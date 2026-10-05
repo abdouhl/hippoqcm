@@ -1,0 +1,337 @@
+{
+  "semester": 1,
+  "module": "Cytology",
+  "source": "EMD1 2022-2023",
+  "questions": [
+    {
+      "stem": "Concerning extracellular matrix pathologies (one or more correct answers):",
+      "options": [
+        "In scurvy, vascular anomalies are linked to anomalies in the synthesis of type III collagen",
+        "Fibrosis is characterized by an increase, in a tissue, of the constituents of the mitochondrial matrix",
+        "Some genetic diseases can affect collagen synthesis",
+        "Scurvy is due to a deficiency of vitamin C, which is a cofactor of collagen synthesis"
+      ],
+      "answer": "CD",
+      "explanation": "No official answer key for this exam — answers worked out from the course. Fibrosis is an increase of the extracellular matrix."
+    },
+    {
+      "stem": "Concerning archaea and viruses:",
+      "options": [
+        "Archaea have rRNAs similar to those of eukaryotes",
+        "Archaea are very similar to bacteria morphologically and metabolically",
+        "Viruses have a cytoplasm and a true nucleus",
+        "Viruses are obligate parasites with no metabolism of their own"
+      ],
+      "answer": "BD",
+      "explanation": "No official key for this exam; answer aligned with the official 2024-2025 key for the same statements (archaeal rRNAs differ from those of eukaryotes)."
+    },
+    {
+      "stem": "Concerning the termination step of protein synthesis:",
+      "options": [
+        "Initiation factors are involved",
+        "The tRNA–peptide ester bond is cleaved by peptidyltransferase, which acts as a hydrolase",
+        "The complete protein chain is released and the two ribosomal subunits release the mRNA without dissociating",
+        "Peptidyltransferase has no role in termination and only acts in forming peptide bonds"
+      ],
+      "answer": "B",
+      "explanation": "No official key — release factors are involved and the subunits dissociate."
+    },
+    {
+      "stem": "Concerning transport across the plasma membrane:",
+      "options": [
+        "Receptor-induced pinocytosis is a specific, selective form of endocytosis not involving membrane receptors",
+        "Raft endocytosis leads to the formation of caveolae whose membrane is rich in protein domains",
+        "Facilitated transport works along the molecular gradient",
+        "Symports couple passive and active transport in opposite directions"
+      ],
+      "answer": "C",
+      "explanation": "No official key — symports move both solutes in the same direction; caveolae are rich in cholesterol/sphingolipids (rafts)."
+    },
+    {
+      "stem": "The structure of bacteria always contains:",
+      "options": [
+        "Pili",
+        "A capsule",
+        "An envelope containing viral proteins",
+        "A plasma membrane"
+      ],
+      "answer": "D",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "About protein glycosylation in the rough endoplasmic reticulum:",
+      "options": [
+        "The preformed oligosaccharide motif (2 N-acetylglucosamines, 9 mannoses and 3 glucoses) is transferred from dolichol-phosphate to an N-glycosylation consensus sequence containing asparagine",
+        "The oligosaccharide motifs are only modified after the glycoprotein is transferred to the Golgi apparatus",
+        "N-glycosylation takes place in the RER lumen during translation",
+        "O-glycosylation indicates the extent of protein folding so that proteins only leave the ER once correctly folded"
+      ],
+      "answer": "AC",
+      "explanation": "No official key — trimming starts in the ER; the folding quality control uses the N-glycan (calnexin cycle)."
+    },
+    {
+      "stem": "Hyaluronic acid:",
+      "options": [
+        "Is a proteoglycan",
+        "Is a glycosaminoglycan",
+        "Is necessarily associated with a protein core to form a proteoglycan",
+        "Attracts water, a property essential for resistance to compressive forces"
+      ],
+      "answer": "BD",
+      "explanation": "No official key — hyaluronic acid is a free GAG, not bound to a core protein."
+    },
+    {
+      "stem": "Concerning viruses:",
+      "options": [
+        "Viruses of eukaryotes can be RNA or DNA viruses",
+        "They can be classified by the type of capsid symmetry, helical or cubic",
+        "They have no metabolism of their own nor intrinsic capacity to produce the proteins encoded by their genome",
+        "Coronaviruses are RNA viruses whose name comes from their shape, with spikes forming a kind of crown"
+      ],
+      "answer": "ABCD",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "The molecular mechanisms involved in contact inhibition can be studied on a line of:",
+      "options": [
+        "Lymphocytes at confluence",
+        "Adherent cells at confluence",
+        "Adherent cancer cells at confluence",
+        "Adherent cells at semi-confluence"
+      ],
+      "answer": "B",
+      "explanation": "No official key — cancer cells lose contact inhibition; lymphocytes are not adherent."
+    },
+    {
+      "stem": "The basal lamina:",
+      "options": [
+        "Among its frequent constituents are collagen IV, nidogen and keratins",
+        "Is part of the extracellular matrix",
+        "Is made of parallel collagen fibers forming a dense bundle",
+        "Is a fibrous network made of glycoproteins and proteoglycans"
+      ],
+      "answer": "BD",
+      "explanation": "No official key — keratins are intracellular intermediate filaments."
+    },
+    {
+      "stem": "Integrins:",
+      "options": [
+        "Can transduce signals from the extracellular matrix to the cell",
+        "Are transmembrane receptors",
+        "Consist of an α subunit and a β subunit",
+        "Bind to extracellular matrix molecules"
+      ],
+      "answer": "ABCD",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Concerning the principles of cell theory:",
+      "options": [
+        "Every living organism is composed of one or more cells",
+        "All living beings must be composed of simple elementary structures that do not repeat",
+        "Every cell comes from the division of another pre-existing cell",
+        "The cell is the unit of structure and function of life"
+      ],
+      "answer": "ACD",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Ribosomes bound to the ER membrane make membrane proteins destined:",
+      "options": [
+        "For the outer face of the plasma membrane (external peripheral proteins)",
+        "For the membrane of the Golgi apparatus",
+        "For other cell membranes: peroxisomes, lysosomes and mitochondria",
+        "For the plasma membrane"
+      ],
+      "answer": "ABD",
+      "explanation": "No official key — most peroxisomal and mitochondrial proteins are made on free ribosomes."
+    },
+    {
+      "stem": "Concerning cytoskeletal elements:",
+      "options": [
+        "Desmin depolymerization starts from the microtubule organizing center",
+        "Tubulin is part of the zonula adherens",
+        "Dynein provides centripetal transport and kinesin centrifugal transport",
+        "In cell fractionation, the first pellet obtained after differential ultracentrifugation contributes to the study of cytoskeletal elements"
+      ],
+      "answer": "C",
+      "explanation": "No official key — desmin is an intermediate filament; zonula adherens uses actin."
+    },
+    {
+      "stem": "About detoxification:",
+      "options": [
+        "Detoxification is an important function of the SER",
+        "The active site of cytochrome P450 is on the cytosolic side of the SER",
+        "P450 action hydroxylates the drug, increasing its water solubility",
+        "In the SER lumen, the hydroxylated drug undergoes glucuronidation, which increases its solubility"
+      ],
+      "answer": "ABCD",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Concerning protein synthesis:",
+      "options": [
+        "Protein synthesis always starts at the RER",
+        "Translation ends when the ribosome reaches the stop codon of the mRNA",
+        "The elongation step involves elongation factors",
+        "Protein synthesis requires tRNAs that match a given amino acid to each anticodon of the mRNA"
+      ],
+      "answer": "BC",
+      "explanation": "No official key — synthesis starts on free ribosomes; mRNA carries codons, not anticodons."
+    },
+    {
+      "stem": "The study of microtubule dynamics during cell division requires the use of:",
+      "options": [
+        "Fluorochromes",
+        "Flow cytometry",
+        "Transmission electron microscopy",
+        "Confocal fluorescence microscopy"
+      ],
+      "answer": "AD",
+      "explanation": "No official key — dynamics require live imaging with fluorescence."
+    },
+    {
+      "stem": "Membrane transporters:",
+      "options": [
+        "Are composed of hydrophilic lipids",
+        "Can change configuration while transporting molecules",
+        "Modify the molecule they transport",
+        "Always carry out transport down the chemical gradient"
+      ],
+      "answer": "B",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Which laboratory techniques keep cells alive?",
+      "options": [
+        "Flow cytometry",
+        "Cell fractionation",
+        "Fluorescent immunolabeling",
+        "Immortalization by viral transfection"
+      ],
+      "answer": "AD",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Plasma membrane lipids:",
+      "options": [
+        "Are never linked to sugar chains, unlike proteins",
+        "All have a hydrophilic domain and a hydrophobic domain",
+        "Phosphatidylserine and phosphatidylethanolamine are found mainly in the inner leaflet",
+        "Can move slowly from one leaflet of the bilayer to the other"
+      ],
+      "answer": "BCD",
+      "explanation": "No official key — glycolipids exist; flip-flop is slow."
+    },
+    {
+      "stem": "The combination (Taxol + fluorescent immunolabeling) makes it possible to visualize:",
+      "options": [
+        "The framework of microvilli",
+        "The microtubules of cell division",
+        "The intermediate filaments present in stem cells",
+        "The mitotic contractile ring"
+      ],
+      "answer": "B",
+      "explanation": "No official key — Taxol stabilizes microtubules."
+    },
+    {
+      "stem": "About the functions of the endoplasmic reticulum:",
+      "options": [
+        "The RER synthesizes proteins destined for the constitutive and regulated secretory pathway",
+        "The SER is involved in sulfation",
+        "The RER is the site of some glycosylation processes",
+        "The SER is the site of biosynthesis of lipids destined for the cell membrane"
+      ],
+      "answer": "ACD",
+      "explanation": "No official key — sulfation occurs in the Golgi."
+    },
+    {
+      "stem": "Concerning actin microfilaments:",
+      "options": [
+        "G-actin-ATP is found only in the cytosol",
+        "Nucleation of F-actin occurs anywhere in the cytosol",
+        "The basic unit and the basic protein are the same",
+        "Depolymerization occurs at the microtubule organizing center"
+      ],
+      "answer": "C",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "About protein folding in the RER:",
+      "options": [
+        "After synthesis in the RER, misfolded proteins are sent by vesicles to lysosomes for degradation",
+        "Folding depends on chaperone proteins that help and control folding",
+        "When proteins misfold in the RER, the cell goes into apoptosis",
+        "Folding gives the three-dimensional conformation needed for their function"
+      ],
+      "answer": "BD",
+      "explanation": "No official key — misfolded proteins are retro-translocated to the proteasome (ERAD)."
+    },
+    {
+      "stem": "About cytoskeletal elements:",
+      "options": [
+        "Microtubule tubulin undergoes N-glycosylation in the RER, essential for its polymerization",
+        "Intermediate filaments are not involved in cell division",
+        "They all have the same diameter",
+        "Some can take part in the intracellular movement of organelles"
+      ],
+      "answer": "D",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Concerning RNAs and translation:",
+      "options": [
+        "A tRNA with a specific codon can carry different amino acids",
+        "tRNAs are small double-stranded RNA molecules",
+        "An mRNA can be translated by several ribosomes at once, producing several identical proteins from the same messenger",
+        "tRNAs contain a three-nucleotide sequence, the anticodon, whose bases are complementary to the mRNA codon"
+      ],
+      "answer": "CD",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Concerning the plasma membrane:",
+      "options": [
+        "The cell coat helps maintain plasma membrane asymmetry",
+        "The hydrophilic regions of transmembrane proteins are all exposed on the cytosolic side",
+        "Peripheral membrane proteins are amphipathic",
+        "The lipid composition of the two leaflets is different, reflecting the identical functions of the two faces"
+      ],
+      "answer": "A",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Events in the maturation of ribosomal RNAs and formation of eukaryotic ribosomes include:",
+      "options": [
+        "Synthesis of a 45S pre-rRNA molecule",
+        "Incorporation of 18S rRNA into the large ribosomal subunits",
+        "Association of ribosomal proteins with rRNAs before these molecules leave the nucleus",
+        "Synthesis of a 5S rRNA molecule in the nucleolus"
+      ],
+      "answer": "AC",
+      "explanation": "No official key — 18S goes to the small subunit; 5S rRNA is transcribed outside the nucleolus."
+    },
+    {
+      "stem": "Facilitated passive membrane transport:",
+      "options": [
+        "Allows diffusion against the concentration gradient of the transported molecule",
+        "Is saturable",
+        "Is involved exclusively in the diffusion of lipid-soluble molecules",
+        "Requires energy from ATP hydrolysis"
+      ],
+      "answer": "B",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Concerning the extracellular matrix:",
+      "options": [
+        "The macromolecules making up the extracellular matrix are produced locally by cells in the matrix",
+        "Elastin ensures adhesion of cells to the extracellular matrix",
+        "Hyaluronic acid is a glycosaminoglycan that exists in the free state in the extracellular matrix",
+        "All glycosaminoglycans of the extracellular matrix are bound to proteins forming proteoglycans"
+      ],
+      "answer": "AC",
+      "explanation": "No official key — elastin provides elasticity; adhesion is via fibronectin/laminin."
+    }
+  ]
+}

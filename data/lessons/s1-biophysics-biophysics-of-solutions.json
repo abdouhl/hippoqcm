@@ -1,0 +1,248 @@
+{
+  "semester": 1,
+  "module": "Biophysics",
+  "title": "Biophysics of solutions",
+  "pdf": "s1/biophysics/biophysics-of-solutions.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q3", "EMD1 2022-2023 Q4",
+    "EMD1 2023-2024 Q3", "EMD1 2023-2024 Q4",
+    "EMD1 2024-2025 Q3", "EMD1 2024-2025 Q4",
+    "EMD1 2025-2026 Q3", "EMD1 2025-2026 Q4"
+  ],
+  "questions": [
+    {
+      "stem": "About plasma, the correct proposition is:",
+      "options": [
+        "It is an intermediate state combining the properties of a liquid and a crystalline solid",
+        "It is made up only of neutral atoms and molecules",
+        "It is used in mobile telephony screens",
+        "It is an ionized gas, called the 4th state of matter",
+        "It has its own volume"
+      ],
+      "answer": "D",
+      "explanation": "Plasma is the 4th state of matter: an ionized gas made of electrons, ions, atoms or neutral molecules. The intermediate state used in mobile telephony is the liquid crystal, not plasma.",
+      "page": 1
+    },
+    {
+      "stem": "The liquid state:",
+      "options": [
+        "Has neither a fixed shape nor a fixed volume",
+        "Is condensed (particles close together) but fluid (particles weakly bound and mobile)",
+        "Has strongly bound, immobile particles",
+        "Has a free surface that, at rest, follows the curvature of the container",
+        "Tends to occupy all the available volume"
+      ],
+      "answer": "B",
+      "explanation": "A liquid has its own volume, takes the shape of its container, has a flat horizontal free surface at rest, and is condensed but fluid. Having no fixed volume and filling all available space describe the gaseous state.",
+      "page": 1
+    },
+    {
+      "stem": "The gaseous state:",
+      "options": [
+        "Has its own volume but takes the shape of its container",
+        "Is condensed, with particles close together",
+        "Is made up of electrons, ions, atoms and neutral molecules",
+        "Has a flat, horizontal free surface at rest",
+        "Is dispersed and completely disorganized, with almost independent particles"
+      ],
+      "answer": "E",
+      "explanation": "A gas has neither fixed shape nor volume, fills all available volume, is dispersed and disorganized, and is made only of atoms and molecules. Electrons and ions characterize plasma (an ionized gas).",
+      "page": 2
+    },
+    {
+      "stem": "About energy units, the correct proposition is:",
+      "options": [
+        "1 erg = 10⁷ J",
+        "The erg is the energy unit of the SI (M.K.S.A) system",
+        "1 cal = 4.184 J",
+        "1 eV = 1.6 × 10¹⁹ J",
+        "The joule is the energy unit of the CGS system"
+      ],
+      "answer": "C",
+      "explanation": "1 cal = 4.184 J. The joule is the SI unit, the erg is the CGS unit with 1 erg = 10⁻⁷ J (not 10⁷), and 1 eV = 1.6 × 10⁻¹⁹ J.",
+      "page": 2
+    },
+    {
+      "stem": "An energy of 2 cal is equal to:",
+      "options": [
+        "0.478 J",
+        "8.368 × 10⁻⁷ erg",
+        "1.34 × 10⁻¹⁸ eV",
+        "8.368 × 10⁷ erg",
+        "2 J"
+      ],
+      "answer": "D",
+      "explanation": "2 cal = 2 × 4.184 = 8.368 J, and since 1 erg = 10⁻⁷ J, 8.368 J = 8.368 × 10⁷ erg. Dividing instead of multiplying gives the 0.478 J and 10⁻⁷ erg traps.",
+      "page": 2
+    },
+    {
+      "stem": "A glass contains oil floating on water (two immiscible liquids). This system has:",
+      "options": [
+        "One phase and one liquid state",
+        "Two phases and two liquid states",
+        "One phase and two states",
+        "Two phases and only one liquid state",
+        "A single phase, since both components are liquids"
+      ],
+      "answer": "D",
+      "explanation": "Two immiscible liquids form two different phases (regions with different properties) but only one state of matter (liquid). Being in the same state does not make them one phase.",
+      "page": 2
+    },
+    {
+      "stem": "About thermodynamic systems, the correct proposition is:",
+      "options": [
+        "An open system exchanges only energy with the surrounding environment",
+        "A closed system exchanges only energy with the surrounding environment",
+        "A closed system exchanges energy and matter with the surrounding environment",
+        "An isolated system exchanges only matter with the surrounding environment",
+        "An open glass of milk is an example of an isolated system"
+      ],
+      "answer": "B",
+      "explanation": "Open: exchanges energy and matter (open glass of milk). Closed: exchanges only energy (sealed jar). Isolated: no exchange at all (thermos flask).",
+      "page": 2
+    },
+    {
+      "stem": "Which pairing of example and system type is correct?",
+      "options": [
+        "Open glass of milk → closed system",
+        "Sealed jar of jam → isolated system",
+        "Sealed jar of jam → open system",
+        "Thermos flask → isolated system",
+        "Thermos flask → closed system"
+      ],
+      "answer": "D",
+      "explanation": "The thermos (ideally) exchanges neither energy nor matter, so it is isolated. The sealed jar exchanges only energy (closed) and the open glass of milk exchanges energy and matter (open).",
+      "page": 2
+    },
+    {
+      "stem": "The saturating vapor pressure (Psat) of a liquid placed in a closed chamber:",
+      "options": [
+        "Depends on the temperature and on the volume of the chamber",
+        "Depends on the quantity of liquid introduced",
+        "Depends only on the temperature",
+        "Is the vapor pressure of a substance in equilibrium with its solid phase",
+        "Is reached in an open system"
+      ],
+      "answer": "C",
+      "explanation": "In a closed chamber at fixed temperature, molecules vaporize until the space is saturated; the pressure reached, Psat, depends only on temperature. It is defined with respect to the liquid phase, not the solid phase.",
+      "page": 2
+    },
+    {
+      "stem": "Once saturation is reached in a closed chamber at fixed temperature:",
+      "options": [
+        "Molecules stop passing from the liquid to the gaseous phase",
+        "The vapor pressure keeps rising as long as liquid remains",
+        "Adding more liquid to the chamber raises the vapor pressure",
+        "The space above the liquid stays at P = 0",
+        "The flow of molecules from liquid to gas equals the flow from gas to liquid"
+      ],
+      "answer": "E",
+      "explanation": "Equilibrium means the liquid→gas flow equals the gas→liquid flow; exchanges continue but cancel out. Because Psat depends only on temperature, adding liquid does not change it.",
+      "page": 3
+    },
+    {
+      "stem": "Duperray's formula for water:",
+      "options": [
+        "Psat = (t/100)⁴, with Psat in bar and t in °C, valid for 100°C ≤ t ≤ 200°C",
+        "Psat = (t/100)⁴, with Psat in Pa and t in K",
+        "Psat = (100/t)⁴, with Psat in bar and t in °C",
+        "Psat = (t/100)⁴, valid for 0°C ≤ t ≤ 100°C",
+        "Psat = (t/100)², with Psat in bar and t in °C"
+      ],
+      "answer": "A",
+      "explanation": "Duperray: Psat = (t/100)⁴ with Psat in bar and t in °C, for 100°C ≤ t ≤ 200°C. Check: t = 100°C gives 1 bar, the boiling point at atmospheric pressure.",
+      "page": 3
+    },
+    {
+      "stem": "A sealed pressure cooker maintains a water vapor pressure of 2 bar. Using Duperray's formula, the boiling point of water inside is approximately:",
+      "options": [
+        "200°C",
+        "141°C",
+        "108°C",
+        "125°C",
+        "119°C"
+      ],
+      "answer": "E",
+      "explanation": "t = 100 × (Psat)^(1/4) = 100 × 2^(1/4) ≈ 119°C. Taking the square root instead gives 141°C, and a linear relation gives 200°C.",
+      "page": 3
+    },
+    {
+      "stem": "About pressure units, the correct proposition is:",
+      "options": [
+        "1 atm = 101325 mmHg",
+        "1 bar = 10⁵ Pa ≈ 1 atm",
+        "1 Pa = 7.5 mmHg",
+        "The pressure exerted by a column of liquid depends on the cross-section S of the column",
+        "The pressure exerted by a column of liquid does not depend on the liquid's density"
+      ],
+      "answer": "B",
+      "explanation": "1 bar = 10⁵ Pa ≈ 1 atm = 101325 Pa = 760 mmHg, and 1 Pa = 7.5 × 10⁻³ mmHg. For a liquid column P = ρgh: S cancels out, but density matters.",
+      "page": 3
+    },
+    {
+      "stem": "What height of a water column (ρ = 1 g/cm³, g = 9.81 m/s²) exerts a pressure of 1 atm?",
+      "options": [
+        "0.76 m",
+        "10.3 m",
+        "1.03 m",
+        "7.6 m",
+        "103 m"
+      ],
+      "answer": "B",
+      "explanation": "P = ρgh ⇒ h = 101325 / (1000 × 9.81) ≈ 10.3 m. The 0.76 m value is the mercury column (ρ = 13.6 g/cm³), not water.",
+      "page": 3
+    },
+    {
+      "stem": "A mass m = 4 g of water (M = 18 g/mol) is introduced into an initially empty container of volume V = 10 L and heated to 80°C. Psat(80°C) = 0.466 bar (R = 8.31 SI). What mass of water remains liquid?",
+      "options": [
+        "2.86 g",
+        "0 g (all the water vaporizes)",
+        "1.14 g",
+        "0.47 g",
+        "3.53 g"
+      ],
+      "answer": "C",
+      "explanation": "The maximum vapor is n = PsatV/RT = 46600 × 0.010 / (8.31 × 353) ≈ 0.159 mol ≈ 2.86 g < 4 g, so saturation is reached and 4 − 2.86 ≈ 1.14 g stays liquid. 2.86 g is the vaporized mass, not the liquid.",
+      "page": 3
+    },
+    {
+      "stem": "(Continued: 4 g of water in the 10 L container.) The container is heated to 100°C, where Psat = 1 bar. The vapor pressure inside is:",
+      "options": [
+        "1 bar (saturated vapor)",
+        "0.466 bar",
+        "0.82 bar",
+        "0.69 bar (all the water is vapor, unsaturated)",
+        "0.58 bar"
+      ],
+      "answer": "D",
+      "explanation": "If all 4 g (0.222 mol) vaporize, P = nRT/V = 0.222 × 8.31 × 373 / 0.010 ≈ 0.69 bar < Psat = 1 bar, so there is no liquid left and the vapor is unsaturated. P only equals Psat if liquid remains.",
+      "page": 3
+    },
+    {
+      "stem": "A mass of 0.5 g of water (M = 18 g/mol) is introduced into an initially empty 10 L container at 80°C, where Psat = 0.466 bar (R = 8.31 SI). The correct proposition is:",
+      "options": [
+        "Saturation is reached and the vapor pressure is 0.466 bar",
+        "Part of the water remains liquid",
+        "All the water vaporizes and the vapor pressure is about 0.082 bar",
+        "The vapor pressure is about 0.82 bar",
+        "The vapor pressure depends only on the temperature"
+      ],
+      "answer": "C",
+      "explanation": "P = nRT/V = (0.5/18) × 8.31 × 353 / 0.010 ≈ 8150 Pa ≈ 0.082 bar < Psat, so all the water vaporizes. The vapor pressure depends only on temperature only when the vapor is saturated.",
+      "page": 3
+    },
+    {
+      "stem": "A sealed 2 L pressure cooker is heated to 120°C. Using Duperray's formula, what maximum mass of water (M = 18 g/mol) can exist as vapor inside? (R = 8.31 SI)",
+      "options": [
+        "1.10 g",
+        "2.29 g",
+        "1.37 g",
+        "3.12 g",
+        "0.73 g"
+      ],
+      "answer": "B",
+      "explanation": "Psat = (120/100)⁴ ≈ 2.07 bar, so n = PsatV/RT = 207360 × 0.002 / (8.31 × 393) ≈ 0.127 mol ≈ 2.29 g. Using Psat = 1 bar instead gives about 1.10 g.",
+      "page": 3
+    }
+  ]
+}

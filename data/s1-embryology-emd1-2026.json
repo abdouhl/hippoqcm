@@ -1,0 +1,222 @@
+{
+  "semester": 1,
+  "module": "Embryology",
+  "source": "EMD1 2025-2026",
+  "questions": [
+    {
+      "stem": "Find the correct statement: the structure (X) shown above represents:",
+      "image": "s1/embryology-q1.png",
+      "options": [
+        "The beginning of delimitation.",
+        "The formation of the mesoblast (mesoderm).",
+        "The formation of the neuroectoderm.",
+        "The formation of the notochord."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "Find the correct label for structure X:",
+      "image": "s1/embryology-q1.png",
+      "options": [
+        "Arrow 1 indicates the pharyngeal membrane.",
+        "Arrow 2 indicates the primitive streak.",
+        "Arrow 3 indicates Hensen's node.",
+        "Arrow 4 indicates the future neural tube."
+      ],
+      "answer": "AB"
+    },
+    {
+      "stem": "Among the following statements concerning the hypothalamic–pituitary–gonadal axis, indicate which is/are correct:",
+      "options": [
+        "The hypothalamus secretes GnRH.",
+        "Inhibin is secreted by Sertoli cells.",
+        "Pituitary LH stimulates Sertoli cells.",
+        "Progesterone is secreted during the preovulatory phase."
+      ],
+      "answer": "AB"
+    },
+    {
+      "stem": "Concerning the decidua:",
+      "options": [
+        "It refers to the part of the endometrium formed following the decidual reaction.",
+        "It is expelled after childbirth.",
+        "The parietal decidua surrounds the embryo and accompanies it during growth.",
+        "At the end of pregnancy, the three deciduae are observed."
+      ],
+      "answer": "AB"
+    },
+    {
+      "stem": "Concerning monozygotic twins:",
+      "options": [
+        "These twins are always monoamniotic.",
+        "The least \"true\" of true twins are diamniotic and dichorionic.",
+        "They are not tolerant to reciprocal grafts.",
+        "Conjoined twins result from a separation at a stage preceding the appearance of the primitive streak."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "Among the following statements concerning neurulation, indicate which is/are correct:",
+      "options": [
+        "The primordium of the nervous system appears at the beginning of the 3rd week of development.",
+        "The neural plate is an anterior thickening of the neuroectoderm.",
+        "At the end of the 4th week, the three primary brain vesicles give rise to five.",
+        "Neurulation is induced by the appearance of the vertebral column."
+      ],
+      "answer": "AC"
+    },
+    {
+      "stem": "At the end of segmentation (metamerization), the paraxial mesoblast will consist of:",
+      "options": ["30 pairs of somites.", "35 pairs of somites.", "42 pairs of somites.", "44 pairs of somites."],
+      "answer": "CD"
+    },
+    {
+      "stem": "Among the embryological elements proposed below, indicate the one(s) that have an inductive effect:",
+      "options": ["Primordial gonocytes.", "The allantoic diverticulum.", "The neural tube.", "The primitive streak."],
+      "answer": "BD"
+    },
+    {
+      "stem": "Concerning the figure below:",
+      "image": "s1/embryology-q9.png",
+      "options": [
+        "It is a pre-antral follicle.",
+        "At the center of the structure is the secondary oocyte arrested in metaphase II.",
+        "At the periphery, an internal theca of fibrous nature can be identified.",
+        "The structure has just undergone a hormonal surge (FSH, LH)."
+      ],
+      "answer": "BD"
+    },
+    {
+      "stem": "Among the following statements concerning the passage of sperm through the female genital tract, indicate which one(s) is/are correct:",
+      "options": [
+        "Cervical secretions are favourable to sperm at the time of ovulation.",
+        "Cervical secretions are favourable to sperm before ovulation.",
+        "The pH of the vaginal canal is unfavourable to sperm survival.",
+        "The permeability of the cervical mucus varies throughout the cycle."
+      ],
+      "answer": "ACD"
+    },
+    {
+      "stem": "Regarding fertilisation:",
+      "options": [
+        "Acrosomal hyaluronidase enables hydrolysis of the zona pellucida.",
+        "Contact between the first sperm and the plasma membrane of the oocyte triggers the release of cortical granules.",
+        "Fertilisation can take place in the uterine cavity.",
+        "Sperm deposited in the vagina travel towards the fallopian tube, at the end of which the oocyte is located."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "Some of these characteristics are observed during the endometrium's response to implantation:",
+      "options": [
+        "The immunological reaction is generally very strong.",
+        "Stromal cells proliferate and become smaller.",
+        "Invasion of lymphocytes with increased vascularisation.",
+        "It begins in the implantation area in contact with the syncytiotrophoblast."
+      ],
+      "answer": "ACD"
+    },
+    {
+      "stem": "Among the following cells, indicate which one(s) is (are) haploid:",
+      "options": ["Spermatozoid.", "Spermatids.", "Spermatogonia.", "Oocyte II."],
+      "answer": "ABD"
+    },
+    {
+      "stem": "Regarding the evolution of the corpus luteum in the event of fertilisation, it:",
+      "options": [
+        "Regresses within a few days and is replaced by the egg, which releases oestrogen and progesterone.",
+        "Regresses within 12 to 14 days and is replaced by the placenta, which releases oestrogen and progesterone.",
+        "Persists and its endocrine activity is maintained until the third month.",
+        "Produces the HCG necessary to maintain pregnancy."
+      ],
+      "answer": "C"
+    },
+    {
+      "stem": "Among the following elements, indicate the one(s) that derive from the endoderm:",
+      "options": ["The large intestine.", "The liver.", "The kidney.", "The epidermis."],
+      "answer": "AB"
+    },
+    {
+      "stem": "Among the statements concerning the intermediate mesoblast, indicate the one(s) that is/are correct:",
+      "options": [
+        "The pronephros is represented by functional urinary structures.",
+        "The mesonephros forms the Wolffian duct, which participates in the formation of the urinary tract and male genital tract.",
+        "The metanephros is the origin of the definitive genital outline.",
+        "The metanephros is the origin of the outline of the kidney."
+      ],
+      "answer": "BD"
+    },
+    {
+      "stem": "The cephalic part of the neural tube gives rise to three primitive vesicles in the cranio-caudal direction, in the following order:",
+      "options": [
+        "Telencephalon-diencephalon-mesencephalon.",
+        "Telencephalon-mesencephalon-rhombencephalon.",
+        "Prosencephalon-myelencephalon-telencephalon.",
+        "Prosencephalon-mesencephalon-rhombencephalon."
+      ],
+      "answer": "D"
+    },
+    {
+      "stem": "What is the term used to describe the process during which ectodermal cells migrate to form the mesoblast?",
+      "options": ["Invagination.", "Proliferation.", "Pre-gastrulation.", "Individualisation."],
+      "answer": "A"
+    },
+    {
+      "stem": "From an embryological point of view, the diagram shown represents:",
+      "image": "s1/embryology-q19.png",
+      "options": [
+        "It has a trophoblastic origin.",
+        "Derived from the extra-embryonic mesenchyme.",
+        "Constitutes the functional unit of the placenta.",
+        "Disappears at the end of pregnancy."
+      ],
+      "answer": "ABC"
+    },
+    {
+      "stem": "The placental barrier, at the stage shown, includes:",
+      "image": "s1/embryology-q19.png",
+      "options": [
+        "An external syncytiotrophoblastic layer.",
+        "An internal cytotrophoblastic layer.",
+        "Primitive blood cells in the core of the villus.",
+        "Embryonic mesoderm."
+      ],
+      "answer": "ABC"
+    },
+    {
+      "stem": "Concerning primitive blood islands, they are:",
+      "options": [
+        "Of ectodermal origin.",
+        "Their primordium appears at the end of the 2nd week of embryonic development.",
+        "At the origin of the first blood vessels and blood cells.",
+        "Definitive structures."
+      ],
+      "answer": "BC"
+    },
+    {
+      "stem": "Concerning the allantois, it is:",
+      "options": [
+        "A formation of purely mesodermal origin.",
+        "A diverticulum derived from the ectoderm.",
+        "A diverticulum formed by evagination of the endoderm.",
+        "A structure derived from Heuser's membrane."
+      ],
+      "answer": "C"
+    },
+    {
+      "stem": "Concerning the location of the allantois, it forms posterior to:",
+      "options": ["The pharyngeal membrane.", "The cloacal membrane.", "The yolk sac.", "The cardiogenic area."],
+      "answer": "B"
+    },
+    {
+      "stem": "Concerning the structure of the allantoic wall, the epithelium of the allantois is lined by:",
+      "options": ["Embryonic somatopleure.", "Intermediate mesoderm.", "Embryonic splanchnopleure.", "Extra-embryonic ectoderm."],
+      "answer": "C"
+    },
+    {
+      "stem": "Concerning the vascular role of the allantois, the allantoic vessels:",
+      "options": ["Completely degenerate.", "Form the pulmonary arteries.", "Form the umbilical vessels.", "Form the cerebral capillaries."],
+      "answer": "C"
+    }
+  ]
+}

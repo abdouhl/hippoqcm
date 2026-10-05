@@ -1,0 +1,222 @@
+{
+  "semester": 1,
+  "module": "Biophysics",
+  "title": "Biophysics of solutions 2",
+  "pdf": "s1/biophysics/biophysics-of-solutions-2.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q6", "EMD1 2022-2023 Q7", "EMD1 2022-2023 Q8",
+    "EMD1 2023-2024 Q6", "EMD1 2023-2024 Q7",
+    "EMD1 2024-2025 Q6", "EMD1 2024-2025 Q7", "EMD1 2024-2025 Q15",
+    "EMD1 2025-2026 Q6", "EMD1 2025-2026 Q7"
+  ],
+  "questions": [
+    {
+      "stem": "Medical application — respiratory water loss. The correct proposition is:",
+      "options": [
+        "The human body eliminates about 2.4 L of water per day, of which 300 to 400 g are eliminated by the lungs",
+        "If the inspired air is saturated with water vapor, the elimination of water by the alveoli is maximal",
+        "If the inspired air is dry, the elimination of water by the alveoli is zero",
+        "Water is eliminated by the alveoli by condensation",
+        "Expired air contains less water vapor than inspired air"
+      ],
+      "answer": "A",
+      "explanation": "About 2.4 L/day are eliminated, 300–400 g of it by alveolar evaporation. Saturated inspired air makes this elimination zero (Psat already reached) and dry air makes it maximal — the two distractors swap these; expired air is very rich in water vapor.",
+      "page": 1
+    },
+    {
+      "stem": "A liquid evaporates in a closed enclosure. The correct proposition is:",
+      "options": [
+        "Evaporation persists as long as the vapor pressure is higher than the saturation pressure",
+        "Equilibrium between the liquid and gas phases is reached when P_vapor = P_sat; the enclosure is then saturated",
+        "Once P_vapor = P_sat, vapor molecules keep forming at a constant rate",
+        "The vapor pressure is also called the saturation pressure",
+        "Evaporation stops as soon as P_vapor becomes lower than P_sat"
+      ],
+      "answer": "B",
+      "explanation": "Evaporation continues while P_vapor < P_sat; at P_vapor = P_sat the liquid and gas are at equilibrium, the enclosure is saturated and no more vapor can form. The vapor pressure is also called the partial vapor pressure, not the saturation pressure.",
+      "page": 1
+    },
+    {
+      "stem": "About the types of solutions, the correct proposition is:",
+      "options": [
+        "A solution is a heterogeneous mixture made of several phases",
+        "A colloidal solution consists of a single phase",
+        "The solute particles of a colloidal solution have sizes ranging from 10 to 1000 Å",
+        "The dissolution of sugar in water is an example of a colloidal solution",
+        "An electrolytic solution carries a net electric charge"
+      ],
+      "answer": "C",
+      "explanation": "Colloids are relatively large particles of 10 to 1000 Å (e.g. soap in water), forming a heterogeneous mixture of more than one phase. A (true) solution is homogeneous with a single phase (sugar in water); an electrolytic solution is electrically neutral and conducts current.",
+      "page": 2
+    },
+    {
+      "stem": "About ideal solutions, the correct propositions are:",
+      "options": [
+        "Solute–solvent interactions predominate over solvent–solvent interactions",
+        "Solvent–solvent, solute–solute and solute–solvent interactions are approximately equal",
+        "A solution is considered ideal when it is very dilute (C ≤ 10⁻³ mol/L)",
+        "The dispersion of soap in water is an example of an ideal solution",
+        "The activity coefficient of a solute in an ideal solution is γ = 0"
+      ],
+      "answer": "BC",
+      "explanation": "In an ideal solution no single interaction predominates, and solutions are considered ideal when very dilute (C ≤ 10⁻³ mol/L), e.g. a mixture of alcohols. Soap in water is a colloidal example, and γ = 1 (not 0) for ideal solutions.",
+      "page": 2
+    },
+    {
+      "stem": "About the chemical activity aᵢ of a species i of concentration Cᵢ, the correct propositions are:",
+      "options": [
+        "aᵢ = γᵢ·Cᵢ/C₀, with C₀ = 1 mol/L the reference concentration",
+        "aᵢ is expressed in mol/L",
+        "The activity coefficient satisfies 0 < γᵢ ≤ 1",
+        "γᵢ = 1 for ideal solutions, pure substances and solvents",
+        "The activity is the ability of the solute to dissociate into ions"
+      ],
+      "answer": "ACD",
+      "explanation": "Activity (active concentration) aᵢ = γᵢ·Cᵢ/C₀ is dimensionless, with 0 < γᵢ ≤ 1 and γᵢ = 1 for ideal solutions, pure substances and solvents. It expresses the availability of the solute for chemical reactions (affected by solute–solvent and solute–solute interactions), not its dissociation.",
+      "page": 2
+    },
+    {
+      "stem": "Calculate the chemical activity of the Cl⁻ ion in an aqueous CaCl₂ solution at 2×10⁻³ mol/L (total dissociation, Debye–Hückel applicable).",
+      "options": [
+        "1.83×10⁻³",
+        "4.00×10⁻³",
+        "3.80×10⁻³",
+        "3.66×10⁻³",
+        "4.37×10⁻³"
+      ],
+      "answer": "D",
+      "explanation": "C(Cl⁻) = 4×10⁻³ mol/L; I = ½[2×10⁻³×(+2)² + 4×10⁻³×(−1)²] = 6×10⁻³ mol/L; log γ = −0.5×√(6×10⁻³) ⇒ γ ≈ 0.915; a = γ·C/C₀ ≈ 3.66×10⁻³. 1.83×10⁻³ uses the salt concentration instead of [Cl⁻]; 4.37×10⁻³ divides by γ.",
+      "page": 3
+    },
+    {
+      "stem": "About the ionic strength I of a solution, the correct propositions are:",
+      "options": [
+        "I = ½ Σ C_k·z_k², summed over all the ions k of the solution",
+        "It is expressed in mol/L",
+        "For a totally dissociated NaCl solution, I equals the molar concentration of NaCl",
+        "The valence of O²⁻ is z = +2",
+        "A 10⁻³ mol/L glucose solution has an ionic strength of 10⁻³ mol/L"
+      ],
+      "answer": "ABC",
+      "explanation": "I = ½ΣC_k z_k² in mol/L; for NaCl at C, I = ½(C×1 + C×1) = C. z(O²⁻) = −2, and glucose is a non-electrolyte (no ions), so its ionic strength is zero.",
+      "page": 2
+    },
+    {
+      "stem": "One liter of aqueous solution contains 5.85 g of NaCl (M = 58.5 g/mol) and 9.5 g of MgCl₂ (M = 95 g/mol). The electrolytes are totally dissociated. Calculate the ionic strength of the solution (mol/L).",
+      "options": [
+        "0.30",
+        "0.35",
+        "0.40",
+        "0.80",
+        "0.25"
+      ],
+      "answer": "C",
+      "explanation": "0.1 mol/L of each salt: Na⁺ 0.1, Mg²⁺ 0.1, Cl⁻ 0.1 + 0.2 = 0.3 mol/L. I = ½[0.1×1 + 0.1×(+2)² + 0.3×1] = 0.40 mol/L. Forgetting to square z(Mg²⁺) gives 0.30; forgetting the ½ gives 0.80.",
+      "page": 2
+    },
+    {
+      "stem": "At the same concentration of 10⁻³ mol/L (total dissociation), the activity coefficient of the Cl⁻ ion is the lowest in a solution of:",
+      "options": [
+        "NaCl",
+        "MgCl₂",
+        "HCl",
+        "KCl",
+        "LaCl₃"
+      ],
+      "answer": "E",
+      "explanation": "LaCl₃ gives the highest ionic strength (I = 6×10⁻³ vs 3×10⁻³ for MgCl₂ and 10⁻³ for the 1:1 salts). Since I₁ < I₂ ⇒ γ₁ > γ₂, γ(Cl⁻) is lowest in LaCl₃ (0.9147 vs 0.9389 in MgCl₂).",
+      "page": 3
+    },
+    {
+      "stem": "Using the Debye–Hückel equation, calculate the activity coefficient of the Mg²⁺ ion in a 10⁻³ mol/L MgCl₂ solution (total dissociation).",
+      "options": [
+        "0.939",
+        "0.777",
+        "0.882",
+        "0.864",
+        "0.896"
+      ],
+      "answer": "B",
+      "explanation": "I = ½[10⁻³×4 + 2×10⁻³×1] = 3×10⁻³ mol/L < 0.05; log γ = −0.5×(2)²×√(3×10⁻³) ≈ −0.110 ⇒ γ ≈ 0.777. 0.939 is γ of Cl⁻ (z = −1); 0.882 comes from not squaring z.",
+      "page": 3
+    },
+    {
+      "stem": "About the chemical potential μᵢ, the correct propositions are:",
+      "options": [
+        "μᵢ(T) = μᵢ⁰(T) + RT·ln(aᵢ)",
+        "It is expressed in joules (J)",
+        "μᵢ⁰(T) is the potential of i in its standard state, the most stable physical state at P_atm for a given temperature",
+        "At 298 K, the standard state of water is vapor",
+        "When two phases coexist at equilibrium, their temperatures and pressures are equal but their chemical potentials differ"
+      ],
+      "answer": "AC",
+      "explanation": "μᵢ = μᵢ⁰ + RT·ln(aᵢ), in J/mol (not J). The standard state is the most stable state at P_atm (liquid for water at 298 K). At phase equilibrium, temperatures, pressures and chemical potentials are all equal.",
+      "page": 4
+    },
+    {
+      "stem": "Compared with pure water (μ₁), the chemical potential of water in an aqueous solution (μ₂) is:",
+      "options": [
+        "Higher, because the concentration of water in the solution is higher than 55.5 mol/L",
+        "Lower, because the concentration of water in the solution is lower than that of pure water (55.5 mol/L)",
+        "Equal, because the activity coefficient of water is 1 in both cases",
+        "Lower, because the activity coefficient of water as a solvent is less than 1",
+        "Higher, because the solute increases the activity of water"
+      ],
+      "answer": "B",
+      "explanation": "γ(water) = 1 both as a pure body and as a solvent, so μ₂ − μ₁ = RT·ln(C₂/C₁); in 1 L of solution n(water) < 55.5 mol, so C₂ < C₁ and μ₂ < μ₁. Equal γ does not mean equal μ, because the concentrations differ.",
+      "page": 4
+    },
+    {
+      "stem": "About the osmolarity ω of a solution containing a single solute, the correct propositions are:",
+      "options": [
+        "ω = [1 + α(β − 1)]·C",
+        "ω is expressed in osmol/L and the molarity C in mol/L",
+        "β is the number of ions produced by the dissociation of the solute, if it is an electrolyte",
+        "For glucose, β = 1, so ω = C",
+        "For urea, ω = 2C"
+      ],
+      "answer": "ABCD",
+      "explanation": "ω = [1 + α(β − 1)]C, in osmol/L; β is the number of ions released by an electrolyte. Urea, like glucose, is a non-electrolyte (β = 1), so ω = C, not 2C.",
+      "page": 5
+    },
+    {
+      "stem": "An aqueous CaCl₂ solution at 0.2 mol/L has a dissociation coefficient α = 0.8. Calculate its osmolarity (osmol/L).",
+      "options": [
+        "0.60",
+        "0.36",
+        "0.52",
+        "0.48",
+        "0.20"
+      ],
+      "answer": "C",
+      "explanation": "CaCl₂ → Ca²⁺ + 2Cl⁻, so β = 3; ω = [1 + 0.8×(3 − 1)]×0.2 = 2.6×0.2 = 0.52 osmol/L. 0.60 assumes total dissociation; 0.36 uses β = 2.",
+      "page": 5
+    },
+    {
+      "stem": "One liter of aqueous solution contains 5.85 g of NaCl (M = 58.5 g/mol), 18 g of glucose (M = 180 g/mol) and 20 mL of H₂SO₄ (1 mol/L). The electrolytes are totally dissociated. Calculate the osmolarity of the solution.",
+      "options": [
+        "460 mosm/L",
+        "340 mosm/L",
+        "220 mosm/L",
+        "400 mosm/L",
+        "360 mosm/L"
+      ],
+      "answer": "E",
+      "explanation": "With total dissociation ω = βC: NaCl 2×100 = 200, glucose (non-electrolyte, β = 1) 100, H₂SO₄ (2H⁺ + SO₄²⁻, β = 3) 3×20 = 60 ⇒ 360 mosm/L. Counting glucose twice gives 460; ignoring dissociation gives 220.",
+      "page": 5
+    },
+    {
+      "stem": "Solutions at the same molar concentration C = 0.1 mol/L, electrolytes totally dissociated. The correct propositions are:",
+      "options": [
+        "Glucose and urea solutions have the same osmolarity",
+        "NaCl and glucose solutions have the same osmolarity",
+        "The osmolarity of the CaCl₂ solution is 0.3 osmol/L",
+        "Na₂SO₄ and MgCl₂ solutions have the same osmolarity",
+        "The osmolarity of the NaCl solution equals its molarity"
+      ],
+      "answer": "ACD",
+      "explanation": "Glucose and urea are non-electrolytes (ω = C = 0.1). With total dissociation ω = βC: NaCl β = 2 (0.2, not equal to C), CaCl₂, Na₂SO₄ and MgCl₂ all β = 3 (0.3 osmol/L).",
+      "page": 5
+    }
+  ]
+}

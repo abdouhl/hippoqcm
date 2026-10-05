@@ -1,0 +1,429 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "source": "EMD1 2025-2026",
+  "questions": [
+    {
+      "stem": "To study the human body, we use several branches of anatomy. Which of the following correspond to topographical anatomy?",
+      "options": [
+        "The study of morphological variations in human races",
+        "The analytical study of the morphology of separate organs",
+        "The study of the relations of the organs",
+        "The basics of anatomy",
+        "The basis of surgery"
+      ],
+      "answer": "CE"
+    },
+    {
+      "stem": "For the study of the descriptive, topographic, and functional anatomy of the human body, we use the following reference axes: the body axis, the hand axis, and the foot axis. What are the characteristics of the body axis?",
+      "options": [
+        "A transverse axis",
+        "A longitudinal axis",
+        "An axis that passes through the center of gravity of the body",
+        "A lowered vertex axis",
+        "A lowered shoulder axis"
+      ],
+      "answer": "BCD"
+    },
+    {
+      "stem": "The transverse plane is a reference anatomical plane that divides the body into two parts. What are its characteristics?",
+      "options": [
+        "It is parallel to the ground",
+        "It is perpendicular to the ground",
+        "It divides the body into two parts: right and left",
+        "It divides the body into two parts: cranial and caudal",
+        "It is vertical"
+      ],
+      "answer": "AD"
+    },
+    {
+      "stem": "Dynamic coordinate systems indicate the direction of movement; each movement occurs in a plane relative to an axis. What is the axis and what is the plane of medial rotation?",
+      "options": [
+        "A transverse axis",
+        "A vertical axis",
+        "A transverse (cross-sectional) plane",
+        "A sagittal plane",
+        "A frontal plane"
+      ],
+      "answer": "BC"
+    },
+    {
+      "stem": "The systems of the human body are grouped into three main categories: the life and relationship system, the reproductive system, and the nutrition system. What are the nutrition systems?",
+      "options": [
+        "The digestive system",
+        "The female reproductive system",
+        "The nervous system",
+        "The urinary system",
+        "The locomotor system"
+      ],
+      "answer": "AD"
+    },
+    {
+      "stem": "Cartilage is a strong yet elastic tissue. It lacks blood vessels and is classified into three types. What are the characteristics of hyaline cartilage?",
+      "options": [
+        "It constitutes the means of joint adaptation",
+        "It covers the joint surfaces",
+        "It is translucent and glassy",
+        "It is yellowish in color",
+        "It is nerveless"
+      ],
+      "answer": "BCE"
+    },
+    {
+      "stem": "Bones are rigid, hard structures in the human body and make up the human skeleton. What are the characteristics of the appendicular skeleton?",
+      "options": [
+        "It is asymmetrical",
+        "It is symmetrical",
+        "It is made up of the spine",
+        "It attaches to the axial skeleton",
+        "It is made up of the skeleton of the thoracic limb"
+      ],
+      "answer": "BDE"
+    },
+    {
+      "stem": "The surface of bones is irregular, with cavities and projections that can be articular or non-articular. Which of the following correspond to non-articular projections?",
+      "options": [
+        "A process",
+        "A foramen",
+        "A ridge",
+        "A spine",
+        "A notch"
+      ],
+      "answer": "ACD"
+    },
+    {
+      "stem": "The hip bone (os coxae) is a bone that makes up the bony pelvis and is embryologically formed by the joining of three bony parts: the ilium, ischium, and pubis. Which of the following correspond to its lateral surface?",
+      "options": [
+        "The pecten of the pubis",
+        "The posterior gluteal line",
+        "The obturator groove",
+        "The acetabular limbus",
+        "The gluteal surface"
+      ],
+      "answer": "BDE"
+    },
+    {
+      "stem": "The bony pelvis is divided into two sections by the pelvic inlet: the greater pelvis and the lesser pelvis. Which of the following represent the boundaries of this pelvic inlet?",
+      "options": [
+        "Behind, the promontory of the sacrum",
+        "In front, the ischial tuberosity",
+        "Laterally, the arcuate lines of the hip bones",
+        "In front, the pubic symphysis",
+        "Behind, the coccyx"
+      ],
+      "answer": "ACD"
+    },
+    {
+      "stem": "The femoral head is a spheroid articular projection located at the proximal epiphysis. Which of the following are the characteristics of this femoral head?",
+      "options": [
+        "It is covered with fibrous cartilage",
+        "It represents 1/3 of a sphere",
+        "It represents 2/3 of a sphere",
+        "It presents the fovea capitis",
+        "It presents the intertrochanteric line"
+      ],
+      "answer": "CD"
+    },
+    {
+      "stem": "The axis of the femoral neck forms an angle of inclination of 125° to 130° with that of the diaphysis. Which of the following angles corresponds to coxa valga?",
+      "options": ["100°", "110°", "120°", "130°", "140°"],
+      "answer": "E"
+    },
+    {
+      "stem": "The tibial plateau represents the base of the proximal epiphysis of the tibia and it articulates with the femoral condyles. Which of the following anatomical elements constitute it?",
+      "options": [
+        "The anterior tibial tuberosity",
+        "The superior lateral tibial articular surface",
+        "The posterior intercondylar area",
+        "The anterior intercondylar area",
+        "The anterior tibial tuberosity"
+      ],
+      "answer": "BCD"
+    },
+    {
+      "stem": "The distal epiphysis of the tibia articulates inferiorly with the talus. Which of the following are the articular surfaces of this epiphysis?",
+      "options": [
+        "The inferior tibial articular surface",
+        "The medial superior tibial articular surface",
+        "The superior lateral tibial articular surface",
+        "The articular surface of the medial malleolus",
+        "The articular surface of the lateral malleolus"
+      ],
+      "answer": "AD"
+    },
+    {
+      "stem": "The proximal tibial epiphysis is a quadrangular pyramid with a base and four faces, each with several tuberosities. What are the tuberosities of this proximal epiphysis?",
+      "options": [
+        "The anterior tibial tuberosity",
+        "The posterior tibial tuberosity",
+        "The lateral tibial tuberosity",
+        "The medial tuberosity",
+        "The inferior tibial tuberosity"
+      ],
+      "answer": "ACD"
+    },
+    {
+      "stem": "Flexion and extension of the hip joint occur around a transverse axis that passes through the center of the femoral head. What is the range of motion of the hip joint with the knee extended?",
+      "options": ["90°", "100°", "110°", "120°", "130°"],
+      "answer": "A"
+    },
+    {
+      "stem": "The knee joint is a weight-bearing joint equipped with ligaments and tendons that provide the stability necessary for standing and walking. What joints make it up?",
+      "options": [
+        "The patellofemoral joint",
+        "The femorotibial joint",
+        "The tibiopatellar joint",
+        "The proximal tibiofibular joint",
+        "The distal tibiofibular joint"
+      ],
+      "answer": "AB"
+    },
+    {
+      "stem": "The knee joint is a weight-bearing joint. It is equipped with ligaments and tendons that provide the stability necessary for standing and walking. The central pivot is a strong ligament of this joint. What are its characteristics?",
+      "options": [
+        "It is made up of the cruciate ligaments",
+        "It is made up of the collateral ligaments",
+        "It is made up of the patellar ligament",
+        "It ensures the anteroposterior stability of the knee",
+        "It ensures lateral stability of the knee"
+      ],
+      "answer": "AD"
+    },
+    {
+      "stem": "Knee flexion is the act of bringing the back of the leg towards the back of the thigh. What is the range of passive flexion for a flexed hip?",
+      "options": ["120°", "130°", "140°", "150°", "160°"],
+      "answer": "E"
+    },
+    {
+      "stem": "The subaponeurotic skeletal muscle:",
+      "options": [
+        "It is a subcutaneous muscle",
+        "It is a deep muscle",
+        "It is a muscle located between the fascia and the skin",
+        "It is a muscle found in the pharynx and larynx",
+        "It is an involuntary muscle with rapid contractions"
+      ],
+      "answer": "BD"
+    },
+    {
+      "stem": "From an insertion point perspective, a skeletal muscle:",
+      "options": [
+        "Must have a starting point (usually fixed) and an ending point (usually mobile)",
+        "It can be inserted onto the skin, like the palmaris brevis muscle",
+        "It can attach to the fascia, like the cricothyroid muscle",
+        "It can insert onto cartilage, like the abductor hallucis muscle",
+        "It can attach to the bone, like the brachioradialis muscle"
+      ],
+      "answer": "ABE"
+    },
+    {
+      "stem": "The muscular fascia:",
+      "options": [
+        "Is also called the covering aponeurosis",
+        "It is a fibrous groove delimiting the osteofibrous canals with the bone",
+        "Sheathes the muscles",
+        "Separates the muscles",
+        "Facilitates muscle gliding"
+      ],
+      "answer": "ACD"
+    },
+    {
+      "stem": "The inferior surface of the clavicle presents:",
+      "options": [
+        "The groove of the subclavius muscle, in the middle",
+        "The acromial articular surface, laterally",
+        "The costal tuberosity, medially",
+        "The trapezoid line, which gives attachment to the ligament of the same name",
+        "The conoid tubercle, where the conoid ligament attaches"
+      ],
+      "answer": "ACDE"
+    },
+    {
+      "stem": "The lateral angle of the scapula supports several anatomical structures such as:",
+      "options": [
+        "The neck of the scapula which supports the coracoid process",
+        "The coracoid process which gives attachment to the coracoclavicular ligament",
+        "The supraglenoid tubercle, which provides insertion for the triceps brachii muscle",
+        "The scapular notch where the suprascapular artery and nerve pass",
+        "The glenoid cavity which faces laterally"
+      ],
+      "answer": "BE"
+    },
+    {
+      "stem": "Among the protrusions (projections) of the diaphysis of the humerus, the following are mentioned:",
+      "options": [
+        "The crest of the lesser tubercle",
+        "The deltoid tuberosity",
+        "The radial nerve groove",
+        "The crest of the greater tubercle",
+        "The medial epicondyle"
+      ],
+      "answer": "ABD"
+    },
+    {
+      "stem": "The medial border of the radius:",
+      "options": [
+        "Is also called the interosseous border",
+        "Separates the two surfaces, anterior and lateral, of the radius",
+        "It continues on both epiphyses of the radius",
+        "Faces the lateral border of the ulna",
+        "Provides attachment to the forearm interosseous membrane"
+      ],
+      "answer": "ADE"
+    },
+    {
+      "stem": "The coronoid process of the ulna bears the following anatomical structures:",
+      "options": [
+        "The trochlear notch (upper part)",
+        "The radial notch",
+        "The ulnar notch",
+        "The ulnar styloid process",
+        "The ulnar tuberosity"
+      ],
+      "answer": "BE"
+    },
+    {
+      "stem": "Among the carpal bones, the following are mentioned:",
+      "options": [
+        "The scaphoid bone located laterally on the proximal row",
+        "The trapezoid bone belongs to the proximal row",
+        "The pisiform bone which articulates with the lunate bone",
+        "The capitate bone is located in the middle of the proximal row",
+        "The hamate bone is located medially on the distal row"
+      ],
+      "answer": "AE"
+    },
+    {
+      "stem": "The wrist is composed of the following joints:",
+      "options": [
+        "The distal radioulnar joint",
+        "The radiocarpal joint",
+        "The mid-carpal joint",
+        "The proximal intercarpal joints",
+        "The distal intercarpal joints"
+      ],
+      "answer": "BCDE"
+    },
+    {
+      "stem": "The antebrachial articular surface of the radiocarpal joint:",
+      "options": [
+        "It is a convex elliptical surface",
+        "It has a major transverse axis",
+        "It is formed of two parts: the carpal articular surface of the radius, and the radioulnar articular disc",
+        "It is divided into three thirds: 1/3 lateral and 2/3 medial",
+        "It articulates with the four carpal bones of the proximal row"
+      ],
+      "answer": "BC"
+    },
+    {
+      "stem": "Which passive ligaments of the radiocarpal joint terminate on the lunate?",
+      "options": [
+        "The palmar radiocarpal ligament",
+        "The palmar ulnocarpal ligament",
+        "The dorsal radiocarpal ligament",
+        "The radial collateral ligament of the carpus",
+        "The ulnar collateral ligament of the carpus"
+      ],
+      "answer": "ABC"
+    },
+    {
+      "stem": "The forefoot is composed of the following joints:",
+      "options": [
+        "The tarsometatarsal joints",
+        "The intermetatarsal joints",
+        "The metatarsophalangeal joints",
+        "The transverse tarsal joint",
+        "The interphalangeal joints of the foot"
+      ],
+      "answer": "ABCE"
+    },
+    {
+      "stem": "The eversion movement of the foot is the result of the combination of three foot movements. Which ones?",
+      "options": [
+        "Elevation",
+        "Extension",
+        "Abduction",
+        "Pronation",
+        "Supination"
+      ],
+      "answer": "ACD"
+    },
+    {
+      "stem": "The trochlea of the talus:",
+      "options": [
+        "It is a large protrusion, articulating with the leg",
+        "It features two articular surfaces",
+        "It fits into the tibiofibular \"mortise\"",
+        "It articulates medially with the articular surface of the medial malleolus",
+        "It articulates laterally with the fibula via a comma-shaped articular surface"
+      ],
+      "answer": "ACD"
+    },
+    {
+      "stem": "The elbow joint is a complex joint that unites the humerus, ulna, and radius. This joint has several articular surfaces. What is the position of the capitulum?",
+      "options": [
+        "It occupies the outer surface of the coronoid process",
+        "It occupies the perimeter of the head of the radius",
+        "It is located on the lateral and distal part of the humerus",
+        "It is located in the medial and distal part of the humerus",
+        "It is located on the lateral and proximal part of the humerus"
+      ],
+      "answer": "C"
+    },
+    {
+      "stem": "The elbow has three palpable bony landmarks posteriorly: the lateral epicondyle, the medial epicondyle, and the olecranon. Which of the following correspond to these landmarks?",
+      "options": [
+        "The Malgaigne line in flexion",
+        "The Malgaigne line in extension",
+        "The Malgaigne triangle in extension",
+        "The Nélaton triangle in extension",
+        "The Nélaton triangle in flexion"
+      ],
+      "answer": "BE"
+    },
+    {
+      "stem": "Synovial joints are characterized by the presence of a joint cavity, a synovial membrane, and bone surfaces covered with articular cartilage. The latter is characterized by:",
+      "options": [
+        "The same thickness in all joints",
+        "A rich vascularization",
+        "Its lesions are reversible with medical treatment",
+        "Its degeneration is responsible for osteoarthritis",
+        "It covers the epiphyses of the long bones"
+      ],
+      "answer": "DE"
+    },
+    {
+      "stem": "The adaptive mechanisms are fibrocartilaginous structures that exist in cases of joint incongruity and are interposed between the bone surfaces:",
+      "options": [
+        "They exist in all joints",
+        "They play a role in joint mobility",
+        "They are interposed between the capsule and the synovium",
+        "They are essential for joint stability",
+        "They are never the site of lesions"
+      ],
+      "answer": "D"
+    },
+    {
+      "stem": "The sternocostoclavicular joint unites the medial end of the clavicle with the sternal manubrium and the first costal cartilage:",
+      "options": [
+        "It's a saddle joint with an articular disc",
+        "It is an arthrodial (plane) joint with an articular disc",
+        "It's a joint that allows for slight gliding movements",
+        "It's a slippery space with a serous bursa",
+        "The articular surfaces are joined by a thick capsule and two ligaments"
+      ],
+      "answer": "A"
+    },
+    {
+      "stem": "The coracohumeral ligament is a strong ligament that originates from the lateral border of the coracoid process. What is its termination?",
+      "options": [
+        "By two bundles, one on the greater tubercle and the other on the lesser tubercle",
+        "By three bundles on the greater and lesser tubercles and on the anatomical neck",
+        "By two bundles, one on the anatomical neck and the other on the surgical neck",
+        "By a single bundle on the bicipital groove",
+        "By a single bundle on the surgical neck"
+      ],
+      "answer": "A"
+    }
+  ]
+}

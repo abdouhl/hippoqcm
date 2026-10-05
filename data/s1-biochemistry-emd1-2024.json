@@ -1,0 +1,171 @@
+{
+  "semester": 1,
+  "module": "Biochemistry",
+  "source": "EMD1 2023-2024",
+  "questions": [
+    {
+      "stem": "About the linear oses (a) and (b) shown in the figure: (Questions 1 and 2)",
+      "options": ["They are epimers", "They are enantiomers", "Both oses belong to the D series", "Equimolar amounts of these oses form an optically inactive racemic mixture"],
+      "answer": "BD",
+      "image": "s1/biochemistry-2024-q1.png"
+    },
+    {
+      "stem": "About the linear oses (a) and (b) shown in the figure:",
+      "options": ["They produce different alcohols by reduction", "They produce the same aldaric acids by strong oxidation", "The alcohols and aldaric acids produced are optically inactive", "L-Rhamnose derives from ose (b)"],
+      "answer": "AC",
+      "image": "s1/biochemistry-2024-q1.png"
+    },
+    {
+      "stem": "Ribose, by Kiliani–Fischer synthesis, produces 2 oses which are:",
+      "options": ["Aldohexoses", "Ketohexoses", "Optical isomers", "C2 epimers"],
+      "answer": "AD"
+    },
+    {
+      "stem": "Disaccharide (A) shown in the figure is: (Questions 4 and 5)",
+      "options": ["Maltose", "Isomaltose", "Sucrose", "Cellobiose"],
+      "answer": "B",
+      "image": "s1/biochemistry-2024-q4.png"
+    },
+    {
+      "stem": "About disaccharide (A) shown in the figure:",
+      "options": ["It is produced by hydrolysis of starch and glycogen", "It is produced by hydrolysis of cellulose", "There are 4 asymmetric carbons per ose", "After methylation, it becomes non-reducing"],
+      "answer": "AD",
+      "image": "s1/biochemistry-2024-q4.png"
+    },
+    {
+      "stem": "The following reactions are positive on glucose-6-phosphate (G6P, figure) except one. Which one?",
+      "options": ["Methylation by methanol", "Mild oxidation by dilute HNO₃", "Isomerization using the enzyme glucose-6-P isomerase", "Dephosphorylation using the enzyme hexokinase"],
+      "answer": "D",
+      "image": "s1/biochemistry-2024-q6.png"
+    },
+    {
+      "stem": "About carbohydrate polymers:",
+      "options": ["Starch is a plant polymer", "Starch is made of glucose or glucosamine residues linked by α(1→4) bonds", "After a meal, glycogen is synthesized via glycogenogenesis (glycogenesis)", "The muscle glycogen store is 300 g (2/3 of the total store)"],
+      "answer": "ACD"
+    },
+    {
+      "stem": "The following enzymes catalyze the reversible reactions shared by glycolysis and gluconeogenesis except one. Which one?",
+      "options": ["Phosphofructokinase", "Glucose-6-P isomerase", "Phosphoglycerate kinase", "Enolase"],
+      "answer": "A"
+    },
+    {
+      "stem": "Pyruvate dehydrogenase catalyzes the conversion of:",
+      "options": ["Pyruvate to phosphoenolpyruvate (PEP)", "Pyruvate to acetyl-CoA", "Pyruvate to lactate", "Pyruvate to ethanol"],
+      "answer": "B"
+    },
+    {
+      "stem": "About the Krebs cycle:",
+      "options": ["It operates under aerobic metabolism", "It takes place in the cytoplasm", "Citrate, the first intermediate of the cycle, is tricarboxylic", "It produces 12 ATP per acetyl-CoA oxidized"],
+      "answer": "ACD"
+    },
+    {
+      "stem": "The energy yield of the complete oxidation of one pyruvate molecule under aerobic conditions is:",
+      "options": ["2 ATP", "8 ATP", "12 ATP", "15 ATP"],
+      "answer": "D"
+    },
+    {
+      "stem": "The synthesis of the following molecules uses acetyl-CoA as a precursor, except one. Which one?",
+      "options": ["Carnitine", "Mevalonate", "Fatty acids", "Ketone bodies"],
+      "answer": "A"
+    },
+    {
+      "stem": "Concerning the metabolic pathway shown in the figure (glucose → 2 pyruvate → 2 lactate, with X ATP):",
+      "options": ["It is an anaerobic pathway", "It is a lactic fermentation", "It is an alcoholic fermentation", "X ATP = 2 ATP"],
+      "answer": "ABD",
+      "image": "s1/biochemistry-2024-q13.png"
+    },
+    {
+      "stem": "About NADPH,H+ (reducing power):",
+      "options": ["It is mainly produced by the pentose phosphate pathway", "It is produced by the citrate–pyruvate shuttle", "It is used in cholesterol synthesis", "It is used in sphingosine synthesis"],
+      "answer": "ABCD"
+    },
+    {
+      "stem": "The conversion of pyruvate to oxaloacetate is catalyzed by pyruvate carboxylase. Indicate the possible metabolic pathway(s) using this reaction:",
+      "options": ["Gluconeogenesis", "Pentose phosphate pathway", "Malate–aspartate shuttle", "Citrate–pyruvate shuttle"],
+      "answer": "AD"
+    },
+    {
+      "stem": "About the pentose phosphate pathway (PPP):",
+      "options": ["It is an exclusively hepatic pathway", "Its precursor is glucose-6-P", "Glucose-6-phosphate dehydrogenase (G6PD) is the key enzyme of this pathway", "The oxidative phase of this pathway uses two decarboxylation reactions"],
+      "answer": "BC"
+    },
+    {
+      "stem": "About glycogenogenesis (glycogen synthesis):",
+      "options": ["Glycogen synthesis is cytosolic", "The main enzyme is glycogen synthase", "The precursor is glucose-6-P", "Synthesis requires energy in the form of ATP and UTP (uridine triphosphate)"],
+      "answer": "ABCD"
+    },
+    {
+      "stem": "About the reaction shown in the figure (succinyl-CoA ⇌ succinate, with ADP + Pi / ATP + CoASH):",
+      "options": ["It is a Krebs cycle reaction", "It is catalyzed by succinate dehydrogenase", "Succinyl-CoA is the product of an oxidative decarboxylation of α-ketoglutarate", "The ketolysis pathway can use the ATP produced by this reaction"],
+      "answer": "ACD",
+      "image": "s1/biochemistry-2024-q18.png"
+    },
+    {
+      "stem": "What does the dehydrogenation of succinate give?",
+      "options": ["Fumarate", "Malate", "Oxaloacetate", "Citrate"],
+      "answer": "A"
+    },
+    {
+      "stem": "Propionate, a gluconeogenesis precursor, can be converted into succinyl-CoA. What is the energy yield if propionate is degraded to oxaloacetate (OAA)?",
+      "options": ["2 ATP", "3 ATP", "5 ATP", "All the propositions are false"],
+      "answer": "C"
+    },
+    {
+      "stem": "Glucose-6-phosphatase is a key enzyme that catalyzes the conversion of:",
+      "options": ["Glucose to glucose-6-phosphate", "Glucose-6-phosphate to glucose", "Glucose-6-phosphate to fructose-6-phosphate", "Fructose-6-phosphate to glucose-6-phosphate"],
+      "answer": "B"
+    },
+    {
+      "stem": "The following enzymes play an important role in carbohydrate metabolism. Check those that are mitochondrial:",
+      "options": ["Hexokinase", "Succinate dehydrogenase", "Pyruvate dehydrogenase", "Glucose-6-phosphatase"],
+      "answer": "BC"
+    },
+    {
+      "stem": "Among the roles of the pentose phosphate pathway (PPP) in the body:",
+      "options": ["ATP production", "NADH,H+ production", "NADPH,H+ production", "Ribose-5-phosphate production"],
+      "answer": "CD"
+    },
+    {
+      "stem": "About molecule (X) shown in the figure (a phosphatidylserine): (Questions 24, 25 and 26)",
+      "options": ["This molecule is amphoteric and amphipathic", "This molecule is neutral at physiological pH", "This molecule is acidic at physiological pH", "It is a storage lipid"],
+      "answer": "AC",
+      "image": "s1/biochemistry-2024-q24.png"
+    },
+    {
+      "stem": "The action of phospholipase C on molecule (X) releases phosphoserine; the remainder is a diglyceride (α-palmito-β-olein) with molar mass = 594. Its saponification index is: (Given: palmitic acid C16:0, oleic acid C18:1 Δ9, KOH = 56)",
+      "options": ["94.27", "188.55", "282.82", "All the propositions are false"],
+      "answer": "B",
+      "image": "s1/biochemistry-2024-q24.png",
+      "explanation": "Diglyceride: 2 ester bonds. SI = 2 × 56 000 / 594 ≈ 188.55."
+    },
+    {
+      "stem": "(Same diglyceride α-palmito-β-olein, M = 594.) Its iodine index is: (Given I = 127)",
+      "options": ["42.76", "85.52", "128.28", "All the propositions are false"],
+      "answer": "A",
+      "explanation": "One double bond (oleic acid): II = 254 × 100 / 594 ≈ 42.76."
+    },
+    {
+      "stem": "The energy balance of β-oxidation of lauric acid (C12:0) includes:",
+      "options": ["6 acetyl-CoA", "5 NADH,H+", "5 FADH₂", "A net yield of 95 ATP"],
+      "answer": "ABCD",
+      "explanation": "5 turns → 6 acetyl-CoA (72 ATP) + 5 NADH (15) + 5 FADH₂ (10) = 97 − 2 (activation) = 95 ATP."
+    },
+    {
+      "stem": "The compound shown in the figure is an important molecule of the central nervous system. It can be classified as: (Questions 28 and 29)",
+      "options": ["A heteroside", "A glycerophospholipid", "A sphingolipid", "A cerebroside"],
+      "answer": "AC",
+      "image": "s1/biochemistry-2024-q28.png"
+    },
+    {
+      "stem": "(Same compound as the previous question.) Which enzymes are capable of hydrolyzing this compound?",
+      "options": ["α-Glucosidase", "β-Glucosidase", "β-Galactosidase", "Ceramidase"],
+      "answer": "BCD",
+      "image": "s1/biochemistry-2024-q28.png"
+    },
+    {
+      "stem": "Ketogenesis uses acetyl-CoA coming from the degradation of:",
+      "options": ["Glucose", "Fatty acids", "Malonyl-CoA", "Amino acids"],
+      "answer": "BD"
+    }
+  ]
+}

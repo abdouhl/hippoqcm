@@ -1,0 +1,117 @@
+{
+  "semester": 1,
+  "module": "Biostatistics",
+  "source": "EMD1 2016-2017",
+  "questions": [
+    {
+      "stem": "Exercise 1 — In the manufacture of a type of lens, each lens undergoes two treatments T₁ and T₂. A lens is drawn at random. A study showed: 10% of lenses have a defect for treatment T₁; 20% have a defect for treatment T₂; the probability that a lens has neither defect is 0.75.\nThe probability that a randomly drawn lens has a defect for at least one of the two treatments T₁ or T₂ is:",
+      "options": ["0.30", "0.50", "0.75", "0.25"],
+      "answer": "D",
+      "explanation": "P(T₁ ∪ T₂) = 1 − 0.75 = 0.25."
+    },
+    {
+      "stem": "Exercise 1 (lenses: P(T₁) = 0.10, P(T₂) = 0.20, P(no defect) = 0.75).\nThe probability that a lens has a defect for both treatments T₁ and T₂ is:",
+      "options": ["0.03", "0.06", "0.05", "0.02"],
+      "answer": "C",
+      "explanation": "P(T₁ ∩ T₂) = 0.10 + 0.20 − 0.25 = 0.05."
+    },
+    {
+      "stem": "Exercise 1 (lenses: P(T₁) = 0.10, P(T₂) = 0.20, P(no defect) = 0.75).\nThe events T₁ and T₂ are:",
+      "options": ["Incompatible (mutually exclusive)", "Independent", "Dependent", "Nothing can be said"],
+      "answer": "C",
+      "explanation": "P(T₁ ∩ T₂) = 0.05 ≠ P(T₁)·P(T₂) = 0.02, and ≠ 0."
+    },
+    {
+      "stem": "Exercise 1 (lenses: P(T₁) = 0.10, P(T₂) = 0.20, P(no defect) = 0.75).\nThe probability that a lens has a defect for only one of the two treatments is:",
+      "options": ["0.35", "0.10", "0.25", "0.20"],
+      "answer": "D",
+      "explanation": "0.25 − 0.05 = 0.20."
+    },
+    {
+      "stem": "Exercise 1 (lenses: P(T₁) = 0.10, P(T₂) = 0.20, P(no defect) = 0.75).\nThe probability that a lens has a defect for treatment T₂ given that it has a defect for treatment T₁ is:",
+      "options": ["0.60", "0.50", "0.20", "0.30"],
+      "answer": "B",
+      "explanation": "P(T₂|T₁) = 0.05 / 0.10 = 0.50."
+    },
+    {
+      "stem": "Exercise 2 — In a population, two diseases M₁ and M₂ are present in 10% and 20% of people respectively; the number suffering from both is negligible. A screening test reacts in 90% of M₁ patients, 70% of M₂ patients and 10% of individuals with neither disease. An individual is chosen at random.\nThe probability that the test reacts is:",
+      "options": ["0.10", "0.40", "0.20", "0.30"],
+      "answer": "D",
+      "explanation": "0.1×0.9 + 0.2×0.7 + 0.7×0.1 = 0.09 + 0.14 + 0.07 = 0.30."
+    },
+    {
+      "stem": "Exercise 2 (M₁ 10%, M₂ 20%; test reacts in 90% of M₁, 70% of M₂, 10% of healthy). Given that the test reacted for an individual:\nThe probability that it reacted because of disease M₁ is:",
+      "options": ["0.20", "0.30", "0.10", "0.40"],
+      "answer": "B",
+      "explanation": "0.09 / 0.30 = 0.30."
+    },
+    {
+      "stem": "Exercise 2 (M₁ 10%, M₂ 20%; test reacts in 90% of M₁, 70% of M₂, 10% of healthy). Given that the test reacted:\nThe probability that it reacted because of disease M₂ is:",
+      "options": ["0.48", "0.47", "0.49", "0.50"],
+      "answer": "B",
+      "explanation": "0.14 / 0.30 ≈ 0.47."
+    },
+    {
+      "stem": "Exercise 2 (M₁ 10%, M₂ 20%; test reacts in 90% of M₁, 70% of M₂, 10% of healthy). Given that the test reacted:\nThe probability that it reacted while the individual has neither M₁ nor M₂ is:",
+      "options": ["0.23", "0.20", "0.24", "0.00"],
+      "answer": "A",
+      "explanation": "0.07 / 0.30 ≈ 0.23."
+    },
+    {
+      "stem": "Exercise 3 — Let X be a random variable with X(Ω) = {0, 2, 3, 4, 5} and distribution function F, such that: F(0) = 0.50; F(4) = 15/16; P(X = 2) = P(X = 5); and P(X = 3) = P((X = 2) ∪ (X = 5)).\nF(2) equals:",
+      "options": ["1", "8/16", "9/16", "11/16"],
+      "answer": "C"
+    },
+    {
+      "stem": "Exercise 3 (X(Ω) = {0, 2, 3, 4, 5}; F(0) = 0.50; F(4) = 15/16; P(X = 2) = P(X = 5); P(X = 3) = P((X = 2) ∪ (X = 5))).\nThe pair (expectation E(X); variance V(X)) is:",
+      "options": ["(1.8125; 3.6523)", "(1.8125; 3.5523)", "(1.8145; 3.6523)", "(1.8125; 3.6524)"],
+      "answer": "A"
+    },
+    {
+      "stem": "Exercise 4 — X is a continuous random variable with density f(x) = 0 if x < −1 or x > 1, and f(x) = m(x + 1)(1 − x) if x ∈ [−1, 1].\nThe value of m for which f is a probability density is:",
+      "options": ["4/3", "2/3", "3/4", "1/3"],
+      "answer": "C",
+      "explanation": "∫₋₁¹ (1 − x²) dx = 4/3, so m = 3/4."
+    },
+    {
+      "stem": "Exercise 4 (f(x) = (3/4)(1 − x²) on [−1, 1], 0 elsewhere).\nP(X ≤ 0.5) equals:",
+      "options": ["11/32", "2/9", "5/8", "27/32"],
+      "answer": "D",
+      "explanation": "(3/4)[x − x³/3] from −1 to 0.5 = (3/4)(11/24 + 2/3) = 27/32."
+    },
+    {
+      "stem": "Exercise 5 — In a nursery, 95% of seedlings are assumed virus-free. A packet of two seedlings is called healthy if both seedlings are virus-free.\nThe probability p of having a healthy packet is:",
+      "options": ["0.90", "0.91", "0.95", "0.92"],
+      "answer": "A",
+      "explanation": "0.95² ≈ 0.90."
+    },
+    {
+      "stem": "Exercise 5 (healthy packet probability p ≈ 0.90). Let X be the number of healthy packets in a lot of 10 packets. The probability distribution of X is:",
+      "options": ["X ~ B(10; 0.91)", "X ~ B(10; 0.90)", "X ~ B(9; 0.95)", "X ~ B(10; 0.92)"],
+      "answer": "B"
+    },
+    {
+      "stem": "Exercise 5 (X ~ B(10; 0.90) healthy packets). A lot of 10 packets is accepted by the buyer if at least 9 of the 10 packets are healthy. The probability that the lot is accepted is:",
+      "options": ["0.7362", "0.7364", "0.7361", "0.7363"],
+      "answer": "C",
+      "explanation": "0.9¹⁰ + 10 × 0.9⁹ × 0.1 ≈ 0.3487 + 0.3874 = 0.7361."
+    },
+    {
+      "stem": "Exercise 5 (each packet healthy with p = 0.90). The number of packets n to choose so that the probability of getting at least one healthy packet is strictly greater than 90%:",
+      "options": ["n ≥ 10", "n ≥ 1", "n ≥ 2", "n ≥ 0"],
+      "answer": "C",
+      "explanation": "1 − 0.1ⁿ > 0.9 ⇔ 0.1ⁿ < 0.1 ⇔ n ≥ 2."
+    },
+    {
+      "stem": "Exercise 6 — In a screening center for a disease M, the mean number of patients arriving for a consultation is λ = 5. Let X be the number of arrivals.\nThe probability distribution of X is:",
+      "options": ["X ~ P(√5)", "X ~ P(1/5)", "X ~ P(5)", "X ~ P(5; √5)"],
+      "answer": "C"
+    },
+    {
+      "stem": "Exercise 6 (arrivals X ~ Poisson P(5)).\nThe probability that at least one person shows up during the day is:",
+      "options": ["0.9966", "0.9938", "0.9933", "0.9940"],
+      "answer": "C",
+      "explanation": "1 − e⁻⁵ ≈ 0.9933."
+    }
+  ]
+}

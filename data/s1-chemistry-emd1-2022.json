@@ -1,0 +1,33 @@
+{
+  "semester": 1,
+  "module": "Chemistry",
+  "source": "EMD1 2021-2022",
+  "questions": [
+    {"stem": "The masses of the proton, neutron and electron are respectively 1.6723842×10⁻²⁴ g, 1.6746887×10⁻²⁴ g and 9.109534×10⁻²⁸ g.\nDefine the atomic mass unit (amu):", "options": ["It is one twelfth of the mass of an atom of the carbon(-12) isotope", "It is one twelfth of the mass of an atom of the oxygen isotope", "It is a molar concentration", "It is one mole of atoms"], "answer": "A", "explanation": "No official answer key for this exam — answers worked out."},
+    {"stem": "Give the value of the atomic mass unit in g:", "options": ["1.09×10⁻²⁴ g", "1.66030217×10⁻²⁴ g", "0.1907×10⁻²⁴ g", "1.66030217×10⁻²⁷ g"], "answer": "B", "explanation": "No official key — 1 amu = 1/N g ≈ 1.66×10⁻²⁴ g."},
+    {"stem": "Calculate, in amu, the mass of the proton (mp = 1.6723842×10⁻²⁴ g):", "options": ["1.619003 amu", "1.07277 amu", "1.007277 amu", "1.003218 amu"], "answer": "C", "explanation": "No official key."},
+    {"stem": "Using Einstein's relation (mass–energy equivalence), calculate the energy content of one amu in MeV. (1 eV = 1.6×10⁻¹⁹ J)", "options": ["907 MeV", "834 MeV", "934 MeV", "957 MeV"], "answer": "C", "explanation": "No official key — 1.66×10⁻²⁷ kg × (3×10⁸)² / 1.6×10⁻¹³ ≈ 934 MeV."},
+    {"stem": "Gallium Ga (Z = 31) has two stable isotopes ⁶⁹Ga and ⁷¹Ga. The atomic molar mass of gallium is 69.72 g/mol. Approximate natural abundance of ⁶⁹Ga:", "options": ["60%", "54%", "62%", "64%"], "answer": "D", "explanation": "No official key — 69x + 71(1 − x) = 69.72 → x = 0.64."},
+    {"stem": "(Gallium, M = 69.72 g/mol.) Approximate natural abundance of ⁷¹Ga:", "options": ["26%", "36%", "33%", "30%"], "answer": "B", "explanation": "No official key."},
+    {"stem": "A hydrogen atom in its ground state absorbs a photon of wavelength λ₁ then emits a photon of wavelength λ₂. On which level is the electron for λ₁ = 97.28 nm?", "options": ["ni = 4", "ni = 1", "ni = 5", "ni = 2"], "answer": "A", "explanation": "No official key."},
+    {"stem": "(Hydrogen atom excited to n = 4.) On which level is the electron after emitting λ₂ = 1879 nm?", "options": ["nj = 4", "nj = 6", "nj = 2", "nj = 3"], "answer": "D", "explanation": "No official key."},
+    {"stem": "The first ionization energy of the helium atom is 24.6 eV. What is the energy of the ground level?", "options": ["−23.09 eV", "−20.12 eV", "+24.6 eV", "−24.6 eV"], "answer": "D", "explanation": "No official key."},
+    {"stem": "A helium atom is in an excited state; one of its electrons is at the energy level −21.4 eV (ground level −24.6 eV). What is the wavelength of the radiation emitted when this electron falls back to the ground level?", "options": ["λ = 288 nm", "λ = 308 nm", "λ = 388 nm", "λ = 380 nm"], "answer": "C", "explanation": "No official key — ΔE = 3.2 eV → λ = 1240/3.2 ≈ 388 nm."},
+    {"stem": "What is the number of valence electrons of vanadium V (Z = 23)?", "options": ["5", "2", "1", "4"], "answer": "A", "explanation": "No official key — 4s² 3d³."},
+    {"stem": "What is the number of valence electrons of gallium Ga (Z = 31)?", "options": ["6", "3", "1", "5"], "answer": "B", "explanation": "No official key — 4s² 4p¹."},
+    {"stem": "Give the outer-shell configuration of gallium:", "options": ["4s² 3d⁴", "3s² 3p⁴", "4s² 4p¹", "4s² 4p⁵"], "answer": "C", "explanation": "No official key."},
+    {"stem": "Give the outer-shell configuration of vanadium:", "options": ["2s² 2p⁵", "3s² 3p³", "4s² 4p⁶", "4s² 3d³"], "answer": "D", "explanation": "No official key."},
+    {"stem": "Molybdenum (Mo) belongs to the chromium family Cr (Z = 24) and to the fifth period. Give its atomic number:", "options": ["32", "42", "30", "40"], "answer": "B", "explanation": "No official key."},
+    {"stem": "(Molybdenum, Z = 42.) Give its electron configuration:", "options": ["[Kr] 4d⁵ 5s¹", "[Kr] 5s² 5p⁵", "[Kr] 4d³ 5s²", "[Kr] 4d⁴ 5s²"], "answer": "A", "explanation": "No official key — same exception as Cr (half-filled d)."},
+    {"stem": "The tin atom (Sn) in its ground state has two electrons in the 5p sub-shell. Give its atomic number:", "options": ["55", "45", "50", "65"], "answer": "C", "explanation": "No official key."},
+    {"stem": "(Tin, Z = 50.) Does it belong to:", "options": ["The transition metals?", "The heavy metals?", "The alkali metals?", "The halogens?"], "answer": "B", "explanation": "No official key."},
+    {"stem": "(Tin is not a transition metal.) Why?", "options": ["4p is filled", "4f is filled", "4d is filled", "4s is filled"], "answer": "C", "explanation": "No official key — its d sub-shell (4d¹⁰) is complete."},
+    {"stem": "Consider ₁₁Na⁺, ₁₂Mg²⁺ and ₁₃Al³⁺. Which of these ions has the smallest ionic radius?", "options": ["rAl³⁺ > rMg²⁺ > rNa⁺", "rMg²⁺ > rAl³⁺ > rNa⁺", "rNa⁺ > rAl³⁺ > rMg²⁺", "rNa⁺ > rMg²⁺ > rAl³⁺"], "answer": "D", "explanation": "No official key — isoelectronic ions: Al³⁺ is the smallest."},
+    {"stem": "Why are hybridization states defined?", "options": ["Hybridization explains the spatial configuration (geometry) of molecules", "Hybridization explains the number of π bonds", "Hybridization explains axial overlap", "Hybridization explains the formation of the ionic bond"], "answer": "A", "explanation": "No official key."},
+    {"stem": "Consider the molecules CO₂; CH₄; C₂H₄ and C₂H₂. Give the hybridization states of the carbon atoms (in this order):", "options": ["sp, sp, sp³, sp²", "sp², sp, sp², sp³", "sp, sp³, sp², sp", "sp³, sp², sp, sp"], "answer": "C", "explanation": "No official key."},
+    {"stem": "The structure of BeH₂ is known (Be, Z = 4). What type of bonds are formed?", "options": ["σ (sigma) bonds", "π bonds", "Dative bonds", "Dative bond (repeated)"], "answer": "A", "explanation": "No official key."},
+    {"stem": "(BeH₂.) Give the hybridization of Be:", "options": ["sp³", "sp", "sp²", "sp³d"], "answer": "B", "explanation": "No official key."},
+    {"stem": "(BeH₂.) What is the geometry of the molecule?", "options": ["Trigonal planar", "Tetrahedral", "Cubic", "Linear"], "answer": "D", "explanation": "No official key."},
+    {"stem": "Calculate the normality of 0.1 M H₂SO₄:", "options": ["0.2 N", "0.1 N", "0.01 N", "0.002 N"], "answer": "A", "explanation": "No official key — diacid: N = 2 × M."}
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "semester": 1,
+  "module": "Biochemistry",
+  "source": "EMD1 2025-2026",
+  "questions": [
+    {
+      "stem": "Concerning monosaccharides:",
+      "options": [
+        "They are soluble in water.",
+        "They possess at least one asymmetric carbon atom.",
+        "A D-monosaccharide is always dextrorotatory.",
+        "Physiological glucose is a D-monosaccharide."
+      ],
+      "answer": "AD"
+    },
+    {
+      "stem": "The general formula of a monosaccharide is:",
+      "options": ["CₙH₂ₙ₋₂Oₙ", "CₙH₂ₙ₊₂Oₙ", "CₙH₂ₙOₙ", "CₙH₂ₙO₂"],
+      "answer": "C"
+    },
+    {
+      "stem": "Concerning dihydroxyacetone:",
+      "options": [
+        "It is a ketotriose.",
+        "It is optically active.",
+        "It is a reducing sugar.",
+        "It can undergo mutarotation."
+      ],
+      "answer": "A"
+    },
+    {
+      "stem": "Concerning the cyclization of monosaccharides:",
+      "options": [
+        "It corresponds to an intramolecular reaction.",
+        "It leads to the formation of a hemiacetal or hemiketal.",
+        "It is irreversible in aqueous solution.",
+        "It creates a new asymmetric carbon atom."
+      ],
+      "answer": "ABD"
+    },
+    {
+      "stem": "α-D-galactopyranose and β-D-galactopyranose are:",
+      "options": ["Epimers", "Anomers", "Enantiomers", "Diastereoisomers"],
+      "answer": "B"
+    },
+    {
+      "stem": "Concerning oxidation and reduction reactions of monosaccharides:",
+      "options": [
+        "Mild oxidation of glucose yields an aldaric acid.",
+        "Strong oxidation of glucose yields an aldonic acid.",
+        "Reduction of D-glucose yields D-sorbitol.",
+        "Reduction of D-fructose yields D-sorbitol or D-mannitol."
+      ],
+      "answer": "CD"
+    },
+    {
+      "stem": "Concerning polysaccharides:",
+      "options": [
+        "All polysaccharides are holosides.",
+        "Starch is composed of amylose and amylopectin.",
+        "Glycogen is more highly branched than amylopectin.",
+        "Cellulose is digestible by humans."
+      ],
+      "answer": "BC"
+    },
+    {
+      "stem": "ATP-consuming reactions in glycolysis are catalyzed by:",
+      "options": ["Hexokinase", "Phosphofructokinase", "Phosphoglycerate kinase", "Pyruvate kinase"],
+      "answer": "AB"
+    },
+    {
+      "stem": "Glucose-6-phosphate (G-6-P) is a metabolic intermediate of:",
+      "options": ["Glycolysis", "Glycogen synthesis and degradation", "The pentose phosphate pathway", "Gluconeogenesis"],
+      "answer": "ABCD"
+    },
+    {
+      "stem": "Concerning isocitrate dehydrogenase:",
+      "options": [
+        "It catalyzes the conversion of isocitrate to α-ketoglutarate.",
+        "It produces NADH + H⁺ and CO₂.",
+        "It is a key regulatory enzyme of the Krebs cycle.",
+        "It is activated by ATP and NADH."
+      ],
+      "answer": "ABC"
+    },
+    {
+      "stem": "Under hypoxic conditions (reduced oxygen supply or utilization by tissues):",
+      "options": [
+        "The respiratory chain is inhibited and the Krebs cycle slows down.",
+        "Glycolysis is inhibited.",
+        "Lactate production increases.",
+        "NAD⁺ is regenerated."
+      ],
+      "answer": "ACD"
+    },
+    {
+      "stem": "Concerning gluconeogenesis:",
+      "options": [
+        "It occurs exclusively in the cytosol.",
+        "It contributes to the maintenance of blood glucose levels.",
+        "It allows glucose synthesis from non-carbohydrate precursors.",
+        "It uses all the reactions and enzymes of glycolysis."
+      ],
+      "answer": "BC"
+    },
+    {
+      "stem": "Concerning the pentose phosphate pathway:",
+      "options": [
+        "It produces NADPH.",
+        "It produces ribose-5-phosphate.",
+        "It produces ATP.",
+        "A deficiency in glucose-6-phosphate dehydrogenase (G6PD) mainly affects red blood cells."
+      ],
+      "answer": "ABD"
+    },
+    {
+      "stem": "Concerning galactose metabolism:",
+      "options": [
+        "It results from lactose hydrolysis.",
+        "It is phosphorylated by galactokinase.",
+        "It is converted into glucose-1-phosphate.",
+        "It enters glycolysis via fructose-6-phosphate."
+      ],
+      "answer": "ABC"
+    },
+    {
+      "stem": "What is the main role of the Felig cycle in glucose metabolism?",
+      "options": [
+        "Transport glucose from muscles to the liver.",
+        "Enable hepatic gluconeogenesis from alanine.",
+        "Enable hepatic gluconeogenesis from lactate.",
+        "Supply energy to muscle in the form of ATP."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "A diglyceride (DG): α-butyryl-β-palmitolein. Given: butyric acid C4:0; palmitoleic acid C16:1Δ⁹; KOH = 56; iodine = 127.\n\nThe saponification index of the DG is:",
+      "options": ["83.02", "143.16", "281.41", "All answers are incorrect."],
+      "answer": "C",
+      "explanation": "M(DG) = 92 (glycerol) + 88 (butyric) + 254 (palmitoleic) − 2×18 = 398 g/mol. SI = 2 × 56 000 / 398 ≈ 281.4."
+    },
+    {
+      "stem": "A diglyceride (DG): α-butyryl-β-palmitolein. Given: butyric acid C4:0; palmitoleic acid C16:1Δ⁹; KOH = 56; iodine = 127.\n\nThe iodine index of the DG is:",
+      "options": ["63.81", "100.10", "136.22", "All answers are incorrect."],
+      "answer": "A",
+      "explanation": "One double bond fixes one I₂ (254 g). II = 254 × 100 / 398 ≈ 63.8."
+    },
+    {
+      "stem": "Concerning chaulmoogric acid (a fatty acid historically used in the treatment of leprosy):",
+      "options": [
+        "It is a saturated linear-chain fatty acid.",
+        "It is a saturated branched-chain fatty acid.",
+        "It contains a cyclopentenyl ring at the end of its carbon chain.",
+        "It contains three conjugated double bonds."
+      ],
+      "answer": "C"
+    },
+    {
+      "stem": "What is the effect of introducing a double bond (unsaturation) on the melting point?",
+      "options": [
+        "It markedly increases the melting point.",
+        "It lowers the melting point.",
+        "It makes the fatty acid solid at room temperature.",
+        "It has no effect."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "Concerning cerides (waxes):",
+      "options": [
+        "Cerides are complex lipids.",
+        "Cerides are esters formed between a long-chain fatty alcohol and a fatty acid.",
+        "Cerides are esters of glycerol and a fatty acid.",
+        "Cerides are solid at room temperature."
+      ],
+      "answer": "BD"
+    },
+    {
+      "stem": "The rings of the sterane nucleus in sterols are designated as:",
+      "options": ["1, 2, 3, 4", "α, β, γ, δ", "A, B, C, D", "a, b, c, d"],
+      "answer": "C"
+    },
+    {
+      "stem": "What is the main role of bile salts during lipid digestion?",
+      "options": [
+        "Hydrolyze triglycerides into glycerol and fatty acids.",
+        "Emulsify fats to increase the surface area for lipase action.",
+        "Transport chylomicrons in the blood.",
+        "Activate lipase."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "What is the main vehicle for the transport of dietary lipids from the enterocyte to the lymph and then to the bloodstream?",
+      "options": ["Micelles", "Free fatty acids bound to albumin", "Chylomicrons", "LDL lipoproteins"],
+      "answer": "C"
+    },
+    {
+      "stem": "Where does β-oxidation (Lynen spiral) of fatty acids mainly occur?",
+      "options": ["Cytosol", "Mitochondrial matrix", "Endoplasmic reticulum", "Golgi apparatus"],
+      "answer": "B"
+    },
+    {
+      "stem": "Which molecule transports long-chain fatty acids across the inner mitochondrial membrane?",
+      "options": ["Creatine", "Carnitine", "Coenzyme A", "Albumin"],
+      "answer": "B"
+    },
+    {
+      "stem": "What is the effect of a high cytosolic concentration of malonyl-CoA?",
+      "options": [
+        "It activates triglyceride degradation.",
+        "It inhibits the carnitine shuttle, thereby blocking β-oxidation.",
+        "It promotes cholesterol efflux from the cell.",
+        "It stimulates bile salt production."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "What are the two initial precursors of sphingolipid synthesis?",
+      "options": ["Carnitine and palmitoyl-CoA", "L-serine and palmitoyl-CoA", "Choline and stearyl-CoA", "Inositol and stearyl-CoA"],
+      "answer": "B"
+    },
+    {
+      "stem": "In cholesterol biosynthesis, HMG-CoA reductase is inhibited by:",
+      "options": ["Glucagon", "Insulin", "Thyroid hormones", "A high intracellular cholesterol concentration"],
+      "answer": "AD"
+    },
+    {
+      "stem": "Why is the liver unable to use ketone bodies as an energy source?",
+      "options": [
+        "The liver lacks mitochondria.",
+        "The liver is unable to produce ketone bodies.",
+        "The liver lacks the enzyme thiophorase (β-ketoacyl-CoA transferase).",
+        "Ketone bodies cannot cross the hepatic mitochondrial membrane."
+      ],
+      "answer": "C"
+    },
+    {
+      "stem": "What is the primary role of LDL?",
+      "options": [
+        "Transport cholesterol from tissues to the liver.",
+        "Transport cholesterol from the liver to peripheral tissues.",
+        "Hydrolyze triglycerides in muscle.",
+        "Absorb fat-soluble vitamins."
+      ],
+      "answer": "B"
+    }
+  ]
+}

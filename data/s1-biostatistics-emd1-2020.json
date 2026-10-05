@@ -1,0 +1,60 @@
+{
+  "semester": 1,
+  "module": "Biostatistics",
+  "source": "EMD1 2019-2020",
+  "questions": [
+    {
+      "stem": "Let X be a discrete random variable. If x < y, then:",
+      "options": ["P(x < X ≤ y) = Fx(y) − Fx(x)", "P(x < Y ≤ y) = Fx(x) − Fy(x)", "P(x < Y ≤ y) = Fx(x) − Fx(y)", "P(x < X ≤ y) = Fx(Y) − Fy(X)"],
+      "answer": "A"
+    },
+    {
+      "stem": "Bayes' formula is given by:",
+      "options": ["P(Hᵢ|A) = P(A|Hᵢ)P(Hᵢ) / Σⱼ P(A|Hⱼ)P(Hᵢ)", "P(A|Hⱼ) = P(Hⱼ|A)P(A) / Σᵢ P(Hᵢ|A)P(A)", "P(Hⱼ|A) = P(A|Hⱼ)P(Hⱼ) / Σᵢ P(A|Hᵢ)P(Hᵢ)", "P(A|Hⱼ) = P(A|Hᵢ)P(Hᵢ) / Σⱼ P(A|Hⱼ)P(Hⱼ)"],
+      "answer": "C"
+    },
+    {
+      "stem": "The confidence interval for a mean when the sample size is large (n > 30) and σ is unknown is:",
+      "options": ["[x̄ − t(n−1; 1−α/2)·s/√(n−1); x̄ + t(n−1; 1−α/2)·s/√(n−1)]", "[x̄ − Z(1−α/2)·s/√(n−1); x̄ + Z(1−α/2)·s/√(n−1)]", "[x̄ − Z(1−α/2)·s/√n; x̄ + Z(1−α/2)·s/√n]", "[x̄ − t(n−1; 1−α/2)·s/√n; x̄ + t(n−1; 1−α/2)·s/√n]"],
+      "answer": "C"
+    },
+    {
+      "stem": "The expectation of the chi-square distribution (with n degrees of freedom) equals:",
+      "options": ["E(Y) = p", "E(Y) = 2n", "E(Y) = λ", "E(Y) = n"],
+      "answer": "D"
+    },
+    {
+      "stem": "The weight (X, kg) and height (Y, cm) of medical students in the same group were recorded (contingency table in the figure).\nThe pair of means (X̄; Ȳ) equals:",
+      "options": ["(49; 160)", "(49.125; 159)", "(50.125; 161)", "(51; 149)"],
+      "answer": "B",
+      "image": "s1/biostatistics-2018-emd2-table.png"
+    },
+    {
+      "stem": "Developmental psychology studies show that at 12 months, 50% of normal babies walk. A study on developmental delay of premature babies observes a sample of 80 premature babies; at 12 months, 35 of them walk.\nGive a (95%) confidence interval for the proportion of premature babies who walk at 12 months:",
+      "options": ["[0.3287; 0.5462]", "[0.495; 0.731]", "[0.780; 0.578]", "[0.3904; 0.6095]"],
+      "answer": "A",
+      "explanation": "p = 35/80 = 0.4375; 0.4375 ± 1.96·√(0.4375 × 0.5625 / 80) = 0.4375 ± 0.1087."
+    },
+    {
+      "stem": "In a nursery, 90% of seedlings are assumed virus-free. A packet of two seedlings is healthy if both seedlings are virus-free.\nThe probability p of having a healthy packet is:",
+      "options": ["0.90", "0.81", "0.95", "0.84"],
+      "answer": "B"
+    },
+    {
+      "stem": "(Nursery: healthy packet probability p = 0.81.) Let X be the number of healthy packets in a lot of 10 packets. The distribution of X is:",
+      "options": ["X ~ B(10; 0.84)", "X ~ B(10; 0.90)", "X ~ B(10; 0.95)", "X ~ B(10; 0.81)"],
+      "answer": "D"
+    },
+    {
+      "stem": "(X ~ B(10; 0.81) healthy packets.) A lot of 10 packets is accepted by the buyer if at least 9 of them are healthy. The probability that a lot is accepted is:",
+      "options": ["0.5067", "0.6067", "0.0012", "0.4067"],
+      "answer": "D",
+      "explanation": "0.81¹⁰ + 10 × 0.81⁹ × 0.19 ≈ 0.1216 + 0.2852 = 0.4067."
+    },
+    {
+      "stem": "(Healthy packet probability 0.81.) Let Y be the number of healthy packets in a lot of 50 packets. A lot of 50 is accepted if at least 45 of the 50 are healthy. The probability that a lot is accepted is:",
+      "options": ["0.0556", "0.0526", "0.0485", "0.9427"],
+      "answer": "B"
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "semester": 1,
+  "module": "Physiology",
+  "source": "EMD1 2025-2026",
+  "questions": [
+    {
+      "stem": "Passive transport:",
+      "options": [
+        "Requires ATP consumption",
+        "Always occurs against the concentration gradient",
+        "Depends on the electrochemical gradient",
+        "May occur by simple diffusion or facilitated diffusion"
+      ],
+      "answer": "CD"
+    },
+    {
+      "stem": "Facilitated diffusion:",
+      "options": ["Uses specific membrane proteins", "Is saturable", "Requires metabolic energy", "Follows the concentration gradient"],
+      "answer": "ABD"
+    },
+    {
+      "stem": "Primary active transport:",
+      "options": [
+        "Directly requires ATP",
+        "Occurs without membrane proteins",
+        "Allows transport against the electrochemical gradient",
+        "Is always electrically neutral"
+      ],
+      "answer": "AC"
+    },
+    {
+      "stem": "The Na⁺/K⁺-ATPase pump:",
+      "options": ["Expels 3 Na⁺ ions out of the cell", "Brings 2 K⁺ ions into the cell", "Is an electrogenic pump", "Functions without ATP consumption"],
+      "answer": "ABC"
+    },
+    {
+      "stem": "Secondary active transport:",
+      "options": [
+        "Directly uses ATP",
+        "Depends on the ionic gradient created by primary active transport",
+        "May occur as symport or antiport",
+        "Does not require membrane proteins"
+      ],
+      "answer": "BC"
+    },
+    {
+      "stem": "The resting membrane potential:",
+      "options": [
+        "Is usually negative inside the cell",
+        "Mainly depends on potassium permeability",
+        "Is identical in all cell types",
+        "Is maintained by ionic gradients"
+      ],
+      "answer": "ABD"
+    },
+    {
+      "stem": "The Nernst equation is used to calculate:",
+      "options": ["Membrane potential", "Equilibrium potential of a single ion", "Membrane permeability", "Intracellular concentration gradient"],
+      "answer": "B"
+    },
+    {
+      "stem": "The action potential:",
+      "options": ["Follows the all-or-none law", "Is mainly due to rapid sodium influx", "Depends on stimulus duration", "Propagates without decrement"],
+      "answer": "ABD"
+    },
+    {
+      "stem": "Receptors:",
+      "options": [
+        "Are only expressed on the cell surface",
+        "Allow intercellular communication",
+        "Bind ligands such as steroid hormones and neurotransmitters",
+        "Have a very weak interaction with their ligand"
+      ],
+      "answer": "BC"
+    },
+    {
+      "stem": "Intracellular second messengers:",
+      "options": [
+        "Are composed of large molecules",
+        "cAMP is one of these second messengers",
+        "Transmit information to the cytosol",
+        "Play a role in signal amplification"
+      ],
+      "answer": "BCD"
+    },
+    {
+      "stem": "Hydrophilic ligands:",
+      "options": [
+        "Freely cross the plasma membrane",
+        "Bind preferentially to nuclear receptors",
+        "Act via membrane receptors",
+        "Include peptide hormones and neurotransmitters"
+      ],
+      "answer": "CD"
+    },
+    {
+      "stem": "Among the ligands of intracellular receptors:",
+      "options": ["Steroid hormones", "Thyroid hormones", "Adrenaline", "Vitamin D"],
+      "answer": "ABD"
+    },
+    {
+      "stem": "Chemical synaptic transmission:",
+      "options": ["Is unidirectional", "Is faster than electrical transmission", "Requires a neurotransmitter", "Occurs only between neurons"],
+      "answer": "AC"
+    },
+    {
+      "stem": "Regarding the internal environment, which of the following statements are correct?",
+      "options": [
+        "It is the intracellular fluid",
+        "It is the extracellular fluid",
+        "It is essentially composed of lymph",
+        "The kidneys contribute to the homeostasis of the internal environment more than any other organ"
+      ],
+      "answer": "BD"
+    },
+    {
+      "stem": "The ionic composition of the internal environment is characterized by:",
+      "options": [
+        "Na⁺, Cl⁻ and HCO₃⁻ are the main components",
+        "Potassium salts (K⁺) are the main components",
+        "Plasma and interstitial fluid do not have the same ionic composition",
+        "The osmolarity of the internal environment is essentially determined by sodium"
+      ],
+      "answer": "AD"
+    },
+    {
+      "stem": "The dilution method using a marker is the reference method for measuring fluid volumes. This marker must be:",
+      "options": [
+        "Non toxic",
+        "Not diffusing outside the space to be measured",
+        "Minimally altering tissue function and metabolism",
+        "Slowly eliminated and/or metabolized"
+      ],
+      "answer": "ABD"
+    },
+    {
+      "stem": "Among these compartments, which ones can be directly measured using the dilution method?",
+      "options": ["Plasma volume", "Intracellular volume", "Total body water", "Interstitial fluid volume"],
+      "answer": "AC"
+    },
+    {
+      "stem": "Exchanges between plasma and interstitial fluid:",
+      "options": [
+        "Occur through the capillaries",
+        "Take place according to the Starling mechanism",
+        "Oncotic pressure alone represents the major driving force of these exchanges",
+        "These exchanges, which occur along the length of the capillaries, are variable"
+      ],
+      "answer": "ACD"
+    },
+    {
+      "stem": "The functional unit of skeletal striated muscle is:",
+      "options": ["The myofibril", "The sarcomere", "The myocyte", "The actin filament"],
+      "answer": "B"
+    },
+    {
+      "stem": "The thin filaments of the sarcomere are mainly composed of:",
+      "options": ["Myosin", "Actin", "Troponin", "Tropomyosin"],
+      "answer": "BCD"
+    },
+    {
+      "stem": "During muscle contraction:",
+      "options": ["Sarcomeres shorten", "Actin filaments shorten", "Actin filaments slide over myosin", "Filament length remains constant"],
+      "answer": "ACD"
+    },
+    {
+      "stem": "Calcium (Ca²⁺) is involved in muscle contraction by:",
+      "options": [
+        "Binding to troponin",
+        "Allowing the movement of tropomyosin",
+        "Inhibiting actin–myosin interaction",
+        "Triggering the formation of actin–myosin cross-bridges"
+      ],
+      "answer": "ABD"
+    },
+    {
+      "stem": "The phosphocreatine pathway:",
+      "options": [
+        "Provides ATP very rapidly",
+        "Is used during short, intense efforts",
+        "Produces lactic acid",
+        "Is an anaerobic alactic pathway with limited capacity"
+      ],
+      "answer": "ABD"
+    },
+    {
+      "stem": "Type I muscle fibers:",
+      "options": ["Are slow-twitch", "Are rich in myoglobin", "Fatigue rapidly", "Mainly use aerobic metabolism"],
+      "answer": "ABD"
+    },
+    {
+      "stem": "Energy expenditure over 24 hours includes:",
+      "options": [
+        "Basal metabolic rate.",
+        "Diet-induced thermogenesis.",
+        "Energy expenditure related to physical activity.",
+        "Energy expenditure related to thermoregulation."
+      ],
+      "answer": "ABCD"
+    },
+    {
+      "stem": "Basal metabolic rate:",
+      "options": [
+        "Corresponds to energy expenditure at rest.",
+        "Corresponds to energy expenditure during sleep.",
+        "Is higher in women than in men.",
+        "Is measured in a thermoneutral environment."
+      ],
+      "answer": "AD"
+    },
+    {
+      "stem": "Food calorimetry is:",
+      "options": [
+        "A direct calorimetry method.",
+        "The measurement of oxygen consumption in a given individual.",
+        "The combustion of carbohydrates and lipids in the presence of oxygen in a calorimetric bomb.",
+        "The energy value of food released into the body."
+      ],
+      "answer": "D"
+    },
+    {
+      "stem": "To treat a patient suffering from obesity, the energy balance must be:",
+      "options": ["Zero", "Negative", "Positive", "Indifferent"],
+      "answer": "B"
+    },
+    {
+      "stem": "Which of these fatty acids are conditionally essential?",
+      "options": ["Omega 3", "Omega 6", "Omega 9", "EPA and DHA"],
+      "answer": "D"
+    },
+    {
+      "stem": "In the colon, dietary fibre is digested by:",
+      "options": ["Colon cells", "Proteolytic enzymes", "Glycolytic enzymes", "The gut microbiota (colon bacteria)"],
+      "answer": "D"
+    }
+  ]
+}

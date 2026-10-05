@@ -1,0 +1,120 @@
+{
+  "semester": 1,
+  "module": "Biophysics",
+  "source": "EMD1 2023-2024",
+  "questions": [
+    {
+      "stem": "The correct proposition is:",
+      "options": ["A compressible fluid ensures good pressure transmission", "Liquids are compressible and expansible", "Pressure is homogeneous to an energy density", "The Torr corresponds to 13.3 pascal", "A melted solid turns into a gas"],
+      "answer": "C"
+    },
+    {
+      "stem": "A homogeneous mixture of 2 gases containing 2 moles of gas (A) and 3 moles of gas (B) has a pressure of 3 bar:",
+      "options": ["The pressure of gases (A) and (B) is 3 bar", "The pressure of gas (B) equals 1.8 bar", "The pressure of gas (A) equals 1 bar", "The volume of gas (B) equals 3/2 that of (A)", "If its volume doubles, its pressure will be 6 bar"],
+      "answer": "B",
+      "explanation": "P(B) = 3/5 × 3 bar = 1.8 bar."
+    },
+    {
+      "stem": "The saturation pressure of ether is 400 Torr at 17°C. With an enclosure of V = 20 L, what is the maximum mass of ether that can be vaporized at 17°C? Molar mass of ether 74 g. (R = 8.31 SI)",
+      "options": ["32.7 g", "15.4 g", "27.3 g", "43.2 g", "12.9 g"],
+      "answer": "A",
+      "explanation": "n = PV/RT = (400/760 × 101 325) × 0.02 / (8.31 × 290) ≈ 0.442 mol → 32.7 g."
+    },
+    {
+      "stem": "(Continued) What is the ether vapor pressure at 17°C of this mass if the volume of the enclosure increases by 5 liters?",
+      "options": ["115 Torr", "363 Torr", "298 Torr", "274 Torr", "320 Torr"],
+      "answer": "E",
+      "explanation": "Same amount in 25 L: P = 400 × 20/25 = 320 Torr."
+    },
+    {
+      "stem": "Consider an A₂B electrolyte solution with α₀ = 0.6:",
+      "options": ["Its Van't Hoff correction factor equals 3.2", "If it is molar (1 mol/L), its osmolarity will be 2.5 osmol/L", "40% of the initial molecules ionize", "If it is molar and its volume is 2 liters, the number of kinetic units will be 4.4 N", "Each molecule decomposes into 2 ions"],
+      "answer": "D",
+      "explanation": "i = 1 + 0.6 × 2 = 2.2; 2 mol × 2.2 = 4.4 N kinetic units."
+    },
+    {
+      "stem": "One liter of aqueous solution contains 11.1 g of CaCl₂ (M = 111 g/mol) and 45 mL of H₂SO₄ (1 mol/L). The electrolytes are totally dissociated. Calculate the osmolarity of the solution.",
+      "options": ["325 mosm/L", "435 mosm/L", "512 mosm/L", "288 mosm/L", "462 mosm/L"],
+      "answer": "B",
+      "explanation": "CaCl₂: 0.1 mol × 3 = 300 mosm; H₂SO₄: 0.045 × 3 = 135 mosm; total 435 mosm/L."
+    },
+    {
+      "stem": "Calculate the IONIC STRENGTH of 1 L of aqueous solution containing 3.28 g of Na₃PO₄ (M = 164 g) and 3.33 g of CaCl₂ (M = 111 g).",
+      "options": ["0.21", "0.32", "0.18", "0.47", "0.39"],
+      "answer": "A",
+      "explanation": "Na₃PO₄ 0.02 M: ½(0.06·1 + 0.02·9) = 0.12; CaCl₂ 0.03 M: ½(0.03·4 + 0.06·1) = 0.09; total 0.21."
+    },
+    {
+      "stem": "The correct statement is:",
+      "options": ["The chemical potential of a very dilute liquid solution is proportional to the solute fraction", "The concentration gradient between 2 solutions must be large to have diffusion", "Fick's 1st law determines the equivalent concentration of solutions", "The friction coefficient of a solution is a driving factor of diffusion", "A high temperature ensures better diffusion"],
+      "answer": "E"
+    },
+    {
+      "stem": "2 aqueous solutions of the same substance (30 mmol/L and 70 mmol/L) are separated by a dialyzing membrane of total area 4 cm². Knowing that the initial molar flow of the solute is 4.2 pmol/s, calculate the diffusive permeability (in 10⁻⁹ m/s):",
+      "options": ["0.33", "0.17", "0.26", "0.21", "0.37"],
+      "answer": "C",
+      "explanation": "P = J / (S·ΔC) = 4.2×10⁻¹² / (4×10⁻⁴ × 40) ≈ 0.26×10⁻⁹ m/s."
+    },
+    {
+      "stem": "A subject excretes 0.8 L of urine per day with a freezing-point depression of −1.9°C (K = 1.86 SI). Blood freezing-point depression = −0.56°C; blood osmolarity is 300 mosm/L; T = 37°C and K = 1.86 SI. Calculate the number of moles of urea eliminated per day.",
+      "options": ["0.814 mol", "772 mmol", "0.625 mol", "594 mmol", "0.423 mol"],
+      "answer": "A"
+    },
+    {
+      "stem": "(Continued: urine 0.8 L/day, Δ = −1.9°C; blood Δ = −0.56°C, 300 mosm/L, 37°C.) Determine the power supplied by each kidney.",
+      "options": ["12.4 mW", "10.6 mW", "16.8 mW", "14.8 mW", "15.5 mW"],
+      "answer": "D"
+    },
+    {
+      "stem": "The electrical conductivity of a solution placed in a cylindrical cell (S = 12 cm² and L = 10 cm) is 16.3 (SI). What is its resistance?",
+      "options": ["7.31 Ω", "8.24 Ω", "4.56 Ω", "3.88 Ω", "5.11 Ω"],
+      "answer": "E",
+      "explanation": "R = L / (σ·S) = 0.1 / (16.3 × 12×10⁻⁴) ≈ 5.11 Ω."
+    },
+    {
+      "stem": "The correct statement is:",
+      "options": ["Osmosis is a transfer of kinetic units", "In an osmosis experiment, water diffuses from the more concentrated side to the less concentrated side", "Reverse osmosis is a transfer of water across a semipermeable wall by applying an opposing overpressure greater than the osmotic pressure", "In a reverse osmosis experiment, water diffuses toward the more concentrated side", "Renal work is greater when the urine freezing-point depression is low (in absolute value)"],
+      "answer": "C"
+    },
+    {
+      "stem": "Estimate, in atmospheres, the osmotic pressure of a solution of osmolarity 0.104 osmol/L at 27°C opposed to pure water by a semipermeable wall.",
+      "options": ["3.22", "3.77", "4.53", "2.56", "2.19"],
+      "answer": "D",
+      "explanation": "Π = cRT = 104 × 8.31 × 300 ≈ 2.59×10⁵ Pa ≈ 2.56 atm."
+    },
+    {
+      "stem": "A dialyzing membrane separates 2 compartments (A) and (B) of fixed and equal volumes containing aqueous NaCl solutions at equilibrium. In (A), the equivalent concentration is 170 mEq/L. A fully dissociating protein RNa₁₅ is then introduced into compartment (B). At this moment, compartment (B) has a freezing-point depression of −0.67°C. Given K = 1.8 (SI), determine the molar concentration of this protein before dissociation.",
+      "options": ["1 mmol/L", "2 mmol/L", "3 mmol/L", "4 mmol/L", "5 mmol/L"],
+      "answer": "B",
+      "explanation": "Osm(B) = 0.67/1.8 ≈ 372 mosm/L; NaCl gives 340 mosm/L, so the protein adds ≈ 32 mosm/L = 16 particles × c → c = 2 mmol/L."
+    },
+    {
+      "stem": "(Continued) At equilibrium, determine the concentration of Na⁺ that diffused from B to A.",
+      "options": ["5.6 mosmol/L", "6.3 mosmol/L", "7.2 mosmol/L", "8.4 mosmol/L", "9.1 mosmol/L"],
+      "answer": "C"
+    },
+    {
+      "stem": "A globular particle, initially at x = 10 cm from the rotor axis of a centrifuge, undergoes ultracentrifugation at 60 000 rpm. Calculate the distance it travels in 1 hour, given its Svedberg constant is 10 S.",
+      "options": ["13.2 mm", "16.4 mm", "14.8 mm", "12.7 mm", "15.5 mm"],
+      "answer": "E",
+      "explanation": "x = x₀·e^(sω²t); ω = 6283 rad/s, sω²t = 10⁻¹² × 3.95×10⁷ × 3600 ≈ 0.142 → x ≈ 11.53 cm, distance ≈ 15.3 mm."
+    },
+    {
+      "stem": "Consider the electric circuit in the figure. Determine its equivalent resistance in ohms.",
+      "options": ["1", "2", "3", "1.5", "1.3"],
+      "answer": "A",
+      "image": "s1/biophysics-2024-q18.png",
+      "explanation": "Three parallel branches of 3 Ω each (3; 1.5 + 1.5; 1 + 1 + 1) → 3/3 = 1 Ω. (Option A's label is illegible on the scan; it is 1.)"
+    },
+    {
+      "stem": "The correct statement is:",
+      "options": ["The depolarization–polarization interface in a muscle fiber is equivalent to a fixed electric dipole", "The vectorcardiogram represents the variation of the heart's electric field at the precordial leads", "The precordial leads are 6 bipolar leads", "The sides of Einthoven's triangle are obtained by the three bipolar limb leads (D1, D2 and D3)", "Atrial myocardium contraction appears at the T wave"],
+      "answer": "D"
+    },
+    {
+      "stem": "Concerning the evaluation of the heart's electrical axis (ÂQRS), the correct statement is — the lead for which the QRS complex:",
+      "options": ["Has the largest amplitude (positive deflection) is perpendicular to ÂQRS", "Has zero amplitude (isodiphasic) is perpendicular to ÂQRS", "Has the largest amplitude (negative deflection) gives the direction of ÂQRS", "Has the largest amplitude (positive deflection) is opposite to ÂQRS", "Has zero amplitude (isodiphasic) is in the direction of ÂQRS"],
+      "answer": "B"
+    }
+  ]
+}

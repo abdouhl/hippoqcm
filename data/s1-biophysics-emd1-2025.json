@@ -1,0 +1,119 @@
+{
+  "semester": 1,
+  "module": "Biophysics",
+  "source": "EMD1 2024-2025",
+  "questions": [
+    {
+      "stem": "The correct proposition is:",
+      "options": ["Crystalline solids all appear in 6 crystal systems", "The cubic system has 3 crystal lattices", "The orthorhombic system has 3 crystal lattices", "1 cm of water corresponds to 9.81 pascal", "Condensation of a gas gives a liquid"],
+      "answer": "B"
+    },
+    {
+      "stem": "A homogeneous mixture of 3 gases containing 2 moles of gas (A), 3 moles of gas (B) and 5 moles of gas (C) has a pressure of 150 Torr:",
+      "options": ["The pressure of gases (A), (B) and (C) is 150 Torr", "The pressure of gas (B) equals 50 Torr", "The volume of gas (C) equals the volume of gases (A + B)", "The pressure of gas (C) equals 75 Torr", "The pressure of gas (A) equals 3/2 that of (B)"],
+      "answer": "D",
+      "explanation": "P(C) = 5/10 × 150 = 75 Torr."
+    },
+    {
+      "stem": "The saturation pressure of water at 30°C is 31.8 Torr. With an enclosure of V = 100 L, what is the maximum mass of water that can be vaporized at 30°C? Molar mass of water: 18 g. (R = 8.31 SI)",
+      "options": ["3.03 g", "4.17 g", "4.73 g", "5.11 g", "5.83 g"],
+      "answer": "A",
+      "explanation": "n = PV/RT = (31.8/760 × 101 325) × 0.1 / (8.31 × 303) ≈ 0.168 mol → 3.03 g."
+    },
+    {
+      "stem": "(Continued) What will then be the vapor pressure of a 2 g mass of water at 30°C in this same enclosure?",
+      "options": ["17 Torr", "24 Torr", "14 Torr", "27 Torr", "21 Torr"],
+      "answer": "E",
+      "explanation": "2 g < 3.03 g, so it all vaporizes: P = 31.8 × 2/3.03 ≈ 21 Torr."
+    },
+    {
+      "stem": "The diffusion coefficient D in the liquid phase:",
+      "options": ["Is given by the relation D = k·T·f", "Decreases when temperature increases", "Is independent of the particle's density when its shape is arbitrary", "Is proportional to the cube root of the particle's mass", "Increases in the presence of a membrane"],
+      "answer": "C"
+    },
+    {
+      "stem": "One liter of aqueous solution contains 22.2 g of CaCl₂ (M = 111 g/mol) and 35 mL of H₃PO₄ (1 mol/L). The electrolytes are totally dissociated. Calculate the osmolarity of the solution.",
+      "options": ["520 mosm/L", "680 mosm/L", "820 mosm/L", "790 mosm/L", "740 mosm/L"],
+      "answer": "E",
+      "explanation": "CaCl₂: 0.2 × 3 = 600 mosm; H₃PO₄: 0.035 × 4 = 140 mosm; total 740 mosm/L."
+    },
+    {
+      "stem": "(Continued) Calculate the IONIC STRENGTH of this aqueous solution.",
+      "options": ["0.67", "0.81", "0.53", "0.93", "0.74"],
+      "answer": "B",
+      "explanation": "CaCl₂ 0.2 M: ½(0.2·4 + 0.4·1) = 0.6; H₃PO₄ 0.035 M: ½(0.105·1 + 0.035·9) = 0.21; total 0.81."
+    },
+    {
+      "stem": "The correct statement is:",
+      "options": ["The diffusive permeability of a membrane is proportional to its total surface area", "Fick's 1st law determines the ionic concentration of the ions present in a solution", "The diffusive permeability of a membrane corresponds to the ratio (Jn / ΔC)", "Temperature is not a driving factor of diffusion", "Friction is a driving factor of diffusion"],
+      "answer": "C"
+    },
+    {
+      "stem": "The freezing-point depression of an aqueous CaCl₂ solution (0.1 mol/L) equals −0.45°C. Determine its degree of dissociation α₀. (K = 1.86 SI)",
+      "options": ["0.71", "0.19", "0.67", "0.43", "0.59"],
+      "answer": "A",
+      "explanation": "i = 0.45 / (1.86 × 0.1) ≈ 2.42 = 1 + 2α → α ≈ 0.71."
+    },
+    {
+      "stem": "A subject excretes 1.0 L of urine per day with a freezing-point depression of −1.6°C (K = 1.86 SI). Calculate the number of mmol of urea eliminated per day.",
+      "options": ["748", "645", "920", "860", "1060"],
+      "answer": "D",
+      "explanation": "1.6 / 1.86 ≈ 0.860 osmol/L × 1 L = 860 mmol."
+    },
+    {
+      "stem": "The electrical resistance of a solution placed in a cylindrical cell (S = 16 cm² and L = 10 cm) is 7.3 Ω. Calculate its electrical conductivity (SI).",
+      "options": ["8.56", "5.21", "0.93", "6.25", "13.2"],
+      "answer": "A",
+      "explanation": "σ = L / (R·S) = 0.1 / (7.3 × 16×10⁻⁴) ≈ 8.56 S/m."
+    },
+    {
+      "stem": "Consider the electric circuit in the figure. Determine its equivalent capacitance C_eq.",
+      "options": ["5.8 µF", "11.2 µF", "9.4 µF", "7.6 µF", "4.4 µF"],
+      "answer": "D",
+      "image": "s1/biophysics-2025-q12.png"
+    },
+    {
+      "stem": "Two solutions of osmolarities 0.214 and 0.115 (osmol/L) are opposed across a semipermeable wall. Determine the resulting osmotic pressure at 27°C.",
+      "options": ["14.3 bar", "2.47 bar", "1.17 bar", "0.49 bar", "0.35 bar"],
+      "answer": "B",
+      "explanation": "ΔΠ = ΔC·RT = 99 × 8.31 × 300 ≈ 2.47×10⁵ Pa = 2.47 bar."
+    },
+    {
+      "stem": "In Donnan equilibrium:",
+      "options": ["The macromolecule is not necessarily charged", "Only ions initially presenting a concentration gradient diffuse", "There is an inequality of ion concentrations of the same sign on either side of the membrane at equilibrium", "The osmotic pressure is called oncotic pressure", "The Donnan ratio expresses the ratio of ion concentrations of opposite sign"],
+      "answer": "C"
+    },
+    {
+      "stem": "The correct statement is:",
+      "options": ["The activity of a solution is its ability to dissociate", "The activity coefficient is greater than 1", "The electric mobility of ions is inversely proportional to the applied electric field", "The unit of electric mobility is m²/s", "For a very dilute solution, the activity coefficient equals 1"],
+      "answer": "E"
+    },
+    {
+      "stem": "A particle undergoing ultracentrifugation, initially at 10 cm from the rotor axis, travels 2.5 cm during the first hour. How long will it take to reach the bottom of the tube located 18 cm from the rotor axis?",
+      "options": ["2 h 38 min", "3 h 21 min", "2 h 06 min", "1 h 54 min", "3 h 12 min"],
+      "answer": "A",
+      "explanation": "ln(x/x₀) is proportional to t: t = 1 h × ln(18/10) / ln(12.5/10) ≈ 2.63 h ≈ 2 h 38 min."
+    },
+    {
+      "stem": "The K⁺ concentrations on either side of an axon membrane are C(axoplasm) = 100 and C(ext) = 4 (mmol/L) at 17°C. Determine the Nernst potential of this ion. (R = 8.31 SI, F = 96 500 C/mol)",
+      "options": ["−70.8 mV", "−64.2 mV", "−80.4 mV", "−58.3 mV", "−93.7 mV"],
+      "answer": "C",
+      "explanation": "E = (RT/F)·ln(Cext/Cint) = (8.31 × 290 / 96 500) × ln(0.04) ≈ −80.4 mV."
+    },
+    {
+      "stem": "During a weak stimulus applied to a nerve fiber:",
+      "options": ["The propagation distance of the stimulus is of the order of a few centimeters", "Na⁺ permeability increases abruptly", "An action potential can be obtained for a long stimulation time", "The absolute refractory period is very important", "The leak current is responsible for the attenuation of the stimulus along the axon"],
+      "answer": "E"
+    },
+    {
+      "stem": "The correct statement is:",
+      "options": ["The accommodation constant of a membrane is expressed in amperes", "Rheobase is the maximum value of threshold intensities", "During an AP, the pre-potential phase is a spike obeying the all-or-none law", "The existence of the absolute refractory phase means the AP has only one direction of propagation", "During an AP, the rising part of the potential corresponds to a massive exit of K⁺ ions from the axoplasm"],
+      "answer": "D"
+    },
+    {
+      "stem": "Concerning the evaluation of the heart's electrical axis (ÂQRS), the correct statement is — the lead for which the QRS complex:",
+      "options": ["Has the largest amplitude (positive deflection) is perpendicular to ÂQRS", "Has zero amplitude (isodiphasic) is perpendicular to ÂQRS", "Has the largest amplitude (negative deflection) gives the direction of ÂQRS", "Has the largest amplitude (positive deflection) is opposite to ÂQRS", "Has zero amplitude (isodiphasic) is in the direction of ÂQRS"],
+      "answer": "B"
+    }
+  ]
+}

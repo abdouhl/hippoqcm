@@ -1,0 +1,121 @@
+{
+  "semester": 1,
+  "module": "Biostatistics",
+  "source": "EMD1 2024-2025",
+  "questions": [
+    {
+      "stem": "For any A ∈ P(Ω):",
+      "options": ["P(Ā | H) = 1 − P(A | H)", "P(Ā | H) = 1 + P(A | H̄)", "P(Ā | H) = 1 − P(A/H) (as a fraction)", "P(Ā | H) = 1 − P(A)"],
+      "answer": "A"
+    },
+    {
+      "stem": "The probability density function of Student's t distribution (tₙ) equals:",
+      "options": ["f(t) = (1/(σ√2π))·e^(−½((x−µ)/σ)²)", "f(t) = cₙ(1 + t²)^(−(n+1)/2)", "f(t) = cₙ(1 + t²/n)^(−(n+1)/2)", "f(t) = (1/(σ√2π))·e^(−½((n−µ)/σ)²)"],
+      "answer": "C"
+    },
+    {
+      "stem": "With n and p such that 1 ≤ p ≤ n:",
+      "options": ["Cₙᵖ = Cₙᵖ⁻¹ + Cₙ₋₁ᵖ⁻¹", "Cₙᵖ = Cₙᵖ⁻¹ + Cₙ₋₁ᵖ", "Cₙᵖ = Cₙ₋₁ᵖ + Cₙ₋₁ᵖ⁻¹", "Cₙᵖ = Aₙ₋₁ᵖ⁻¹ + Cₙᵖ⁻¹"],
+      "answer": "C"
+    },
+    {
+      "stem": "The adjusted (rectified) frequencies n′ (for classes of unequal width aᵢ) equal:",
+      "options": ["xᵢ / aᵢ", "nᵢ·xᵢ", "nᵢ / aᵢ", "n′ᵢ / aᵢ"],
+      "answer": "C"
+    },
+    {
+      "stem": "Exercise 1 — An experiment on 234 people studied the relation between age X and sleep time Y (contingency table in the figure).\nThe mean and variance of X are:",
+      "options": ["(20.43; 15.6)", "(19.18; 208.35)", "(30; 36.7)", "(12.3; 104.6)"],
+      "answer": "B",
+      "image": "s1/biostatistics-2025-sleep-table.png"
+    },
+    {
+      "stem": "Exercise 1 (age X / sleep time Y table). The mean and standard deviation of Y are:",
+      "options": ["(10.18; 2.38)", "(24.13; 4.4201)", "(10.18; 5.69)", "(24.12; 19.63)"],
+      "answer": "A",
+      "image": "s1/biostatistics-2025-sleep-table.png"
+    },
+    {
+      "stem": "Exercise 1 (age X / sleep time Y table). The covariance equals:",
+      "options": ["15.50", "−26.13", "24.15", "−11.22"],
+      "answer": "B",
+      "image": "s1/biostatistics-2025-sleep-table.png"
+    },
+    {
+      "stem": "Exercise 1 (age X / sleep time Y table). The correlation coefficient equals:",
+      "options": ["−34%", "80%", "52%", "−76%"],
+      "answer": "D",
+      "image": "s1/biostatistics-2025-sleep-table.png"
+    },
+    {
+      "stem": "Exercise 1 (age X / sleep time Y table). The regression line Y(X) is:",
+      "options": ["y = −0.10x + 14", "y = −0.11x + 15.35", "y = 0.22x − 5.54", "y = −0.12x + 12.48"],
+      "answer": "D",
+      "image": "s1/biostatistics-2025-sleep-table.png"
+    },
+    {
+      "stem": "Exercise 1 (regression y = −0.12x + 12.48). The estimated sleep time of a 66-year-old person is:",
+      "options": ["7 hours", "9 hours", "8 hours", "5 hours"],
+      "answer": "D",
+      "explanation": "−0.12 × 66 + 12.48 ≈ 4.6 ≈ 5 hours."
+    },
+    {
+      "stem": "Exercise 2 — X follows an exponential distribution with parameter λ = 3: f(x) = λe^(−λx) if x ≥ 0, 0 otherwise.\nThe probability that X = 4 equals:",
+      "options": ["0.06", "0", "0.22", "0.03"],
+      "answer": "B",
+      "explanation": "X is continuous, so P(X = a) = 0."
+    },
+    {
+      "stem": "Exercise 2 (X ~ exp(λ = 3)). The probability that X is greater than 1 equals:",
+      "options": ["0.05", "0.02", "0.08", "0.21"],
+      "answer": "A",
+      "explanation": "e⁻³ ≈ 0.05."
+    },
+    {
+      "stem": "Exercise 2 (X ~ exp(λ = 3)). The expectation of X equals:",
+      "options": ["0.44", "0.33", "0.35", "0"],
+      "answer": "B",
+      "explanation": "1/λ = 1/3."
+    },
+    {
+      "stem": "Exercise 2 (X ~ exp(λ = 3)). The standard deviation of X equals:",
+      "options": ["0.11", "0.22", "0.66", "0.09"],
+      "answer": "A",
+      "explanation": "Official key: A. Note: 0.11 = 1/λ² is actually the variance; the standard deviation is 1/λ ≈ 0.33 (not among the options)."
+    },
+    {
+      "stem": "Exercise 3 — An epidemiologist claims a diagnostic method detects a bacterial infection with probability 89%. Step I: the method is tested on the epidemiologist after being infected.\nThe probability that the infection is detected equals:",
+      "options": ["0.77", "0.03", "0.89", "0.11"],
+      "answer": "C"
+    },
+    {
+      "stem": "Exercise 3 (step I: Bernoulli with p = 0.89). The standard deviation equals:",
+      "options": ["0.35", "0.38", "0.30", "0.31"],
+      "answer": "D",
+      "explanation": "√(0.89 × 0.11) ≈ 0.31."
+    },
+    {
+      "stem": "Exercise 3 (step II: the method is tested on 20 infected patients, X ~ B(20; 0.89)).\nThe probability that the infection is detected in 17 patients equals:",
+      "options": ["0.20", "0.21", "0.16", "0.07"],
+      "answer": "B"
+    },
+    {
+      "stem": "Exercise 3 (X ~ B(20; 0.89)). The probability that the infection is detected in at least 16 patients equals:",
+      "options": ["0.16", "0.64", "0.85", "0.94"],
+      "answer": "D"
+    },
+    {
+      "stem": "Exercise 3 (X ~ B(20; 0.89)). The standard deviation equals:",
+      "options": ["1.4", "1.02", "1.58", "1.3"],
+      "answer": "A",
+      "explanation": "√(20 × 0.89 × 0.11) ≈ 1.40."
+    },
+    {
+      "stem": "Exercise 3 (step III: 1500 infected patients, detection probability 0.89; normal approximation).\nThe probability of between 1320 and 1360 detected infections equals:",
+      "options": ["0.79", "0.70", "0.87", "0.85"],
+      "answer": "C",
+      "image": "s1/biostatistics-normal-table.png",
+      "explanation": "µ = 1335, σ ≈ 12.12: P(−1.24 < Z < 2.06) ≈ 0.87."
+    }
+  ]
+}

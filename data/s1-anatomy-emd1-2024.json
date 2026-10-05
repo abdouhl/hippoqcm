@@ -1,0 +1,207 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "source": "EMD1 2023-2024",
+  "questions": [
+    {
+      "stem": "The anatomical reference position is the position on which all anatomical descriptions are based. Which of the following correspond to this anatomical reference position?",
+      "options": ["A living adult, seated", "Arms hanging along the body", "Palms of the hands facing inward", "Gaze directed upward", "Feet together, placed on the ground"],
+      "answer": "BE"
+    },
+    {
+      "stem": "The Nomina Anatomica is an essential basis for communication between physicians and scientists. Which of the following correspond to the Nomina Anatomica?",
+      "options": ["It is written in English", "It is written in Latin", "It is a European nomenclature", "It is an international nomenclature", "It universalizes the study of the human body"],
+      "answer": "BDE"
+    },
+    {
+      "stem": "For descriptive, topographic and functional anatomy, we use reference axes: the body axis, the hand axis and the foot axis. What are the characteristics of the foot axis?",
+      "options": ["A longitudinal axis", "A transverse axis", "An axis passing through the 4th toe", "An axis passing through the 3rd toe", "An axis passing through the 2nd toe"],
+      "answer": "AE"
+    },
+    {
+      "stem": "During the Muslim renaissance, several scientists marked this period. Who is the founder of modern optics and the first scientist to describe the anatomy of the eye?",
+      "options": ["Ibn Rushd", "Ibn Al-Haytham", "Ibn Nafis", "Abu Al-Qasim Al-Zahrawi", "Ibn Sina"],
+      "answer": "B"
+    },
+    {
+      "stem": "Medial rotation is a rotational movement from outside to inside. What are its axis and plane?",
+      "options": ["A transverse axis and a sagittal plane", "A sagittal axis and a frontal plane", "A vertical axis and a transverse plane", "A vertical axis and a sagittal plane", "A transverse axis and a frontal plane"],
+      "answer": "C"
+    },
+    {
+      "stem": "Cartilage is a specialized connective tissue; it is elastic and resistant. Which of the following correspond to hyaline cartilage?",
+      "options": ["A bluish cartilage", "A whitish cartilage", "A yellowish cartilage", "A glassy (vitreous) cartilage", "A translucent cartilage"],
+      "answer": "ADE"
+    },
+    {
+      "stem": "Bone growth is of two types: growth in length and growth in width. Which structure is responsible for growth in width?",
+      "options": ["The epiphyseal cartilage (growth plate)", "The articular cartilage", "Compact bone", "The periosteum", "Spongy bone"],
+      "answer": "D"
+    },
+    {
+      "stem": "Morphologically, the bone surface is not regular; it shows reliefs and cavities. Which of the following correspond to non-articular eminences?",
+      "options": ["A crest", "A foramen", "A process", "A spine", "A groove (sulcus)"],
+      "answer": "ACD"
+    },
+    {
+      "stem": "The femur is a long bone forming the skeleton of the thigh. It has a proximal epiphysis, a distal epiphysis and a diaphysis. What are the articular surfaces of the distal epiphysis?",
+      "options": ["The medial epicondyle of the femur", "The patellar surface of the femur", "The medial condyle", "The lateral condyle", "The posterior surface of the patella"],
+      "answer": "BCD"
+    },
+    {
+      "stem": "The hip bone (os coxae) is a flat, twisted bone shaped like a two-bladed propeller. It connects the lower limb to the spine. Which of the following belong to its lateral surface?",
+      "options": ["The posterior gluteal line", "The obturator foramen", "The arcuate line", "The auricular surface", "The acetabulum"],
+      "answer": "ABE"
+    },
+    {
+      "stem": "The hip bone has 4 borders: superior, inferior, anterior and posterior. Which of the following belong to its anterior border?",
+      "options": ["The innominate notch", "The greater sciatic notch", "The iliopectineal (iliopubic) eminence", "The lesser innominate notch", "The ischial tuberosity"],
+      "answer": "AC"
+    },
+    {
+      "stem": "The tibial plateau articulates with the femoral condyles. Which anatomical elements make it up?",
+      "options": ["The fibular articular surface", "The anterior intercondylar area", "The oblique crest", "The intercondylar tubercles", "The medial malleolus"],
+      "answer": "BD"
+    },
+    {
+      "stem": "The tarsal bones of the foot are seven, arranged in an anterior tarsus and a posterior tarsus. Which are the bones of the anterior tarsus?",
+      "options": ["Lunate", "The cuboid", "The talus", "The calcaneus", "The navicular"],
+      "answer": "BE"
+    },
+    {
+      "stem": "The femur has a sharp posterior border (the linea aspera) which gives attachment to several hip and thigh muscles. Which of the following muscles attach to this border?",
+      "options": ["The gluteus medius", "The adductor muscles of the thigh", "The vastus medialis", "The vastus lateralis", "The obturator externus"],
+      "answer": "BCD"
+    },
+    {
+      "stem": "The articular capsule of the knee is a fibrous sleeve connecting the articular surfaces, inserting more or less close to the articular cartilage. What are its characteristics?",
+      "options": ["It thickens posteriorly to form the condylar shells (caps)", "It thickens anteriorly to form the condylar shells (caps)", "It has an anterior window for the patella", "It has an anterior window for the fabella", "It has a posterior window for the fabella"],
+      "answer": "AC"
+    },
+    {
+      "stem": "The knee joint is a weight-bearing joint with a ligamentous and tendinous system providing stability when standing and walking. The collateral system is a powerful ligament of this joint. What are its characteristics?",
+      "options": ["It is formed by the cruciate ligaments", "It is formed by the collateral ligaments", "Its injury produces a drawer movement", "It ensures antero-posterior stability of the knee", "It ensures lateral (collateral) stability of the knee"],
+      "answer": "BE"
+    },
+    {
+      "stem": "Knee flexion brings the posterior surface of the leg toward the posterior surface of the thigh. What is the range of active flexion with the hip extended?",
+      "options": ["120°", "130°", "140°", "150°", "160°"],
+      "answer": "A"
+    },
+    {
+      "stem": "According to their anatomical structure and mobility, there are three types of joints. Among them, syndesmoses are:",
+      "options": ["Fibrous joints whose articular surfaces are covered with articular cartilage", "Fibrous joints that unite the teeth to their sockets", "Joined by fibrocartilaginous structures", "Joints between articular surfaces that are distant from each other", "Fibrous joints that progressively ossify over time"],
+      "answer": "D"
+    },
+    {
+      "stem": "According to the morphology of the articular surfaces, six types of joints are distinguished. Ginglymus (hinge) joints:",
+      "options": ["Unite two articular surfaces, one concave and the other convex", "Unite two pulley-shaped articular surfaces", "Have a single axis of movement", "Are also called condylar joints", "Are amphiarthrosis-type joints"],
+      "answer": "BC"
+    },
+    {
+      "stem": "Synovial joints have great mobility. Adduction:",
+      "options": ["Is a movement performed around a transverse axis", "Is a movement that carries the anterior surface of a segment outward", "Is a simple movement performed by a single type of joint", "Is a movement specific to spheroid joints", "Is a movement performed in a frontal plane"],
+      "answer": "E"
+    },
+    {
+      "stem": "The scapula is a thin, flat, asymmetric bone located on the postero-superior part of the thorax:",
+      "options": ["The pillar of the scapula is a vertical ridge that delimits its dorsal surface", "Its cervical (superior) border shows the coracoid notch medially", "Its lateral border is the longest and thickest", "The glenoid cavity is carried by the neck of the scapula", "The tip (inferior angle) of the scapula lies opposite the 8th rib"],
+      "answer": "D"
+    },
+    {
+      "stem": "The clavicle is a long bone that forms the shoulder girdle with the scapula:",
+      "options": ["Its caudal (inferior) surface has the costal tuberosity on its medial part", "The conoid tubercle is located laterally and anteriorly on the ventral surface", "The trapezoid ligament attaches to the ventral tubercle of its caudal surface", "Its cranial (superior) surface gives attachment to the costoclavicular ligament", "Its anterior border is concave in its medial part"],
+      "answer": "AC"
+    },
+    {
+      "stem": "The humerus is a long bone forming the skeleton of the arm. It articulates above with the scapula and below with the two forearm bones:",
+      "options": ["The radial nerve groove on its dorsal surface is oblique downward and outward", "The bicipital groove extends its antero-lateral surface downward", "Its proximal epiphysis is entirely articular", "The distal epiphysis articulates only with the ulna", "The trochlea occupies the medial part of the humeral condyle"],
+      "answer": "AE"
+    },
+    {
+      "stem": "The radius is a long bone of the forearm occupying its lateral part:",
+      "options": ["The fovea of the radial head articulates with the medial part of the humeral condyle", "The radial tuberosity gives attachment to the biceps brachii", "The medial surface of its distal end extends downward as the styloid process", "The inferior surface of its distal end articulates with the first row of the carpus", "Its proximal epiphysis has a single articular surface"],
+      "answer": "BD"
+    },
+    {
+      "stem": "The scapulohumeral (glenohumeral) joint is the main shoulder joint; it unites the humeral head to the glenoid cavity of the scapula:",
+      "options": ["It is a deep, fragile and very mobile joint", "It is a diarthrosis of the enarthrosis (ball-and-socket) type", "It is a mobile joint with two degrees of freedom", "Adduction is possible on its own", "Flexion is a movement in the sagittal plane, also called antepulsion"],
+      "answer": "BE"
+    },
+    {
+      "stem": "The glenoid labrum is a fibrocartilaginous ring applied around the rim of the glenoid cavity:",
+      "options": ["Its peripheral surface is free, smooth and convex", "Its external surface is covered with articular cartilage", "Its internal surface extends outward the surface of the scapular neck", "It is richly innervated and vascularized", "Its lesions heal spontaneously"],
+      "answer": "B"
+    },
+    {
+      "stem": "The sterno-costo-clavicular joint is a true joint of the shoulder complex:",
+      "options": ["It is a plane joint of the arthrodial type", "It is a synovial joint with an intermediate articular disc", "It unites two articular surfaces", "It allows very slight gliding movements", "It allows two types of movements"],
+      "answer": "BE"
+    },
+    {
+      "stem": "The subtalar joint is one of the joints of the foot:",
+      "options": ["It is the joint uniting the posterior tarsus to the anterior tarsus", "It is a synovial joint of the spheroid type", "It unites the posterior calcaneal surface to the posterior talar surface", "It has a capsule and two passive ligaments", "It is a mobile joint with two degrees of freedom"],
+      "answer": "CE"
+    },
+    {
+      "stem": "The ankle joint unites the two leg bones to the talus and is of the trochlear type:",
+      "options": ["The tibiofibular mortise has a medial wall facing the lateral surface of the talus", "The tibiofibular mortise has three walls, the superior one being fibular", "The tibial plafond (pilon) faces the talar trochlea", "The medial collateral ligament is made of two bundles, anterior and posterior", "The posterior bundle of the fibular collateral ligament extends from the lateral malleolus to the posterior surface of the talus"],
+      "answer": "CE"
+    },
+    {
+      "stem": "The ulna is a long bone of the forearm forming the medial part of the forearm skeleton:",
+      "options": ["The posterior surface of the olecranon is triangular with a concave inferior base", "The ulnar tuberosity marks the antero-inferior surface of the coronoid process", "The ulnar head has a single articular surface", "The anterior surface of the olecranon and the superior surface of the coronoid process form the trochlear notch of the ulna", "The beak of the olecranon extends its medial surface"],
+      "answer": "BD"
+    },
+    {
+      "stem": "The radio-ulnar articular disc:",
+      "options": ["Is a fibrocartilaginous structure", "Is triangular in shape", "Occupies the medial 2/3 of the antebrachial articular surface", "Is interposed between the ulna and the radius", "Articulates with the triquetrum and the pisiform"],
+      "answer": "AB"
+    },
+    {
+      "stem": "The trapeziometacarpal joint:",
+      "options": ["Is one of the intercarpal joints", "Unites the trapezium and the head of metacarpal I", "Is a saddle-type synovial joint", "Is very mobile", "Performs rotational movements of the thumb"],
+      "answer": "CD"
+    },
+    {
+      "stem": "The internal surface of the annular ligament of the radius:",
+      "options": ["Is purely fibrous in structure", "Is covered with cartilage", "Attaches anteriorly to the anterior border of the radial notch of the ulna", "Encircles the radial head", "Articulates with the articular circumference of the radius"],
+      "answer": "BCDE"
+    },
+    {
+      "stem": "Which passive ligament of the elbow joint attaches to the radius?",
+      "options": ["The ulnar collateral ligament of the elbow", "The radial collateral ligament of the elbow", "The oblique ligament of the elbow", "The posterior ligament", "The quadrate ligament"],
+      "answer": "E"
+    },
+    {
+      "stem": "The elbow joint performs the following movements:",
+      "options": ["Flexion, with a range of 140° to 160°", "Extension, with a range of 0°", "Pronation, with a range of 85°", "Supination, with a range of 80°", "Circumduction"],
+      "answer": "AB"
+    },
+    {
+      "stem": "The pubofemoral ligament:",
+      "options": ["Attaches to the ischial tuberosity", "Attaches to the iliopectineal (iliopubic) eminence", "Was formerly called the ligament of Bertin", "Is an intrasynovial ligament", "Is an active ligament"],
+      "answer": "BC"
+    },
+    {
+      "stem": "The ligament of the head of the femur:",
+      "options": ["Was formerly called the round ligament of the femoral head", "Plays a role in nourishing the femoral head", "Is an intrasynovial and intracapsular ligament", "Reinforces the articular capsule", "Attaches at the fovea capitis"],
+      "answer": "ABE"
+    },
+    {
+      "stem": "The acetabulum:",
+      "options": ["Is the only articular surface of the hip bone", "Is surrounded by the glenoid labrum", "Is surrounded by the cotyloid (acetabular) labrum", "Is entirely covered with articular cartilage", "Is partially covered with articular cartilage"],
+      "answer": "CE"
+    },
+    {
+      "stem": "Muscle has the following properties:",
+      "options": ["Tonicity", "Rigidity", "Elasticity", "Contractility", "Excitability"],
+      "answer": "ACDE"
+    },
+    {
+      "stem": "The roles of muscles are:",
+      "options": ["Heat production", "Vitamin production", "Production of movement", "Concentration of clotting factors", "Stabilization of joints"],
+      "answer": "ACE"
+    }
+  ]
+}

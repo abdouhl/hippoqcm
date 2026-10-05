@@ -1,0 +1,128 @@
+{
+  "semester": 1,
+  "module": "Biostatistics",
+  "source": "EMD1 2022-2023",
+  "questions": [
+    {
+      "stem": "Two events A and B are said to be independent when:",
+      "options": ["P(A ∩ B) = P(A) + P(B)", "P(A ∩ B) = P(A)·P(B)", "P(A ∩ B) = P(A) − P(B)", "P(A ∩ B) = 0"],
+      "answer": "B",
+      "explanation": "No official answer key for this exam — answers worked out."
+    },
+    {
+      "stem": "The correct formula for the expectation of the (observed) sample variance is:",
+      "options": ["E(S²) = 1/n", "E(S²) = σ/(n − 1)", "E(S²) = ((n − 1)/n)·σ²", "E(S²) = σ²/n"],
+      "answer": "C",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "The probability density function of Student's t distribution (tₙ) is:",
+      "options": ["f(t) = (1 + t²/n)^(−(n−1)/2)", "f(t) = (1/(σ√2π))·e^(−½((t−µ)/σ)²)", "f(t) = (1/√2π)·e^(−½((t−µ)/σ)²)", "f(t) = cₙ(1 + t²/n)^(−(n+1)/2)"],
+      "answer": "D",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "The variance of a random variable following the chi-square distribution (n degrees of freedom) equals:",
+      "options": ["2n", "n", "np", "σ²"],
+      "answer": "A",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Cₙᵖ, the number of combinations of p elements taken from n, equals:",
+      "options": ["n!", "n! / (p!(n − p)!)", "n! / (n − p)!", "p! / (n!(n − p)!)"],
+      "answer": "B",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "In general, if X is a discrete variable taking the ordered values x₁, x₂, …, xₚ, xₚ₊₁, …, xₙ, then if n = 2p + 1 the median equals:",
+      "options": ["xₚ₊₁", "xₚ + xₚ₊₁", "(xₚ + xₚ₊₁)/2", "xₚ"],
+      "answer": "A",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Exercise 1 — Distribution of the number of absences for some medical students. The table gives decreasing cumulative frequencies (n↘):\nXᵢ: 3, 7, 12, 14\nn↘: 25, 21, 13, 7\nThe population studied is:",
+      "options": ["25 medical students", "66 medical students", "36 medical students", "14 medical students"],
+      "answer": "A",
+      "explanation": "No official key — the counts are decreasing cumulative: total 25; individual frequencies 4, 8, 6, 7."
+    },
+    {
+      "stem": "Exercise 1 (absences: x = 3, 7, 12, 14 with frequencies 4, 8, 6, 7; N = 25).\nThe mean X̄ equals:",
+      "options": ["7.21", "9.52", "7.02", "13.22"],
+      "answer": "B",
+      "explanation": "No official key — 238/25 = 9.52."
+    },
+    {
+      "stem": "Exercise 1 (absences: x = 3, 7, 12, 14 with frequencies 4, 8, 6, 7; N = 25).\nThe variance equals:",
+      "options": ["16.9296", "15.9296", "14.9326", "16.9396"],
+      "answer": "B",
+      "explanation": "No official key — 106.56 − 9.52² = 15.9296."
+    },
+    {
+      "stem": "Exercise 1 (absences: x = 3, 7, 12, 14 with frequencies 4, 8, 6, 7).\nThe mode equals:",
+      "options": ["14", "03", "12", "07"],
+      "answer": "D",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Exercise 1 (absences: x = 3, 7, 12, 14 with frequencies 4, 8, 6, 7).\nThe median equals:",
+      "options": ["03", "12", "07", "12 (repeated)"],
+      "answer": "BD",
+      "explanation": "No official key — the 13th value is 12. The original exam printed \"12\" twice (options B and D)."
+    },
+    {
+      "stem": "Exercise 2 — A second-hand mobile phone shop has 2500 phones: 650 made in Europe, 780 made in China and the rest local. 3% of European phones and 5% of Chinese phones are returned for a defect after being sold. The probability that a sold phone is not returned is 93.38%.\nWhat is the probability that a customer does not return a phone given that it is locally made?",
+      "options": ["0.1", "0.9", "0.03", "0.04"],
+      "answer": "B",
+      "explanation": "No official key — 1070 local phones; 0.0662 × 2500 = 165.5 returns = 19.5 + 39 + 1070p → p(return | local) = 0.1, so not returned = 0.9."
+    },
+    {
+      "stem": "Exercise 2 (2500 phones: 650 European 3% returned, 780 Chinese 5% returned, 1070 local 10% returned).\nA customer bought a phone and returned it a week later for a battery defect. What is the probability that it is locally made?",
+      "options": ["0.03564", "0.9338", "0.00", "0.6465"],
+      "answer": "D",
+      "explanation": "No official key — 107 / 165.5 ≈ 0.6465."
+    },
+    {
+      "stem": "Exercise 3 — X represents a family's monthly expenses (10³ monetary units), with density f(x) = C(x − 1) if 1 ≤ x < 2; C if 2 ≤ x < 3; 2 − Cx if 3 ≤ x ≤ 4; 0 elsewhere.\nFind the constant C so that f(x) is a probability density.",
+      "options": ["0.5", "0.25", "0.02", "0.22"],
+      "answer": "A",
+      "explanation": "No official key — C/2 + C + (2 − 3.5C) = 2 − 2C = 1 → C = 0.5."
+    },
+    {
+      "stem": "Exercise 3 (density with C = 0.5 on [1, 4]).\nCalculate the probability that a family's monthly expenses do not exceed 2.5 (10³ monetary units).",
+      "options": ["0.3", "0.5", "0.02", "0.8"],
+      "answer": "B",
+      "explanation": "No official key — 0.25 + 0.5 × 0.5 = 0.5."
+    },
+    {
+      "stem": "Exercise 3 (density with C = 0.5 on [1, 4]).\nOut of 1000 families, how many are likely to spend between 2.5 and 3.5 (10³ monetary units)?",
+      "options": ["350", "1000", "250", "438"],
+      "answer": "D",
+      "explanation": "No official key — 0.25 + ∫₃^3.5 (2 − 0.5x)dx = 0.25 + 0.1875 = 0.4375 → ≈ 438 families."
+    },
+    {
+      "stem": "Exercise 3 (density with C = 0.5 on [1, 4]).\nCalculate the standard deviation of X.",
+      "options": ["7.21", "0.6455", "0.6455 (repeated)", "13.22"],
+      "answer": "BC",
+      "explanation": "No official key — E(X) = 2.5, E(X²) = 6.667, V = 0.4167, σ ≈ 0.6455. The original exam printed this value twice (B and C)."
+    },
+    {
+      "stem": "Exercise 4 — A few weeks into the year, the biostatistics teacher gives a 10-question single-choice quiz with four possible answers each (answers given at random). A response sheet is chosen at random.\nWhat is the probability that the sheet contains 3 correct answers?",
+      "options": ["0.2222", "0.7066", "0.2503", "0.3477"],
+      "answer": "C",
+      "explanation": "No official key — X ~ B(10; 0.25): C(10,3) × 0.25³ × 0.75⁷ ≈ 0.2503."
+    },
+    {
+      "stem": "Exercise 4 (X ~ B(10; 0.25) correct answers).\nWhat is the probability that a sheet contains at least two correct answers?",
+      "options": ["0.214", "0.853", "0.145", "0.756"],
+      "answer": "D",
+      "explanation": "No official key — 1 − 0.0563 − 0.1877 ≈ 0.756."
+    },
+    {
+      "stem": "Exercise 4 (part II) — The final exam is a single-choice quiz of 50 questions with four possible answers each. A response sheet is chosen at random.\nWhat is the probability that the sheet contains more than 20 correct answers?",
+      "options": ["0.4501", "0.0071", "0.0025", "0.9122"],
+      "answer": "B",
+      "image": "s1/biostatistics-normal-table.png",
+      "explanation": "No official key — normal approximation of B(50; 0.25): µ = 12.5, σ ≈ 3.06; P(Z > (20 − 12.5)/3.06 ≈ 2.45) ≈ 0.0071."
+    }
+  ]
+}

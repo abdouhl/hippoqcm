@@ -1,0 +1,167 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "source": "EMD1 2024-2025",
+  "questions": [
+    {
+      "stem": "Anatomy is divided into several branches to study the systems, apparatuses and organs of the human body. Which of the following correspond to descriptive anatomy?",
+      "options": ["The study of the location of organs", "The analytical study of the morphology of separate organs", "The study of the relations of organs", "The basis of anatomy", "The basis of surgery"],
+      "answer": "BD"
+    },
+    {
+      "stem": "The anatomical reference position is the position on which all anatomical descriptions are based. Which of the following correspond to it?",
+      "options": ["A living adult, standing", "Palms of the hands facing forward", "Legs flexed", "Gaze horizontal", "Feet apart, placed on the ground"],
+      "answer": "ABD"
+    },
+    {
+      "stem": "The paramedian sagittal plane is an anteroposterior anatomical plane that divides the body into two parts. What are its characteristics?",
+      "options": ["It is symmetrical", "It is asymmetrical", "It divides the body into right and left parts", "It divides the body into medial and lateral parts", "It is vertical"],
+      "answer": "BDE"
+    },
+    {
+      "stem": "For descriptive, topographic and functional anatomy we use reference axes: the body axis, the hand axis and the foot axis. What are the characteristics of the body axis?",
+      "options": ["A transverse line", "A line dropped from the vertex", "A line dropped from the shoulder", "A line passing through the umbilicus", "A line passing through the body's center of gravity"],
+      "answer": "BE"
+    },
+    {
+      "stem": "Flexion is a movement that brings a part of the body forward. What are its axis and plane?",
+      "options": ["A transverse axis and a sagittal plane", "A sagittal axis and a frontal plane", "A vertical axis and a transverse plane", "A vertical axis and a sagittal plane", "A transverse axis and a frontal plane"],
+      "answer": "A"
+    },
+    {
+      "stem": "Cartilage belongs to the skeletal system and makes up most of the fetal skeleton. What are the characteristics of fibrous cartilage (fibrocartilage)?",
+      "options": ["It is rich in elastic fibers", "It is rich in collagen fibers", "It forms the articular adaptation structures of joints", "It is devoid of nerves", "It has blood vessels"],
+      "answer": "BCD"
+    },
+    {
+      "stem": "The human skeleton has two parts: an axial skeleton and an appendicular skeleton. Which of the following bones belong to the axial skeleton?",
+      "options": ["The femur", "The hyoid bone", "The ulna", "The sternum", "The rib"],
+      "answer": "BDE"
+    },
+    {
+      "stem": "The bone surface has articular and non-articular cavities; the latter give passage or attachment to anatomical elements. Which of the following correspond to non-articular cavities?",
+      "options": ["A tubercle", "A fossa (small pit)", "A groove (sulcus)", "A crest", "A notch (incisure)"],
+      "answer": "BCE"
+    },
+    {
+      "stem": "Bone is a dense, solid specialized connective tissue rich in calcium phosphate and carbonate, made of compact and spongy bone. What are the characteristics of compact bone?",
+      "options": ["It is made of osteons", "It is made of bony trabeculae", "It is made of interstitial lamellae", "It is epiphyseal", "It is diaphyseal"],
+      "answer": "ACE"
+    },
+    {
+      "stem": "The hip bone belongs to the pelvic girdle and is formed embryologically by the junction of 3 bony pieces: ilium, ischium and pubis. Which of the following belong to its medial surface?",
+      "options": ["The pecten pubis", "The anterior gluteal line", "The obturator groove", "The arcuate line", "The gluteal surface"],
+      "answer": "ACD"
+    },
+    {
+      "stem": "The hip bone has 4 borders: superior, inferior, anterior and posterior. Which of the following belong to its posterior border?",
+      "options": ["The greater sciatic notch", "The lesser sciatic notch", "The innominate notch", "The iliopectineal (iliopubic) eminence", "The ischial spine"],
+      "answer": "ABE"
+    },
+    {
+      "stem": "The tibial plateau is the base of the proximal epiphysis of the tibia and articulates with the femoral condyles. Which anatomical elements make it up?",
+      "options": ["The medial superior tibial articular surface", "The anterior tibial tuberosity", "The posterior intercondylar area", "The intercondylar tubercles", "The medial tibial tuberosity"],
+      "answer": "ACD"
+    },
+    {
+      "stem": "The distal epiphysis of the tibia articulates below with the talus. Which are the articular surfaces of this epiphysis?",
+      "options": ["The medial superior tibial articular surface", "The inferior tibial articular surface", "The articular surface of the medial malleolus", "The articular surface of the lateral malleolus", "The lateral superior tibial articular surface"],
+      "answer": "BC"
+    },
+    {
+      "stem": "The proximal femoral epiphysis has a femoral head, a greater trochanter, a lesser trochanter and a neck. Which of the following correspond to the greater trochanter?",
+      "options": ["A lateral quadrangular projection", "A medial quadrangular projection", "A rounded projection", "The trochanteric fossa", "The fovea capitis"],
+      "answer": "AD"
+    },
+    {
+      "stem": "The distal epiphysis of the femur articulates with the patella and the tibial plateau. Which are the articular surfaces of this epiphysis?",
+      "options": ["The lateral femoral condyle", "The patellar articular surface of the femur", "The intercondylar fossa", "The medial femoral epicondyle", "The posterior surface of the patella"],
+      "answer": "AB"
+    },
+    {
+      "stem": "The radio-ulnar articular disc:",
+      "options": ["Is a triangular ligament spreading horizontally", "Occupies the lateral third of the antebrachial articular surface", "Is covered with cartilage on its 2 surfaces, superior and inferior", "Gives attachment to the articular capsule on its 2 borders, anterior and posterior", "Attaches laterally to the ulnar styloid process"],
+      "answer": "ACD"
+    },
+    {
+      "stem": "Among the passive ligaments of the radiocarpal joint, which attach to the capitate?",
+      "options": ["The palmar radiocarpal ligament", "The palmar ulnocarpal ligament", "The dorsal radiocarpal ligament", "The radial collateral ligament of the carpus", "The ulnar collateral ligament of the carpus"],
+      "answer": "AB"
+    },
+    {
+      "stem": "The lateral ligament of the talocrural (ankle) joint:",
+      "options": ["Is the strongest", "Is made of 3 bundles", "Extends from the lateral malleolus", "Ends on the talus and the navicular bone", "Can be injured in common ankle sprains"],
+      "answer": "BCE"
+    },
+    {
+      "stem": "The scapulohumeral joint is the proximal joint of the upper (thoracic) limb. It is a joint that is:",
+      "options": ["True and accessory", "Mobile, of the spheroid type", "Not very mobile and rather fragile", "Very mobile and very stable", "Very mobile but unstable"],
+      "answer": "BE"
+    },
+    {
+      "stem": "Synarthroses are immobile joints in which the bony surfaces are united by connective tissue:",
+      "options": ["The articular surfaces are covered with articular cartilage", "The sutures of the skull are synfibroses", "A gomphosis is the joint that unites a tooth to its dental socket", "Synarthroses are temporary joints during growth", "Syndesmoses unite articular surfaces very close to each other"],
+      "answer": "BC"
+    },
+    {
+      "stem": "Synovial joints are mobile joints making up most limb joints. They are characterized by:",
+      "options": ["Epiphyseal articular surfaces of variable shape, covered with hyaline cartilage", "The synovial membrane, lining the inner surface of the capsule, is richly vascularized and innervated", "Ligaments are the active stabilizers of a joint", "Hyaline cartilage has a constant thickness in all joints", "Tendons of periarticular muscles are passive stabilizers of the joint"],
+      "answer": "AB"
+    },
+    {
+      "stem": "Articular adaptation structures are fibrocartilaginous structures interposed between the articular surfaces:",
+      "options": ["They are of three types: labrum, meniscus and disc", "They are richly innervated and vascularized", "They are devoid of vessels and nerves", "The menisci are fibrocartilages of the elbow", "A tear of a fibrocartilage can heal"],
+      "answer": "AC"
+    },
+    {
+      "stem": "Muscles are organs that can contract under a stimulus; they are divided into three groups: striated, smooth and mixed. Striated muscles are:",
+      "options": ["Visceral muscles", "Skeletal muscles", "Made of non-elongated cells", "Made of elongated cells", "Attached to the skeleton"],
+      "answer": "BDE"
+    },
+    {
+      "stem": "Smooth muscles are:",
+      "options": ["Under control of the voluntary nervous system", "Under control of the autonomic (neurovegetative) nervous system", "Located in the viscera", "Located in the arm", "Located in the neck"],
+      "answer": "BC"
+    },
+    {
+      "stem": "Among the mixed muscles:",
+      "options": ["The broad muscles of the abdomen", "The myocardium", "The muscles of hearing (middle ear)", "The muscles of the eye", "The diaphragm"],
+      "answer": "BCE"
+    },
+    {
+      "stem": "The scapula is a flat triangular bone applied to the postero-superior part of the thorax. It has three borders:",
+      "options": ["The spinal superior border", "The cervical superior border", "The spinal lateral border", "The axillary lateral border", "The medial border, the thickest"],
+      "answer": "BD"
+    },
+    {
+      "stem": "Among the elements of the supero-lateral angle of the scapula:",
+      "options": ["The glenoid cavity", "The neck of the scapula", "The pillar of the scapula", "The coracoid notch", "The coracoid process"],
+      "answer": "ABE"
+    },
+    {
+      "stem": "The ulna is a long, paired bone forming the medial part of the forearm skeleton. Its proximal epiphysis shows:",
+      "options": ["The olecranon, a horizontal and anterior process", "The olecranon, a vertical and posterior process", "The coronoid process, which is horizontal and anterior", "The coronoid process, which is vertical and posterior", "The radial notch on its medial surface"],
+      "answer": "BC"
+    },
+    {
+      "stem": "The radius is a long, paired bone forming the lateral part of the forearm skeleton. Its proximal epiphysis has the radial head, made up of:",
+      "options": ["The radial cupula (fovea), its superior surface", "The articular circumference, called the fovea", "The radial cupula, which is the rim of the radial head", "The articular circumference, which is the rim of the radial head", "The radial tuberosity, called the bicipital tuberosity"],
+      "answer": "AD"
+    },
+    {
+      "stem": "The radial head:",
+      "options": ["The radial cupula articulates with the ulna", "The articular circumference articulates with the capitulum", "The radial cupula articulates with the capitulum", "The articular circumference articulates with the ulna", "The radial cupula articulates with the carpus"],
+      "answer": "CD"
+    },
+    {
+      "stem": "The distal end of the radius has five surfaces. Which statements are correct?",
+      "options": ["The ventral surface is hollowed by grooves", "The ventral surface is smooth", "The dorsal surface is hollowed by grooves", "The inferior surface is articular and triangular", "The inferior surface has an articular surface with the ulna called the ulnar notch"],
+      "answer": "BCD"
+    },
+    {
+      "stem": "The scaphoid bone is a bone:",
+      "options": ["Of the carpus", "Of the metacarpus", "Of the first (proximal) row", "Of the second (distal) row", "The first one, located medially"],
+      "answer": "AC"
+    }
+  ]
+}

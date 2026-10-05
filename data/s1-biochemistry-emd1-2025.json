@@ -1,0 +1,141 @@
+{
+  "semester": 1,
+  "module": "Biochemistry",
+  "source": "EMD1 2024-2025",
+  "questions": [
+    {
+      "stem": "D-glucose and L-glucose are isomers that are:",
+      "options": ["Epimers", "Anomers", "Enantiomers", "Functional isomers"],
+      "answer": "C"
+    },
+    {
+      "stem": "Among the following disaccharides, which are made only of two glucoses?",
+      "options": ["Sucrose", "Lactose", "Maltose and cellobiose", "Trehalose and lactose"],
+      "answer": "C"
+    },
+    {
+      "stem": "Trehalose, present in some insects and fungi, is unique among disaccharides because:",
+      "options": ["It contains a free anomeric carbon", "It is hydrolyzed by the enzyme maltase", "It is made of two glucoses linked α(1→1)", "It has a β(1→2) bond between the two glucoses"],
+      "answer": "C"
+    },
+    {
+      "stem": "Which enzyme catalyzes the first reaction of glycolysis?",
+      "options": ["Phosphofructokinase-1 (PFK-1)", "Hexokinase", "Pyruvate kinase", "Enolase"],
+      "answer": "B",
+      "explanation": "This question was numbered as a duplicate \"3\" in the exam and has no line in the official key; hexokinase phosphorylates glucose to glucose-6-phosphate."
+    },
+    {
+      "stem": "To promote glycolysis, what is the main positive regulator of phosphofructokinase-1 (PFK-1)?",
+      "options": ["ATP", "NADH,H+", "Acetyl-CoA", "Fructose-2,6-bisphosphate"],
+      "answer": "D"
+    },
+    {
+      "stem": "Which metabolic pathway regenerates NAD+ under anaerobic conditions?",
+      "options": ["Krebs cycle", "Fermentation", "Pentose phosphate pathway", "Beta-oxidation"],
+      "answer": "B"
+    },
+    {
+      "stem": "What are the main functions of the Krebs cycle?",
+      "options": ["Production of reduced coenzymes for the respiratory chain", "Production of energy as GTP/ATP", "Glucose synthesis", "Supplying intermediates for anabolic pathways"],
+      "answer": "ABD"
+    },
+    {
+      "stem": "Among the following reactions, which generate NADH in the Krebs cycle?",
+      "options": ["Conversion of isocitrate to α-ketoglutarate", "Conversion of succinyl-CoA to succinate", "Conversion of α-ketoglutarate to succinyl-CoA", "Conversion of malate to oxaloacetate"],
+      "answer": "ACD"
+    },
+    {
+      "stem": "Which Krebs cycle reactions release CO₂?",
+      "options": ["Conversion of oxaloacetate to citrate", "Conversion of isocitrate to α-ketoglutarate", "Conversion of α-ketoglutarate to succinyl-CoA", "Conversion of succinate to fumarate"],
+      "answer": "BC"
+    },
+    {
+      "stem": "What are the consequences of a Krebs cycle dysfunction?",
+      "options": ["Decreased production of NADH,H+ and FADH₂", "Accumulation of oxaloacetate", "Reduced ATP production", "Increased oxidative metabolism"],
+      "answer": "AC"
+    },
+    {
+      "stem": "Which gluconeogenesis enzyme is absent in muscle?",
+      "options": ["Pyruvate carboxylase", "Phosphoenolpyruvate carboxykinase", "Fructose-1,6-bisphosphatase", "Glucose-6-phosphatase"],
+      "answer": "D"
+    },
+    {
+      "stem": "Which precursors are NOT used in gluconeogenesis?",
+      "options": ["Glycerol", "Lactate", "Acetyl-CoA", "Malonyl-CoA"],
+      "answer": "CD"
+    },
+    {
+      "stem": "What is the main role of the Cori cycle in glucose metabolism?",
+      "options": ["Transport glucose from muscles to the liver", "Recycle lactate produced in muscle into glucose in the liver", "Convert pyruvate into acetyl-CoA", "Store excess glucose as glycogen"],
+      "answer": "B"
+    },
+    {
+      "stem": "Which molecules come from the non-oxidative phase of the pentose phosphate pathway (PPP) and can re-enter glycolysis?",
+      "options": ["Fructose-6-phosphate", "Fructose-1,6-bisphosphate", "Xylulose-5-phosphate", "Glyceraldehyde-3-phosphate"],
+      "answer": "AD"
+    },
+    {
+      "stem": "Consider a triglyceride (TG): α-arachidonyl-β-linolenyl-acyl(X)-glycerol (Questions 14, 15, 16). Given: TG molar mass = 904; arachidonic acid C20:4; linolenic acid C18:3.\nWhat is the saturated fatty acid (acyl X) esterifying the α′ position of glycerol?",
+      "options": ["Palmitic acid", "Stearic acid", "Arachidic acid", "All the propositions are false"],
+      "answer": "B",
+      "explanation": "M(X) = 904 − 92 + 3×18 − 304 − 278 = 284 g/mol → stearic acid (C18:0)."
+    },
+    {
+      "stem": "(Same TG: α-arachidonyl-β-linolenyl-stearyl-glycerol, M = 904.) The saponification index of the TG is: (Given KOH = 56)",
+      "options": ["61.94", "123.89", "185.84", "All the propositions are false"],
+      "answer": "C",
+      "explanation": "SI = 3 × 56 000 / 904 ≈ 185.84."
+    },
+    {
+      "stem": "(Same TG, M = 904, with C20:4 and C18:3.) The iodine index of the TG is: (Given I = 127)",
+      "options": ["84.29", "112.38", "196.68", "All the propositions are false"],
+      "answer": "C",
+      "explanation": "7 double bonds: II = 7 × 254 × 100 / 904 ≈ 196.68."
+    },
+    {
+      "stem": "What is the main role of lipids in the body?",
+      "options": ["Provide energy", "Store genetic information", "Catalyze chemical reactions", "Be involved in oxygen transport in the body"],
+      "answer": "A"
+    },
+    {
+      "stem": "Concerning essential fatty acids:",
+      "options": ["They play a crucial role in protein synthesis", "Their deficiency can cause cardiovascular disorders only", "Their deficiency can cause disorders of cell-exchange permeability and coagulation disorders", "Red meat is a good food source of essential fatty acids"],
+      "answer": "C"
+    },
+    {
+      "stem": "Concerning prostaglandins:",
+      "options": ["The main role of prostaglandins in the body is to provide energy", "Prostaglandins play a role in hormonal regulation", "Prostaglandins are produced from cholesterol", "Prostaglandins are often involved in lipid digestion"],
+      "answer": "B"
+    },
+    {
+      "stem": "What type of reaction is involved in the formation of triglycerides?",
+      "options": ["Oxidation", "Hydrolysis", "Esterification", "All the propositions are false"],
+      "answer": "C"
+    },
+    {
+      "stem": "What is the role of fatty acids in the structure of glycerophospholipids?",
+      "options": ["They provide energy", "They contribute to membrane fluidity", "They are responsible for cell signaling", "They have no role"],
+      "answer": "B"
+    },
+    {
+      "stem": "Which process is mainly responsible for the degradation of fatty acids?",
+      "options": ["Glycolysis", "β-oxidation", "Lipogenesis", "Lipolysis"],
+      "answer": "B"
+    },
+    {
+      "stem": "What is the role of carnitine in fatty acid metabolism?",
+      "options": ["It transports fatty acids into the mitochondria", "It catalyzes the addition reaction of saturated fatty acids", "It synthesizes fatty acids", "It degrades fatty acids in the cytoplasm"],
+      "answer": "A"
+    },
+    {
+      "stem": "Concerning the regulation of fatty acid degradation:",
+      "options": ["NADH activates 3-hydroxyacyl-CoA dehydrogenase", "NADH inhibits 3-hydroxyacyl-CoA dehydrogenase", "Acetyl-CoA activates thiolase", "A high cytosolic malonyl-CoA concentration inhibits acyl-carnitine transferase 1 (CAT1)"],
+      "answer": "BD"
+    },
+    {
+      "stem": "Concerning fatty acid biosynthesis:",
+      "options": ["This synthesis requires an energy source", "It is entirely cytosolic", "Its rate is maximal when carbohydrates are low", "The precursor of this synthesis is acetyl-CoA"],
+      "answer": "ABD"
+    }
+  ]
+}

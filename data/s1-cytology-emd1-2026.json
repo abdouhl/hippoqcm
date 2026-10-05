@@ -1,0 +1,307 @@
+{
+  "semester": 1,
+  "module": "Cytology",
+  "source": "EMD1 2025-2026",
+  "questions": [
+    {
+      "stem": "You are working on a cell line derived from a malignant colonic tumor. During the observation of your cells using the laboratory light microscope, you notice an intense bright spot at the center of the field of view, with a progressive decrease in light intensity toward the periphery. Which component should be adjusted to correct this finding?",
+      "options": ["condenser.", "revolving nosepiece (objective turret).", "tube connecting the objectives to the eyepieces.", "light source."],
+      "answer": "A"
+    },
+    {
+      "stem": "In this cell line, you intend to analyze the distribution of mitochondria. You choose to use fluorochromes. Which fluorochrome is the most appropriate for this experiment?",
+      "options": ["fluorescein.", "green fluorescent protein (GFP).", "rhodamine.", "DAPI."],
+      "answer": "C"
+    },
+    {
+      "stem": "After fluorescent labeling (rhodamine), you examine the slides using a fluorescence microscope. At which wavelength should the excitation filter be set to visualize mitochondria?",
+      "options": ["ultraviolet (358 nm).", "green (540–550 nm).", "blue (495 nm).", "red (570–590 nm)."],
+      "answer": "B"
+    },
+    {
+      "stem": "What is the emission wavelength of the used fluorochrome (rhodamine)?",
+      "options": ["ultraviolet (358 nm).", "blue (495 nm).", "green (540–550 nm).", "red-orange (570–590 nm)."],
+      "answer": "D"
+    },
+    {
+      "stem": "The next step of your project consists of isolating mitochondria by cell fractionation. You begin with the homogenization of your sample. Which conditions must be respected to preserve mitochondria?",
+      "options": ["neutral pH.", "isotonic medium.", "protection from light.", "low temperature (4 °C)."],
+      "answer": "ABD"
+    },
+    {
+      "stem": "After homogenization, which protocol should be followed to isolate a large quantity of mitochondria from your sample?",
+      "options": [
+        "differential ultracentrifugation alone.",
+        "density gradient ultracentrifugation alone.",
+        "differential ultracentrifugation followed by density gradient ultracentrifugation.",
+        "density gradient ultracentrifugation followed by differential ultracentrifugation."
+      ],
+      "answer": "C"
+    },
+    {
+      "stem": "After isolation of mitochondria, you aim to study the precise organization of transporters within the inner mitochondrial membrane. Which technique is the most appropriate for this study?",
+      "options": ["bright-field light microscopy.", "transmission electron microscopy (TEM).", "fluorescence microscopy.", "scanning electron microscopy (SEM)."],
+      "answer": "B"
+    },
+    {
+      "stem": "To move forward, a migrating cell forms a lamellipodium. Which cytoskeletal event is directly responsible for this extension?",
+      "options": [
+        "the stable polymerization of microtubules.",
+        "the depolymerization of actin filaments at the front of the cell.",
+        "the polymerization of actin, pushing the membrane forward.",
+        "reinforcement by desmin filaments."
+      ],
+      "answer": "C"
+    },
+    {
+      "stem": "A drug that prevents tubulin polymerization will result in:",
+      "options": [
+        "increased contraction of actin filaments.",
+        "disruption of intracellular transport.",
+        "disruption of mitotic spindle formation during cell division.",
+        "impaired ciliary motility."
+      ],
+      "answer": "BCD"
+    },
+    {
+      "stem": "Intermediate filaments are directly involved in:",
+      "options": ["desmosomes.", "tight junctions.", "hemidesmosomes.", "maintaining nuclear shape."],
+      "answer": "ACD"
+    },
+    {
+      "stem": "The centrosome plays a key role in cytoskeleton organization. Among the following statements, which are correct?",
+      "options": [
+        "it constitutes the main microtubule-organizing center (MTOC).",
+        "it orients the growth of microtubules formed from gamma and beta tubulin.",
+        "it directly regulates the polymerization of actin filaments.",
+        "it participates in organizing the mitotic spindle during cell division."
+      ],
+      "answer": "AD"
+    },
+    {
+      "stem": "Adding an actin polymerization inhibitor leads to:",
+      "options": ["a defect in cytokinesis.", "impaired muscle contraction.", "loss of cell motility.", "disorganization of the cell cortex."],
+      "answer": "ABCD"
+    },
+    {
+      "stem": "Correctly match:",
+      "options": ["cytokeratins → epithelial cells.", "neurofilaments → axons.", "desmin → muscle cells.", "laminins → nucleus."],
+      "answer": "ABC"
+    },
+    {
+      "stem": "A cell loses its ability to move. The most directly involved structures are:",
+      "options": ["actin microfilaments.", "microtubules of the centrioles.", "intermediate filaments.", "nuclear lamina."],
+      "answer": "A"
+    },
+    {
+      "stem": "Eubacteria are best described as:",
+      "options": [
+        "multicellular organisms with specialized tissues.",
+        "unicellular microscopic organisms with diverse shapes but a common organization plan.",
+        "viruses that reproduce independently.",
+        "eukaryotic cells lacking a nucleus."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "A key example of archaeal uniqueness is that their rRNA:",
+      "options": ["is identical to bacterial rRNA.", "is identical to eukaryotic rRNA.", "differs from both bacterial and eukaryotic rRNA.", "is absent."],
+      "answer": "C"
+    },
+    {
+      "stem": "Archaea are similar to eubacteria in terms of:",
+      "options": ["morphology and metabolism.", "having a nucleus.", "having peptidoglycan walls.", "having mitochondria."],
+      "answer": "A"
+    },
+    {
+      "stem": "Viral integration into the host genome implies that:",
+      "options": [
+        "the virus becomes a bacterium.",
+        "viral DNA replicates at the same pace as host DNA.",
+        "the virus immediately lyses the cell.",
+        "the virus loses all genetic information."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "Concerning exocytosis:",
+      "options": [
+        "regulated exocytosis requires an external signal (hormone/neurotransmitter) and occurs in specialized secretory cells.",
+        "constitutive exocytosis transports vesicles from the trans-Golgi network (TGN) to the plasma membrane.",
+        "constitutive exocytosis maintains membrane renewal.",
+        "regulated exocytosis releases vesicle contents after fusion with the plasma membrane."
+      ],
+      "answer": "ABCD"
+    },
+    {
+      "stem": "In Na⁺/glucose symport in enterocytes:",
+      "options": [
+        "2 Na⁺ + 1 glucose enter through SGLT1 at the apical membrane.",
+        "glucose exits through GLUT2 at the basal membrane.",
+        "Na⁺/K⁺-ATPase maintains the Na⁺ gradient by extruding Na⁺.",
+        "glucose enters by simple diffusion at the apical surface."
+      ],
+      "answer": "ABC"
+    },
+    {
+      "stem": "Simple diffusion across the membrane depends on:",
+      "options": ["molecular size.", "partition coefficient (lipid solubility).", "concentration gradient.", "electrical charge and hydration."],
+      "answer": "ABCD"
+    },
+    {
+      "stem": "Membrane asymmetry refers to:",
+      "options": [
+        "equal composition on both sides of the membrane.",
+        "different structures/functions of inner vs outer membrane surfaces.",
+        "the absence of receptors.",
+        "a membrane made only of proteins."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "Specializations of the cell periphery:",
+      "options": [
+        "cilia and flagella are important for cell motility or movement of surrounding fluids.",
+        "microvilli function mainly to increase surface area for absorption and exchange.",
+        "stereocilia are motile and microtubule-based.",
+        "cilia and flagella are important for membrane glycosylation."
+      ],
+      "answer": "AB"
+    },
+    {
+      "stem": "Caveolae are:",
+      "options": [
+        "small flask-shaped invaginations derived from lipid rafts.",
+        "derived from lipid rafts / DIGs.",
+        "rich in cholesterol and glycosphingolipids.",
+        "contain caveolin."
+      ],
+      "answer": "ABCD"
+    },
+    {
+      "stem": "Receptor-mediated pinocytosis occurs mainly through:",
+      "options": ["smooth vesicles without receptors.", "clathrin-coated pits with receptor–ligand complexes.", "mitochondrial cristae.", "tight junctions."],
+      "answer": "B"
+    },
+    {
+      "stem": "GPI-anchored proteins are attached via:",
+      "options": ["peptidoglycan chains.", "phosphatidylinositol in the outer leaflet.", "cholesterol rings in the inner leaflet.", "microtubules."],
+      "answer": "B"
+    },
+    {
+      "stem": "Which mechanism is the most selective?",
+      "options": ["smooth (uncoated) pinocytosis.", "receptor-mediated pinocytosis via clathrin-coated pits.", "micropinocytosis.", "simple diffusion."],
+      "answer": "B"
+    },
+    {
+      "stem": "Under TEM, the trilaminar appearance is characterized by:",
+      "options": [
+        "two dense layers (~2 nm each).",
+        "a light layer (~3.5 nm) between them.",
+        "the same trilaminar appearance in organelle membranes.",
+        "a structure caused by three lipid bilayers stacked."
+      ],
+      "answer": "ABC"
+    },
+    {
+      "stem": "Mature basal lamina components include:",
+      "options": ["laminin.", "type IV collagen.", "nidogen/entactin.", "perlecan."],
+      "answer": "ABCD"
+    },
+    {
+      "stem": "GAG hydration causes:",
+      "options": ["attraction of cations.", "formation of hydrated gel.", "resistance to compressive forces.", "increased tensile strength mainly."],
+      "answer": "ABC"
+    },
+    {
+      "stem": "Tissue-specific ECM organization depends on:",
+      "options": [
+        "variable proportions of ECM macromolecules depending on the tissue.",
+        "local synthesis of macromolecules by the cells within the matrix.",
+        "universal identical ECM composition.",
+        "mitochondrial density in ECM."
+      ],
+      "answer": "AB"
+    },
+    {
+      "stem": "Which combinations correctly link ECM component → main mechanical contribution?",
+      "options": [
+        "collagen → tensile strength.",
+        "GAGs → resistance to compressive forces through hydration.",
+        "elastin → elasticity and tear prevention.",
+        "collagen IV → main source of elasticity in blood vessels."
+      ],
+      "answer": "ABC"
+    },
+    {
+      "stem": "Compared with the plasma membrane, ER membrane lipids are characterized by:",
+      "options": [
+        "longer aliphatic chains and higher cholesterol content.",
+        "shorter aliphatic chains and lower cholesterol content → increased fluidity.",
+        "saturated chains and high cholesterol → decreased fluidity.",
+        "identical lipid composition and identical fluidity."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "Export of misfolded proteins from the ER involves:",
+      "options": [
+        "passage through the translocon pore back to the cytosol.",
+        "assistance of an ER chaperone molecule.",
+        "deglycosylation in the cytosol.",
+        "ubiquitination followed by proteasomal degradation."
+      ],
+      "answer": "ABCD"
+    },
+    {
+      "stem": "Soluble ER-resident proteins are retained by a C-terminal:",
+      "options": ["KKXX motif.", "KDEL sequence.", "SRP-binding domain.", "Stop-transfer segment."],
+      "answer": "B"
+    },
+    {
+      "stem": "In the ER lumen, proteins receive oligosaccharides mainly through:",
+      "options": [
+        "O-glycosidic linkages on serine/threonine.",
+        "N-glycosidic (asparagine-linked) bonds.",
+        "attachment only to cytosolic proteins.",
+        "random attachment without enzymes."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "If the signal sequence is internal, it:",
+      "options": [
+        "is cleaved and removed like an N-terminal signal peptide.",
+        "acts as a start-transfer signal and remains as a transmembrane α-helix.",
+        "is degraded before insertion.",
+        "prevents glycosylation entirely."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "If an mRNA encodes a protein lacking an ER signal peptide:",
+      "options": [
+        "the polyribosome binds to the RER and the protein enters the lumen.",
+        "the polyribosome remains free in the cytosol and the protein stays cytosolic.",
+        "the SRP forces translocation into the ER regardless of the signal peptide.",
+        "the protein becomes an ER-resident protein by default."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "Free ribosomes mainly synthesize proteins destined for:",
+      "options": [
+        "secretion outside the cell.",
+        "the cytosol or organelles like peroxisomes and mitochondria.",
+        "glycosylation in the Golgi.",
+        "lysosomal digestion."
+      ],
+      "answer": "B"
+    },
+    {
+      "stem": "Multi-pass transmembrane proteins are characterized by:",
+      "options": ["crossing the bilayer several times.", "multiple regular α-helices.", "being peripheral proteins.", "having no hydrophobic segments."],
+      "answer": "AB"
+    }
+  ]
+}

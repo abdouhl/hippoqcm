@@ -1,0 +1,185 @@
+{
+  "semester": 1,
+  "module": "Chemistry",
+  "source": "EMD1 2025-2026",
+  "questions": [
+    {
+      "stem": "Natural copper consists of two stable isotopes ⁶³₂₉Cu and ⁶⁵₂₉Cu with respective atomic masses 62.929 uma and 64.927 uma, given that the average atomic mass is equal to 63.540 uma. Calculate the abundances of the two isotopes.",
+      "options": ["30.58% ; 69.42%", "20.08% ; 79.92%", "50.58% ; 49.42%", "20.38% ; 79.62%"],
+      "answer": "A",
+      "explanation": "62.929x + 64.927(1 − x) = 63.540 ⇒ x(⁶³Cu) ≈ 69.42%, ⁶⁵Cu ≈ 30.58%."
+    },
+    {
+      "stem": "Calculate the mass defect Δm for the isotope ⁶³₂₉Cu (M = 62.929 uma) in uma. (mp = 1.00718 uma; mn = 1.00850 uma)",
+      "options": ["0.56 uma", "2.61 uma", "0.90 uma", "0.28 uma"],
+      "answer": "A",
+      "explanation": "Δm = 29 × 1.00718 + 34 × 1.00850 − 62.929 ≈ 0.57 uma."
+    },
+    {
+      "stem": "The mass of 1 uma in kg is:",
+      "options": ["1.66054 × 10⁻²³ kg", "1.66054 × 10⁻²⁷ kg", "1.00054 × 10⁻²⁷ kg", "0.66054 × 10⁻²⁷ kg"],
+      "answer": "B"
+    },
+    {
+      "stem": "The electron of a hydrogen atom initially in its ground state absorbs an amount of energy of 12.09 eV. To which energy level n would it transition?",
+      "options": ["n = 5", "n = 2", "n = 1", "n = 3"],
+      "answer": "D",
+      "explanation": "13.6(1 − 1/n²) = 12.09 ⇒ 1/n² ≈ 0.111 ⇒ n = 3."
+    },
+    {
+      "stem": "This electron (hydrogen atom, now at n = 3) emits radiation with a wavelength of 657.7 nm; what energy level would it be at in this case?",
+      "options": ["n = 7", "n = 2", "n = 3", "n = 6"],
+      "answer": "B",
+      "explanation": "656–657 nm is the Hα line of the Balmer series (3 → 2)."
+    },
+    {
+      "stem": "How many rays can be emitted when the electron returns from the n = 4 orbital to the ground state?",
+      "options": ["9 rays", "4 rays", "6 rays", "1 ray"],
+      "answer": "C",
+      "explanation": "n(n − 1)/2 = 4 × 3/2 = 6."
+    },
+    {
+      "stem": "The electron of a hydrogenoid is in a level n = 4 with energy E = E_H = −13.6 eV. Which hydrogenoid is it?",
+      "options": ["Be³⁺", "Li²⁺", "B⁴⁺", "He⁺"],
+      "answer": "A",
+      "explanation": "−13.6·Z²/16 = −13.6 ⇒ Z = 4 ⇒ Be³⁺."
+    },
+    {
+      "stem": "Define the value of Z for this hydrogenoid (electron at n = 4 with E = −13.6 eV).",
+      "options": ["Z = 8", "Z = 17", "Z = 4", "Z = 6"],
+      "answer": "C"
+    },
+    {
+      "stem": "Which of these electronic structures are incorrect?\n1) 1s² 2s² 2p⁶ 3s¹\n2) 1s² 2s² 2p⁷ 3s²\n3) 1s² 2s² 2p⁵ 3s¹\n4) 1s² 2s³ 2p⁶ 2d¹⁰ 3s²\n5) 1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 3f⁶",
+      "options": ["1, 2, 3", "1, 3, 5", "3, 2, 4", "2, 5, 4"],
+      "answer": "D",
+      "explanation": "2p⁷ (max 6), 2s³/2d (no d sublevel for n = 2) and 3f (no f for n = 3) are impossible. Structure 3 is an excited state but allowed."
+    },
+    {
+      "stem": "In the following series of values for the quantum numbers (n, l, m) of an electron, define the possible cases.\n1) (2,0,0)  2) (2,1,−1)  3) (2,2,0)  4) (1,0,1)  5) (4,1,−2)  6) (3,0,0)",
+      "options": ["1, 2, 6", "3, 4, 5", "4, 5, 6", "3, 4, 1"],
+      "answer": "A",
+      "explanation": "Rules: 0 ≤ l ≤ n − 1 and −l ≤ m ≤ +l."
+    },
+    {
+      "stem": "An element has fewer than 20 electrons and two unpaired electrons. What are its possible Z values?",
+      "options": ["₁X, ₈X, ₉X, ₁₇X", "₁₆X, ₁₂X, ₆X, ₅X", "₁₆X, ₈X, ₆X, ₁₄X", "₁₁X, ₈X, ₇X, ₂₁X"],
+      "answer": "C",
+      "explanation": "np² or np⁴: C (6), O (8), Si (14), S (16)."
+    },
+    {
+      "stem": "Given the elements F, Cl, Rb, and Rb⁻, rank these species in order of increasing atomic radius.",
+      "options": ["F < Rb < Cl < Rb⁻", "F < Cl < Rb < Rb⁻", "Rb⁻ < Cl < Rb < F", "Rb < Cl < F < Rb⁻"],
+      "answer": "B"
+    },
+    {
+      "stem": "Rank these elements (F, Cl, Rb, Rb⁻) in order of increasing ionisation energy.",
+      "options": ["Rb⁻ < Rb < Cl < F", "Rb < Rb⁻ < Cl < F", "Rb⁻ < Cl < Rb < F", "Rb⁻ < Rb < F < Cl"],
+      "answer": "A"
+    },
+    {
+      "stem": "The three molecules NH₃, H₂O, and CH₄ have an arrangement:",
+      "options": ["Bipyramids", "Planar triangle", "Linear", "Tetrahedral"],
+      "answer": "D"
+    },
+    {
+      "stem": "Consider a beryllium ion ₄Be³⁺. Given that r₀(H) = 0.53 Å, what are the radii corresponding to the K and L shells of this ion?",
+      "options": ["0.15 Å, 0.23 Å", "0.1325 Å, 0.53 Å", "0.25 Å, 1.53 Å", "0.145 Å, 0.83 Å"],
+      "answer": "B",
+      "explanation": "r = 0.53·n²/Z: K (n = 1) = 0.53/4 = 0.1325 Å; L (n = 2) = 0.53 × 4/4 = 0.53 Å."
+    },
+    {
+      "stem": "When radiation with wavelength λ is sent onto this ion (Be³⁺), an electron moves from layer n = 1 to n = 5. Calculate the frequency of the absorbed radiation. (R_H = 1.09677576 × 10⁷ m⁻¹; c = 3.00 × 10⁸ m/s)",
+      "options": ["3.55 × 10¹⁶ s⁻¹", "5.7055 × 10¹⁷ s⁻¹", "5.06 × 10¹⁶ s⁻¹", "0.765 × 10¹⁰ s⁻¹"],
+      "answer": "C",
+      "explanation": "ν = R_H·c·Z²(1 − 1/25) = 1.0968×10⁷ × 3×10⁸ × 16 × 0.96 ≈ 5.06 × 10¹⁶ s⁻¹."
+    },
+    {
+      "stem": "Indicate which of the following triplets is possible.",
+      "options": ["n = 3 ; l = 2 ; m = 0", "n = 2 ; l = 2 ; m = −1", "n = 3 ; l = 0 ; m = 3", "n = 3 ; l = −2 ; m = 0"],
+      "answer": "A"
+    },
+    {
+      "stem": "Give the electronic structure of the valence shell of the first alkaline earth metal.",
+      "options": ["4s²", "2s² 2p⁴", "5s¹", "2s²"],
+      "answer": "D",
+      "explanation": "Beryllium (Z = 4)."
+    },
+    {
+      "stem": "Give the electronic structure of the valence shell of the halogen of the third period.",
+      "options": ["2s² 2p³ s¹", "3s² 3p⁵", "4s² 4p³", "3s¹"],
+      "answer": "B",
+      "explanation": "Chlorine (Z = 17)."
+    },
+    {
+      "stem": "Give the electronic structure of the valence shell of the ninth transition metal.",
+      "options": ["4s² 3d²", "4s¹ 3d¹⁰", "3s² 3p⁵", "4s¹ 3d⁵"],
+      "answer": "B",
+      "explanation": "Sc, Ti, V, Cr, Mn, Fe, Co, Ni, Cu → copper (exception: 4s¹ 3d¹⁰)."
+    },
+    {
+      "stem": "Knowing the electronegativity of the atoms H (2.2), Cl (3.1), K (0.8), F (4.0), predict the main character (ionic, covalent) of the bonds, in the same order, of the following molecules: K-F; K-Cl; H-Cl and H-H.",
+      "options": [
+        "Ionic; ionic; covalent; covalent",
+        "Covalent; ionic; ionic; covalent",
+        "Covalent; covalent; ionic; ionic",
+        "Ionic; covalent; covalent; ionic"
+      ],
+      "answer": "A"
+    },
+    {
+      "stem": "Consider the following molecules: CO₂; CH₄; C₂H₄ and C₂H₂. Specify the hybridisation states of the carbon atoms (in this order).",
+      "options": ["sp³, sp, sp, sp²", "sp, sp², sp, sp³", "sp, sp², sp³, sp", "sp, sp³, sp², sp"],
+      "answer": "D"
+    },
+    {
+      "stem": "Calculate the theoretical dipole moment μthéo of HCl gas. Given that μexp = 1.07 D and the interatomic distance is 127.4 pm (printed as \"nm\" on the exam). (1 D = 3.33 × 10⁻³⁰ C·m; e = 1.6 × 10⁻¹⁹ C)",
+      "options": ["4.31 D", "6.11 D", "9.1 D", "0.91 D"],
+      "answer": "B",
+      "explanation": "μ = e·d = 1.6×10⁻¹⁹ × 127.4×10⁻¹² ≈ 2.04×10⁻²⁹ C·m ≈ 6.11 D."
+    },
+    {
+      "stem": "Determine the ionic percentage of the H-Cl bond (μexp = 1.07 D, μthéo = 6.11 D).",
+      "options": ["17.5%", "11.09%", "7.5%", "27.9%"],
+      "answer": "A",
+      "explanation": "1.07 / 6.11 ≈ 17.5%."
+    },
+    {
+      "stem": "For a 50 ml solution containing 3.65 g of HCl (MW = 36.5 g/mol), calculate the molarity.",
+      "options": ["0.005 mol/l", "0.5 mol/l", "2 mol/l", "2.5 mol/l"],
+      "answer": "C",
+      "explanation": "0.1 mol / 0.05 L = 2 mol/L."
+    },
+    {
+      "stem": "For a 50 ml solution containing 3.65 g of HCl (MW = 36.5 g/mol), calculate the normality.",
+      "options": ["0.25 N", "2.0 N", "0.01 N", "0.001 N"],
+      "answer": "B"
+    },
+    {
+      "stem": "For a 50 ml solution containing 3.65 g of HCl (MW = 36.5 g/mol), calculate the mass concentration.",
+      "options": ["65 g/l", "27 g/l", "34 g/l", "73 g/l"],
+      "answer": "D",
+      "explanation": "3.65 g / 0.05 L = 73 g/L."
+    },
+    {
+      "stem": "A sigma bond (σ) results from:",
+      "options": ["Lateral overlap of p orbitals.", "Axial (frontal) overlap of orbitals.", "Electron transfer between two atoms.", "The bond between two d orbitals."],
+      "answer": "B"
+    },
+    {
+      "stem": "A pi (π) bond is formed by:",
+      "options": ["Axial overlap of s orbitals.", "The first bond between two atoms.", "A single carbon-carbon bond.", "Lateral overlap of p orbitals."],
+      "answer": "D"
+    },
+    {
+      "stem": "Determine the type of molecule AXₙEₘ for the following molecules and molecular ions: NO₂⁻, H₂CO, NH₃, NO₂⁺.",
+      "options": [
+        "AX₂E₁, AX₂, AX₃, AX₂E₁",
+        "AX₂E₁, AX₃, AX₃E₁, AX₂",
+        "AX₃E₁, AX₂, AX₃, AX₂E₁",
+        "AX₃, AX₂E₁, AX₂, AX₃E₁"
+      ],
+      "answer": "B"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "semester": 1,
+  "module": "Biostatistics",
+  "source": "EMD2 2017-2018",
+  "questions": [
+    {
+      "stem": "The number of classes is calculated by the formula (Sturges):",
+      "options": ["n_c = 1 + (10/3)·log₁₀ n", "n_c = n + (10/3)·log₁₀ a", "n_c = a + (10/3)·log₁₀ n", "n_c = 1 + (10/3)·log₁₀ a"],
+      "answer": "A"
+    },
+    {
+      "stem": "A continuous quantitative variable is represented graphically by:",
+      "options": ["A pie chart", "A bar chart", "A histogram", "A stick (bar-line) diagram"],
+      "answer": "C"
+    },
+    {
+      "stem": "When ρ²(X, Y) > 0.9, there is a linear relation between X and Y of the form Y = aX + b, called the regression line of Y on X, which minimizes the sum:",
+      "options": ["S = ΣᵢΣⱼ nᵢⱼ (xⱼ − b·yᵢ − a)²", "S = ΣᵢΣⱼ nᵢⱼ (yⱼ − b)²", "S = ΣᵢΣⱼ nᵢⱼ (xⱼ − a·xᵢ − b)²", "S = ΣᵢΣⱼ nᵢⱼ (yⱼ − a·xᵢ − b)²"],
+      "answer": "D"
+    },
+    {
+      "stem": "Exercise 2 — Distribution of the number of absences for some medical students. The table gives decreasing cumulative frequencies (n↘):\nXᵢ: 3, 7, 12, 14\nn↘: 25, 21, 13, 7\nThe population studied is:",
+      "options": ["66 medical students", "25 medical students", "36 medical students", "28 medical students"],
+      "answer": "B",
+      "explanation": "The counts are decreasing cumulative: the first value (25) is the total. Individual frequencies: 4, 8, 6, 7."
+    },
+    {
+      "stem": "Exercise 2 (absences: x = 3, 7, 12, 14 with frequencies 4, 8, 6, 7; N = 25).\nThe mean X̄ equals:",
+      "options": ["7.21", "17", "9.52", "13.22"],
+      "answer": "C",
+      "explanation": "(12 + 56 + 72 + 98)/25 = 238/25 = 9.52."
+    },
+    {
+      "stem": "Exercise 2 (absences: x = 3, 7, 12, 14 with frequencies 4, 8, 6, 7; N = 25).\nThe variance equals:",
+      "options": ["16.9296", "15.9296", "14.9326", "16.9396"],
+      "answer": "B",
+      "explanation": "2664/25 − 9.52² = 106.56 − 90.6304 = 15.9296."
+    },
+    {
+      "stem": "Exercise 2 (absences, variance 15.9296).\nThe standard deviation equals:",
+      "options": ["3.9911", "4.1157", "3.8642", "4.1145"],
+      "answer": "A"
+    },
+    {
+      "stem": "Exercise 2 (absences: x = 3, 7, 12, 14 with frequencies 4, 8, 6, 7).\nThe mode equals:",
+      "options": ["14", "03", "12", "07"],
+      "answer": "D"
+    },
+    {
+      "stem": "Exercise 2 (absences: x = 3, 7, 12, 14 with frequencies 4, 8, 6, 7).\nThe median equals:",
+      "options": ["03", "07", "14", "12"],
+      "answer": "D",
+      "explanation": "13th value: cumulative 4, 12, 18 → 12."
+    },
+    {
+      "stem": "Exercise 2 (absences: x = 3, 7, 12, 14 with frequencies 4, 8, 6, 7).\nThe interquartile range equals:",
+      "options": ["14", "06", "07", "19"],
+      "answer": "C",
+      "explanation": "Q1 = 7, Q3 = 14 → 7."
+    },
+    {
+      "stem": "Exercise 2 (absences: mean 9.52, SD 3.9911).\nThe coefficient of variation equals:",
+      "options": ["41.2%", "41.5%", "41%", "41.9%"],
+      "answer": "D",
+      "explanation": "3.9911 / 9.52 ≈ 41.9%."
+    },
+    {
+      "stem": "Exercise 3 — The weight (X, kg) and height (Y, cm) of the pupils of a class were recorded (contingency table in the figure).\nThe mean X̄ is:",
+      "options": ["49", "49.125", "50.125", "51"],
+      "answer": "B",
+      "image": "s1/biostatistics-2018-emd2-table.png"
+    },
+    {
+      "stem": "Exercise 3 (weight X / height Y table).\nThe mean Ȳ is:",
+      "options": ["160", "159", "161", "149"],
+      "answer": "B",
+      "image": "s1/biostatistics-2018-emd2-table.png"
+    },
+    {
+      "stem": "Exercise 3 (weight X / height Y table).\nThe standard deviation of X equals:",
+      "options": ["5.9", "5", "5.3", "5.6"],
+      "answer": "C",
+      "image": "s1/biostatistics-2018-emd2-table.png"
+    },
+    {
+      "stem": "Exercise 3 (weight X / height Y table).\nThe standard deviation of Y equals:",
+      "options": ["5.8", "4", "5", "4.8"],
+      "answer": "A",
+      "image": "s1/biostatistics-2018-emd2-table.png"
+    },
+    {
+      "stem": "Exercise 3 (weight X / height Y table).\nThe covariance of the pair (Y, X) equals:",
+      "options": ["23.44", "23", "24.44", "24"],
+      "answer": "C",
+      "image": "s1/biostatistics-2018-emd2-table.png"
+    },
+    {
+      "stem": "Exercise 3 (weight X / height Y table).\nThe linear correlation coefficient equals:",
+      "options": ["0.80", "0.70", "0.81", "0.71"],
+      "answer": "A",
+      "image": "s1/biostatistics-2018-emd2-table.png"
+    },
+    {
+      "stem": "Exercise 3 (weight X / height Y table).\nThe equation of the regression line of Y on X is:",
+      "options": ["y = 0.70x + 116", "y = 0.87x + 116.26", "y = 0.85x + 117", "y = 0.71x + 116.26"],
+      "answer": "B",
+      "image": "s1/biostatistics-2018-emd2-table.png"
+    },
+    {
+      "stem": "Exercise 3 (regression y = 0.87x + 116.26).\nThe estimated height for a weight of 50 kg is:",
+      "options": ["160 cm", "151 cm", "150 cm", "161 cm"],
+      "answer": "A",
+      "explanation": "0.87 × 50 + 116.26 ≈ 159.8 ≈ 160 cm."
+    },
+    {
+      "stem": "Exercise 3 (weight and height). The type of the pair of characters is:",
+      "options": ["One discrete and one continuous", "One qualitative and one quantitative", "Both qualitative", "Both quantitative"],
+      "answer": "D"
+    }
+  ]
+}

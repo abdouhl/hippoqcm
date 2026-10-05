@@ -1,0 +1,128 @@
+{
+  "semester": 1,
+  "module": "Biostatistics",
+  "source": "EMD1 2021-2022",
+  "questions": [
+    {
+      "stem": "For any A ∈ P(Ω):",
+      "options": ["P(Ā | H) = 1 − P(A | H)", "P(Ā | H) = 1 + P(A | H̄)", "P(Ā | H) = 1 − P(H | A)", "P(Ā | H) = 1 − P(A)"],
+      "answer": "A",
+      "explanation": "No official answer key for this exam — answers worked out."
+    },
+    {
+      "stem": "The probability density function of Student's t distribution (tₙ) equals:",
+      "options": ["f(t) = (1/(σ√2π))·e^(−½((t−µ)/σ)²)", "f(t) = cₙ(1 + t²)^(−(n+1)/2)", "f(t) = cₙ(1 + t²/n)^(−(n+1)/2)", "f(t) = (1/(σ√2π))·e^(−½((x−µ)/σ)²)"],
+      "answer": "C",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "With n and p such that 1 ≤ p ≤ n:",
+      "options": ["Cₙᵖ = Cₙᵖ⁻¹ + Cₙ₋₁ᵖ⁻¹", "Cₙᵖ = Cₙᵖ⁻¹ + Cₙ₋₁ᵖ", "Cₙᵖ = Cₙ₋₁ᵖ + Cₙ₋₁ᵖ⁻¹", "Cₙᵖ = Aₙ₋₁ᵖ⁻¹ + Cₙᵖ⁻¹"],
+      "answer": "C",
+      "explanation": "No official key — Pascal's rule."
+    },
+    {
+      "stem": "The expectation of the chi-square distribution (n degrees of freedom) equals:",
+      "options": ["E(Y) = p", "E(Y) = 2n", "E(Y) = λ", "E(Y) = n"],
+      "answer": "D",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Exercise 1 — A statistical study gave the following 50 results:\n9.5 – 12 – 14 – 10.3 – 11.3 – 9.4 – 17 – 12.4 – 13.8 – 15.5 – 12.6 – 12.3 – 10.2 – 16.2 – 14.7 – 11.3 – 9.4 – 16.1 – 10.6 – 8.9 – 19.4 – 14.7 – 18.1 – 8.4 – 13.7 – 15.7 – 18.4 – 12.6 – 13.9 – 16.7 – 12.9 – 10.5 – 13.5 – 9.6 – 10.7 – 18 – 15.2 – 17.3 – 16 – 15.8 – 10.9 – 13.4 – 12.8 – 9.6 – 11.7 – 13.9 – 15.6 – 10.5 – 12.6 – 13.5\nAfter building the classes and the statistical table, the mean X̄ equals:",
+      "options": ["14.296", "13.296", "12.296", "13.356"],
+      "answer": "B",
+      "explanation": "No official key — computed. Sturges gives 7 classes of width 1.6 starting at 8.4 (frequencies 7, 9, 9, 10, 8, 3, 4); mean of class midpoints = 13.296."
+    },
+    {
+      "stem": "Exercise 1 (50 values grouped into 7 classes of width 1.6 from 8.4; frequencies 7, 9, 9, 10, 8, 3, 4).\nThe standard deviation of X equals:",
+      "options": ["2.8001", "2.8109", "2.7425", "3.0744"],
+      "answer": "B",
+      "explanation": "No official key — computed from class midpoints."
+    },
+    {
+      "stem": "Exercise 1 (50 values grouped into 7 classes of width 1.6 from 8.4; frequencies 7, 9, 9, 10, 8, 3, 4).\nThe median Me equals:",
+      "options": ["13.3", "13.5", "13.2", "13.4"],
+      "answer": "C",
+      "explanation": "No official key — 25th value falls in [13.2; 14.8[ at its lower bound: Me = 13.2."
+    },
+    {
+      "stem": "Exercise 1 (50 values grouped into 7 classes of width 1.6 from 8.4; frequencies 7, 9, 9, 10, 8, 3, 4).\nThe mode Mo equals:",
+      "options": ["13.7333", "13.2040", "13.7222", "13.8045"],
+      "answer": "A",
+      "explanation": "No official key — modal class [13.2; 14.8[: 13.2 + 1.6 × 1/(1 + 2) = 13.7333."
+    },
+    {
+      "stem": "Exercise 1 (50 values grouped into 7 classes of width 1.6 from 8.4; frequencies 7, 9, 9, 10, 8, 3, 4).\nThe interquartile range IQR equals:",
+      "options": ["4.3223", "4.7862", "4.2756", "4.5066"],
+      "answer": "A",
+      "explanation": "No official key — computed by interpolation."
+    },
+    {
+      "stem": "Exercise 2 — An urn contains n green balls (n ≥ 1), 5 blue and 8 red. 2 balls are drawn successively without replacement.\nDetermine the values of n such that the probability of drawing 2 green balls is < 1/4:",
+      "options": ["Between 1 and 9", "Between 1 and 13", "Between 1 and 15", "Between 1 and 12"],
+      "answer": "B",
+      "explanation": "No official key — n(n−1)/((n+13)(n+12)) < 1/4 ⇔ 3n² − 29n − 156 < 0 ⇔ n < 13.5."
+    },
+    {
+      "stem": "Exercise 3 — To fight the coronavirus epidemic, Algerian authorities imported vaccines: 27% Johnson & Johnson, 33% Sputnik and 40% Sinovac. The probability of being infected after receiving the vaccine is 3% for J&J, 4% for Sputnik and 5% for Sinovac.\nWhat is the probability that a randomly chosen person carries the virus given that they received the Sputnik vaccine?",
+      "options": ["0.40", "0.05", "0.03", "0.04"],
+      "answer": "D",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Exercise 3 (vaccines: J&J 27% / 3%, Sputnik 33% / 4%, Sinovac 40% / 5% infection).\nWhat is the probability of being infected by the virus?",
+      "options": ["0.04521", "0.8102", "0.0413", "0.5071"],
+      "answer": "C",
+      "explanation": "No official key — 0.0081 + 0.0132 + 0.02 = 0.0413."
+    },
+    {
+      "stem": "Exercise 3 (vaccines: J&J 27% / 3%, Sputnik 33% / 4%, Sinovac 40% / 5% infection).\nA randomly chosen person is found to be infected. What is the probability that they received the J&J vaccine?",
+      "options": ["0.1971", "0.1961", "0.1951", "0.1958"],
+      "answer": "B",
+      "explanation": "No official key — 0.0081 / 0.0413 ≈ 0.1961."
+    },
+    {
+      "stem": "Exercise 4 — The \"Linde\" plant produces oxygen bottles with a capacity of 44 dm³. X, the capacity of a bottle, follows a normal distribution with mean 44 dm³ and variance 0.04 dm⁶. A bottle is chosen at random. (Standard normal table in the figure.)\nThe probability that the capacity is between 43.8 and 44.3 dm³ is:",
+      "options": ["0.7822", "0.7888", "0.7750", "0.7745"],
+      "answer": "D",
+      "image": "s1/biostatistics-normal-table.png",
+      "explanation": "No official key — σ = 0.2: P(−1 < Z < 1.5) = 0.9332 − 0.1587 = 0.7745."
+    },
+    {
+      "stem": "Exercise 4 (part II) — 5% of the bottles are under-filled and considered unfit. Distributors buy lots of 10 bottles; a lot is rejected if it contains at least two unfit bottles. Y = number of unfit bottles per lot.\nThe probability distribution of Y is:",
+      "options": ["Poisson", "Bernoulli", "Binomial", "Normal"],
+      "answer": "C",
+      "explanation": "No official key — Y ~ B(10; 0.05)."
+    },
+    {
+      "stem": "Exercise 4 (Y = number of unfit bottles per lot of 10). The type of this variable is:",
+      "options": ["Discrete", "Continuous", "Qualitative nominal", "Qualitative ordinal"],
+      "answer": "A",
+      "explanation": "No official key."
+    },
+    {
+      "stem": "Exercise 4 (Y ~ B(10; 0.05); a lot is rejected if Y ≥ 2).\nThe probability of rejecting a lot is:",
+      "options": ["0.0823", "0.0862", "0.0872", "0.7862"],
+      "answer": "B",
+      "explanation": "No official key — 1 − 0.95¹⁰ − 10 × 0.05 × 0.95⁹ ≈ 0.0861."
+    },
+    {
+      "stem": "Exercise 4 (part III) — The Consumers' Association buys 10 lots (100 bottles, 5% unfit) to check their capacity. Y′ = number of unfit bottles in the 10 lots.\nThe probability distribution of Y′ is (approximately):",
+      "options": ["Poisson", "Bernoulli", "Binomial", "Normal"],
+      "answer": "A",
+      "explanation": "No official key. Exactly B(100; 0.05), which is approximated by Poisson P(5) (n large, p small) — the expected values in the next questions use this Poisson approximation."
+    },
+    {
+      "stem": "Exercise 4 (Y′ ≈ Poisson P(5)).\nThe probability that Y′ is less than or equal to 4 is:",
+      "options": ["0.4208", "0.4503", "0.4405", "0.4607"],
+      "answer": "C",
+      "explanation": "No official key — Poisson(5): P(Y′ ≤ 4) ≈ 0.4405."
+    },
+    {
+      "stem": "Exercise 4 (Y′ ≈ Poisson P(5)).\nThe standard deviation of Y′ equals:",
+      "options": ["2.2351", "2.2361", "2.2371", "2.2381"],
+      "answer": "B",
+      "explanation": "No official key — √5 ≈ 2.2361."
+    }
+  ]
+}
