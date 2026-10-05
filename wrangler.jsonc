@@ -11,9 +11,7 @@
     {
       "binding": "DB",
       "database_name": "hippoqcm",
-      // Placeholder for local dev. Replace with the real id from
-      // `wrangler d1 create hippoqcm` before deploying.
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "629aeda4-c76b-41ca-96a2-ef2d7fe8f174",
       "migrations_dir": "migrations"
     }
   ]
