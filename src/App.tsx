@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import type { Lesson, Module } from "../shared/types";
+import { getJSON, useSyncStatus } from "./api";
 import Decks from "./Decks";
+import Exam from "./Exam";
+import Insights from "./Insights";
 import { LessonPage, ModulePage } from "./Lessons";
 import { Footer, NotFound, StaticPage, isPage } from "./Pages";
 import Study from "./Study";
@@ -9,7 +12,9 @@ type View =
   | { kind: "home" }
   | { kind: "module"; module: Module }
   | { kind: "lesson"; module: Module; lesson: Lesson }
-  | { kind: "study"; title: string; endpoint: string; back: View; backLabel: string };
+  | { kind: "study"; title: string; endpoint: string; back: View; backLabel: string }
+  | { kind: "exam"; module: Module }
+  | { kind: "insights" };
 
 export default function App() {
   const [modules, setModules] = useState<Module[] | null>(null);
@@ -31,8 +36,7 @@ export default function App() {
   }, []);
 
   const loadModules = useCallback(() => {
-    fetch("/api/modules")
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
+    getJSON<Module[]>("/api/modules")
       .then(setModules)
       .catch((e: Error) => setError(e.message));
   }, []);
@@ -61,6 +65,31 @@ export default function App() {
     );
   }
 
+  if (view.kind === "exam") {
+    return (
+      <Exam
+        module={view.module}
+        onExit={() => {
+          setView({ kind: "module", module: view.module });
+          loadModules();
+        }}
+      />
+    );
+  }
+
+  if (view.kind === "insights") {
+    if (!modules) return <main><p>Loading…</p></main>;
+    return (
+      <Insights
+        modules={modules}
+        onBack={() => setView({ kind: "home" })}
+        onStudy={({ title, endpoint }) =>
+          setView({ kind: "study", title, endpoint, back: view, backLabel: "Insights" })
+        }
+      />
+    );
+  }
+
   if (view.kind === "module") {
     // Use the freshest counts after returning from a study session.
     const module = modules?.find((m) => m.id === view.module.id) ?? view.module;
@@ -69,6 +98,7 @@ export default function App() {
         module={module}
         onBack={() => setView({ kind: "home" })}
         onOpenLesson={(lesson) => setView({ kind: "lesson", module, lesson })}
+        onExam={() => setView({ kind: "exam", module })}
         onStudy={(lessonsOnly) =>
           setView({
             kind: "study",
@@ -110,6 +140,10 @@ export default function App() {
         <img src="/logo.svg" alt="" width="36" height="36" />
         <span><span>Hippo<em>QCM</em></span><small>Medical MCQs, spaced out</small></span>
       </h1>
+      <nav className="home-nav">
+        <button className="link" onClick={() => setView({ kind: "insights" })}>📊 Insights</button>
+        <SyncBadge />
+      </nav>
       <Decks
         modules={modules}
         onStudy={({ title, endpoint }) =>
@@ -120,5 +154,19 @@ export default function App() {
       />
       <Footer navigate={navigate} />
     </main>
+  );
+}
+
+// Shows when the app is running from its offline copy, or has reviews waiting to sync.
+function SyncBadge() {
+  const { online, pending, snapshotAt } = useSyncStatus();
+  if (online && pending === 0) {
+    return snapshotAt ? <span className="sync ok" title="Questions saved for offline study">✓ Available offline</span> : null;
+  }
+  return (
+    <span className="sync off">
+      {online ? "Syncing" : "Offline"}
+      {pending > 0 && ` · ${pending} review${pending === 1 ? "" : "s"} to sync`}
+    </span>
   );
 }

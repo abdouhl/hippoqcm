@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import type { Lesson, Module } from "../shared/types";
+import { getJSON } from "./api";
 
 function useLessons(moduleId: number) {
   const [lessons, setLessons] = useState<Lesson[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   useEffect(() => {
-    fetch(`/api/modules/${moduleId}/lessons`)
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
+    getJSON<Lesson[]>(`/api/modules/${moduleId}/lessons`)
       .then(setLessons)
       .catch((e: Error) => setError(e.message));
   }, [moduleId]);
@@ -20,9 +20,10 @@ type ModuleProps = {
   onBack: () => void;
   onOpenLesson: (lesson: Lesson) => void;
   onStudy: (lessonsOnly: boolean) => void;
+  onExam: () => void;
 };
 
-export function ModulePage({ module, onBack, onOpenLesson, onStudy }: ModuleProps) {
+export function ModulePage({ module, onBack, onOpenLesson, onStudy, onExam }: ModuleProps) {
   const { lessons, error } = useLessons(module.id);
 
   return (
@@ -41,6 +42,9 @@ export function ModulePage({ module, onBack, onOpenLesson, onStudy }: ModuleProp
             Only my lessons · {module.lesson_question_count} Qs
           </button>
         )}
+        <button className="secondary" onClick={onExam} disabled={module.question_count === 0}>
+          ⏱ Mock exam
+        </button>
       </div>
 
       <h2>Lessons</h2>

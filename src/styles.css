@@ -159,3 +159,56 @@ button.flag:hover { color: var(--error); }
 .site-footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 20px; }
 .site-footer p { margin: 8px 0 0; }
 .brand em { font-style: normal; color: var(--coral); }
+
+/* Home nav, sync badge */
+.home-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: -8px 0 16px; }
+.sync { font-size: 0.8rem; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
+.sync.off { border-color: var(--coral); color: var(--coral); }
+
+/* Mock exam */
+.exam-setup { border: none; padding: 0; margin: 0 0 16px; }
+.exam-setup legend { font-weight: 600; margin-bottom: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; }
+.chip.on { border-color: var(--accent); background: var(--accent); color: var(--bg); font-weight: 600; }
+.exam-check { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; cursor: pointer; }
+.timer { font-variant-numeric: tabular-nums; font-weight: 700; }
+.timer.low { color: var(--error); }
+.palette { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
+.palette button {
+  width: 32px; height: 32px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--muted); font-size: 0.8rem; cursor: pointer; font-variant-numeric: tabular-nums;
+}
+.palette button.answered { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.palette button.current { outline: 2px solid var(--coral); outline-offset: 1px; }
+.exam-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.exam-nav .secondary, .review-head .primary { padding: 10px 18px; border-radius: 8px; border: 1px solid var(--accent); background: transparent; color: var(--accent); font-weight: 600; cursor: pointer; }
+.exam-nav .secondary:disabled { opacity: 0.4; cursor: default; }
+.exam-nav .primary { margin-left: auto; }
+.review-head .primary { background: var(--accent); color: var(--bg); padding: 6px 14px; }
+.review-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.review-head .exam-check { margin: 0; }
+.review-list { display: grid; gap: 12px; }
+div.option { cursor: default; }
+
+/* Insights */
+.insights-table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; font-size: 0.9rem; }
+.insights-table th { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border); }
+.insights-table td { padding: 6px 8px; }
+.insights-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.progress { display: inline-block; width: 64px; height: 6px; border-radius: 3px; background: var(--border); vertical-align: middle; overflow: hidden; }
+.progress span { display: block; height: 100%; background: var(--accent); }
+.acc.bad { color: var(--error); font-weight: 600; }
+.acc.mid { color: var(--coral); font-weight: 600; }
+.acc.ok { color: var(--ok); font-weight: 600; }
+.error-pattern { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 4px 16px 8px; margin-bottom: 8px; }
+.stack { display: flex; height: 14px; border-radius: 7px; overflow: hidden; gap: 2px; }
+.stack span, .swatch { background: var(--border); }
+.stack .extra, .swatch.extra { background: var(--error); }
+.stack .missed, .swatch.missed { background: var(--accent); }
+.stack .both, .swatch.both { background: var(--muted); }
+.stack-legend { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.85rem; }
+.swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
+.leeches { list-style: none; padding: 0; display: grid; gap: 8px; }
+.leeches li { display: flex; flex-direction: column; gap: 4px; padding: 10px 12px; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--error); border-radius: 8px; }
+.leech-stem { line-height: 1.4; }

@@ -53,6 +53,7 @@ export type CardRow = {
 
 export type StudyQuestion = {
   id: number;
+  module_id: number;
   stem: string;
   explanation: string | null;
   image: string | null; // path under /images
@@ -71,4 +72,20 @@ export type ReviewInput = {
   selected: string;
   card: CardRow;
   reviewed_at: number;
+};
+
+export type Insights = {
+  modules: { module_id: number; reviews: number; correct: number }[];
+  lessons: { id: number; module_id: number; title: string; reviews: number; correct: number }[];
+  leeches: { id: number; module_id: number; stem: string; lapses: number; reps: number }[];
+  // Wrong answers split by cause: ticked a false option only, missed a true one only, or both.
+  errors: { total: number; extra: number; missed: number; both: number };
+};
+
+// Offline copy of the deck tree and every unflagged question, from /api/snapshot.
+export type Snapshot = {
+  modules: Pick<Module, "id" | "semester" | "name">[];
+  lessons: Pick<Lesson, "id" | "module_id" | "title" | "pdf" | "position" | "completed_at">[];
+  questions: (StudyQuestion & { lesson_ids: number[] })[];
+  fetched_at: number; // unix ms
 };

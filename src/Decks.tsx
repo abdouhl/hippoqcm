@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import type { ActivityDay, Lesson, Module } from "../shared/types";
+import { getJSON } from "./api";
 
 type Counts = { new_count: number; learn_count: number; review_count: number; question_count: number };
 
@@ -86,8 +87,7 @@ export default function Decks({ modules, onStudy, onOpenModule, onOpenLesson }: 
   const { open, toggle } = useOpenNodes();
 
   useEffect(() => {
-    fetch("/api/lessons")
-      .then((r) => (r.ok ? r.json() : []))
+    getJSON<Lesson[]>("/api/lessons")
       .then(setLessons)
       .catch(() => {});
   }, [modules]); // refetch alongside module counts
@@ -202,8 +202,7 @@ function Activity({ refreshKey }: { refreshKey: unknown }) {
   const [days, setDays] = useState<ActivityDay[] | null>(null);
 
   useEffect(() => {
-    fetch(`/api/activity?tz=${new Date().getTimezoneOffset()}`)
-      .then((r) => (r.ok ? r.json() : []))
+    getJSON<ActivityDay[]>(`/api/activity?tz=${new Date().getTimezoneOffset()}`)
       .then(setDays)
       .catch(() => setDays([]));
   }, [refreshKey]);

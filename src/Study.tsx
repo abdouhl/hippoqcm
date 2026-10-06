@@ -1,41 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { createEmptyCard, fsrs, Rating, type Card, type Grade } from "ts-fsrs";
-import type { CardRow, Label, ReviewInput, StudyQuestion } from "../shared/types";
-
-const scheduler = fsrs();
-
-const toCard = (row: CardRow | null): Card =>
-  row
-    ? {
-        ...row,
-        due: new Date(row.due),
-        last_review: row.last_review == null ? undefined : new Date(row.last_review),
-      }
-    : createEmptyCard();
-
-const toRow = (card: Card): CardRow => ({
-  due: card.due.getTime(),
-  stability: card.stability,
-  difficulty: card.difficulty,
-  elapsed_days: card.elapsed_days,
-  scheduled_days: card.scheduled_days,
-  learning_steps: card.learning_steps,
-  reps: card.reps,
-  lapses: card.lapses,
-  state: card.state,
-  last_review: card.last_review?.getTime() ?? null,
-});
-
-function formatInterval(from: Date, to: Date): string {
-  const mins = Math.max(1, Math.round((to.getTime() - from.getTime()) / 60_000));
-  if (mins < 60) return `${mins}m`;
-  const hours = Math.round(mins / 60);
-  if (hours < 24) return `${hours}h`;
-  const days = Math.round(hours / 24);
-  if (days < 30) return `${days}d`;
-  const months = Math.round(days / 30);
-  return months < 12 ? `${months}mo` : `${(days / 365).toFixed(1)}y`;
-}
+import { Rating, type Grade } from "ts-fsrs";
+import type { Label, ReviewInput, StudyQuestion } from "../shared/types";
+import { flagQuestion, getJSON, saveReviews } from "./api";
+import { formatInterval, scheduler, toCard, toRow } from "./fsrs";
 
 const GRADES: { rating: Grade; label: string }[] = [
   { rating: Rating.Hard, label: "Hard" },
@@ -70,8 +37,7 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
       setStats({ correct: 0, total: 0 });
       setPracticeAll(all);
       const sep = endpoint.includes("?") ? "&" : "?";
-      fetch(all ? `${endpoint}${sep}all=1` : endpoint)
-        .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
+      getJSON<StudyQuestion[]>(all ? `${endpoint}${sep}all=1` : endpoint)
         .then(setQueue)
         .catch((e: Error) => setError(e.message));
     },
@@ -117,12 +83,7 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
     };
     setSaving(true);
     try {
-      const r = await fetch("/api/reviews", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      await saveReviews([body]); // saved locally, synced in the background
     } catch (e) {
       setError(`Couldn't save review: ${(e as Error).message}`);
       setSaving(false);
@@ -140,8 +101,7 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
     if (!question || saving) return;
     setSaving(true);
     try {
-      const r = await fetch(`/api/questions/${question.id}/flag`, { method: "POST" });
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      await flagQuestion(question.id);
     } catch (e) {
       setError(`Couldn't flag question: ${(e as Error).message}`);
       setSaving(false);
