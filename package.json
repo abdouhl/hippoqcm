@@ -10,6 +10,7 @@
     "deploy": "bun run build && wrangler d1 migrations apply DB --remote && wrangler deploy",
     "db:migrate:local": "wrangler d1 migrations apply DB --local",
     "typecheck": "tsc -b",
+    "admin": "bun scripts/admin/server.ts",
     "cf-typegen": "wrangler types"
   },
   "dependencies": {

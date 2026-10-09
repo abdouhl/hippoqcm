@@ -1,0 +1,214 @@
+{
+  "semester": 1,
+  "module": "Embryology",
+  "title": "Introduction to human embryology",
+  "pdf": "s1/embryology/introduction-to-human-embryology.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "About the definition of embryology:",
+      "options": [
+        "Embryology is the morphological description of the transformations of the fertilized egg into an organism",
+        "Human embryology covers human development from the zygote stage until birth",
+        "Human embryology covers development from the zygote stage until puberty",
+        "The fetal period falls within the scope of human embryology"
+      ],
+      "answer": "ABD",
+      "explanation": "Human embryology covers development from the zygote until birth, so it includes the fetal period. Puberty (secondary sexual characteristics) is mentioned only as the end of secondary/definitive morphogenesis, not as the limit of embryology.",
+      "page": 7
+    },
+    {
+      "stem": "About the cells defined in embryology:",
+      "options": [
+        "The oocyte is a haploid sex cell with a single copy of each chromosome",
+        "The spermatozoon is a diploid cell that ensures fertilization",
+        "The zygote is a diploid cell resulting from the fusion of a male and a female gamete",
+        "A somatic cell is a haploid cell making up the body"
+      ],
+      "answer": "AC",
+      "explanation": "Both gametes (oocyte and spermatozoon) are haploid; the zygote and somatic cells are diploid.",
+      "page": 7
+    },
+    {
+      "stem": "The gonocyte:",
+      "options": [
+        "Is a cell whose differentiation will produce a gamete",
+        "Is a germ cell",
+        "Is the diploid cell resulting from the fusion of two gametes",
+        "Is any cell making up the body of an organism"
+      ],
+      "answer": "AB",
+      "explanation": "A gonocyte is a germ cell whose differentiation produces a gamete. The fusion product of two gametes is the zygote; 'any cell making up the body' defines the somatic cell.",
+      "page": 7
+    },
+    {
+      "stem": "About the human virgin egg (female gamete):",
+      "options": [
+        "It is a secondary oocyte (oocyte II) blocked in metaphase II",
+        "It is alecithal, i.e. devoid of nutritional reserves",
+        "Like the bird egg, it is very rich in vitellus",
+        "Vitellus (lecith) refers to the egg's nutritional reserves"
+      ],
+      "answer": "ABD",
+      "explanation": "The human egg is an oocyte II blocked in metaphase II and is alecithal, unlike the bird egg which is very rich in vitellus (lecith = nutritional reserves).",
+      "page": 7
+    },
+    {
+      "stem": "The term 'germ' designates the developing organism:",
+      "options": [
+        "From the 8th week of pregnancy until birth",
+        "As long as its shape is still spherical",
+        "Starting from the zygote stage",
+        "Until the end of the 3rd week of embryonic development"
+      ],
+      "answer": "BCD",
+      "explanation": "'Germ' is used while the shape is still spherical: from the zygote until the end of the 3rd week of development. From the 8th week until birth it is a fetus.",
+      "page": 7
+    },
+    {
+      "stem": "About the embryo and the fetus:",
+      "options": [
+        "The embryo is the organism from the first division of the zygote until the main organs are sketched out",
+        "The fetus has bilateral symmetry",
+        "The fetal period is characterized essentially by the sketching out of the organs",
+        "During the first 8 weeks of pregnancy, we speak of an embryo"
+      ],
+      "answer": "ABD",
+      "explanation": "Organs are sketched out during the embryonic period; the fetal period is characterized essentially by maturation and growth, since systems and organs are already formed.",
+      "page": 10
+    },
+    {
+      "stem": "An ultrasound is performed at the 14th week of pregnancy. At this stage, the developing organism:",
+      "options": [
+        "Is designated by the term fetus",
+        "Is undergoing the first sketch of its neural tube",
+        "Grows and matures, its systems and organs being already formed",
+        "Is still called a germ because it is spherical"
+      ],
+      "answer": "AC",
+      "explanation": "From the 3rd month the organism has distinctive human characteristics and is called a fetus; the fetal period is mainly maturation and growth. The neural tube is first sketched in the 4th week, and 'germ' only applies until the end of the 3rd week.",
+      "page": 10
+    },
+    {
+      "stem": "About the section planes of the (spherical) germ:",
+      "options": [
+        "The sub- and supra-equatorial planes pass through the animal and vegetative poles",
+        "They are similar to those used for the terrestrial globe",
+        "The meridian plane passes through the animal and vegetative poles",
+        "The equatorial plane cuts the germ into two equal parts"
+      ],
+      "answer": "BCD",
+      "explanation": "Germ planes mimic the globe: the meridian plane passes through the two poles (animal and vegetative), the equatorial plane cuts it into two equal halves. Sub- and supra-equatorial sections lie below/above the equator, parallel to it, not through the poles.",
+      "page": 8
+    },
+    {
+      "stem": "About sections in the embryo and the fetus:",
+      "options": [
+        "Longitudinal sections of the embryo are of 2 types: sagittal and para-sagittal",
+        "In the fetus, meridian and equatorial planes are used, as in the germ",
+        "Transverse sections can pass through any region of the embryo",
+        "In the fetus, bilateral symmetry being acquired, section planes are the same as in the adult"
+      ],
+      "answer": "ACD",
+      "explanation": "The fetus has acquired bilateral symmetry, so adult section planes are used; meridian/equatorial planes belong to the spherical germ.",
+      "page": 8
+    },
+    {
+      "stem": "Which section necessarily divides the embryo into two equal parts?",
+      "options": [
+        "The para-sagittal section",
+        "The transverse section",
+        "The sagittal (median) section",
+        "The sub-equatorial section"
+      ],
+      "answer": "C",
+      "explanation": "The sagittal (median) section must pass through the embryo's axis of symmetry, giving 2 equal parts. The para-sagittal section is only parallel to it, and transverse sections can be at any level.",
+      "page": 8
+    },
+    {
+      "stem": "In this diagram of an embryo, the central black arrow, the two red arrows and the green arrow represent, respectively:",
+      "options": [
+        "Para-sagittal, sagittal and transverse sections",
+        "Meridian, sub/supra-equatorial and equatorial planes",
+        "Sagittal, transverse and para-sagittal sections",
+        "Sagittal, para-sagittal and transverse sections"
+      ],
+      "answer": "D",
+      "explanation": "The median longitudinal line through the axis of symmetry is the sagittal section, the lines parallel to it are para-sagittal, and the line perpendicular to the longitudinal plane is transverse. Meridian/equatorial planes apply to the spherical germ.",
+      "page": 9,
+      "image": "s1/lessons/introduction-to-human-embryology-g1.png"
+    },
+    {
+      "stem": "Fertilization, segmentation and the formation of the blastocyst belong to:",
+      "options": [
+        "Primordial morphogenesis",
+        "Pre-morphogenesis",
+        "Primary morphogenesis",
+        "Secondary and definitive morphogenesis"
+      ],
+      "answer": "B",
+      "explanation": "Pre-morphogenesis occupies the 1st week: fertilization, segmentation and blastocyst formation. Primordial morphogenesis (weeks 2–3) is the didermic → tridermic transformation.",
+      "page": 9
+    },
+    {
+      "stem": "About primordial morphogenesis:",
+      "options": [
+        "It occurs during the 2nd and 3rd weeks of embryonic development",
+        "It corresponds to days 20–29 of pregnancy",
+        "It transforms the embryonic button into a didermic then a tridermic germ",
+        "Its process is gastrulation, leading to the gastrula stage"
+      ],
+      "answer": "ACD",
+      "explanation": "Primordial morphogenesis (weeks 2–3) = gastrulation, producing a tridermic embryonic disc. Days 20–29 (4th week) correspond to primary morphogenesis.",
+      "page": 10
+    },
+    {
+      "stem": "About primary morphogenesis:",
+      "options": [
+        "It corresponds to the 4th week of pregnancy (20th–29th days)",
+        "Its characteristic stage is the gastrula",
+        "It ends with the appearance of secondary sexual characteristics",
+        "It establishes the first sketch of the nervous, circulatory and digestive systems"
+      ],
+      "answer": "AD",
+      "explanation": "Primary morphogenesis (4th week) is neurulation (neurula stage) and sets up the neural tube, circulatory and digestive sketches. The gastrula belongs to primordial morphogenesis; secondary sexual characteristics end secondary/definitive morphogenesis.",
+      "page": 10
+    },
+    {
+      "stem": "About secondary and definitive morphogenesis:",
+      "options": [
+        "It ends at birth",
+        "It begins from the 5th week of pregnancy",
+        "It is when the different organs of the embryo are sketched out",
+        "It continues until the appearance of secondary sexual characteristics at puberty"
+      ],
+      "answer": "BCD",
+      "explanation": "It starts at the 5th week and continues through the fetal period and even years after birth, until secondary sexual characteristics appear at puberty — so it does not end at birth.",
+      "page": 10
+    },
+    {
+      "stem": "A tri-dermic embryonic disc is the characteristic feature of which stage?",
+      "options": [
+        "Zygote",
+        "Gastrula",
+        "Neurula",
+        "Embryo with organ sketches"
+      ],
+      "answer": "B",
+      "explanation": "In the table of embryogenesis periods, gastrulation gives the gastrula, featuring a tri-dermic embryonic disc. The neurula features the neural sketch.",
+      "page": 10
+    },
+    {
+      "stem": "A woman is on day 24 of pregnancy. At this time, the conceptus is undergoing:",
+      "options": [
+        "Formation of the blastocyst",
+        "Transformation of the embryonic button into a didermic germ",
+        "Neurulation, with the first sketch of the neural tube",
+        "The establishment of the first sketch of the circulatory and digestive systems"
+      ],
+      "answer": "CD",
+      "explanation": "Day 24 falls in the 4th week (days 20–29) = primary morphogenesis: neurulation plus first sketches of the circulatory and digestive systems. Blastocyst formation is 1st week; the didermic germ forms in weeks 2–3.",
+      "page": 10
+    }
+  ]
+}

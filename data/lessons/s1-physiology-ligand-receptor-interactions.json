@@ -1,0 +1,286 @@
+{
+  "semester": 1,
+  "module": "Physiology",
+  "title": "Ligand-receptor interactions",
+  "pdf": "s1/physiology/ligand-receptor-interactions.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q8",
+    "EMD1 2022-2023 Q9",
+    "EMD1 2022-2023 Q10",
+    "EMD1 2022-2023 Q11",
+    "EMD1 2023-2024 Q9",
+    "EMD1 2023-2024 Q12",
+    "EMD1 2024-2025 Q8",
+    "EMD1 2024-2025 Q9",
+    "EMD1 2024-2025 Q10",
+    "EMD1 2025-2026 Q9",
+    "EMD1 2025-2026 Q10",
+    "EMD1 2025-2026 Q11",
+    "EMD1 2025-2026 Q12"
+  ],
+  "questions": [
+    {
+      "stem": "Direct intercellular communication (physical contact between cells) can occur through:",
+      "options": [
+        "Gap junctions, transmembrane proteins forming ionic channels",
+        "Nanotubules, which can even transfer organelles such as mitochondria",
+        "Hormones carried by the circulation",
+        "Surface markers, especially in the immune system"
+      ],
+      "answer": "ABD",
+      "explanation": "Direct communication uses gap junctions, nanotubules, surface markers and adhesions. Hormones carried in the blood are indirect (endocrine) communication.",
+      "page": 4
+    },
+    {
+      "stem": "A cell secretes a local chemical mediator that acts on neighbouring cells, its action being limited in time and space. This mode of signaling is:",
+      "options": ["Endocrine", "Paracrine", "Autocrine", "Direct communication through gap junctions"],
+      "answer": "B",
+      "explanation": "Paracrine signaling acts on cells in the immediate vicinity (local chemical mediators). Autocrine would act on the secreting cell itself; endocrine acts at a distance through the blood.",
+      "page": 5
+    },
+    {
+      "stem": "Concerning the four signaling modes numbered in the figure:",
+      "options": [
+        "1 is autocrine: the cell responds to the signal molecule it produces itself",
+        "2 is endocrine",
+        "3 is neurocrine (synaptic): the signal acts on postsynaptic receptors of a cell in its immediate vicinity",
+        "In 4, the signal molecule is a hormone transported by the circulation to act on distant target cells"
+      ],
+      "answer": "ACD",
+      "explanation": "1 = autocrine, 2 = paracrine (a signaling cell releasing a local mediator to neighbouring target cells), 3 = synaptic/neurocrine, 4 = endocrine (hormone in the bloodstream).",
+      "page": 5,
+      "image": "s1/lessons/ligand-receptor-interactions-g1.png"
+    },
+    {
+      "stem": "About the phases of intercellular communication:",
+      "options": [
+        "There are three phases: reception, transduction and cellular response",
+        "The reception phase is the conversion of the signal into a particular cellular response",
+        "The transduction phase most often requires a cascade of interactions between intermediary molecules",
+        "The cellular response may consist of changes in transcriptional activity"
+      ],
+      "answer": "ACD",
+      "explanation": "Reception is detection/recognition of the ligand and binding to its receptor; converting the signal into a response is transduction. Responses are changes in membrane permeability, enzymatic activity or transcription.",
+      "page": 7
+    },
+    {
+      "stem": "Lipid-soluble ligands:",
+      "options": [
+        "Diffuse across the plasma membrane",
+        "Bind intracellular receptors, which can be cytosolic or nuclear",
+        "Include thyroid hormones, derived from the amino acid tyrosine",
+        "Include peptide hormones and growth factors"
+      ],
+      "answer": "ABC",
+      "explanation": "Lipid-soluble ligands (steroid hormones from cholesterol, thyroid hormones from tyrosine) cross the membrane to reach intracellular receptors. Peptide hormones and growth factors are hydrophilic and use membrane receptors.",
+      "page": 9
+    },
+    {
+      "stem": "In the figure, ligand 2 could be:",
+      "options": ["Aldosterone", "A growth factor", "Testosterone", "Serotonin"],
+      "answer": "AC",
+      "explanation": "Ligand 2 crosses the membrane to an intracellular receptor, so it is lipid-soluble: steroid hormones such as aldosterone and testosterone. Growth factors and serotonin are hydrophilic and bind surface receptors (ligand 1).",
+      "page": 9,
+      "image": "s1/lessons/ligand-receptor-interactions-g2.png"
+    },
+    {
+      "stem": "An experimental target cell has had all of its plasma-membrane receptors blocked. Which ligands can still act on it?",
+      "options": ["Cortisol", "Acetylcholine", "Estrogen", "Noradrenaline"],
+      "answer": "AC",
+      "explanation": "Cortisol and estrogen are lipid-soluble steroid hormones acting on intracellular receptors. Acetylcholine and noradrenaline are hydrophilic neurotransmitters that need membrane receptors.",
+      "page": 11
+    },
+    {
+      "stem": "Channel receptors (ionotropic receptors):",
+      "options": [
+        "Mainly concern excitable cells such as neurons and muscle cells",
+        "Are transmembrane channel proteins that carry ligand-binding sites",
+        "Become permeable to certain ions when ligand binding changes their conformation",
+        "Are illustrated by the muscarinic acetylcholine receptor"
+      ],
+      "answer": "ABC",
+      "explanation": "Ligand binding changes the conformation of the channel protein, which becomes permeable to certain ions. The example is the nicotinic receptor; the muscarinic receptor is a G protein-coupled receptor.",
+      "page": 13
+    },
+    {
+      "stem": "Acetylcholine:",
+      "options": [
+        "Acts on the nicotinic receptor, which is a channel receptor",
+        "Acts on the muscarinic receptor, which is a G protein-coupled receptor",
+        "Acts on the nicotinic receptor, which is a G protein-coupled receptor",
+        "Acts on the muscarinic receptor, which is a tyrosine kinase receptor"
+      ],
+      "answer": "AB",
+      "explanation": "The lesson gives the nicotinic receptor as the example of channel receptor and the muscarinic receptor (with the adrenaline receptor) as examples of GPCRs.",
+      "page": 17
+    },
+    {
+      "stem": "Which subunit of the G protein carries the GDP/GTP binding site?",
+      "options": ["α", "β", "γ", "The βγ dimer"],
+      "answer": "A",
+      "explanation": "The G protein has three subunits (α, β, γ); only the α subunit has the GDP/GTP binding site. αs stimulates, αi inhibits.",
+      "page": 16
+    },
+    {
+      "stem": "After a ligand binds its G protein-coupled receptor:",
+      "options": [
+        "GTP leaves the α subunit and is replaced by GDP",
+        "The α subunit, activated by GTP, detaches from the βγ dimer",
+        "The α-GTP and βγ complexes can each activate a different effector",
+        "The intrinsic GTPase of α hydrolyses GTP to GDP, and α-GDP reassociates with βγ"
+      ],
+      "answer": "BCD",
+      "explanation": "It is GDP that leaves the α subunit and GTP that replaces it. The signal ends when α's intrinsic GTPase hydrolyses GTP and α-GDP rejoins βγ.",
+      "page": 16
+    },
+    {
+      "stem": "About G protein-coupled receptors (GPCRs):",
+      "options": [
+        "More than 50% of current therapeutic agents target them",
+        "The adrenaline receptor is an example",
+        "The insulin receptor is an example",
+        "The activated αs subunit activates a primary effector enzyme that forms second messengers"
+      ],
+      "answer": "ABD",
+      "explanation": "The insulin receptor is an enzyme (tyrosine kinase) receptor. αs activates a primary effector (an enzyme) that forms second messengers, which activate protein kinases.",
+      "page": 17
+    },
+    {
+      "stem": "In this diagram, X and Y are masked:",
+      "options": [
+        "X is adenylate cyclase, which converts ATP into cAMP",
+        "X is stimulated by the left G protein and inhibited by the right one",
+        "Y is protein kinase C",
+        "Both G proteins are shown at rest, with the α subunit bound to GDP"
+      ],
+      "answer": "ABD",
+      "explanation": "X = adenylate cyclase (AC), stimulated by Gs and inhibited by Gi. Y = PKA activation by cAMP; PKC is activated by DAG in the phospholipase C pathway.",
+      "page": 18,
+      "image": "s1/lessons/ligand-receptor-interactions-g3.png"
+    },
+    {
+      "stem": "A ligand binds a receptor coupled to an inhibitory G protein (αi). The result is:",
+      "options": [
+        "Stimulation of adenylate cyclase",
+        "Inhibition of the formation of cAMP",
+        "Activation of phospholipase C",
+        "Opening of the Ca²⁺ channel of the smooth endoplasmic reticulum"
+      ],
+      "answer": "B",
+      "explanation": "With the αi-GTP complex the result is inhibition of second-messenger (cAMP) formation; αs-GTP is the one that activates adenylate cyclase.",
+      "page": 23
+    },
+    {
+      "stem": "Cyclic GMP (cGMP):",
+      "options": [
+        "Is produced from ATP by adenylate cyclase",
+        "Is degraded into cAMP",
+        "Is produced from GTP by guanylate cyclase",
+        "Is produced by phospholipase C from membrane phosphatidylinositol"
+      ],
+      "answer": "C",
+      "explanation": "cGMP is made from GTP by guanylate cyclase and degraded into GMP by a phosphodiesterase. ATP → cAMP is adenylate cyclase; phospholipase C produces IP3 and DAG.",
+      "page": 24
+    },
+    {
+      "stem": "Phospholipase C, activated via a G protein, directly produces:",
+      "options": ["cAMP", "IP3 and DAG", "cGMP", "Calmodulin"],
+      "answer": "B",
+      "explanation": "Phospholipase C splits membrane phosphatidylinositol into two second messengers: inositol triphosphate (IP3) and diacylglycerol (DAG).",
+      "page": 24
+    },
+    {
+      "stem": "Inositol triphosphate (IP3):",
+      "options": [
+        "Binds its receptor on the membrane of the smooth endoplasmic reticulum",
+        "Has a receptor that is a Ca²⁺ channel",
+        "Directly activates protein kinase C",
+        "Causes Ca²⁺ release into the cytoplasm"
+      ],
+      "answer": "ABD",
+      "explanation": "IP3 leaves the membrane and opens its Ca²⁺-channel receptor on the smooth ER, releasing Ca²⁺. It is DAG that activates PKC.",
+      "page": 24
+    },
+    {
+      "stem": "Calmodulin:",
+      "options": [
+        "Is activated by binding Ca²⁺ ions",
+        "Can then activate Ca²⁺/calmodulin-dependent protein kinases",
+        "Is activated directly by DAG",
+        "Is the Ca²⁺ channel of the smooth endoplasmic reticulum"
+      ],
+      "answer": "AB",
+      "explanation": "Ca²⁺ released by IP3 binds and activates calmodulin, which activates many enzymes including Ca²⁺/calmodulin-dependent kinases. DAG activates PKC; the ER channel is the IP3 receptor.",
+      "page": 24
+    },
+    {
+      "stem": "Concerning the pathway in the figure (structures 1, 2 and 3 are masked):",
+      "options": [
+        "1 is phospholipase C, activated by the α-GTP subunit of the G protein",
+        "2 is the endoplasmic reticulum, which releases Ca²⁺ in response to IP3",
+        "3 is protein kinase A, activated by cAMP",
+        "3 is activated by DAG together with Ca²⁺"
+      ],
+      "answer": "ABD",
+      "explanation": "PIP2 is split by phospholipase C (1) into IP3, which releases Ca²⁺ from the ER (2), and DAG, which activates the Ca²⁺-dependent protein kinase C (3) — not PKA, which belongs to the cAMP pathway.",
+      "page": 25,
+      "image": "s1/lessons/ligand-receptor-interactions-g5.png"
+    },
+    {
+      "stem": "Concerning the receptor shown in the figure (its intracellular domain is masked):",
+      "options": [
+        "It is a G protein-coupled receptor",
+        "It is an enzyme receptor; insulin acts through this type of receptor",
+        "Its ligand must cross the plasma membrane to bind it",
+        "Its activation uses ATP to phosphorylate proteins that relay the signal"
+      ],
+      "answer": "BD",
+      "explanation": "This is a tyrosine kinase (enzyme) receptor, example insulin: its activation phosphorylates proteins using ATP. Its binding site is extracellular, so the ligand does not cross the membrane.",
+      "page": 21,
+      "image": "s1/lessons/ligand-receptor-interactions-g4.png"
+    },
+    {
+      "stem": "About tyrosine kinase receptors:",
+      "options": [
+        "They are individual polypeptides (monomers) with an extracellular ligand-binding site",
+        "Ligand binding brings two receptor polypeptides together into a dimer",
+        "Dimerization activates the tyrosine kinase of each polypeptide, which is phosphorylated by hydrolysis of ATP",
+        "The phosphorylated tyrosine kinases are recognized by intracellular proteins, each of which primes a pathway"
+      ],
+      "answer": "ABCD",
+      "explanation": "All four statements describe the transduction mechanism of enzyme receptors given in the lesson (example: insulin).",
+      "page": 20
+    },
+    {
+      "stem": "For a steroid hormone acting on its target cell:",
+      "options": [
+        "The ligand-receptor complex enters the nucleus and attaches to specific genes",
+        "Transcription of a gene into mRNA is stimulated",
+        "The mRNA is translated into a specific protein by cytoplasmic ribosomes",
+        "Binding to a membrane receptor is required first"
+      ],
+      "answer": "ABC",
+      "explanation": "Lipid-soluble ligands cross the membrane, bind a specific cytosolic receptor, and the complex directly activates genes in the nucleus. No membrane receptor is needed.",
+      "page": 22
+    },
+    {
+      "stem": "According to the lesson, which of the following are second messengers?",
+      "options": ["cAMP", "Calmodulin", "cGMP", "DAG"],
+      "answer": "ACD",
+      "explanation": "cAMP, cGMP, IP3 and DAG are second messengers (small molecules made in the cell in response to the first messenger). Calmodulin is a protein activated by Ca²⁺.",
+      "page": 23
+    },
+    {
+      "stem": "Concerning signal amplification in the cAMP system:",
+      "options": [
+        "One first messenger bound to its receptor leads to the formation of many cAMP molecules",
+        "Each protein kinase A phosphorylates several enzymes",
+        "Each activated enzyme generates about 100 final products",
+        "The number of molecules involved decreases at each step of the cascade"
+      ],
+      "answer": "ABC",
+      "explanation": "Each step multiplies the signal: one receptor → many cAMP → PKA → phosphorylated enzymes → ~100 products each. The number of molecules increases, it does not decrease.",
+      "page": 26
+    }
+  ]
+}
