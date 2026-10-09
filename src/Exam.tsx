@@ -203,6 +203,11 @@ function Sitting({ module, exam, onChange, onSubmit }: {
     return () => clearInterval(id);
   }, []);
 
+  // On phones the palette is one scrolling row; keep the current question in view.
+  useEffect(() => {
+    document.querySelector(".palette .current")?.scrollIntoView({ block: "nearest", inline: "center" });
+  }, [exam.index]);
+
   // Time's up: hand it in as it stands.
   useEffect(() => {
     if (remaining !== null && remaining <= 0) onSubmit(exam);
@@ -210,7 +215,9 @@ function Sitting({ module, exam, onChange, onSubmit }: {
 
   const go = (index: number) => {
     setConfirming(false);
-    onChange({ ...exam, index: Math.max(0, Math.min(exam.questions.length - 1, index)) });
+    const next = Math.max(0, Math.min(exam.questions.length - 1, index));
+    if (next !== exam.index) window.scrollTo(0, 0);
+    onChange({ ...exam, index: next });
   };
   const toggle = (label: Label) => {
     const answers = [...exam.answers];

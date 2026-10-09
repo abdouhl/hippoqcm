@@ -94,6 +94,7 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
     setSelected(new Set());
     setChecked(false);
     setIndex((i) => i + 1);
+    window.scrollTo(0, 0); // long questions leave phones scrolled down
   };
 
   // Hide a wrong/bad question from study until it's fixed, and move on without rating it.
@@ -111,6 +112,7 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
     setSelected(new Set());
     setChecked(false);
     setIndex((i) => i + 1);
+    window.scrollTo(0, 0);
   };
 
   // Keyboard: A–E toggle, Enter checks / continues, 2–4 rate when correct.
@@ -211,34 +213,36 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
 
         {checked && question.explanation && <p className="explanation">{question.explanation}</p>}
 
-        {!checked ? (
-          <button className="primary" disabled={selected.size === 0} onClick={() => setChecked(true)}>
-            Check answer
-          </button>
-        ) : (
-          <div className="feedback">
-            <p className={isCorrect ? "verdict ok" : "verdict bad"}>
-              {isCorrect
-                ? "Correct!"
-                : `Incorrect — answer: ${[...correctSet].sort().join(", ")}`}
-            </p>
-            {isCorrect && preview ? (
-              <div className="grades">
-                {GRADES.map((g) => (
-                  <button key={g.rating} onClick={() => rate(g.rating)} disabled={saving}>
-                    {g.label}
-                    <small>{formatInterval(preview.now, preview.record[g.rating].card.due)}</small>
-                  </button>
-                ))}
-              </div>
-            ) : (
-              <button className="primary" onClick={() => rate(Rating.Again)} disabled={saving}>
-                Next
-                {preview && <small> · again in {formatInterval(preview.now, preview.record[Rating.Again].card.due)}</small>}
-              </button>
-            )}
-          </div>
-        )}
+        <div className="action-bar">
+          {!checked ? (
+            <button className="primary" disabled={selected.size === 0} onClick={() => setChecked(true)}>
+              Check answer
+            </button>
+          ) : (
+            <div className="feedback">
+              <p className={isCorrect ? "verdict ok" : "verdict bad"}>
+                {isCorrect
+                  ? "Correct!"
+                  : `Incorrect — answer: ${[...correctSet].sort().join(", ")}`}
+              </p>
+              {isCorrect && preview ? (
+                <div className="grades">
+                  {GRADES.map((g) => (
+                    <button key={g.rating} onClick={() => rate(g.rating)} disabled={saving}>
+                      {g.label}
+                      <small>{formatInterval(preview.now, preview.record[g.rating].card.due)}</small>
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <button className="primary" onClick={() => rate(Rating.Again)} disabled={saving}>
+                  Next
+                  {preview && <small> · again in {formatInterval(preview.now, preview.record[Rating.Again].card.due)}</small>}
+                </button>
+              )}
+            </div>
+          )}
+        </div>
       </article>
     </main>
   );

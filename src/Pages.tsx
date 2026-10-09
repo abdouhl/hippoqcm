@@ -1,7 +1,7 @@
 import type { MouseEvent, ReactNode } from "react";
 
 export const CONTACT_EMAIL = "abderahmane@elhellal.com";
-const UPDATED = "5 October 2026";
+const UPDATED = "8 October 2026";
 
 export type PageKey = "about" | "privacy" | "terms" | "contact";
 
@@ -108,19 +108,21 @@ function Privacy() {
   return (
     <>
       <p className="meta">Last updated {UPDATED}</p>
-      <p className="lead">There are no accounts, ads or third-party trackers.</p>
+      <p className="lead">There are no sign-ups, ads or third-party trackers.</p>
       <h2>What is stored</h2>
       <ul>
         <li>
           <b>Study progress, on the server:</b> each review (which question, the grade you chose and when) and
-          the resulting schedule for each card. This is what makes spaced repetition work. It is not linked
-          to your name, email or any other identity.
+          the resulting schedule for each card. This is what makes spaced repetition work. It is filed under a
+          random sync code your device makes up on its first visit (the server keeps only a scrambled hash of
+          it), not under your name, email or any other identity.
         </li>
         <li>
           <b>Flags:</b> when you flag a question, only the question is marked for review.
         </li>
         <li>
-          <b>In your browser:</b> which decks you left expanded (local storage). Clearing site data removes it.
+          <b>In your browser:</b> your sync code, which decks you left expanded, and questions saved for offline
+          study. Clearing site data removes them, so keep a copy of your code (see <b>Save progress</b>).
         </li>
       </ul>
       <h2>What is not collected</h2>
@@ -134,7 +136,10 @@ function Privacy() {
         protect the site, under its own privacy policy.
       </p>
       <h2>Questions</h2>
-      <p>Write to <Mail /> to ask about your data or have it deleted.</p>
+      <p>
+        To erase your progress, open <b>Save progress</b> and choose <b>Delete my progress</b>. For anything else
+        about your data, write to <Mail />.
+      </p>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import type { ActivityDay, Lesson, Module } from "../shared/types";
 import { getJSON } from "./api";
 
@@ -49,7 +49,7 @@ function Row({ depth, label, counts, expanded, onToggle, onStudy, onDetails }: R
   const empty = counts.question_count === 0;
   return (
     <tr className={empty ? "deck-row empty" : "deck-row"}>
-      <td className="deck-name" style={{ paddingLeft: 8 + depth * 22 }}>
+      <td className="deck-name" style={{ "--depth": depth } as CSSProperties}>
         <span className="toggle">
           {expanded !== undefined && (
             <button className="link" onClick={onToggle} aria-label={expanded ? "Collapse" : "Expand"}>

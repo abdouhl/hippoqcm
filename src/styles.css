@@ -29,8 +29,14 @@
   }
 }
 * { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--text); }
-main { max-width: 720px; margin: 0 auto; padding: 24px 16px; }
+main {
+  max-width: 720px; margin: 0 auto;
+  /* Installed on a phone, keep clear of the notch and home indicator. */
+  padding: calc(24px + env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
+    calc(24px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+}
 h1 { color: var(--accent); margin-top: 0; }
 h2 { font-size: 1rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
 .modules { list-style: none; padding: 0; display: grid; gap: 8px; }
@@ -45,9 +51,11 @@ h2 { font-size: 1rem; color: var(--muted); text-transform: uppercase; letter-spa
 .meta { color: var(--muted); font-size: 0.875rem; }
 .error { color: var(--error); }
 
-button { font: inherit; }
+button { font: inherit; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 button.link { background: none; border: none; color: var(--accent); cursor: pointer; padding: 0; }
 .study-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; }
+.study-header > * { flex: none; }
+.study-header > .meta { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .question { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
 .question > .meta { margin: 0 0 8px; }
 .stem { font-size: 1.1rem; line-height: 1.5; margin: 0 0 16px; white-space: pre-line; }
@@ -106,10 +114,17 @@ button.flag:hover { color: var(--error); }
 .deck-row:hover { background: var(--bg); }
 .deck-row .gear button { visibility: hidden; color: var(--muted); }
 .deck-row:hover .gear button, .deck-row .gear button:focus-visible { visibility: visible; }
-.deck-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 0; width: 100%; }
+.deck-name {
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 0; width: 100%;
+  padding-left: calc(8px + var(--depth, 0) * 22px) !important;
+}
 .deck-name .toggle { display: inline-block; width: 18px; }
 .deck-name .toggle button { color: var(--muted); font-weight: 700; }
-.deck-link { color: var(--text) !important; text-align: left; }
+.deck-link {
+  color: var(--text) !important; text-align: left;
+  /* Truncate the label itself; an over-wide button would otherwise collapse to a bare "…". */
+  display: inline-block; max-width: calc(100% - 18px); overflow: hidden; text-overflow: ellipsis; vertical-align: middle;
+}
 .deck-link:hover:not(:disabled) { color: var(--accent) !important; }
 .deck-row.empty .deck-link { color: var(--muted) !important; cursor: default; }
 .num.new { color: #3b82f6; }
@@ -145,7 +160,7 @@ button.flag:hover { color: var(--error); }
 .activity-stats b { color: var(--ok); }
 .brand { display: flex; align-items: center; gap: 12px; letter-spacing: -0.02em; }
 .brand img { flex: none; border-radius: 10px; }
-.brand span { display: flex; flex-direction: column; line-height: 1.1; }
+.brand > span { display: flex; flex-direction: column; line-height: 1.1; }
 .brand small { font-size: 0.8rem; font-weight: 500; color: var(--muted); letter-spacing: 0; }
 
 /* Static pages + footer */
@@ -162,7 +177,7 @@ button.flag:hover { color: var(--error); }
 
 /* Home nav, sync badge */
 .home-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: -8px 0 16px; }
-.sync { font-size: 0.8rem; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
+.sync { white-space: nowrap; font-size: 0.8rem; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
 .sync.off { border-color: var(--coral); color: var(--coral); }
 
 /* Mock exam */
@@ -212,3 +227,95 @@ div.option { cursor: default; }
 .leeches { list-style: none; padding: 0; display: grid; gap: 8px; }
 .leeches li { display: flex; flex-direction: column; gap: 4px; padding: 10px 12px; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--error); border-radius: 8px; }
 .leech-stem { line-height: 1.4; }
+
+/* Sync code / save progress */
+.home-links { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.code-reminder {
+  display: block; width: 100%; margin: 0 0 16px; padding: 12px 14px; text-align: left; line-height: 1.4;
+  background: var(--surface); color: var(--text); border: 1px solid var(--coral); border-left-width: 4px;
+  border-radius: 10px; cursor: pointer;
+}
+.account-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+.account-card > .meta:first-child { margin-top: 0; }
+.sync-code {
+  font: 700 clamp(1.3rem, 6.5vw, 1.8rem) / 1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.04em; color: var(--accent); margin: 4px 0 8px; user-select: all; overflow-wrap: anywhere;
+}
+.ok-note { color: var(--ok); font-weight: 600; margin-bottom: 0; }
+.page-list { padding-left: 20px; line-height: 1.5; }
+.page-list li { margin-bottom: 6px; }
+.restore.prompt { border-color: var(--accent); }
+.restore.prompt > p:first-child { margin-top: 0; }
+.restore-row { display: flex; gap: 8px; }
+.code-input {
+  flex: 1; min-width: 0; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); text-transform: uppercase; letter-spacing: 0.04em;
+  font: 16px ui-monospace, SFMono-Regular, Menlo, monospace; /* 16px+ stops iOS zooming in on focus */
+}
+.code-input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+button.link.danger { color: var(--error); }
+.danger-zone { border-color: var(--error); }
+.actions button.danger { background: var(--error); border-color: var(--error); color: #fff; }
+
+/* ---- Phones ------------------------------------------------------------------------------- */
+
+/* No hover on touch screens: show what desktop reveals on hover. */
+@media (hover: none), (pointer: coarse), (max-width: 600px) {
+  .deck-row .gear button { visibility: visible; }
+  .deck-row:hover { background: none; }
+}
+
+@media (max-width: 600px) {
+  main { padding-top: calc(16px + env(safe-area-inset-top)); }
+  h1 { font-size: 1.5rem; }
+
+  /* Questions: bigger tap targets, answer controls pinned within thumb reach. */
+  .question { padding: 14px; border-radius: 10px; }
+  .stem { font-size: 1.05rem; }
+  .figure { max-height: 300px; }
+  .option { padding: 14px 12px; min-height: 52px; }
+  .action-bar, .exam-nav {
+    position: sticky; bottom: 0; z-index: 1;
+    margin: 0 -14px -14px; padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+    background: var(--surface); border-top: 1px solid var(--border); border-radius: 0 0 10px 10px;
+  }
+  .action-bar .primary { width: 100%; padding: 14px; }
+  .action-bar .verdict { margin: 0 0 10px; }
+  .grades { flex-wrap: nowrap; }
+  .grades button { flex: 1; min-width: 0; padding: 10px 4px; }
+  .exam-nav > button { flex: 1 1 auto; padding: 12px 10px; }
+  .exam-nav .primary { margin-left: 0; }
+  .exam-nav .meta { flex-basis: 100%; }
+
+  /* Mock exam question grid: one swipeable row instead of several wrapped ones. */
+  .palette { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -16px 12px; padding: 3px 16px; }
+  .palette::-webkit-scrollbar { display: none; }
+  .palette button { flex: none; width: 38px; height: 38px; }
+  .chip { padding: 10px 16px; }
+  .exam-check input { width: 20px; height: 20px; }
+
+  /* Deck tree: tighter columns, taller rows. */
+  .decks th { font-size: 0.8rem; padding: 10px 4px; }
+  .decks td { padding: 10px 4px; }
+  .decks .num { width: 34px; font-size: 0.9rem; }
+  .decks .gear { width: 36px; }
+  .deck-name { padding-left: calc(4px + var(--depth, 0) * 14px) !important; }
+  .deck-name .toggle { width: 26px; }
+  .deck-link { max-width: calc(100% - 26px); white-space: normal; } /* phones: wrap long names instead */
+  .deck-name .toggle button, .decks .gear button { padding: 4px 8px; }
+
+  /* Lists and button rows stack. */
+  .module { flex-wrap: wrap; gap: 4px 12px; padding: 14px 16px; }
+  .actions.start > button { flex: 1 1 auto; padding: 12px 16px; }
+
+  /* Phones can't show PDFs inline (iOS shows page 1 only, Android nothing): open the viewer instead. */
+  .pdf { display: none; }
+  .pdf-bar > .meta { display: none; }
+  .pdf-open {
+    flex: 1; text-align: center; padding: 14px; border-radius: 8px; text-decoration: none;
+    background: var(--accent); color: var(--bg); font-weight: 600;
+  }
+
+  .insights-table .hide-sm { display: none; }
+  .progress { width: 40px; }
+}

@@ -61,7 +61,7 @@ export default function Insights({ modules, onBack, onStudy }: Props) {
       <h2>Modules</h2>
       <table className="insights-table">
         <thead>
-          <tr><th>Module</th><th>Seen</th><th className="num">Reviews</th><th className="num">Accuracy</th></tr>
+          <tr><th>Module</th><th>Seen</th><th className="num hide-sm">Reviews</th><th className="num">Accuracy</th></tr>
         </thead>
         <tbody>
           {moduleRows.map(({ m, reviews, accuracy, seen }) => (
@@ -77,7 +77,7 @@ export default function Insights({ modules, onBack, onStudy }: Props) {
                 </span>
                 <small className="meta"> {seen}/{m.question_count}</small>
               </td>
-              <td className="num">{reviews}</td>
+              <td className="num hide-sm">{reviews}</td>
               <td className={`num ${reviews ? accuracyClass(accuracy) : "meta"}`}>{reviews ? `${accuracy}%` : "—"}</td>
             </tr>
           ))}

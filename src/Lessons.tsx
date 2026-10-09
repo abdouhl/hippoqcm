@@ -108,7 +108,7 @@ export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
       </div>
       <div className="pdf-bar">
         <span className="meta">Lesson PDF</span>
-        <a href={pdfUrl} target="_blank" rel="noreferrer">Open in new tab ↗</a>
+        <a className="pdf-open" href={pdfUrl} target="_blank" rel="noreferrer">Open in new tab ↗</a>
       </div>
       <iframe className="pdf" src={pdfUrl} title={`${lesson.title} PDF`} />
     </main>

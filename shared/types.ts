@@ -89,3 +89,6 @@ export type Snapshot = {
   questions: (StudyQuestion & { lesson_ids: number[] })[];
   fetched_at: number; // unix ms
 };
+
+// Progress tied to a sync code, from /api/account.
+export type Account = { created_at: number; reviews: number; cards: number };

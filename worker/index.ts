@@ -1,4 +1,5 @@
-import type { ActivityDay, Insights, Option, ReviewInput, Snapshot, StudyQuestion } from "../shared/types";
+import { hashCode, isCode, normalizeCode } from "../shared/code";
+import type { Account, ActivityDay, Insights, Option, ReviewInput, Snapshot, StudyQuestion } from "../shared/types";
 
 interface Env {
   DB: D1Database;
@@ -9,6 +10,33 @@ const json = (data: unknown, status = 200) => Response.json(data, { status });
 
 // A question with this many lapses keeps slipping: it's a leech.
 const LEECH_LAPSES = 4;
+
+// The caller's sync code, from "Authorization: Bearer <code>"; null if missing or malformed.
+function codeOf(request: Request): string | null {
+  const match = request.headers.get("Authorization")?.match(/^Bearer (.+)$/);
+  const code = match ? normalizeCode(match[1]) : "";
+  return isCode(code) ? code : null;
+}
+
+// User id for reads. Unknown codes get 0, which matches no rows: a fresh account with no progress.
+async function readerId(request: Request, db: D1Database): Promise<number> {
+  const code = codeOf(request);
+  if (!code) return 0;
+  const row = await db.prepare("SELECT id FROM users WHERE token_hash = ?1").bind(await hashCode(code)).first<{ id: number }>();
+  return row?.id ?? 0;
+}
+
+// User id for writes; a code's first write creates its user.
+async function writerId(code: string, db: D1Database): Promise<number> {
+  const row = await db.prepare(
+    `INSERT INTO users (token_hash, last_seen) VALUES (?1, ?2)
+     ON CONFLICT (token_hash) DO UPDATE SET last_seen = excluded.last_seen
+     RETURNING id`,
+  )
+    .bind(await hashCode(code), Date.now())
+    .first<{ id: number }>();
+  return row!.id;
+}
 
 // Columns for a StudyQuestion row; expects `questions q LEFT JOIN cards c`.
 const QUESTION_COLUMNS = `q.id, q.module_id, q.stem, q.explanation, q.source, q.image, q.origin, q.pdf_page,
@@ -67,6 +95,8 @@ async function toStudyQuestions(db: D1Database, rows: Record<string, unknown>[])
 export default {
   async fetch(request, env): Promise<Response> {
     const url = new URL(request.url);
+    const isApiGet = url.pathname.startsWith("/api/") && request.method === "GET";
+    const user = isApiGet ? await readerId(request, env.DB) : 0;
 
     if (url.pathname === "/api/modules" && request.method === "GET") {
       const now = Date.now();
@@ -82,11 +112,11 @@ export default {
                 (SELECT COUNT(*) FROM lessons l WHERE l.module_id = m.id) AS lesson_count
          FROM modules m
          LEFT JOIN questions q ON q.module_id = m.id AND q.flagged = 0
-         LEFT JOIN cards c ON c.question_id = q.id
+         LEFT JOIN cards c ON c.question_id = q.id AND c.user_id = ?2
          GROUP BY m.id
          ORDER BY m.semester, m.name`,
       )
-        .bind(now)
+        .bind(now, user)
         .all();
       return json(results);
     }
@@ -105,12 +135,12 @@ export default {
          FROM lessons l
          LEFT JOIN question_lessons ql ON ql.lesson_id = l.id
          LEFT JOIN questions q ON q.id = ql.question_id AND q.flagged = 0
-         LEFT JOIN cards c ON c.question_id = q.id
+         LEFT JOIN cards c ON c.question_id = q.id AND c.user_id = ?3
          WHERE ?1 IS NULL OR l.module_id = ?1
          GROUP BY l.id
          ORDER BY l.module_id, l.position`,
       )
-        .bind(lessonsMatch[1] ? Number(lessonsMatch[1]) : null, Date.now())
+        .bind(lessonsMatch[1] ? Number(lessonsMatch[1]) : null, Date.now(), user)
         .all();
       return json(results);
     }
@@ -121,11 +151,11 @@ export default {
       const { results } = await env.DB.prepare(
         `SELECT CAST((reviewed_at - ?1) / 86400000 AS INTEGER) AS day, COUNT(*) AS count
          FROM review_log
-         WHERE reviewed_at >= ?2
+         WHERE user_id = ?3 AND reviewed_at >= ?2
          GROUP BY day
          ORDER BY day`,
       )
-        .bind(offset, Date.now() - 400 * 86_400_000)
+        .bind(offset, Date.now() - 400 * 86_400_000, user)
         .all<ActivityDay>();
       return json(results);
     }
@@ -148,12 +178,12 @@ export default {
       const { results } = await env.DB.prepare(
         `SELECT ${QUESTION_COLUMNS}
          FROM questions q
-         LEFT JOIN cards c ON c.question_id = q.id
+         LEFT JOIN cards c ON c.question_id = q.id AND c.user_id = ?4
          WHERE ${scope} AND q.flagged = 0 AND (?2 = 1 OR c.question_id IS NULL OR c.due <= ?3)
          -- Overdue reviews first, then unseen questions in exam order.
          ORDER BY c.due IS NULL, c.due, q.id`,
       )
-        .bind(studyMatch[2] ? Number(studyMatch[2]) : null, url.searchParams.get("all") === "1" ? 1 : 0, Date.now())
+        .bind(studyMatch[2] ? Number(studyMatch[2]) : null, url.searchParams.get("all") === "1" ? 1 : 0, Date.now(), user)
         .all<Record<string, unknown>>();
       return json(await toStudyQuestions(env.DB, results));
     }
@@ -164,7 +194,7 @@ export default {
       const { results } = await env.DB.prepare(
         `SELECT ${QUESTION_COLUMNS}
          FROM questions q
-         LEFT JOIN cards c ON c.question_id = q.id
+         LEFT JOIN cards c ON c.question_id = q.id AND c.user_id = ?4
          WHERE q.module_id = ?1 AND q.flagged = 0 AND (?2 = 0 OR q.origin = 'exam')
          ORDER BY RANDOM()
          LIMIT ?3`,
@@ -173,6 +203,7 @@ export default {
           Number(examMatch[1]),
           url.searchParams.get("origin") === "exam" ? 1 : 0,
           Math.min(Number(url.searchParams.get("n")) || 20, 200),
+          user,
         )
         .all<Record<string, unknown>>();
       return json(await toStudyQuestions(env.DB, results));
@@ -184,29 +215,31 @@ export default {
         env.DB.prepare(
           `SELECT q.module_id, COUNT(*) AS reviews, SUM(r.correct) AS correct
            FROM review_log r JOIN questions q ON q.id = r.question_id
+           WHERE r.user_id = ?1
            GROUP BY q.module_id`,
-        ),
+        ).bind(user),
         env.DB.prepare(
           `SELECT l.id, l.module_id, l.title, COUNT(*) AS reviews, SUM(r.correct) AS correct
            FROM review_log r
            JOIN question_lessons ql ON ql.question_id = r.question_id
            JOIN lessons l ON l.id = ql.lesson_id
+           WHERE r.user_id = ?1
            GROUP BY l.id`,
-        ),
+        ).bind(user),
         env.DB.prepare(
           `SELECT q.id, q.module_id, q.stem, c.lapses, c.reps
            FROM cards c JOIN questions q ON q.id = c.question_id
-           WHERE c.lapses >= ?1 AND q.flagged = 0
+           WHERE c.user_id = ?2 AND c.lapses >= ?1 AND q.flagged = 0
            ORDER BY c.lapses DESC, c.reps DESC`,
-        ).bind(LEECH_LAPSES),
+        ).bind(LEECH_LAPSES, user),
         env.DB.prepare(
           `SELECT r.selected,
                   (SELECT group_concat(label, '') FROM
                      (SELECT label FROM options WHERE question_id = r.question_id AND is_correct = 1 ORDER BY label)
                   ) AS answer
            FROM review_log r
-           WHERE r.correct = 0`,
-        ),
+           WHERE r.user_id = ?1 AND r.correct = 0`,
+        ).bind(user),
       ]);
 
       // Split wrong answers by what went wrong: ticked a false option, missed a true one, or both.
@@ -241,10 +274,10 @@ export default {
         env.DB.prepare(
           `SELECT ${QUESTION_COLUMNS}
            FROM questions q
-           LEFT JOIN cards c ON c.question_id = q.id
+           LEFT JOIN cards c ON c.question_id = q.id AND c.user_id = ?1
            WHERE q.flagged = 0
            ORDER BY q.id`,
-        ),
+        ).bind(user),
       ]);
       const lessonIds = new Map<number, number[]>();
       for (const { question_id, lesson_id } of links.results as { question_id: number; lesson_id: number }[]) {
@@ -263,6 +296,28 @@ export default {
       return json(snapshot);
     }
 
+    // Whether a sync code has progress, checked before a device switches to it.
+    if (url.pathname === "/api/account" && request.method === "GET") {
+      if (!user) return json({ error: "No progress found for this code" }, 404);
+      const row = await env.DB.prepare(
+        `SELECT u.created_at,
+                (SELECT COUNT(*) FROM review_log WHERE user_id = u.id) AS reviews,
+                (SELECT COUNT(*) FROM cards WHERE user_id = u.id) AS cards
+         FROM users u WHERE u.id = ?1`,
+      )
+        .bind(user)
+        .first<Account>();
+      return json(row);
+    }
+
+    // Erase the caller's progress for good.
+    if (url.pathname === "/api/account" && request.method === "DELETE") {
+      const code = codeOf(request);
+      if (!code) return json({ error: "Sync code required" }, 400);
+      await env.DB.prepare("DELETE FROM users WHERE token_hash = ?1").bind(await hashCode(code)).run();
+      return json({ ok: true });
+    }
+
     const flagMatch = url.pathname.match(/^\/api\/questions\/(\d+)\/flag$/);
     if (flagMatch && request.method === "POST") {
       await env.DB.prepare("UPDATE questions SET flagged = 1 WHERE id = ?1").bind(Number(flagMatch[1])).run();
@@ -271,30 +326,35 @@ export default {
 
     // One review, or a batch (a finished mock exam, or reviews queued while offline).
     if (url.pathname === "/api/reviews" && request.method === "POST") {
+      const code = codeOf(request);
+      // An app version from before accounts: answer "try later" so it keeps its queued reviews
+      // until the new version loads and sends them with a code.
+      if (!code) return json({ error: "Sync code required" }, 503);
       const body = (await request.json()) as ReviewInput | ReviewInput[];
       const reviews = Array.isArray(body) ? body : [body];
       if (reviews.length === 0) return json({ ok: true });
+      const userId = await writerId(code, env.DB);
       await env.DB.batch(
         reviews.flatMap((r) => {
           const c = r.card;
           return [
             env.DB.prepare(
               `INSERT INTO cards (question_id, due, stability, difficulty, elapsed_days, scheduled_days,
-                                  learning_steps, reps, lapses, state, last_review)
-               VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)
-               ON CONFLICT (question_id) DO UPDATE SET
+                                  learning_steps, reps, lapses, state, last_review, user_id)
+               VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)
+               ON CONFLICT (user_id, question_id) DO UPDATE SET
                  due = excluded.due, stability = excluded.stability, difficulty = excluded.difficulty,
                  elapsed_days = excluded.elapsed_days, scheduled_days = excluded.scheduled_days,
                  learning_steps = excluded.learning_steps, reps = excluded.reps, lapses = excluded.lapses,
                  state = excluded.state, last_review = excluded.last_review`,
             ).bind(
               r.question_id, c.due, c.stability, c.difficulty, c.elapsed_days, c.scheduled_days,
-              c.learning_steps, c.reps, c.lapses, c.state, c.last_review,
+              c.learning_steps, c.reps, c.lapses, c.state, c.last_review, userId,
             ),
             env.DB.prepare(
-              `INSERT INTO review_log (question_id, rating, correct, selected, reviewed_at)
-               VALUES (?1, ?2, ?3, ?4, ?5)`,
-            ).bind(r.question_id, r.rating, r.correct ? 1 : 0, r.selected, r.reviewed_at),
+              `INSERT INTO review_log (question_id, rating, correct, selected, reviewed_at, user_id)
+               VALUES (?1, ?2, ?3, ?4, ?5, ?6)`,
+            ).bind(r.question_id, r.rating, r.correct ? 1 : 0, r.selected, r.reviewed_at, userId),
           ];
         }),
       );

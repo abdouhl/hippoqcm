@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import type { Lesson, Module } from "../shared/types";
+import Account, { needsCodeReminder } from "./Account";
 import { getJSON, useSyncStatus } from "./api";
 import Decks from "./Decks";
 import Exam from "./Exam";
@@ -14,12 +15,25 @@ type View =
   | { kind: "lesson"; module: Module; lesson: Lesson }
   | { kind: "study"; title: string; endpoint: string; back: View; backLabel: string }
   | { kind: "exam"; module: Module }
-  | { kind: "insights" };
+  | { kind: "insights" }
+  | { kind: "account"; incoming: string | null };
+
+// A restore link looks like https://…/#code=XXXX-XXXX-XXXX-XXXX. The code stays in the fragment so it
+// never reaches the server's logs; it's taken out of the address bar as soon as it's read.
+function takeIncomingCode(): string | null {
+  const match = window.location.hash.match(/^#code=([\w-]+)$/);
+  if (!match) return null;
+  window.history.replaceState(null, "", window.location.pathname);
+  return match[1];
+}
 
 export default function App() {
   const [modules, setModules] = useState<Module[] | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [view, setView] = useState<View>({ kind: "home" });
+  const [view, setView] = useState<View>(() => {
+    const incoming = takeIncomingCode();
+    return incoming ? { kind: "account", incoming } : { kind: "home" };
+  });
   const [path, setPath] = useState(() => window.location.pathname);
 
   useEffect(() => {
@@ -75,6 +89,10 @@ export default function App() {
         }}
       />
     );
+  }
+
+  if (view.kind === "account") {
+    return <Account incoming={view.incoming} onBack={() => setView({ kind: "home" })} />;
   }
 
   if (view.kind === "insights") {
@@ -141,9 +159,18 @@ export default function App() {
         <span><span>Hippo<em>QCM</em></span><small>Medical MCQs, spaced out</small></span>
       </h1>
       <nav className="home-nav">
-        <button className="link" onClick={() => setView({ kind: "insights" })}>📊 Insights</button>
+        <span className="home-links">
+          <button className="link" onClick={() => setView({ kind: "insights" })}>📊 Insights</button>
+          <button className="link" onClick={() => setView({ kind: "account", incoming: null })}>🔑 Save progress</button>
+        </span>
         <SyncBadge />
       </nav>
+      {needsCodeReminder() && (
+        <button className="code-reminder" onClick={() => setView({ kind: "account", incoming: null })}>
+          <b>Don't lose your progress.</b> Save your sync code so you can restore it on another device or after
+          clearing your browser. →
+        </button>
+      )}
       <Decks
         modules={modules}
         onStudy={({ title, endpoint }) =>

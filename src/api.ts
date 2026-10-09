@@ -2,7 +2,8 @@
 // network hangs), reads are answered from a local snapshot of every question (/api/snapshot), and
 // writes wait in an outbox that is sent once the server is reachable again.
 import { useEffect, useState } from "react";
-import type { Lesson, Module, ReviewInput, Snapshot, StudyQuestion } from "../shared/types";
+import { isCode, newCode, normalizeCode } from "../shared/code";
+import type { Account, Lesson, Module, ReviewInput, Snapshot, StudyQuestion } from "../shared/types";
 
 const TIMEOUT_MS = 8000;
 // Keep in sync with LEECH_LAPSES in worker/index.ts.
@@ -79,7 +80,39 @@ export function useSyncStatus(): SyncStatus {
   return s;
 }
 
+// ---- Sync code: who this device studies as -----------------------------------------------------
+// Kept in both localStorage and IndexedDB so that losing one doesn't lose the account.
+
+const CODE_KEY = "hippoqcm.code";
+let code = "";
+
+function readLocalCode(): string | null {
+  try {
+    return localStorage.getItem(CODE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+async function storeCode(value: string) {
+  code = value;
+  try {
+    localStorage.setItem(CODE_KEY, value);
+  } catch {}
+  await kvSet("code", value);
+}
+
+const auth = () => ({ Authorization: `Bearer ${code}` });
+
+/** This device's sync code (normalized, without dashes). */
+export async function getCode(): Promise<string> {
+  await ready;
+  return code;
+}
+
 const ready = (async () => {
+  const saved = [readLocalCode(), await kvGet<string>("code")].find((c) => c && isCode(c));
+  await storeCode(saved ?? newCode());
   snapshot = (await kvGet<Snapshot>("snapshot")) ?? null;
   outbox = (await kvGet<OutboxItem[]>("outbox")) ?? [];
   notify();
@@ -119,7 +152,7 @@ export function flush(): Promise<boolean> {
         try {
           res = await fetch(outbox[0].path, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json", ...auth() },
             body: body === undefined ? undefined : JSON.stringify(body),
             signal: AbortSignal.timeout(TIMEOUT_MS),
           });
@@ -153,6 +186,9 @@ async function enqueue(item: OutboxItem) {
 /** Record reviews locally right away, then send them (now or once back online). */
 export async function saveReviews(reviews: ReviewInput[]): Promise<void> {
   if (reviews.length === 0) return;
+  try {
+    localStorage.setItem("hippoqcm.studied", "1"); // STUDIED_KEY in Account.tsx: there's progress to lose now
+  } catch {}
   await ready;
   if (snapshot) {
     const byId = new Map(snapshot.questions.map((q) => [q.id, q]));
@@ -163,6 +199,68 @@ export async function saveReviews(reviews: ReviewInput[]): Promise<void> {
     await saveSnapshot();
   }
   await enqueue({ path: "/api/reviews", body: reviews });
+}
+
+// ---- Account ---------------------------------------------------------------------------------
+
+/** Progress stored under a code, or null if the server has never seen it. Needs the network. */
+async function fetchAccount(forCode: string): Promise<Account | null> {
+  const res = await fetch("/api/account", {
+    headers: { Authorization: `Bearer ${forCode}` },
+    signal: AbortSignal.timeout(TIMEOUT_MS),
+  });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return (await res.json()) as Account;
+}
+
+export async function getAccount(): Promise<Account | null> {
+  await ready;
+  return fetchAccount(code);
+}
+
+// Cached answers belong to the old account.
+async function forgetCaches() {
+  snapshot = null;
+  try {
+    const tx = (await db()).transaction("kv", "readwrite");
+    const store = tx.objectStore("kv");
+    store.clear();
+    store.put(code, "code");
+    store.put(outbox, "outbox");
+    await new Promise<void>((resolve) => (tx.oncomplete = () => resolve()));
+  } catch {}
+}
+
+/** Switch this device to another code's progress. Throws a readable message if it can't. */
+export async function switchCode(input: string): Promise<void> {
+  const next = normalizeCode(input);
+  if (!isCode(next)) throw new Error("A sync code has 16 letters and numbers, like ABCD-EFGH-JKMN-PQRS");
+  await ready;
+  if (next === code) return;
+  // Reviews still waiting would be sent under the wrong account after the switch.
+  if (!(await flush()) || outbox.length > 0) {
+    throw new Error("You have reviews waiting to sync. Connect to the internet and try again");
+  }
+  let account: Account | null;
+  try {
+    account = await fetchAccount(next);
+  } catch {
+    throw new Error("Couldn't reach the server. Check your connection and try again");
+  }
+  if (!account) throw new Error("No progress found for this code. Check it for typos");
+  await storeCode(next);
+  await forgetCaches();
+}
+
+/** Erase this code's progress on the server and start over with a new code. */
+export async function deleteProgress(): Promise<void> {
+  await ready;
+  const res = await fetch("/api/account", { method: "DELETE", headers: auth(), signal: AbortSignal.timeout(TIMEOUT_MS) });
+  if (!res.ok) throw new Error(`Couldn't delete progress (HTTP ${res.status})`);
+  outbox = [];
+  await storeCode(newCode());
+  await forgetCaches();
 }
 
 export async function flagQuestion(id: number): Promise<void> {
@@ -182,7 +280,8 @@ export async function getJSON<T>(path: string): Promise<T> {
   const reachable = navigator.onLine && (await flush());
   if (reachable) {
     try {
-      const res = await fetch(path, { signal: AbortSignal.timeout(TIMEOUT_MS) });
+      await ready;
+      const res = await fetch(path, { headers: auth(), signal: AbortSignal.timeout(TIMEOUT_MS) });
       if (!res.ok) throw new HttpError(`HTTP ${res.status}`);
       const data = (await res.json()) as T;
       setOnline(true);
@@ -203,7 +302,8 @@ export async function getJSON<T>(path: string): Promise<T> {
 export async function refreshSnapshot(): Promise<void> {
   if (!navigator.onLine || !(await flush()) || outbox.length > 0) return;
   try {
-    const res = await fetch("/api/snapshot", { signal: AbortSignal.timeout(30_000) });
+    await ready;
+    const res = await fetch("/api/snapshot", { headers: auth(), signal: AbortSignal.timeout(30_000) });
     if (!res.ok) return;
     snapshot = (await res.json()) as Snapshot;
     // A review made while the download was in flight would be missing from it; it'll be in the next one.
@@ -316,7 +416,13 @@ export function startOffline() {
   if (import.meta.env.PROD && "serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js").catch(() => {});
   }
+  // Mobile browsers may evict site storage under pressure; unsynced reviews live there.
+  void navigator.storage?.persist?.().catch(() => {});
   void refreshSnapshot();
+  // Phones suspend backgrounded tabs, so retry the outbox whenever the app comes back.
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible" && outbox.length > 0) void flush();
+  });
   window.addEventListener("online", () => {
     setOnline(true);
     void refreshSnapshot();
