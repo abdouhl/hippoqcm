@@ -1,0 +1,248 @@
+{
+  "semester": 1,
+  "module": "Biophysics",
+  "title": "Biophysics of solutions 4",
+  "pdf": "s1/biophysics/biophysics-of-solutions-4.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q10", "EMD1 2022-2023 Q13", "EMD1 2022-2023 Q14",
+    "EMD1 2023-2024 Q14",
+    "EMD1 2024-2025 Q9", "EMD1 2024-2025 Q13",
+    "EMD1 2025-2026 Q9", "EMD1 2025-2026 Q11"
+  ],
+  "questions": [
+    {
+      "stem": "About the three types of membranes, the correct propositions are:",
+      "options": [
+        "A dialysis membrane is permeable to water and to small molecules or ions (Na⁺, K⁺, Cl⁻…), and impermeable to macromolecules",
+        "A semi-permeable membrane is permeable to water and to ions",
+        "A dialysis membrane is permeable to macromolecules (M ≥ 10 kg)",
+        "A selective (biological) membrane is permeable to water and to certain molecules",
+        "A semi-permeable membrane is permeable only to water"
+      ],
+      "answer": "ADE",
+      "explanation": "Dialysis: water + small molecules/ions, but not macromolecules (M ≥ 10 kg). Semi-permeable: only water — ions do not cross it. Selective (biological): water + certain molecules.",
+      "page": 1
+    },
+    {
+      "stem": "About colligative properties, the correct propositions are:",
+      "options": [
+        "A solution boils at a lower temperature than its pure solvent",
+        "They depend only on the number of solute particles in the solution",
+        "The cryoscopic depression ΔT_sol = T_s − T₀ is positive",
+        "The ebullioscopic elevation ΔT_vap = T_s − T₀ is positive",
+        "By Raoult's law, ΔT_vap = K_eb × ω"
+      ],
+      "answer": "BDE",
+      "explanation": "Colligative properties depend only on the number of solute particles. The solution boils higher (T_s > T₀, ΔT_vap = K_eb·ω > 0) and freezes lower (T_s < T₀, so the cryoscopic depression is negative).",
+      "page": 1
+    },
+    {
+      "stem": "If ω is expressed as an osmolality and ΔT in kelvins, the ebullioscopic constant K_eb is expressed in:",
+      "options": [
+        "°C·L/osmol",
+        "K·kg/osmol",
+        "°C·osmol/L",
+        "K·L/osmol",
+        "osmol/(K·kg)"
+      ],
+      "answer": "B",
+      "explanation": "K_eb = ΔT/ω: with ΔT in K and ω in osmol/kg, K_eb is in K·kg/osmol. °C·L/osmol (or K·L/osmol) applies when ω is an osmolarity.",
+      "page": 1
+    },
+    {
+      "stem": "Pure water boils at 100 °C. An aqueous NaCl solution at 0.1 mol/L is totally dissociated; K_eb(water) = 0.52 °C·L/osmol. At what temperature does the solution boil?",
+      "options": [
+        "99.896 °C",
+        "100.052 °C",
+        "100.104 °C",
+        "100.208 °C",
+        "101.04 °C"
+      ],
+      "answer": "C",
+      "explanation": "ω = 2 × 0.1 = 0.2 osmol/L; ΔT_vap = 0.52 × 0.2 = 0.104 °C, so T_s = T₀ + ΔT = 100.104 °C. 100.052 forgets the dissociation; 99.896 subtracts — a solution boils higher than its solvent.",
+      "page": 1
+    },
+    {
+      "stem": "About cryoscopic depression, the correct propositions are:",
+      "options": [
+        "It is given by ΔT_sol = +K_cr × ω",
+        "A solution solidifies at a lower temperature than its pure solvent",
+        "When ω is an osmolarity, K_cr is expressed in °C·L/osmol",
+        "At the same molar concentration, a totally dissociated NaCl solution has a larger depression (in absolute value) than a glucose solution",
+        "At the same osmolarity, the depression depends on the molar mass of the solute"
+      ],
+      "answer": "BCD",
+      "explanation": "ΔT_sol = −K_cr·ω < 0 (T_s < T₀). It depends only on ω (colligative), not on the nature or molar mass of the solute; NaCl gives ω = 2C versus ω = C for glucose, hence a larger depression.",
+      "page": 2
+    },
+    {
+      "stem": "An aqueous NaCl solution at 0.15 mol/L is totally dissociated (K_cr = 1.86 °C·L/osmol). Its cryoscopic depression is:",
+      "options": [
+        "−0.28 °C",
+        "+0.56 °C",
+        "−1.12 °C",
+        "−0.84 °C",
+        "−0.56 °C"
+      ],
+      "answer": "E",
+      "explanation": "ω = 2 × 0.15 = 0.3 osmol/L; ΔT_sol = −1.86 × 0.3 = −0.56 °C (the normal depression of blood). −0.28 ignores dissociation; −0.84 uses β = 3; the sign is always negative.",
+      "page": 2
+    },
+    {
+      "stem": "The cryoscopic depression of an aqueous MgCl₂ solution at 0.1 mol/L is −0.4836 °C (K_cr = 1.86 °C·L/osmol). Determine its dissociation coefficient α.",
+      "options": [
+        "0.80",
+        "0.30",
+        "0.53",
+        "1.6",
+        "0.60"
+      ],
+      "answer": "A",
+      "explanation": "ω = 0.4836/1.86 = 0.26 osmol/L. MgCl₂ → Mg²⁺ + 2Cl⁻, β = 3: [1 + 2α]×0.1 = 0.26 ⇒ α = 0.8. Using β = 4 gives 0.53; 1.6 is impossible since α ≤ 1.",
+      "page": 2
+    },
+    {
+      "stem": "A formic acid (HCOOH, weak electrolyte) solution at 0.5 mol/L has a cryoscopic depression of −1.023 °C (K_cr = 1.86 °C·L/osmol). Its dissociation coefficient α is:",
+      "options": [
+        "0.55",
+        "1.1",
+        "0.05",
+        "0.10",
+        "0.20"
+      ],
+      "answer": "D",
+      "explanation": "ω = 1.023/1.86 = 0.55 osmol/L. HCOOH → H⁺ + HCOO⁻, β = 2: [1 + α]×0.5 = 0.55 ⇒ α = 0.1, consistent with a weak electrolyte (α < 1). 0.55 is ω itself, not α.",
+      "page": 2
+    },
+    {
+      "stem": "The cryoscopic depression of an alcohol-intoxicated subject's blood is −0.65 °C. All other blood parameters are normal (normal depression −0.56 °C; K_cr = 1.86 °C·L/osmol; M(ethanol) = 46 g/mol). The blood alcohol concentration is:",
+      "options": [
+        "1.48 g/L",
+        "2.23 g/L",
+        "16.1 g/L",
+        "0.048 g/L",
+        "4.45 g/L"
+      ],
+      "answer": "B",
+      "explanation": "ω_alc = (ΔT₂ − ΔT₁)/(−K_cr) = (−0.65 + 0.56)/(−1.86) = 0.048 osmol/L = C_alc (non-electrolyte); C_p = 0.048 × 46 = 2.23 g/L. 16.1 uses the whole −0.65 °C instead of the excess; 0.048 g/L forgets to multiply by M.",
+      "page": 2
+    },
+    {
+      "stem": "In the blood-alcohol exercise (cryoscopy of an intoxicated subject), the correct propositions are:",
+      "options": [
+        "The osmolarity of the blood containing alcohol is ω₂ = ω₁ − ω_alc",
+        "Ethanol is a non-electrolyte, so C_alc = ω_alc",
+        "The alcohol makes the cryoscopic depression of blood more negative",
+        "The alcohol raises the freezing temperature of blood",
+        "The normal cryoscopic depression of blood is −0.56 °C"
+      ],
+      "answer": "BCE",
+      "explanation": "The alcohol adds osmoles: ω₂ = ω₁ + ω_alc, so ΔT₂ = ΔT₁ − K_cr·ω_alc is more negative (blood freezes lower, not higher). Ethanol does not dissociate, so its molarity equals its osmolarity.",
+      "page": 2
+    },
+    {
+      "stem": "About osmosis and osmotic pressure, the correct propositions are:",
+      "options": [
+        "Osmosis is the diffusion of water through a semi-permeable membrane",
+        "Between a solution and pure water, water flows from the solution toward the pure water",
+        "π_osm measures the tendency of a solution to draw in water by osmosis",
+        "π_osm = ωRT is known as Raoult's law",
+        "π_osm is expressed in pascals"
+      ],
+      "answer": "ACE",
+      "explanation": "Water moves from pure water (2) into the solution (1), which draws it in with π_osm = ωRT — Van't Hoff's law (Raoult's law is for ΔT_vap and ΔT_sol). π_osm is in Pa.",
+      "page": 3
+    },
+    {
+      "stem": "At 27 °C, a perfectly semi-permeable membrane separates compartment (1), CaCl₂ at 0.05 mol/L, from compartment (2), NaCl at 0.05 mol/L (both totally dissociated). R = 8.31 SI. The correct proposition is:",
+      "options": [
+        "Water flows from (1) to (2) under π ≈ 125 kPa",
+        "Water flows from (2) to (1) under π ≈ 623 kPa",
+        "No water flows: the two solutions have the same molarity",
+        "Water flows from (2) to (1) under π ≈ 125 kPa",
+        "Water flows from (2) to (1) under π ≈ 0.125 kPa"
+      ],
+      "answer": "D",
+      "explanation": "ω₁ = 3 × 0.05 = 0.15 osmol/L, ω₂ = 2 × 0.05 = 0.10 osmol/L; water goes toward the higher osmolarity, (2) → (1). π = (ω₁ − ω₂)RT = 50 osmol/m³ × 8.31 × 300 ≈ 125 kPa. 623 kPa adds the osmolarities; 0.125 kPa forgets the conversion to osmol/m³.",
+      "page": 3
+    },
+    {
+      "stem": "At 27 °C, two compartments are separated by a semi-permeable membrane. Compartment (1) has an osmolarity of 0.3 osmol/L. Water diffuses from (1) to (2) and the osmotic pressure is 249.3 kPa (R = 8.31 SI). The osmolarity of (2) is:",
+      "options": [
+        "0.2 osmol/L",
+        "0.1 osmol/L",
+        "0.4 osmol/L",
+        "100 osmol/L",
+        "0.3 osmol/L"
+      ],
+      "answer": "C",
+      "explanation": "Δω = π/RT = 249 300/(8.31 × 300) = 100 osmol/m³ = 0.1 osmol/L. Water flows toward the more concentrated side, so ω₂ = 0.3 + 0.1 = 0.4 osmol/L; 0.2 gets the direction backwards.",
+      "page": 3
+    },
+    {
+      "stem": "About isotonicity, the correct propositions are:",
+      "options": [
+        "If π₁ < π₂, solution (1) is hypertonic and (2) hypotonic",
+        "If π_osm = 0 (π₁ = π₂), there is no water flow and the solutions are isotonic",
+        "With a semi-permeable membrane, isotonicity implies iso-osmolarity (ω₁ = ω₂)",
+        "With a biological membrane, isotonicity does not necessarily imply iso-osmolarity",
+        "Urea, which diffuses freely across the erythrocyte membrane, is not osmotically active"
+      ],
+      "answer": "BCDE",
+      "explanation": "π₁ < π₂ makes (1) hypotonic and (2) hypertonic — option A inverts them. Across a biological membrane, freely diffusing solutes such as urea behave like water and exert no osmotic pressure, so isotonic solutions can have different osmolarities.",
+      "page": 4
+    },
+    {
+      "stem": "An erythrocyte (300 mosmol/L) is immersed in a solution containing 150 mosmol/L of NaCl and 200 mosmol/L of urea, which diffuses freely across its membrane. The correct propositions are:",
+      "options": [
+        "The solution is iso-osmolar to the erythrocyte",
+        "The solution is hypotonic relative to the erythrocyte",
+        "Water enters the erythrocyte",
+        "The solution is hypertonic because 350 > 300 mosmol/L",
+        "Urea contributes to the osmotic pressure of the solution"
+      ],
+      "answer": "BC",
+      "explanation": "Urea crosses the membrane, so it is not osmotically active: π₂ = ω_NaCl·RT = 150RT < π₁ = 300RT. The solution is hypotonic (although its total osmolarity, 350, is higher) and the erythrocyte draws water in.",
+      "page": 4
+    },
+    {
+      "stem": "About the solute reflection coefficient σ, the correct propositions are:",
+      "options": [
+        "σ = number of osmoles that do not cross the membrane / initial number of osmoles",
+        "For a dialysis membrane, σ = 1",
+        "For a semi-permeable membrane, σ = 1",
+        "0 ≤ σ ≤ 1",
+        "σ = area of the pores permeable to the solute / total pore area"
+      ],
+      "answer": "ACD",
+      "explanation": "σ = non-crossing osmoles / initial osmoles = area of pores IMPERMEABLE to the solute / total pore area. Semi-permeable: σ = 1; dialysis (solute crosses): σ = 0.",
+      "page": 4
+    },
+    {
+      "stem": "At 27 °C, a solution of osmolarity 0.1 osmol/L is opposed to pure water across a membrane partially permeable to the solute, with σ = 0.4 (R = 8.31 SI). The osmotic pressure is:",
+      "options": [
+        "249 kPa",
+        "99.7 kPa",
+        "149.6 kPa",
+        "0 kPa",
+        "0.0997 kPa"
+      ],
+      "answer": "B",
+      "explanation": "π = σωRT = 0.4 × 100 osmol/m³ × 8.31 × 300 ≈ 99.7 kPa. 249 kPa ignores σ (semi-permeable case); 149.6 uses 1 − σ; 0 would be a totally permeable membrane.",
+      "page": 4
+    },
+    {
+      "stem": "At 27 °C, a solution is opposed to pure water across a membrane. It contains NaCl (ω = 200 osmol/m³, σ = 0.5) and urea (ω = 100 osmol/m³, σ = 0). R = 8.31 SI. The osmotic pressure is:",
+      "options": [
+        "748 kPa",
+        "374 kPa",
+        "499 kPa",
+        "125 kPa",
+        "249 kPa"
+      ],
+      "answer": "E",
+      "explanation": "π = Σσᵢωᵢ·RT = (0.5 × 200 + 0 × 100) × 8.31 × 300 ≈ 249 kPa. 748 kPa takes σ = 1 for both; 374 applies σ = 0.5 to urea too; 499 ignores the σ of NaCl.",
+      "page": 4
+    }
+  ]
+}

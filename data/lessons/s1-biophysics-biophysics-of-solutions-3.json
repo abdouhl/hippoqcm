@@ -1,0 +1,170 @@
+{
+  "semester": 1,
+  "module": "Biophysics",
+  "title": "Biophysics of solutions 3",
+  "pdf": "s1/biophysics/biophysics-of-solutions-3.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q6", "EMD1 2022-2023 Q7",
+    "EMD1 2023-2024 Q6",
+    "EMD1 2024-2025 Q6",
+    "EMD1 2025-2026 Q6"
+  ],
+  "questions": [
+    {
+      "stem": "About the Van't Hoff dissociation coefficient α, the correct propositions are:",
+      "options": [
+        "α = number of dissociated moles / initial number of moles",
+        "For HCOOH, a weak electrolyte, α = 1",
+        "0 ≤ α ≤ 1",
+        "For glucose, α = 1 because all its molecules stay intact",
+        "For HCl, a strong electrolyte, α = 1"
+      ],
+      "answer": "ACE",
+      "explanation": "α = n(dissociated)/n(initial), so 0 ≤ α ≤ 1. HCl (strong) dissociates completely: α = 1; HCOOH (weak) dissociates partially: α < 1; glucose (non-electrolyte) does not dissociate at all: α = 0, not 1.",
+      "page": 1
+    },
+    {
+      "stem": "Which solute – β pairing is correct?",
+      "options": [
+        "NaCl – β = 1",
+        "Na₂SO₄ – β = 3",
+        "Urea – β = 2",
+        "HCOOH – β = 3",
+        "Glucose – β = 0"
+      ],
+      "answer": "B",
+      "explanation": "β is the number of ions released: Na₂SO₄ → 2Na⁺ + SO₄²⁻ gives β = 3. NaCl → Na⁺ + Cl⁻ and HCOOH → H⁺ + HCOO⁻ give β = 2; non-electrolytes (urea, glucose) have β = 1, not 0 or 2.",
+      "page": 1
+    },
+    {
+      "stem": "For an aqueous glucose solution of molarity C, the correct propositions are:",
+      "options": [
+        "Glucose is a weak electrolyte",
+        "α = 0",
+        "ω = 0, since glucose does not dissociate",
+        "β = 1",
+        "ω = C"
+      ],
+      "answer": "BDE",
+      "explanation": "Glucose is a non-electrolyte: no moles dissociate (α = 0) and β = 1, so ω = [1 + α(β − 1)]C = C. Not dissociating does not make ω zero — each intact molecule still counts as one osmole.",
+      "page": 1
+    },
+    {
+      "stem": "An aqueous solution of formic acid HCOOH (weak electrolyte) at 0.1 mol/L has a dissociation coefficient α = 0.2. Calculate its osmolarity.",
+      "options": [
+        "0.20 osmol/L",
+        "0.10 osmol/L",
+        "0.12 osmol/L",
+        "0.14 osmol/L",
+        "0.02 osmol/L"
+      ],
+      "answer": "C",
+      "explanation": "HCOOH → H⁺ + HCOO⁻, β = 2: ω = [1 + 0.2×(2 − 1)]×0.1 = 1.2×0.1 = 0.12 osmol/L. 0.20 assumes total dissociation (strong electrolyte); 0.10 ignores dissociation.",
+      "page": 1
+    },
+    {
+      "stem": "An aqueous Na₂SO₄ solution at 0.2 mol/L has an osmolarity of 0.5 osmol/L. What is its dissociation coefficient α?",
+      "options": [
+        "0.50",
+        "0.25",
+        "1.5",
+        "0.75",
+        "0.60"
+      ],
+      "answer": "D",
+      "explanation": "Na₂SO₄ → 2Na⁺ + SO₄²⁻, β = 3: 0.5 = [1 + 2α]×0.2 ⇒ 1 + 2α = 2.5 ⇒ α = 0.75. Using β = 2 gives 1.5, which is impossible since 0 ≤ α ≤ 1.",
+      "page": 1
+    },
+    {
+      "stem": "About osmolarity and osmolality, the correct propositions are:",
+      "options": [
+        "Osmolality is used when the concentration C is expressed as a molality",
+        "Molality = number of moles of solute / mass of solvent, expressed in mol/kg",
+        "Osmolality is expressed in osmol/L",
+        "Osmolarity = number of osmoles of solute / volume of solution",
+        "Molarity = number of moles of solute / mass of solution"
+      ],
+      "answer": "ABD",
+      "explanation": "Osmolarity and molarity are per volume of solution (osmol/L, mol/L); osmolality and molality are per mass of solvent (osmol/kg, mol/kg). The same formula ω = [1 + α(β − 1)]C applies to both.",
+      "page": 2
+    },
+    {
+      "stem": "One liter of aqueous solution contains 0.1 mol of NaCl (totally dissociated) and 0.2 mol of HCOOH (α = 0.1). Calculate the total osmolarity.",
+      "options": [
+        "0.60 osmol/L",
+        "0.40 osmol/L",
+        "0.32 osmol/L",
+        "0.22 osmol/L",
+        "0.42 osmol/L"
+      ],
+      "answer": "E",
+      "explanation": "ω = Σ[1 + αᵢ(βᵢ − 1)]Cᵢ: NaCl 2×0.1 = 0.20; HCOOH [1 + 0.1×1]×0.2 = 0.22 ⇒ 0.42 osmol/L. 0.60 treats HCOOH as totally dissociated; 0.40 ignores its dissociation.",
+      "page": 2
+    },
+    {
+      "stem": "In 1 L of water there are 11.7 g of NaCl (M = 58.5 g/mol) and 9 g of glucose (M = 180 g/mol). NaCl is totally dissociated. Calculate the osmolarity of the solution.",
+      "options": [
+        "250 mosmol/L",
+        "450 mosmol/L",
+        "500 mosmol/L",
+        "400 mosmol/L",
+        "300 mosmol/L"
+      ],
+      "answer": "B",
+      "explanation": "C(NaCl) = 11.7/58.5 = 0.2 mol/L ⇒ ω = 2×0.2 = 0.4; C(glucose) = 9/180 = 0.05 mol/L ⇒ ω = 0.05 (non-electrolyte). Total 0.45 osmol/L = 450 mosmol/L. 250 forgets NaCl dissociation; 500 doubles glucose.",
+      "page": 2
+    },
+    {
+      "stem": "One liter of aqueous solution contains 14.2 g of Na₂SO₄ (M = 142 g/mol) and 25 mL of H₃PO₄ (2 mol/L). The electrolytes are totally dissociated. Calculate the osmolarity of the solution.",
+      "options": [
+        "400 mosm/L",
+        "350 mosm/L",
+        "450 mosm/L",
+        "500 mosm/L",
+        "600 mosm/L"
+      ],
+      "answer": "D",
+      "explanation": "Na₂SO₄: 0.1 mol/L × β = 3 ⇒ 300 mosm/L. H₃PO₄: 0.025 L × 2 mol/L = 0.05 mol in 1 L, → 3H⁺ + PO₄³⁻ so β = 4 ⇒ 200 mosm/L. Total 500 mosm/L; 450 uses β = 3 for H₃PO₄.",
+      "page": 2
+    },
+    {
+      "stem": "About blood vessels, the correct propositions are:",
+      "options": [
+        "Veins carry blood from the heart to the organs",
+        "There are 5 types of blood vessels: arteries, arterioles, capillaries, veins and venules",
+        "Gases and nutrients are exchanged between blood and tissues through the capillaries",
+        "Gases and nutrients are exchanged between blood and tissues through the arterioles",
+        "Arteries carry blood from the heart to the organs"
+      ],
+      "answer": "BCE",
+      "explanation": "Blood goes heart → (arteries) → organs → (veins) → heart; exchanges blood ↔ tissues happen across the capillaries, not the arterioles. The 5 vessel types are arteries, arterioles, capillaries, veins and venules.",
+      "page": 2
+    },
+    {
+      "stem": "For a single-solute solution, the osmolarity ω equals the molarity C when:",
+      "options": [
+        "The solute is a non-electrolyte (β = 1)",
+        "The solute is a strong electrolyte (α = 1)",
+        "The solute is NaCl, totally dissociated",
+        "The solute is a weak electrolyte (0 < α < 1, β = 2)",
+        "No solute molecule dissociates (α = 0)"
+      ],
+      "answer": "AE",
+      "explanation": "ω = [1 + α(β − 1)]C equals C only when α(β − 1) = 0, i.e. β = 1 (non-electrolyte) or α = 0. Any dissociating electrolyte (α > 0, β ≥ 2) gives ω > C — e.g. totally dissociated NaCl gives ω = 2C.",
+      "page": 1
+    },
+    {
+      "stem": "An aqueous CaCl₂ solution has a molality of 0.3 mol/kg; CaCl₂ is totally dissociated. Its osmolality is:",
+      "options": [
+        "0.9 osmol/L",
+        "0.6 osmol/kg",
+        "0.9 osmol/kg",
+        "0.3 osmol/kg",
+        "1.2 osmol/kg"
+      ],
+      "answer": "C",
+      "explanation": "CaCl₂ → Ca²⁺ + 2Cl⁻, β = 3, α = 1: ω = 3×0.3 = 0.9. Since C is a molality (mol/kg), ω is an osmolality in osmol/kg, not osmol/L.",
+      "page": 2
+    }
+  ]
+}
