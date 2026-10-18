@@ -149,7 +149,7 @@ export default function Decks({ modules, onStudy, onOpenModule, onOpenLesson }: 
             <Row
               key={`l${l.id}`}
               depth={3}
-              label={l.title}
+              label={<>{l.read_at && <span className="check" title="Read">✓ </span>}{l.title}</>}
               counts={l}
               onStudy={() => onStudy({ title: l.title, endpoint: `/api/lessons/${l.id}/study` })}
               onDetails={() => onOpenLesson(m, l)}

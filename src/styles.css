@@ -95,6 +95,25 @@ code { background: var(--surface); border: 1px solid var(--border); border-radiu
 .actions.start { justify-content: flex-start; align-items: center; margin-bottom: 16px; }
 .actions button:disabled { opacity: 0.5; cursor: default; }
 .check { color: var(--ok); }
+.check.unread { color: var(--muted); }
+.lesson-pick { margin: -4px 0 8px; }
+.lesson-item { display: flex; align-items: center; gap: 10px; }
+.lesson-item > input { width: 18px; height: 18px; flex: none; accent-color: var(--accent); cursor: pointer; }
+.lesson-item > .module { flex: 1 1 0; min-width: 0; }
+.lesson-item.picked > .module { border-color: var(--accent); }
+.read-toggle {
+  flex: none; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--muted); font-size: 0.8rem; cursor: pointer; white-space: nowrap;
+}
+.read-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.read-toggle.on { border-color: var(--ok); background: var(--ok-bg); color: var(--ok); }
+.selection-bar {
+  position: sticky; bottom: 0; margin: 12px 0 0; padding: 12px 0;
+  background: var(--bg); border-top: 1px solid var(--border);
+}
+.setting { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 8px 0; }
+.setting small { display: block; font-weight: normal; }
+.setting input { width: 80px; padding: 8px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font: inherit; text-align: right; }
 .question-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 0 0 8px; }
 .badge {
   display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 0.75rem; font-weight: 600;
@@ -306,6 +325,8 @@ button.link.danger { color: var(--error); }
 
   /* Lists and button rows stack. */
   .module { flex-wrap: wrap; gap: 4px 12px; padding: 14px 16px; }
+  .lesson-item { flex-wrap: wrap; gap: 6px 10px; }
+  .lesson-item > .read-toggle { margin-left: 28px; }
   .actions.start > button { flex: 1 1 auto; padding: 12px 16px; }
 
   /* Phones can't show PDFs inline (iOS shows page 1 only, Android nothing): open the viewer instead. */

@@ -8,6 +8,10 @@ interface Env {
 
 const json = (data: unknown, status = 200) => Response.json(data, { status });
 
+// Lesson ids from "?ids=1,2,3".
+const idList = (url: URL): number[] =>
+  (url.searchParams.get("ids") ?? "").split(",").map(Number).filter((n) => Number.isInteger(n) && n > 0);
+
 // A question with this many lapses keeps slipping: it's a leech.
 const LEECH_LAPSES = 4;
 
@@ -126,6 +130,7 @@ export default {
     if (lessonsMatch && request.method === "GET") {
       const { results } = await env.DB.prepare(
         `SELECT l.id, l.module_id, l.title, l.pdf, l.position, l.completed_at,
+                (SELECT read_at FROM lesson_reads WHERE user_id = ?3 AND lesson_id = l.id) AS read_at,
                 COUNT(q.id) AS question_count,
                 COALESCE(SUM(q.origin = 'exam'), 0) AS exam_count,
                 COALESCE(SUM(CASE WHEN q.id IS NOT NULL AND (c.question_id IS NULL OR c.due <= ?2) THEN 1 ELSE 0 END), 0) AS due_count,
@@ -161,7 +166,7 @@ export default {
     }
 
     // Study queue for a whole year, a semester, a module (optionally only questions tied to a
-    // lesson), one lesson, or every leech. Year n = semesters 2n-1 and 2n.
+    // lesson, or to the lessons listed in ?ids=1,2), one lesson, or every leech. Year n = semesters 2n-1 and 2n.
     const studyMatch = url.pathname.match(/^\/api\/(?:(years|semesters|modules|lessons)\/(\d+)|(leeches))\/study$/);
     if (studyMatch && request.method === "GET") {
       const onlyLessons = url.searchParams.get("lessons") === "1"
@@ -180,15 +185,23 @@ export default {
          FROM questions q
          LEFT JOIN cards c ON c.question_id = q.id AND c.user_id = ?4
          WHERE ${scope} AND q.flagged = 0 AND (?2 = 1 OR c.question_id IS NULL OR c.due <= ?3)
+           AND (?5 IS NULL OR q.id IN (SELECT question_id FROM question_lessons
+                                       WHERE lesson_id IN (SELECT value FROM json_each(?5))))
          -- Overdue reviews first, then unseen questions in exam order.
          ORDER BY c.due IS NULL, c.due, q.id`,
       )
-        .bind(studyMatch[2] ? Number(studyMatch[2]) : null, url.searchParams.get("all") === "1" ? 1 : 0, Date.now(), user)
+        .bind(
+          studyMatch[2] ? Number(studyMatch[2]) : null,
+          url.searchParams.get("all") === "1" ? 1 : 0,
+          Date.now(),
+          user,
+          url.searchParams.has("ids") ? JSON.stringify(idList(url)) : null,
+        )
         .all<Record<string, unknown>>();
       return json(await toStudyQuestions(env.DB, results));
     }
 
-    // Random sample of a module's questions for a mock exam, ignoring due dates.
+    // Random sample of a module's questions for a mock exam, ignoring due dates; ?ids=1,2 limits it to those lessons.
     const examMatch = url.pathname.match(/^\/api\/modules\/(\d+)\/exam$/);
     if (examMatch && request.method === "GET") {
       const { results } = await env.DB.prepare(
@@ -196,6 +209,8 @@ export default {
          FROM questions q
          LEFT JOIN cards c ON c.question_id = q.id AND c.user_id = ?4
          WHERE q.module_id = ?1 AND q.flagged = 0 AND (?2 = 0 OR q.origin = 'exam')
+           AND (?5 IS NULL OR q.id IN (SELECT question_id FROM question_lessons
+                                       WHERE lesson_id IN (SELECT value FROM json_each(?5))))
          ORDER BY RANDOM()
          LIMIT ?3`,
       )
@@ -204,6 +219,7 @@ export default {
           url.searchParams.get("origin") === "exam" ? 1 : 0,
           Math.min(Number(url.searchParams.get("n")) || 20, 200),
           user,
+          url.searchParams.has("ids") ? JSON.stringify(idList(url)) : null,
         )
         .all<Record<string, unknown>>();
       return json(await toStudyQuestions(env.DB, results));
@@ -268,8 +284,10 @@ export default {
       const [modules, lessons, links, questions] = await env.DB.batch([
         env.DB.prepare("SELECT id, semester, name FROM modules ORDER BY semester, name"),
         env.DB.prepare(
-          "SELECT id, module_id, title, pdf, position, completed_at FROM lessons ORDER BY module_id, position",
-        ),
+          `SELECT l.id, l.module_id, l.title, l.pdf, l.position, l.completed_at, r.read_at
+           FROM lessons l LEFT JOIN lesson_reads r ON r.lesson_id = l.id AND r.user_id = ?1
+           ORDER BY l.module_id, l.position`,
+        ).bind(user),
         env.DB.prepare("SELECT question_id, lesson_id FROM question_lessons"),
         env.DB.prepare(
           `SELECT ${QUESTION_COLUMNS}
@@ -321,6 +339,23 @@ export default {
     const flagMatch = url.pathname.match(/^\/api\/questions\/(\d+)\/flag$/);
     if (flagMatch && request.method === "POST") {
       await env.DB.prepare("UPDATE questions SET flagged = 1 WHERE id = ?1").bind(Number(flagMatch[1])).run();
+      return json({ ok: true });
+    }
+
+    // Mark a lesson read ({ read: true }) or unread.
+    const readMatch = url.pathname.match(/^\/api\/lessons\/(\d+)\/read$/);
+    if (readMatch && request.method === "POST") {
+      const code = codeOf(request);
+      if (!code) return json({ error: "Sync code required" }, 503);
+      const { read, at } = (await request.json()) as { read: boolean; at: number };
+      const userId = await writerId(code, env.DB);
+      const lessonId = Number(readMatch[1]);
+      await (read
+        ? env.DB.prepare(
+            "INSERT INTO lesson_reads (user_id, lesson_id, read_at) VALUES (?1, ?2, ?3) ON CONFLICT DO NOTHING",
+          ).bind(userId, lessonId, at)
+        : env.DB.prepare("DELETE FROM lesson_reads WHERE user_id = ?1 AND lesson_id = ?2").bind(userId, lessonId)
+      ).run();
       return json({ ok: true });
     }
 

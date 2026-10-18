@@ -7,6 +7,7 @@ import Exam from "./Exam";
 import Insights from "./Insights";
 import { LessonPage, ModulePage } from "./Lessons";
 import { Footer, NotFound, StaticPage, isPage } from "./Pages";
+import Settings from "./Settings";
 import Study from "./Study";
 
 type View =
@@ -14,8 +15,9 @@ type View =
   | { kind: "module"; module: Module }
   | { kind: "lesson"; module: Module; lesson: Lesson }
   | { kind: "study"; title: string; endpoint: string; back: View; backLabel: string }
-  | { kind: "exam"; module: Module }
+  | { kind: "exam"; module: Module; lessons?: Lesson[] }
   | { kind: "insights" }
+  | { kind: "settings" }
   | { kind: "account"; incoming: string | null };
 
 // A restore link looks like https://…/#code=XXXX-XXXX-XXXX-XXXX. The code stays in the fragment so it
@@ -83,6 +85,7 @@ export default function App() {
     return (
       <Exam
         module={view.module}
+        lessons={view.lessons}
         onExit={() => {
           setView({ kind: "module", module: view.module });
           loadModules();
@@ -93,6 +96,10 @@ export default function App() {
 
   if (view.kind === "account") {
     return <Account incoming={view.incoming} onBack={() => setView({ kind: "home" })} />;
+  }
+
+  if (view.kind === "settings") {
+    return <Settings onBack={() => setView({ kind: "home" })} />;
   }
 
   if (view.kind === "insights") {
@@ -116,7 +123,16 @@ export default function App() {
         module={module}
         onBack={() => setView({ kind: "home" })}
         onOpenLesson={(lesson) => setView({ kind: "lesson", module, lesson })}
-        onExam={() => setView({ kind: "exam", module })}
+        onExam={(lessons) => setView({ kind: "exam", module, lessons })}
+        onStudyLessons={(lessons) =>
+          setView({
+            kind: "study",
+            title: lessons.length === 1 ? lessons[0].title : `${module.name} · ${lessons.length} lessons`,
+            endpoint: `/api/modules/${module.id}/study?ids=${lessons.map((l) => l.id).join(",")}`,
+            back: view,
+            backLabel: module.name,
+          })
+        }
         onStudy={(lessonsOnly) =>
           setView({
             kind: "study",
@@ -161,6 +177,7 @@ export default function App() {
       <nav className="home-nav">
         <span className="home-links">
           <button className="link" onClick={() => setView({ kind: "insights" })}>📊 Insights</button>
+          <button className="link" onClick={() => setView({ kind: "settings" })}>⚙ Settings</button>
           <button className="link" onClick={() => setView({ kind: "account", incoming: null })}>🔑 Save progress</button>
         </span>
         <SyncBadge />

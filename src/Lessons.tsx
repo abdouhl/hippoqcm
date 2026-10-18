@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Lesson, Module } from "../shared/types";
-import { getJSON } from "./api";
+import { getJSON, setLessonRead } from "./api";
 
 function useLessons(moduleId: number) {
   const [lessons, setLessons] = useState<Lesson[] | null>(null);
@@ -10,7 +10,26 @@ function useLessons(moduleId: number) {
       .then(setLessons)
       .catch((e: Error) => setError(e.message));
   }, [moduleId]);
-  return { lessons, error };
+
+  // Flip read/unread here right away; the write syncs in the background.
+  const toggleRead = (lesson: Lesson) => {
+    const read = !lesson.read_at;
+    setLessons((ls) => ls?.map((l) => (l.id === lesson.id ? { ...l, read_at: read ? Date.now() : null } : l)) ?? null);
+    setLessonRead(lesson.id, read).catch((e: Error) => setError(e.message));
+  };
+  return { lessons, error, toggleRead };
+}
+
+function ReadToggle({ lesson, onToggle }: { lesson: Lesson; onToggle: () => void }) {
+  return (
+    <button
+      className={lesson.read_at ? "read-toggle on" : "read-toggle"}
+      onClick={onToggle}
+      title={lesson.read_at ? "Mark as not read" : "Mark as read"}
+    >
+      {lesson.read_at ? `✓ Read ${formatDate(lesson.read_at)}` : "Mark as read"}
+    </button>
+  );
 }
 
 const formatDate = (ms: number) => new Date(ms).toLocaleDateString(undefined, { day: "numeric", month: "short" });
@@ -20,11 +39,21 @@ type ModuleProps = {
   onBack: () => void;
   onOpenLesson: (lesson: Lesson) => void;
   onStudy: (lessonsOnly: boolean) => void;
-  onExam: () => void;
+  onStudyLessons: (lessons: Lesson[]) => void;
+  onExam: (lessons?: Lesson[]) => void;
 };
 
-export function ModulePage({ module, onBack, onOpenLesson, onStudy, onExam }: ModuleProps) {
-  const { lessons, error } = useLessons(module.id);
+export function ModulePage({ module, onBack, onOpenLesson, onStudy, onStudyLessons, onExam }: ModuleProps) {
+  const { lessons, error, toggleRead } = useLessons(module.id);
+  const [picked, setPicked] = useState<Set<number>>(new Set());
+  const selection = lessons?.filter((l) => picked.has(l.id)) ?? [];
+  const pick = (ids: number[]) => setPicked(new Set(ids));
+  const togglePick = (id: number) =>
+    setPicked((prev) => {
+      const next = new Set(prev);
+      if (!next.delete(id)) next.add(id);
+      return next;
+    });
 
   return (
     <main>
@@ -42,7 +71,7 @@ export function ModulePage({ module, onBack, onOpenLesson, onStudy, onExam }: Mo
             Only my lessons · {module.lesson_question_count} Qs
           </button>
         )}
-        <button className="secondary" onClick={onExam} disabled={module.question_count === 0}>
+        <button className="secondary" onClick={() => onExam()} disabled={module.question_count === 0}>
           ⏱ Mock exam
         </button>
       </div>
@@ -52,20 +81,47 @@ export function ModulePage({ module, onBack, onOpenLesson, onStudy, onExam }: Mo
       {lessons && lessons.length === 0 && (
         <p className="meta">No lessons yet. Finish one, then run <code>/lesson path/to/lesson.pdf</code>.</p>
       )}
+      {lessons && lessons.length > 1 && (
+        <p className="meta lesson-pick">
+          Select:{" "}
+          <button className="link" onClick={() => pick(lessons.map((l) => l.id))}>all</button> ·{" "}
+          <button className="link" onClick={() => pick(lessons.filter((l) => l.read_at).map((l) => l.id))}>read</button>
+          {picked.size > 0 && (
+            <> · <button className="link" onClick={() => pick([])}>none</button></>
+          )}
+        </p>
+      )}
       <ul className="modules">
         {lessons?.map((l) => (
-          <li key={l.id}>
+          <li key={l.id} className={picked.has(l.id) ? "lesson-item picked" : "lesson-item"}>
+            <input
+              type="checkbox"
+              checked={picked.has(l.id)}
+              onChange={() => togglePick(l.id)}
+              aria-label={`Select ${l.title}`}
+            />
             <button className="module" onClick={() => onOpenLesson(l)}>
               <span className="name">
-                <span className="check">✓</span> {l.title}
+                <span className={l.read_at ? "check" : "check unread"}>{l.read_at ? "✓" : "○"}</span> {l.title}
               </span>
               <span className="meta">
                 {l.question_count} Qs ({l.exam_count} exam) · {l.due_count} due
               </span>
             </button>
+            <ReadToggle lesson={l} onToggle={() => toggleRead(l)} />
           </li>
         ))}
       </ul>
+      {selection.length > 0 && (
+        <div className="actions start selection-bar">
+          <button onClick={() => onStudyLessons(selection)} disabled={selection.every((l) => l.question_count === 0)}>
+            Study {selection.length} lesson{selection.length === 1 ? "" : "s"}
+          </button>
+          <button className="secondary" onClick={() => onExam(selection)} disabled={selection.every((l) => l.question_count === 0)}>
+            ⏱ Mock exam on {selection.length === 1 ? "it" : "them"}
+          </button>
+        </div>
+      )}
     </main>
   );
 }
@@ -78,13 +134,13 @@ type LessonProps = {
 };
 
 export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
-  const { lessons, error } = useLessons(module.id);
+  const { lessons, error, toggleRead } = useLessons(module.id);
   const lesson = lessons?.find((l) => l.id === lessonId);
 
   const header = (
     <header className="study-header">
       <button className="link" onClick={onBack}>← {module.name}</button>
-      {lesson && <span className="meta">✓ Done {formatDate(lesson.completed_at)}</span>}
+      {lesson && <ReadToggle lesson={lesson} onToggle={() => toggleRead(lesson)} />}
     </header>
   );
 

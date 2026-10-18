@@ -17,7 +17,8 @@ export type Lesson = {
   title: string;
   pdf: string; // path under /lessons
   position: number;
-  completed_at: number; // unix ms
+  completed_at: number; // unix ms, when the lesson was added
+  read_at: number | null; // unix ms, when this user marked it read; null = unread
   question_count: number;
   exam_count: number;
   due_count: number;
@@ -85,7 +86,7 @@ export type Insights = {
 // Offline copy of the deck tree and every unflagged question, from /api/snapshot.
 export type Snapshot = {
   modules: Pick<Module, "id" | "semester" | "name">[];
-  lessons: Pick<Lesson, "id" | "module_id" | "title" | "pdf" | "position" | "completed_at">[];
+  lessons: Pick<Lesson, "id" | "module_id" | "title" | "pdf" | "position" | "completed_at" | "read_at">[];
   questions: (StudyQuestion & { lesson_ids: number[] })[];
   fetched_at: number; // unix ms
 };

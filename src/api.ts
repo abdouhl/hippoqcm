@@ -272,6 +272,18 @@ export async function flagQuestion(id: number): Promise<void> {
   await enqueue({ path: `/api/questions/${id}/flag` });
 }
 
+/** Mark a lesson read or unread, locally right away and on the server once reachable. */
+export async function setLessonRead(id: number, read: boolean): Promise<void> {
+  await ready;
+  const at = Date.now();
+  if (snapshot) {
+    const lesson = snapshot.lessons.find((l) => l.id === id);
+    if (lesson) lesson.read_at = read ? at : null;
+    await saveSnapshot();
+  }
+  await enqueue({ path: `/api/lessons/${id}/read`, body: { read, at } });
+}
+
 // ---- Reads -----------------------------------------------------------------------------------
 
 /** GET from the worker, falling back to the offline snapshot when the network is unavailable. */
@@ -380,15 +392,20 @@ function offlineAnswer(path: string): unknown {
       .filter((l) => moduleId === null || l.module_id === moduleId)
       .map((l): Lesson => {
         const qs = s.questions.filter((q) => q.lesson_ids.includes(l.id));
-        return { ...l, ...counts(qs, now), exam_count: qs.filter((q) => q.origin === "exam").length };
+        // read_at is missing from snapshots saved before lessons could be marked read.
+        return { ...l, read_at: l.read_at ?? null, ...counts(qs, now), exam_count: qs.filter((q) => q.origin === "exam").length };
       });
   }
+
+  // ?ids=1,2: only questions from those lessons.
+  const ids = url.searchParams.get("ids")?.split(",").map(Number);
+  const inLessons = (q: Snapshot["questions"][number]) => !ids || q.lesson_ids.some((l) => ids.includes(l));
 
   const exam = p.match(/^\/api\/modules\/(\d+)\/exam$/);
   if (exam) {
     const examOnly = url.searchParams.get("origin") === "exam";
     const n = Math.min(Number(url.searchParams.get("n")) || 20, 200);
-    const pool = s.questions.filter((q) => q.module_id === Number(exam[1]) && (!examOnly || q.origin === "exam"));
+    const pool = s.questions.filter((q) => q.module_id === Number(exam[1]) && (!examOnly || q.origin === "exam") && inLessons(q));
     return shuffle(pool).slice(0, n);
   }
 
@@ -406,7 +423,7 @@ function offlineAnswer(path: string): unknown {
   };
   const all = url.searchParams.get("all") === "1";
   return s.questions
-    .filter((q) => inScope(q) && (all || !q.card || q.card.due <= now))
+    .filter((q) => inScope(q) && inLessons(q) && (all || !q.card || q.card.due <= now))
     // Overdue reviews first, then unseen questions in exam order.
     .sort((a, b) => (a.card ? 0 : 1) - (b.card ? 0 : 1) || (a.card?.due ?? 0) - (b.card?.due ?? 0) || a.id - b.id);
 }

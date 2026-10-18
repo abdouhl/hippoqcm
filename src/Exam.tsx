@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Rating } from "ts-fsrs";
-import type { Label, Module, ReviewInput, StudyQuestion } from "../shared/types";
+import type { Label, Lesson, Module, ReviewInput, StudyQuestion } from "../shared/types";
 import { getJSON, saveReviews } from "./api";
 import { scheduler, toCard, toRow } from "./fsrs";
 
@@ -47,9 +47,10 @@ function clock(ms: number): string {
   return `${m}:${String(s).padStart(2, "0")}`;
 }
 
-type Props = { module: Module; onExit: () => void };
+// `lessons` limits the exam to questions from those lessons.
+type Props = { module: Module; lessons?: Lesson[]; onExit: () => void };
 
-export default function Exam({ module, onExit }: Props) {
+export default function Exam({ module, lessons, onExit }: Props) {
   const [exam, setExam] = useState<Running | null>(() => loadSaved(module.id));
   const [finished, setFinished] = useState<Finished | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -67,7 +68,9 @@ export default function Exam({ module, onExit }: Props) {
     setError(null);
     try {
       const questions = await getJSON<StudyQuestion[]>(
-        `/api/modules/${module.id}/exam?n=${count}${examOnly ? "&origin=exam" : ""}`,
+        `/api/modules/${module.id}/exam?n=${count}${examOnly ? "&origin=exam" : ""}${
+          lessons ? `&ids=${lessons.map((l) => l.id).join(",")}` : ""
+        }`,
       );
       if (questions.length === 0) throw new Error("No questions match these settings");
       const now = Date.now();
@@ -115,13 +118,14 @@ export default function Exam({ module, onExit }: Props) {
     return <Results module={module} exam={finished} onRetry={() => setFinished(null)} onExit={onExit} />;
   }
   if (exam) return <Sitting module={module} exam={exam} onChange={update} onSubmit={submit} />;
-  return <Setup module={module} error={error} onStart={start} onExit={onExit} />;
+  return <Setup module={module} lessons={lessons} error={error} onStart={start} onExit={onExit} />;
 }
 
 // ---- Setup -------------------------------------------------------------------------------------
 
-function Setup({ module, error, onStart, onExit }: {
+function Setup({ module, lessons, error, onStart, onExit }: {
   module: Module;
+  lessons?: Lesson[];
   error: string | null;
   onStart: (count: number, minutes: number, examOnly: boolean) => Promise<void>;
   onExit: () => void;
@@ -138,6 +142,7 @@ function Setup({ module, error, onStart, onExit }: {
         <span className="meta">Mock exam</span>
       </header>
       <h1>Mock exam · {module.name}</h1>
+      {lessons && <p className="meta">On {lessons.map((l) => l.title).join(", ")}</p>}
       <p className="meta">
         Random questions, answers hidden until you submit. All-or-nothing scoring, graded out of 20.
         Your answers count as reviews.
