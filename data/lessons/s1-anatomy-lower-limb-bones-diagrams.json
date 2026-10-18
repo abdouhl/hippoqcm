@@ -1,0 +1,145 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "title": "Lower limb bones (diagrams)",
+  "pdf": "s1/anatomy/lower-limb-bones-diagrams.pdf",
+  "exam_questions": [
+    "EMD1 2023-2024 Q9",
+    "EMD1 2023-2024 Q10",
+    "EMD1 2023-2024 Q11",
+    "EMD1 2023-2024 Q12",
+    "EMD1 2023-2024 Q13",
+    "EMD1 2024-2025 Q10",
+    "EMD1 2024-2025 Q11",
+    "EMD1 2024-2025 Q12",
+    "EMD1 2024-2025 Q13",
+    "EMD1 2024-2025 Q15",
+    "EMD1 2025-2026 Q9",
+    "EMD1 2025-2026 Q10",
+    "EMD1 2025-2026 Q13",
+    "EMD1 2025-2026 Q14",
+    "EMD1 2025-2026 Q15"
+  ],
+  "questions": [
+    {
+      "stem": "Bones of the lower (pelvic) limb, anterior view. Which matches are correct?",
+      "options": ["a → femur", "b → patella", "c → fibula", "d → fibula", "e → metatarsals"],
+      "answer": "ABD",
+      "explanation": "c is the tibia (medial, thick) and d the fibula (lateral, thin). e points to the tarsal bones; the metatarsals are f.",
+      "page": 1,
+      "image": "s1/lessons/lower-limb-bones-g1.png"
+    },
+    {
+      "stem": "Bones of the lower (pelvic) limb, anterior view. Which matches are correct?",
+      "options": ["b → tibial tuberosity", "c → tibia", "e → tarsal bones", "f → metatarsals", "g → phalanges"],
+      "answer": "BCDE",
+      "explanation": "b is the patella, lying in front of the knee above the tibia.",
+      "page": 1,
+      "image": "s1/lessons/lower-limb-bones-g1.png"
+    },
+    {
+      "stem": "Constitution of the hip bone (lateral surface). Which matches are correct?",
+      "options": ["k → ilium", "l → ischium", "m → pubis", "l → pubis", "m → ischium"],
+      "answer": "ADE",
+      "explanation": "The ilium (k) forms the upper wing; the pubis (l) is anterior and the ischium (m) posterior-inferior. All three meet at the acetabulum.",
+      "page": 2,
+      "image": "s1/lessons/lower-limb-bones-g2.png"
+    },
+    {
+      "stem": "Hip bone, lateral surface. Which matches are correct?",
+      "options": ["a → iliac crest", "b → anterior superior iliac spine", "l → ischial tuberosity", "m → obturator foramen", "g → ischial tuberosity"],
+      "answer": "ABCD",
+      "explanation": "The anterior border is on the right (b, c) and the ischial tuberosity (l) is posterior-inferior. g lies on the pubis, at the anterior-inferior corner.",
+      "page": 2,
+      "image": "s1/lessons/lower-limb-bones-g3.png"
+    },
+    {
+      "stem": "Bony pelvis, anterior view. Which matches are correct?",
+      "options": ["a → iliac crest", "b → gluteal surface", "d → anterior superior iliac spine", "g → acetabulum", "h → pubic symphysis"],
+      "answer": "ACE",
+      "explanation": "In anterior view we see the inner surface of the ilium: b is the iliac fossa (the gluteal surface is lateral). g is the obturator foramen.",
+      "page": 3,
+      "image": "s1/lessons/lower-limb-bones-g4.png"
+    },
+    {
+      "stem": "Bony pelvis, anterior view. Which matches are correct?",
+      "options": ["d → posterior superior iliac spine", "e → anterior inferior iliac spine", "g → obturator foramen", "b → iliac fossa", "h → sacroiliac joint"],
+      "answer": "BCD",
+      "explanation": "d is the anterior superior iliac spine, with the anterior inferior spine (e) below it. h is the pubic symphysis, in the midline in front.",
+      "page": 3,
+      "image": "s1/lessons/lower-limb-bones-g4.png"
+    },
+    {
+      "stem": "Bony pelvis, anterior view. Label c points to a ridge on the inner surface of the ilium that forms the lateral boundary of the pelvic inlet. It is:",
+      "options": ["The iliac crest", "The arcuate line", "The posterior gluteal line", "The ischial spine", "The pubic tubercle"],
+      "answer": "B",
+      "explanation": "The arcuate line separates the iliac fossa (greater pelvis) from the lesser pelvis and forms the lateral boundary of the pelvic inlet, with the promontory behind and the symphysis in front.",
+      "page": 3,
+      "image": "s1/lessons/lower-limb-bones-g4.png"
+    },
+    {
+      "stem": "Femur, anterior and posterior views. Which matches are correct?",
+      "options": ["i → head of the femur", "j → neck of the femur", "h → lesser trochanter", "l → intertrochanteric crest", "m → greater trochanter"],
+      "answer": "ABD",
+      "explanation": "h is the greater trochanter (lateral, above) and m the lesser trochanter (posteromedial, below the neck). The intertrochanteric crest (l) is posterior; the intertrochanteric line (k) anterior.",
+      "page": 4,
+      "image": "s1/lessons/lower-limb-bones-g5.png"
+    },
+    {
+      "stem": "Femur, anterior and posterior views. Which matches are correct?",
+      "options": ["k → intertrochanteric line", "m → lesser trochanter", "h → greater trochanter", "q → lateral epicondyle", "r → medial condyle"],
+      "answer": "ABCE",
+      "explanation": "q is the medial epicondyle (on the head side, i.e. medial, in both views). r is the medial condyle seen from behind.",
+      "page": 4,
+      "image": "s1/lessons/lower-limb-bones-g5.png"
+    },
+    {
+      "stem": "Patella, anterior and posterior views. What does label s point to?",
+      "options": ["Apex of the patella", "Base of the patella", "Lateral border", "Tibial tuberosity", "Medial condyle"],
+      "answer": "B",
+      "explanation": "The base of the patella is its broad upper edge (s); the apex (t) points downward.",
+      "page": 4,
+      "image": "s1/lessons/lower-limb-bones-g5.png"
+    },
+    {
+      "stem": "Tibia and fibula, anterior and posterior views. Which matches are correct?",
+      "options": ["a → intercondylar eminence", "c → tibial tuberosity", "e → head of the fibula", "i → lateral malleolus", "j → lateral malleolus"],
+      "answer": "BCE",
+      "explanation": "a is the lateral condyle of the tibia (fibula side). i is the medial malleolus of the tibia; j the lateral malleolus at the lower end of the fibula.",
+      "page": 5,
+      "image": "s1/lessons/lower-limb-bones-g6.png"
+    },
+    {
+      "stem": "Tibia and fibula, anterior and posterior views. Which matches are correct?",
+      "options": ["a → lateral condyle", "b → medial condyle", "f → anterior border of the tibia", "h → shaft of the fibula", "g → fibula"],
+      "answer": "ABCD",
+      "explanation": "g points to the shaft of the tibia in both views; the fibula is the thin lateral bone marked h.",
+      "page": 5,
+      "image": "s1/lessons/lower-limb-bones-g6.png"
+    },
+    {
+      "stem": "Skeleton of the foot, dorsal view. Which matches are correct?",
+      "options": ["l → talus", "m → calcaneus", "k → cuboid", "j → navicular", "3 → tarsus"],
+      "answer": "ABE",
+      "explanation": "k is the navicular (medial, in front of the talus) and j the cuboid (lateral, in front of the calcaneus).",
+      "page": 6,
+      "image": "s1/lessons/lower-limb-bones-g7.png"
+    },
+    {
+      "stem": "Skeleton of the foot, dorsal view. Which matches are correct?",
+      "options": ["g → medial cuneiform", "h → intermediate cuneiform", "i → medial cuneiform", "k → navicular", "j → cuboid"],
+      "answer": "ABDE",
+      "explanation": "The three cuneiforms run medial to lateral: g (medial), h (intermediate), i (lateral). Together with the navicular and cuboid they form the anterior tarsus.",
+      "page": 6,
+      "image": "s1/lessons/lower-limb-bones-g7.png"
+    },
+    {
+      "stem": "Skeleton of the foot, dorsal view. Which statements are correct?",
+      "options": ["a → distal phalanx", "b → middle phalanx", "c → middle phalanx", "The hallux has only two phalanges (no b)", "3 → metatarsals"],
+      "answer": "ABD",
+      "explanation": "c is the proximal phalanx. 1 marks the phalanges, 2 the metatarsals and 3 the tarsus.",
+      "page": 6,
+      "image": "s1/lessons/lower-limb-bones-g7.png"
+    }
+  ]
+}

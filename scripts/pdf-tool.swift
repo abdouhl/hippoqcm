@@ -5,6 +5,7 @@
 //   swift scripts/pdf-tool.swift render <in.pdf> <page> <out.png> [dpi=150]
 //   swift scripts/pdf-tool.swift shrink <in.pdf> <out.pdf> [dpi=110] [quality=0.6]
 //        Re-rasterizes every page as JPEG — for scans that exceed the 25 MiB static-asset limit.
+//   swift scripts/pdf-tool.swift extract <in.pdf> <out.pdf> <first> <last>   copy a page range into a new PDF
 import AppKit
 import PDFKit
 
@@ -38,7 +39,7 @@ func rasterize(_ page: PDFPage, dpi: Double) -> NSBitmapImageRep {
 }
 
 let args = CommandLine.arguments.dropFirst().map { $0 }
-guard let cmd = args.first, args.count >= 2 else { fail("usage: pdf-tool.swift info|text|render|shrink <in.pdf> ...") }
+guard let cmd = args.first, args.count >= 2 else { fail("usage: pdf-tool.swift info|text|render|shrink|extract <in.pdf> ...") }
 let doc = open(args[1])
 
 switch cmd {
@@ -81,6 +82,13 @@ case "shrink":
     guard out.write(to: URL(fileURLWithPath: args[2])) else { fail("couldn't write \(args[2])") }
     let bytes = (try? FileManager.default.attributesOfItem(atPath: args[2])[.size] as? Int) ?? 0
     print("wrote \(args[2]) — \(out.pageCount) pages, \(String(format: "%.1f", Double(bytes) / 1_048_576)) MB")
+case "extract":
+    guard args.count >= 5, let first = Int(args[3]), let last = Int(args[4]), first >= 1, last <= doc.pageCount, first <= last
+    else { fail("extract <in.pdf> <out.pdf> <first> <last>") }
+    let out = PDFDocument()
+    for i in first...last { out.insert(doc.page(at: i - 1)!.copy() as! PDFPage, at: out.pageCount) }
+    guard out.write(to: URL(fileURLWithPath: args[2])) else { fail("couldn't write \(args[2])") }
+    print("wrote \(args[2]) — \(out.pageCount) pages")
 default:
     fail("unknown command \(cmd)")
 }
