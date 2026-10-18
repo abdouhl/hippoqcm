@@ -1,0 +1,249 @@
+{
+  "semester": 1,
+  "module": "Cytology",
+  "title": "General organization of the cell",
+  "pdf": "s1/cytology/general-organization-of-the-cell.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q2",
+    "EMD1 2022-2023 Q5",
+    "EMD1 2023-2024 Q8",
+    "EMD1 2023-2024 Q23",
+    "EMD1 2023-2024 Q37",
+    "EMD1 2024-2025 Q1",
+    "EMD1 2024-2025 Q4",
+    "EMD1 2024-2025 Q6",
+    "EMD1 2025-2026 Q15",
+    "EMD1 2025-2026 Q17",
+    "EMD1 2025-2026 Q22",
+    "EMD1 2025-2026 Q39"
+  ],
+  "questions": [
+    {
+      "stem": "According to the current classification, the living world is divided into three major domains. These are:",
+      "options": ["Viruses", "Eukaryotes", "Archaea", "Eubacteria"],
+      "answer": "BCD",
+      "explanation": "The three domains are Eukaryotes, Eubacteria and Archaea. Viruses are not cells (no cytoplasm, no nucleus, no metabolism) and are treated separately.",
+      "page": 1
+    },
+    {
+      "stem": "About the nuclear envelope of the eukaryotic cell:",
+      "options": [
+        "It consists of two membranes separated by a perinuclear space",
+        "Its inner membrane is in contact with the cytoplasm",
+        "Its inner membrane is separated from the chromatin by the lamina",
+        "Its pores allow substances to pass only from the nucleus to the cytoplasm"
+      ],
+      "answer": "AC",
+      "explanation": "The outer membrane faces the cytoplasm; the inner one is lined by the lamina on the chromatin side. Nuclear pores allow endogenous and exogenous substances to transit in both directions.",
+      "page": 1
+    },
+    {
+      "stem": "About the plasma membrane of the eukaryotic cell:",
+      "options": [
+        "It is a lipid bilayer associated with transmembrane and peripheral proteins",
+        "Its outer and inner surfaces differ in structure and function",
+        "It contains receptors",
+        "It may present microvilli and intercellular junctions"
+      ],
+      "answer": "ABCD",
+      "explanation": "All four are stated in the course. The difference between the two surfaces is called membrane asymmetry; the main role of the membrane is to maintain the integrity of the cell.",
+      "page": 1
+    },
+    {
+      "stem": "Which of the following belong to the endomembrane system as described in the course?",
+      "options": ["Endoplasmic reticulum", "Mitochondria", "Golgi apparatus", "Lysosomes"],
+      "answer": "ACD",
+      "explanation": "The endomembrane system includes the ER, the Golgi apparatus and lysosomes, which communicate via vesicles budding from their membranes. Mitochondria are described separately, with their own double membrane.",
+      "page": 1
+    },
+    {
+      "stem": "Under the electron microscope, one region of a cell's endoplasmic reticulum carries ribosomes while another is devoid of them. Concerning these two regions:",
+      "options": [
+        "The ribosome-free region synthesizes proteins destined for mitochondria",
+        "The ribosome-bearing region participates in the synthesis of proteins destined for secretion",
+        "The ribosome-free region is involved in lipid synthesis",
+        "The ribosome-free region synthesizes most membrane proteins"
+      ],
+      "answer": "BC",
+      "explanation": "Ribosome-bearing ER is the RER (secreted proteins and most membrane proteins); ribosome-free ER is the SER (lipid synthesis). Mitochondrial proteins are made by free ribosomes, not by the SER.",
+      "page": 2
+    },
+    {
+      "stem": "Which of the following proteins are synthesized by ribosomes of the rough endoplasmic reticulum rather than by free ribosomes?",
+      "options": [
+        "A mitochondrial protein",
+        "A hormone secreted outside the cell",
+        "A cytosolic enzyme",
+        "A plasma membrane protein"
+      ],
+      "answer": "BD",
+      "explanation": "The RER makes proteins destined for secretion and most membrane proteins. Free ribosomes make proteins for the cytosol and for organelles such as peroxisomes and mitochondria.",
+      "page": 2
+    },
+    {
+      "stem": "About the Golgi apparatus:",
+      "options": [
+        "It modifies, sorts, packages and distributes the products synthesized by the ER",
+        "It consists of a stack of flattened sacs (dictyosomes) associated with vesicles",
+        "It is involved in glycosylation",
+        "It is the main distributor of newly synthesized membranes"
+      ],
+      "answer": "ABCD",
+      "explanation": "All four statements come directly from the course's description of the Golgi apparatus.",
+      "page": 2
+    },
+    {
+      "stem": "A cell is treated with a drug that inhibits all its hydrolases. Which organelle's function is most directly impaired?",
+      "options": ["Golgi apparatus", "Smooth endoplasmic reticulum", "Mitochondria", "Lysosomes"],
+      "answer": "D",
+      "explanation": "Lysosomes are membrane-bound organelles containing hydrolases able to degrade most endogenous and exogenous molecules. The Golgi handles glycosylation and sorting, the SER lipid synthesis.",
+      "page": 2
+    },
+    {
+      "stem": "About mitochondria:",
+      "options": [
+        "The inner membrane is more permeable than the outer membrane",
+        "The respiratory chain is located in the matrix, next to mitochondrial DNA",
+        "They are bounded by a double membrane whose outer membrane is highly permeable",
+        "The cristae contain the respiratory chain and the ATP-synthesizing machinery"
+      ],
+      "answer": "CD",
+      "explanation": "The outer membrane is highly permeable and the inner one less permeable; its invaginations (cristae) carry the respiratory chain and ATP synthesis. The matrix holds mitochondrial DNA and protein-synthesis components, not the respiratory chain.",
+      "page": 2
+    },
+    {
+      "stem": "About the general organization of the bacterial cell (Eubacteria):",
+      "options": [
+        "The nucleoid is separated from the cytoplasm by an envelope",
+        "The cell wall is mainly composed of peptidoglycan",
+        "The cytoplasm is poor in proteins and devoid of ribosomes",
+        "The chromosome consists of several linear filaments located at the periphery of the cell"
+      ],
+      "answer": "B",
+      "explanation": "The resistant cell wall is mainly peptidoglycan. The chromosome (nucleoid) is a single closed-loop filament in the center of the cell, not separated from the cytoplasm, which is rich in proteins and contains ribosomes.",
+      "page": 2
+    },
+    {
+      "stem": "Which of the following structures may be present in some bacteria but are not constant?",
+      "options": ["A polysaccharidic capsule", "A plasma membrane", "Plasmids", "Pili and flagella"],
+      "answer": "ACD",
+      "explanation": "Capsule, inclusions, pili, flagella and plasmids are listed as structures eubacteria may possess. Every bacterium is bounded by a plasma membrane.",
+      "page": 2
+    },
+    {
+      "stem": "About archaea:",
+      "options": [
+        "They possess several linear chromosomes, like eukaryotes",
+        "Formerly called archaebacteria, they are unicellular microorganisms",
+        "They are much larger than eubacteria, measuring 10–100 µm",
+        "They divide by binary fission and often possess proteinaceous flagella"
+      ],
+      "answer": "BD",
+      "explanation": "Archaea have a size range similar to eubacteria (0.1–15 µm) and a single circular chromosome. They divide by binary fission and often move with proteinaceous flagella.",
+      "page": 2
+    },
+    {
+      "stem": "At the molecular level, archaea:",
+      "options": [
+        "Are much closer to eukaryotes than to eubacteria",
+        "Share with eukaryotes some proteins that are absent from eubacteria",
+        "Have DNA replication, repair and transcription proteins that resemble eukaryotic proteins",
+        "Have information-processing proteins that are mostly similar to bacterial ones"
+      ],
+      "answer": "ABC",
+      "explanation": "Archaea resemble eubacteria in morphology and metabolism, but molecularly (especially information-processing proteins) they are far closer to eukaryotes.",
+      "page": 2
+    },
+    {
+      "stem": "A unicellular organism is isolated from an acidic hot spring. Its envelope contains no peptidoglycan but a protein layer covering the plasma membrane, and its membrane phospholipids are isoprenoid ethers. This organism is most likely:",
+      "options": ["A eubacterium", "A eukaryote", "An archaeon", "A virus"],
+      "answer": "C",
+      "explanation": "No peptidoglycan, a protein envelope and isoprenoid ether lipids are unique to archaea. Eubacteria have peptidoglycan walls and, like eukaryotes, fatty acid ester phospholipids.",
+      "page": 2
+    },
+    {
+      "stem": "About the envelope and membrane lipids of archaea:",
+      "options": [
+        "Their phospholipids are isoprenoid ethers derived from a long-chain alcohol",
+        "Their phospholipids are fatty acid esters, as in eubacteria",
+        "Their envelope contains peptidoglycan, as in most eubacteria",
+        "Their envelope is generally a protein layer covering the plasma membrane"
+      ],
+      "answer": "AD",
+      "explanation": "Archaeal phospholipids are isoprenoid ethers, unlike the fatty acid esters of eubacteria and eukaryotes, and their envelope is a protein layer without peptidoglycan.",
+      "page": 2
+    },
+    {
+      "stem": "About the habitats of archaea:",
+      "options": [
+        "Some thrive in anaerobic, highly saline or very hot conditions",
+        "They colonize deep-sea hydrothermal vents, saline waters and acidic hot springs",
+        "Some live in the intestines and lungs of mammals",
+        "Many live in common habitats such as soils, lakes and oceans"
+      ],
+      "answer": "ABCD",
+      "explanation": "Archaea are famous for extreme environments, but the course stresses that many live in ordinary habitats, including soils, oceans and mammalian intestines and lungs.",
+      "page": 2
+    },
+    {
+      "stem": "About viruses:",
+      "options": [
+        "They are obligate parasites that cannot reproduce outside a host cell",
+        "They lack cytoplasm and a true nucleus",
+        "Each virion contains both DNA and RNA",
+        "Their genome is surrounded by a protein capsid"
+      ],
+      "answer": "ABD",
+      "explanation": "A virus consists of a nucleic acid — DNA or RNA, not both — surrounded by a protective protein capsid. It has no cytoplasm, no nucleus and must infect a host cell to multiply.",
+      "page": 3
+    },
+    {
+      "stem": "Correctly match each virus with the nature of its genome:",
+      "options": [
+        "Hepatitis B virus → DNA",
+        "SARS-CoV-2 → DNA",
+        "HIV → RNA",
+        "Tobacco mosaic virus → RNA"
+      ],
+      "answer": "ACD",
+      "explanation": "Hepatitis B is the course's DNA virus example; HIV and SARS-CoV-2 are RNA viruses. Figure 03 shows tobacco mosaic virus with an RNA genome.",
+      "page": 3
+    },
+    {
+      "stem": "Concerning the multiplication cycle of a virus:",
+      "options": [
+        "The virus uses its own metabolism to produce energy",
+        "The virus hijacks the host cell's machinery to replicate its genome and synthesize its proteins",
+        "Once inside the cell, the virus produces its proteins independently",
+        "New viral particles are assembled, then the virions are released from the host cell"
+      ],
+      "answer": "BD",
+      "explanation": "A virus has no metabolism of its own and cannot produce its proteins independently; it uses the host's machinery, then new particles are assembled and released.",
+      "page": 3
+    },
+    {
+      "stem": "In a culture, infected cells keep producing virions for several days without being destroyed, and the released virions are surrounded by a membrane. Concerning this mode of release:",
+      "options": [
+        "It corresponds to cell lysis",
+        "It corresponds to budding",
+        "The viral envelope comes from a portion of the host cell's plasma membrane",
+        "The host cell is necessarily destroyed immediately after release"
+      ],
+      "answer": "BC",
+      "explanation": "In budding, enveloped viruses leave by taking a piece of plasma membrane as their envelope, and the cell may keep producing viruses for some time. In lysis, the cell is destroyed.",
+      "page": 3
+    },
+    {
+      "stem": "About the organization of the viral capsid (Figure 03):",
+      "options": [
+        "Tobacco mosaic virus has a helical capsid",
+        "The adenovirus genome is RNA",
+        "Adenovirus has a polyhedral capsid made of capsomeres",
+        "The bacteriophage has a complex structure with a head containing DNA and a tail"
+      ],
+      "answer": "ACD",
+      "explanation": "Figure 03 shows three capsid types: helical (tobacco mosaic virus, RNA), polyhedral (adenovirus, DNA) and complex (bacteriophage, head with DNA plus tail sheath and fibers).",
+      "page": 5
+    }
+  ]
+}
