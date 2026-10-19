@@ -3,12 +3,14 @@
 // writes wait in an outbox that is sent once the server is reachable again.
 import { useEffect, useState } from "react";
 import { isCode, newCode, normalizeCode } from "../shared/code";
-import type { Account, Lesson, Module, ReviewInput, Snapshot, StudyQuestion } from "../shared/types";
+import type { Account, Lesson, Module, ReviewInput, Snapshot, SnapshotUpdate, StudyQuestion, SyncedPrefs } from "../shared/types";
+import { getSettings, hasSavedSettings, type Settings, settingsSavedAt, storeSettings } from "./prefs";
 
 const TIMEOUT_MS = 8000;
 // Keep in sync with LEECH_LAPSES in worker/index.ts.
 export const LEECH_LAPSES = 4;
 const BATCH_SIZE = 50; // reviews per request when emptying the outbox
+const REFRESH_AFTER_MS = 60_000; // coming back to the app pulls changes if the snapshot is older
 
 // ---- Tiny IndexedDB key-value store ----------------------------------------------------------
 
@@ -154,6 +156,7 @@ export function flush(): Promise<boolean> {
             method: "POST",
             headers: { "Content-Type": "application/json", ...auth() },
             body: body === undefined ? undefined : JSON.stringify(body),
+            keepalive: true, // finish even if the app is closed mid-request
             signal: AbortSignal.timeout(TIMEOUT_MS),
           });
         } catch {
@@ -173,8 +176,10 @@ export function flush(): Promise<boolean> {
   })());
 }
 
-async function enqueue(item: OutboxItem) {
+async function enqueue(item: OutboxItem, replace = false) {
   await ready;
+  // Only the latest of some writes matters (settings): drop the unsent older ones.
+  if (replace) outbox = outbox.filter((o) => o.path !== item.path);
   outbox.push(item);
   await saveOutbox();
   notify();
@@ -201,6 +206,27 @@ export async function saveReviews(reviews: ReviewInput[]): Promise<void> {
   await enqueue({ path: "/api/reviews", body: reviews });
 }
 
+/** Save study settings here right away, and under this code once the server is reachable. */
+export async function saveSettings(settings: Settings): Promise<void> {
+  const at = Date.now();
+  storeSettings(settings, at);
+  await enqueue({ path: "/api/prefs", body: { settings, at } }, true);
+}
+
+// Take the code's settings if another device saved them more recently; send ours if they're newer.
+function syncPrefs(remote: SyncedPrefs) {
+  const localAt = settingsSavedAt();
+  if (remote && remote.updated_at > localAt) {
+    storeSettings(remote.settings as Partial<Settings>, remote.updated_at);
+  } else if (hasSavedSettings() && (!remote || localAt > remote.updated_at)) {
+    // Settings saved before they synced have no time yet: stamp them now.
+    const settings = getSettings();
+    const at = localAt || Date.now();
+    if (!localAt) storeSettings(settings, at);
+    void enqueue({ path: "/api/prefs", body: { settings, at } }, true);
+  }
+}
+
 // ---- Account ---------------------------------------------------------------------------------
 
 /** Progress stored under a code, or null if the server has never seen it. Needs the network. */
@@ -222,6 +248,8 @@ export async function getAccount(): Promise<Account | null> {
 // Cached answers belong to the old account.
 async function forgetCaches() {
   snapshot = null;
+  // The new code's settings (if it has any) replace this device's at the next pull.
+  if (hasSavedSettings()) storeSettings(getSettings(), 0);
   try {
     const tx = (await db()).transaction("kv", "readwrite");
     const store = tx.objectStore("kv");
@@ -310,24 +338,56 @@ export async function getJSON<T>(path: string): Promise<T> {
   return local as T;
 }
 
-/** Refresh the offline snapshot (and have the service worker fetch its images and PDFs). */
-export async function refreshSnapshot(): Promise<void> {
-  if (!navigator.onLine || !(await flush()) || outbox.length > 0) return;
-  try {
-    await ready;
-    const res = await fetch("/api/snapshot", { headers: auth(), signal: AbortSignal.timeout(30_000) });
-    if (!res.ok) return;
-    snapshot = (await res.json()) as Snapshot;
-    // A review made while the download was in flight would be missing from it; it'll be in the next one.
-    await saveSnapshot();
-    notify();
-    const urls = [
-      ...snapshot.questions.flatMap((q) => (q.image ? [`/images/${q.image}`] : [])),
-      ...snapshot.lessons.map((l) => `/lessons/${l.pdf}`),
-    ];
-    navigator.serviceWorker?.ready.then((reg) => reg.active?.postMessage({ type: "cache", urls }));
-  } catch {}
+let refreshing: Promise<boolean> | null = null;
+
+/**
+ * Pull changes into the offline snapshot (and have the service worker fetch new images and PDFs).
+ * When the questions haven't changed since the last pull, only this code's progress is downloaded.
+ * Resolves false if it couldn't sync.
+ */
+export function refreshSnapshot(): Promise<boolean> {
+  return (refreshing ??= (async () => {
+    try {
+      if (!navigator.onLine || !(await flush()) || outbox.length > 0) return false;
+      await ready;
+      const version = snapshot?.content_version;
+      const res = await fetch(version ? `/api/snapshot?content=${version}` : "/api/snapshot", {
+        headers: auth(),
+        signal: AbortSignal.timeout(30_000),
+      });
+      if (!res.ok) return false;
+      const data = (await res.json()) as Snapshot | SnapshotUpdate;
+      // A review made while the download was in flight is missing from it: keep ours, pull next time.
+      if (outbox.some((o) => o.path === "/api/reviews")) return false;
+      if ("questions" in data) {
+        snapshot = data;
+        const urls = [
+          ...snapshot.questions.flatMap((q) => (q.image ? [`/images/${q.image}`] : [])),
+          ...snapshot.lessons.map((l) => `/lessons/${l.pdf}`),
+        ];
+        navigator.serviceWorker?.ready.then((reg) => reg.active?.postMessage({ type: "cache", urls }));
+      } else if (snapshot) {
+        const cards = new Map(data.cards.map(({ question_id, ...card }) => [question_id, card]));
+        for (const q of snapshot.questions) q.card = cards.get(q.id) ?? null;
+        const reads = new Map(data.reads.map((r) => [r.lesson_id, r.read_at]));
+        for (const l of snapshot.lessons) l.read_at = reads.get(l.id) ?? null;
+        snapshot.prefs = data.prefs;
+        snapshot.fetched_at = data.fetched_at;
+      }
+      syncPrefs(data.prefs);
+      await saveSnapshot();
+      notify();
+      return true;
+    } catch {
+      return false;
+    } finally {
+      refreshing = null;
+    }
+  })());
 }
+
+/** Send everything waiting and pull everything new, like Anki's sync button. */
+export const syncNow = refreshSnapshot;
 
 // ---- Offline answers, computed from the snapshot ---------------------------------------------
 // These mirror the worker's SQL for the same routes.
@@ -436,9 +496,15 @@ export function startOffline() {
   // Mobile browsers may evict site storage under pressure; unsynced reviews live there.
   void navigator.storage?.persist?.().catch(() => {});
   void refreshSnapshot();
-  // Phones suspend backgrounded tabs, so retry the outbox whenever the app comes back.
+  // Sync when the app is put away (phones may kill it next) and pull when it comes back.
   document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible" && outbox.length > 0) void flush();
+    if (document.visibilityState === "hidden") {
+      if (outbox.length > 0) void flush();
+    } else if (Date.now() - (snapshot?.fetched_at ?? 0) > REFRESH_AFTER_MS) {
+      void refreshSnapshot();
+    } else if (outbox.length > 0) {
+      void flush();
+    }
   });
   window.addEventListener("online", () => {
     setOnline(true);

@@ -67,11 +67,12 @@ if (cmd === "exams") {
   const exams = await examQuestions(Number(semester), module);
   if (exams.size === 0) throw new Error(`no exam banks for S${semester} ${module}`);
   for (const [key, q] of exams) {
-    console.log(`[${key}] ${q.stem}`);
+    console.log(`[${key}] ${q.stem}${q.image ? `   (image ${q.image})` : ""}`);
     q.options.forEach((o, j) => console.log(`  ${LABELS[j]}. ${o}`));
     console.log(`  → ${answerOf(q) || "?"}`);
   }
-  console.log(`\n${exams.size} questions`);
+  const withImage = [...exams.values()].filter((q) => q.image).length;
+  console.log(`\n${exams.size} questions, ${withImage} with an image`);
 } else if (cmd === "review") {
   const draft: Draft = await Bun.file(args[0]).json();
   const exams = await validate(draft);

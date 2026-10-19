@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import type { Lesson, Module } from "../shared/types";
 import Account, { needsCodeReminder } from "./Account";
-import { getJSON, useSyncStatus } from "./api";
+import { getJSON, syncNow, useSyncStatus } from "./api";
 import Decks from "./Decks";
 import Exam from "./Exam";
 import Insights from "./Insights";
@@ -201,16 +201,36 @@ export default function App() {
   );
 }
 
-// Shows when the app is running from its offline copy, or has reviews waiting to sync.
+// "just now", "5 min ago", "3 h ago", "2 d ago".
+function ago(ms: number): string {
+  const min = Math.floor((Date.now() - ms) / 60_000);
+  if (min < 1) return "just now";
+  if (min < 60) return `${min} min ago`;
+  if (min < 60 * 24) return `${Math.floor(min / 60)} h ago`;
+  return `${Math.floor(min / 60 / 24)} d ago`;
+}
+
+// Sync state; tap to sync now. Shows when the app is offline or has reviews waiting to sync.
 function SyncBadge() {
   const { online, pending, snapshotAt } = useSyncStatus();
+  const [syncing, setSyncing] = useState(false);
+  const sync = async () => {
+    setSyncing(true);
+    await syncNow();
+    setSyncing(false);
+  };
+  if (syncing) return <span className="sync">Syncing…</span>;
   if (online && pending === 0) {
-    return snapshotAt ? <span className="sync ok" title="Questions saved for offline study">✓ Available offline</span> : null;
+    return snapshotAt ? (
+      <button className="sync ok" title="Saved for offline study. Tap to sync now" onClick={sync}>
+        ✓ Synced {ago(snapshotAt)}
+      </button>
+    ) : null;
   }
   return (
-    <span className="sync off">
+    <button className="sync off" title="Tap to sync now" onClick={sync}>
       {online ? "Syncing" : "Offline"}
-      {pending > 0 && ` · ${pending} review${pending === 1 ? "" : "s"} to sync`}
-    </span>
+      {pending > 0 && ` · ${pending} change${pending === 1 ? "" : "s"} to sync`}
+    </button>
   );
 }

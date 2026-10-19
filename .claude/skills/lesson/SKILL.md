@@ -71,10 +71,17 @@ Distribute by exam weight:
   if the lesson seems to, mention it to the user.
 - `explanation`: 1–3 sentences — the fact from the lesson, and why the tempting distractor is wrong.
 - `page`: physical page where the answer is taught.
-- Figures (optional, only when a diagram/table question is genuinely high-yield): render with
-  `scripts/bin/pdf-tool render <pdf> <page> <scratchpad>/p.png 200`, crop with Python PIL, save to
-  `public/images/s<semester>/lessons/<lesson-slug>-g<N>.png`, set `"image": "s1/lessons/<lesson-slug>-g<N>.png"`.
-  Crop out any labels that give the answer away.
+- Image questions — decided by the module's exams, not by taste. The last line of `exams.txt` says
+  `N questions, M with an image`, and image questions are tagged `(image …)`.
+  - **M > 0** → write image questions in roughly the same proportion as the exams (M/N of your new questions,
+    at least 1 if the lesson has a usable figure), on the kinds of figures the exams use (look at the tagged ones).
+  - **Either way**, also make an image question from any figure you judge genuinely worth it — a diagram, schema,
+    curve or table that carries key lesson content better than text could (e.g. labelled structures, a graph to
+    read, a pathway). Skip decorative pictures and figures that only repeat what the text says.
+    With M = 0 these are the only image questions; keep them few and mention in the review summary why each was chosen.
+  To make one: render with `scripts/bin/pdf-tool render <pdf> <page> <scratchpad>/p.png 200`, crop with Python PIL,
+  save to `public/images/s<semester>/lessons/<lesson-slug>-g<N>.png`, set
+  `"image": "s<semester>/lessons/<lesson-slug>-g<N>.png"`. Crop out any labels that give the answer away.
 
 ## 6. Draft and review — nothing is imported before the user approves
 

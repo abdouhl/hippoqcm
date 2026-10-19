@@ -1,5 +1,7 @@
 import { hashCode, isCode, normalizeCode } from "../shared/code";
-import type { Account, ActivityDay, Insights, Option, ReviewInput, Snapshot, StudyQuestion } from "../shared/types";
+import type {
+  Account, ActivityDay, Insights, Option, ReviewInput, Snapshot, SnapshotUpdate, StudyQuestion, SyncedPrefs,
+} from "../shared/types";
 
 interface Env {
   DB: D1Database;
@@ -279,8 +281,36 @@ export default {
       return json(insights);
     }
 
-    // Everything needed to study offline: the deck tree and every question with its card.
+    // Everything needed to study offline: the deck tree and every question with its card. With
+    // ?content=<version> matching the current content, only the caller's progress.
     if (url.pathname === "/api/snapshot" && request.method === "GET") {
+      const [version, prefsRow] = await env.DB.batch([
+        env.DB.prepare("SELECT version FROM content_version"),
+        env.DB.prepare("SELECT settings, updated_at FROM user_prefs WHERE user_id = ?1").bind(user),
+      ]);
+      const content_version = (version.results[0] as { version: number }).version;
+      const p = prefsRow.results[0] as { settings: string; updated_at: number } | undefined;
+      const prefs: SyncedPrefs = p ? { settings: JSON.parse(p.settings), updated_at: p.updated_at } : null;
+
+      if (Number(url.searchParams.get("content")) === content_version) {
+        const [cards, reads] = await env.DB.batch([
+          env.DB.prepare(
+            `SELECT question_id, due, stability, difficulty, elapsed_days, scheduled_days,
+                    learning_steps, reps, lapses, state, last_review
+             FROM cards WHERE user_id = ?1`,
+          ).bind(user),
+          env.DB.prepare("SELECT lesson_id, read_at FROM lesson_reads WHERE user_id = ?1").bind(user),
+        ]);
+        const update: SnapshotUpdate = {
+          content_version,
+          cards: cards.results as SnapshotUpdate["cards"],
+          reads: reads.results as SnapshotUpdate["reads"],
+          prefs,
+          fetched_at: Date.now(),
+        };
+        return json(update);
+      }
+
       const [modules, lessons, links, questions] = await env.DB.batch([
         env.DB.prepare("SELECT id, semester, name FROM modules ORDER BY semester, name"),
         env.DB.prepare(
@@ -309,6 +339,8 @@ export default {
           ...q,
           lesson_ids: lessonIds.get(q.id) ?? [],
         })),
+        content_version,
+        prefs,
         fetched_at: Date.now(),
       };
       return json(snapshot);
@@ -381,18 +413,37 @@ export default {
                  due = excluded.due, stability = excluded.stability, difficulty = excluded.difficulty,
                  elapsed_days = excluded.elapsed_days, scheduled_days = excluded.scheduled_days,
                  learning_steps = excluded.learning_steps, reps = excluded.reps, lapses = excluded.lapses,
-                 state = excluded.state, last_review = excluded.last_review`,
+                 state = excluded.state, last_review = excluded.last_review
+               -- Devices sync in any order: a review made earlier but sent later mustn't win.
+               WHERE COALESCE(excluded.last_review, 0) >= COALESCE(cards.last_review, 0)`,
             ).bind(
               r.question_id, c.due, c.stability, c.difficulty, c.elapsed_days, c.scheduled_days,
               c.learning_steps, c.reps, c.lapses, c.state, c.last_review, userId,
             ),
             env.DB.prepare(
-              `INSERT INTO review_log (question_id, rating, correct, selected, reviewed_at, user_id)
+              // OR IGNORE: a batch whose response was lost is sent again.
+              `INSERT OR IGNORE INTO review_log (question_id, rating, correct, selected, reviewed_at, user_id)
                VALUES (?1, ?2, ?3, ?4, ?5, ?6)`,
             ).bind(r.question_id, r.rating, r.correct ? 1 : 0, r.selected, r.reviewed_at, userId),
           ];
         }),
       );
+      return json({ ok: true });
+    }
+
+    // Save study settings ({ settings, at }); an older save than the stored one is ignored.
+    if (url.pathname === "/api/prefs" && request.method === "POST") {
+      const code = codeOf(request);
+      if (!code) return json({ error: "Sync code required" }, 503);
+      const { settings, at } = (await request.json()) as { settings: Record<string, unknown>; at: number };
+      const userId = await writerId(code, env.DB);
+      await env.DB.prepare(
+        `INSERT INTO user_prefs (user_id, settings, updated_at) VALUES (?1, ?2, ?3)
+         ON CONFLICT (user_id) DO UPDATE SET settings = excluded.settings, updated_at = excluded.updated_at
+         WHERE excluded.updated_at >= user_prefs.updated_at`,
+      )
+        .bind(userId, JSON.stringify(settings), at)
+        .run();
       return json({ ok: true });
     }
 

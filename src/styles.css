@@ -196,7 +196,7 @@ button.flag:hover { color: var(--error); }
 
 /* Home nav, sync badge */
 .home-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: -8px 0 16px; }
-.sync { white-space: nowrap; font-size: 0.8rem; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
+.sync { background: none; cursor: pointer; white-space: nowrap; font-size: 0.8rem; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
 .sync.off { border-color: var(--coral); color: var(--coral); }
 
 /* Mock exam */

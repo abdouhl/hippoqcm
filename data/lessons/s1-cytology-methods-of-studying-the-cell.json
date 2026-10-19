@@ -1,0 +1,270 @@
+{
+  "semester": 1,
+  "module": "Cytology",
+  "title": "Methods of studying the cell",
+  "pdf": "s1/cytology/methods-of-studying-the-cell.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q17",
+    "EMD1 2023-2024 Q14",
+    "EMD1 2023-2024 Q15",
+    "EMD1 2023-2024 Q38",
+    "EMD1 2023-2024 Q39",
+    "EMD1 2024-2025 Q27",
+    "EMD1 2024-2025 Q28",
+    "EMD1 2024-2025 Q29",
+    "EMD1 2024-2025 Q30",
+    "EMD1 2025-2026 Q2",
+    "EMD1 2025-2026 Q3",
+    "EMD1 2025-2026 Q4",
+    "EMD1 2025-2026 Q5",
+    "EMD1 2025-2026 Q6",
+    "EMD1 2025-2026 Q7"
+  ],
+  "questions": [
+    {
+      "stem": "The numbered parts of the light microscope shown in the figure belong to its optical system. Correctly match:",
+      "options": ["1 → eyepiece (ocular lens)", "2 → revolving nosepiece", "3 → condenser", "4 → coarse focus knob"],
+      "answer": "AC",
+      "explanation": "The optical system is the light source, condenser with diaphragm, objectives and eyepieces: 1 = eyepiece, 2 = objective lenses, 3 = condenser, 4 = lamp (light source). The revolving nosepiece and focus knobs belong to the mechanical system.",
+      "page": 2,
+      "image": "s1/lessons/methods-of-studying-the-cell-g1.png"
+    },
+    {
+      "stem": "About the fundamental parameters of microscopes:",
+      "options": [
+        "Resolution is the minimum distance at which two points can still be distinguished as separate",
+        "Resolving power is directly proportional to resolution",
+        "The resolution of the human eye is about 200 μm",
+        "Magnification is the critical parameter conditioning image clarity"
+      ],
+      "answer": "AC",
+      "explanation": "Resolving power is inversely proportional to resolution (the smaller the resolvable distance, the better the resolving power), and it is resolving power — not magnification — that conditions image clarity.",
+      "page": 2
+    },
+    {
+      "stem": "A student observes a stained smear with a light microscope fitted with a ×40 objective and a ×10 eyepiece:",
+      "options": [
+        "The total magnification is ×400",
+        "The total magnification is ×50",
+        "The resolution of this microscope is about 0.2 μm",
+        "The maximum useful magnification of a light microscope is about ×1000"
+      ],
+      "answer": "ACD",
+      "explanation": "Total magnification is the product (not the sum) of objective and ocular magnifications: 40 × 10 = ×400. Light microscopy resolves ~0.2 μm with a maximum useful magnification of ~×1000.",
+      "page": 3
+    },
+    {
+      "stem": "Which resolutions are correctly matched?",
+      "options": [
+        "Human eye → about 200 μm",
+        "Light microscope → about 0.2 μm",
+        "Electron microscope → 0.2 nm (2 Å)",
+        "Electron microscope → about 0.2 μm"
+      ],
+      "answer": "ABC",
+      "explanation": "Each step gains a factor of ~1000: eye 200 μm, light microscope 0.2 μm, electron microscope 0.2 nm. 0.2 μm is the light-microscope value.",
+      "page": 4
+    },
+    {
+      "stem": "About image formation in the light microscope:",
+      "options": [
+        "The image is formed by photons transmitted through a system of superimposed glass lenses",
+        "The lenses are electromagnetic",
+        "Light passes through the specimen and is refracted by the objectives and eyepieces",
+        "Specimens usually need fixation, sectioning and staining to enhance contrast"
+      ],
+      "answer": "ACD",
+      "explanation": "Electromagnetic lenses focus the electron beam of electron microscopes; the light microscope uses glass lenses. Preparation (fixation, sectioning, staining) preserves architecture and enhances contrast.",
+      "page": 2
+    },
+    {
+      "stem": "You label a cytoplasmic protein with FITC (fluorescein). Under the fluorescence microscope, the excitation and emission are:",
+      "options": [
+        "UV excitation, blue emission",
+        "Blue excitation, green emission",
+        "Green excitation, red-orange emission",
+        "Blue excitation, UV emission"
+      ],
+      "answer": "B",
+      "explanation": "FITC/GFP: blue excitation, green emission (protein labeling). UV→blue is DAPI and green→red-orange is rhodamine; emission can never be at a shorter wavelength than excitation (blue → UV is impossible).",
+      "page": 3
+    },
+    {
+      "stem": "In the same culture, you want to visualize both the nuclear DNA and the mitochondria with fluorochromes:",
+      "options": [
+        "DAPI binds DNA",
+        "DAPI is excited by UV light and emits blue light",
+        "Rhodamine is used for mitochondrial labeling",
+        "DAPI emits red-orange light"
+      ],
+      "answer": "ABC",
+      "explanation": "DAPI: UV excitation, blue emission, DNA binding. Rhodamine (green excitation, red-orange emission) labels mitochondria — red-orange is rhodamine's emission, not DAPI's.",
+      "page": 3
+    },
+    {
+      "stem": "About the principle of fluorescence microscopy:",
+      "options": [
+        "A fluorochrome re-emits light at a longer wavelength than the one it absorbs",
+        "The excitation filter selects the incident wavelength that excites the fluorochrome",
+        "It illuminates the sample with an electron beam",
+        "Ordinary light microscopy can distinguish transparent, colorless organelles without labeling"
+      ],
+      "answer": "AB",
+      "explanation": "The fluorescence microscope uses a white light source split into its spectrum, not electrons. It exists precisely because transparent, colorless components are invisible to ordinary light microscopy.",
+      "page": 3
+    },
+    {
+      "stem": "To localize a membrane protein, you only have a primary antibody that is already coupled to a fluorochrome:",
+      "options": [
+        "You will perform direct immunofluorescence",
+        "You will perform indirect immunofluorescence",
+        "A fluorochrome-coupled secondary antibody is required",
+        "The technique allows specific detection and localization of the protein"
+      ],
+      "answer": "AD",
+      "explanation": "Fluorochrome on the primary antibody = direct immunofluorescence; on a secondary antibody = indirect. Either way, antibody–fluorochrome conjugates give specific detection and localization.",
+      "page": 3
+    },
+    {
+      "stem": "After immunofluorescent labeling, your cells are in suspension (not adherent). They should be analyzed by:",
+      "options": ["Flow cytometry", "Fluorescence microscopy", "Scanning electron microscopy", "The pulse-chase technique"],
+      "answer": "A",
+      "explanation": "Suspension cells are analyzed by flow cytometry; adherent cells by fluorescence microscopy.",
+      "page": 4
+    },
+    {
+      "stem": "About the confocal fluorescence microscope:",
+      "options": [
+        "Its light source is a LASER",
+        "It scans the specimen point by point",
+        "Computer superimposition of acquisitions can render the image in 3D",
+        "It gives a less sharp image than a conventional fluorescence microscope"
+      ],
+      "answer": "ABC",
+      "explanation": "The confocal microscope is the improved version of the fluorescence microscope: laser point-by-point scanning plus computer reconstruction produces a sharper image, possibly in 3D.",
+      "page": 4
+    },
+    {
+      "stem": "About the operating principle of electron microscopes:",
+      "options": [
+        "The electron beam is emitted under vacuum",
+        "The beam is focused by glass lenses",
+        "The electrons are accelerated by high voltage",
+        "Living specimens can be observed"
+      ],
+      "answer": "AC",
+      "explanation": "Electron beams are focused by electromagnetic lenses, and the critical limitation of electron microscopy is that living specimens cannot be observed.",
+      "page": 4
+    },
+    {
+      "stem": "You want to study the three-dimensional surface topography of the microvilli of an intestinal epithelium. The most appropriate tool is:",
+      "options": [
+        "Transmission electron microscope",
+        "Scanning electron microscope",
+        "Light microscope",
+        "Fluorescence microscope"
+      ],
+      "answer": "B",
+      "explanation": "The SEM reveals surfaces and 3D morphology. The TEM gives internal ultrastructure of ultra-thin sections, not surface topography.",
+      "page": 5
+    },
+    {
+      "stem": "About the scanning electron microscope (SEM):",
+      "options": [
+        "The electron beam scans the specimen surface without penetrating it",
+        "Samples are coated with a conductive material (gold or carbon)",
+        "The image is formed by electrons transmitted through the specimen",
+        "It requires ultra-thin sections"
+      ],
+      "answer": "AB",
+      "explanation": "In the SEM, reflected electrons form a 3D surface image; the coating optimizes reflection. Transmission through ultra-thin specimens is the TEM principle.",
+      "page": 5
+    },
+    {
+      "stem": "You need to examine the structure of a virus at the ultrastructural level with a transmission electron microscope (TEM):",
+      "options": [
+        "The electron beam penetrates through an ultra-thin specimen",
+        "The SEM, not the TEM, is the tool that provides ultrastructure",
+        "The TEM magnification is in the order of ×50,000",
+        "The image forms on a fluorescent screen"
+      ],
+      "answer": "ACD",
+      "explanation": "The TEM provides ultrastructure (viral structure is one of its applications) by transmitting electrons through ultra-thin specimens; images form on fluorescent screens. The SEM shows surfaces.",
+      "page": 4
+    },
+    {
+      "stem": "Which of the following are chemical methods of homogenization?",
+      "options": ["Osmotic shock", "Detergents", "Sonication", "Grinding"],
+      "answer": "AB",
+      "explanation": "Chemical: osmotic shock and detergents. Sonication and pressure are physical methods; grinding is mechanical; enzymatic digestion is biochemical.",
+      "page": 5
+    },
+    {
+      "stem": "About microsomes:",
+      "options": [
+        "They form when fragments of the ER, Golgi apparatus and cell membrane spontaneously reseal into small vesicles",
+        "They are organelles naturally present in the living cell",
+        "In differential ultracentrifugation they sediment after mitochondria and before ribosomes",
+        "In density gradient ultracentrifugation they settle in the intermediate-density zone"
+      ],
+      "answer": "ACD",
+      "explanation": "Microsomes are an artifact of homogenization, not native organelles. DUC order: nuclei → mitochondria/lysosomes/peroxisomes → microsomes → ribosomes; in a gradient, microsomes are among the intermediate-density components.",
+      "page": 5
+    },
+    {
+      "stem": "During differential ultracentrifugation of a homogenate, the first pellet (lowest speed) mainly contains:",
+      "options": ["Nuclei", "Ribosomes", "Microsomes", "Mitochondria"],
+      "answer": "A",
+      "explanation": "Organelles sediment in the order nuclei, then mitochondria with lysosomes and peroxisomes, then microsomes, then ribosomes (last, at the highest speed).",
+      "page": 6
+    },
+    {
+      "stem": "About differential ultracentrifugation (DUC):",
+      "options": [
+        "Components are separated mainly by size, and also by density",
+        "Centrifugations are performed at progressively increasing speeds",
+        "It gives high-purity fractions in a single centrifugation",
+        "It is limited to small sample volumes"
+      ],
+      "answer": "AB",
+      "explanation": "DUC is simple and handles large volumes but gives incomplete purification. High purity in a single run with small volumes describes density gradient ultracentrifugation.",
+      "page": 5
+    },
+    {
+      "stem": "A homogenate is layered on a pre-formed sucrose density gradient and centrifuged:",
+      "options": [
+        "Each component migrates to the level matching its own density",
+        "Lipid droplets and lipoproteins are found at the top (low density)",
+        "Ribosomes are found at the top with the lipid droplets",
+        "The method gives excellent separation but is limited to small sample volumes"
+      ],
+      "answer": "ABD",
+      "explanation": "Density gradient ultracentrifugation separates by buoyant density: lipid droplets/lipoproteins at the top, membranes and most organelles in the middle, nuclei and ribosomes at the bottom (high density).",
+      "page": 6
+    },
+    {
+      "stem": "To follow a secretory protein, pancreatic cells are incubated for a few minutes with ³H-leucine, then transferred to a medium containing a large excess of unlabeled leucine; samples are taken at regular intervals:",
+      "options": [
+        "The short exposure to the radioactive ('hot') precursor is the pulse",
+        "The transfer to excess non-radioactive ('cold') precursor is the chase",
+        "The compartments containing radioactive molecules are detected by autoradiography",
+        "Sampling at spaced intervals tracks the transformation of the hot precursor into labeled molecules"
+      ],
+      "answer": "ABCD",
+      "explanation": "Pulse = brief exposure to the hot precursor; chase = large excess of cold precursor; regular sampling + autoradiography (light or electron microscope) reveals where the label travels — e.g. protein synthesis and trafficking.",
+      "page": 6
+    },
+    {
+      "stem": "About radioactive isotopes and the pulse-chase technique:",
+      "options": [
+        "An isotope differs from the natural element by its nuclear mass",
+        "An unstable isotope disintegrates, releasing electrons or radiation",
+        "³²P and ¹²⁵I are radioactive isotopes used to track metabolic pathways",
+        "Pulse-chase is performed on fixed (dead) cells"
+      ],
+      "answer": "ABC",
+      "explanation": "The pulse phase exposes living cells to the hot precursor, which must enter the cell and be incorporated into metabolic reactions — this is impossible in fixed cells.",
+      "page": 6
+    }
+  ]
+}

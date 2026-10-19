@@ -1,0 +1,428 @@
+{
+  "semester": 1,
+  "module": "Biochemistry",
+  "title": "Carbohydrates",
+  "pdf": "s1/biochemistry/carbohydrates.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q1",
+    "EMD1 2022-2023 Q2",
+    "EMD1 2022-2023 Q3",
+    "EMD1 2022-2023 Q4",
+    "EMD1 2022-2023 Q5",
+    "EMD1 2022-2023 Q6",
+    "EMD1 2022-2023 Q7",
+    "EMD1 2023-2024 Q1",
+    "EMD1 2023-2024 Q2",
+    "EMD1 2023-2024 Q3",
+    "EMD1 2024-2025 Q1",
+    "EMD1 2024-2025 Q2",
+    "EMD1 2024-2025 Q3",
+    "EMD1 2025-2026 Q1",
+    "EMD1 2025-2026 Q2",
+    "EMD1 2025-2026 Q3",
+    "EMD1 2025-2026 Q4",
+    "EMD1 2025-2026 Q5",
+    "EMD1 2025-2026 Q6",
+    "EMD1 2025-2026 Q7"
+  ],
+  "questions": [
+    {
+      "stem": "The disaccharide shown in the figure is:",
+      "options": ["Maltose", "Lactose", "Sucrose", "Trehalose"],
+      "answer": "C",
+      "explanation": "An α-D-glucopyranose (top) is linked through its C1 to C2 of a β-D-fructofuranose (five-membered ring, bottom): this is sucrose, α-D-glucopyranosyl (1→2) β-D-fructofuranoside. Trehalose is two glucopyranoses linked (1→1).",
+      "page": 53,
+      "image": "s1/lessons/carbohydrates-g1.png"
+    },
+    {
+      "stem": "About the disaccharide shown in the figure:",
+      "options": [
+        "It is an α-D-glucopyranosyl (1→2) β-D-fructofuranoside",
+        "It reduces Fehling's solution",
+        "Its hydrolysis products are levorotatory although the disaccharide itself is dextrorotatory",
+        "Its hydrolysis can be catalysed by β-D-fructosidase (invertase)"
+      ],
+      "answer": "ACD",
+      "explanation": "Sucrose links both anomeric carbons (C1 of glucose, C2 of fructose), so it has no free aldehyde or keto group and is non-reducing. It is +66.5° while its hydrolysate is −28.2° (sucrose inversion), and invertase or α-D-glucosidase hydrolyses it.",
+      "page": 54,
+      "image": "s1/lessons/carbohydrates-g1.png"
+    },
+    {
+      "stem": "About the disaccharide shown in the figure:",
+      "options": [
+        "The left unit is a β-D-glucopyranose",
+        "Its two units are galactose and glucose joined by a β(1→4) glycosidic bond",
+        "It is a non-reducing disaccharide",
+        "It is found only in milk, at about 75 g/L in human milk"
+      ],
+      "answer": "BD",
+      "explanation": "This is β-lactose: β-D-galactopyranosyl (1→4) β-D-glucopyranose, so the left unit is galactose, not glucose. The glucose C1 stays free, which makes lactose reducing; it occurs in milk and nowhere else (≈75 g/L human, 48 g/L cow).",
+      "page": 53,
+      "image": "s1/lessons/carbohydrates-g2.png"
+    },
+    {
+      "stem": "About the disaccharide shown in the figure:",
+      "options": [
+        "It is trehalose",
+        "Its two glucose units are joined by an α(1→1) bond",
+        "It is a reducing disaccharide",
+        "Fungi and bacteria accumulate it in response to cold or desiccation"
+      ],
+      "answer": "ABD",
+      "explanation": "Two α-D-glucopyranoses linked through both anomeric carbons (1→1) form trehalose. Because neither anomeric carbon is free it is non-reducing, like sucrose.",
+      "page": 54,
+      "image": "s1/lessons/carbohydrates-g3.png"
+    },
+    {
+      "stem": "The two aldohexoses shown in the figure (Fischer projections) are:",
+      "options": ["Both of the D-series", "C4 epimers", "Diastereomers", "Enantiomers"],
+      "answer": "AC",
+      "explanation": "Left is D-galactose, right is D-mannose: both have the C5 –OH on the right (D-series). They differ at two carbons (C2 and C4), so they are diastereomers, not epimers; they are not mirror images, so not enantiomers.",
+      "page": 16,
+      "image": "s1/lessons/carbohydrates-g4.png"
+    },
+    {
+      "stem": "About the two aldohexoses shown in the figure:",
+      "options": [
+        "The left one is the C4 epimer of D-glucose",
+        "The right one is the C2 epimer of D-glucose",
+        "Strong oxidation of the left one by nitric acid gives an optically inactive aldaric acid",
+        "Reduction of the right one gives D-sorbitol"
+      ],
+      "answer": "ABC",
+      "explanation": "Left = D-galactose (C4 epimer of glucose), right = D-mannose (C2 epimer). Galactose + nitric acid gives mucic acid, inactive because of its plane of symmetry. Mannose is reduced to D-mannitol; D-sorbitol comes from glucose.",
+      "page": 15,
+      "image": "s1/lessons/carbohydrates-g4.png"
+    },
+    {
+      "stem": "About the cyclic structure shown in the figure:",
+      "options": [
+        "It is α-D-glucopyranose",
+        "It is β-D-glucopyranose",
+        "C1 is a hemiacetal carbon",
+        "The ring is closed between C1 and C4"
+      ],
+      "answer": "AC",
+      "explanation": "With the ring oxygen at the upper right, the C1 –OH pointing down defines the α anomer (up would be β). C1 is the anomeric (hemiacetal) carbon; a pyranose of an aldose closes C1–C5, not C1–C4 (that would be a furanose).",
+      "page": 22,
+      "image": "s1/lessons/carbohydrates-g5.png"
+    },
+    {
+      "stem": "About the monosaccharide shown in the figure:",
+      "options": [
+        "It is a ketohexose",
+        "Its ring is closed between C2 and C5",
+        "Its anomeric carbon is C1",
+        "Its solution turns polarized light to the right"
+      ],
+      "answer": "AB",
+      "explanation": "This is D-fructofuranose: a ketohexose whose five-membered ring forms between C2 and C5. Its anomeric (hemiketal) carbon is C2, and D-fructose is levorotatory (−92.2°).",
+      "page": 23,
+      "image": "s1/lessons/carbohydrates-g6.png"
+    },
+    {
+      "stem": "About carbohydrates in general:",
+      "options": [
+        "They are polyhydroxy-aldehydes or ketones, or compounds that produce them on hydrolysis",
+        "All of them satisfy the formula (CH₂O)n",
+        "Monosaccharides have the formula (CH₂O)n with n = 3 to 7",
+        "Monosaccharides can be hydrolysed into simpler carbohydrates"
+      ],
+      "answer": "AC",
+      "explanation": "Deoxyribose (C₅H₁₀O₄) does not fit (CH₂O)n, so carbohydrates are not always 'hydrates of carbon'. Monosaccharides are the simplest units and cannot be hydrolysed further.",
+      "page": 3
+    },
+    {
+      "stem": "About the biological roles of carbohydrates:",
+      "options": [
+        "One gram of carbohydrate provides about 4 kcal",
+        "Glycogen is stored mainly in the liver and muscles",
+        "ABO blood group antigens are carbohydrate structures on the red blood cell surface",
+        "Cellulose is a linear polymer of α-D-glucose"
+      ],
+      "answer": "ABC",
+      "explanation": "Cellulose is a linear polymer of β-D-glucose (β(1→4) bonds), which is why humans cannot digest it. The other three are stated in the lesson's list of roles.",
+      "page": 4
+    },
+    {
+      "stem": "About the classification of monosaccharides:",
+      "options": [
+        "Glyceraldehyde is an aldotriose",
+        "Ribulose is an aldopentose",
+        "Sedoheptulose is a ketoheptose",
+        "Oligosaccharides contain more than 10 monosaccharide units"
+      ],
+      "answer": "AC",
+      "explanation": "Ribulose is the ketopentose (ribose is the aldopentose). Oligosaccharides contain 2–10 units; more than 10 makes a polysaccharide.",
+      "page": 9
+    },
+    {
+      "stem": "About asymmetric carbons (C*) of monosaccharides:",
+      "options": [
+        "A carbon is asymmetric when it is attached to four different atoms or groups",
+        "Dihydroxyacetone has one asymmetric carbon",
+        "D-erythrose has 2 C* and therefore 4 stereoisomers",
+        "A linear aldohexose has 4 C* and therefore 16 stereoisomers"
+      ],
+      "answer": "ACD",
+      "explanation": "The number of isomers is N = 2ⁿ (n = number of C*): 2² = 4 for erythrose, 2⁴ = 16 for aldohexoses (8 D + 8 L). Dihydroxyacetone is achiral — it has no asymmetric carbon.",
+      "page": 17
+    },
+    {
+      "stem": "About the D and L series:",
+      "options": [
+        "The series is set by the –OH on the asymmetric carbon adjacent to the terminal primary alcohol",
+        "For glucose, this reference carbon is C4",
+        "Most sugars of higher animals, including man, are of the D configuration",
+        "D-glucose and L-glucose are C5 epimers"
+      ],
+      "answer": "AC",
+      "explanation": "For glucose the reference carbon is C5 (–OH right = D, left = L). D- and L-glucose are mirror images at every C*, so they are enantiomers, not epimers.",
+      "page": 13
+    },
+    {
+      "stem": "About Kiliani–Fischer synthesis and the D-aldose family:",
+      "options": [
+        "It lengthens the chain of an aldose by one carbon at a time",
+        "There are 8 D-aldohexoses",
+        "Glucose, mannose and galactose are the most familiar D-aldohexoses",
+        "D-fructose is the only aldose that predominantly occurs in nature"
+      ],
+      "answer": "ABC",
+      "explanation": "D-glucose is the aldose that predominates in nature; fructose is a ketose, not an aldose.",
+      "page": 18
+    },
+    {
+      "stem": "Which of the following are ketoses?",
+      "options": ["D-Xylulose", "D-Erythrose", "D-Ribose", "D-Sedoheptulose"],
+      "answer": "AD",
+      "explanation": "D-Xylulose (5C) and D-sedoheptulose (7C) are among the physiologically important ketoses (with dihydroxyacetone, D-ribulose, D-fructose). Erythrose and ribose are aldoses.",
+      "page": 19
+    },
+    {
+      "stem": "About the cyclization of monosaccharides:",
+      "options": [
+        "The pyranose ring of an aldose is formed between C1 and C5",
+        "The furanose ring of a ketose is formed between C1 and C4",
+        "The pyranose ring of a ketose is formed between C2 and C5",
+        "The chair form is the most stable conformation of glucose"
+      ],
+      "answer": "AD",
+      "explanation": "Aldoses: pyranose C1–C5, furanose C1–C4. Ketoses: pyranose C2–C6, furanose C2–C5. The chair form of glucose is more stable than the boat form.",
+      "page": 24
+    },
+    {
+      "stem": "Pure α-D-glucose is dissolved in water and its specific rotation is followed with a polarimeter:",
+      "options": [
+        "The initial specific rotation is about +111°",
+        "The rotation falls until it stabilizes at about +52.5°",
+        "At equilibrium the solution contains only the β-form",
+        "This spontaneous change is called mutarotation"
+      ],
+      "answer": "ABD",
+      "explanation": "α-D-glucose (+111°) and β-D-glucose (+19.2°) interconvert until an equilibrium mixture of both anomers at +52.5° is reached — not pure β.",
+      "page": 34
+    },
+    {
+      "stem": "About the measurement of optical activity:",
+      "options": [
+        "It is measured with a polarimeter at 20 °C using the sodium D-line (589 nm)",
+        "In Biot's law, concentration is in g/mL and tube length in decimeters",
+        "A racemic mixture is dextrorotatory",
+        "Whether a sugar is (+) or (−) follows directly from its D or L configuration"
+      ],
+      "answer": "AB",
+      "explanation": "A racemic (equimolar D/L) mixture is optically inactive because the rotations cancel. The sign of rotation has no relationship with D/L configuration — D-fructose is levorotatory.",
+      "page": 31
+    },
+    {
+      "stem": "A solution contains D-glucose ([α] = +52°) and L-glucose at exactly the same concentration. Its observed rotation is:",
+      "options": ["+52°", "−52°", "0°", "+104°"],
+      "answer": "C",
+      "explanation": "Enantiomers rotate light by equal amounts in opposite directions (L-glucose = −52°), and rotations are additive, so this racemic mixture shows no optical activity.",
+      "page": 33
+    },
+    {
+      "stem": "About the oxidation of monosaccharides:",
+      "options": [
+        "Mild oxidation of an aldose gives an aldonic acid",
+        "Ketoses are oxidized under the same mild conditions",
+        "Oxidation of the terminal CH₂OH alone gives a uronic acid",
+        "Oxidation of both the aldehyde and the primary alcohol gives an aldaric acid"
+      ],
+      "answer": "ACD",
+      "explanation": "Mild oxidation attacks only the aldehyde (aldonic acid) and ketoses do not react under these conditions. Strong oxidation of both ends → aldaric acid; of the CH₂OH only → uronic acid.",
+      "page": 37
+    },
+    {
+      "stem": "In the liver, bilirubin, hormones and drugs are made water-soluble for urinary or biliary elimination by conjugation with:",
+      "options": ["Gluconic acid", "Glucuronic acid", "Glucaric acid", "Sorbitol"],
+      "answer": "B",
+      "explanation": "Uronic acids (glucuronic acid) conjugate these substances into soluble glucuronides — hepatic detoxification. Gluconic acid is the aldonic acid and glucaric acid the aldaric acid of glucose.",
+      "page": 39
+    },
+    {
+      "stem": "A sugar solution heated with Fehling's solution in alkaline medium gives a red precipitate:",
+      "options": [
+        "The precipitate is cuprous oxide",
+        "The sugar has been oxidized",
+        "Sucrose would give this result",
+        "The sugar is called a reducing sugar"
+      ],
+      "answer": "ABD",
+      "explanation": "Cupric oxide oxidizes the aldose (to an aldonic acid) and is reduced to red cuprous oxide, so the sugar is 'reducing'. Sucrose has no free anomeric carbon and is non-reducing.",
+      "page": 40
+    },
+    {
+      "stem": "In poorly controlled diabetes, a sugar alcohol accumulates in the lens and nerves, contributing to cataract and neuropathy. About the reduction of monosaccharides:",
+      "options": [
+        "Reduction of D-glucose gives D-sorbitol",
+        "Reduction of D-galactose gives D-dulcitol",
+        "Reduction of D-ribose gives D-mannitol",
+        "Mannitol raises intracranial pressure and is avoided in brain oedema"
+      ],
+      "answer": "AB",
+      "explanation": "Sorbitol and dulcitol cause osmotic swelling of cells when they accumulate. D-ribose gives D-ribitol, and mannitol is used to lower intracranial tension by forced diuresis.",
+      "page": 42
+    },
+    {
+      "stem": "About other chemical reactions of monosaccharides:",
+      "options": [
+        "In dilute alkali, glucose, fructose and mannose interconvert through a common 1,2-enediol",
+        "Concentrated acid dehydrates pentoses into furfural",
+        "Dehydration of hexoses gives 5-hydroxymethylfurfural (HMF)",
+        "ATP donates the phosphate in the formation of glucose 6-phosphate"
+      ],
+      "answer": "ABCD",
+      "explanation": "All four are taught: enolization (p43), dehydration losing three water molecules (p44), and esterification by phosphoric acid with ATP as donor (p45).",
+      "page": 44
+    },
+    {
+      "stem": "Methylation of the anomeric –OH of glucose:",
+      "options": [
+        "Makes the sugar non-reducing",
+        "Makes the sugar more strongly reducing",
+        "Complete methylation helps locate glycosidic linkages in polysaccharides",
+        "Is the reaction that forms glucose 1-phosphate"
+      ],
+      "answer": "AC",
+      "explanation": "Blocking the anomeric –OH removes the reducing property. Complete methylation identifies which –OH groups are engaged in bonds (and protects them in synthesis); glucose 1-phosphate is a phosphate ester, not a methylation product.",
+      "page": 47
+    },
+    {
+      "stem": "About monosaccharide derivatives:",
+      "options": [
+        "Deoxyribose carries a CH₂ group at carbon 2",
+        "Rhamnose is 6-deoxy-L-galactose",
+        "In amino sugars, the –OH at C2 is replaced by –NH₂",
+        "Sialic acid (NANA) is formed from pyruvic acid and D-glucosamine"
+      ],
+      "answer": "AC",
+      "explanation": "Fucose is 6-deoxy-L-galactose; rhamnose is 6-deoxy-L-mannose. Sialic acid (9C) comes from pyruvic acid (3C) + D-mannosamine (6C).",
+      "page": 49
+    },
+    {
+      "stem": "About vitamin C (ascorbic acid):",
+      "options": [
+        "Only the L-form is biologically active",
+        "It is characterized by an ene-diol function",
+        "Humans synthesize it from glucose",
+        "Its deficiency causes scurvy through abnormal collagen synthesis"
+      ],
+      "answer": "ABD",
+      "explanation": "Humans cannot synthesize ascorbic acid, which is why it is a water-soluble vitamin. Deficiency weakens collagen and vessel walls (scurvy).",
+      "page": 49
+    },
+    {
+      "stem": "Which of the following disaccharides are reducing?",
+      "options": ["Maltose", "Cellobiose", "Sucrose", "Trehalose"],
+      "answer": "AB",
+      "explanation": "Maltose and cellobiose (both glucose (1→4) glucose) keep a free anomeric carbon. Sucrose (1→2) and trehalose (1→1) link both anomeric carbons and are non-reducing.",
+      "page": 52
+    },
+    {
+      "stem": "A patient with hepatic encephalopathy (raised plasma ammonia) is treated with lactulose:",
+      "options": [
+        "Lactulose is a synthetic disaccharide of galactose and fructose",
+        "Lactulose is absorbed in the small intestine",
+        "It converts NH₃ in the intestinal lumen into poorly absorbed NH₄⁺",
+        "Lactulose is made of two glucose units"
+      ],
+      "answer": "AC",
+      "explanation": "Lactulose (galactose + fructose) is neither digested nor absorbed; trapping ammonia as NH₄⁺ in the lumen lowers plasma NH₃.",
+      "page": 52
+    },
+    {
+      "stem": "About starch and glycogen:",
+      "options": [
+        "Amylose is the water-insoluble, predominant component of starch",
+        "Glycogen has α(1→4) bonds with α(1→6) bonds at branch points",
+        "Glycogen contains a small protein, glycogenin, at its core",
+        "Glycogen is less branched than amylopectin"
+      ],
+      "answer": "BC",
+      "explanation": "Amylose is water-soluble and only 15–20% of starch; amylopectin (80–85%) is insoluble. Glycogen resembles amylopectin but with more branches; glycogenin initiates its synthesis.",
+      "page": 58
+    },
+    {
+      "stem": "About homopolysaccharides:",
+      "options": [
+        "Chitin is made of N-acetyl-D-glucosamine units joined by β(1→4) bonds",
+        "Glucans are polymers of glucose and fructosans polymers of fructose",
+        "Humans digest cellulose using their amylases",
+        "Polysaccharides dissolve readily in water, forming true solutions"
+      ],
+      "answer": "AB",
+      "explanation": "Humans lack the enzyme that cleaves β-glycosidic bonds, so cellulose is indigestible fiber. Polysaccharides, with their high molecular weight, form colloidal solutions rather than dissolving readily.",
+      "page": 59
+    },
+    {
+      "stem": "About heterosides (glycosides):",
+      "options": [
+        "In O-heterosides the aglycone is linked to the sugar through an oxygen atom",
+        "Nucleosides are N-heterosides",
+        "Sinigrin of black mustard seeds is an S-heteroside",
+        "Amygdalin can release hydrocyanic acid on enzymatic hydrolysis"
+      ],
+      "answer": "ABCD",
+      "explanation": "Heterosides are classed by the atom bonding sugar to aglycone: O (amygdalin, digitalin, rutin), N (purine/pyrimidine bases in nucleosides), S (sinigrin). Amygdalin is cyanogenic.",
+      "page": 63
+    },
+    {
+      "stem": "About glycoproteins and proteoglycans:",
+      "options": [
+        "O-glycosidic linkages bind the carbohydrate to a serine or threonine –OH",
+        "N-glycosidic linkages bind the carbohydrate to the amide nitrogen of asparagine",
+        "In proteoglycans the carbohydrate part is less than 10%",
+        "Heparin is a secretory glycosaminoglycan"
+      ],
+      "answer": "ABD",
+      "explanation": "Proteoglycans are dominated by their GAG chains (> 90% carbohydrate); it is glycoproteins whose carbohydrate content varies (1–90%).",
+      "page": 66
+    },
+    {
+      "stem": "About glycosaminoglycans (GAGs):",
+      "options": [
+        "Hyaluronic acid is made of D-glucuronic acid and N-acetylglucosamine",
+        "Chondroitin sulfate contains L-iduronic acid",
+        "Keratan sulfate keeps the cornea transparent",
+        "Hyaluronidase breaks α(1→4) linkages of hyaluronic acid around the ovum"
+      ],
+      "answer": "AC",
+      "explanation": "L-iduronic acid (C5 inversion of D-glucuronic acid) characterizes dermatan sulfate. Hyaluronidase cleaves the β(1→4) linkages, helping sperm penetration.",
+      "page": 69
+    },
+    {
+      "stem": "About monosaccharides of biological interest:",
+      "options": [
+        "Normal glycemia is about 0.80 g/L",
+        "Fructose in seminal fluid is an energy substrate for spermatozoa",
+        "L-arabinose is fully metabolized by humans",
+        "Galactose is a constituent of lactose"
+      ],
+      "answer": "ABD",
+      "explanation": "L-arabinose (and D-arabinose) are not metabolized by humans and are excreted in the urine without pathological consequences.",
+      "page": 27
+    }
+  ]
+}

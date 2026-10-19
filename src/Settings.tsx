@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { DEFAULTS, saveSettings, useSettings, type Settings as SettingsT } from "./prefs";
+import { saveSettings } from "./api";
+import { DEFAULTS, useSettings, type Settings as SettingsT } from "./prefs";
 
 const ORDERS: { value: SettingsT["order"]; label: string }[] = [
   { value: "mixed", label: "Mixed in with reviews" },
@@ -24,7 +25,7 @@ export default function Settings({ onBack }: { onBack: () => void }) {
     <main>
       <header className="study-header">
         <button className="link" onClick={onBack}>← Decks</button>
-        <span className="meta">{saved ? "✓ Saved" : "Saved on this device"}</span>
+        <span className="meta">{saved ? "✓ Saved" : "Synced with your code"}</span>
       </header>
       <h1>Settings</h1>
 

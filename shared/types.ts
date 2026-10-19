@@ -88,7 +88,21 @@ export type Snapshot = {
   modules: Pick<Module, "id" | "semester" | "name">[];
   lessons: Pick<Lesson, "id" | "module_id" | "title" | "pdf" | "position" | "completed_at" | "read_at">[];
   questions: (StudyQuestion & { lesson_ids: number[] })[];
+  content_version: number; // bumped by any change to modules, lessons or questions
+  prefs: SyncedPrefs;
   fetched_at: number; // unix ms
+};
+
+// Study settings saved under a sync code; null until a device saves some.
+export type SyncedPrefs = { settings: Record<string, unknown>; updated_at: number } | null;
+
+// /api/snapshot?content=<version> when the caller's content is current: only the caller's progress.
+export type SnapshotUpdate = {
+  content_version: number;
+  cards: ({ question_id: number } & CardRow)[];
+  reads: { lesson_id: number; read_at: number }[];
+  prefs: SyncedPrefs;
+  fetched_at: number;
 };
 
 // Progress tied to a sync code, from /api/account.
