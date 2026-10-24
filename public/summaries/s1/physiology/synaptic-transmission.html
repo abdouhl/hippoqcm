@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Synaptic transmission — Summary</title>
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Physiology · Summary</div>
+<h1>Synaptic transmission</h1>
+<p class="meta">From the 54-slide course PDF (Dr S. Kebir, academic year 2026-2027) · 18 past exam questions (EMD1 2022–2026) cover this lesson ·
+  <a href="/lessons/s1/physiology/synaptic-transmission.pdf">open the PDF</a></p>
+<ul class="toc">
+  <li><a target="_self" href="#essentials">Essentials</a></li>
+  <li><a target="_self" href="#classification">Classification</a></li>
+  <li><a target="_self" href="#structure">Chemical synapse</a></li>
+  <li><a target="_self" href="#properties">Properties</a></li>
+  <li><a target="_self" href="#neurotransmitters">Neurotransmitters</a></li>
+  <li><a target="_self" href="#nmj">Neuromuscular junction</a></li>
+  <li><a target="_self" href="#epp">EPP &amp; MEPP</a></li>
+  <li><a target="_self" href="#ach">Acetylcholine</a></li>
+  <li><a target="_self" href="#pharmacology">Pharmacology</a></li>
+  <li><a target="_self" href="#neuroneuronal">EPSP / IPSP</a></li>
+  <li><a target="_self" href="#integration">Integration</a></li>
+  <li><a target="_self" href="#traps">Exam traps</a></li>
+  <li><a target="_self" href="#check">Self-check</a></li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<div class="box essentials" id="essentials">
+  <span class="label">If you remember only this</span>
+  <ul>
+    <li><b>Chemical synapse</b>: a <b>neurotransmitter</b> crosses the cleft → <b>unidirectional</b> (pre → post), with a <b>synaptic delay</b>,
+      fatigue, integration, <b>not all-or-nothing</b>. <b>Electrical synapse</b>: ionic current passes directly → <b>bidirectional</b>.</li>
+    <li>Sequence: AP arrives → <b>Ca²⁺ enters</b> (voltage-gated Ca²⁺ channels) → exocytosis → NT binds its receptor → rapid inactivation by
+      <b>degradation, (presynaptic) reuptake or diffusion</b>.</li>
+    <li><b>NMJ</b> = motor neuron α axon + skeletal muscle fiber (motor endplate); cleft <b>50–100 nm</b>; <b>nicotinic</b> ACh receptors on the
+      crests of the folds.</li>
+    <li><b>EPP</b> = <b>local depolarization of the postsynaptic</b> (muscle) membrane, isolated with <b>curare</b> or <b>TTX</b> (blocks Na⁺
+      channels); max in <b>2 ms</b>, back to 0 in <b>20 ms</b>; due to ↑ gNa⁺ <b>and</b> gK⁺ → about <b>−15 mV</b>. <b>MEPP</b> = spontaneous
+      <b>0.5 mV</b> = one <b>quantum</b> of ACh.</li>
+    <li>ACh: made from <b>acetyl-CoA + choline</b> by <b>choline acetyltransferase</b>; released by Ca²⁺ via <b>synaptotagmin + SNAREs</b>;
+      destroyed by <b>acetylcholinesterase</b> into choline + acetate; choline is <b>recaptured</b>.</li>
+    <li>Nicotinic receptor: <b>5 subunits (2α, β, γ, δ)</b>; <b>2 ACh</b> open the cation channel (Na⁺, K⁺).</li>
+    <li><b>EPSP</b> (depolarization, ↑gNa⁺ + gK⁺) and <b>IPSP</b> (hyperpolarization, Cl⁻ in / K⁺ out) are <b>local, gradable, summable,
+      decremental</b>, no refractory period, <b>not all-or-nothing</b>.</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="intro"><span class="num">I.</span> Introduction <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=3">p. 3</a></h2>
+<ul>
+  <li>The term <span class="term">synapse</span> was proposed by <b>Sherrington</b> for areas of <b>contiguity</b> between neurons, specialized in
+    transmitting information.</li>
+  <li>Synapses are not only <b>inter-neuronal</b>: they also connect neurons to <b>effector cells</b> (muscle, gland) = <b>neuro-effector</b> synapses.</li>
+  <li>The transfer of information from one cell to another at these contacts = <span class="term">synaptic transmission</span>.</li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="classification"><span class="num">II.</span> Classification of synapses <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=4">p. 4–13</a>
+  <span class="exam">2022-23</span></h2>
+<figure>
+  <svg viewBox="0 0 760 330" role="img" aria-label="Synapses are classified by 4 criteria: operating mode (chemical or electrical), postsynaptic element (neuro-neuronal or neuro-effector), effect on the postsynaptic membrane (excitatory or inhibitory), chemical mediator (cholinergic, glutamatergic, GABAergic, dopaminergic, peptidergic)">
+    <rect x="250" y="10" width="260" height="44" rx="10" class="s-accent" stroke-width="2"/>
+    <text x="380" y="38" text-anchor="middle" class="s-text" font-size="17" font-weight="700">Synapses: 4 criteria</text>
+    <line x1="380" y1="54" x2="380" y2="72" class="s-line" stroke-width="2"/>
+    <line x1="95" y1="72" x2="665" y2="72" class="s-line" stroke-width="2"/>
+    <line x1="95" y1="72" x2="95" y2="88" class="s-line" stroke-width="2"/>
+    <line x1="285" y1="72" x2="285" y2="88" class="s-line" stroke-width="2"/>
+    <line x1="475" y1="72" x2="475" y2="88" class="s-line" stroke-width="2"/>
+    <line x1="665" y1="72" x2="665" y2="88" class="s-line" stroke-width="2"/>
+    <rect x="10" y="88" width="170" height="52" rx="8" class="s-warn" stroke-width="2"/>
+    <text x="95" y="110" text-anchor="middle" class="s-text" font-size="14" font-weight="700">1. Operating</text>
+    <text x="95" y="129" text-anchor="middle" class="s-text" font-size="14" font-weight="700">mode</text>
+    <rect x="200" y="88" width="170" height="52" rx="8" class="s-ok" stroke-width="2"/>
+    <text x="285" y="110" text-anchor="middle" class="s-text" font-size="14" font-weight="700">2. Postsynaptic</text>
+    <text x="285" y="129" text-anchor="middle" class="s-text" font-size="14" font-weight="700">element</text>
+    <rect x="390" y="88" width="170" height="52" rx="8" class="s-violet" stroke-width="2"/>
+    <text x="475" y="110" text-anchor="middle" class="s-text" font-size="14" font-weight="700">3. Effect on post-</text>
+    <text x="475" y="129" text-anchor="middle" class="s-text" font-size="14" font-weight="700">synaptic membrane</text>
+    <rect x="580" y="88" width="170" height="52" rx="8" class="s-coral" stroke-width="2"/>
+    <text x="665" y="110" text-anchor="middle" class="s-text" font-size="14" font-weight="700">4. Chemical</text>
+    <text x="665" y="129" text-anchor="middle" class="s-text" font-size="14" font-weight="700">mediator</text>
+    <text x="95" y="172" text-anchor="middle" class="s-text" font-size="14">Chemical</text>
+    <text x="95" y="190" text-anchor="middle" class="s-muted" font-size="12">neurotransmitter,</text>
+    <text x="95" y="206" text-anchor="middle" class="s-muted" font-size="12">one-way</text>
+    <text x="95" y="236" text-anchor="middle" class="s-text" font-size="14">Electrical</text>
+    <text x="95" y="254" text-anchor="middle" class="s-muted" font-size="12">direct current,</text>
+    <text x="95" y="270" text-anchor="middle" class="s-muted" font-size="12">bidirectional</text>
+    <text x="285" y="172" text-anchor="middle" class="s-text" font-size="14">Neuro-neuronal</text>
+    <text x="285" y="190" text-anchor="middle" class="s-muted" font-size="12">axo-somatic, axo-dendritic,</text>
+    <text x="285" y="206" text-anchor="middle" class="s-muted" font-size="12">axo-axonic</text>
+    <text x="285" y="236" text-anchor="middle" class="s-text" font-size="14">Neuro-effector</text>
+    <text x="285" y="254" text-anchor="middle" class="s-muted" font-size="12">skeletal/cardiac muscle,</text>
+    <text x="285" y="270" text-anchor="middle" class="s-muted" font-size="12">smooth muscle, gland</text>
+    <text x="475" y="172" text-anchor="middle" class="s-text" font-size="14">Excitatory</text>
+    <text x="475" y="190" text-anchor="middle" class="s-muted" font-size="12">depolarization</text>
+    <text x="475" y="236" text-anchor="middle" class="s-text" font-size="14">Inhibitory</text>
+    <text x="475" y="254" text-anchor="middle" class="s-muted" font-size="12">hyperpolarization</text>
+    <text x="665" y="172" text-anchor="middle" class="s-text" font-size="13">Cholinergic (ACh)</text>
+    <text x="665" y="194" text-anchor="middle" class="s-text" font-size="13">Glutamatergic</text>
+    <text x="665" y="216" text-anchor="middle" class="s-text" font-size="13">GABAergic</text>
+    <text x="665" y="238" text-anchor="middle" class="s-text" font-size="13">Dopaminergic</text>
+    <text x="665" y="260" text-anchor="middle" class="s-text" font-size="13">Peptidergic…</text>
+    <text x="380" y="314" text-anchor="middle" class="s-muted" font-size="13">The same synapse is described by all 4 criteria at once (e.g. NMJ = chemical, neuro-effector, excitatory, cholinergic)</text>
+  </svg>
+  <figcaption><b>The 4 ways to classify a synapse</b> (schema of slides 4–13). <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=4">p. 4</a></figcaption>
+</figure>
+
+<h3>1. By operating mode <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=5">p. 5–8</a> <span class="exam">2022-23</span></h3>
+<div class="table-wrap"><table>
+  <tr><th></th><th>Chemical synapse</th><th>Electrical synapse</th></tr>
+  <tr><td>Signal</td><td>A <b>neurotransmitter</b> released by the presynaptic fiber binds <b>postsynaptic receptors</b> and modifies its excitability</td>
+    <td>Purely <b>electrical</b>: membrane potential changes pass <b>directly</b> to the next neuron (ions through the <b>gap-junction</b> channels)</td></tr>
+  <tr><td>Direction</td><td><b>One-way</b>: presynaptic → postsynaptic</td><td><b>Bidirectional</b></td></tr>
+</table></div>
+<div class="grid2">
+  <figure>
+    <img src="synaptic-transmission/chemical-synapse.jpg" alt="Chemical synapse: presynaptic neuron with synaptic vesicles; zoom on vesicles fusing and releasing neurotransmitter into the synaptic cleft, onto postsynaptic receptors; ions pass through postsynaptic channels" loading="lazy">
+    <figcaption><b>Chemical:</b> vesicles fuse with the presynaptic membrane, release the neurotransmitter into the <b>cleft</b>; it binds
+      postsynaptic receptors and <b>ions pass through postsynaptic channels</b>. <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=6">p. 6</a></figcaption>
+  </figure>
+  <figure>
+    <img src="synaptic-transmission/electrical-synapse.jpg" alt="Electrical synapse: presynaptic and postsynaptic membranes joined by gap junction channels through which ions pass" loading="lazy">
+    <figcaption><b>Electrical:</b> no vesicles; the two membranes are joined by <b>communicating (gap) junction</b> channels and
+      <b>ions pass directly</b> from cell to cell. <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=8">p. 8</a></figcaption>
+  </figure>
+</div>
+
+<h3>2. By the postsynaptic element <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=9">p. 9–11</a></h3>
+<ul>
+  <li><b>Neuro-neuronal</b>: postsynaptic element = a nerve membrane → <b>axo-somatic, axo-dendritic, axo-axonic</b>.</li>
+  <li><b>Neuro-effector</b>: postsynaptic element = an effector cell → <b>striated skeletal or cardiac muscle, smooth muscle, gland</b>.</li>
+</ul>
+<figure class="small">
+  <img src="synaptic-transmission/neuroneuronal-types.jpg" alt="Three neurons showing axosomatic synapses on the cell body, axodendritic synapses on dendrites and an axo-axonic synapse on the axon" loading="lazy">
+  <figcaption><b>Neuro-neuronal synapses by target:</b> on the cell body (axo-somatic), on a dendrite (axo-dendritic), on another axon
+    (axo-axonic). <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=10">p. 10</a></figcaption>
+</figure>
+
+<h3>3. By the effect on the postsynaptic membrane <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=12">p. 12</a></h3>
+<ul>
+  <li><b>Excitatory</b>: activating the presynaptic element → <b>depolarization</b> of the postsynaptic membrane.</li>
+  <li><b>Inhibitory</b>: → <b>hyperpolarization</b>.</li>
+</ul>
+
+<h3>4. By the chemical mediator <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=13">p. 13</a></h3>
+<p>Cholinergic (<b>acetylcholine</b>), glutamatergic (<b>glutamate</b>), GABAergic (<b>GABA</b> = gamma-aminobutyric acid), dopaminergic
+  (<b>dopamine</b>), peptidergic (<b>peptides</b>)…</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="structure"><span class="num">III.</span> Structure and operation of a chemical synapse <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=14">p. 14–15</a>
+  <span class="exam">2022-23 · 2023-24 · 2024-25</span></h2>
+<p>The <b>synaptic complex</b> has <b>3 parts</b>:</p>
+<ul>
+  <li>a <b>presynaptic element</b> — <b>always a nerve cell</b>;</li>
+  <li>a <b>postsynaptic element</b> — a nerve cell <b>or</b> an effector;</li>
+  <li>the <b>synaptic space</b> (synaptic cleft).</li>
+</ul>
+<ol class="steps">
+  <li>The <b>action potential</b> arrives in the presynaptic terminal → <b>entry of calcium</b>.</li>
+  <li>The calcium signal triggers <b>exocytosis</b> by membrane fusion.</li>
+  <li>The vesicle contents are <b>released into the cleft</b>.</li>
+  <li>The neurotransmitter <b>binds a specific receptor</b>.</li>
+  <li><b>Rapid inactivation</b> by <b>degradation</b>, <b>reuptake</b> (recapture) or <b>diffusion</b>.</li>
+</ol>
+<figure class="small">
+  <img src="synaptic-transmission/chemical-synapse-steps.jpg" alt="Numbered diagram of a chemical synapse: 1 action potential arrives, 2 voltage-opened calcium channel, 4a-4b vesicle fusion and release, 4c coated vesicle recycling, 5 receptor channel opens on the postsynaptic dendrite" loading="lazy">
+  <figcaption><b>The steps on the diagram</b> (French labels): ① AP (PA) arrives; ② a channel <b>opened by depolarization</b> lets Ca²⁺ in;
+    ④a–b vesicles fuse and release the transmitter into the cleft (fente); ④c the membrane is retrieved as a <b>coated vesicle</b>;
+    ⑤ the postsynaptic <b>receptor-channel</b> goes from closed (fermé) to open (ouvert). <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=15">p. 15</a></figcaption>
+</figure>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="properties"><span class="num">IV.</span> Properties of chemical synapses <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=16">p. 16</a>
+  <span class="exam">2022-23 · 2023-24 · 2024-25 · 2025-26</span></h2>
+<div class="table-wrap"><table>
+  <tr><th>Property</th><th>Meaning</th></tr>
+  <tr><td><b>Unidirectional</b></td><td>The impulse passes <b>only</b> from the presynaptic to the postsynaptic element.</td></tr>
+  <tr><td><b>Fatigue</b></td><td>Repeated stimulation → progressive decrease of the postsynaptic response, by <b>exhaustion of the neurotransmitter stock</b>.</td></tr>
+  <tr><td><b>Synaptic delay</b></td><td>Time needed to release the neurotransmitter into the cleft and for it to act on the postsynaptic receptor.</td></tr>
+  <tr><td><b>Integrative role</b></td><td>A neuron in contact with several neurons acts as an <b>integrator</b>; the information can be modified.</td></tr>
+  <tr><td><b>Not all-or-nothing</b></td><td>Does not obey the all-or-nothing law.</td></tr>
+</table></div>
+<div class="box tip"><span class="label">Memory trick</span> <b>U-F-D-I-N</b>: <b>U</b>nidirectional, <b>F</b>atigue, <b>D</b>elay, <b>I</b>ntegration,
+  <b>N</b>ot all-or-nothing.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="neurotransmitters"><span class="num">V.</span> Neurotransmitters <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=17">p. 17–18</a></h2>
+<div class="box def"><span class="label">Neurotransmitter (neuromediator)</span>
+  A chemical substance released by a neuron at a synapse.</div>
+<h3>5 criteria to identify a neurotransmitter</h3>
+<ol class="steps">
+  <li><b>Synthesized</b> by the neuron.</li>
+  <li><b>Present</b> in the presynaptic terminal.</li>
+  <li><b>Released</b> in sufficient quantity to act on the postsynaptic neuron.</li>
+  <li>Applied directly to the target neuron, it <b>reproduces the effect</b> of the endogenous neurotransmitter.</li>
+  <li><b>Specifically inactivated</b>.</li>
+</ol>
+<h3>2 large groups</h3>
+<div class="table-wrap"><table>
+  <tr><th>Group</th><th>Members</th></tr>
+  <tr><td rowspan="3"><b>Classic</b></td><td><b>Acetylcholine</b></td></tr>
+  <tr><td><b>Monoamines</b>: noradrenaline, adrenaline, dopamine, serotonin, histamine</td></tr>
+  <tr><td><b>Amino acids</b>: glutamate, aspartate, GABA, glycine</td></tr>
+  <tr><td><b>Others</b></td><td>Above all the <b>peptides</b>; also <b>nitric oxide (NO)</b>, <b>ATP</b>, adenosine</td></tr>
+</table></div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="nmj"><span class="num">VI.</span> The neuromuscular junction (NMJ, motor endplate) <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=19">p. 19–22</a>
+  <span class="exam">2022-23 · 2023-24</span></h2>
+<div class="box def"><span class="label">Definition</span>
+  The <b>contact zone</b> between the nerve ending (<b>axon of the α motor neuron</b>) and the <b>striated skeletal muscle fiber</b> it
+  innervates = the <span class="term">motor endplate</span>.</div>
+<ul>
+  <li>At the muscle, the axon divides into branches, <b>each innervating a single muscle fiber</b>.</li>
+  <li>The terminal branches sink into a <b>groove</b> dug into the surface of the muscle membrane.</li>
+</ul>
+<div class="table-wrap"><table>
+  <tr><th>Part</th><th>Content</th></tr>
+  <tr><td><b>Presynaptic element</b></td><td><b>Synaptic vesicles</b> containing the neurotransmitter (ACh)</td></tr>
+  <tr><td><b>Synaptic cleft</b></td><td><b>50 to 100 nm</b> wide</td></tr>
+  <tr><td><b>Postsynaptic element</b></td><td>Muscle membrane with <b>nicotinic ACh receptors</b> at the <b>crests of the folds</b></td></tr>
+</table></div>
+<div class="grid2">
+  <figure>
+    <img src="synaptic-transmission/nmj-overview.jpg" alt="Motor neuron axon reaching a muscle fiber at the neuromuscular junction; zoom on the end-plate region with axon branches, myelin and Schwann cell sheath" loading="lazy">
+    <figcaption><b>Location:</b> the motor neuron's myelinated axon ends on the muscle fiber at the <b>end-plate region</b>, where it
+      branches. <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=21">p. 21</a></figcaption>
+  </figure>
+  <figure>
+    <img src="synaptic-transmission/nmj-detail.jpg" alt="Detailed NMJ: terminal with mitochondria and ACh vesicles at active zones, Ca2+ channels, synaptic cleft with basement membrane, junctional folds with ACh receptors on the crests and voltage-gated Na+ channels deeper" loading="lazy">
+    <figcaption><b>Ultrastructure:</b> vesicles cluster at <b>active zones</b> beside <b>Ca²⁺ channels</b>; the muscle membrane forms
+      <b>junctional folds</b> — <b>ACh receptors</b> on the crests, <b>voltage-gated Na⁺ channels</b> deeper in the folds.
+      <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=22">p. 22</a></figcaption>
+  </figure>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="epp"><span class="num">VI.3</span> Electrophysiology of the NMJ <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=23">p. 23–29</a>
+  <span class="exam">2022-23 · 2024-25</span></h2>
+<h3>a) Endplate potential (EPP, PPM)</h3>
+<ul>
+  <li>Normally, stimulating the motor nerve <b>always</b> triggers an action potential that propagates along the muscle membrane.</li>
+  <li>After <b>curarization</b> or blocking by <b>TTX (tetrodotoxin)</b>, a <b>local depolarization</b> can be isolated: the <b>EPP</b>.</li>
+  <li>The EPP is <b>local</b>: maximum in <b>2 ms</b>, then decreases <b>exponentially</b> to zero in <b>20 ms</b>.</li>
+</ul>
+
+
+<h3>b) Ionic mechanism (voltage clamp)</h3>
+<ul>
+  <li>During the EPP: <b>membrane resistance falls</b>, permeabilities rise, ions pass.</li>
+  <li>The EPP is due to a <b>simultaneous increase of the conductances to Na⁺ and K⁺</b>.</li>
+  <li>Each ion tends toward its own equilibrium potential (E<sub>ion</sub>) → the result is an <b>intermediate value, about −15 mV</b>.</li>
+  <li>The <b>patch clamp</b> technique measures conductances and ionic current at the scale of a <b>single channel</b>.</li>
+</ul>
+<div class="grid2">
+<figure>
+  <img src="synaptic-transmission/epp-curve.jpg" alt="Membrane potential traces from -75 mV: a muscle action potential overshooting to +10 mV, and with Na channels blocked, smaller EPPs that rise to about -45 mV or stay below the threshold of about -60 mV" loading="lazy">
+  <figcaption><b>EPP vs muscle AP.</b> When it crosses the <b>trigger threshold</b> (dashed, ≈ −60 mV) the EPP fires a muscle <b>AP</b>; with
+    <b>Na⁺ channels blocked</b> only the EPP remains — a graded hump that decays back to rest (−75 mV).
+    <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=24">p. 24</a></figcaption>
+</figure>
+<figure>
+  <img src="synaptic-transmission/epp-reversal.jpg" alt="Synaptic currents recorded at holding potentials from +75 to -100 mV with arrows for K+ and Na+ flux: above E_EPSP the current is outward, below it inward; K+ always flows out, Na+ flows in more and more at negative potentials" loading="lazy">
+  <figcaption><b>Voltage clamp of the endplate current.</b> The current changes direction at <b>E<sub>EPSP</sub></b> (≈ −15 mV): there, K⁺
+    leaving and Na⁺ entering cancel out. The more negative the membrane, the bigger the Na⁺ entry.
+    <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=27">p. 27</a></figcaption>
+</figure>
+</div>
+
+<h3>c) Miniature endplate potential (MEPP)</h3>
+<p>Recorded <b>without any stimulation</b>: small potentials of <b>0.5 mV</b>, <b>spontaneous and random</b> — thought to result from the release of
+  small packets of ACh called <span class="term">quanta</span>.</p>
+<figure class="small">
+  <img src="synaptic-transmission/mepp.jpg" alt="Postsynaptic membrane potential traces over 500 ms showing small spontaneous MEPP blips (scale bar 1 mV)" loading="lazy">
+  <figcaption><b>MEPPs</b>: random spontaneous blips, much smaller than 1 mV (scale bar), without any nerve stimulation.
+    <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=29">p. 29</a></figcaption>
+</figure>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="ach"><span class="num">VI.4</span> Biochemistry: acetylcholine <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=30">p. 30–39</a>
+  <span class="exam">2022-23 · 2023-24 · 2024-25</span></h2>
+<h3>a) Metabolism of ACh</h3>
+<ol class="steps">
+  <li><b>Synthesis</b> — in the <b>cytosol</b> of the presynaptic ending, from <b>acetyl-coenzyme A</b> (from glucose metabolism in the
+    <b>mitochondria</b>) + <b>choline</b>, catalysed by <b>choline acetyltransferase (CAT)</b>.</li>
+  <li><b>Storage</b> — concentrated in <b>synaptic vesicles</b>, in <b>2 pools</b>: a <b>reserve</b> pool and a pool near the plasma membrane in
+    the <b>active zones</b>, ready for exocytosis.</li>
+  <li><b>Exocytosis</b> — controlled by <b>Ca²⁺</b>: the AP opens <b>voltage-gated Ca²⁺ channels</b> very fast; Ca²⁺ entry triggers fusion and
+    exocytosis.</li>
+  <li><b>Degradation</b> — after acting, ACh is quickly split by <b>acetylcholinesterase</b> into <b>choline + acetic acid</b>; <b>choline is
+    recaptured</b> by the presynaptic terminal through <b>active transporters</b>.</li>
+</ol>
+
+<h3>Molecular mechanism of exocytosis</h3>
+<div class="flow">
+  <span>↑ Ca²⁺ in the terminal</span><i>→</i><span>activates <b>synaptotagmin</b> (vesicle protein)</span><i>→</i><span>with the <b>SNARE</b> complex</span><i>→</i><span>docking</span><i>→</i><span>vesicle–plasma membrane fusion</span><i>→</i><span>ACh released</span>
+</div>
+<div class="table-wrap"><table>
+  <tr><th>SNARE protein</th><th>Membrane</th></tr>
+  <tr><td><b>Synaptobrevin</b> (VAMP)</td><td>Vesicle</td></tr>
+  <tr><td><b>SNAP-25</b></td><td>Plasma membrane</td></tr>
+  <tr><td><b>Syntaxin</b></td><td>Plasma membrane</td></tr>
+</table></div>
+<div class="grid2">
+  <figure>
+    <img src="synaptic-transmission/ach-synthesis.jpg" alt="Cycle: choline plus acetyl coenzyme A, via choline acetyltransferase, give acetylcholine and coenzyme A; acetylcholinesterase splits acetylcholine into choline and acetate, which are recycled" loading="lazy">
+    <figcaption><b>The ACh cycle</b>: made by <b>choline acetyltransferase</b>, destroyed by <b>acetylcholinesterase</b>; choline is reused.
+      <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=31">p. 31</a></figcaption>
+  </figure>
+  <figure>
+    <img src="synaptic-transmission/snare.jpg" alt="SNARE complex: synaptobrevin/VAMP on the vesicle membrane, SNAP-25 and syntaxin on the plasma membrane, synaptotagmin with C2A and C2B domains next to a calcium channel; below, vesicle docking, hemifusion and fusion pore after Ca2+" loading="lazy">
+    <figcaption><b>Exocytosis machinery</b>: synaptobrevin (vesicle) zips with SNAP-25 and syntaxin (plasma membrane);
+      <b>synaptotagmin</b> sits next to the <b>Ca²⁺ channel</b>; Ca²⁺ → fusion pore. <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=34">p. 34</a></figcaption>
+  </figure>
+</div>
+
+<h3>b) The nicotinic ACh receptor <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=37">p. 37–39</a></h3>
+<ul>
+  <li>A <b>glycoprotein of 5 subunits</b>: <b>2 α, 1 β, 1 γ, 1 δ</b>, forming the walls of a <b>central pore</b>; each subunit has
+    <b>4 transmembrane domains</b> (TM1–TM4).</li>
+  <li>Binding of <b>2 ACh molecules</b> → <b>conformation change</b> (closed → open) → simultaneous, rapid, transient ↑ permeability to
+    <b>cations (Na⁺ and K⁺)</b>.</li>
+</ul>
+<div class="grid2">
+  <figure>
+    <img src="synaptic-transmission/nicotinic-receptor.jpg" alt="Top view of the nicotinic receptor in the membrane: five subunits alpha, gamma, alpha, delta, beta around a central pore, each with four transmembrane domains TM1 to TM4" loading="lazy">
+    <figcaption><b>Top view:</b> 5 subunits (α, γ, α, δ, β) around the pore; each has 4 transmembrane domains.
+      <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=38">p. 38</a></figcaption>
+  </figure>
+  <figure>
+    <img src="synaptic-transmission/nicotinic-activation.jpg" alt="Nicotinic receptor side views: no ACh bound, channel closed; two ACh molecules bound on the alpha subunits, channel open with Na+ entering and K+ leaving" loading="lazy">
+    <figcaption><b>Activation:</b> no ACh → closed; <b>2 ACh</b> (on the α subunits) → open: <b>Na⁺ in, K⁺ out</b>.
+      <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=39">p. 39</a></figcaption>
+  </figure>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="pharmacology"><span class="num">VI.6</span> Pharmacology of the NMJ <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=40">p. 40–41</a>
+  <span class="exam">2022-23 · 2023-24</span></h2>
+<p>Neuromuscular transmission can be blocked in <b>3 ways</b>:</p>
+<div class="table-wrap"><table>
+  <tr><th>Level</th><th>Mechanism</th><th>Agents</th></tr>
+  <tr><td rowspan="1">1. Synthesis</td><td>Inhibit ACh synthesis</td><td><b>Hemicholinium</b>, <b>vesamicol</b></td></tr>
+  <tr><td rowspan="2">2. Release</td><td>Calcium-entry inhibitors</td><td><b>Mg²⁺</b>, <b>aminoglycoside</b> antibiotics (streptomycin, neomycin), calcium channel blockers</td></tr>
+  <tr><td>Neurotoxins</td><td><b>Botulinum toxin</b>, <b>β-bungarotoxin</b></td></tr>
+  <tr><td rowspan="3">3. Postsynaptic</td><td><b>Non-depolarizing</b> blockers = <b>competitive antagonists</b> of ACh — reversible</td><td><b>Curare</b></td></tr>
+  <tr><td>Non-depolarizing — <b>irreversible</b> competitive antagonist</td><td><b>α-bungarotoxin</b></td></tr>
+  <tr><td><b>Depolarizing</b> blockers = ACh <b>agonists</b></td><td><b>Decamethonium</b>, <b>suxamethonium</b></td></tr>
+</table></div>
+<div class="box tip"><span class="label">Memory trick</span>
+  <b>β</b>-bungarotoxin acts <b>before</b> the cleft (release); <b>α</b>-bungarotoxin acts <b>after</b> it (receptor, irreversible).</div>
+
+<h3>7. Clinical application <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=42">p. 42</a></h3>
+<div class="grid2">
+  <div class="box"><span class="label" style="color:var(--accent)">Postsynaptic disorders</span>
+    <ul>
+      <li><b>Myasthenia gravis</b>: autoimmune, antibodies against <b>ACh receptors</b></li>
+      <li>Congenital myasthenic syndromes</li>
+      <li>Toxic postsynaptic damage</li>
+    </ul></div>
+  <div class="box"><span class="label" style="color:var(--violet)">Presynaptic disorders</span>
+    <ul>
+      <li><b>Lambert-Eaton syndrome</b>: autoimmune, antibodies against <b>calcium channels</b></li>
+      <li><b>Botulism</b>: the toxin <b>blocks ACh release</b></li>
+    </ul></div>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="neuroneuronal"><span class="num">VII.</span> Neuro-neuronal synapses <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=43">p. 43–49</a>
+  <span class="exam">2022-23 · 2023-24 · 2024-25</span></h2>
+<p>Contact zone between <b>2 neurons</b>. The neurotransmitter can depolarize (EPSP) <b>or</b> hyperpolarize (IPSP) the postsynaptic neuron.</p>
+<div class="table-wrap"><table>
+  <tr><th></th><th>EPSP (PPSE) — excitatory</th><th>IPSP (PPSI) — inhibitory</th></tr>
+  <tr><td>What</td><td><b>Local depolarization</b> of the postsynaptic membrane</td><td><b>Hyperpolarization</b> of the postsynaptic membrane — the <b>mirror image</b> of the EPSP</td></tr>
+  <tr><td>Cause</td><td>Excitatory neurotransmitter on specific receptors</td><td>Inhibitory neurotransmitter on specific receptors (e.g. GABA in the figure)</td></tr>
+  <tr><td>Ions</td><td>Simultaneous ↑ <b>gNa⁺ and gK⁺</b></td><td><b>Cl⁻ entering</b> and/or <b>K⁺ leaving</b> the cell</td></tr>
+  <tr><td>Time course</td><td>Sets up quickly, disappears gradually</td><td>—</td></tr>
+</table></div>
+<div class="box def"><span class="label">Characteristics of postsynaptic potentials</span>
+  <b>Summable</b> · <b>gradable</b> (amplitude depends on the amount of neurotransmitter released) · <b>decremental</b> (amplitude falls with
+  distance) · <b>not all-or-nothing</b> · <b>no refractory period</b>.</div>
+<figure class="small">
+  <img src="synaptic-transmission/ipsp-ionic.jpg" alt="GABA molecules open transmitter-gated chloride channels; Cl- enters the cytosol; the membrane potential falls below -65 mV (IPSP) then recovers over about 8 ms" loading="lazy">
+  <figcaption><b>Ionic mechanism of the IPSP:</b> GABA opens transmitter-gated <b>Cl⁻ channels</b>, Cl⁻ <b>enters</b> → V<sub>m</sub> goes
+    <b>below</b> −65 mV (hyperpolarization) and recovers within a few ms. <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=49">p. 49</a></figcaption>
+</figure>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="integration"><span class="num">VII.2</span> Synaptic integration <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=50">p. 50–54</a></h2>
+<ul>
+  <li>The <b>initial segment</b> (trigger zone) is where the neuron's <b>action potential is born</b>.</li>
+  <li>There, membrane excitability is <b>maximal</b> (abundant <b>voltage-dependent Na⁺ channels</b>).</li>
+  <li>When the <b>sum of EPSPs exceeds the threshold</b> at the initial segment, an AP is fired.</li>
+</ul>
+<figure class="small">
+  <img src="synaptic-transmission/synaptic-integration.jpg" alt="A: EPSPs recorded on dendrites, cell body and trigger zone of a neuron; only at the trigger zone does an action potential appear. B: EPSP amplitude decreasing with distance from the synapse until the trigger zone where it crosses threshold" loading="lazy">
+  <figcaption><b>Where the decision is made</b> (French labels): the EPSP (PPSE) shrinks as it travels from dendrites (dendrites) through the cell
+    body (corps cellulaire); an AP appears only at the <b>trigger zone</b> (zone gâchette) if the potential reaches the <b>threshold</b> (seuil).
+    <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=50">p. 50</a></figcaption>
+</figure>
+
+<h3>Spatial vs temporal summation</h3>
+<div class="table-wrap"><table>
+  <tr><th></th><th>Spatial summation</th><th>Temporal summation</th></tr>
+  <tr><td>As drawn in the PDF figures</td><td><b>Several presynaptic neurons</b> stimulate the <b>same</b> postsynaptic neuron at the same time</td>
+    <td><b>One presynaptic neuron</b> fires <b>repeatedly</b> in a short time</td></tr>
+  <tr><td>Result</td><td colspan="2">The EPSPs add up; if the sum reaches threshold → an AP</td></tr>
+</table></div>
+<div class="box trap"><span class="label">The PDF text swaps these two definitions</span>
+  The slide text says "<i>spatial</i>: the same presynaptic neuron stimulates repeatedly…" and "<i>temporal</i>: several neurons stimulate the same
+  neuron…". Its own figures show the opposite: "Sommation <b>spatiale</b>" = <b>3 different axons</b> firing together (p. 52); "Sommation
+  <b>temporelle</b>" = <b>one axon</b> firing 3 times in a row, the EPSPs climbing step by step (p. 53). The table above follows the figures —
+  check with your teacher which version they expect.</div>
+<div class="grid2">
+  <figure>
+    <img src="synaptic-transmission/spatial-summation.jpg" alt="Spatial summation: three separate axons each deliver one impulse to a neuron at once; the recorded Vm rises in one large EPSP from -65 mV" loading="lazy">
+    <figcaption><b>Spatial</b> (sommation spatiale): 3 axons, one impulse each, at the same time → one large EPSP.
+      <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=52">p. 52</a></figcaption>
+  </figure>
+  <figure>
+    <img src="synaptic-transmission/temporal-summation.jpg" alt="Temporal summation: one axon delivers three impulses in quick succession; the recorded EPSP climbs in steps" loading="lazy">
+    <figcaption><b>Temporal</b> (sommation temporelle): 1 axon, 3 impulses in a row → the EPSPs (PPSE) stack up in steps.
+      <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=53">p. 53</a></figcaption>
+  </figure>
+</div>
+
+<h3>3. Presynaptic inhibition <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=54">p. 54</a></h3>
+<p class="meta">This slide is a figure only (in French); what it shows:</p>
+<figure class="small">
+  <img src="synaptic-transmission/presynaptic-inhibition.jpg" alt="Presynaptic inhibition. 1, not inhibited: an Ia afferent releases excitatory transmitter on an alpha motor neuron, which fires an action potential. 2, inhibited: an inhibitory interneuron on the afferent terminal increases inhibitory transmitter, excitatory transmitter decreases, and the motor neuron only shows a small depolarization" loading="lazy">
+  <figcaption><b>1 — not inhibited</b>: an afferent (e.g. Ia) releases <b>excitatory transmitter</b> on an α motor neuron → AP (PA).
+    <b>2 — inhibited</b>: an <b>inhibitory interneuron</b> contacts the afferent's <b>terminal</b> (axo-axonic); inhibitory transmitter ↑ →
+    <b>excitatory transmitter ↓</b> → the motor neuron only shows a small sub-threshold depolarization.
+    <a class="page" href="/lessons/s1/physiology/synaptic-transmission.pdf#page=54">p. 54</a></figcaption>
+</figure>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="traps">Exam traps <span class="meta">— the wrong options past exams keep using</span></h2>
+<div class="box trap"><span class="label">False statements that keep coming back</span>
+  <ul>
+    <li>"At a chemical synapse the neurotransmitter crosses through <b>gap junctions</b>" / "pre- and postsynaptic membranes are
+      <b>continuous</b>" — <b>false</b>: those describe the <b>electrical</b> synapse; a chemical synapse has a <b>cleft</b>. <span class="exam">3 years</span></li>
+    <li>"Neurotransmitters are eliminated by <b>reuptake by postsynaptic</b> elements" — <b>false</b>: degradation, diffusion and
+      <b>presynaptic</b> reuptake. <span class="exam">3 years</span></li>
+    <li>Postsynaptic potentials are "<b>all-or-none</b>", "<b>propagated</b>, always hyperpolarizing" or "reflect <b>presynaptic</b> conductance
+      changes" — <b>false</b>: <b>gradable and summable</b>, local, either sign, postsynaptic. <span class="exam">3 years</span></li>
+    <li>"<b>Sodium</b> entry into the presynaptic terminal causes release" — <b>false</b>: <b>calcium</b>. <span class="exam">2 years</span></li>
+    <li>"The EPP is a <b>presynaptic</b> phenomenon / an electrotonic depolarization of the presynaptic membrane / a hyperpolarization" —
+      <b>false</b>: <b>local depolarization of the postsynaptic</b> membrane. <span class="exam">2 years</span></li>
+    <li>"The EPP is due to <b>muscarinic</b> receptors" — <b>false</b>: <b>nicotinic</b>.</li>
+    <li>"The duration of action of ACh is <b>not limited</b>" — <b>false</b>: acetylcholinesterase degrades it quickly. True in the same question:
+      release triggered by the motor neuron AP; EPP local and <b>gradable by spatial and temporal summation</b>; blocked by <b>curare</b>.
+      <span class="exam">2 years</span></li>
+    <li>Which substance blocks Na⁺ channels? <b>TTX</b> (tetrodotoxin) — not curare (nicotinic receptor antagonist) or GABA.</li>
+    <li>In an electrical synapse the signal is carried by <b>ionic current</b>, not ACh or glycine.</li>
+    <li>"Chemical transmission is <b>faster</b> than electrical" / "occurs <b>only between neurons</b>" — <b>false</b> per the key (it has a
+      synaptic delay; neuro-effector synapses exist).</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="check">Self-check <span class="meta">— answer, then tap to reveal</span></h2>
+<details class="card"><summary>Give the 4 criteria used to classify synapses.</summary>
+  <div>Operating mode (chemical / electrical), postsynaptic element (neuro-neuronal / neuro-effector), effect on the postsynaptic membrane
+    (excitatory / inhibitory), chemical mediator (cholinergic, glutamatergic, GABAergic, dopaminergic, peptidergic).</div></details>
+<details class="card"><summary>Chemical vs electrical synapse: signal and direction?</summary>
+  <div>Chemical: neurotransmitter on postsynaptic receptors, one-way. Electrical: direct passage of potential changes (ionic current), bidirectional.</div></details>
+<details class="card"><summary>List the 5 steps of chemical transmission.</summary>
+  <div>AP arrives → Ca²⁺ entry; Ca²⁺ triggers exocytosis; release into the cleft; binding to a specific receptor; rapid inactivation
+    (degradation, reuptake, diffusion).</div></details>
+<details class="card"><summary>Name the 5 properties of chemical synapses.</summary>
+  <div>Unidirectional, fatigue, synaptic delay, integrative role, not all-or-nothing.</div></details>
+<details class="card"><summary>What 5 criteria make a molecule a neurotransmitter?</summary>
+  <div>Synthesized by the neuron; present in the presynaptic terminal; released in sufficient quantity; reproduces the endogenous effect when
+    applied; specifically inactivated.</div></details>
+<details class="card"><summary>Width of the NMJ cleft, and where are the nicotinic receptors?</summary>
+  <div>50–100 nm; on the crests of the junctional folds of the muscle membrane.</div></details>
+<details class="card"><summary>How is the EPP isolated, and what is its time course?</summary>
+  <div>By curare or TTX; max in 2 ms, exponential decay to 0 in 20 ms.</div></details>
+<details class="card"><summary>Why is the EPP's reversal around −15 mV?</summary>
+  <div>Na⁺ and K⁺ conductances increase together; each ion pulls toward its own equilibrium potential, giving an intermediate value.</div></details>
+<details class="card"><summary>What is a MEPP?</summary>
+  <div>A spontaneous, random 0.5 mV potential at rest, due to release of one quantum of ACh.</div></details>
+<details class="card"><summary>Synthesis and degradation of ACh: substrates and enzymes?</summary>
+  <div>Acetyl-CoA + choline → ACh by choline acetyltransferase (cytosol). ACh → choline + acetic acid by acetylcholinesterase; choline recaptured.</div></details>
+<details class="card"><summary>Which proteins drive vesicle fusion, and where is each?</summary>
+  <div>Synaptotagmin (vesicle, Ca²⁺ sensor) with the SNAREs: synaptobrevin (vesicle), SNAP-25 and syntaxin (plasma membrane).</div></details>
+<details class="card"><summary>Composition of the nicotinic receptor and how it opens?</summary>
+  <div>5 subunits (2α, β, γ, δ), each with 4 transmembrane domains; 2 ACh → closed-to-open conformation → Na⁺ and K⁺ permeability ↑.</div></details>
+<details class="card"><summary>Classify: curare, α-bungarotoxin, suxamethonium, vesamicol, botulinum toxin.</summary>
+  <div>Curare: reversible competitive antagonist. α-bungarotoxin: irreversible competitive antagonist. Suxamethonium: depolarizing blocker
+    (agonist). Vesamicol: inhibits synthesis (per the course). Botulinum toxin: blocks release.</div></details>
+<details class="card"><summary>Myasthenia gravis vs Lambert-Eaton?</summary>
+  <div>Myasthenia: postsynaptic, antibodies against ACh receptors. Lambert-Eaton: presynaptic, antibodies against calcium channels.</div></details>
+<details class="card"><summary>Ionic basis of the EPSP and the IPSP?</summary>
+  <div>EPSP: simultaneous ↑ gNa⁺ and gK⁺. IPSP: Cl⁻ entry and/or K⁺ exit.</div></details>
+<details class="card"><summary>Where is the AP born in a neuron, and why there?</summary>
+  <div>At the initial segment (trigger zone): maximal excitability thanks to abundant voltage-dependent Na⁺ channels.</div></details>
+
+<footer>Summary of the course "Synaptic transmission — neuromuscular junction, neuro-neuronal synapses" (Dr S. Kebir), 1st-year medicine physiology,
+  Faculty of Medicine Annaba. 🎯 = topic asked in past EMD1 exams (years shown). 📄 = page in the lesson PDF. Every fact here comes from the PDF;
+  exam traps are taken from the official keys.</footer>
+</main>
+</body>
+</html>

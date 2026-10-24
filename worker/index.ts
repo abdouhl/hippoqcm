@@ -1,6 +1,7 @@
 import { hashCode, isCode, normalizeCode } from "../shared/code";
 import type {
-  Account, ActivityDay, Insights, Option, ReviewInput, Snapshot, SnapshotUpdate, StudyQuestion, SyncedPrefs,
+  Account, ActivityDay, Insights, LessonRead, Option, ReadKind, ReviewInput, Snapshot, SnapshotUpdate, StudyQuestion,
+  SyncedPrefs,
 } from "../shared/types";
 
 interface Env {
@@ -42,6 +43,21 @@ async function writerId(code: string, db: D1Database): Promise<number> {
     .bind(await hashCode(code), Date.now())
     .first<{ id: number }>();
   return row!.id;
+}
+
+// A user's reads of each lesson, oldest first.
+async function readsByLesson(db: D1Database, user: number): Promise<Map<number, LessonRead[]>> {
+  const { results } = await db.prepare(
+    "SELECT lesson_id, kind, read_at FROM lesson_read_log WHERE user_id = ?1 ORDER BY read_at",
+  )
+    .bind(user)
+    .all<{ lesson_id: number; kind: ReadKind; read_at: number }>();
+  const reads = new Map<number, LessonRead[]>();
+  for (const { lesson_id, kind, read_at } of results) {
+    if (!reads.has(lesson_id)) reads.set(lesson_id, []);
+    reads.get(lesson_id)!.push({ kind, at: read_at });
+  }
+  return reads;
 }
 
 // Columns for a StudyQuestion row; expects `questions q LEFT JOIN cards c`.
@@ -132,7 +148,6 @@ export default {
     if (lessonsMatch && request.method === "GET") {
       const { results } = await env.DB.prepare(
         `SELECT l.id, l.module_id, l.title, l.pdf, l.position, l.completed_at,
-                (SELECT read_at FROM lesson_reads WHERE user_id = ?3 AND lesson_id = l.id) AS read_at,
                 COUNT(q.id) AS question_count,
                 COALESCE(SUM(q.origin = 'exam'), 0) AS exam_count,
                 COALESCE(SUM(CASE WHEN q.id IS NOT NULL AND (c.question_id IS NULL OR c.due <= ?2) THEN 1 ELSE 0 END), 0) AS due_count,
@@ -149,7 +164,13 @@ export default {
       )
         .bind(lessonsMatch[1] ? Number(lessonsMatch[1]) : null, Date.now(), user)
         .all();
-      return json(results);
+      const reads = await readsByLesson(env.DB, user);
+      return json(
+        results.map((l) => {
+          const r = reads.get(l.id as number) ?? [];
+          return { ...l, reads: r, read_at: r.at(-1)?.at ?? null };
+        }),
+      );
     }
 
     // Reviews per local day for the activity grid. tz = Date#getTimezoneOffset() in minutes.
@@ -299,7 +320,7 @@ export default {
                     learning_steps, reps, lapses, state, last_review
              FROM cards WHERE user_id = ?1`,
           ).bind(user),
-          env.DB.prepare("SELECT lesson_id, read_at FROM lesson_reads WHERE user_id = ?1").bind(user),
+          env.DB.prepare("SELECT lesson_id, kind, read_at FROM lesson_read_log WHERE user_id = ?1 ORDER BY read_at").bind(user),
         ]);
         const update: SnapshotUpdate = {
           content_version,
@@ -314,10 +335,8 @@ export default {
       const [modules, lessons, links, questions] = await env.DB.batch([
         env.DB.prepare("SELECT id, semester, name FROM modules ORDER BY semester, name"),
         env.DB.prepare(
-          `SELECT l.id, l.module_id, l.title, l.pdf, l.position, l.completed_at, r.read_at
-           FROM lessons l LEFT JOIN lesson_reads r ON r.lesson_id = l.id AND r.user_id = ?1
-           ORDER BY l.module_id, l.position`,
-        ).bind(user),
+          "SELECT id, module_id, title, pdf, position, completed_at FROM lessons ORDER BY module_id, position",
+        ),
         env.DB.prepare("SELECT question_id, lesson_id FROM question_lessons"),
         env.DB.prepare(
           `SELECT ${QUESTION_COLUMNS}
@@ -332,9 +351,13 @@ export default {
         if (!lessonIds.has(question_id)) lessonIds.set(question_id, []);
         lessonIds.get(question_id)!.push(lesson_id);
       }
+      const reads = await readsByLesson(env.DB, user);
       const snapshot: Snapshot = {
         modules: modules.results as Snapshot["modules"],
-        lessons: lessons.results as Snapshot["lessons"],
+        lessons: (lessons.results as Omit<Snapshot["lessons"][number], "reads">[]).map((l) => ({
+          ...l,
+          reads: reads.get(l.id) ?? [],
+        })),
         questions: (await toStudyQuestions(env.DB, questions.results as Record<string, unknown>[])).map((q) => ({
           ...q,
           lesson_ids: lessonIds.get(q.id) ?? [],
@@ -374,19 +397,23 @@ export default {
       return json({ ok: true });
     }
 
-    // Mark a lesson read ({ read: true }) or unread.
+    // Log one read of a lesson ({ kind, at }), or undo the read logged at { undo: at }.
+    // { read, at } comes from app versions from before reads were counted.
     const readMatch = url.pathname.match(/^\/api\/lessons\/(\d+)\/read$/);
     if (readMatch && request.method === "POST") {
       const code = codeOf(request);
       if (!code) return json({ error: "Sync code required" }, 503);
-      const { read, at } = (await request.json()) as { read: boolean; at: number };
+      const body = (await request.json()) as { kind?: ReadKind; at?: number; undo?: number; read?: boolean };
       const userId = await writerId(code, env.DB);
       const lessonId = Number(readMatch[1]);
-      await (read
-        ? env.DB.prepare(
-            "INSERT INTO lesson_reads (user_id, lesson_id, read_at) VALUES (?1, ?2, ?3) ON CONFLICT DO NOTHING",
-          ).bind(userId, lessonId, at)
-        : env.DB.prepare("DELETE FROM lesson_reads WHERE user_id = ?1 AND lesson_id = ?2").bind(userId, lessonId)
+      const del = "DELETE FROM lesson_read_log WHERE user_id = ?1 AND lesson_id = ?2";
+      await (body.undo !== undefined
+        ? env.DB.prepare(`${del} AND read_at = ?3`).bind(userId, lessonId, body.undo)
+        : body.read === false
+          ? env.DB.prepare(del).bind(userId, lessonId)
+          : env.DB.prepare(
+              "INSERT INTO lesson_read_log (user_id, lesson_id, kind, read_at) VALUES (?1, ?2, ?3, ?4) ON CONFLICT DO NOTHING",
+            ).bind(userId, lessonId, body.kind === "summary" ? "summary" : "pdf", body.at)
       ).run();
       return json({ ok: true });
     }

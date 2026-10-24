@@ -3,7 +3,7 @@
 // writes wait in an outbox that is sent once the server is reachable again.
 import { useEffect, useState } from "react";
 import { isCode, newCode, normalizeCode } from "../shared/code";
-import type { Account, Lesson, Module, ReviewInput, Snapshot, SnapshotUpdate, StudyQuestion, SyncedPrefs } from "../shared/types";
+import type { Account, Lesson, LessonRead, Module, ReviewInput, Snapshot, SnapshotUpdate, StudyQuestion, SyncedPrefs } from "../shared/types";
 import { getSettings, hasSavedSettings, type Settings, settingsSavedAt, storeSettings } from "./prefs";
 
 const TIMEOUT_MS = 8000;
@@ -300,17 +300,32 @@ export async function flagQuestion(id: number): Promise<void> {
   await enqueue({ path: `/api/questions/${id}/flag` });
 }
 
-/** Mark a lesson read or unread, locally right away and on the server once reachable. */
-export async function setLessonRead(id: number, read: boolean): Promise<void> {
+/** Log one read of a lesson, locally right away and on the server once reachable. */
+export async function addLessonRead(id: number, read: LessonRead): Promise<void> {
   await ready;
-  const at = Date.now();
   if (snapshot) {
     const lesson = snapshot.lessons.find((l) => l.id === id);
-    if (lesson) lesson.read_at = read ? at : null;
+    if (lesson) lesson.reads = [...lessonReads(lesson), read];
     await saveSnapshot();
   }
-  await enqueue({ path: `/api/lessons/${id}/read`, body: { read, at } });
+  await enqueue({ path: `/api/lessons/${id}/read`, body: read });
 }
+
+/** Undo the read of a lesson logged at `at`. */
+export async function undoLessonRead(id: number, at: number): Promise<void> {
+  await ready;
+  if (snapshot) {
+    const lesson = snapshot.lessons.find((l) => l.id === id);
+    if (lesson) lesson.reads = lessonReads(lesson).filter((r) => r.at !== at);
+    await saveSnapshot();
+  }
+  await enqueue({ path: `/api/lessons/${id}/read`, body: { undo: at } });
+}
+
+// Snapshots saved before reads were counted have only the latest read_at, or nothing.
+type SavedLesson = Snapshot["lessons"][number] & { read_at?: number | null };
+const lessonReads = (l: SavedLesson): LessonRead[] =>
+  l.reads ?? (l.read_at ? [{ kind: "pdf", at: l.read_at }] : []);
 
 // ---- Reads -----------------------------------------------------------------------------------
 
@@ -369,8 +384,9 @@ export function refreshSnapshot(): Promise<boolean> {
       } else if (snapshot) {
         const cards = new Map(data.cards.map(({ question_id, ...card }) => [question_id, card]));
         for (const q of snapshot.questions) q.card = cards.get(q.id) ?? null;
-        const reads = new Map(data.reads.map((r) => [r.lesson_id, r.read_at]));
-        for (const l of snapshot.lessons) l.read_at = reads.get(l.id) ?? null;
+        for (const l of snapshot.lessons) l.reads = [];
+        const lessons = new Map(snapshot.lessons.map((l) => [l.id, l]));
+        for (const r of data.reads) lessons.get(r.lesson_id)?.reads.push({ kind: r.kind, at: r.read_at });
         snapshot.prefs = data.prefs;
         snapshot.fetched_at = data.fetched_at;
       }
@@ -452,8 +468,14 @@ function offlineAnswer(path: string): unknown {
       .filter((l) => moduleId === null || l.module_id === moduleId)
       .map((l): Lesson => {
         const qs = s.questions.filter((q) => q.lesson_ids.includes(l.id));
-        // read_at is missing from snapshots saved before lessons could be marked read.
-        return { ...l, read_at: l.read_at ?? null, ...counts(qs, now), exam_count: qs.filter((q) => q.origin === "exam").length };
+        const reads = lessonReads(l);
+        return {
+          ...l,
+          reads,
+          read_at: reads.at(-1)?.at ?? null,
+          ...counts(qs, now),
+          exam_count: qs.filter((q) => q.origin === "exam").length,
+        };
       });
   }
 

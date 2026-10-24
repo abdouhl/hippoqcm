@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biophysics of solutions 5 — Summary</title>
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Biophysics · Summary · Part 5 of 5</div>
+<h1>Biophysics of solutions — 5</h1>
+<p class="meta">Pr B. Boutabia-Chéraitia · slides 27–33 (renal work, H transport phenomena) · 3 past exam questions (EMD1 2023–2025) ·
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-5.pdf">open the PDF</a></p>
+<p class="meta">Course parts: <a target="_self" href="biophysics-of-solutions.html">1 · States, Psat</a> ·
+  <a target="_self" href="biophysics-of-solutions-2.html">2 · Solutions, activity, ionic strength</a> ·
+  <a target="_self" href="biophysics-of-solutions-3.html">3 · Osmolarity</a> ·
+  <a target="_self" href="biophysics-of-solutions-4.html">4 · Colligative properties</a> ·
+  <b>5 · Renal work, transport</b></p>
+<ul class="toc">
+  <li><a target="_self" href="#essentials">Essentials</a></li>
+  <li><a target="_self" href="#renal">Renal work</a></li>
+  <li><a target="_self" href="#transport">Transport types</a></li>
+  <li><a target="_self" href="#flow">Molar flow, Fick</a></li>
+  <li><a target="_self" href="#flux">Diffusive flux</a></li>
+  <li><a target="_self" href="#check">Self-check</a></li>
+</ul>
+
+<div class="box essentials" id="essentials">
+  <span class="label">If you remember only this</span>
+  <ul>
+    <li><b>Renal work</b> to move n₀ osmoles from plasma to urine: <b>ΔW = n₀RT ln(ω<sub>u</sub>/ω<sub>pl</sub>)</b>. Power per kidney = ½ ΔW/Δt.</li>
+    <li>Drinking water ↑ urine volume → ↓ ω<sub>u</sub> → ↓ renal work: protects the remaining nephrons in renal insufficiency.</li>
+    <li>Transport depends on particle nature (size, charge, shape), osmolarity and pressures.
+      <b>Passive</b>: diffusion (Δconcentration), convection (Δpressure), migration (Δelectric potential); <b>facilitated</b> (transporters, no energy);
+      <b>active</b> (transporters, <b>ATP</b>).</li>
+    <li>Diffusion until equal concentrations: <b>C<sub>∞</sub> = (C₁V₁ + C₂V₂)/(V₁ + V₂)</b>.</li>
+    <li><b>Fick</b>: Q = dn/dt = −DS′ dC/dx (mol/s); D in m²/s. Flux J<sub>d</sub> = Q/S (mol/s·m²).</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="renal">Medical application: renal work
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-5.pdf#page=1">slides 27–29</a>
+  <span class="exam">2023-24 · 2024-25</span></h2>
+<p>Renal work = energy spent by the kidneys to <b>filter</b> blood and <b>secrete or reabsorb</b> solutes (sodium, urea, glucose).</p>
+<div class="formula">ΔW = n₀ R T ln( ω<sub>u</sub> / ω<sub>pl</sub> )
+  <span class="where">n₀ osmoles moved from plasma (pl) to urine (u) · ω<sub>u</sub>, ω<sub>pl</sub> = osmolarities of the solute in urine and plasma ·
+  power of <b>each</b> kidney P = ½ · ΔW / Δt (Δt = 24 h = 86 400 s)</span></div>
+<div class="box def"><span class="label">Exercise 8 (slides 27–28): moderate renal insufficiency, 0.36 mol urea / 24 h, uremia 0.6 g/L, M<sub>urea</sub> = 60</span>
+  <ol>
+    <li>Urine 0.6 L/day: ω<sub>u</sub> = 0.36/0.6 = <b>0.6 osmol/L</b>; plasma 0.6/60 = 0.01 osmol/L → ratio 60 →
+      P = ½ × 8.31 × 310 × 0.36 × ln 60 / 86 400 = <b>21.97 mW</b> per kidney.</li>
+    <li>Drinks → urine 1.8 L/day: ω′<sub>u</sub> = 0.2 osmol/L → ratio 20 → P′ = <b>16.08 mW</b>.</li>
+    <li>P′ &lt; P ⇒ W′ &lt; W: drinking lowers urinary osmolarity and the nephrons' work — crucial to avoid exhausting the remaining nephrons.</li>
+  </ol>
+</div>
+<div class="box def"><span class="label">Exam method (2023-24 Q10–Q11, 2024-25 Q10)</span>
+  Urine osmolarity from the freezing point: ω<sub>u</sub> = |ΔT|/K. The keys count all urine osmoles as urea: n = ω<sub>u</sub> × V.<br>
+  2024-25: 1.0 L, −1.6 °C → 1.6/1.86 × 1 = <b>860 mmol</b>.<br>
+  2023-24: 0.8 L, −1.9 °C → ω<sub>u</sub> = 1.02 osmol/L, n ≈ <b>0.81 mol</b>; blood 0.3 osmol/L, 37 °C →
+  P = ½ × 0.81 × 8.31 × 310 × ln(1.02/0.3) / 86 400 ≈ <b>14.8 mW</b> per kidney.
+</div>
+<div class="box trap"><span class="label">Traps</span>
+  <ul>
+    <li>Power is <b>per kidney</b>: divide by 2 (the slide's 172 800 s = 2 × 86 400).</li>
+    <li>T = 37 °C = <b>310 K</b>; Δt in <b>seconds</b>.</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="transport"><span class="num">H.</span> Transport phenomena
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-5.pdf#page=2">slides 29–30</a></h2>
+<p>Exchange of water and solutes across membranes between intra- and extracellular compartments. Depends on: the <b>nature</b> of the particles
+  (size, charge, shape), the <b>osmolarity</b> of the solutions, the <b>pressures</b> on each side.</p>
+<div class="table-wrap"><table>
+  <tr><th>Type</th><th>Driving force / means</th><th>Energy</th></tr>
+  <tr><td><b>Passive</b> — diffusion</td><td>Difference in <b>concentrations</b> (thermal agitation)</td><td>None</td></tr>
+  <tr><td><b>Passive</b> — convection</td><td>Difference in <b>pressures</b></td><td>None</td></tr>
+  <tr><td><b>Passive</b> — migration</td><td>Difference in <b>electric potentials</b></td><td>None</td></tr>
+  <tr><td><b>Facilitated passive</b></td><td>Membrane transporter proteins, specific channels</td><td><b>None</b></td></tr>
+  <tr><td><b>Active</b></td><td>Membrane transporter proteins</td><td><b>ATP</b> hydrolysis</td></tr>
+</table></div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="flow"><span class="num">2-1.</span> Molar flow rate of the solute
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-5.pdf#page=2">slides 30–33</a></h2>
+<p>Same solute in (1) and (2) across a <b>dialysis</b> membrane of thickness l, C₁ᵢ &gt; C₂ᵢ. By convention solute flows come first, then liquid flows.
+  The solute <b>diffuses (1) → (2) until concentrations are equal</b>; total moles are conserved:</p>
+<div class="formula">C<sub>∞</sub> = <span class="frac"><span>C₁ᵢV₁ + C₂ᵢV₂</span><span>V₁ + V₂</span></span>
+  &nbsp;&nbsp; = (C₁ᵢ + C₂ᵢ)/2 if V₁ = V₂</div>
+<div class="formula">Q = <span class="frac"><span>dn</span><span>dt</span></span> = −D S′ <span class="frac"><span>dC</span><span>dx</span></span> &nbsp;&nbsp; (Fick's law) &nbsp;&nbsp; [Q] = mol/s
+  <span class="where">D = diffusion coefficient (m²/s) · dC/dx = concentration gradient (mol/m⁴) · S′ = permeable pore surface ·
+  x-axis with origin at the membrane, unidirectional flow</span></div>
+<div class="formula">Q<sub>i</sub> = −D S′ ΔC<sub>i</sub>/l = (D S′ / l) · |ΔC<sub>i</sub>| &nbsp;&nbsp; (initial flow; ΔC<sub>i</sub> = C₂ᵢ − C₁ᵢ &lt; 0, dx = l)</div>
+<p>With mass concentration: Q = dm/dt = −DS′ dC<sub>p</sub>/dx, in <b>kg/s</b> (mass flow rate).</p>
+
+<h2 id="flux"><span class="num">2-2.</span> Diffusive flux of solute
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-5.pdf#page=4">slide 33</a></h2>
+<div class="formula">J<sub>d</sub> = <span class="frac"><span>Q</span><span>S</span></span> = −D <span class="frac"><span>S′</span><span>S</span></span> <span class="frac"><span>dC</span><span>dx</span></span> &nbsp;&nbsp; [J<sub>d</sub>] = mol/s·m²
+  <span class="where">J<sub>d</sub> = molar flow rate per unit area · S = membrane surface</span></div>
+<div class="box tip"><span class="label">Memo (slide 33)</span> <b>Rate</b> of X = X / time · <b>Flux</b> of X = X / surface.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="check">Self-check <span class="meta">— answer, then tap to reveal</span></h2>
+<details class="card"><summary>Formula of renal work, and power of one kidney?</summary><div>ΔW = n₀RT ln(ω<sub>u</sub>/ω<sub>pl</sub>); P = ½ ΔW/Δt.</div></details>
+<details class="card"><summary>Why does drinking water protect a patient with renal insufficiency?</summary><div>More urine → lower urinary osmolarity of urea → smaller ratio ω<sub>u</sub>/ω<sub>pl</sub> → less renal work.</div></details>
+<details class="card"><summary>Three passive transports and their driving forces?</summary><div>Diffusion (concentration), convection (pressure), migration (electric potential).</div></details>
+<details class="card"><summary>Facilitated vs active transport?</summary><div>Both use membrane transporters; facilitated needs no energy, active uses ATP.</div></details>
+<details class="card"><summary>Final concentration after diffusion between V₁ and V₂?</summary><div>C<sub>∞</sub> = (C₁V₁ + C₂V₂)/(V₁ + V₂).</div></details>
+<details class="card"><summary>Fick's law and the unit of D?</summary><div>Q = −DS′ dC/dx (mol/s); D in m²/s.</div></details>
+<details class="card"><summary>Molar flow rate vs diffusive flux?</summary><div>Flow rate Q = per time (mol/s); flux J<sub>d</sub> = Q/S per area (mol/s·m²).</div></details>
+<details class="card"><summary>Urine 1 L/day freezing at −1.6 °C: urea moles?</summary><div>1.6/1.86 × 1 = 0.86 mol = 860 mmol.</div></details>
+
+<footer>Summary of "Biophysics of solutions" slides 27–33, Pr B. Boutabia-Chéraitia, 1st-year medicine, Faculty of Medicine Annaba.
+  🎯 = asked in past EMD1 exams. 📄 = page in the lesson PDF. Exam calculations reproduce the official keys with the course's formulas.</footer>
+</main>
+</body>
+</html>

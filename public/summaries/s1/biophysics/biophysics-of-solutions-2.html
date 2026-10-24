@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biophysics of solutions 2 — Summary</title>
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Biophysics · Summary · Part 2 of 5</div>
+<h1>Biophysics of solutions — 2</h1>
+<p class="meta">Pr B. Boutabia-Chéraitia · slides 7–15 (end of C, D1–D5) · 10 past exam questions (EMD1 2022–2026) ·
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-2.pdf">open the PDF</a></p>
+<p class="meta">Course parts: <a target="_self" href="biophysics-of-solutions.html">1 · States, Psat</a> ·
+  <b>2 · Solutions, activity, ionic strength</b> ·
+  <a target="_self" href="biophysics-of-solutions-3.html">3 · Osmolarity</a> ·
+  <a target="_self" href="biophysics-of-solutions-4.html">4 · Colligative properties</a> ·
+  <a target="_self" href="biophysics-of-solutions-5.html">5 · Renal work, transport</a></p>
+<ul class="toc">
+  <li><a target="_self" href="#essentials">Essentials</a></li>
+  <li><a target="_self" href="#vapor">Vapor pressure (end)</a></li>
+  <li><a target="_self" href="#definitions">Solutions</a></li>
+  <li><a target="_self" href="#activity">Activity</a></li>
+  <li><a target="_self" href="#ionic">Ionic strength</a></li>
+  <li><a target="_self" href="#potential">Chemical potential</a></li>
+  <li><a target="_self" href="#osmolarity">Osmolarity</a></li>
+  <li><a target="_self" href="#traps">Exam traps</a></li>
+  <li><a target="_self" href="#check">Self-check</a></li>
+</ul>
+
+<div class="box essentials" id="essentials">
+  <span class="label">If you remember only this</span>
+  <ul>
+    <li><b>Activity</b> a<sub>i</sub> = γ<sub>i</sub> · C<sub>i</sub>/C₀ (dimensionless, C₀ = 1 mol/L). <b>0 &lt; γ ≤ 1</b>; <b>γ = 1</b> for ideal (very dilute) solutions,
+      pure substances and solvents.</li>
+    <li><b>Ionic strength</b> I = ½ Σ C<sub>k</sub> z<sub>k</sub>² (mol/L) — sum over <b>every ion</b>, with its own concentration and squared charge.</li>
+    <li><b>Debye–Hückel</b> (I &lt; 0.05 mol/L): log γ<sub>i</sub> = −0.5 z<sub>i</sub>² √(I/I₀). Higher I → lower γ.</li>
+    <li><b>Chemical potential</b> μ<sub>i</sub> = μ<sub>i</sub>⁰ + RT ln a<sub>i</sub> (J/mol). Water in a solution has a <b>lower</b> μ than pure water.</li>
+    <li><b>Osmolarity</b> ω = [1 + α(β − 1)] C (osmol/L); β = ions per molecule, α = dissociation coefficient.</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="vapor">End of C: vapor pressure
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-2.pdf#page=1">slides 7–8</a></h2>
+<p>Exercise 2 (part 1) ends with 0.22 mol turned to vapor in 10 L at 100 °C: P<sub>vapor</sub> = 0.22 × 8.31 × 373 / 10⁻² ≈ 68 252 Pa = <b>0.68 bar</b>
+  (&lt; 1 bar, so all water is vapor). Then the remarks (evaporation while P<sub>vapor</sub> &lt; P<sub>sat</sub>) and respiratory water loss — summarized
+  in <a target="_self" href="biophysics-of-solutions.html#psat">part 1</a>.</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="definitions"><span class="num">D1.</span> Solutions — definitions
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-2.pdf#page=1">slides 8–9</a></h2>
+<div class="table-wrap"><table>
+  <tr><th>Type</th><th>Definition</th><th>Example</th></tr>
+  <tr><td><b>Solution</b></td><td><b>Homogeneous</b> mixture — one single phase (solute in solvent)</td><td>Sugar in water</td></tr>
+  <tr><td><b>Colloidal solution</b></td><td><b>Heterogeneous</b> mixture — more than one phase; particles <b>10–1000 Å</b></td><td>Soap in water</td></tr>
+  <tr><td><b>Electrolytic solution</b></td><td>Ionic, electrically <b>neutral</b>, <b>conducts</b> current</td><td>NaCl solution</td></tr>
+  <tr><td><b>Ideal solution</b></td><td>Solvent–solvent, solute–solute and solute–solvent interactions about equal; <b>very dilute</b>: C ≤ 10⁻³ mol/L</td><td>Mixture of alcohols</td></tr>
+</table></div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="activity"><span class="num">D2.</span> Chemical activity
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-2.pdf#page=2">slide 10</a>
+  <span class="exam">2024-25</span></h2>
+<p>Solute–solvent and solute–solute interactions reduce the solute's availability for reactions → <b>active concentration</b> (chemical activity):</p>
+<div class="formula">a<sub>i</sub> = γ<sub>i</sub> · <span class="frac"><span>C<sub>i</sub></span><span>C₀</span></span>
+  <span class="where">a<sub>i</sub> dimensionless · C₀ = 1 mol/L (reference) · γ<sub>i</sub> = activity coefficient, 0 &lt; γ<sub>i</sub> ≤ 1 ·
+  γ<sub>i</sub> = 1 for ideal solutions, pure substances and solvents</span></div>
+
+<h2 id="ionic"><span class="num">D3.</span> Ionic strength I
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-2.pdf#page=2">slides 10–12</a>
+  <span class="exam">2022-23 · 2023-24 · 2024-25 · 2025-26</span></h2>
+<div class="formula">I = ½ Σ<sub>k</sub> C<sub>k</sub> z<sub>k</sub>² &nbsp;&nbsp; [I] = mol/L
+  <span class="where">k ions, each with concentration C<sub>k</sub> and valence z<sub>k</sub> (z<sub>Al³⁺</sub> = +3, z<sub>O²⁻</sub> = −2, z<sub>H⁺</sub> = +1)</span></div>
+<div class="formula">log γ<sub>i</sub> = −0.5 z<sub>i</sub>² √(I / I₀) &nbsp;&nbsp; (Debye–Hückel, I &lt; 0.05 mol/L)
+  <span class="where">I₀ = 1 mol/L (reference ionic strength)</span></div>
+<div class="box def"><span class="label">Exercise 3 (slides 11–12): Cl⁻ in MgCl₂ vs LaCl₃ at 10⁻³ mol/L</span>
+  MgCl₂ → Mg²⁺ (10⁻³) + 2Cl⁻ (2×10⁻³): I = ½[10⁻³×4 + 2×10⁻³×1] = <b>3 × 10⁻³</b> → γ<sub>Cl⁻</sub> = <b>0.9389</b>.<br>
+  LaCl₃ → La³⁺ (10⁻³) + 3Cl⁻ (3×10⁻³): I = ½[10⁻³×9 + 3×10⁻³] = <b>6 × 10⁻³</b> → γ<sub>Cl⁻</sub> = <b>0.9147</b>.<br>
+  <b>Conclusion: I₁ &lt; I₂ ⇒ γ₁ &gt; γ₂</b> — the activity coefficient falls when ionic strength rises.
+</div>
+<div class="box def"><span class="label">Worked: EMD1 2025-26 Q7 (key D = 0.84)</span>
+  47.4 g KMnO₄ / 158 = 0.3 mol → K⁺ 0.3, MnO₄⁻ 0.3. 45 mL × 2 mol/L H₃PO₄ = 0.09 mol → H⁺ 0.27, PO₄³⁻ 0.09.<br>
+  I = ½[0.3×1 + 0.3×1 + 0.27×1 + 0.09×9] = ½ × 1.68 = <b>0.84</b>.
+</div>
+<div class="box tip"><span class="label">Memory trick</span> Charges are <b>squared</b>: a 3⁻ ion counts 9 times, a 2⁺ ion 4 times. Write every ion's concentration first
+  (number of ions × salt concentration), then square the charges.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="potential"><span class="num">D4.</span> Chemical potential
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-2.pdf#page=4">slides 13–15</a></h2>
+<div class="formula">μ<sub>i</sub>(T) = μ<sub>i</sub>⁰(T) + RT ln(a<sub>i</sub>) &nbsp;&nbsp; [μ] = J/mol
+  <span class="where">μ<sub>i</sub>⁰ = potential in the <b>standard state</b> = the most stable physical state at P<sub>atm</sub> and T (water at 298 K: liquid)</span></div>
+<ul>
+  <li>The system's energy varies with the number of moles of species i → this gives i a potential μ<sub>i</sub>.</li>
+  <li>Two phases at <b>equilibrium</b>: equal <b>temperatures, pressures and chemical potentials</b>.</li>
+  <li>Exercise 4.1: glucose 0.1 → 0.2 mmol/L at 27 °C (ideal): Δμ = RT ln(C₂/C₁) = 8.31 × 300 × ln 2 = <b>1730 J/mol</b>.</li>
+  <li>Exercise 4.2: pure water = <b>55.5 mol/L</b>; in a solution n<sub>water</sub> &lt; 55.5 → C₂ &lt; C₁ (γ = 1 for both: pure body, solvent) →
+    μ₂ − μ₁ = RT ln(C₂/C₁) &lt; 0 → <b>water's chemical potential is lower in solution than in pure water</b>.</li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="osmolarity"><span class="num">D5.</span> Osmolarity of a solution
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-2.pdf#page=5">slide 15</a>
+  <span class="exam">2022-23 · 2023-24 · 2024-25 · 2025-26</span></h2>
+<div class="formula">ω = [1 + α(β − 1)] · C
+  <span class="where">ω = osmoles of solute / V<sub>solution</sub> (osmol/L) · C = moles / V (mol/L) · β = number of ions per molecule
+  (β = 1 for non-electrolytes: urea, glucose ⇒ ω = C)</span></div>
+<p>Continued (α, examples, several solutes, osmolality) in <a target="_self" href="biophysics-of-solutions-3.html">part 3</a>.</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="traps">Exam traps</h2>
+<div class="box trap"><span class="label">EMD1 2024-25 Q15 — only E was true</span>
+  <ul>
+    <li>"The activity of a solution is its ability to dissociate" — false: activity = active concentration (γ·C/C₀).</li>
+    <li>"The activity coefficient is greater than 1" — false: <b>0 &lt; γ ≤ 1</b>.</li>
+    <li>"For a very dilute solution, the activity coefficient equals 1" — <b>true</b> (ideal solution).</li>
+    <li>Also offered: electric mobility statements (inversely proportional to the field, unit m²/s) — false, and not in these slides.</li>
+  </ul>
+</div>
+<div class="box trap"><span class="label">Ionic strength mistakes</span>
+  <ul>
+    <li>Forgetting the <b>½</b>, or forgetting to <b>square</b> z.</li>
+    <li>Using the salt concentration for every ion: in CaCl₂ at C, Cl⁻ is <b>2C</b>; in Na₃PO₄, Na⁺ is <b>3C</b>.</li>
+    <li>Volume of acid given in mL: moles = V (L) × C (e.g. 45 mL × 2 mol/L = 0.09 mol, in 1 L of solution).</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="check">Self-check <span class="meta">— answer, then tap to reveal</span></h2>
+<details class="card"><summary>Solution vs colloidal solution?</summary><div>Solution: homogeneous, one phase. Colloidal: heterogeneous, &gt; 1 phase, particles 10–1000 Å.</div></details>
+<details class="card"><summary>When is a solution considered ideal?</summary><div>When very dilute, C ≤ 10⁻³ mol/L (interactions all about equal).</div></details>
+<details class="card"><summary>Range of γ and when it equals 1?</summary><div>0 &lt; γ ≤ 1; γ = 1 for ideal solutions, pure substances, solvents.</div></details>
+<details class="card"><summary>Ionic strength of 0.1 mol/L CaCl₂?</summary><div>Ca²⁺ 0.1, Cl⁻ 0.2: I = ½(0.1×4 + 0.2×1) = 0.3 mol/L.</div></details>
+<details class="card"><summary>Debye–Hückel: formula and validity?</summary><div>log γ = −0.5 z² √(I/I₀), for I &lt; 0.05 mol/L.</div></details>
+<details class="card"><summary>Higher ionic strength → γ goes which way?</summary><div>Down (I₁ &lt; I₂ ⇒ γ₁ &gt; γ₂).</div></details>
+<details class="card"><summary>Conditions of equilibrium between two phases?</summary><div>Equal temperatures, pressures and chemical potentials.</div></details>
+<details class="card"><summary>Why is water's μ lower in a solution?</summary><div>Its concentration is &lt; 55.5 mol/L, so RT ln(C₂/C₁) &lt; 0.</div></details>
+<details class="card"><summary>Osmolarity formula?</summary><div>ω = [1 + α(β − 1)] C; non-electrolyte (β = 1): ω = C.</div></details>
+
+<footer>Summary of "Biophysics of solutions" slides 7–15, Pr B. Boutabia-Chéraitia, 1st-year medicine, Faculty of Medicine Annaba.
+  🎯 = asked in past EMD1 exams. 📄 = page in the lesson PDF. Worked examples reproduce the official keys with the course's formulas.</footer>
+</main>
+</body>
+</html>

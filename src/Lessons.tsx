@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import type { Lesson, Module } from "../shared/types";
-import { getJSON, setLessonRead } from "./api";
+import type { Lesson, LessonRead, Module, ReadKind } from "../shared/types";
+import { addLessonRead, getJSON, undoLessonRead } from "./api";
 
 function useLessons(moduleId: number) {
   const [lessons, setLessons] = useState<Lesson[] | null>(null);
@@ -11,24 +11,45 @@ function useLessons(moduleId: number) {
       .catch((e: Error) => setError(e.message));
   }, [moduleId]);
 
-  // Flip read/unread here right away; the write syncs in the background.
-  const toggleRead = (lesson: Lesson) => {
-    const read = !lesson.read_at;
-    setLessons((ls) => ls?.map((l) => (l.id === lesson.id ? { ...l, read_at: read ? Date.now() : null } : l)) ?? null);
-    setLessonRead(lesson.id, read).catch((e: Error) => setError(e.message));
+  // Show reads here right away; the writes sync in the background.
+  const setReads = (lesson: Lesson, reads: LessonRead[]) =>
+    setLessons((ls) => ls?.map((l) => (l.id === lesson.id ? { ...l, reads, read_at: reads.at(-1)?.at ?? null } : l)) ?? null);
+  const addRead = (lesson: Lesson, kind: ReadKind) => {
+    const read = { kind, at: Date.now() };
+    setReads(lesson, [...lesson.reads, read]);
+    addLessonRead(lesson.id, read).catch((e: Error) => setError(e.message));
   };
-  return { lessons, error, toggleRead };
+  const undoRead = (lesson: Lesson, kind: ReadKind) => {
+    const last = lesson.reads.filter((r) => r.kind === kind).at(-1);
+    if (!last) return;
+    setReads(lesson, lesson.reads.filter((r) => r !== last));
+    undoLessonRead(lesson.id, last.at).catch((e: Error) => setError(e.message));
+  };
+  return { lessons, error, addRead, undoRead };
 }
 
-function ReadToggle({ lesson, onToggle }: { lesson: Lesson; onToggle: () => void }) {
+const NOUN: Record<ReadKind, string> = { pdf: "lesson", summary: "summary" };
+const readCount = (lesson: Lesson, kind: ReadKind) => lesson.reads.filter((r) => r.kind === kind).length;
+
+// Each press logs one more read of the lesson PDF or its summary; ↶ takes the last one back.
+function ReadButton({ lesson, kind, onRead, onUndo }: { lesson: Lesson; kind: ReadKind; onRead: () => void; onUndo: () => void }) {
+  const reads = lesson.reads.filter((r) => r.kind === kind);
+  const last = reads.at(-1);
   return (
-    <button
-      className={lesson.read_at ? "read-toggle on" : "read-toggle"}
-      onClick={onToggle}
-      title={lesson.read_at ? "Mark as not read" : "Mark as read"}
-    >
-      {lesson.read_at ? `✓ Read ${formatDate(lesson.read_at)}` : "Mark as read"}
-    </button>
+    <span className="read-toggle-group">
+      <button
+        className={last ? "read-toggle on" : "read-toggle"}
+        onClick={onRead}
+        title={last ? `Read the ${NOUN[kind]} again (last ${formatDate(last.at)})` : `Mark the ${NOUN[kind]} as read`}
+      >
+        {last ? `✓ ${NOUN[kind]} read ${reads.length}×` : `Mark ${NOUN[kind]} read`}
+      </button>
+      {last && (
+        <button className="read-undo" onClick={onUndo} title={`Undo the read of ${formatDate(last.at)}`} aria-label="Undo last read">
+          ↶
+        </button>
+      )}
+    </span>
   );
 }
 
@@ -59,7 +80,7 @@ type ModuleProps = {
 };
 
 export function ModulePage({ module, onBack, onOpenLesson, onStudy, onStudyLessons, onExam }: ModuleProps) {
-  const { lessons, error, toggleRead } = useLessons(module.id);
+  const { lessons, error, addRead, undoRead } = useLessons(module.id);
   const [picked, setPicked] = useState<Set<number>>(new Set());
   const selection = lessons?.filter((l) => picked.has(l.id)) ?? [];
   const pick = (ids: number[]) => setPicked(new Set(ids));
@@ -121,9 +142,10 @@ export function ModulePage({ module, onBack, onOpenLesson, onStudy, onStudyLesso
               </span>
               <span className="meta">
                 {l.question_count} Qs ({l.exam_count} exam) · {l.due_count} due
+                {readCount(l, "summary") > 0 && <> · summary read {readCount(l, "summary")}×</>}
               </span>
             </button>
-            <ReadToggle lesson={l} onToggle={() => toggleRead(l)} />
+            <ReadButton lesson={l} kind="pdf" onRead={() => addRead(l, "pdf")} onUndo={() => undoRead(l, "pdf")} />
           </li>
         ))}
       </ul>
@@ -149,15 +171,19 @@ type LessonProps = {
 };
 
 export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
-  const { lessons, error, toggleRead } = useLessons(module.id);
+  const { lessons, error, addRead, undoRead } = useLessons(module.id);
   const lesson = lessons?.find((l) => l.id === lessonId);
   const hasSummary = useHasSummary(lesson?.pdf);
-  const [view, setView] = useState<"summary" | "pdf">("summary");
+  const [view, setView] = useState<ReadKind>("summary");
+  // The read button counts whichever one is on screen.
+  const kind: ReadKind = hasSummary ? view : "pdf";
 
   const header = (
     <header className="study-header">
       <button className="link" onClick={onBack}>← {module.name}</button>
-      {lesson && <ReadToggle lesson={lesson} onToggle={() => toggleRead(lesson)} />}
+      {lesson && (
+        <ReadButton lesson={lesson} kind={kind} onRead={() => addRead(lesson, kind)} onUndo={() => undoRead(lesson, kind)} />
+      )}
     </header>
   );
 
