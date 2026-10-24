@@ -107,3 +107,32 @@ a { color: var(--accent); }
   .sidebar { max-height: 40vh; }
   .topbar input[type="search"] { width: 100%; }
 }
+.lesson-head .spacer { flex: 1; }
+
+/* Reports (TP) */
+a.button { display: inline-block; text-decoration: none; color: inherit; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; }
+a.button:hover { border-color: var(--accent); }
+.printer { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; padding: 10px 12px; }
+.printer label.field { display: grid; gap: 3px; font-size: 12px; color: var(--muted); }
+.printer label.field input { color: var(--text); font-size: 14px; }
+.report-head { display: grid; grid-template-columns: 1fr auto; gap: 8px 12px; padding: 10px 12px; align-items: start; }
+.report-head .actions { grid-column: 1 / -1; }
+.report-request { padding: 10px 12px; display: grid; gap: 6px; }
+.log { max-height: 260px; overflow: auto; background: var(--bg); padding: 8px; border-radius: 6px; font-size: 12px; white-space: pre-wrap; margin: 0; }
+.content:has(.sheet-builder) { max-width: 1400px; }
+.sheet-builder { display: grid; grid-template-columns: minmax(0, 1fr) 450px; gap: 12px; align-items: start; }
+.sheet-items { display: grid; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+.sheet-item { display: flex; gap: 6px; align-items: center; }
+.sheet-item > select, .sheet-item > input:not([type]) { flex: 1; min-width: 0; }
+.sheet-item label.num { display: flex; gap: 4px; align-items: center; font-size: 12px; color: var(--muted); white-space: nowrap; }
+.sheet-item label.num input[type="number"] { width: 64px; }
+.sheet-item label.num input[type="checkbox"] { width: auto; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.thumb { display: grid; gap: 4px; text-align: left; padding: 6px; font-size: 12px; align-content: start; }
+.thumb img { width: 100%; height: 90px; object-fit: contain; background: #fff; border-radius: 4px; }
+/* The preview page is A4 plus 1 cm padding (23 × 31.7 cm ≈ 870 × 1198 px), shown at half size. */
+.sheet-preview { position: sticky; top: 64px; width: 450px; height: 610px; overflow: hidden; border-radius: 8px; border: 1px solid var(--border); }
+.sheet-preview iframe { width: 900px; height: 1220px; border: 0; transform: scale(0.5); transform-origin: 0 0; }
+@media (max-width: 1100px) { .sheet-builder { grid-template-columns: 1fr; } }
+a.button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+a.button.disabled { opacity: 0.5; pointer-events: none; }

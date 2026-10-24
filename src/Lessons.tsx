@@ -32,6 +32,21 @@ function ReadToggle({ lesson, onToggle }: { lesson: Lesson; onToggle: () => void
   );
 }
 
+// Lesson pdf paths that have a summary page (public/summaries/index.json, written by scripts/summary.ts).
+let summaries: Promise<Set<string>> | null = null;
+function useHasSummary(pdf: string | undefined) {
+  const [has, setHas] = useState(false);
+  useEffect(() => {
+    if (!pdf) return;
+    summaries ??= fetch("/summaries/index.json")
+      .then((r) => (r.ok ? r.json() : []))
+      .then((list: string[]) => new Set(list))
+      .catch(() => new Set<string>());
+    summaries.then((set) => setHas(set.has(pdf)));
+  }, [pdf]);
+  return has;
+}
+
 const formatDate = (ms: number) => new Date(ms).toLocaleDateString(undefined, { day: "numeric", month: "short" });
 
 type ModuleProps = {
@@ -136,6 +151,8 @@ type LessonProps = {
 export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
   const { lessons, error, toggleRead } = useLessons(module.id);
   const lesson = lessons?.find((l) => l.id === lessonId);
+  const hasSummary = useHasSummary(lesson?.pdf);
+  const [view, setView] = useState<"summary" | "pdf">("summary");
 
   const header = (
     <header className="study-header">
@@ -149,6 +166,8 @@ export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
   if (!lesson) return <main>{header}<p className="error">Lesson not found</p></main>;
 
   const pdfUrl = `/lessons/${lesson.pdf}`;
+  const showSummary = hasSummary && view === "summary";
+  const docUrl = showSummary ? `/summaries/${lesson.pdf.replace(/\.pdf$/, ".html")}` : pdfUrl;
   return (
     <main className="wide">
       {header}
@@ -163,10 +182,21 @@ export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
         </span>
       </div>
       <div className="pdf-bar">
-        <span className="meta">Lesson PDF</span>
-        <a className="pdf-open" href={pdfUrl} target="_blank" rel="noreferrer">Open in new tab ↗</a>
+        {hasSummary ? (
+          <div className="chips">
+            <button className={showSummary ? "chip on" : "chip"} onClick={() => setView("summary")}>Summary</button>
+            <button className={showSummary ? "chip" : "chip on"} onClick={() => setView("pdf")}>PDF</button>
+          </div>
+        ) : (
+          <span className="meta">Lesson PDF</span>
+        )}
+        <a className="pdf-open" href={docUrl} target="_blank" rel="noreferrer">Open in new tab ↗</a>
       </div>
-      <iframe className="pdf" src={pdfUrl} title={`${lesson.title} PDF`} />
+      <iframe
+        className={showSummary ? "pdf summary" : "pdf"}
+        src={docUrl}
+        title={`${lesson.title} ${showSummary ? "summary" : "PDF"}`}
+      />
     </main>
   );
 }

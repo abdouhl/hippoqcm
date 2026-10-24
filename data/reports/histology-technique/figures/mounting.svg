@@ -1,0 +1,18 @@
+<svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg" font-family="Times New Roman" font-size="13">
+      <g font-weight="bold" fill="#1f4e79"><text x="8" y="40">A</text><text x="8" y="115">B</text><text x="8" y="190">C</text></g>
+      <!-- A -->
+      <path d="M30,55 L250,55 L280,40 L60,40 Z" fill="#eef7fb" stroke="#555"/>
+      <ellipse cx="160" cy="47" rx="16" ry="5" fill="#b5534e"/>
+      <path d="M200,6 L172,26" stroke="#8a5a00" stroke-width="3"/><circle cx="168" cy="31" r="4" fill="#e3b04b"/>
+      <text x="215" y="14">drop of balsam</text>
+      <!-- B -->
+      <path d="M30,130 L250,130 L280,115 L60,115 Z" fill="#eef7fb" stroke="#555"/>
+      <ellipse cx="160" cy="122" rx="16" ry="5" fill="#b5534e"/>
+      <path d="M135,124 L175,90" stroke="#3f8fd2" stroke-width="3"/>
+      <text x="185" y="95">coverslip lowered</text><text x="185" y="109">at an angle</text>
+      <!-- C -->
+      <path d="M30,205 L250,205 L280,190 L60,190 Z" fill="#eef7fb" stroke="#555"/>
+      <path d="M120,203 L200,203 L215,192 L135,192 Z" fill="#cfe6f7" stroke="#3f8fd2"/>
+      <ellipse cx="166" cy="197" rx="16" ry="4" fill="#b5534e"/>
+      <text x="150" y="226" text-anchor="middle">section sealed under the coverslip</text>
+    </svg>

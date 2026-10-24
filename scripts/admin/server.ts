@@ -4,10 +4,15 @@
 // Edits also flow back into the source-of-truth JSON in data/ where the question can be found.
 
 import { Database } from "bun:sqlite";
-import { appendFileSync, existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { fileUrls, imageSize, readSettings, stampBox, toPdf } from "../report";
+import {
+  calibrationPage, coverPage, numberedFigures, reportPage as renderReport, stampPage,
+  type Report, type Settings, type StampItem,
+} from "../report/render";
 import index from "./index.html";
 
-const PORT = 8790;
+const PORT = Number(process.env.ADMIN_PORT) || 8790;
 const LABELS = ["A", "B", "C", "D", "E"];
 const BATCH_SUFFIX = "_admin_edits.sql";
 const D1_DIR = ".wrangler/state/v3/d1/miniflare-D1DatabaseObject";
@@ -418,6 +423,211 @@ async function patchLesson(id: number, patch: { title?: string; position?: numbe
   return [];
 }
 
+// --- Google Drive lessons folder -------------------------------------------------------------
+
+// The public folder lessons and exams get posted to. Its embedded view lists a folder without an
+// API key, so "Check Drive" walks it and remembers every file it has seen in DRIVE_STATE.
+const DRIVE_ROOT = "1iS8w65Fcoi09LImHrLqWTva6R5n4QvuV";
+const DRIVE_STATE = "scripts/admin/drive-seen.json";
+
+type DriveEntry = { id: string; path: string; url: string; modified: string };
+type DriveFile = DriveEntry & { first_seen: number; status: "new" | "updated" | "seen" };
+type DriveState = { checked_at: number | null; files: Record<string, DriveFile> };
+
+const readDrive = (): DriveState =>
+  existsSync(DRIVE_STATE) ? JSON.parse(readFileSync(DRIVE_STATE, "utf8")) : { checked_at: null, files: {} };
+const writeDrive = (s: DriveState) => Bun.write(DRIVE_STATE, JSON.stringify(s, null, 2) + "\n");
+
+const unescapeHtml = (s: string) =>
+  s.replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("&quot;", '"').replaceAll("&#39;", "'").replaceAll("&amp;", "&").trim();
+
+async function walkDrive(id: string, path: string, out: DriveEntry[]) {
+  const res = await fetch(`https://drive.google.com/embeddedfolderview?id=${id}`);
+  if (!res.ok) throw new Error(`Drive folder ${path || "root"}: HTTP ${res.status}`);
+  const html = await res.text();
+  const entries = html.matchAll(
+    /<div class="flip-entry" id="entry-([^"]+)"[\s\S]*?<a href="([^"]+)"[\s\S]*?<div class="flip-entry-title">([\s\S]*?)<\/div>[\s\S]*?<div class="flip-entry-last-modified"><div>([^<]*)<\/div>/g,
+  );
+  await Promise.all([...entries].map(([, entryId, href, title, modified]) => {
+    const p = path ? `${path}/${unescapeHtml(title)}` : unescapeHtml(title);
+    if (href.includes("/folders/")) return walkDrive(entryId, p, out);
+    out.push({ id: entryId, path: p, url: unescapeHtml(href), modified: unescapeHtml(modified) });
+  }));
+  return out;
+}
+
+function driveView(s: DriveState) {
+  const files = Object.values(s.files);
+  return {
+    checked_at: s.checked_at,
+    total: files.length,
+    pending: files.filter((f) => f.status !== "seen").sort((a, b) => b.first_seen - a.first_seen || a.path.localeCompare(b.path)),
+  };
+}
+
+async function checkDrive() {
+  const found = await walkDrive(DRIVE_ROOT, "", []); // throws before touching the state if Drive fails
+  const state = readDrive();
+  // The first check only records what's already there.
+  const baseline = state.checked_at === null;
+  const now = Date.now();
+  for (const f of found) {
+    const old = state.files[f.id];
+    if (!old) {
+      state.files[f.id] = { ...f, first_seen: now, status: baseline ? "seen" : "new" };
+      continue;
+    }
+    // Drive shows a time ("10:42 AM") for files changed today and a date afterwards, so a time
+    // turning into a date is the same edit.
+    const sameEdit = old.modified === f.modified || (old.modified.includes(":") && !f.modified.includes(":"));
+    if (!sameEdit && old.status === "seen") old.status = "updated";
+    Object.assign(old, f);
+  }
+  const live = new Set(found.map((f) => f.id));
+  for (const id of Object.keys(state.files)) if (!live.has(id)) delete state.files[id];
+  state.checked_at = now;
+  await writeDrive(state);
+  return { ...driveView(state), baseline };
+}
+
+async function markDriveSeen(ids: string[]) {
+  const state = readDrive();
+  for (const id of ids) if (state.files[id]) state.files[id].status = "seen";
+  await writeDrive(state);
+  return driveView(state);
+}
+
+// --- Practical-work reports (scripts/report.ts, /report skill) --------------------------------
+
+const REPORTS = "data/reports";
+const reportUrls = (slug: string) => ({ report: `/report-files/${slug}/`, assets: "/report-assets/" });
+const reportPath = (slug: string) => {
+  if (!/^[a-z0-9-]+$/.test(slug) || !existsSync(`${REPORTS}/${slug}/report.json`)) throw new Error(`No report ${slug}`);
+  return `${REPORTS}/${slug}/report.json`;
+};
+const writeReport = (slug: string, r: Report) => Bun.write(reportPath(slug), JSON.stringify(r, null, 2) + "\n");
+
+function listReports() {
+  if (!existsSync(REPORTS)) return [];
+  return readdirSync(REPORTS, { withFileTypes: true })
+    .filter((d) => existsSync(`${REPORTS}/${d.name}/report.json`))
+    .map((d) => {
+      const r = JSON.parse(readFileSync(`${REPORTS}/${d.name}/report.json`, "utf8")) as Report;
+      return { slug: d.name, title: r.title, status: r.request?.status ?? "ready", created_at: r.request?.created_at ?? 0 };
+    })
+    .sort((a, b) => b.created_at - a.created_at);
+}
+
+async function getReport(slug: string) {
+  const r = (await Bun.file(reportPath(slug)).json()) as Report;
+  let figures: (Omit<ReturnType<typeof numberedFigures>[number], "row"> & { aspect: number | null; row: number[]; height_cm: number })[] = [];
+  let error: string | null = null;
+  try {
+    const all = numberedFigures(r);
+    figures = all.map((f) => {
+      const size = existsSync(`${REPORTS}/${slug}/${f.file}`) ? imageSize(`${REPORTS}/${slug}/${f.file}`) : null;
+      return { ...f, aspect: size ? size.h / size.w : null, row: f.row.map((id) => all.find((x) => x.id === id)!.n), height_cm: stampBox(slug, r, { kind: "figure", fig: f.n, y: 0 }).y1 };
+    });
+  } catch (e) { error = (e as Error).message; }
+  const log = existsSync(`${REPORTS}/${slug}/generate.log`) ? readFileSync(`${REPORTS}/${slug}/generate.log`, "utf8").slice(-4000) : "";
+  return { slug, report: r, figures, chapters: r.chapters.map((c) => c.title), error, log, generating: generating.has(slug) };
+}
+
+// A new report starts as a request: title, notes and uploaded sources, for the /report skill to write.
+async function createReport(form: FormData) {
+  const title = String(form.get("title") ?? "").trim();
+  if (!title) throw new Error("A title is needed");
+  const base = title.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 50) || "report";
+  let slug = base;
+  for (let i = 2; existsSync(`${REPORTS}/${slug}`); i++) slug = `${base}-${i}`;
+  mkdirSync(`${REPORTS}/${slug}/sources`, { recursive: true });
+  const sources: string[] = [];
+  for (const f of form.getAll("files")) {
+    if (!(f instanceof File) || !f.size) continue;
+    const name = f.name.replace(/[^\w.\- ]+/g, "_");
+    await Bun.write(`${REPORTS}/${slug}/sources/${name}`, f);
+    sources.push(`sources/${name}`);
+  }
+  const report: Report = {
+    title,
+    subtitle: String(form.get("subtitle") ?? "").trim() || undefined,
+    module: String(form.get("module") ?? "").trim(),
+    academic_year: String(form.get("academic_year") ?? "").trim(),
+    cover_images: [],
+    figures: {},
+    chapters: [],
+    request: { notes: String(form.get("notes") ?? "").trim(), sources, status: "requested", created_at: Date.now() },
+  };
+  await Bun.write(`${REPORTS}/${slug}/report.json`, JSON.stringify(report, null, 2) + "\n");
+  return { slug };
+}
+
+// "Generate" runs the /report skill in a headless Claude Code session. Its tools are limited to
+// what the skill needs; everything it prints lands in generate.log.
+const generating = new Set<string>();
+const GENERATE_TOOLS = [
+  "Read", "Write", "Edit", "Glob", "Grep",
+  "Bash(bun scripts/report.ts:*)", "Bash(scripts/bin/pdf-tool:*)", "Bash(python3:*)", "Bash(mkdir:*)", "Bash(cp:*)",
+  "Bash(ls:*)", "Bash(sips:*)", "Bash(textutil:*)", "Bash(unzip:*)",
+];
+
+async function generateReport(slug: string) {
+  if (generating.has(slug)) throw new Error("Already generating");
+  const r = (await Bun.file(reportPath(slug)).json()) as Report;
+  r.request = { ...r.request, status: "generating" };
+  await writeReport(slug, r);
+  const log = Bun.file(`${REPORTS}/${slug}/generate.log`);
+  const proc = Bun.spawn(["claude", "-p", `/report ${slug}`, "--allowedTools", ...GENERATE_TOOLS], { stdout: log, stderr: log, stdin: "ignore" });
+  generating.add(slug);
+  void proc.exited.then(async (code) => {
+    generating.delete(slug);
+    const now = (await Bun.file(reportPath(slug)).json()) as Report;
+    if (now.request?.status === "generating") {
+      now.request.status = code === 0 && now.chapters.length ? "ready" : "error";
+      await writeReport(slug, now);
+    }
+  });
+  return { started: true };
+}
+
+// /report/<slug>/cover|full|sheet is the HTML (the sheet builder's preview); with ".pdf" it's the PDF
+// headless Chrome makes from it — what gets printed, identical to the CLI's. ?download saves it.
+async function reportPage(req: Bun.BunRequest<"/report/:slug/:page">) {
+  const { slug } = req.params;
+  const pdf = req.params.page.endsWith(".pdf");
+  const page = req.params.page.replace(/\.pdf$/, "");
+  const p = new URL(req.url).searchParams;
+  const opts = { preview: !pdf && p.has("preview") };
+  let r: Report;
+  try { r = await Bun.file(reportPath(slug)).json(); } catch (e) { return new Response((e as Error).message, { status: 404 }); }
+  const s = await readSettings();
+  const urls = pdf ? fileUrls(slug) : reportUrls(slug);
+  let html: string;
+  try {
+    html =
+      page === "cover" ? coverPage(r, s, urls, opts)
+      : page === "full" ? renderReport(r, s, urls, opts)
+      : page === "sheet" ? stampPage(r, JSON.parse(p.get("items") || "[]") as StampItem[], s, urls, opts)
+      : "";
+  } catch (e) {
+    return new Response((e as Error).message, { status: 400 });
+  }
+  if (!html) return new Response("Not found", { status: 404 });
+  if (!pdf) return new Response(html, { headers: { "Content-Type": "text/html; charset=utf-8" } });
+  mkdirSync(`${REPORTS}/${slug}/print`, { recursive: true });
+  const out = await toPdf(html, `${REPORTS}/${slug}/print/${page}-admin.pdf`);
+  const name = page === "cover" ? `Cover - ${s.name || slug}.pdf` : page === "full" ? `${r.title}.pdf` : `Sheet - ${slug}.pdf`;
+  return pdfResponse(out, name, p.has("download"));
+}
+
+const pdfResponse = (path: string, name: string, download: boolean) =>
+  new Response(Bun.file(path), {
+    headers: {
+      "Content-Type": "application/pdf",
+      "Content-Disposition": `${download ? "attachment" : "inline"}; filename*=UTF-8''${encodeURIComponent(name)}`,
+    },
+  });
+
 // --- HTTP ------------------------------------------------------------------------------------
 
 const ok = (data: unknown) => Response.json(data);
@@ -475,6 +685,38 @@ const server = Bun.serve({
     "/api/lessons/:id": {
       PATCH: handle(async (req) => ({ notes: await patchLesson(Number(req.params.id), await req.json()) })),
     },
+    "/api/drive": {
+      GET: handle(() => driveView(readDrive())),
+      POST: handle(() => checkDrive()),
+    },
+    "/api/drive/seen": {
+      POST: handle(async (req) => markDriveSeen(((await req.json()) as { ids: string[] }).ids)),
+    },
+    "/api/reports": {
+      GET: handle(() => listReports()),
+      POST: handle(async (req) => createReport(await req.formData())),
+    },
+    "/api/reports/:slug": handle((req) => getReport(req.params.slug)),
+    "/api/reports/:slug/generate": { POST: handle((req) => generateReport(req.params.slug)) },
+    "/api/report-settings": {
+      GET: handle(() => readSettings()),
+      PUT: handle(async (req) => {
+        const b = (await req.json()) as Partial<Settings>;
+        const s: Settings = { ...(await readSettings()), ...b };
+        s.offset_x_cm = Number(s.offset_x_cm) || 0;
+        s.offset_y_cm = Number(s.offset_y_cm) || 0;
+        mkdirSync(REPORTS, { recursive: true });
+        await Bun.write(`${REPORTS}/settings.json`, JSON.stringify(s, null, 2) + "\n");
+        return s;
+      }),
+    },
+    "/report/:slug/:page": reportPage,
+    "/report-calibration.pdf": async () => {
+      mkdirSync(`${REPORTS}/print`, { recursive: true });
+      return pdfResponse(await toPdf(calibrationPage(), `${REPORTS}/print/calibration.pdf`), "Printer calibration.pdf", false);
+    },
+    "/report-files/*": staticFile(REPORTS),
+    "/report-assets/*": staticFile("scripts/report/assets"),
     // Flags are raised on production (the study screen's "flag" button), so read them there.
     "/api/remote-flags": handle(async () => {
       const rows = await remote<{ id: number; source: string | null; stem: string }>("SELECT id, source, stem FROM questions WHERE flagged = 1");

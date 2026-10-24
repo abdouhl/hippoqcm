@@ -4,3 +4,7 @@ dist
 .dev.vars
 *.tsbuildinfo
 backups
+data/reports/*/print/
+data/reports/print/
+data/reports/*/report.pdf
+data/reports/*/generate.log

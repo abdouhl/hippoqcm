@@ -1,0 +1,72 @@
+{
+  "title": "Report on the first practical session: Introduction to histology techniques",
+  "subtitle": "The successive steps required to prepare a sample for histological study",
+  "module": "General Human Embryology",
+  "academic_year": "2026/2027",
+  "cover_images": ["figures/microscope-photo.jpeg", "figures/cover-sections.jpeg", "figures/cover-slides.jpeg", "figures/cover-blood.png", "figures/slides_rack.jpg"],
+  "request": {
+    "notes": "List the successive steps required to prepare a sample for histological study. Use schemas and images. Follow the cover page + instructions guide (similar but not the same).",
+    "sources": ["sources/guide.docx"],
+    "status": "ready",
+    "created_at": 1792771200000
+  },
+  "figures": {
+    "flowchart": { "file": "figures/flowchart.svg", "caption": "The nine successive steps of the histological technique (paraffin method).", "width_cm": 16 },
+    "pleural": { "file": "figures/pleural.jpg", "caption": "Puncture of a pleural effusion through the back of the thorax.", "width_cm": 9.5 },
+    "fixative": { "file": "figures/fixative.jpg", "caption": "Sample immersed in fixative in a labelled container.", "width_cm": 6 },
+    "fixative-ratio": { "file": "figures/fixative-ratio.svg", "caption": "Ratio between fixative volume and sample volume.", "width_cm": 7.5 },
+    "dehydration": { "file": "figures/dehydration.svg", "caption": "Schematic of dehydration in ethanol baths, clearing in toluene and impregnation with paraffin.", "width_cm": 16 },
+    "processor": { "file": "figures/processor.jpg", "caption": "Automatic tissue processor (carousel of reagent baths).", "width_cm": 11 },
+    "oven": { "file": "figures/oven.jpg", "caption": "Oven keeping paraffin liquid at 56–58 °C.", "width_cm": 4.5 },
+    "embedding": { "file": "figures/embedding.svg", "caption": "Schematic of embedding and of the paraffin block.", "width_cm": 7.5 },
+    "sectioning": { "file": "figures/sectioning.svg", "caption": "Schematic of sectioning with a microtome and collection of the sections on a slide.", "width_cm": 16 },
+    "microtome": { "file": "figures/microtome1.jpg", "caption": "Rotary microtome producing a ribbon of paraffin sections.", "width_cm": 10 },
+    "deparaffinization": { "file": "figures/deparaffinization.svg", "caption": "Schematic of deparaffinization and rehydration of the sections before staining.", "width_cm": 16 },
+    "trichrome": { "file": "figures/trichrome.jpg", "caption": "Histological sections stained with Masson's trichrome: collagen fibres appear blue or green.", "width_cm": 14 },
+    "mounting": { "file": "figures/mounting.svg", "caption": "Schematic of mounting with Canada balsam.", "width_cm": 7.5 },
+    "slides": { "file": "figures/slides_rack.jpg", "caption": "Finished, stained and mounted slides.", "width_cm": 5.5 },
+    "light-path": { "file": "figures/light-path.svg", "caption": "Path of light in the light microscope.", "width_cm": 5.5 },
+    "microscope": { "file": "figures/microscope-photo.jpeg", "caption": "Examining a histological slide under the light microscope.", "width_cm": 6.5 },
+    "micrographs": { "file": "figures/micrographs.jpg", "caption": "Examples of stained sections as seen under the light microscope.", "width_cm": 14 }
+  },
+  "intro": "<p>Histology is the study of tissues and of the cells that build them. Most tissues cannot be observed directly: they are too thick for light to pass through, too soft to be cut thinly, and almost colourless. A fragment of tissue must therefore go through a series of successive steps, called the <b>histological technique</b>, that turn it into a thin, stained and protected section that can be examined under a light microscope.</p><p>The aim of this report is to list and explain these steps in the order in which they are carried out in the laboratory, from the collection of the biological material to the observation of the finished slide. The classic protocol uses <b>paraffin embedding</b> and includes nine steps (Figure 01).</p>{{fig:flowchart}}",
+  "chapters": [
+    {
+      "title": "Sampling (collection of the biological material)",
+      "html": "<p>The first step is to obtain the tissue to be studied. The fragment must be representative of the organ, taken with sharp instruments so as not to crush it, and kept small (a few millimetres thick) so that the fixative can penetrate it quickly. Depending on the situation, the material may come from:</p><ul><li><b>Biopsies:</b> removal of a small fragment of a tissue or organ, for example a liver biopsy, or a biopsy taken during endoscopy of the respiratory, digestive or urinary system.</li><li><b>Whole organs:</b> obtained at autopsy (on the body after death) or after total surgical removal of an organ.</li><li><b>Puncture of effusion fluids:</b> pleural, pericardial or cerebrospinal fluid, whose cells are then studied.</li><li><b>Organ dissection in animal experimentation.</b></li></ul>{{fig:pleural}}"
+    },
+    {
+      "title": "Fixation",
+      "html": "<p>Fixation is <b>the most crucial step</b> of the histological preparation. As soon as a tissue is removed from the body, its own enzymes begin to digest it (<b>autolysis</b>) and bacteria cause <b>post-mortem decomposition</b>. Fixation must therefore be carried out <b>immediately</b> after sampling, by immersing the fragment in a fixative liquid (10% formalin and Bouin's fluid are the most commonly used).</p><p>The fixative <b>stabilizes proteins</b> while preserving the structure of the cells and the architecture of the tissue. The volume of fixative must be about <b>10 times the volume of the sample</b>. The purposes of fixation are to:</p><ul><li>immobilize and preserve the biological structures as close as possible to the living state;</li><li>prevent autolysis and post-mortem decomposition;</li><li>harden the tissue, which makes the following steps (especially sectioning) easier.</li></ul>{{fig:fixative|fixative-ratio}}"
+    },
+    {
+      "title": "Dehydration and clearing",
+      "html": "<p>Tissues contain a lot of water, and paraffin does not mix with water. The goal of this step is therefore to <b>remove the water</b> from the tissue so that it can later be impregnated with paraffin.</p><ul><li>The sample is passed through successive baths of <b>ethanol of increasing concentration</b> (for example 70°, 80°, 90°, 95° and 100°). The gradual increase avoids sudden shrinkage and distortion of the tissue.</li><li>The alcohol is then replaced by a solvent that mixes with paraffin, such as <b>toluene</b> (clearing step).</li><li>This process is usually carried out by an <b>automatic tissue processor</b> that moves the cassettes from bath to bath.</li></ul><p>The replacement sequence can be summarized as: <b>water → alcohol → toluene → paraffin</b> (Figure 05).</p>{{fig:dehydration}}{{fig:processor}}"
+    },
+    {
+      "title": "Embedding in paraffin",
+      "html": "<p>Embedding gives the soft tissue a firm, homogeneous support so that it can be cut into very thin slices. The most frequently used embedding medium is <b>paraffin wax</b>. It is <b>liquid at 56–58 °C</b> (it is kept melted in an oven at this temperature) and <b>solidifies below this temperature</b>.</p><p>The impregnated sample is placed in a metal mould, oriented, and covered with melted paraffin. A plastic cassette carrying the sample's label is placed on top, and the whole is cooled. The result is a <b>paraffin block</b> in which the tissue is enclosed and fully infiltrated.</p>{{fig:oven|embedding}}"
+    },
+    {
+      "title": "Sectioning (microtomy)",
+      "html": "<p>The paraffin block is cut into <b>very thin sections, 2 to 5 µm thick</b>, so that the light of the microscope can pass through them. Cutting is done with a <b>microtome</b>, an instrument equipped with a very sharp blade: at each turn of the handwheel the block advances by the chosen thickness and passes over the blade.</p><p>The successive sections stick to one another and form a <b>ribbon</b>. The sections are floated on a warm water bath so that they <b>stretch</b> and lose their folds, and are then <b>collected on glass slides</b> and dried.</p>{{fig:sectioning}}{{fig:microtome}}"
+    },
+    {
+      "title": "Deparaffinization and rehydration",
+      "html": "<p>Most stains are aqueous solutions and cannot penetrate a section still full of paraffin. Before staining, the paraffin must therefore be <b>eliminated</b> and the section brought back to water. This is the reverse of steps 3 and 4:</p><ul><li>the slides are placed on a <b>heating plate at 45–60 °C for about 15 minutes</b>, which melts the paraffin;</li><li>they are then passed through baths of <b>toluene</b>, which dissolve the remaining paraffin;</li><li>then through baths of <b>alcohol of decreasing concentration</b> (100°, 95°, 70°);</li><li>and finally into <b>distilled water</b>.</li></ul><p>At the end of this step the section is rehydrated and ready for staining.</p>{{fig:deparaffinization}}"
+    },
+    {
+      "title": "Staining",
+      "html": "<p>Unstained sections are almost transparent. To distinguish the different tissue and cell components, various <b>dyes</b> are used. They are chosen according to the affinity of each structure: <b>basic dyes</b> such as hematoxylin bind to acidic structures (nuclei, rich in nucleic acids), while <b>acidic dyes</b> such as eosin bind to basic structures (cytoplasm). The main stains seen in this session are summarized in Table 01.</p><div class=\"tcap\"><b>Table 01.</b> Main histological stains and the colours they give.</div><table><tr><th style=\"width:30%\">Stain</th><th style=\"width:30%\">Dyes</th><th>Result</th></tr><tr><td><b>Hematoxylin–Eosin (H&amp;E)</b><br>routine stain</td><td>Hematoxylin<br>Eosin</td><td><span class=\"sw\" style=\"background:#5b2a86\"></span>Nuclei → <b>purple</b><br><span class=\"sw\" style=\"background:#f2a6c0\"></span>Cytoplasm → <b>pink</b></td></tr><tr><td><b>HES</b> (Hematoxylin–Eosin–Saffron)</td><td>H&amp;E + saffron</td><td>Nuclei purple, cytoplasm pink<br><span class=\"sw\" style=\"background:#e8c547\"></span>Collagen fibres → <b>yellow</b></td></tr><tr><td><b>Masson's trichrome</b></td><td>Hematoxylin–Eosin + aniline blue <i>or</i> light green</td><td>Nuclei dark, cytoplasm red/pink<br><span class=\"sw\" style=\"background:#3f8fd2\"></span><span class=\"sw\" style=\"background:#5dbb63\"></span>Collagen fibres → <b>blue or green</b></td></tr></table>{{fig:trichrome}}"
+    },
+    {
+      "title": "Mounting",
+      "html": "<p>After staining, the section is dehydrated again (alcohol, then toluene) and permanently <b>protected between a slide and a coverslip</b>. A drop of a mounting resin such as <b>Canada balsam</b> is placed on the section, and the coverslip is lowered at an angle to avoid trapping air bubbles. The resin hardens and glues the coverslip to the slide. The result is a permanent <b>microscopic preparation</b>, which is labelled and can be kept for years.</p>{{fig:mounting|slides}}"
+    },
+    {
+      "title": "Observation under the light microscope",
+      "html": "<p>The finished slides are examined with the <b>light (optical) microscope</b>, which allows the tissue to be observed, analysed and, in a medical context, diagnosed. Light from the source is concentrated by the <b>condenser</b>, passes through the thin stained section held on the <b>mechanical stage</b>, and is collected by the <b>objective lens</b>. The image is magnified again by the <b>eyepiece</b>. The coarse and fine focus knobs adjust the sharpness, the revolving nosepiece changes the objective, and the rheostat adjusts the light intensity.</p>{{fig:light-path|microscope}}{{fig:micrographs}}"
+    }
+  ],
+  "conclusion": "<p>The preparation of a sample for histological study follows a strict order: <b>sampling → fixation → dehydration → paraffin embedding → sectioning → deparaffinization and rehydration → staining → mounting → observation</b>. Each step prepares the next one: fixation preserves the structures, dehydration and embedding make thin sectioning possible, staining makes the components visible, and mounting protects the section. Fixation is the most important step, because poorly fixed tissue cannot be recovered by any later step. A careful technique produces a permanent slide on which the normal or pathological architecture of a tissue can be studied and diagnosed.</p>"
+}

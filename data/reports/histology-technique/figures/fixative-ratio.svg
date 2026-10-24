@@ -1,0 +1,9 @@
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" font-family="Times New Roman" font-size="14">
+      <path d="M60,40 V170 Q60,185 75,185 H185 Q200,185 200,170 V40" fill="none" stroke="#1f4e79" stroke-width="3"/>
+      <rect x="62" y="70" width="136" height="113" fill="#f6dfae" opacity=".8"/>
+      <ellipse cx="130" cy="150" rx="22" ry="13" fill="#b5534e"/>
+      <text x="130" y="110" text-anchor="middle">Fixative</text>
+      <text x="130" y="128" text-anchor="middle" font-weight="bold">10 × V</text>
+      <path d="M152,150 H225" stroke="#333"/><text x="228" y="146" font-size="13">Sample</text><text x="228" y="161" font-size="13">(1 × V)</text>
+      <text x="130" y="25" text-anchor="middle" font-weight="bold" fill="#b3121b">Fixative : sample ≥ 10 : 1</text>
+    </svg>

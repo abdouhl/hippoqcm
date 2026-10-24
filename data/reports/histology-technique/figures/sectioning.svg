@@ -1,0 +1,30 @@
+<svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" font-family="Times New Roman" font-size="13">
+  <!-- microtome -->
+  <rect x="20" y="40" width="110" height="120" rx="8" fill="#e4e8ec" stroke="#555" stroke-width="2"/>
+  <circle cx="75" cy="100" r="26" fill="none" stroke="#555" stroke-width="3"/><path d="M75,100 L95,82" stroke="#555" stroke-width="3"/>
+  <text x="75" y="178" text-anchor="middle">Handwheel</text>
+  <rect x="130" y="78" width="40" height="40" fill="#f3e9a9" stroke="#8a5a00" stroke-width="2"/>
+  <ellipse cx="150" cy="98" rx="10" ry="6" fill="#b5534e"/>
+  <text x="150" y="70" text-anchor="middle">Block</text>
+  <path d="M172,120 L210,120 L172,132 Z" fill="#9aa4ad" stroke="#333"/>
+  <text x="190" y="150" text-anchor="middle">Blade</text>
+  <!-- ribbon -->
+  <g fill="#fbf4cf" stroke="#8a5a00">
+    <rect x="212" y="110" width="34" height="18"/><rect x="246" y="110" width="34" height="18"/><rect x="280" y="110" width="34" height="18"/><rect x="314" y="110" width="34" height="18"/>
+  </g>
+  <g fill="#b5534e"><circle cx="229" cy="119" r="4"/><circle cx="263" cy="119" r="4"/><circle cx="297" cy="119" r="4"/><circle cx="331" cy="119" r="4"/></g>
+  <text x="280" y="102" text-anchor="middle">Ribbon of sections (2–5 µm)</text>
+  <!-- arrow -->
+  <path d="M360,119 H392" stroke="#1f4e79" stroke-width="2.5"/><path d="M392,112 L404,119 L392,126 Z" fill="#1f4e79"/>
+  <!-- water bath -->
+  <rect x="410" y="95" width="100" height="50" fill="#bfe1f6" stroke="#1f4e79" stroke-width="2"/>
+  <rect x="440" y="100" width="34" height="8" fill="#fbf4cf" stroke="#8a5a00"/>
+  <text x="460" y="165" text-anchor="middle">Warm water bath</text><text x="460" y="180" text-anchor="middle">(stretching)</text>
+  <path d="M515,119 H540" stroke="#1f4e79" stroke-width="2.5"/><path d="M540,112 L552,119 L540,126 Z" fill="#1f4e79"/>
+  <!-- slide -->
+  <rect x="558" y="104" width="76" height="30" fill="#eef7fb" stroke="#555" stroke-width="1.5"/>
+  <rect x="558" y="104" width="20" height="30" fill="#dfe3e6" stroke="#555" stroke-width="1.5"/>
+  <circle cx="606" cy="119" r="7" fill="#b5534e"/>
+  <text x="596" y="165" text-anchor="middle">Section on</text><text x="596" y="180" text-anchor="middle">a glass slide</text>
+  <text x="320" y="25" text-anchor="middle" font-weight="bold" font-size="14" fill="#b3121b">Microtome → ribbon → stretching → slide</text>
+</svg>

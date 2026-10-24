@@ -1,0 +1,365 @@
+{
+  "semester": 1,
+  "module": "Physiology",
+  "title": "Synaptic transmission",
+  "pdf": "s1/physiology/synaptic-transmission.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q1",
+    "EMD1 2022-2023 Q2",
+    "EMD1 2022-2023 Q3",
+    "EMD1 2022-2023 Q4",
+    "EMD1 2022-2023 Q5",
+    "EMD1 2022-2023 Q7",
+    "EMD1 2022-2023 Q14",
+    "EMD1 2022-2023 Q19",
+    "EMD1 2023-2024 Q7",
+    "EMD1 2023-2024 Q8",
+    "EMD1 2023-2024 Q10",
+    "EMD1 2023-2024 Q11",
+    "EMD1 2023-2024 Q21",
+    "EMD1 2024-2025 Q11",
+    "EMD1 2024-2025 Q12",
+    "EMD1 2024-2025 Q13",
+    "EMD1 2024-2025 Q14",
+    "EMD1 2025-2026 Q13"
+  ],
+  "questions": [
+    {
+      "stem": "About electrical and chemical synapses:",
+      "options": [
+        "In an electrical synapse, ions pass directly from one cell to the other through the channels of communicating (gap) junctions",
+        "In an electrical synapse, transmission is bidirectional",
+        "In a chemical synapse, information passes only from the presynaptic to the postsynaptic element",
+        "In an electrical synapse, a neurotransmitter is released into the synaptic cleft"
+      ],
+      "answer": "ABC",
+      "explanation": "Chemical synapses are one-way; electrical synapses transmit potential variations directly (ions through gap-junction channels) and are bidirectional. Only chemical synapses use a neurotransmitter.",
+      "page": 7
+    },
+    {
+      "stem": "Among the properties of chemical synapses:",
+      "options": [
+        "The postsynaptic neuron only relays the information without modifying it",
+        "They obey the all-or-nothing law",
+        "There is a synaptic delay, the time needed to release the neurotransmitter and for it to act on the postsynaptic receptor",
+        "Transmission is unidirectional"
+      ],
+      "answer": "CD",
+      "explanation": "Chemical synapses are unidirectional, show fatigue and synaptic delay, have an integrative role (the information can be modified) and do not obey the all-or-nothing law.",
+      "page": 16
+    },
+    {
+      "stem": "During repeated high-frequency stimulation of a presynaptic neuron, the postsynaptic response progressively decreases. This corresponds to:",
+      "options": [
+        "Synaptic delay",
+        "Synaptic fatigue, by exhaustion of the neurotransmitter stock",
+        "The all-or-nothing law",
+        "The integrative role of the synapse"
+      ],
+      "answer": "B",
+      "explanation": "Fatigue: repeated stimulations lead to a progressive decrease of the postsynaptic response by exhaustion of the neurotransmitter stock. Synaptic delay is a fixed time lag, not a decrement.",
+      "page": 16
+    },
+    {
+      "stem": "In the functioning of a chemical synapse:",
+      "options": [
+        "The neurotransmitter is rapidly inactivated by degradation, recapture or diffusion",
+        "Sodium entry is the direct trigger of vesicle exocytosis",
+        "The arrival of the action potential at the presynaptic terminal causes calcium entry",
+        "The calcium signal triggers exocytosis by membrane fusion"
+      ],
+      "answer": "ACD",
+      "explanation": "Sequence: AP → Ca²⁺ entry → exocytosis by fusion → release into the cleft → binding to a specific receptor → rapid inactivation (degradation, recapture, diffusion). It is Ca²⁺, not Na⁺, that triggers release.",
+      "page": 14
+    },
+    {
+      "stem": "Once acetylcholine has acted on the motor end-plate, its action is terminated by:",
+      "options": [
+        "Recapture of choline into the presynaptic terminal by active transporters",
+        "Hydrolysis by acetylcholinesterase into choline and acetic acid",
+        "Reuptake of intact acetylcholine by the muscle fiber",
+        "Degradation by choline acetyltransferase"
+      ],
+      "answer": "AB",
+      "explanation": "ACh is quickly degraded by acetylcholinesterase into choline and acetic acid; choline is recaptured by the presynaptic terminal via active transporters. Choline acetyltransferase synthesizes ACh, it does not degrade it.",
+      "page": 35
+    },
+    {
+      "stem": "About the elements of the synaptic complex:",
+      "options": [
+        "Axo-axonic synapses are neuro-effector synapses",
+        "The presynaptic element can be a glandular cell",
+        "In a neuro-effector synapse, the postsynaptic element can be a skeletal or cardiac striated muscle cell",
+        "In a neuro-effector synapse, the postsynaptic element can be a smooth muscle or glandular cell"
+      ],
+      "answer": "CD",
+      "explanation": "The presynaptic element is always a nerve cell; the postsynaptic one is a neuron (axo-somatic, axo-dendritic, axo-axonic = neuro-neuronal) or an effector (striated, smooth muscle, gland).",
+      "page": 9
+    },
+    {
+      "stem": "About the classification of synapses:",
+      "options": [
+        "In an inhibitory synapse, activation of the presynaptic element hyperpolarizes the postsynaptic membrane",
+        "Cholinergic, dopaminergic and peptidergic synapses are classified according to the chemical mediator released",
+        "Glutamatergic synapses release gamma-aminobutyric acid",
+        "In an excitatory synapse, activation of the presynaptic element depolarizes the postsynaptic membrane"
+      ],
+      "answer": "ABD",
+      "explanation": "By effect: excitatory = depolarization, inhibitory = hyperpolarization. By mediator: cholinergic (ACh), glutamatergic (glutamate), GABAergic (GABA), dopaminergic, peptidergic. GABA is released by GABAergic synapses, not glutamatergic ones.",
+      "page": 13
+    },
+    {
+      "stem": "For a molecule to be considered a neurotransmitter, it must:",
+      "options": [
+        "Be specifically inactivated",
+        "Be synthesized by the neuron",
+        "Reproduce the effect of the endogenous neurotransmitter when applied directly to the target neuron",
+        "Be present in the presynaptic terminal"
+      ],
+      "answer": "ABCD",
+      "explanation": "All four are criteria listed in the course, together with being released in sufficient quantity to act on the postsynaptic neuron.",
+      "page": 17
+    },
+    {
+      "stem": "Which of the following are monoamines?",
+      "options": [
+        "Dopamine",
+        "Glutamate",
+        "Acetylcholine",
+        "Histamine"
+      ],
+      "answer": "AD",
+      "explanation": "Monoamines: noradrenaline, adrenaline, dopamine, serotonin, histamine. Acetylcholine forms its own group and glutamate is an amino acid.",
+      "page": 18
+    },
+    {
+      "stem": "Belong to the 'other' (non-classic) neurotransmitters:",
+      "options": [
+        "Nitric oxide (NO)",
+        "Glycine",
+        "ATP and adenosine",
+        "Peptides"
+      ],
+      "answer": "ACD",
+      "explanation": "Non-classic neurotransmitters are mainly peptides, plus NO and ATP/adenosine. Glycine is a classic amino-acid neurotransmitter.",
+      "page": 18
+    },
+    {
+      "stem": "About the structure of the neuromuscular junction:",
+      "options": [
+        "The postsynaptic receptors are muscarinic acetylcholine receptors",
+        "It is the contact between the axon of an α motor neuron and a skeletal striated muscle fiber",
+        "The synaptic cleft is 50 to 100 nm wide",
+        "Each terminal branch of the motor axon innervates several muscle fibers"
+      ],
+      "answer": "BC",
+      "explanation": "Each axon branch innervates a single muscle fiber; the cleft is 50–100 nm; the muscle membrane carries nicotinic ACh receptors at the crests of the junctional folds.",
+      "page": 20
+    },
+    {
+      "stem": "In a nerve–muscle preparation treated with curare or tetrodotoxin (TTX), stimulation of the motor nerve:",
+      "options": [
+        "Produces a potential that reaches threshold and propagates along the muscle fiber",
+        "Reveals a local depolarization of the end-plate, the end-plate potential (EPP)",
+        "Produces a potential that peaks in about 2 ms and decays exponentially to zero in about 20 ms",
+        "No longer triggers a propagated muscle action potential"
+      ],
+      "answer": "BCD",
+      "explanation": "Normally nerve stimulation always triggers a muscle AP; after curarization or TTX block only the EPP remains: a local phenomenon peaking at 2 ms and back to zero in 20 ms.",
+      "page": 23
+    },
+    {
+      "stem": "Ionic mechanism of the end-plate potential (voltage-clamp experiment):",
+      "options": [
+        "The EPP is due to an entry of Cl⁻",
+        "The resulting potential is an intermediate value around −15 mV",
+        "The EPP is due to a simultaneous increase in Na⁺ and K⁺ conductances",
+        "Membrane resistance increases during the EPP"
+      ],
+      "answer": "BC",
+      "explanation": "During the EPP membrane resistance decreases as permeabilities increase. Na⁺ and K⁺ each tend toward their equilibrium potential, giving an intermediate value around −15 mV.",
+      "page": 25
+    },
+    {
+      "stem": "Miniature end-plate potentials (MEPPs):",
+      "options": [
+        "Have an amplitude of about 0.5 mV",
+        "Result from the release of small amounts (quanta) of acetylcholine",
+        "Are recorded without any nerve stimulation",
+        "Occur at regular intervals"
+      ],
+      "answer": "ABC",
+      "explanation": "MEPPs are small (0.5 mV) spontaneous potentials occurring randomly, not regularly, attributed to the release of quanta of ACh.",
+      "page": 29
+    },
+    {
+      "stem": "Synthesis of acetylcholine:",
+      "options": [
+        "Uses acetyl-coenzyme A and choline",
+        "Takes place in the synaptic cleft",
+        "Is catalyzed by choline acetyltransferase (CAT)",
+        "Takes place in the cytosol of the presynaptic nerve ending"
+      ],
+      "answer": "ACD",
+      "explanation": "ACh is made in the cytosol of the presynaptic ending from acetyl-CoA (from mitochondrial glucose metabolism) and choline, by choline acetyltransferase; it is then stored in vesicles.",
+      "page": 30
+    },
+    {
+      "stem": "The ion whose entry into the motor nerve terminal triggers acetylcholine exocytosis is:",
+      "options": [
+        "Ca²⁺",
+        "Na⁺",
+        "K⁺",
+        "Cl⁻"
+      ],
+      "answer": "A",
+      "explanation": "The presynaptic AP rapidly opens voltage-gated Ca²⁺ channels; Ca²⁺ entry triggers vesicle fusion and exocytosis.",
+      "page": 32
+    },
+    {
+      "stem": "Molecular mechanism of exocytosis:",
+      "options": [
+        "Synaptotagmin, activated by Ca²⁺, is a protein of the plasma membrane",
+        "The SNARE complex allows docking of the vesicles and fusion of the vesicular and plasma membranes",
+        "Synaptobrevin is a vesicular protein",
+        "Syntaxin and SNAP25 belong to the plasma membrane"
+      ],
+      "answer": "BCD",
+      "explanation": "Synaptotagmin and synaptobrevin are vesicular; syntaxin and SNAP25 are plasma-membrane SNAREs. Together they dock the vesicle and fuse the membranes.",
+      "page": 33
+    },
+    {
+      "stem": "The muscle nicotinic acetylcholine receptor:",
+      "options": [
+        "When open, increases the membrane permeability to Na⁺ and K⁺",
+        "Is a glycoprotein of 5 subunits forming the walls of a central pore",
+        "Contains two α subunits",
+        "Opens as soon as a single molecule of acetylcholine binds"
+      ],
+      "answer": "ABC",
+      "explanation": "The receptor has 5 subunits (2α, β, γ, δ). Binding of two ACh molecules switches it from closed to open, causing a rapid, transient increase in cation (Na⁺, K⁺) permeability.",
+      "page": 37
+    },
+    {
+      "stem": "A patient receives curare during surgery. Curare:",
+      "options": [
+        "Blocks the release of acetylcholine from the nerve ending",
+        "Is a reversible competitive antagonist of acetylcholine at the motor end-plate",
+        "Is an acetylcholine agonist like suxamethonium",
+        "Is a non-depolarizing blocking agent"
+      ],
+      "answer": "BD",
+      "explanation": "Curare acts post-synaptically as a reversible competitive antagonist (non-depolarizing blocker). Suxamethonium is a depolarizing agonist; release is blocked by other agents (Mg²⁺, botulinum toxin…).",
+      "page": 41
+    },
+    {
+      "stem": "Agents that block the release of acetylcholine at the neuromuscular junction:",
+      "options": [
+        "Hemicholinium",
+        "Aminoglycoside antibiotics (streptomycin, neomycin)",
+        "Botulinum toxin",
+        "Mg²⁺"
+      ],
+      "answer": "BCD",
+      "explanation": "Release is blocked by Ca²⁺-entry inhibitors (Mg²⁺, aminoglycosides, Ca²⁺-channel blockers) and neurotoxins (botulinum toxin, β-bungarotoxin). Hemicholinium inhibits ACh synthesis.",
+      "page": 40
+    },
+    {
+      "stem": "Which drug–mechanism pairs are correct?",
+      "options": [
+        "Hemicholinium – inhibition of acetylcholine synthesis",
+        "α-bungarotoxin – irreversible competitive antagonist",
+        "Vesamicol – depolarizing blocking agent",
+        "Suxamethonium – acetylcholine agonist (depolarizing blocker)"
+      ],
+      "answer": "ABD",
+      "explanation": "Hemicholinium and vesamicol inhibit ACh synthesis; α-bungarotoxin is an irreversible competitive antagonist; decamethonium and suxamethonium are depolarizing agonists.",
+      "page": 41
+    },
+    {
+      "stem": "A patient has autoantibodies against the presynaptic calcium channels of the neuromuscular junction:",
+      "options": [
+        "It is a presynaptic disorder",
+        "This is Lambert–Eaton syndrome",
+        "Botulism is also a presynaptic disorder, the toxin blocking acetylcholine release",
+        "This is myasthenia gravis"
+      ],
+      "answer": "ABC",
+      "explanation": "Lambert–Eaton (anti-Ca²⁺ channel antibodies) and botulism are presynaptic disorders. Myasthenia gravis is postsynaptic, with antibodies against ACh receptors.",
+      "page": 42
+    },
+    {
+      "stem": "The excitatory postsynaptic potential (EPSP):",
+      "options": [
+        "Has an amplitude that depends on the amount of neurotransmitter released",
+        "Obeys the all-or-nothing law",
+        "Has no refractory period",
+        "Is a local depolarization of the postsynaptic membrane"
+      ],
+      "answer": "ACD",
+      "explanation": "The EPSP is local, summable, gradable (amplitude depends on the NT amount) and decremental; it does not obey the all-or-nothing law and has no refractory period.",
+      "page": 45
+    },
+    {
+      "stem": "About the ionic mechanisms of postsynaptic potentials:",
+      "options": [
+        "The IPSP can result from an exit of K⁺ from the cell",
+        "The EPSP results from a simultaneous increase in gNa⁺ and gK⁺",
+        "The IPSP results from an entry of Na⁺ into the cell",
+        "The IPSP can result from an entry of Cl⁻ into the cell"
+      ],
+      "answer": "ABD",
+      "explanation": "EPSP: simultaneous increase in gNa⁺ and gK⁺. IPSP: hyperpolarization by Cl⁻ entry and/or K⁺ exit. Na⁺ entry would depolarize.",
+      "page": 48
+    },
+    {
+      "stem": "Binding of GABA to its receptors on a postsynaptic neuron:",
+      "options": [
+        "Depolarizes the postsynaptic membrane",
+        "Produces a hyperpolarization of the postsynaptic membrane",
+        "Produces a potential that is the mirror image of the EPSP",
+        "Opens channels through which Cl⁻ enters the cell"
+      ],
+      "answer": "BCD",
+      "explanation": "GABA is inhibitory: the IPSP is a hyperpolarization, mirror image of the EPSP, here due to Cl⁻ entry through transmitter-gated channels.",
+      "page": 49
+    },
+    {
+      "stem": "About synaptic integration in the postsynaptic neuron:",
+      "options": [
+        "An action potential is triggered when the sum of EPSPs exceeds threshold at the initial segment",
+        "Membrane excitability is maximal at the initial segment",
+        "This is due to the abundance of voltage-dependent Na⁺ channels there",
+        "The initial segment (trigger zone) is where the neuronal action potential is born"
+      ],
+      "answer": "ABCD",
+      "explanation": "All are stated in the course: the trigger zone is rich in voltage-dependent Na⁺ channels, so summed EPSPs that exceed threshold there give rise to an AP.",
+      "page": 51
+    },
+    {
+      "stem": "The figure shows potentials recorded at the end-plate of a muscle fiber after motor-nerve stimulation, in the normal state and after Na⁺ channel blockade.",
+      "options": [
+        "Curve Y is a propagated muscle action potential",
+        "Curves X are end-plate potentials, local depolarizations",
+        "The dashed line corresponds to the resting potential of the muscle fiber",
+        "Curves X were recorded in the normal state, without any blockade"
+      ],
+      "answer": "AB",
+      "explanation": "Normally nerve stimulation always triggers a muscle AP (Y). With Na⁺ channels blocked only the local EPP remains (X). The dashed line is the trigger threshold (≈ −60 mV); rest is ≈ −75 mV.",
+      "page": 24,
+      "image": "s1/lessons/synaptic-transmission-g1.png"
+    },
+    {
+      "stem": "In a neuro-neuronal synapse:",
+      "options": [
+        "Glutamate binding to transmitter-gated channels lets Na⁺ in and produces an EPSP",
+        "Neurotransmitter release requires calcium entry into the presynaptic terminal",
+        "The EPSP is a depolarization of the presynaptic membrane",
+        "The neurotransmitter is always acetylcholine"
+      ],
+      "answer": "AB",
+      "explanation": "The EPSP is a postsynaptic depolarization (e.g. glutamate opening Na⁺-permeable channels). Release depends on presynaptic Ca²⁺ entry. Many mediators exist (glutamate, GABA, dopamine…), not only ACh.",
+      "page": 46
+    }
+  ]
+}
