@@ -4,47 +4,56 @@
   "title": "Anatomical language",
   "pdf": "s1/anatomy/anatomical-language.pdf",
   "exam_questions": [
-    "EMD1 2023-2024 Q1", "EMD1 2023-2024 Q2", "EMD1 2023-2024 Q3", "EMD1 2023-2024 Q5",
-    "EMD1 2024-2025 Q2", "EMD1 2024-2025 Q3", "EMD1 2024-2025 Q4", "EMD1 2024-2025 Q5",
-    "EMD1 2025-2026 Q2", "EMD1 2025-2026 Q3", "EMD1 2025-2026 Q4", "EMD1 2025-2026 Q5"
+    "EMD1 2023-2024 Q1",
+    "EMD1 2023-2024 Q2",
+    "EMD1 2023-2024 Q3",
+    "EMD1 2023-2024 Q5",
+    "EMD1 2024-2025 Q2",
+    "EMD1 2024-2025 Q3",
+    "EMD1 2024-2025 Q4",
+    "EMD1 2024-2025 Q5",
+    "EMD1 2025-2026 Q2",
+    "EMD1 2025-2026 Q3",
+    "EMD1 2025-2026 Q4",
+    "EMD1 2025-2026 Q5"
   ],
   "questions": [
     {
       "stem": "The Nomina Anatomica (NA):",
       "options": [
-        "Was adopted by an international agreement in Paris",
-        "Is written in Latin",
+        "Defines 2 axes and 2 planes of reference",
         "Relates to a well-defined position of the human body",
         "Is a national French nomenclature",
-        "Defines 2 axes and 2 planes of reference"
+        "Was adopted by an international agreement in Paris",
+        "Is written in Latin"
       ],
-      "answer": "ABC",
+      "answer": "BDE",
       "explanation": "The NA is an international Latin nomenclature (adopted in Paris, 1955) referring to the reference anatomical position, with 3 axes, 3 planes and dynamic reference points.",
       "page": 3
     },
     {
       "stem": "In the reference anatomical position, the subject is:",
       "options": [
-        "A living human body, lying supine",
+        "With the legs extended and the feet together on the ground",
         "Upright, with the upper limbs hanging along the trunk",
-        "With the palms facing backward",
         "With the gaze straight and horizontal",
-        "With the legs extended and the feet together on the ground"
+        "With the palms facing backward",
+        "A living human body, lying supine"
       ],
-      "answer": "BDE",
+      "answer": "ABC",
       "explanation": "Reference position: living, upright body, upper limbs hanging along the trunk, palms facing forward, gaze straight and horizontal, legs extended, feet together on the ground.",
       "page": 3
     },
     {
       "stem": "An anatomy drawing shows a subject standing with the palms facing the thighs (thumbs forward). Compared with the reference anatomical position, what is wrong?",
       "options": [
-        "Nothing, palms facing medially is the reference position",
-        "The palms should face forward",
-        "The subject should be lying down",
         "The gaze should be directed upward",
-        "The upper limbs should be raised horizontally"
+        "The upper limbs should be raised horizontally",
+        "The palms should face forward",
+        "Nothing, palms facing medially is the reference position",
+        "The subject should be lying down"
       ],
-      "answer": "B",
+      "answer": "C",
       "explanation": "In the reference position the palms face forward (anteriorly). Palms facing inward is a classic exam distractor.",
       "page": 3
     },
@@ -52,42 +61,47 @@
       "stem": "About the reference axes:",
       "options": [
         "The body axis is a vertical line dropped from the top of the skull (vertex)",
-        "The body axis passes through the centre of gravity, located at the level of the pelvis",
-        "The axis of the hand passes through the 3rd finger",
         "The axis of the foot passes through the 3rd toe",
-        "The axis of the hand is a transverse axis"
+        "The axis of the hand passes through the 3rd finger",
+        "The axis of the hand is a transverse axis",
+        "The body axis passes through the centre of gravity, located at the level of the pelvis"
       ],
-      "answer": "ABC",
+      "answer": "ACE",
       "explanation": "The hand axis is longitudinal through the 3rd finger; the foot axis is longitudinal through the 2nd toe, not the 3rd.",
       "page": 3
     },
     {
       "stem": "Through which digit does the reference axis of the foot pass?",
-      "options": ["The 1st toe", "The 2nd toe", "The 3rd toe", "The 4th toe", "The 5th toe"],
+      "options": [
+        "The 1st toe",
+        "The 2nd toe",
+        "The 3rd toe",
+        "The 4th toe",
+        "The 5th toe"
+      ],
       "answer": "B",
-      "keep_order": true,
       "explanation": "The foot axis is the longitudinal axis passing through the 2nd toe (the hand axis passes through the 3rd finger).",
       "page": 3
     },
     {
       "stem": "The frontal (coronal) plane:",
       "options": [
-        "Is a vertical plane parallel to the forehead",
-        "Divides the body into anterior and posterior parts",
-        "Divides the body into right and left parts",
         "Is parallel to the ground",
-        "Is the plane in which abduction and adduction take place"
+        "Is the plane in which abduction and adduction take place",
+        "Divides the body into anterior and posterior parts",
+        "Is a vertical plane parallel to the forehead",
+        "Divides the body into right and left parts"
       ],
-      "answer": "ABE",
+      "answer": "BCD",
       "explanation": "The frontal plane is vertical, parallel to the forehead, and separates anterior from posterior; abduction/adduction occur in it around a sagittal axis. Right/left = median sagittal plane; parallel to the ground = transverse plane.",
       "page": 3
     },
     {
       "stem": "The median sagittal plane:",
       "options": [
-        "Is vertical and anteroposterior",
-        "Passes through the midline",
         "Divides the body into two symmetrical parts, right and left",
+        "Passes through the midline",
+        "Is vertical and anteroposterior",
         "Divides the body into medial and lateral parts",
         "Is parallel to the ground"
       ],
@@ -97,21 +111,27 @@
     },
     {
       "stem": "The transverse plane is also called:",
-      "options": ["The horizontal plane", "The axial plane", "The coronal plane", "The paramedian plane", "The frontal plane"],
-      "answer": "AB",
+      "options": [
+        "The frontal plane",
+        "The horizontal plane",
+        "The paramedian plane",
+        "The coronal plane",
+        "The axial plane"
+      ],
+      "answer": "BE",
       "explanation": "The transverse plane is the horizontal or axial plane, parallel to the ground, dividing the body into superior (cranial) and inferior (caudal) parts. Coronal = frontal plane.",
       "page": 3
     },
     {
       "stem": "Flexion and extension are performed:",
       "options": [
+        "Around a sagittal axis",
         "Around a transverse axis",
         "In a sagittal plane",
         "Around a vertical axis",
-        "In a frontal plane",
-        "Around a sagittal axis"
+        "In a frontal plane"
       ],
-      "answer": "AB",
+      "answer": "BC",
       "explanation": "Flexion (forward) and extension (backward) occur around a transverse axis in a sagittal plane.",
       "page": 3
     },
@@ -119,12 +139,12 @@
       "stem": "Abduction:",
       "options": [
         "Moves a part of the body away from the median plane",
-        "Brings a part of the body closer to the median plane",
-        "Is performed around a sagittal axis",
         "Is performed in a frontal plane",
-        "Is performed in a transverse plane"
+        "Is performed in a transverse plane",
+        "Is performed around a sagittal axis",
+        "Brings a part of the body closer to the median plane"
       ],
-      "answer": "ACD",
+      "answer": "ABD",
       "explanation": "Abduction moves a segment away from the median plane (adduction brings it closer); both occur around a sagittal axis in a frontal plane.",
       "page": 4
     },
@@ -132,12 +152,12 @@
       "stem": "Lateral (external) rotation is:",
       "options": [
         "A rotary movement from inside to outside",
+        "Performed in a transverse plane",
         "A rotary movement from outside to inside",
         "Performed around a vertical axis",
-        "Performed in a transverse plane",
         "Performed in a sagittal plane"
       ],
-      "answer": "ACD",
+      "answer": "ABD",
       "explanation": "Lateral rotation goes from inside to outside (medial rotation from outside to inside); rotations occur around a vertical axis in a transverse plane.",
       "page": 3
     },
@@ -145,19 +165,25 @@
       "stem": "About location and direction terms:",
       "options": [
         "Medial means near the median sagittal plane",
-        "Proximal means close to the root of the limb",
-        "Ipsilateral means belonging to two different sides",
+        "Internal means close to the surface",
         "Caudal is a synonym of inferior",
-        "Internal means close to the surface"
+        "Ipsilateral means belonging to two different sides",
+        "Proximal means close to the root of the limb"
       ],
-      "answer": "ABD",
+      "answer": "ACE",
       "explanation": "Ipsilateral = same side (contralateral = different sides). Internal = facing the inside of a cavity or organ; close to the surface is superficial.",
       "page": 4
     },
     {
       "stem": "Which of the following terms are synonyms of \"superior\"?",
-      "options": ["Cranial", "Cephalic", "Proximal", "Caudal", "Dorsal"],
-      "answer": "AB",
+      "options": [
+        "Caudal",
+        "Proximal",
+        "Cephalic",
+        "Dorsal",
+        "Cranial"
+      ],
+      "answer": "CE",
       "explanation": "Superior = cranial = cephalic (near the upper end). Caudal = inferior; dorsal = posterior; proximal = close to the root of a limb.",
       "page": 4
     },
@@ -165,52 +191,64 @@
       "stem": "About the levels of structural organization of the human body:",
       "options": [
         "The cell is the basic structural and functional unit",
-        "A tissue is a group of cells playing a homologous role, e.g. bone tissue",
         "An organ brings together different tissues for a specific function, e.g. liver",
         "A system is a set of dissimilar organs participating in the same function",
+        "A tissue is a group of cells playing a homologous role, e.g. bone tissue",
         "An apparatus is a set of structurally comparable organs, e.g. the skeletal system"
       ],
-      "answer": "ABC",
+      "answer": "ABD",
       "explanation": "The definitions are inverted in the last two: a system groups structurally similar organs (skeletal system, CNS), while an apparatus groups dissimilar organs for one function (digestive, circulatory).",
       "page": 4
     },
     {
       "stem": "Which of the following belong to the apparatuses of relational life?",
-      "options": ["The locomotor apparatus", "The nervous apparatus", "The sensory apparatus", "The circulatory apparatus", "The endocrine system"],
-      "answer": "ABC",
+      "options": [
+        "The endocrine system",
+        "The nervous apparatus",
+        "The sensory apparatus",
+        "The circulatory apparatus",
+        "The locomotor apparatus"
+      ],
+      "answer": "BCE",
       "explanation": "Relational life: locomotor (skeletal, articular, muscular systems), nervous and sensory apparatus. Circulatory and endocrine belong to the nutrition apparatuses.",
       "page": 4
     },
     {
       "stem": "The locomotor apparatus includes:",
-      "options": ["The skeletal system", "The articular system", "The muscular system", "The peripheral nervous system", "The sensory organs"],
-      "answer": "ABC",
+      "options": [
+        "The sensory organs",
+        "The skeletal system",
+        "The articular system",
+        "The peripheral nervous system",
+        "The muscular system"
+      ],
+      "answer": "BCE",
       "explanation": "The locomotor apparatus groups the skeletal, articular and muscular systems; the peripheral nervous system belongs to the nervous apparatus.",
       "page": 4
     },
     {
       "stem": "About the topographical organization of the human body:",
       "options": [
-        "The shape of the body is determined by the osteo-cartilaginous skeleton",
-        "The head contains the initial segments of the digestive and respiratory systems",
         "The neck is a passageway for visceral, vascular and nervous elements",
+        "The head contains the initial segments of the digestive and respiratory systems",
+        "The limbs are formed essentially by viscera",
         "The trunk contains the thoracic cavity above and the abdominopelvic cavity below",
-        "The limbs are formed essentially by viscera"
+        "The shape of the body is determined by the osteo-cartilaginous skeleton"
       ],
-      "answer": "ABCD",
+      "answer": "ABDE",
       "explanation": "The limbs are extensions of the trunk formed by bones, joints, muscles, vessels and nerves, not viscera.",
       "page": 5
     },
     {
       "stem": "The image shows three sections of the head (1, 2, 3 from left to right). In which planes were they cut?",
       "options": [
-        "1 is a frontal (coronal) section",
         "2 is a median sagittal section",
-        "3 is a transverse (axial) section",
         "1 is a transverse section",
-        "2 is a frontal section"
+        "1 is a frontal (coronal) section",
+        "2 is a frontal section",
+        "3 is a transverse (axial) section"
       ],
-      "answer": "ABC",
+      "answer": "ACE",
       "explanation": "Section 1 shows both hemispheres from the front (frontal plane), section 2 cuts the head into right/left halves through the midline (median sagittal), and section 3 is parallel to the ground through the eyes (transverse/axial).",
       "page": 23,
       "image": "s1/lessons/anatomical-language-g1.png"
