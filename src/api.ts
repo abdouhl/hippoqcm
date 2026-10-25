@@ -376,11 +376,6 @@ export function refreshSnapshot(): Promise<boolean> {
       if (outbox.some((o) => o.path === "/api/reviews")) return false;
       if ("questions" in data) {
         snapshot = data;
-        const urls = [
-          ...snapshot.questions.flatMap((q) => (q.image ? [`/images/${q.image}`] : [])),
-          ...snapshot.lessons.map((l) => `/lessons/${l.pdf}`),
-        ];
-        navigator.serviceWorker?.ready.then((reg) => reg.active?.postMessage({ type: "cache", urls }));
       } else if (snapshot) {
         const cards = new Map(data.cards.map(({ question_id, ...card }) => [question_id, card]));
         for (const q of snapshot.questions) q.card = cards.get(q.id) ?? null;
@@ -393,6 +388,7 @@ export function refreshSnapshot(): Promise<boolean> {
       syncPrefs(data.prefs);
       await saveSnapshot();
       notify();
+      void cacheFiles();
       return true;
     } catch {
       return false;
@@ -400,6 +396,27 @@ export function refreshSnapshot(): Promise<boolean> {
       refreshing = null;
     }
   })());
+}
+
+// Have the service worker download the images, PDFs and summaries the snapshot refers to. Sent on
+// every pull, not only when questions change, so files added to an unchanged deck get cached too;
+// the worker skips the ones it already has.
+async function cacheFiles() {
+  if (!snapshot) return;
+  const pdfs = snapshot.lessons.map((l) => l.pdf);
+  let summaries: string[] = [];
+  try {
+    const res = await fetch("/summaries/index.json", { signal: AbortSignal.timeout(TIMEOUT_MS) });
+    if (res.ok) summaries = (await res.json()) as string[];
+  } catch {}
+  const urls = [
+    ...snapshot.questions.flatMap((q) => (q.image ? [`/images/${q.image}`] : [])),
+    ...pdfs.map((pdf) => `/lessons/${pdf}`),
+    "/summaries/index.json",
+    ...pdfs.filter((pdf) => summaries.includes(pdf)).map((pdf) => `/summaries/${pdf.replace(/\.pdf$/, ".html")}`),
+  ];
+  const reg = await navigator.serviceWorker?.ready;
+  reg?.active?.postMessage({ type: "cache", urls });
 }
 
 /** Send everything waiting and pull everything new, like Anki's sync button. */
