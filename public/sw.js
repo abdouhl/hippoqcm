@@ -1,7 +1,7 @@
 // Offline support. The app shell and static files are served from cache; /api is left to the
 // page, which falls back to its own offline snapshot (src/api.ts).
 // Bump when files change under the same URL (lesson PDFs are cached for good); see activate.
-const CACHE = "hippoqcm-v3";
+const CACHE = "hippoqcm-v4";
 // Hashed build output, and lesson files that are fetched once and kept.
 const STATIC = /^\/(assets|images|lessons)\/|^\/summaries\/.+\.(jpe?g|png|webp|svg)$|^\/[^/]+\.(svg|png|webmanifest)$/;
 // Summary pages and their index can be rewritten under the same URL: show the cached copy, refresh it.
@@ -27,7 +27,8 @@ self.addEventListener("activate", (event) => {
     (async () => {
       const old = (await caches.keys()).filter((key) => key !== CACHE);
       // Keep the images already downloaded instead of fetching them all again. Lesson PDFs are
-      // fetched anew: v3 replaced the anatomy PDFs (English notes only) under the same URLs.
+      // fetched anew: v3 replaced the anatomy PDFs (English notes only) under the same URLs. v4 drops
+      // the summaries v3 cached as redirected responses, which browsers won't show in a frame.
       if (old.length > 0) {
         const cache = await caches.open(CACHE);
         for (const key of old) {
@@ -78,12 +79,21 @@ async function put(cache, request, res) {
   if (cacheable(res, path)) await cache.put(request, res.clone());
 }
 
+// Cloudflare redirects /x.html to /x. A response that went through a redirect can't answer a
+// navigation (the summary iframe): the browser shows a blank frame. So fetch navigations with
+// redirects followed (a navigation request itself would only get the opaque redirect), and keep a
+// plain copy of the result.
+async function fetchFollowing(request) {
+  const res = await fetch(request.mode === "navigate" ? request.url : request);
+  return res.redirected ? new Response(res.body, { status: res.status, statusText: res.statusText, headers: res.headers }) : res;
+}
+
 // Static files never change under the same URL (built assets are hashed), so cache wins.
 async function cacheFirst(request) {
   const cache = await caches.open(CACHE);
   const hit = await cache.match(request, MATCH);
   if (hit) return hit;
-  const res = await fetch(request);
+  const res = await fetchFollowing(request);
   await put(cache, request, res);
   return res;
 }
@@ -91,7 +101,7 @@ async function cacheFirst(request) {
 async function staleWhileRevalidate(request, event) {
   const cache = await caches.open(CACHE);
   const hit = await cache.match(request, MATCH);
-  const update = fetch(request).then(async (res) => {
+  const update = fetchFollowing(request).then(async (res) => {
     await put(cache, request, res);
     return res;
   });
@@ -131,14 +141,16 @@ self.addEventListener("message", (event) => {
       const cache = await caches.open(CACHE);
       for (const url of event.data.urls) {
         try {
-          if (!(await cache.match(url, MATCH))) await put(cache, url, await fetch(url));
+          if (!(await cache.match(url, MATCH))) await put(cache, url, await fetchFollowing(new Request(url)));
           // A summary page shows figures and a stylesheet of its own.
           const page = url.endsWith(".html") && (await cache.match(url, MATCH));
           if (page) {
             const html = await page.text();
             for (const [, ref] of html.matchAll(/(?:src|href)="([^"#:]+\.(?:css|jpe?g|png|webp|svg))"/g)) {
               const asset = new URL(ref, new URL(url, self.location.origin)).pathname;
-              if (asset.startsWith("/summaries/") && !(await cache.match(asset, MATCH))) await put(cache, asset, await fetch(asset));
+              if (asset.startsWith("/summaries/") && !(await cache.match(asset, MATCH))) {
+                await put(cache, asset, await fetchFollowing(new Request(asset)));
+              }
             }
           }
         } catch {}
