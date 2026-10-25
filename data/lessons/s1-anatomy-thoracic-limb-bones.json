@@ -1,0 +1,328 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "title": "Thoracic limb bones",
+  "pdf": "s1/anatomy/thoracic-limb-bones.pdf",
+  "exam_questions": [
+    "EMD1 2023-2024 Q21",
+    "EMD1 2023-2024 Q22",
+    "EMD1 2023-2024 Q23",
+    "EMD1 2023-2024 Q24",
+    "EMD1 2023-2024 Q30",
+    "EMD1 2024-2025 Q26",
+    "EMD1 2024-2025 Q27",
+    "EMD1 2024-2025 Q28",
+    "EMD1 2024-2025 Q29",
+    "EMD1 2024-2025 Q30",
+    "EMD1 2024-2025 Q31",
+    "EMD1 2024-2025 Q32",
+    "EMD1 2025-2026 Q23",
+    "EMD1 2025-2026 Q24",
+    "EMD1 2025-2026 Q25",
+    "EMD1 2025-2026 Q26",
+    "EMD1 2025-2026 Q27",
+    "EMD1 2025-2026 Q28"
+  ],
+  "questions": [
+    {
+      "stem": "About the skeleton of the thoracic limb:",
+      "options": [
+        "The shoulder girdle is formed by the scapula and the clavicle",
+        "The forearm skeleton is formed by the radius laterally and the ulna medially",
+        "It is attached to the thorax by the shoulder girdle",
+        "The shoulder girdle is formed by the scapula and the humerus",
+        "The humerus alone forms the skeleton of the arm"
+      ],
+      "answer": "ABCE",
+      "explanation": "The shoulder girdle = scapula + clavicle (paired bones); the humerus is the arm skeleton.",
+      "page": 1
+    },
+    {
+      "stem": "The clavicle:",
+      "options": [
+        "Has a deep, non-palpable superior surface",
+        "Is a long bone shaped like an extended \"S\"",
+        "Extends between the scapula and the humerus",
+        "Has a posterior border that is convex in its lateral 1/3",
+        "Has an anterior border that is concave in its medial 2/3"
+      ],
+      "answer": "BD",
+      "explanation": "The anterior border is concave in its lateral 1/3 and convex in its medial 2/3; the posterior border is the reverse (convex lateral 1/3, concave medial 2/3). Also false: \"Extends between the scapula and the humerus\"; \"Has a deep, non-palpable superior surface\".",
+      "page": 1
+    },
+    {
+      "stem": "On the inferior surface of the clavicle, which structure gives attachment to the costoclavicular ligament?",
+      "options": [
+        "The acromial articular surface",
+        "The conoid tubercle",
+        "The groove for the subclavius",
+        "The costal tuberosity",
+        "The trapezoid line"
+      ],
+      "answer": "D",
+      "explanation": "Medially, the costal tuberosity (costoclavicular ligament); in the middle, the subclavius groove; laterally, trapezoid line and conoid tubercle (coracoclavicular ligament: trapezoid and conoid parts).",
+      "page": 1
+    },
+    {
+      "stem": "About the extremities of the clavicle:",
+      "options": [
+        "The sternal end articulates with the first rib only",
+        "The acromial end articulates with the acromion of the scapula",
+        "The acromial end is medial and rounded",
+        "The sternal end articulates with the coracoid process",
+        "The sternal end is medial and rounded"
+      ],
+      "answer": "BE",
+      "explanation": "The sternal end articulates with the sternum and 1st costal cartilage; the coracoid process is linked to the clavicle by ligaments, not a joint surface. Also false: \"The acromial end is medial and rounded\"; \"The sternal end articulates with the first rib only\".",
+      "page": 2
+    },
+    {
+      "stem": "The scapula:",
+      "options": [
+        "Is a flat, triangular, dorsal bone",
+        "Is oriented with its concave surface backward",
+        "Projects between the 1st and the 10th ribs",
+        "Articulates with the humerus and the clavicle",
+        "Projects between the 2nd and the 7th ribs"
+      ],
+      "answer": "ADE",
+      "explanation": "The scapula projects onto the 2nd rib above and the 7th rib below; its concave (costal) surface faces forward.",
+      "page": 2
+    },
+    {
+      "stem": "About the faces of the scapula:",
+      "options": [
+        "The scapular spine extends laterally as the coracoid process",
+        "The anterior surface forms the subscapular fossa for the subscapularis",
+        "The supraspinous fossa gives insertion to the subscapularis",
+        "The posterior surface is divided by the scapular spine into supraspinous and infraspinous fossae",
+        "The infraspinous fossa gives insertion to the infraspinatus, teres minor and teres major"
+      ],
+      "answer": "BDE",
+      "explanation": "The supraspinous fossa receives the supraspinatus; the spine extends laterally as the acromion, which carries the clavicular articular surface.",
+      "page": 2
+    },
+    {
+      "stem": "The scapular notch:",
+      "options": [
+        "Is surmounted by the transverse ligament of the scapula",
+        "Is on the lateral angle",
+        "Gives passage to the suprascapular artery and nerve",
+        "Gives passage to the radial nerve",
+        "Is on the superior (cervical) border"
+      ],
+      "answer": "ACE",
+      "explanation": "The scapular notch belongs to the superior border, not the lateral angle (a classic exam trap).",
+      "page": 2
+    },
+    {
+      "stem": "About the lateral angle of the scapula:",
+      "options": [
+        "The supraglenoid tubercle gives insertion to the long head of triceps",
+        "The neck of the scapula supports the glenoid cavity",
+        "The infraglenoid tubercle gives insertion to the long head of biceps",
+        "The glenoid cavity is oval, notched anteriorly, with the glenoid tubercle at its centre",
+        "The coracoid process gives insertion to the short head of biceps, coracobrachialis and pectoralis minor"
+      ],
+      "answer": "BDE",
+      "explanation": "It is reversed: supraglenoid tubercle = long head of biceps; infraglenoid tubercle = long head of triceps.",
+      "page": 2
+    },
+    {
+      "stem": "About the diaphysis of the humerus:",
+      "options": [
+        "It is cylindrical above and triangular and flattened below",
+        "The radial nerve groove crosses its posterior surface",
+        "The lateral head of triceps inserts below the radial groove",
+        "The crest of the greater tubercle gives insertion to the latissimus dorsi",
+        "The deltoid tuberosity is on its anterolateral surface"
+      ],
+      "answer": "ABE",
+      "explanation": "Lateral head of triceps above the groove, medial head below. The crest of the greater tubercle (anterior border) receives the pectoralis major; latissimus dorsi inserts on the crest of the lesser tubercle.",
+      "page": 3
+    },
+    {
+      "stem": "A fracture of the middle of the humeral shaft causes wrist drop. Which structure on the humerus explains this?",
+      "options": [
+        "The surgical neck",
+        "The groove for the ulnar nerve on the medial epicondyle",
+        "The intertubercular groove",
+        "The radial nerve groove on the posterior surface",
+        "The deltoid tuberosity"
+      ],
+      "answer": "D",
+      "explanation": "The radial nerve runs in the radial nerve groove on the posterior surface of the humeral shaft, so it can be injured in shaft fractures.",
+      "page": 3
+    },
+    {
+      "stem": "About the proximal epiphysis of the humerus:",
+      "options": [
+        "The surgical neck separates the proximal epiphysis from the diaphysis and is vulnerable to fractures",
+        "The anatomical neck separates the proximal epiphysis from the diaphysis",
+        "The lesser tubercle is a large lateral projection",
+        "The humeral head represents 2/3 of a sphere",
+        "The intertubercular groove gives passage to the tendon of the long head of biceps"
+      ],
+      "answer": "AE",
+      "explanation": "The greater tubercle is the large lateral projection; the lesser tubercle is a small anterior projection. Also false: \"The humeral head represents 2/3 of a sphere\"; \"The anatomical neck separates the proximal epiphysis from the diaphysis\".",
+      "page": 3
+    },
+    {
+      "stem": "About the humeral condyle:",
+      "options": [
+        "The capitulum is lateral, rounded and not visible from behind",
+        "The trochlea is medial and articulates with the trochlear notch of the ulna",
+        "The capitulum articulates with the radial head",
+        "The olecranon fossa lies anteriorly above the trochlea",
+        "The trochlea is surmounted by the radial fossa"
+      ],
+      "answer": "ABC",
+      "explanation": "The capitulum is surmounted by the radial fossa; the trochlea by the coronoid fossa (anteriorly) and the olecranon fossa (posteriorly).",
+      "page": 3
+    },
+    {
+      "stem": "The medial epicondyle of the humerus:",
+      "options": [
+        "Gives attachment to the radial collateral ligament",
+        "Is poorly developed",
+        "Is crossed posteriorly by the groove for the ulnar nerve",
+        "Gives attachment to the ulnar collateral ligament of the elbow",
+        "Is very developed and palpable"
+      ],
+      "answer": "CDE",
+      "explanation": "The lateral epicondyle is the poorly developed one, giving attachment to the radial collateral ligament.",
+      "page": 3
+    },
+    {
+      "stem": "About the ulna:",
+      "options": [
+        "It is the medial bone of the forearm",
+        "The coronoid process is horizontal and anterior",
+        "Its medial border is the interosseous border",
+        "The olecranon is horizontal and anterior",
+        "The radial notch is on the medial surface of the coronoid process"
+      ],
+      "answer": "AB",
+      "explanation": "The radial notch of the ulna is on the lateral (outer) side of the coronoid process, articulating with the radial articular circumference. Also false: \"Its medial border is the interosseous border\"; \"The olecranon is horizontal and anterior\".",
+      "page": 4
+    },
+    {
+      "stem": "Which muscle inserts on the ulnar tuberosity?",
+      "options": [
+        "The biceps brachii",
+        "The brachialis",
+        "The triceps brachii",
+        "The brachioradialis",
+        "The coracobrachialis"
+      ],
+      "answer": "B",
+      "explanation": "The ulnar tuberosity, in front of the coronoid process, receives the brachialis. The biceps ends on the radial tuberosity; triceps on the olecranon.",
+      "page": 4
+    },
+    {
+      "stem": "About the distal epiphysis of the ulna:",
+      "options": [
+        "The ulnar head articulates with the radioulnar articular disc",
+        "The ulnar styloid process is a large anterolateral projection",
+        "The ulnar head articulates directly with the lunate",
+        "The ulnar styloid process gives attachment to the radial collateral ligament of the carpus",
+        "The ulnar head articulates with the ulnar notch of the radius"
+      ],
+      "answer": "AE",
+      "explanation": "The ulna does not articulate directly with the carpus: the radioulnar articular disc is interposed. Also false: \"The ulnar styloid process is a large anterolateral projection\"; \"The ulnar styloid process gives attachment to the radial collateral ligament of the carpus\".",
+      "page": 4
+    },
+    {
+      "stem": "About the proximal epiphysis of the radius:",
+      "options": [
+        "The articular circumference articulates with the radial notch of the ulna and the annular ligament",
+        "The fovea articulates with the radial notch of the ulna",
+        "The articular circumference articulates with the capitulum",
+        "The radial articular fovea is superior and concave",
+        "The radial tuberosity receives the termination of the brachialis"
+      ],
+      "answer": "AD",
+      "explanation": "The fovea (cupula) faces the capitulum; the peripheral circumference faces the ulna's radial notch and the annular ligament. Also false: \"The fovea articulates with the radial notch of the ulna\"; \"The radial tuberosity receives the termination of the brachialis\".",
+      "page": 5
+    },
+    {
+      "stem": "About the distal epiphysis of the radius:",
+      "options": [
+        "Its lateral surface extends down as the radial styloid process",
+        "It is a quadrangular pyramid with an inferior base",
+        "Its lateral surface carries the ulnar notch",
+        "Its posterior surface is smooth",
+        "Its anterior surface has two grooves for seven tendons"
+      ],
+      "answer": "AB",
+      "explanation": "It is the posterior surface that is furrowed (2 grooves, 7 tendons); the lateral surface's styloid is bordered by 2 grooves for 3 tendons. Also false: \"Its anterior surface has two grooves for seven tendons\"; \"Its lateral surface carries the ulnar notch\".",
+      "page": 5
+    },
+    {
+      "stem": "Which carpal bones form the proximal row (from lateral to medial)?",
+      "options": [
+        "Scaphoid",
+        "Pisiform",
+        "Trapezium",
+        "Lunate",
+        "Triquetrum"
+      ],
+      "answer": "ABDE",
+      "explanation": "Proximal row: scaphoid, lunate, triquetrum, pisiform. Distal row: trapezium, trapezoid, capitate, hamate.",
+      "page": 5
+    },
+    {
+      "stem": "This palmar view of a right carpus shows the carpal bones numbered 1 to 8. Which identifications are correct?",
+      "options": [
+        "7 is the hamate",
+        "1 is the scaphoid",
+        "4 is the pisiform",
+        "5 is the trapezoid",
+        "2 is the lunate"
+      ],
+      "answer": "BCE",
+      "explanation": "Proximal row lateral→medial: 1 scaphoid, 2 lunate, 3 triquetrum, 4 pisiform. Distal row: 5 trapezium, 6 trapezoid, 7 capitate, 8 hamate.",
+      "page": 120,
+      "image": "s1/lessons/thoracic-limb-bones-g1.png"
+    },
+    {
+      "stem": "The carpal tunnel:",
+      "options": [
+        "Gives passage to muscle tendons",
+        "Is on the posterior face of the carpus",
+        "Gives passage to the radial nerve",
+        "Is formed by the carpal groove completed by the flexor retinaculum",
+        "Gives passage to the median nerve"
+      ],
+      "answer": "ADE",
+      "explanation": "The anterior (palmar) face of the carpus is concave (carpal groove); with the flexor retinaculum it forms the carpal tunnel for the median nerve and tendons.",
+      "page": 5
+    },
+    {
+      "stem": "About the metacarpus and phalanges:",
+      "options": [
+        "There are 5 metacarpals numbered I to V from lateral to medial",
+        "There are 14 phalanges",
+        "The thumb has 2 phalanges",
+        "The thumb has 3 phalanges",
+        "The base is the distal end of a phalanx"
+      ],
+      "answer": "ABC",
+      "explanation": "Each phalanx has a proximal base and a distal head. The thumb has 2 phalanges (P1, P2), the other fingers 3.",
+      "page": 5
+    },
+    {
+      "stem": "Bone age in a child is assessed on:",
+      "options": [
+        "A CT scan of the skull",
+        "An X-ray of the right foot",
+        "An X-ray of the left wrist and hand",
+        "An MRI of the knee",
+        "An X-ray of the right shoulder"
+      ],
+      "answer": "C",
+      "explanation": "Bone age is assessed on an X-ray of the left wrist and hand (ossification of the carpal bones and of the epiphyses of the wrist/hand long bones).",
+      "page": 5
+    }
+  ]
+}

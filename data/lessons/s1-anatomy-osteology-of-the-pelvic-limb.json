@@ -1,0 +1,314 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "title": "Osteology of the pelvic limb",
+  "pdf": "s1/anatomy/osteology-of-the-pelvic-limb.pdf",
+  "exam_questions": [
+    "EMD1 2023-2024 Q9",
+    "EMD1 2023-2024 Q10",
+    "EMD1 2023-2024 Q11",
+    "EMD1 2023-2024 Q12",
+    "EMD1 2023-2024 Q13",
+    "EMD1 2024-2025 Q10",
+    "EMD1 2024-2025 Q11",
+    "EMD1 2024-2025 Q12",
+    "EMD1 2024-2025 Q13",
+    "EMD1 2024-2025 Q14",
+    "EMD1 2024-2025 Q15",
+    "EMD1 2025-2026 Q9",
+    "EMD1 2025-2026 Q10",
+    "EMD1 2025-2026 Q11",
+    "EMD1 2025-2026 Q12",
+    "EMD1 2025-2026 Q13",
+    "EMD1 2025-2026 Q14",
+    "EMD1 2025-2026 Q15"
+  ],
+  "questions": [
+    {
+      "stem": "About the skeletal axes of the pelvic limb:",
+      "options": [
+        "The mechanical axis of the thigh makes an angle of 9° with the vertical",
+        "The anatomical axis of the leg makes an angle of 9° with the vertical",
+        "The angle between the femoral and leg axes is normally about 165°",
+        "The mechanical axis of the thigh runs from the centre of the femoral head to the centre of the knee",
+        "The anatomical axis of the femoral diaphysis makes an angle of 9° with the vertical"
+      ],
+      "answer": "DE",
+      "explanation": "Femoral diaphysis 9°, mechanical thigh axis 3°, leg axis 3°; femur–leg angle 175° = physiological genu valgum. Also false: \"The anatomical axis of the leg makes an angle of 9° with the vertical\"; \"The angle between the femoral and leg axes is normally about 165°\".",
+      "page": 3
+    },
+    {
+      "stem": "A child stands with the knees touching and the ankles apart (legs in X). The angle between the femoral and leg axes is:",
+      "options": [
+        "More open than 175°: pathological genu varum",
+        "More open than 175°: pathological genu valgum",
+        "More closed than 175°: pathological genu valgum",
+        "Exactly 175°: physiological",
+        "More closed than 175°: pathological genu varum"
+      ],
+      "answer": "C",
+      "explanation": "Legs in X = pathological genu valgum (more closed angle); legs in O = genu varum (more open angle).",
+      "page": 3
+    },
+    {
+      "stem": "About the hip bone (os coxae):",
+      "options": [
+        "It connects the spine and the pelvic limb",
+        "It is oriented with the notched border backward and the foramen downward",
+        "It is a flat bone shaped like a two-bladed propeller",
+        "It is a long bone",
+        "It is formed by the ilium, ischium and pubis meeting in the acetabulum in a \"Y\""
+      ],
+      "answer": "ABCE",
+      "explanation": "Orientation: articular cavity outward, foramen downward, notched border backward.",
+      "page": 3
+    },
+    {
+      "stem": "The acetabulum:",
+      "options": [
+        "Its limbus has three notches, the superior one being wide and deep",
+        "Its peripheral part is the semilunar surface covered with hyaline cartilage",
+        "Is a deep spheroid excavation limited by the acetabular limbus",
+        "Its central acetabular fossa is covered with hyaline cartilage",
+        "Is entirely covered with articular cartilage"
+      ],
+      "answer": "BC",
+      "explanation": "Only the crescent-shaped peripheral semilunar surface is articular; the central acetabular fossa is not. Also false: \"Its limbus has three notches, the superior one being wide and deep\"; \"Its central acetabular fossa is covered with hyaline cartilage\".",
+      "page": 4
+    },
+    {
+      "stem": "The obturator foramen:",
+      "options": [
+        "Lies below the acetabulum",
+        "Is limited above by the ischiopubic ramus",
+        "Is triangular and wide in men",
+        "Is closed by two obturator membranes",
+        "Is oval and narrow in women"
+      ],
+      "answer": "AD",
+      "explanation": "Above: cranial branch of the pubis with the obturator groove; below: ischiopubic ramus; in front: body of the pubis; behind: ischial tuberosity. Also false: \"Is triangular and wide in men\"; \"Is oval and narrow in women\".",
+      "page": 4
+    },
+    {
+      "stem": "Which of the following belong to the lateral surface of the hip bone?",
+      "options": [
+        "The acetabulum",
+        "The auricular surface",
+        "The acetabular limbus",
+        "The gluteal surface with its gluteal lines",
+        "The iliac fossa"
+      ],
+      "answer": "ACD",
+      "explanation": "Iliac fossa and auricular surface (articular with the sacrum) belong to the medial surface.",
+      "page": 3
+    },
+    {
+      "stem": "The medial surface of the hip bone:",
+      "options": [
+        "Presents the acetabulum",
+        "Presents the anterior and posterior gluteal lines",
+        "Is crossed by the arcuate line",
+        "Presents the pecten pubis along the upper border of the obturator foramen",
+        "Presents, above the arcuate line, the gluteal surface"
+      ],
+      "answer": "CD",
+      "explanation": "The gluteal lines are on the gluteal surface (lateral face). Also false: \"Presents, above the arcuate line, the gluteal surface\"; \"Presents the acetabulum\".",
+      "page": 4
+    },
+    {
+      "stem": "The iliac crest:",
+      "options": [
+        "Is the superior border of the hip bone",
+        "Is the posterior border of the hip bone",
+        "Is palpable under the skin",
+        "Is a preferred site for bone punctures and bone graft harvesting",
+        "Articulates with the opposite hip bone"
+      ],
+      "answer": "ACD",
+      "explanation": "The inferior border's anterior segment articulates with the opposite hip bone (pubic symphysis).",
+      "page": 4
+    },
+    {
+      "stem": "Which structures belong to the posterior border of the hip bone?",
+      "options": [
+        "The greater sciatic notch",
+        "The anterior inferior iliac spine",
+        "The ischial spine",
+        "The iliopectineal eminence",
+        "The lesser sciatic notch"
+      ],
+      "answer": "ACE",
+      "explanation": "Posterior border: PSIS, small innominate notch, PIIS, greater sciatic notch, ischial spine, lesser sciatic notch, ischial tuberosity. AIIS and iliopectineal eminence are on the anterior border.",
+      "page": 4
+    },
+    {
+      "stem": "Match the angle of the hip bone with its landmark:",
+      "options": [
+        "Anteroinferior angle: ischial spine",
+        "Posterosuperior angle: posterior superior iliac spine",
+        "Anterosuperior angle: anterior superior iliac spine",
+        "Anteroinferior angle: pubic spine",
+        "Posteroinferior angle: ischial tuberosity"
+      ],
+      "answer": "BCDE",
+      "explanation": "The ischial spine is on the posterior border, not an angle.",
+      "page": 4
+    },
+    {
+      "stem": "About the bony pelvis:",
+      "options": [
+        "The superior strait is limited behind by the sacral promontory",
+        "The superior strait is limited in front by the ischial tuberosities",
+        "The superior strait divides it into anterior and posterior pelvis",
+        "The greater pelvis is also called the obstetrical pelvis",
+        "It is formed by the two hip bones, the sacrum and the coccyx"
+      ],
+      "answer": "AE",
+      "explanation": "In front, the superior strait is limited by the (upper border of the) pubic symphysis; laterally by the arcuate lines. Also false: \"The superior strait divides it into anterior and posterior pelvis\"; \"The greater pelvis is also called the obstetrical pelvis\".",
+      "page": 5
+    },
+    {
+      "stem": "About the femoral diaphysis:",
+      "options": [
+        "Its anterior border is the linea aspera",
+        "The linea aspera trifurcates below, delimiting the popliteal surface",
+        "Its posterior border is the linea aspera",
+        "The linea aspera bifurcates above",
+        "Its three surfaces give insertion to the quadriceps"
+      ],
+      "answer": "CE",
+      "explanation": "The linea aspera is the prominent rough posterior border. Also false: \"The linea aspera bifurcates above\"; \"The linea aspera trifurcates below, delimiting the popliteal surface\".",
+      "page": 5
+    },
+    {
+      "stem": "The femoral head:",
+      "options": [
+        "Gives attachment at the fovea to the ligament of the head of the femur",
+        "Articulates with the glenoid cavity",
+        "Represents 1/3 of a sphere",
+        "Is covered with cartilage except at the fovea capitis",
+        "Represents 2/3 of a sphere"
+      ],
+      "answer": "ADE",
+      "explanation": "The femoral head is 2/3 of a sphere (the humeral head is 1/3) and articulates with the acetabulum.",
+      "page": 5
+    },
+    {
+      "stem": "The femoral neck–shaft angle of a patient measures 115°. This is:",
+      "options": [
+        "Normal",
+        "Coxa vara",
+        "Genu valgum",
+        "Coxa valga",
+        "Genu varum"
+      ],
+      "answer": "B",
+      "explanation": "Normal inclination is 125°–130°; a more closed angle is coxa vara, a more open one coxa valga.",
+      "page": 5
+    },
+    {
+      "stem": "About the trochanters of the femur:",
+      "options": [
+        "They are connected posteriorly by the intertrochanteric line",
+        "They are connected anteriorly by the intertrochanteric crest",
+        "The trochanteric fossa is on the medial face of the greater trochanter",
+        "The lesser trochanter is a medial conical projection",
+        "The greater trochanter is a lateral quadrangular projection"
+      ],
+      "answer": "CDE",
+      "explanation": "Anteriorly: intertrochanteric line; posteriorly: intertrochanteric crest.",
+      "page": 6
+    },
+    {
+      "stem": "About the distal epiphysis of the femur:",
+      "options": [
+        "The femoral trochlea articulates with the posterior surface of the patella",
+        "The intercondylar fossa is anterior",
+        "The epicondyles give attachment to the cruciate ligaments",
+        "The intercondylar fossa gives attachment to the collateral ligaments",
+        "The femoral condyles articulate with the tibial plateau and the patella"
+      ],
+      "answer": "AE",
+      "explanation": "The condyles are separated posteriorly by the intercondylar fossa; the trochlea (patellar surface) is anterior. Also false: \"The intercondylar fossa gives attachment to the collateral ligaments\"; \"The epicondyles give attachment to the cruciate ligaments\".",
+      "page": 6
+    },
+    {
+      "stem": "The patella:",
+      "options": [
+        "Its anterior surface articulates with the femoral trochlea",
+        "Its base receives the patellar ligament",
+        "Its apex receives the quadriceps tendon",
+        "Lies in the tendon of the quadriceps femoris",
+        "Is a sesamoid bone, flat and triangular"
+      ],
+      "answer": "DE",
+      "explanation": "The posterior surface is articular with the femoral trochlea; the anterior surface is convex. Also false: \"Its base receives the patellar ligament\"; \"Its apex receives the quadriceps tendon\".",
+      "page": 6
+    },
+    {
+      "stem": "About the tibial diaphysis:",
+      "options": [
+        "Its medial border is the interosseous border",
+        "Its anterior surface is crossed by the soleal line",
+        "Its anterior border is the subcutaneous tibial crest",
+        "Its medial surface gives insertion to the tibialis anterior",
+        "Its lateral surface gives insertion to the tibialis anterior"
+      ],
+      "answer": "CE",
+      "explanation": "The lateral border of the tibia is the interosseous border. Also false: \"Its medial surface gives insertion to the tibialis anterior\"; \"Its anterior surface is crossed by the soleal line\".",
+      "page": 7
+    },
+    {
+      "stem": "Which structure of the tibia gives insertion to the patellar ligament?",
+      "options": [
+        "The medial tibial tuberosity",
+        "The fibular notch",
+        "The intercondylar tubercles",
+        "The anterior tibial tuberosity",
+        "The medial malleolus"
+      ],
+      "answer": "D",
+      "explanation": "The anterior tibial tuberosity on the anterior face of the proximal epiphysis receives the patellar ligament.",
+      "page": 7
+    },
+    {
+      "stem": "About the distal tibia and the fibula:",
+      "options": [
+        "The tibial plafond is formed by the inferior tibial articular surface and the medial malleolar surface",
+        "The fibular notch is on the medial face of the distal tibia",
+        "The head of the fibula articulates with the tibia",
+        "The medial malleolus is longer than the lateral malleolus and descends lower",
+        "The fibula articulates with the femur"
+      ],
+      "answer": "AC",
+      "explanation": "The fibula articulates with the tibia above and the tibia and talus below; it does not reach the femur. Also false: \"The fibular notch is on the medial face of the distal tibia\"; \"The medial malleolus is longer than the lateral malleolus and descends lower\".",
+      "page": 8
+    },
+    {
+      "stem": "About the bones of the foot:",
+      "options": [
+        "The anterior tarsus contains the talus and the calcaneus",
+        "The posterior tarsus is formed by the talus and the calcaneus",
+        "The two tarsal rows are joined by the Lisfranc joint",
+        "The metatarsus is joined to the tarsus by the Lisfranc joint",
+        "The foot has 28 bones"
+      ],
+      "answer": "BD",
+      "explanation": "The two tarsal rows are joined by the Chopart midtarsal joint; Lisfranc is the tarsometatarsal joint. Also false: \"The foot has 28 bones\"; \"The anterior tarsus contains the talus and the calcaneus\".",
+      "page": 8
+    },
+    {
+      "stem": "About the toes and sesamoid bones of the foot:",
+      "options": [
+        "There are 14 phalanges",
+        "Two sesamoid bones are constant, opposite the head of the 1st metatarsal",
+        "Sesamoid bones of the foot are on its dorsal surface",
+        "The hallux has two phalanges",
+        "Metatarsals are numbered I to V from medial to lateral"
+      ],
+      "answer": "ABDE",
+      "explanation": "Sesamoid bones of the foot are always on the plantar surface.",
+      "page": 8
+    }
+  ]
+}

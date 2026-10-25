@@ -1,0 +1,280 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "title": "Skeletal system",
+  "pdf": "s1/anatomy/skeletal-system.pdf",
+  "exam_questions": [
+    "EMD1 2023-2024 Q6",
+    "EMD1 2023-2024 Q7",
+    "EMD1 2023-2024 Q8",
+    "EMD1 2024-2025 Q6",
+    "EMD1 2024-2025 Q7",
+    "EMD1 2024-2025 Q8",
+    "EMD1 2024-2025 Q9",
+    "EMD1 2025-2026 Q6",
+    "EMD1 2025-2026 Q7",
+    "EMD1 2025-2026 Q8"
+  ],
+  "questions": [
+    {
+      "stem": "About the skeletal system:",
+      "options": [
+        "In the adult, most of the skeleton is cartilaginous",
+        "Cartilage produces the blood cells",
+        "In humans it is an endoskeleton with a cartilaginous part and a bony part",
+        "Its study constitutes arthrology",
+        "Bones store mineral salts (calcium)"
+      ],
+      "answer": "CE",
+      "explanation": "Most of the skeleton is cartilaginous in the fetus; in the adult only some cartilaginous structures persist. Also false: \"Its study constitutes arthrology\"; \"Cartilage produces the blood cells\".",
+      "page": 3
+    },
+    {
+      "stem": "Cartilage is a tissue that is:",
+      "options": [
+        "Covered by periosteum on articular surfaces",
+        "Richly vascularized",
+        "Strong but elastic",
+        "Devoid of nerves",
+        "Devoid of blood vessels"
+      ],
+      "answer": "CDE",
+      "explanation": "Cartilage is strong but elastic and devoid of vessels and nerves. The periosteum covers bone except at the articular surfaces.",
+      "page": 3
+    },
+    {
+      "stem": "Which of the following are made of hyaline cartilage?",
+      "options": [
+        "The thyroid and cricoid cartilages of the larynx",
+        "The epiglottis",
+        "The tracheobronchial tree cartilages",
+        "The meniscus of the knee",
+        "Articular cartilage"
+      ],
+      "answer": "ACE",
+      "explanation": "Hyaline (translucent, bluish, vitreous): articular cartilage, thyroid and cricoid cartilages, tracheobronchial tree, nasal cartilages. The meniscus is fibrocartilage; the epiglottis is elastic cartilage.",
+      "page": 3
+    },
+    {
+      "stem": "Which of the following are examples of fibrocartilage?",
+      "options": [
+        "The nasal cartilages",
+        "The meniscus of the knee",
+        "The intervertebral disc",
+        "The auricular cartilage",
+        "The acetabular labrum"
+      ],
+      "answer": "BCE",
+      "explanation": "Fibrocartilage (whitish, resistant, rich in collagen fibres): intervertebral disc, knee meniscus, acetabular labrum. Auricular cartilage is elastic; nasal cartilages are hyaline.",
+      "page": 3
+    },
+    {
+      "stem": "Elastic cartilage:",
+      "options": [
+        "Forms the articular cartilage",
+        "Is bluish and translucent",
+        "Is rich in elastic fibres",
+        "Forms the epiglottis",
+        "Forms the intervertebral disc"
+      ],
+      "answer": "CD",
+      "explanation": "Elastic cartilage is yellowish, rich in elastic fibres: auricle, epiglottis and small laryngeal cartilages. Articular cartilage is hyaline. Also false: \"Is bluish and translucent\"; \"Forms the intervertebral disc\".",
+      "page": 3
+    },
+    {
+      "stem": "A cartilage described as \"whitish, resistant and rich in collagen fibres\" is:",
+      "options": [
+        "Articular cartilage",
+        "The cricoid cartilage",
+        "Hyaline cartilage",
+        "Elastic cartilage",
+        "Fibrocartilage"
+      ],
+      "answer": "E",
+      "explanation": "Whitish + collagen = fibrocartilage. Hyaline is bluish/translucent; elastic is yellowish with elastic fibres.",
+      "page": 3
+    },
+    {
+      "stem": "About the bones of the skeleton:",
+      "options": [
+        "Wormian bones are supernumerary bones of the foot",
+        "Supernumerary bones are found only in the vertebral column",
+        "There are 206 constant bones",
+        "Sesamoid bones are supernumerary bones of the skull",
+        "Their number may vary because of supernumerary bones"
+      ],
+      "answer": "CE",
+      "explanation": "206 bones, with variable supernumerary bones at the extremities (sesamoid) and in the skull (Wormian), not in the spine. Also false: \"Wormian bones are supernumerary bones of the foot\"; \"Sesamoid bones are supernumerary bones of the skull\".",
+      "page": 3
+    },
+    {
+      "stem": "Which of the following belong to the axial skeleton?",
+      "options": [
+        "The bony head",
+        "The scapula",
+        "The rib cage",
+        "The hyoid bone",
+        "The vertebral column"
+      ],
+      "answer": "ACDE",
+      "explanation": "The axial skeleton is the spine, bony head, rib cage and hyoid bone. The scapula belongs to the thoracic limb (appendicular skeleton).",
+      "page": 4
+    },
+    {
+      "stem": "The appendicular skeleton:",
+      "options": [
+        "Is formed by the bones of the thoracic and pelvic limbs",
+        "Is symmetrical",
+        "Includes the sternum",
+        "Includes the hyoid bone",
+        "Attaches to the axial skeleton"
+      ],
+      "answer": "ABE",
+      "explanation": "The appendicular skeleton is symmetrical, attached to the axial skeleton, made of the limb bones. Hyoid and sternum (rib cage) are axial.",
+      "page": 4
+    },
+    {
+      "stem": "About bone classification:",
+      "options": [
+        "The vertebra is a typical short bone",
+        "A long bone has one epiphysis and two diaphyses",
+        "A flat bone has a diaphysis and two epiphyses",
+        "In a long bone, length predominates over width and thickness",
+        "In a short bone the three dimensions are almost equal"
+      ],
+      "answer": "DE",
+      "explanation": "The vertebra is an irregular bone, which escapes the three classic types. Short bones are e.g. carpal and tarsal bones. Also false: \"A long bone has one epiphysis and two diaphyses\"; \"A flat bone has a diaphysis and two epiphyses\".",
+      "page": 4
+    },
+    {
+      "stem": "Match the bone with its type:",
+      "options": [
+        "The scapula is a flat bone",
+        "The carpal bones are short bones",
+        "The tarsal bones are long bones",
+        "The vertebra is a flat bone",
+        "The femur is a long bone"
+      ],
+      "answer": "ABE",
+      "explanation": "Femur = long, scapula = flat, carpal/tarsal bones = short, vertebra = irregular.",
+      "page": 4
+    },
+    {
+      "stem": "Which of the following are non-articular eminences?",
+      "options": [
+        "A tubercle",
+        "A fossa",
+        "A tuberosity",
+        "A notch (incisure)",
+        "A spine"
+      ],
+      "answer": "ACE",
+      "explanation": "Non-articular eminences: process, tuberosity, tubercle, spine, crest. Notch and fossa are non-articular cavities.",
+      "page": 4
+    },
+    {
+      "stem": "Match the bony relief with its example given in the course:",
+      "options": [
+        "Crest (linear eminence): the iliac crest",
+        "Articular eminence: the olecranon fossa",
+        "Spine (acute eminence): the sciatic spine",
+        "Process: the coracoid process",
+        "Tubercle: the obturator foramen"
+      ],
+      "answer": "ACD",
+      "explanation": "The obturator foramen is a foramen (non-articular cavity) and the olecranon fossa is a fossa (non-articular cavity). An articular eminence is a head, e.g. humeral head; tubercle example: infraglenoid tubercle.",
+      "page": 4
+    },
+    {
+      "stem": "Non-articular cavities of bone:",
+      "options": [
+        "Include the crest, e.g. the iliac crest",
+        "Serve for the passage or attachment of an anatomical element",
+        "Include the process, e.g. the coracoid process",
+        "Include the trochlear notch of the ulna",
+        "Include the foramen, an opening in the bone"
+      ],
+      "answer": "BE",
+      "explanation": "The trochlear notch of the ulna is an articular cavity (it receives an articular eminence). Also false: \"Include the crest, e.g. the iliac crest\"; \"Include the process, e.g. the coracoid process\".",
+      "page": 4
+    },
+    {
+      "stem": "Bone (osseous tissue) is:",
+      "options": [
+        "Poorly vascularized",
+        "A specialized, dense and strong connective tissue",
+        "Formed by 3 types of bone cells in a calcified matrix",
+        "Constantly remodelled",
+        "Rich in calcium phosphate and carbonate"
+      ],
+      "answer": "BCDE",
+      "explanation": "Bone is richly vascularized, not poorly.",
+      "page": 5
+    },
+    {
+      "stem": "Compact bone:",
+      "options": [
+        "Forms the diaphysis of long bones and delimits the medullary canal",
+        "Contains interstitial lamellae between the osteons",
+        "Is made of osteons",
+        "Is made of bony trabeculae",
+        "Contains the red bone marrow of the epiphyses"
+      ],
+      "answer": "ABC",
+      "explanation": "Compact bone = osteons + interstitial lamellae, diaphyseal, bordering the medullary canal (yellow marrow). Trabeculae and red marrow belong to epiphyseal spongy bone.",
+      "page": 5
+    },
+    {
+      "stem": "About spongy bone and the diploe:",
+      "options": [
+        "In the skull vault, spongy bone is called the diploe",
+        "In short bones, spongy bone surrounds compact bone",
+        "The diploe is surrounded by layers of periosteum only",
+        "Spongy bone forms the diaphysis of long bones",
+        "Spongy bone is made of trabeculae delimiting small cavities"
+      ],
+      "answer": "AE",
+      "explanation": "In short and flat bones compact bone surrounds the spongy bone, not the reverse. Also false: \"Spongy bone forms the diaphysis of long bones\"; \"The diploe is surrounded by layers of periosteum only\".",
+      "page": 5
+    },
+    {
+      "stem": "The periosteum:",
+      "options": [
+        "Covers the bone except at the articular surfaces",
+        "Is a whitish fibrous membrane",
+        "Covers the articular cartilage",
+        "Is responsible for growth in length",
+        "Is responsible for growth in width"
+      ],
+      "answer": "ABE",
+      "explanation": "Growth in length depends on the growth plate (epiphyseal/conjugation cartilage) at the diaphyseal-epiphyseal junction; the periosteum does growth in width and does not cover articular surfaces.",
+      "page": 5
+    },
+    {
+      "stem": "A child's femur grows in length thanks to:",
+      "options": [
+        "The medullary canal",
+        "The articular cartilage",
+        "The periosteum",
+        "The compact bone of the diaphysis",
+        "The growth plate (epiphyseal cartilage) at the diaphyseal-epiphyseal junction"
+      ],
+      "answer": "E",
+      "explanation": "Length growth = growth (conjugation) plate at the diaphyseal-epiphyseal junction; width growth = periosteum.",
+      "page": 5
+    },
+    {
+      "stem": "About ossification and radiological exploration of the skeleton:",
+      "options": [
+        "Standard radiography explores mainly traumatic pathology (fractures)",
+        "There are two types: membranous and endochondral ossification",
+        "Ossification is preceded by a calcified bony matrix",
+        "Standard radiography is the examination of choice for tumoral pathology",
+        "Ossification begins at birth"
+      ],
+      "answer": "AB",
+      "explanation": "Ossification is preceded by a cartilaginous or membranous matrix replaced by bone, hence the two ossification types. Also false: \"Ossification begins at birth\"; \"Standard radiography is the examination of choice for tumoral pathology\".",
+      "page": 5
+    }
+  ]
+}
