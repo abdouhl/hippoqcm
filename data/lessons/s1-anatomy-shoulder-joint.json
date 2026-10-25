@@ -1,0 +1,224 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "title": "Shoulder joint",
+  "pdf": "s1/anatomy/shoulder-joint.pdf",
+  "exam_questions": [
+    "EMD1 2023-2024 Q25",
+    "EMD1 2023-2024 Q26",
+    "EMD1 2023-2024 Q27",
+    "EMD1 2024-2025 Q19",
+    "EMD1 2025-2026 Q39",
+    "EMD1 2025-2026 Q40"
+  ],
+  "questions": [
+    {
+      "stem": "The shoulder joint complex consists of:",
+      "options": [
+        "Two true joints and three sliding spaces",
+        "Three true joints: scapulohumeral, sternocostoclavicular, acromioclavicular",
+        "Two sliding spaces: the subacromiodeltoid serous bursa and the scapulothoracic joint",
+        "Five true joints",
+        "Only the scapulohumeral joint"
+      ],
+      "answer": "BC",
+      "explanation": "5 synergistic joints: 3 true joints (scapulohumeral, sternocostoclavicular, acromioclavicular) and 2 sliding spaces (subdeltoid bursa, scapulothoracic).",
+      "page": 2
+    },
+    {
+      "stem": "The sternocostoclavicular joint:",
+      "options": [
+        "Is a saddle synovial joint",
+        "Has no articular disc",
+        "Unites the medial end of the clavicle with the manubrium and the first costal cartilage",
+        "Is a plane joint (arthrodia)",
+        "Allows wide rotational movements"
+      ],
+      "answer": "AC",
+      "explanation": "It is a saddle joint with a disc; the arthrodia of the shoulder complex is the acromioclavicular joint. Also false: \"Has no articular disc\"; \"Allows wide rotational movements\".",
+      "page": 7
+    },
+    {
+      "stem": "The acromioclavicular joint:",
+      "options": [
+        "Is a saddle joint with a disc",
+        "Allows wide circumduction movements",
+        "Is held by the coracohumeral ligament",
+        "Is a plane joint (arthrodia)",
+        "Unites the lateral end of the clavicle with the acromion"
+      ],
+      "answer": "DE",
+      "explanation": "Saddle joint with a disc = sternocostoclavicular joint. Also false: \"Is held by the coracohumeral ligament\"; \"Allows wide circumduction movements\".",
+      "page": 9
+    },
+    {
+      "stem": "The scapulothoracic joint:",
+      "options": [
+        "Is a false joint",
+        "Is a true synovial joint",
+        "Is a sliding space between the rib cage and the anterior surface of the scapula",
+        "Is formed between the acromion and the humeral head",
+        "Is a saddle joint"
+      ],
+      "answer": "AC",
+      "explanation": "It is a false joint: a gliding space between the thoracic wall and the scapula.",
+      "page": 9
+    },
+    {
+      "stem": "The scapulohumeral joint:",
+      "options": [
+        "Is very stable",
+        "Is extremely fragile",
+        "Is the proximal joint of the thoracic limb",
+        "Is very mobile",
+        "Is a spheroid synovial joint (enarthrosis)"
+      ],
+      "answer": "BCDE",
+      "explanation": "The scapulohumeral joint is very mobile but fragile (unstable).",
+      "page": 10
+    },
+    {
+      "stem": "About the articular surfaces of the scapulohumeral joint:",
+      "options": [
+        "The humeral head represents 1/3 of a sphere",
+        "The humeral head represents 2/3 of a sphere",
+        "The glenoid cavity has the glenoid notch on its anterior border",
+        "The glenoid cavity is spherical and deep",
+        "The glenoid cavity is oval and surrounded by the glenoid labrum"
+      ],
+      "answer": "ACE",
+      "explanation": "The humeral head is 1/3 of a sphere (the femoral head is 2/3). The glenoid is oval and shallow, deepened by the labrum.",
+      "page": 10
+    },
+    {
+      "stem": "The glenoid labrum:",
+      "options": [
+        "Its internal face is free and articular",
+        "Is a fibrocartilaginous ring on the rim of the glenoid cavity",
+        "Its peripheral face is covered with articular cartilage",
+        "Increases the depth of the glenoid cavity",
+        "Is round in section, with two faces"
+      ],
+      "answer": "BD",
+      "explanation": "The peripheral face extends the surface of the scapular neck; it is the external face that is articular and part of the glenoid surface. Also false: \"Is round in section, with two faces\"; \"Its internal face is free and articular\".",
+      "page": 54
+    },
+    {
+      "stem": "The capsule of the scapulohumeral joint:",
+      "options": [
+        "Is a thin fibrous sleeve",
+        "Inserts on the coracoid process",
+        "Inserts on the anatomical and surgical necks of the humerus",
+        "Inserts on the peripheral face of the glenoid labrum",
+        "Is thick and very strong"
+      ],
+      "answer": "ACD",
+      "explanation": "The capsule is thin, which is part of the joint's fragility.",
+      "page": 11
+    },
+    {
+      "stem": "The coracohumeral ligament:",
+      "options": [
+        "Ends by two bundles on the greater and lesser tubercles",
+        "Ends by a single bundle on the surgical neck",
+        "Arises from the acromion",
+        "Is the strongest ligament of the scapulohumeral joint",
+        "Arises from the lateral border of the coracoid process"
+      ],
+      "answer": "ADE",
+      "explanation": "Coracohumeral ligament: lateral border of the coracoid → greater tubercle (trochiter) and lesser tubercle (trochin).",
+      "page": 12
+    },
+    {
+      "stem": "About the glenohumeral ligaments:",
+      "options": [
+        "The superior one ends below the surgical neck",
+        "The middle one ends on the lower part of the lesser tubercle",
+        "The inferior one ends on the upper part of the lesser tubercle",
+        "The foramen of Weitbrecht lies between the superior and middle ligaments",
+        "The foramen of Rouvière lies between the superior and middle ligaments"
+      ],
+      "answer": "BD",
+      "explanation": "Foramen of Rouvière is between the middle and inferior glenohumeral ligaments; both foramina are zones of capsular weakness. Also false: \"The superior one ends below the surgical neck\"; \"The inferior one ends on the upper part of the lesser tubercle\".",
+      "page": 12
+    },
+    {
+      "stem": "The weak zone of the shoulder capsule located between the middle and inferior glenohumeral ligaments is:",
+      "options": [
+        "The foramen ovale of Weitbrecht",
+        "The foramen of Rouvière",
+        "The glenoid notch",
+        "The scapular notch",
+        "The bicipital groove"
+      ],
+      "answer": "B",
+      "explanation": "Weitbrecht: between superior and middle; Rouvière: between middle and inferior.",
+      "page": 13
+    },
+    {
+      "stem": "Match the periarticular muscle (active ligament) of the scapulohumeral joint with its position:",
+      "options": [
+        "Subscapularis: above",
+        "Subscapularis: in front",
+        "Supraspinatus: above",
+        "Infraspinatus, teres minor and teres major: behind",
+        "Supraspinatus: behind"
+      ],
+      "answer": "BCD",
+      "explanation": "Supraspinatus above, infraspinatus/teres minor/teres major behind, subscapularis in front; plus long head of biceps, deltoid, triceps.",
+      "page": 14
+    },
+    {
+      "stem": "Which are periarticular serous bursae of the shoulder?",
+      "options": [
+        "The subdeltoid bursa",
+        "The subcoracoid bursa",
+        "The subscapular bursa",
+        "The bicipital bursa",
+        "The infraspinatus bursa"
+      ],
+      "answer": "ABCDE",
+      "explanation": "All five are listed: subscapular, bicipital, subdeltoid, subcoracoid and infraspinatus bursae; they facilitate gliding.",
+      "page": 15
+    },
+    {
+      "stem": "About movements of the scapulohumeral joint:",
+      "options": [
+        "It has 3 degrees of freedom",
+        "Pure adduction is possible on its own",
+        "Flexion (antepulsion) occurs in the sagittal plane around a transverse axis",
+        "Abduction reaches 180° without the scapulothoracic joint",
+        "Extension (retropulsion) reaches 90°"
+      ],
+      "answer": "AC",
+      "explanation": "Pure adduction is not possible; combined with ante- or retropulsion it reaches 40°. Also false: \"Abduction reaches 180° without the scapulothoracic joint\"; \"Extension (retropulsion) reaches 90°\".",
+      "page": 16
+    },
+    {
+      "stem": "With participation of the scapulothoracic joint, shoulder abduction can reach:",
+      "options": [
+        "40°",
+        "120°",
+        "30°",
+        "180°",
+        "90°"
+      ],
+      "answer": "D",
+      "explanation": "Abduction is 90° at the scapulohumeral joint alone and up to 180° with the scapulothoracic joint (same for flexion).",
+      "page": 74
+    },
+    {
+      "stem": "About shoulder rotations (forearm flexed at 90°):",
+      "options": [
+        "Rotations occur in the frontal plane",
+        "They occur in the transverse plane around a vertical axis",
+        "Medial rotation is limited to 80°, completed to 90° by an anterior tilt of the scapula",
+        "Lateral rotation is limited to 80°",
+        "Lateral rotation is limited to 30°"
+      ],
+      "answer": "BCE",
+      "explanation": "Lateral rotation 30°, medial rotation 80° (90° with scapular tilt), in the transverse plane.",
+      "page": 16
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "title": "Hip joint",
+  "pdf": "s1/anatomy/hip-joint.pdf",
+  "exam_questions": [
+    "EMD1 2023-2024 Q36",
+    "EMD1 2023-2024 Q37",
+    "EMD1 2023-2024 Q38",
+    "EMD1 2025-2026 Q16"
+  ],
+  "questions": [
+    {
+      "stem": "The hip (coxofemoral) joint:",
+      "options": [
+        "Is the single joint connecting the lower limb to the trunk",
+        "Is frequently dislocated because of its instability",
+        "Is a trochlear joint with one axis of movement",
+        "Is deep, weight-bearing, mobile and highly congruent",
+        "Is a ball-and-socket (spheroid) joint"
+      ],
+      "answer": "ADE",
+      "explanation": "The hip is a spheroid joint with three axes; it is very stable, so dislocations are rare.",
+      "page": 3
+    },
+    {
+      "stem": "About the acetabulum as an articular surface of the hip:",
+      "options": [
+        "It is entirely articular",
+        "It is bordered by the acetabular limbus",
+        "Its peripheral semilunar surface is articular and crescent-shaped",
+        "It is located on the medial surface of the hip bone",
+        "Its central acetabular fossa is non-articular"
+      ],
+      "answer": "BCE",
+      "explanation": "Only the semilunar surface is articular; the acetabulum is on the lateral surface of the hip bone.",
+      "page": 3
+    },
+    {
+      "stem": "The acetabular labrum:",
+      "options": [
+        "Is a fibrocartilaginous ring attached to the perimeter of the acetabulum",
+        "Increases the depth and extent of the acetabulum",
+        "Makes the acetabulum shallower",
+        "Is made of hyaline cartilage",
+        "Bridges the ischiopubic notch, forming the ligament of the head of the femur"
+      ],
+      "answer": "AB",
+      "explanation": "The labrum is fibrocartilage, not hyaline cartilage. Also false: \"Bridges the ischiopubic notch, forming the ligament of the head of the femur\"; \"Makes the acetabulum shallower\".",
+      "page": 3
+    },
+    {
+      "stem": "The capsule of the hip joint inserts:",
+      "options": [
+        "On the acetabular limbus and labrum",
+        "On the intertrochanteric line and femoral neck",
+        "On the ischial tuberosity",
+        "On the greater trochanter's tip",
+        "On the fovea capitis"
+      ],
+      "answer": "AB",
+      "explanation": "Iliac insertion: limbus and labrum; femoral insertion: intertrochanteric line and femoral neck.",
+      "page": 3
+    },
+    {
+      "stem": "The iliofemoral ligament:",
+      "options": [
+        "Extends between the acetabulum and the intertrochanteric line",
+        "Extends between the ischium and the femoral neck",
+        "Is anterior, triangular and strong",
+        "Reinforces the posterior part of the capsule",
+        "Has two bundles, superior and inferior"
+      ],
+      "answer": "ACE",
+      "explanation": "The posterior reinforcement from ischium to femoral neck is the ischiofemoral ligament.",
+      "page": 3
+    },
+    {
+      "stem": "Which ligament of the hip extends between the iliopectineal eminence and the pretrochanteric depression, reinforcing the anteroinferior capsule?",
+      "options": [
+        "The transverse acetabular ligament",
+        "The pubofemoral ligament",
+        "The iliofemoral ligament",
+        "The ischiofemoral ligament",
+        "The ligament of the femoral head"
+      ],
+      "answer": "B",
+      "explanation": "Pubofemoral: iliopectineal eminence → pretrochanteric depression (anteroinferior). Ischiofemoral: posterior; iliofemoral: anterior.",
+      "page": 4
+    },
+    {
+      "stem": "The ligament of the head of the femur (round ligament):",
+      "options": [
+        "Ends by three bundles: anterior horn of the semilunar surface, transverse ligament, ischium",
+        "Is intra-synovial and reinforces the capsule",
+        "Is extra-articular",
+        "Contains an artery supplying the femoral head",
+        "Arises from the acetabular fossa and ends on the greater trochanter"
+      ],
+      "answer": "AD",
+      "explanation": "It has its own synovium, independent of the joint synovium, so it is extra-synovial; it does not reinforce the capsule. Also false: \"Is extra-articular\"; \"Arises from the acetabular fossa and ends on the greater trochanter\".",
+      "page": 4
+    },
+    {
+      "stem": "After a posterior hip dislocation, the round ligament is torn. What complication can this cause?",
+      "options": [
+        "Rupture of the iliopsoas",
+        "Necrosis of the acetabular labrum",
+        "Paralysis of the gluteus maximus",
+        "Fracture of the iliac crest",
+        "Necrosis of the femoral head"
+      ],
+      "answer": "E",
+      "explanation": "The round ligament carries an artery to the femoral head; its rupture in dislocation risks necrosis of the head.",
+      "page": 58
+    },
+    {
+      "stem": "Match the periarticular muscle group of the hip with its position:",
+      "options": [
+        "Lateral: tensor fasciae latae, gluteus medius, gluteus minimus",
+        "Posterior: gluteus maximus, pelvi-trochanteric muscles, hamstrings",
+        "Anterior: gluteus maximus",
+        "Anterior: iliopsoas, rectus femoris, sartorius",
+        "Medial: pectineus, adductor longus, adductor magnus"
+      ],
+      "answer": "ABDE",
+      "explanation": "Gluteus maximus belongs to the posterior group.",
+      "page": 4
+    },
+    {
+      "stem": "About the synovium of the hip:",
+      "options": [
+        "The round ligament's synovium attaches around the fovea capitis and acetabular fossa",
+        "The round ligament's synovium is continuous with the joint synovium",
+        "The ligament of the femoral head has its own synovium",
+        "It covers the articular cartilage of the femoral head",
+        "It lines the deep surface of the capsule"
+      ],
+      "answer": "ACE",
+      "explanation": "The synovium of the round ligament is separate and independent from the articular synovium.",
+      "page": 4
+    },
+    {
+      "stem": "About hip flexion and extension:",
+      "options": [
+        "Flexion reaches 90° with the knee bent",
+        "Extension reaches 30° with the knee extended",
+        "Extension reaches 20° with the knee extended",
+        "Flexion reaches 120° with the knee extended",
+        "They occur around a transverse axis through the centre of the femoral head"
+      ],
+      "answer": "CE",
+      "explanation": "Flexion: 120° knee bent, 90° knee extended. Extension: 10° knee bent, 20° knee extended. Also false: \"Flexion reaches 90° with the knee bent\"; \"Extension reaches 30° with the knee extended\".",
+      "page": 5
+    },
+    {
+      "stem": "What is the range of hip extension with the knee bent?",
+      "options": [
+        "10°",
+        "20°",
+        "30°",
+        "90°",
+        "120°"
+      ],
+      "answer": "A",
+      "explanation": "Extension is 10° with the knee bent and 20° with the knee extended.",
+      "page": 5
+    },
+    {
+      "stem": "About hip abduction and adduction:",
+      "options": [
+        "Forced abduction can reach 45° to 60° (gymnastics)",
+        "They occur around an anteroposterior axis through the centre of the femoral head",
+        "Abduction occurs around a vertical axis",
+        "Adduction reaches 60°",
+        "Usual abduction is 60°"
+      ],
+      "answer": "AB",
+      "explanation": "Rotations occur around the vertical axis; abduction/adduction around the anteroposterior (sagittal) axis. Also false: \"Usual abduction is 60°\"; \"Adduction reaches 60°\".",
+      "page": 5
+    },
+    {
+      "stem": "About hip rotations:",
+      "options": [
+        "Circumduction results from the succession of the four other movements",
+        "Medial rotation has a larger range than lateral rotation",
+        "They occur around a vertical axis through the centre of the femoral head",
+        "They occur around a transverse axis",
+        "Lateral rotation has a larger range than medial rotation"
+      ],
+      "answer": "ACE",
+      "explanation": "Lateral rotation (up to 60°) exceeds medial rotation (30°–45°); both occur around the vertical axis.",
+      "page": 5
+    },
+    {
+      "stem": "Congenital hip dislocation:",
+      "options": [
+        "Is screened with the Ortolani manoeuvre",
+        "Is treated by swaddling the baby with the hips in forced abduction",
+        "Is treated by swaddling with the hips in forced adduction",
+        "Is detected at birth",
+        "Is screened by measuring the neck–shaft angle"
+      ],
+      "answer": "ABD",
+      "explanation": "Ortolani manoeuvre looks for instability; treatment = swaddling in forced abduction.",
+      "page": 5
+    },
+    {
+      "stem": "Which pathologies of the hip are mentioned in the course?",
+      "options": [
+        "Coxarthrosis (osteoarthritis of the hip)",
+        "Arthritis (serious inflammation or infection)",
+        "Carpal tunnel syndrome",
+        "Frequent traumatic dislocations because of instability",
+        "Fractures of the femoral neck or acetabulum"
+      ],
+      "answer": "ABE",
+      "explanation": "Dislocations are rare because the hip is very stable.",
+      "page": 5
+    }
+  ]
+}

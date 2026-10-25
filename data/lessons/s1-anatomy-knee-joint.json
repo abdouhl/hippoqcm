@@ -1,0 +1,250 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "title": "Knee joint",
+  "pdf": "s1/anatomy/knee-joint.pdf",
+  "exam_questions": [
+    "EMD1 2023-2024 Q15",
+    "EMD1 2023-2024 Q16",
+    "EMD1 2023-2024 Q17",
+    "EMD1 2025-2026 Q17",
+    "EMD1 2025-2026 Q18",
+    "EMD1 2025-2026 Q19"
+  ],
+  "questions": [
+    {
+      "stem": "About the knee joint:",
+      "options": [
+        "It combines the patellofemoral and the femorotibial joints in the same capsule",
+        "The femorotibial joint is a ginglymus",
+        "It is a large, superficial, weight-bearing joint",
+        "The patellofemoral joint is bicondylar",
+        "It includes the proximal tibiofibular joint in its capsule"
+      ],
+      "answer": "AC",
+      "explanation": "The knee = patellofemoral (ginglymus) + bicondylar femorotibial joint in one capsule. The tibiofibular joint is not part of it. Also false: \"The patellofemoral joint is bicondylar\"; \"The femorotibial joint is a ginglymus\".",
+      "page": 3
+    },
+    {
+      "stem": "The patellar surface of the femur:",
+      "options": [
+        "Has a medial slope more extensive than the lateral slope",
+        "Has a lateral slope more extensive than the medial slope",
+        "Articulates with the tibial plateau",
+        "Is on the anterior face of the distal femoral epiphysis",
+        "Articulates with the posterior face of the patella"
+      ],
+      "answer": "BDE",
+      "explanation": "Its lateral slope is the more extensive one; the tibial plateau faces the condyles and menisci.",
+      "page": 3
+    },
+    {
+      "stem": "The posterior surface of the patella:",
+      "options": [
+        "Is entirely articular",
+        "Is articular in its upper 2/3",
+        "Corresponds to the patellar surface of the femur",
+        "Receives the patellar ligament",
+        "Articulates with the tibial plateau"
+      ],
+      "answer": "BC",
+      "explanation": "Only its upper 2/3 is articular; the patellar ligament attaches to the apex.",
+      "page": 3
+    },
+    {
+      "stem": "The menisci of the knee:",
+      "options": [
+        "Are interposed between the femoral condyles and the superior tibial articular surfaces",
+        "Are made of hyaline cartilage",
+        "Are intra-articular, semilunar fibrocartilages",
+        "The medial meniscus is \"O\"-shaped",
+        "Decrease the concavity of the tibial glenoids"
+      ],
+      "answer": "AC",
+      "explanation": "Medial = C-shaped, lateral = O-shaped. Also false: \"Decrease the concavity of the tibial glenoids\"; \"Are made of hyaline cartilage\".",
+      "page": 3
+    },
+    {
+      "stem": "The capsule of the knee:",
+      "options": [
+        "Thickens anteriorly to form the condylar shells",
+        "Has an anterior window for the patella",
+        "Adheres laterally to the cruciate ligaments",
+        "Is cylindrical and inserts close to the articular cartilage",
+        "Has a posterior window for the patella"
+      ],
+      "answer": "BD",
+      "explanation": "The patellar window is anterior; posteriorly the capsule forms the condylar shells. Also false: \"Adheres laterally to the cruciate ligaments\"; \"Thickens anteriorly to form the condylar shells\".",
+      "page": 4
+    },
+    {
+      "stem": "The fabella is:",
+      "options": [
+        "An inconstant sesamoid bone in the lateral condylar shell",
+        "A meniscus",
+        "Another name for the patella",
+        "A tibial spine",
+        "A constant bone in the medial condylar shell"
+      ],
+      "answer": "A",
+      "explanation": "The lateral condylar shell contains an inconstant sesamoid bone, the fabella.",
+      "page": 4
+    },
+    {
+      "stem": "About the collateral ligaments of the knee:",
+      "options": [
+        "Their injury gives abnormal medial or lateral gapping (laxity)",
+        "The tibial collateral ligament is epiphyseal–epiphyseal",
+        "The fibular collateral ligament is epiphyseal–diaphyseal",
+        "They ensure the lateral (collateral) stability of the knee",
+        "Their injury gives a drawer sign"
+      ],
+      "answer": "AD",
+      "explanation": "The drawer sign is due to cruciate ligament injury (central pivot). Also false: \"The tibial collateral ligament is epiphyseal–epiphyseal\"; \"The fibular collateral ligament is epiphyseal–diaphyseal\".",
+      "page": 4
+    },
+    {
+      "stem": "A footballer's knee shows an abnormal forward sliding of the tibia under the femur on examination (anterior drawer). Which structure is injured?",
+      "options": [
+        "The tibial collateral ligament",
+        "The patellar ligament",
+        "The arcuate ligament",
+        "The fibular collateral ligament",
+        "The anterior cruciate ligament"
+      ],
+      "answer": "E",
+      "explanation": "The central pivot (cruciate ligaments) ensures anteroposterior stability; ACL rupture gives anterior drawer/laxity, PCL rupture posterior drawer.",
+      "page": 4
+    },
+    {
+      "stem": "The anterolateral cruciate ligament:",
+      "options": [
+        "Ends on the medial surface of the lateral condyle",
+        "Runs posteriorly and laterally",
+        "Arises from the posterior intercondylar area",
+        "Ends on the lateral surface of the medial condyle",
+        "Arises from the anterior intercondylar area"
+      ],
+      "answer": "ABE",
+      "explanation": "The posteromedial cruciate arises from the posterior intercondylar area and ends on the lateral surface of the medial condyle.",
+      "page": 4
+    },
+    {
+      "stem": "The sagittal ligament system of the knee includes:",
+      "options": [
+        "Anteriorly, the patellar ligament from the patellar apex to the anterior tibial tuberosity",
+        "The menisco-patellar ligaments only",
+        "The tibial collateral ligament",
+        "Posteriorly, the arcuate ligament fanning from the fibular head",
+        "The cruciate ligaments"
+      ],
+      "answer": "AD",
+      "explanation": "Sagittal system = patellar ligament (front) and arcuate ligament (back). Cruciates = central pivot; collaterals = collateral system.",
+      "page": 4
+    },
+    {
+      "stem": "About the patellar retinacula and menisco-patellar ligaments:",
+      "options": [
+        "The lateral retinaculum is the stronger one",
+        "Menisco-patellar ligaments connect the patella to the menisci",
+        "The patellar retinacula connect the patella to each epicondyle",
+        "The medial retinaculum is wider and stronger than the lateral one",
+        "The retinacula connect the patella to the tibial spines"
+      ],
+      "answer": "BCD",
+      "explanation": "The medial patellar wing is the wider and stronger one.",
+      "page": 5
+    },
+    {
+      "stem": "The extensor system of the knee is composed of:",
+      "options": [
+        "The quadriceps tendon",
+        "The popliteus muscle",
+        "The patellar tendon (ligament)",
+        "The quadriceps muscle",
+        "The patella"
+      ],
+      "answer": "ACDE",
+      "explanation": "Popliteus is a posterior active stabilizer, not part of the extensor system.",
+      "page": 5
+    },
+    {
+      "stem": "The muscles of the \"pes anserinus\" (goose foot), medial active stabilizers of the knee, are:",
+      "options": [
+        "Sartorius",
+        "Semitendinosus",
+        "Gracilis",
+        "Biceps femoris",
+        "Semimembranosus"
+      ],
+      "answer": "ABC",
+      "explanation": "Pes anserinus = sartorius, gracilis, semitendinosus. Semimembranosus and biceps femoris are posterior stabilizers.",
+      "page": 5
+    },
+    {
+      "stem": "The synovium of the knee forms anteriorly a large recess called:",
+      "options": [
+        "The acetabular recess",
+        "The quadriceps recess (cul-de-sac)",
+        "The popliteal recess",
+        "The annular recess",
+        "The olecranon recess"
+      ],
+      "answer": "B",
+      "explanation": "In front, the synovium forms the large quadriceps cul-de-sac.",
+      "page": 5
+    },
+    {
+      "stem": "About knee flexion and extension:",
+      "options": [
+        "In the reference position, the leg axis continues the thigh axis",
+        "Active extension reaches 30° beyond the reference position",
+        "Passive flexion (squatting) reaches 140°",
+        "Active flexion reaches 120° with the hip flexed",
+        "Active flexion reaches 120° with the hip extended"
+      ],
+      "answer": "AE",
+      "explanation": "Extension is locked: it only exists from a flexed position back to the reference position. Also false: \"Active flexion reaches 120° with the hip flexed\"; \"Passive flexion (squatting) reaches 140°\".",
+      "page": 5
+    },
+    {
+      "stem": "What is the range of active knee flexion with the hip flexed?",
+      "options": [
+        "120°",
+        "130°",
+        "140°",
+        "150°",
+        "160°"
+      ],
+      "answer": "C",
+      "explanation": "Active flexion: 140° hip flexed, 120° hip extended; passive flexion (squatting): 160°.",
+      "page": 5
+    },
+    {
+      "stem": "About knee rotations:",
+      "options": [
+        "Medial rotation has a larger range than lateral rotation",
+        "Lateral rotation brings the toes outward by 40°",
+        "The reference position is knee flexed at 90° with the toes pointing forward",
+        "Medial rotation brings the toes inward by 30°",
+        "Rotations are measured with the knee fully extended"
+      ],
+      "answer": "BCD",
+      "explanation": "Rotations are measured knee flexed at 90°; lateral (40°) exceeds medial (30°).",
+      "page": 5
+    },
+    {
+      "stem": "About the pathology of the knee:",
+      "options": [
+        "Gonarthrosis is an infectious disease",
+        "MRI with or without arthrography can analyse menisci and ligaments",
+        "The most frequent traumatic lesion in athletes is the meniscal lesion",
+        "Knee dislocations are the most frequent traumatic lesion",
+        "Gonarthrosis (osteoarthritis) is frequent in older people"
+      ],
+      "answer": "BCE",
+      "explanation": "Meniscal lesions are the most frequent; gonarthrosis is degenerative.",
+      "page": 6
+    }
+  ]
+}

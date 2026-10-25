@@ -1,0 +1,211 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "title": "Hand joints and radiocarpal joint",
+  "pdf": "s1/anatomy/hand-joints-and-radiocarpal-joint.pdf",
+  "exam_questions": [
+    "EMD1 2023-2024 Q31",
+    "EMD1 2024-2025 Q16",
+    "EMD1 2024-2025 Q17",
+    "EMD1 2025-2026 Q29",
+    "EMD1 2025-2026 Q30",
+    "EMD1 2025-2026 Q31"
+  ],
+  "questions": [
+    {
+      "stem": "Which of the following are carpometacarpal or finger joints (not wrist joints)?",
+      "options": [
+        "The interphalangeal joints",
+        "The proximal intercarpal joints",
+        "The metacarpophalangeal joints",
+        "The mid-carpal joint",
+        "The carpometacarpal joint of the thumb"
+      ],
+      "answer": "ACE",
+      "explanation": "Wrist joints: radiocarpal, proximal intercarpal, mid-carpal, distal intercarpal. Carpometacarpal joints (thumb, II–V) and finger joints (MCP, IP) form the other two classes.",
+      "page": 1
+    },
+    {
+      "stem": "The radiocarpal joint:",
+      "options": [
+        "Is a trochoid joint",
+        "Is the distal joint of the thoracic limb",
+        "Is a synovial joint of the ellipsoid type",
+        "Is a saddle joint",
+        "Unites the carpus to the forearm"
+      ],
+      "answer": "BCE",
+      "explanation": "The radiocarpal joint is an ellipsoid (condylar) diarthrosis; the saddle joint of the hand is the carpometacarpal joint of the thumb.",
+      "page": 2
+    },
+    {
+      "stem": "The antebrachial (forearm) articular surface of the radiocarpal joint:",
+      "options": [
+        "Is more extensive than the carpal surface",
+        "Has a major transverse axis",
+        "Is convex",
+        "Is elliptical and concave",
+        "Is formed by the carpal surface of the radius and the radioulnar articular disc"
+      ],
+      "answer": "BDE",
+      "explanation": "The forearm surface is concave; the carpal (radial) articular surface is convex and more extensive.",
+      "page": 2
+    },
+    {
+      "stem": "The carpal articular surface of the radius:",
+      "options": [
+        "Has a lateral triangular part for the scaphoid",
+        "Occupies the lateral 2/3 of the antebrachial surface",
+        "Has a medial quadrilateral part for the lunate",
+        "Articulates with the triquetrum",
+        "Occupies the medial 1/3 of the antebrachial surface"
+      ],
+      "answer": "ABC",
+      "explanation": "The radius occupies the lateral 2/3; the articular disc occupies the medial 1/3 and faces the lunate and triquetrum.",
+      "page": 2
+    },
+    {
+      "stem": "The radioulnar articular disc of the wrist:",
+      "options": [
+        "Is a horizontal triangular ligament covered with cartilage",
+        "Attaches to the capitate",
+        "Attaches to the radial styloid process",
+        "Lies between the ulnar head and the carpus",
+        "Occupies the lateral 2/3 of the antebrachial surface"
+      ],
+      "answer": "AD",
+      "explanation": "The disc attaches to the ulnar notch of the radius and the ulnar styloid, between the ulnar head and lunate/triquetrum. Also false: \"Occupies the lateral 2/3 of the antebrachial surface\"; \"Attaches to the capitate\".",
+      "page": 2
+    },
+    {
+      "stem": "The radial articular surface of the carpus is formed by:",
+      "options": [
+        "The trapezium",
+        "The scaphoid",
+        "The capitate",
+        "The pisiform",
+        "The lunate"
+      ],
+      "answer": "BE",
+      "explanation": "Scaphoid, lunate and triquetrum, joined by interosseous ligaments, form the convex carpal surface. The pisiform is not part of it. Also false: \"The capitate\"; \"The trapezium\".",
+      "page": 2
+    },
+    {
+      "stem": "The capsule of the radiocarpal joint attaches to:",
+      "options": [
+        "The metacarpal bases",
+        "The tip of the radial styloid process only",
+        "The anterior and posterior edges of the articular disc",
+        "The periphery of the articular surfaces",
+        "The distal row of the carpus"
+      ],
+      "answer": "CD",
+      "explanation": "The capsule inserts around the articular surfaces and on the anterior and posterior edges of the articular disc.",
+      "page": 2
+    },
+    {
+      "stem": "Which ligament of the radiocarpal joint terminates on the lunate, triquetrum and hamate?",
+      "options": [
+        "The palmar radiocarpal ligament",
+        "The palmar ulnocarpal ligament",
+        "The dorsal radiocarpal ligament",
+        "The radial collateral ligament of the carpus",
+        "The ulnar collateral ligament of the carpus"
+      ],
+      "answer": "C",
+      "explanation": "Dorsal radiocarpal: lunate, triquetrum, hamate. Palmar radiocarpal: lunate, capitate. Palmar ulnocarpal: triquetrum, lunate, capitate.",
+      "page": 2
+    },
+    {
+      "stem": "About the collateral ligaments of the carpus:",
+      "options": [
+        "The ulnar collateral ligament runs from the ulnar styloid to the pisiform and triquetrum",
+        "They are active ligaments",
+        "The ulnar collateral ligament terminates on the hamate",
+        "The radial collateral ligament runs from the radial styloid to the scaphoid",
+        "The radial collateral ligament terminates on the capitate"
+      ],
+      "answer": "AD",
+      "explanation": "Radial collateral → scaphoid; ulnar collateral → pisiform and triquetrum. They are passive ligaments.",
+      "page": 2
+    },
+    {
+      "stem": "Which ligaments of the radiocarpal joint attach to the ulnar styloid process?",
+      "options": [
+        "The dorsal radiocarpal ligament",
+        "The palmar radiocarpal ligament",
+        "The palmar ulnocarpal ligament",
+        "The radial collateral ligament of the carpus",
+        "The ulnar collateral ligament of the carpus"
+      ],
+      "answer": "CE",
+      "explanation": "The palmar ulnocarpal ligament arises from the disc and ulnar styloid; the ulnar collateral ligament from the ulnar styloid. The palmar radiocarpal and radial collateral arise from the radial side.",
+      "page": 2
+    },
+    {
+      "stem": "The active ligaments of the radiocarpal joint include the tendons of:",
+      "options": [
+        "The flexor carpi ulnaris",
+        "The flexor carpi radialis",
+        "The palmaris longus",
+        "The extensor carpi ulnaris",
+        "The extensors carpi radialis longus and brevis"
+      ],
+      "answer": "ABCDE",
+      "explanation": "Six main muscles: flexor carpi radialis, flexor carpi ulnaris, palmaris longus, extensor carpi ulnaris, extensor carpi radialis longus and brevis.",
+      "page": 3
+    },
+    {
+      "stem": "A patient has a rounded swelling on the back of the wrist that becomes prominent in flexion and disappears in extension. This is most likely:",
+      "options": [
+        "A fracture of the radial styloid",
+        "A rupture of the radial collateral ligament",
+        "A dislocation of the lunate",
+        "A synovial cyst",
+        "Carpal tunnel syndrome"
+      ],
+      "answer": "D",
+      "explanation": "A synovial cyst is formed by synovial extensions insinuating between capsular and ligamentous fibres; it is prominent in flexion and disappears in extension.",
+      "page": 3
+    },
+    {
+      "stem": "About the movements of the radiocarpal joint:",
+      "options": [
+        "Flexion has an amplitude of 35°",
+        "Abduction (radial tilt) has a larger amplitude than adduction",
+        "Extension has an amplitude of 50°",
+        "Abduction and adduction occur around a sagittal axis",
+        "Flexion and extension occur around a transverse axis"
+      ],
+      "answer": "DE",
+      "explanation": "Abduction (radial tilt) is 5°, less than adduction (ulnar tilt) 15°. Also false: \"Flexion has an amplitude of 35°\"; \"Extension has an amplitude of 50°\".",
+      "page": 3
+    },
+    {
+      "stem": "What is the amplitude of adduction (ulnar tilt) of the radiocarpal joint?",
+      "options": [
+        "5°",
+        "15°",
+        "35°",
+        "50°",
+        "85°"
+      ],
+      "answer": "B",
+      "explanation": "Adduction (ulnar tilt) 15°, abduction (radial tilt) 5°, extension 35°, flexion 50°.",
+      "page": 3
+    },
+    {
+      "stem": "Circumduction of the wrist:",
+      "options": [
+        "Is performed only around a transverse axis",
+        "Results from passing from one to another of the 4 previous movements",
+        "Is a circular summation movement drawing a cone",
+        "Is a pure rotation around a vertical axis",
+        "Is impossible at the radiocarpal joint"
+      ],
+      "answer": "BC",
+      "explanation": "Circumduction combines flexion, extension, abduction and adduction successively, drawing a cone.",
+      "page": 3
+    }
+  ]
+}

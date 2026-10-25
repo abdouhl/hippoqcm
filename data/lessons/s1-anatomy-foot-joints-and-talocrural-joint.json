@@ -1,0 +1,183 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "title": "Foot joints and talocrural joint",
+  "pdf": "s1/anatomy/foot-joints-and-talocrural-joint.pdf",
+  "exam_questions": [
+    "EMD1 2023-2024 Q29",
+    "EMD1 2024-2025 Q18",
+    "EMD1 2025-2026 Q32",
+    "EMD1 2025-2026 Q34"
+  ],
+  "questions": [
+    {
+      "stem": "The talocrural (ankle) joint:",
+      "options": [
+        "Connects the two bones of the leg to the talus",
+        "Is a ball-and-socket joint",
+        "Connects the talus to the calcaneus",
+        "Is a diarthrosis of the ginglymus (hinge) type",
+        "Is a recessed (mortise) joint ensuring the stability of the foot during walking and running"
+      ],
+      "answer": "ADE",
+      "explanation": "The talocrural joint is a ginglymus uniting tibia and fibula to the talus. The talus–calcaneus joint is the subtalar joint.",
+      "page": 1
+    },
+    {
+      "stem": "Which of the following are tarsal joints?",
+      "options": [
+        "The tarsometatarsal joints",
+        "The talocrural joint",
+        "The transverse joint of the foot",
+        "The joints of the distal tarsal bones with each other",
+        "The subtalar joint"
+      ],
+      "answer": "CDE",
+      "explanation": "Tarsometatarsal joints belong to the forefoot; the talocrural joint is its own class.",
+      "page": 1
+    },
+    {
+      "stem": "The tibiofibular articular surfaces of the ankle are formed by:",
+      "options": [
+        "The articular facet of the lateral malleolus",
+        "The inferior articular surface of the tibia",
+        "The head of the fibula",
+        "The articular facet of the medial malleolus",
+        "The tibial plateau"
+      ],
+      "answer": "ABD",
+      "explanation": "These three surfaces form the mortise receiving the trochlea of the talus.",
+      "page": 2
+    },
+    {
+      "stem": "The trochlea of the talus:",
+      "options": [
+        "Is a large articular projection",
+        "Its lateral malleolar surface is comma-shaped",
+        "Its medial malleolar surface is triangular",
+        "Its upper surface articulates with the fibula",
+        "Its upper surface articulates with the inferior surface of the tibia"
+      ],
+      "answer": "AE",
+      "explanation": "Medial malleolar surface = comma-shaped; lateral malleolar surface = triangular. Also false: \"Its medial malleolar surface is triangular\"; \"Its upper surface articulates with the fibula\".",
+      "page": 2
+    },
+    {
+      "stem": "How are the articular surfaces of the talocrural joint organized?",
+      "options": [
+        "The talar trochlea forms a mortise receiving the malleoli",
+        "The tibiofibular surfaces form a mortise into which the talar trochlea fits",
+        "The calcaneus forms the floor of the mortise",
+        "The navicular closes the mortise in front",
+        "The fibula alone forms the superior wall"
+      ],
+      "answer": "B",
+      "explanation": "Tibia (inferior surface, medial malleolus) and fibula (lateral malleolus) form the mortise for the talar trochlea.",
+      "page": 2
+    },
+    {
+      "stem": "The medial (deltoid) ligament of the ankle:",
+      "options": [
+        "Is strong and triangular",
+        "Has a deep layer with tibionavicular and tibiocalcaneal bundles",
+        "Has its apex attached to the medial malleolus",
+        "Is the ligament typically injured in ankle sprains",
+        "Has a superficial layer with anterior and posterior tibiotalar bundles"
+      ],
+      "answer": "AC",
+      "explanation": "The lateral ligament is \"the ankle sprain ligament\". Also false: \"Has a superficial layer with anterior and posterior tibiotalar bundles\"; \"Has a deep layer with tibionavicular and tibiocalcaneal bundles\".",
+      "page": 2
+    },
+    {
+      "stem": "The lateral ligament of the ankle:",
+      "options": [
+        "Extends from the lateral malleolus",
+        "Includes the tibionavicular bundle",
+        "Is called \"the ankle sprain ligament\"",
+        "Is the strongest ligament of the ankle",
+        "Ends in two bundles"
+      ],
+      "answer": "AC",
+      "explanation": "The strong, triangular ligament is the medial (deltoid) ligament. Also false: \"Ends in two bundles\"; \"Includes the tibionavicular bundle\".",
+      "page": 2
+    },
+    {
+      "stem": "A basketball player twists their foot inward and has pain below the lateral malleolus. Which ligament is most likely injured?",
+      "options": [
+        "The tibionavicular bundle",
+        "The deltoid ligament",
+        "The anterior cruciate ligament",
+        "The lateral ligament of the ankle",
+        "The tibial collateral ligament"
+      ],
+      "answer": "D",
+      "explanation": "The lateral ligament (anterior talofibular, calcaneofibular, posterior talofibular) is the ligament of common ankle sprains.",
+      "page": 2
+    },
+    {
+      "stem": "Which bundles belong to the deep layer of the deltoid ligament?",
+      "options": [
+        "The posterior tibiotalar bundle",
+        "The calcaneofibular bundle",
+        "The tibionavicular bundle",
+        "The anterior tibiotalar bundle",
+        "The tibiocalcaneal bundle"
+      ],
+      "answer": "AD",
+      "explanation": "Deep layer: anterior and posterior tibiotalar. Superficial: tibionavicular and tibiocalcaneal. Calcaneofibular belongs to the lateral ligament.",
+      "page": 2
+    },
+    {
+      "stem": "The synovium of the talocrural joint:",
+      "options": [
+        "Forms a cul-de-sac extension between the tibia and the fibula",
+        "Covers the articular cartilage",
+        "Is continuous with the knee synovium",
+        "Forms the quadriceps recess",
+        "Lines the inner surface of the capsule"
+      ],
+      "answer": "AE",
+      "explanation": "It lines the capsule and sends a recess between tibia and fibula. The quadriceps recess belongs to the knee.",
+      "page": 2
+    },
+    {
+      "stem": "About the movements of the talocrural joint:",
+      "options": [
+        "Extension (plantar flexion) has an amplitude of 30° to 60°",
+        "Movements occur around a vertical axis",
+        "Flexion has an amplitude of 30° to 60°",
+        "Flexion (dorsiflexion) brings the dorsum of the foot toward the front of the leg",
+        "It has three degrees of freedom"
+      ],
+      "answer": "AD",
+      "explanation": "Flexion-extension occur around a transverse axis. Also false: \"It has three degrees of freedom\"; \"Flexion has an amplitude of 30° to 60°\".",
+      "page": 2
+    },
+    {
+      "stem": "What is the amplitude of extension (plantar flexion) of the ankle?",
+      "options": [
+        "10° to 20°",
+        "20° to 30°",
+        "30° to 60°",
+        "60° to 90°",
+        "0°"
+      ],
+      "answer": "C",
+      "explanation": "Extension 30°–60°; flexion (dorsiflexion) 20°–30°.",
+      "page": 2
+    },
+    {
+      "stem": "Dorsiflexion of the foot is also called:",
+      "options": [
+        "Extension",
+        "Flexion",
+        "Lowering",
+        "Plantar flexion",
+        "Elevation"
+      ],
+      "answer": "BE",
+      "explanation": "Flexion = dorsiflexion = elevation; extension = plantar flexion = lowering.",
+      "page": 2
+    }
+  ]
+}

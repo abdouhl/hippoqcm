@@ -3,134 +3,150 @@
   "module": "Anatomy",
   "title": "Introduction to human anatomy",
   "pdf": "s1/anatomy/introduction-to-human-anatomy.pdf",
-  "exam_questions": ["EMD1 2023-2024 Q4", "EMD1 2024-2025 Q1", "EMD1 2025-2026 Q1"],
+  "exam_questions": [
+    "EMD1 2023-2024 Q4",
+    "EMD1 2024-2025 Q1",
+    "EMD1 2025-2026 Q1"
+  ],
   "questions": [
     {
       "stem": "About the definitions of anatomy given in the course:",
       "options": [
-        "The word comes from Greek and Latin terms meaning \"dissection\" (\"to cut through\")",
-        "Rouvière defined it as the \"science of body structures\"",
-        "Paturet (1951) defined it as the \"science whose object is the study of the constitution of organized beings\"",
         "Vesalius (1543) considered it \"the only solid basis of the whole art of medicine\"",
-        "Ribet (1961) defined it as the study of the external forms of the human body intended for artists"
+        "The word comes from Greek and Latin terms meaning \"dissection\" (\"to cut through\")",
+        "Ribet (1961) defined it as the study of the external forms of the human body intended for artists",
+        "Rouvière defined it as the science of the external forms of the body",
+        "Paturet (1951) considered it \"the only solid basis of the whole art of medicine\""
       ],
-      "answer": "ABCD",
-      "explanation": "Anatomy comes from the Greek anatomia / Latin anatomia = dissection. Ribet's definition is the study of the form, reciprocal relationships and final structure of organs; the study of external forms for artists is artistic anatomy.",
+      "answer": "AB",
+      "explanation": "Anatomy comes from the Greek anatomia / Latin anatomia = dissection. Ribet's definition is the study of the form, reciprocal relationships and final structure of organs; the study of external forms for artists is artistic anatomy. Also false: \"Rouvière defined it as the science of the external forms of the body\"; \"Paturet (1951) considered it \"the only solid basis of the whole art of medicine\"\".",
       "page": 3
     },
     {
       "stem": "About the beginnings of anatomy (antiquity):",
       "options": [
-        "The first anatomical descriptions on papyrus date back to 3000 BC",
         "Hippocrates taught human anatomy in Greece",
+        "The first anatomical descriptions on papyrus date back to 3000 BC",
+        "Galen, \"prince of physicians\", carried out his research on human corpses",
         "Aristotle used the term \"anatomy\" for the first time",
-        "Aristotle is the founder of pathological anatomy",
-        "Galen, \"prince of physicians\", carried out his research on human corpses"
+        "Aristotle is the founder of pathological anatomy"
       ],
-      "answer": "ABC",
+      "answer": "ABD",
       "explanation": "Aristotle is the founder of comparative anatomy (pathological anatomy was founded by Morgagni in the 18th century). Galen conducted his research on monkeys, not on human corpses.",
       "page": 3
     },
     {
       "stem": "About anatomy among Muslims (10th–13th century):",
       "options": [
-        "Ibn Sina (Avicenna) used corpses from the battlefields to dissect",
-        "Ibn an-Nafis gave the first description of the pulmonary circulation",
         "Ibn Rushd (Averroes) wrote the \"Canon of Medicine\"",
-        "Ibn Al-Haitham was the first to describe the anatomy of the eye",
-        "Ibn Rushd (Averroes) wrote \"Anatomy of the Organs\""
+        "Ibn Sina gave the first description of the pulmonary circulation",
+        "Ibn an-Nafis gave the first description of the pulmonary circulation",
+        "Ibn Al-Haitham wrote \"Anatomy of the Organs\"",
+        "Ibn Sina (Avicenna) used corpses from the battlefields to dissect"
       ],
-      "answer": "ABDE",
-      "explanation": "The \"Canon of Medicine\" was written by Ibn Sina; Ibn Rushd wrote \"Anatomy of the Organs\".",
+      "answer": "CE",
+      "explanation": "The \"Canon of Medicine\" was written by Ibn Sina; Ibn Rushd wrote \"Anatomy of the Organs\". Also false: \"Ibn Al-Haitham wrote \"Anatomy of the Organs\"\"; \"Ibn Sina gave the first description of the pulmonary circulation\".",
       "page": 3
     },
     {
       "stem": "Which scientist gave the first description of the pulmonary circulation and wrote \"Comments on the anatomy of the Canon of Ibn Sina\"?",
-      "options": ["Ibn Rushd", "Ibn Sina", "Ibn an-Nafis", "Ibn Al-Haitham", "William Harvey"],
-      "answer": "C",
+      "options": [
+        "Ibn Al-Haitham",
+        "Ibn an-Nafis",
+        "Ibn Sina",
+        "Ibn Rushd",
+        "William Harvey"
+      ],
+      "answer": "B",
       "explanation": "Ibn an-Nafis (1213–1288) first described the pulmonary circulation. William Harvey, in the 17th century, only rediscovered and demonstrated it.",
       "page": 3
     },
     {
       "stem": "About anatomy during the Renaissance:",
       "options": [
-        "It covers the 15th and 16th centuries",
-        "Vesalius published \"De Humani Corporis Fabrica\" in 1543",
+        "It covers the 10th to 13th centuries",
         "Vesalius performed the first public dissection",
-        "Gabriel Fallopius described the uterine tube and the facial nerve",
-        "Jacques Dubois (Sylvius) gave the first description of the pulmonary circulation"
+        "Gabriel Fallopius discovered the capillary vessels",
+        "Jacques Dubois (Sylvius) gave the first description of the pulmonary circulation",
+        "Vesalius published \"De Humani Corporis Fabrica\" in 1543"
       ],
-      "answer": "ABCD",
-      "explanation": "Renaissance anatomy spans the 15th–16th centuries; Vesalius wrote the Fabrica (1543) and performed the first public dissection. Sylvius described the middle cerebral artery; pulmonary circulation was first described by Ibn an-Nafis.",
+      "answer": "BE",
+      "explanation": "Renaissance anatomy spans the 15th–16th centuries; Vesalius wrote the Fabrica (1543) and performed the first public dissection. Sylvius described the middle cerebral artery; pulmonary circulation was first described by Ibn an-Nafis. Also false: \"It covers the 10th to 13th centuries\"; \"Gabriel Fallopius discovered the capillary vessels\".",
       "page": 3
     },
     {
       "stem": "About the history of anatomy from the 17th to the 19th century:",
       "options": [
+        "Formaldehyde has been used as a fixative since the 17th century",
+        "Aselli and Pecquet discovered and demonstrated the lymphatic circulation",
         "William Harvey discovered the capillary vessels",
         "Morgagni founded pathological anatomy",
-        "Aselli and Pecquet discovered and demonstrated the lymphatic circulation",
-        "Röntgen discovered X-rays in 1895",
-        "Formaldehyde has been used as a fixative since around 1890"
+        "Röntgen discovered X-rays in 1795"
       ],
-      "answer": "BCDE",
-      "explanation": "The capillary vessels were discovered by Malpighi; Harvey rediscovered and demonstrated the pulmonary circulation.",
+      "answer": "BD",
+      "explanation": "The capillary vessels were discovered by Malpighi; Harvey rediscovered and demonstrated the pulmonary circulation. Also false: \"Röntgen discovered X-rays in 1795\"; \"Formaldehyde has been used as a fixative since the 17th century\".",
       "page": 4
     },
     {
       "stem": "About modern and current anatomy:",
       "options": [
-        "The Visible Man Project (1993) is a 3D virtual man showing real human anatomy",
-        "The Visible Man was obtained after the dissection of a condemned man into 1800 thin slices",
-        "Topographic and surgical anatomy developed in the 20th century for the safety of amputations",
         "Comparative anatomy was born in the 19th century",
-        "Cell theory was demonstrated in the 17th century"
+        "Topographic and surgical anatomy developed in the 20th century for the safety of amputations",
+        "Cell theory was demonstrated in the 17th century",
+        "The Visible Man was obtained after the dissection of a condemned man into 1800 thin slices",
+        "The Visible Man Project (1993) is a 3D virtual man showing real human anatomy"
       ],
-      "answer": "AB",
+      "answer": "DE",
       "explanation": "Topographic and surgical anatomy developed in the 19th century (safety of amputations), the same period in which cell theory was demonstrated; comparative anatomy was born in the 18th century.",
       "page": 4
     },
     {
       "stem": "A student studies an isolated kidney: its shape, dimensions, weight, colour, consistency and internal structure. Which branch of anatomy is this?",
-      "options": ["Topographic anatomy", "Descriptive anatomy", "Functional anatomy", "Artistic anatomy", "Systemic anatomy"],
-      "answer": "B",
+      "options": [
+        "Descriptive anatomy",
+        "Artistic anatomy",
+        "Topographic anatomy",
+        "Functional anatomy",
+        "Systemic anatomy"
+      ],
+      "answer": "A",
       "explanation": "Descriptive (explanatory) anatomy is the analytical study of the morphology of separate organs; it is the basic study in anatomy. Topographic anatomy would study the kidney's location and relations within its region.",
       "page": 4
     },
     {
       "stem": "Topographic anatomy:",
       "options": [
+        "Is the basic study in anatomy",
+        "Studies the function of organs and its relationship to morphology",
         "Is also called functional anatomy",
         "Studies the location and relationships of organs within the same anatomical region",
-        "Is the basic study of surgery",
-        "Is the basic study in anatomy",
-        "Studies the function of organs and its relationship to morphology"
+        "Is the basic study of surgery"
       ],
-      "answer": "BC",
+      "answer": "DE",
       "explanation": "Topographic (regional) anatomy studies location and relations of organs in one region and is the basis of surgery. The basic study in anatomy is descriptive anatomy; function vs morphology is functional anatomy.",
       "page": 4
     },
     {
       "stem": "Match each branch of anatomy with its definition:",
       "options": [
-        "Anthropological anatomy studies morphological variations in human races",
-        "Comparative anatomy studies homologous structures between individuals (ontogeny) or between species (phylogeny)",
         "Radiological anatomy studies morphology using imaging techniques (X-ray, CT scan, MRI, scintigraphy)",
+        "Comparative anatomy studies homologous structures between individuals (ontogeny) or between species (phylogeny)",
         "Pathological anatomy studies the external forms of the human body",
+        "Anthropological anatomy studies morphological variations in human races",
         "Systemic anatomy is anatomy applied to the clinic"
       ],
-      "answer": "ABC",
+      "answer": "ABD",
       "explanation": "Pathological anatomy studies alterations of structures caused by diseases (external forms = artistic anatomy). Systemic anatomy studies the body's systems; anatomy applied to the clinic is medical-surgical (clinical, applied) anatomy.",
       "page": 5
     },
     {
       "stem": "The anatomy of development:",
       "options": [
-        "Studies morphological transformations from fertilization to adulthood",
         "Includes embryology",
-        "Includes fetology",
         "Includes postnatal growth",
-        "Includes teratology (congenital malformations)"
+        "Studies morphological transformations from fertilization to adulthood",
+        "Includes teratology (congenital malformations)",
+        "Includes fetology"
       ],
       "answer": "ABCDE",
       "explanation": "Developmental anatomy covers prenatal development (embryology, fetology), postnatal development (growth) and teratology, from fertilization to adulthood.",
@@ -138,28 +154,40 @@
     },
     {
       "stem": "Which branch of anatomy studies the external forms of the human body and is intended for sculptors, engravers and painters?",
-      "options": ["Anthropological anatomy", "Artistic (plastic) anatomy", "Descriptive anatomy", "Comparative anatomy", "Microscopic anatomy"],
-      "answer": "B",
+      "options": [
+        "Descriptive anatomy",
+        "Anthropological anatomy",
+        "Microscopic anatomy",
+        "Comparative anatomy",
+        "Artistic (plastic) anatomy"
+      ],
+      "answer": "E",
       "explanation": "Artistic, plastic anatomy or anatomy of forms studies the external forms of the body for artists. Anthropological anatomy studies variations between human races.",
       "page": 5
     },
     {
       "stem": "Microscopic (structural) anatomy:",
       "options": [
-        "Studies the structure of cells (cytology)",
-        "Studies the structure of tissues (histology)",
         "Studies alterations of anatomical structures caused by diseases",
         "Is the basic study of surgery",
-        "Uses endoscopy as its main method"
+        "Uses endoscopy as its main method",
+        "Studies the structure of tissues (histology)",
+        "Studies the structure of cells (cytology)"
       ],
-      "answer": "AB",
+      "answer": "DE",
       "explanation": "Microscopic anatomy is the microscopic study of cells (cytology) and tissues (histology). Disease-caused alterations are pathological anatomy; the basis of surgery is topographic anatomy.",
       "page": 5
     },
     {
       "stem": "Which of the following are study methods of anatomy listed in the course?",
-      "options": ["Dissection", "Plastination", "Endoscopy (bronchoscopy, rectoscopy)", "Microscopy", "Mummification"],
-      "answer": "ABCD",
+      "options": [
+        "Microscopy",
+        "Mummification",
+        "Endoscopy (bronchoscopy, rectoscopy)",
+        "Dissection",
+        "Plastination"
+      ],
+      "answer": "ACDE",
       "explanation": "The study methods are dissection, plastination, imaging, endoscopy, surgery and microscopy. Mummification is only cited as evidence of anatomical knowledge in antiquity.",
       "page": 5
     }

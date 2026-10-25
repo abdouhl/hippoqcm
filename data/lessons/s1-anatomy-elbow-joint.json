@@ -1,0 +1,249 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "title": "Elbow joint",
+  "pdf": "s1/anatomy/elbow-joint.pdf",
+  "exam_questions": [
+    "EMD1 2023-2024 Q33",
+    "EMD1 2023-2024 Q34",
+    "EMD1 2023-2024 Q35",
+    "EMD1 2025-2026 Q35",
+    "EMD1 2025-2026 Q36"
+  ],
+  "questions": [
+    {
+      "stem": "The elbow joint is made of three diarthroses. Match each with its type:",
+      "options": [
+        "Proximal radio-ulnar joint: plane joint",
+        "Humero-ulnar joint: trochlear joint",
+        "Humero-ulnar joint: trochoid joint",
+        "Proximal radio-ulnar joint: trochoid joint",
+        "Humero-radial joint: ball-and-socket (enarthrosis)"
+      ],
+      "answer": "BDE",
+      "explanation": "Humero-ulnar = trochlear (flexion-extension); proximal radio-ulnar = trochoid (pronation-supination); humero-radial = enarthrosis, taking part in both.",
+      "page": 1
+    },
+    {
+      "stem": "Why is the elbow considered functionally a single joint?",
+      "options": [
+        "They share a single ligamentous apparatus",
+        "They share a single synovial membrane",
+        "They are all trochlear joints",
+        "They all have separate capsules",
+        "Its three joints share a single joint cavity"
+      ],
+      "answer": "ABE",
+      "explanation": "The three joints form one: one cavity, one synovial membrane, one ligamentous apparatus. They are of different types (trochlear, trochoid, enarthrosis).",
+      "page": 1
+    },
+    {
+      "stem": "About the articular surfaces of the distal humerus at the elbow:",
+      "options": [
+        "The trochlea is surmounted anteriorly by the coronoid fossa",
+        "The radial fossa lies posterior to the capitulum",
+        "The trochlea is a segment of a spheroid",
+        "The capitulum is a segment of a spheroid",
+        "The olecranon fossa lies anteriorly above the trochlea"
+      ],
+      "answer": "AD",
+      "explanation": "The olecranon fossa is posterior, above the trochlea. Also false: \"The trochlea is a segment of a spheroid\"; \"The radial fossa lies posterior to the capitulum\".",
+      "page": 1
+    },
+    {
+      "stem": "The trochlear notch of the ulna:",
+      "options": [
+        "Articulates with the capitulum",
+        "Is hook-shaped and fits onto the humeral trochlea",
+        "Has its two facets separated by a transverse groove",
+        "Has an anterior vertical facet formed by the olecranon",
+        "Has a posterior horizontal facet on the coronoid process"
+      ],
+      "answer": "BC",
+      "explanation": "The trochlear notch articulates with the trochlea; the capitulum articulates with the radial fovea. Also false: \"Has a posterior horizontal facet on the coronoid process\"; \"Has an anterior vertical facet formed by the olecranon\".",
+      "page": 1
+    },
+    {
+      "stem": "The radial notch of the ulna:",
+      "options": [
+        "Is shaped like a hollow cylinder segment",
+        "Occupies the external face of the coronoid process",
+        "Articulates with the capitulum",
+        "Articulates with the articular circumference of the radial head",
+        "Occupies the medial face of the olecranon"
+      ],
+      "answer": "ABD",
+      "explanation": "The radial notch is on the lateral (external) face of the coronoid process and receives the radial head's circumference.",
+      "page": 1
+    },
+    {
+      "stem": "The articular fovea of the radial head:",
+      "options": [
+        "Is the superior, excavated surface of the radial head",
+        "Has a bevelled inner rim articulating with the capitulo-trochlear groove",
+        "Articulates with the trochlea",
+        "Articulates with the capitulum of the humerus",
+        "Articulates with the radial notch of the ulna"
+      ],
+      "answer": "ABD",
+      "explanation": "The radial notch of the ulna receives the articular circumference, not the fovea.",
+      "page": 1
+    },
+    {
+      "stem": "The annular ligament of the radius:",
+      "options": [
+        "Is a fibrocartilaginous band about 1 cm high",
+        "Its outer surface adheres to the articular capsule",
+        "Is both an articular surface and a passive ligament",
+        "Its inner surface is covered with articular cartilage",
+        "Extends from the anterior to the posterior border of the radial notch of the ulna"
+      ],
+      "answer": "ABCDE",
+      "explanation": "Deep (inner) surface: articular, cartilage-covered, facing the radial head; superficial (outer) surface: fibrous, adhering to the capsule.",
+      "page": 2
+    },
+    {
+      "stem": "The radial head's circumference is enclosed in an osteofibrous ring formed by:",
+      "options": [
+        "The olecranon",
+        "The radial notch of the ulna",
+        "The quadrate ligament",
+        "The annular ligament",
+        "The capitulum"
+      ],
+      "answer": "BD",
+      "explanation": "The osteofibrous ring = radial notch of the ulna + annular ligament.",
+      "page": 2
+    },
+    {
+      "stem": "The capsule of the elbow:",
+      "options": [
+        "Attaches on the inferior borders of the epicondyles",
+        "Inserts directly on the radial head cartilage",
+        "Is lined on its deep surface by the synovial membrane",
+        "Inserts on the radial neck about half a centimetre below the radial head",
+        "Runs along the superior border of the coronoid and radial fossae anteriorly"
+      ],
+      "answer": "ACDE",
+      "explanation": "On the radius, the capsule inserts on the neck, 0.5 cm below the head, not on the head itself.",
+      "page": 2
+    },
+    {
+      "stem": "The ulnar collateral ligament of the elbow:",
+      "options": [
+        "Arises from the lateral epicondyle",
+        "Its posterior (Bardinet) bundle ends on the coronoid process",
+        "All its bundles arise from the medial epicondyle",
+        "Its arcuate (Cooper) bundle runs from the medial epicondyle to the radial neck",
+        "Is formed of anterior, middle and posterior bundles"
+      ],
+      "answer": "CE",
+      "explanation": "The ulnar collateral ligament arises from the medial epicondyle; the radial collateral ligament from the lateral epicondyle. Also false: \"Its posterior (Bardinet) bundle ends on the coronoid process\"; \"Its arcuate (Cooper) bundle runs from the medial epicondyle to the radial neck\".",
+      "page": 2
+    },
+    {
+      "stem": "Which bundle of the elbow ligaments is called Bardinet's bundle?",
+      "options": [
+        "The posterior bundle of the ulnar collateral ligament",
+        "The posterior bundle of the radial collateral ligament",
+        "The horizontal humero-humeral bundles",
+        "The anterior oblique bundle of the anterior ligament",
+        "The arcuate bundle between the coronoid process and the olecranon"
+      ],
+      "answer": "A",
+      "explanation": "Bardinet = fan-shaped posterior bundle of the ulnar collateral ligament (medial epicondyle → olecranon). The arcuate bundle is Cooper's ligament.",
+      "page": 2
+    },
+    {
+      "stem": "The radial collateral ligament of the elbow:",
+      "options": [
+        "Its middle bundle ends on the radius, in front of the radial notch",
+        "Its posterior bundle ends on the radial neck",
+        "Arises from the lateral epicondyle",
+        "Ends on the radial head",
+        "Its anterior bundle ends at the radial notch"
+      ],
+      "answer": "CE",
+      "explanation": "All three bundles end on the ulna; none attaches to the radius (the only ligament attaching to the radius is the quadrate ligament). Also false: \"Its posterior bundle ends on the radial neck\"; \"Its middle bundle ends on the radius, in front of the radial notch\".",
+      "page": 3
+    },
+    {
+      "stem": "The quadrate ligament (of Denucé):",
+      "options": [
+        "Is a bundle of the ulnar collateral ligament",
+        "Extends from the lateral epicondyle to the olecranon",
+        "Extends from the inferior border of the radial notch to the medial part of the radial neck",
+        "Attaches to the radius",
+        "Is a quadrilateral plate"
+      ],
+      "answer": "CDE",
+      "explanation": "The inferior (quadrate) ligament joins the ulna's radial notch to the radial neck.",
+      "page": 3
+    },
+    {
+      "stem": "Which synovial recesses does the elbow synovium form?",
+      "options": [
+        "A superior recess above the medial epicondyle",
+        "A recess inside the olecranon bursa",
+        "An anterior recess corresponding to the coronoid and radial fossae",
+        "A posterior recess related to the olecranon fossa",
+        "An inferior (annular) recess surrounding the radial neck"
+      ],
+      "answer": "CDE",
+      "explanation": "Anterior, posterior and inferior (annular) recesses. The olecranon bursa is a separate periarticular structure.",
+      "page": 3
+    },
+    {
+      "stem": "About the movements of the elbow:",
+      "options": [
+        "Flexion has a range of 140° to 160°",
+        "Supination has a range of 70°",
+        "Extension has a range of 0°",
+        "Pronation occurs at the humero-ulnar joint only",
+        "Pronation has a range of 85°"
+      ],
+      "answer": "AC",
+      "explanation": "Pronation-supination occur at the humeroradial and proximal and distal radioulnar joints (radius mobile around a vertical axis). Also false: \"Supination has a range of 70°\"; \"Pronation has a range of 85°\".",
+      "page": 3
+    },
+    {
+      "stem": "A patient turns the forearm so that the palm faces upward. This movement is:",
+      "options": [
+        "Supination, range 70°",
+        "Pronation, range 85°",
+        "Pronation, range 70°",
+        "Supination, range 85°",
+        "Flexion, range 140°"
+      ],
+      "answer": "D",
+      "explanation": "Supination rotates the forearm outward, palm up (85°); pronation rotates inward, palm down (70°).",
+      "page": 3
+    },
+    {
+      "stem": "About the posterior palpable landmarks of the elbow:",
+      "options": [
+        "They are the lateral epicondyle, the olecranon and the medial epicondyle",
+        "In flexion they form Nélaton's triangle",
+        "In flexion they form a straight line",
+        "In extension they form Nélaton's triangle",
+        "In extension they form Malgaigne's line"
+      ],
+      "answer": "ABE",
+      "explanation": "Flexion → Nélaton's triangle; extension → straight line of Malgaigne.",
+      "page": 3
+    },
+    {
+      "stem": "The olecranon bursa:",
+      "options": [
+        "Is part of the elbow joint cavity",
+        "Reduces friction between soft tissues and the bony prominence",
+        "Is a ligament of the elbow",
+        "Is a periarticular structure",
+        "Secretes the synovial fluid of the elbow joint"
+      ],
+      "answer": "BD",
+      "explanation": "Bursae are periarticular structures reducing friction; the joint's synovial fluid is secreted by the synovium.",
+      "page": 3
+    }
+  ]
+}

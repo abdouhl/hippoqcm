@@ -1,0 +1,278 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "title": "Muscular system",
+  "pdf": "s1/anatomy/muscular-system.pdf",
+  "exam_questions": [
+    "EMD1 2023-2024 Q39",
+    "EMD1 2023-2024 Q40",
+    "EMD1 2024-2025 Q23",
+    "EMD1 2024-2025 Q24",
+    "EMD1 2024-2025 Q25",
+    "EMD1 2025-2026 Q20",
+    "EMD1 2025-2026 Q21",
+    "EMD1 2025-2026 Q22"
+  ],
+  "questions": [
+    {
+      "stem": "About muscle in general:",
+      "options": [
+        "It can only be stimulated by a nervous excitation",
+        "It contracts (shortens) under the influence of a stimulus",
+        "It is the driving element of the locomotor apparatus",
+        "The study of muscles is called myology",
+        "The study of muscles is called osteology"
+      ],
+      "answer": "BCD",
+      "explanation": "Stimuli can be nervous, electrical, thermal, painful, etc. Osteology is the study of the skeleton.",
+      "page": 1
+    },
+    {
+      "stem": "Which of the following are roles of the muscular system?",
+      "options": [
+        "Childbirth and blood propulsion",
+        "Maintaining posture",
+        "Storage of calcium salts",
+        "Protection of the viscera",
+        "Production of blood cells"
+      ],
+      "answer": "ABD",
+      "explanation": "Roles: movement, thermogenesis, posture, joint stabilization, protection of viscera, visceral functions (digestion, urination, blood propulsion, childbirth…). Calcium storage and blood cell production are roles of bone.",
+      "page": 1
+    },
+    {
+      "stem": "Muscle tone (tonicity):",
+      "options": [
+        "Allows balance to be maintained at rest (posture)",
+        "Is the ability to stretch without tearing",
+        "Is maximal in coma",
+        "Persists when lying down",
+        "Is the ability to maintain a slight permanent contraction despite relaxation"
+      ],
+      "answer": "AE",
+      "explanation": "The ability to stretch without tearing is elasticity, a different property. Also false: \"Persists when lying down\"; \"Is maximal in coma\".",
+      "page": 1
+    },
+    {
+      "stem": "A muscle that stretches during passive movement of a joint without being torn is showing which property?",
+      "options": [
+        "Excitability",
+        "Tonicity",
+        "Elasticity",
+        "Rigidity",
+        "Contractility"
+      ],
+      "answer": "C",
+      "explanation": "Elasticity is the ability to stretch without tearing. Rigidity is not a muscle property.",
+      "page": 1
+    },
+    {
+      "stem": "Skeletal muscle:",
+      "options": [
+        "Never fatigues",
+        "Has a slow, continuous contraction",
+        "Is controlled by the autonomic nervous system",
+        "Is voluntary",
+        "Is also called striated or red muscle"
+      ],
+      "answer": "DE",
+      "explanation": "Skeletal muscle fatigues fast; cardiac and visceral muscles never fatigue. Also false: \"Has a slow, continuous contraction\"; \"Is controlled by the autonomic nervous system\".",
+      "page": 1
+    },
+    {
+      "stem": "Cardiac muscle (myocardium):",
+      "options": [
+        "Fatigues quickly",
+        "Is classified as a mixed muscle",
+        "Is controlled by the central nervous system",
+        "Is made of striated cells",
+        "Is involuntary, automatic and rhythmic"
+      ],
+      "answer": "BDE",
+      "explanation": "Cardiac muscle is controlled by the autonomic nervous system and never fatigues.",
+      "page": 1
+    },
+    {
+      "stem": "Visceral (smooth) muscle:",
+      "options": [
+        "Is attached to the skeleton",
+        "Is made of striated cells",
+        "Is controlled by the autonomic nervous system",
+        "Has a fast, rhythmic contraction",
+        "Is found in the walls of hollow viscera and vessels"
+      ],
+      "answer": "CE",
+      "explanation": "Muscles attached to the skeleton are skeletal (striated) muscles. Also false: \"Is made of striated cells\"; \"Has a fast, rhythmic contraction\".",
+      "page": 1
+    },
+    {
+      "stem": "Which muscle type is striated but involuntary?",
+      "options": [
+        "Skeletal muscle",
+        "Cardiac muscle",
+        "Visceral muscle",
+        "The muscles of the limbs",
+        "Smooth muscle of vessels"
+      ],
+      "answer": "B",
+      "explanation": "Cardiac muscle has striated cells but is involuntary and automatic. Skeletal is striated and voluntary; visceral is smooth and involuntary.",
+      "page": 1
+    },
+    {
+      "stem": "About the number of skeletal muscles:",
+      "options": [
+        "There are about 600 constant skeletal muscles",
+        "The plantaris muscle is an example of an inconstant muscle",
+        "There are exactly 206 skeletal muscles",
+        "Their number varies because of inconstant (accessory) muscles",
+        "The number of skeletal muscles never varies"
+      ],
+      "answer": "ABD",
+      "explanation": "600 constant skeletal muscles, plus inconstant accessory muscles such as the plantaris. 206 is the number of bones.",
+      "page": 2
+    },
+    {
+      "stem": "Superficial (supra-aponeurotic) muscles:",
+      "options": [
+        "Are located deep to the aponeurosis",
+        "Include the facial (cutaneous) muscles",
+        "Include the muscles of the digestive and respiratory systems",
+        "Include the muscles of the sensory organs",
+        "Are subcutaneous"
+      ],
+      "answer": "BE",
+      "explanation": "Superficial muscles are subcutaneous (facial muscles). Muscles of the digestive/respiratory systems, skeleton and sense organs are deep (sub-aponeurotic).",
+      "page": 2
+    },
+    {
+      "stem": "About the parts of a simple (monogastric) muscle:",
+      "options": [
+        "It has a single belly between two tendons",
+        "The tendons are the contractile part",
+        "The tendons are narrow, whitish, elastic and resistant",
+        "It has two bellies and one intermediate tendon",
+        "The belly is large, red, fleshy and contractile"
+      ],
+      "answer": "ACE",
+      "explanation": "A simple muscle has one belly (contractile) and two tendons. Two bellies with an intermediate tendon is a digastric muscle.",
+      "page": 2
+    },
+    {
+      "stem": "Match the muscle variety with its example:",
+      "options": [
+        "Bifid muscle: the rectus abdominis",
+        "Digastric muscle: the digastric muscle",
+        "Bifid muscle: the quadriceps femoris",
+        "Multifid muscle: the digastric muscle",
+        "Multigastric muscle: the rectus abdominis"
+      ],
+      "answer": "BE",
+      "explanation": "Rectus abdominis has several bellies in series with intermediate tendons (multigastric), not two parallel bellies (bifid). Also false: \"Bifid muscle: the quadriceps femoris\"; \"Multifid muscle: the digastric muscle\".",
+      "page": 2
+    },
+    {
+      "stem": "A muscle with several bellies arranged in parallel, whose parallel tendons are called heads, is:",
+      "options": [
+        "A bifid muscle",
+        "A digastric muscle",
+        "An annular muscle",
+        "A multigastric muscle",
+        "A multifid muscle"
+      ],
+      "answer": "E",
+      "explanation": "Multifid = several parallel bellies (e.g. quadriceps femoris). Bifid has two parallel bellies; multigastric has bellies in series.",
+      "page": 2
+    },
+    {
+      "stem": "About muscle insertions:",
+      "options": [
+        "The origin can sometimes become mobile",
+        "The origin is usually distal and mobile",
+        "The termination is usually distal and mobile",
+        "The cricothyroid has a skin insertion",
+        "The palmaris brevis has a bony insertion"
+      ],
+      "answer": "AC",
+      "explanation": "The palmaris brevis is the example of a skin (cutaneous) insertion; bony insertion example: iliopsoas. Also false: \"The origin is usually distal and mobile\"; \"The cricothyroid has a skin insertion\".",
+      "page": 2
+    },
+    {
+      "stem": "Which muscle is given as the example of an aponeurotic insertion?",
+      "options": [
+        "The iliopsoas",
+        "The palmaris brevis",
+        "The sartorius",
+        "The abductor hallucis",
+        "The cricothyroid"
+      ],
+      "answer": "D",
+      "explanation": "Bone: iliopsoas; cartilage: cricothyroid; aponeurosis: abductor hallucis; skin: palmaris brevis.",
+      "page": 2
+    },
+    {
+      "stem": "Match the muscle shape with its example:",
+      "options": [
+        "Short muscle: the trapezius",
+        "Long muscle: the sartorius",
+        "Flat muscle: the latissimus dorsi",
+        "Geometric muscle: the muscles of the hypothenar compartment",
+        "Annular muscle: the orbicularis oris"
+      ],
+      "answer": "BCE",
+      "explanation": "Short muscles are those of the hypothenar compartment; geometric muscles are the trapezius, pronator quadratus and depressor anguli oris.",
+      "page": 2
+    },
+    {
+      "stem": "Muscle nomenclature: match the criterion with the muscle name:",
+      "options": [
+        "Action criterion: supinator muscle",
+        "Insertion criterion: coracobrachialis muscle",
+        "Size criterion: internal oblique muscle",
+        "Form criterion: rectus abdominis",
+        "Number of heads criterion: triceps brachii"
+      ],
+      "answer": "ABE",
+      "explanation": "Rectus abdominis and internal oblique are named after the direction of their fibres. Form: piriformis, quadratus plantaris; size: gluteus maximus, pectoralis minor.",
+      "page": 3
+    },
+    {
+      "stem": "About the muscle appendices:",
+      "options": [
+        "There are seven muscle appendices",
+        "Fibrous sheaths are sacs filled with synovial fluid",
+        "Tendinous serous sheaths are fibrous grooves forming osteofibrous canals",
+        "Serous (synovial) bursae are sacs filled with synovial fluid near joints that facilitate gliding",
+        "The muscular fascia encases and separates the muscles"
+      ],
+      "answer": "DE",
+      "explanation": "There are four appendices: serous bursae, tendinous serous sheaths, fibrous sheaths and muscular fascia. Also false: \"Tendinous serous sheaths are fibrous grooves forming osteofibrous canals\"; \"Fibrous sheaths are sacs filled with synovial fluid\".",
+      "page": 3
+    },
+    {
+      "stem": "About muscle exploration methods shown in the course:",
+      "options": [
+        "The electromyogram (EMG) records the electrical activity of the muscle",
+        "CT and MRI can show the muscles of the thigh",
+        "A muscle biopsy is a muscle sample",
+        "Muscle testing is scored from 0 to 10",
+        "Muscle testing assesses the strength of a muscle on a scale from 0 to 5"
+      ],
+      "answer": "ABCE",
+      "explanation": "Muscle testing is scored from 0 to 5.",
+      "page": 68
+    },
+    {
+      "stem": "Match the muscle pathology with its definition:",
+      "options": [
+        "Cramp: sudden, involuntary, painful and transient contraction that stops spontaneously",
+        "Bursitis: inflammation of the serous bursae",
+        "Compartment syndrome: rupture of a muscle after excessive stretching",
+        "Tenosynovitis: inflammation of the muscular fascia",
+        "Contracture: involuntary, painful and permanent contraction (e.g. torticollis)"
+      ],
+      "answer": "ABE",
+      "explanation": "Tenosynovitis is inflammation of the synovial sheaths of tendons. Compartment syndrome is muscle ischemia from increased pressure in a compartment; rupture after excessive stretching is a tear (claquage).",
+      "page": 75
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "semester": 1,
+  "module": "Anatomy",
+  "title": "Articular system",
+  "pdf": "s1/anatomy/articular-system.pdf",
+  "exam_questions": [
+    "EMD1 2023-2024 Q18",
+    "EMD1 2023-2024 Q19",
+    "EMD1 2023-2024 Q20",
+    "EMD1 2024-2025 Q20",
+    "EMD1 2024-2025 Q21",
+    "EMD1 2024-2025 Q22",
+    "EMD1 2025-2026 Q37",
+    "EMD1 2025-2026 Q38"
+  ],
+  "questions": [
+    {
+      "stem": "About the classification of joints:",
+      "options": [
+        "Synarthroses are fibrous and immobile joints",
+        "Amphiarthroses are fibrous and immobile joints",
+        "Diarthroses are synovial and mobile joints",
+        "Amphiarthroses are cartilaginous and semi-mobile joints",
+        "The articular system is studied by myology"
+      ],
+      "answer": "ACD",
+      "explanation": "By structure/mobility: synarthroses = fibrous/immobile, amphiarthroses = cartilaginous/semi-mobile, diarthroses = synovial/mobile. The articular system is studied by arthrology.",
+      "page": 1
+    },
+    {
+      "stem": "Synarthroses:",
+      "options": [
+        "Include the gomphosis uniting a tooth to its socket",
+        "Have no articular cartilage",
+        "Include the synfibroses of the skull and face",
+        "Are semi-mobile joints",
+        "Include the pubic symphysis"
+      ],
+      "answer": "ABC",
+      "explanation": "Synarthroses are immobile fibrous joints without articular cartilage (synfibroses, syndesmoses, gomphosis). The pubic symphysis is an amphiarthrosis (semi-mobile).",
+      "page": 1
+    },
+    {
+      "stem": "The interosseous membrane between the two bones of the forearm is an example of:",
+      "options": [
+        "A synfibrosis",
+        "A syndesmosis",
+        "A symphysis",
+        "A synchondrosis",
+        "A gomphosis"
+      ],
+      "answer": "B",
+      "explanation": "Syndesmoses unite bony surfaces distant from each other by connective tissue: interosseous membrane of forearm/leg, ligamenta flava between vertebrae.",
+      "page": 1
+    },
+    {
+      "stem": "Synchondroses:",
+      "options": [
+        "Are permanent fibrous joints of the skull",
+        "Are located between the epiphysis and the diaphysis of long bones",
+        "Are synovial joints",
+        "Correspond to the growth plate responsible for longitudinal growth",
+        "Are temporary joints during growth"
+      ],
+      "answer": "BDE",
+      "explanation": "Synchondroses (amphiarthroses) are temporary: the growth (conjugation) plate between epiphysis and diaphysis. Trauma can cause epiphyseal detachment.",
+      "page": 1
+    },
+    {
+      "stem": "Symphyses:",
+      "options": [
+        "Are reinforced by peripheral ligaments",
+        "Are exemplified by the pubic symphysis",
+        "Have a synovial membrane",
+        "Unite bony surfaces by a mixed fibrous and fibrocartilaginous structure",
+        "Are semi-mobile joints"
+      ],
+      "answer": "ABDE",
+      "explanation": "Symphyses are amphiarthroses with reduced mobility; a synovial membrane characterizes diarthroses.",
+      "page": 1
+    },
+    {
+      "stem": "Synovial joints (diarthroses) are characterized by:",
+      "options": [
+        "Being a minority of the limb joints",
+        "Epiphyseal articular surfaces covered with hyaline cartilage",
+        "An articular cavity",
+        "An articular gap of a few centimetres",
+        "A synovial membrane"
+      ],
+      "answer": "BCE",
+      "explanation": "The articular gap is only a few millimetres, and synovial joints make up the majority of limb joints.",
+      "page": 1
+    },
+    {
+      "stem": "Articular (hyaline) cartilage of synovial joints:",
+      "options": [
+        "Has a thickness inversely proportional to the pressure it supports",
+        "Has the same thickness in all joints",
+        "Its degeneration is responsible for arthrosis (osteoarthritis)",
+        "Is richly vascularized",
+        "Is smooth and bluish-white"
+      ],
+      "answer": "CE",
+      "explanation": "Thickness varies with the pressure supported, so it is not constant between joints. Also false: \"Has a thickness inversely proportional to the pressure it supports\"; \"Is richly vascularized\".",
+      "page": 2
+    },
+    {
+      "stem": "About the articular capsule:",
+      "options": [
+        "The synovial membrane is poorly vascularized and not innervated",
+        "It is a fibrous sleeve inserting around the articular surfaces",
+        "Its external part is the fibrous membrane",
+        "The synovial membrane lines the external face of the capsule",
+        "Its internal part is the synovial membrane"
+      ],
+      "answer": "BCE",
+      "explanation": "The synovial membrane lines the inner face of the capsule and is richly vascularized and innervated.",
+      "page": 2
+    },
+    {
+      "stem": "Synovial fluid (synovia):",
+      "options": [
+        "Facilitates the gliding of the articular surfaces",
+        "Is secreted by the fibrous membrane",
+        "Is secreted by the synovial membrane",
+        "Plays no role in the nutrition of the articular surfaces",
+        "Is opaque and watery"
+      ],
+      "answer": "AC",
+      "explanation": "Synovia is produced by the synovial membrane, not the fibrous membrane. Also false: \"Is opaque and watery\"; \"Plays no role in the nutrition of the articular surfaces\".",
+      "page": 2
+    },
+    {
+      "stem": "After a knee injury, a patient has blood in the joint cavity. This is called:",
+      "options": [
+        "Hydarthrosis",
+        "Luxation",
+        "Hemarthrosis",
+        "Bursitis",
+        "Arthrosis"
+      ],
+      "answer": "C",
+      "explanation": "Hemarthrosis = blood effusion in a joint after trauma. Hydarthrosis = effusion/hypersecretion of synovial fluid.",
+      "page": 33
+    },
+    {
+      "stem": "About the stabilizers of a synovial joint:",
+      "options": [
+        "Tendons of periarticular muscles are the means of active stabilization",
+        "Ligaments are fibrous bands uniting the constituent parts of the joint",
+        "Ligaments are the means of passive stabilization",
+        "Tendons of periarticular muscles are passive stabilizers",
+        "Ligaments are the means of active stabilization"
+      ],
+      "answer": "ABC",
+      "explanation": "Ligaments = passive stabilization; periarticular muscle tendons = active stabilization.",
+      "page": 2
+    },
+    {
+      "stem": "The means of adaptation of synovial joints:",
+      "options": [
+        "Are of three types: labrum, meniscus and disc",
+        "Are interposed between the capsule and the synovial membrane",
+        "Are fibrocartilaginous structures",
+        "Are richly vascularized, so their tears heal well",
+        "Exist in all joints, whatever their congruence"
+      ],
+      "answer": "AC",
+      "explanation": "Fibrocartilages are devoid of vessels and nerves; this lack of vascularization prevents healing of tears. Also false: \"Exist in all joints, whatever their congruence\"; \"Are interposed between the capsule and the synovial membrane\".",
+      "page": 2
+    },
+    {
+      "stem": "Match the means of adaptation with its example:",
+      "options": [
+        "Meniscus: the coxofemoral joint",
+        "Labrum: the scapulohumeral and coxofemoral joints",
+        "Labrum: the intervertebral disc",
+        "Meniscus: the knee and the acromioclavicular joint",
+        "Disc: the intervertebral disc and the sternoclavicular joint"
+      ],
+      "answer": "BDE",
+      "explanation": "Menisci: knee (medial and lateral), acromioclavicular. Labrum: shoulder and hip. Disc: intervertebral, sternoclavicular.",
+      "page": 2
+    },
+    {
+      "stem": "The labrum (articular lip):",
+      "options": [
+        "Is a fibrocartilaginous ring",
+        "Increases the depth and surface area of the articular zone",
+        "Its main role is shock absorption of pressure and traction",
+        "Inserts on the periphery of the bony articular zone",
+        "Is found in the knee"
+      ],
+      "answer": "ABD",
+      "explanation": "Shock absorption and distribution of pressure/traction is the role of discs; the knee has menisci.",
+      "page": 2
+    },
+    {
+      "stem": "A footballer has a torn meniscal fragment causing symptoms. Why must it usually be removed?",
+      "options": [
+        "Because the meniscus heals spontaneously in a few days",
+        "Because fibrocartilage is devoid of vessels, so the tear cannot heal",
+        "Because the meniscus is richly innervated and always painful",
+        "Because the meniscus is made of hyaline cartilage",
+        "Because the meniscus is an active stabilizer"
+      ],
+      "answer": "B",
+      "explanation": "The absence of vascularization prevents healing of a fibrocartilaginous tear, so a symptomatic torn fragment must be removed (e.g. by arthroscopy).",
+      "page": 3
+    },
+    {
+      "stem": "Match the type of synovial joint with its example:",
+      "options": [
+        "Spheroid (enarthrosis): scapulohumeral and coxofemoral joints",
+        "Trochoid (pivot): humero-ulnar joint",
+        "Sellar (saddle): carpometacarpal joint of the thumb",
+        "Plane (arthrodia): proximal radio-ulnar joint",
+        "Ellipsoid (condylar): radiocarpal joint"
+      ],
+      "answer": "ACE",
+      "explanation": "The humero-ulnar joint is trochlear (ginglymus); radio-ulnar joints are trochoid; the acromioclavicular joint is plane.",
+      "page": 3
+    },
+    {
+      "stem": "How many axes of mobility does each joint type have?",
+      "options": [
+        "Spheroid: three axes",
+        "Sellar: two axes",
+        "Ellipsoid: three axes",
+        "Trochlear: two axes",
+        "Ellipsoid: one axis"
+      ],
+      "answer": "AB",
+      "explanation": "Spheroid 3 axes (great mobility), ellipsoid and sellar 2 axes, trochlear (hinge) 1 axis. Also false: \"Ellipsoid: one axis\"; \"Trochlear: two axes\".",
+      "page": 3
+    },
+    {
+      "stem": "A sellar (saddle) joint:",
+      "options": [
+        "Unites two inverted spherical surfaces",
+        "Unites surfaces convex in one direction and concave in the other",
+        "Is also called a joint by reciprocal reception",
+        "Has two axes of mobility",
+        "Unites two flat surfaces"
+      ],
+      "answer": "BCD",
+      "explanation": "Flat surfaces = plane joint (arthrodia); inverted spheres = spheroid joint.",
+      "page": 3
+    },
+    {
+      "stem": "About articular mechanics:",
+      "options": [
+        "Extension \"opens\" the joint",
+        "Flexion \"closes\" the joint around a transverse axis",
+        "Lateral rotation moves the anterior face of the segment outward",
+        "Medial rotation moves the anterior face of the segment outward",
+        "Abduction is performed around a vertical axis"
+      ],
+      "answer": "ABC",
+      "explanation": "Abduction/adduction occur around a sagittal axis; medial rotation moves the anterior face inward.",
+      "page": 4
+    },
+    {
+      "stem": "About exploration and pathology of joints:",
+      "options": [
+        "Clinical examination is unilateral and only passive",
+        "A luxation (dislocation) is a loss of contact between two articular surfaces",
+        "Ultrasound and especially MRI show the articular cartilage and fibrocartilages",
+        "Arthrosis is an infectious arthritis",
+        "A sprain is a loss of contact between two articular surfaces"
+      ],
+      "answer": "BC",
+      "explanation": "Arthrosis is degenerative; arthritis is infectious or inflammatory. Also false: \"Clinical examination is unilateral and only passive\"; \"A sprain is a loss of contact between two articular surfaces\".",
+      "page": 4
+    },
+    {
+      "stem": "Arthroscopy:",
+      "options": [
+        "Is a direct endoscopy of the joint cavities",
+        "Is an injection of contrast medium into the joint",
+        "Is the simplest and most practised joint examination",
+        "Can be used to remove torn meniscal fragments",
+        "Visualizes intra-articular structures"
+      ],
+      "answer": "ADE",
+      "explanation": "Contrast injection is arthrography; the simplest and most practised examination is standard radiography.",
+      "page": 64
+    }
+  ]
+}
