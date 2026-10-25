@@ -259,7 +259,7 @@
       ],
       "answer": "ABCE",
       "explanation": "Muscle testing is scored from 0 to 5.",
-      "page": 68
+      "page": null
     },
     {
       "stem": "Match the muscle pathology with its definition:",
@@ -272,7 +272,7 @@
       ],
       "answer": "ABE",
       "explanation": "Tenosynovitis is inflammation of the synovial sheaths of tendons. Compartment syndrome is muscle ischemia from increased pressure in a compartment; rupture after excessive stretching is a tear (claquage).",
-      "page": 75
+      "page": null
     }
   ]
 }

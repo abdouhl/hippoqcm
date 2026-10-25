@@ -1,6 +1,7 @@
 // Offline support. The app shell and static files are served from cache; /api is left to the
 // page, which falls back to its own offline snapshot (src/api.ts).
-const CACHE = "hippoqcm-v2";
+// Bump when files change under the same URL (lesson PDFs are cached for good); see activate.
+const CACHE = "hippoqcm-v3";
 // Hashed build output, and lesson files that are fetched once and kept.
 const STATIC = /^\/(assets|images|lessons)\/|^\/summaries\/.+\.(jpe?g|png|webp|svg)$|^\/[^/]+\.(svg|png|webmanifest)$/;
 // Summary pages and their index can be rewritten under the same URL: show the cached copy, refresh it.
@@ -25,14 +26,15 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     (async () => {
       const old = (await caches.keys()).filter((key) => key !== CACHE);
-      // Keep the lesson PDFs and images already downloaded instead of fetching them all again.
+      // Keep the images already downloaded instead of fetching them all again. Lesson PDFs are
+      // fetched anew: v3 replaced the anatomy PDFs (English notes only) under the same URLs.
       if (old.length > 0) {
         const cache = await caches.open(CACHE);
         for (const key of old) {
           const prev = await caches.open(key);
           for (const req of await prev.keys()) {
             const path = new URL(req.url).pathname;
-            if (/^\/(images|lessons)\//.test(path) && !(await cache.match(req))) {
+            if (path.startsWith("/images/") && !(await cache.match(req))) {
               const res = await prev.match(req);
               if (res && cacheable(res, path)) await cache.put(req, res);
             }
