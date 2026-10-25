@@ -1,0 +1,15 @@
+diff --git a/lib/dispatcher/client.js b/lib/dispatcher/client.js
+index ee67336c97ec4424444927db9189bd32fdfe9ddc..0d23378b91217252e88059494bbf27cfb6912be5 100644
+--- a/lib/dispatcher/client.js
++++ b/lib/dispatcher/client.js
+@@ -258,8 +258,8 @@ class Client extends DispatcherBase {
+     this[kResuming] = 0 // 0, idle, 1, scheduled, 2 resuming
+     this[kNeedDrain] = 0 // 0, idle, 1, scheduled, 2 resuming
+     this[kHostHeader] = `host: ${this[kUrl].hostname}${this[kUrl].port ? `:${this[kUrl].port}` : ''}\r\n`
+-    this[kBodyTimeout] = bodyTimeout != null ? bodyTimeout : 300e3
+-    this[kHeadersTimeout] = headersTimeout != null ? headersTimeout : 300e3
++    this[kBodyTimeout] = bodyTimeout != null ? bodyTimeout : 3600e3
++    this[kHeadersTimeout] = headersTimeout != null ? headersTimeout : 3600e3
+     this[kStrictContentLength] = strictContentLength == null ? true : strictContentLength
+     this[kMaxRequests] = maxRequestsPerClient
+     this[kClosedResolve] = null

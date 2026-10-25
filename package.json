@@ -27,5 +27,8 @@
     "typescript": "^7.0.2",
     "vite": "^8.3.2",
     "wrangler": "^4.147.0"
+  },
+  "patchedDependencies": {
+    "undici@7.29.1": "patches/undici@7.29.1.patch"
   }
 }

@@ -21,6 +21,9 @@
       },
     },
   },
+  "patchedDependencies": {
+    "undici@7.29.1": "patches/undici@7.29.1.patch",
+  },
   "packages": {
     "@cloudflare/kv-asset-handler": ["@cloudflare/kv-asset-handler@0.5.0", "", {}, "sha512-jxQYkj8dSIzc0cD6cMMNdOc1UVjqSqu8BZdor5s8cGjW2I8BjODt/kWPVdY+u9zj3ms75Q5qaZgnxUad83+eAg=="],
 
