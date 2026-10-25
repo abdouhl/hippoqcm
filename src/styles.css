@@ -83,6 +83,9 @@ button.link { background: none; border: none; color: var(--accent); cursor: poin
 .verdict.bad { color: var(--error); }
 .grades { display: flex; gap: 8px; flex-wrap: wrap; }
 .grades button { display: flex; flex-direction: column; align-items: center; min-width: 80px; }
+.grades button.secondary { background: transparent; color: var(--accent); }
+.grades button.suggested { outline: 3px solid var(--coral); outline-offset: 2px; }
+.leech-note { border-left: 3px solid var(--error); padding-left: 12px; }
 small { font-weight: 400; opacity: 0.85; }
 .explanation { color: var(--muted); border-left: 3px solid var(--accent); padding-left: 12px; }
 .done { text-align: center; padding: 32px 0; }
@@ -346,4 +349,15 @@ button.link.danger { color: var(--error); }
 
   .insights-table .hide-sm { display: none; }
   .progress { width: 40px; }
+}
+
+/* Keyboard hints (src/keys.tsx), only where there's a mouse or trackpad and so likely a keyboard. */
+.hint { display: none; }
+kbd {
+  font: 600 0.7rem/1 ui-monospace, monospace; padding: 2px 5px; border-radius: 4px;
+  border: 1px solid currentColor; opacity: 0.7;
+}
+@media (hover: hover) and (pointer: fine) {
+  kbd.hint { display: inline-block; margin-left: 4px; }
+  p.hint.key-help { display: block; text-align: center; margin-top: 12px; }
 }

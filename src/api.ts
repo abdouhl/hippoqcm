@@ -199,7 +199,7 @@ export async function saveReviews(reviews: ReviewInput[]): Promise<void> {
     const byId = new Map(snapshot.questions.map((q) => [q.id, q]));
     for (const r of reviews) {
       const q = byId.get(r.question_id);
-      if (q) q.card = r.card;
+      if (q && r.card) q.card = r.card;
     }
     await saveSnapshot();
   }
@@ -383,6 +383,7 @@ export function refreshSnapshot(): Promise<boolean> {
         const lessons = new Map(snapshot.lessons.map((l) => [l.id, l]));
         for (const r of data.reads) lessons.get(r.lesson_id)?.reads.push({ kind: r.kind, at: r.read_at });
         snapshot.prefs = data.prefs;
+        snapshot.fsrs_w = data.fsrs_w;
         snapshot.fetched_at = data.fetched_at;
       }
       syncPrefs(data.prefs);
@@ -421,6 +422,15 @@ async function cacheFiles() {
 
 /** Send everything waiting and pull everything new, like Anki's sync button. */
 export const syncNow = refreshSnapshot;
+
+// ---- Scheduling inputs, for src/fsrs.ts ------------------------------------------------------
+
+/** FSRS weights fitted for this code (scripts/optimize.ts), or null for the defaults. */
+export const fsrsWeights = (): number[] | null => snapshot?.fsrs_w ?? null;
+
+/** Due times (unix ms) of every graduated review, to spread new ones over the emptier days. */
+export const reviewDues = (): number[] =>
+  snapshot?.questions.flatMap((q) => (q.card?.state === 2 ? [q.card.due] : [])) ?? [];
 
 // ---- Offline answers, computed from the snapshot ---------------------------------------------
 // These mirror the worker's SQL for the same routes.

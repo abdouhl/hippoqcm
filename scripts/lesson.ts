@@ -3,7 +3,8 @@
 //   "semester": 1, "module": "Cytology", "title": "Plasma membrane",
 //   "pdf": "s1/cytology/plasma-membrane.pdf",            // under public/lessons/
 //   "exam_questions": ["EMD1 2024-2025 Q3", ...],          // past exam questions covered by this lesson
-//   "questions": [{ "stem", "options", "answer", "explanation", "page", "image"? }]  // generated
+//   "questions": [{ "stem", "options", "answer", "explanation", "page", "weight", "image"? }]  // generated
+//   // weight = number of exam sessions that asked the question's topic (0 = never); it raises the topic's priority
 // }
 //
 // Usage:
@@ -15,7 +16,7 @@ import { existsSync, readdirSync } from "node:fs";
 
 type BankQuestion = { stem: string; options: string[]; answer: string; explanation?: string; image?: string };
 type Bank = { semester: 1 | 2; module: string; source: string; questions: BankQuestion[] };
-type LessonQuestion = BankQuestion & { page: number };
+type LessonQuestion = BankQuestion & { page: number; weight?: number };
 type Draft = {
   semester: 1 | 2;
   module: string;
@@ -53,6 +54,7 @@ async function validate(draft: Draft) {
     if (!q.answer || ![...q.answer].every((l) => LABELS.indexOf(l) >= 0 && LABELS.indexOf(l) < q.options.length))
       errors.push(`${n}: bad answer "${q.answer}"`);
     if (!Number.isInteger(q.page) || q.page < 1) errors.push(`${n}: missing page`);
+    if (q.weight !== undefined && !(Number.isInteger(q.weight) && q.weight >= 0)) errors.push(`${n}: weight must be a whole number ≥ 0`);
     if (!q.explanation) errors.push(`${n}: missing explanation`);
     if (q.image && !existsSync(`public/images/${q.image}`)) errors.push(`${n}: missing image public/images/${q.image}`);
   });
@@ -120,8 +122,8 @@ if (cmd === "exams") {
   draft.questions.forEach((g, i) => {
     lines.push(
       `\n-- G${i + 1}`,
-      `INSERT INTO questions (module_id, stem, explanation, source, image, origin, pdf_page) VALUES ` +
-        `(${moduleId}, ${q(g.stem)}, ${q(g.explanation)}, ${q(`Lesson: ${draft.title}`)}, ${q(g.image)}, 'generated', ${g.page});`,
+      `INSERT INTO questions (module_id, stem, explanation, source, image, origin, pdf_page, exam_weight) VALUES ` +
+        `(${moduleId}, ${q(g.stem)}, ${q(g.explanation)}, ${q(`Lesson: ${draft.title}`)}, ${q(g.image)}, 'generated', ${g.page}, ${g.weight ?? 0});`,
       `INSERT INTO question_lessons (question_id, lesson_id) VALUES ((SELECT MAX(id) FROM questions), ${lessonId});`,
       `INSERT INTO options (question_id, label, text, is_correct) VALUES\n` +
         g.options

@@ -6,9 +6,20 @@ export type Settings = {
   reviewsPerDay: number; // reviews per module per day, 0 = no limit
   order: "mixed" | "reviews-first" | "new-first"; // where new questions go in a session
   shuffleOptions: boolean;
+  retention: number; // chance of remembering a question when it comes back, 0.8–0.97; raised before an exam
+  examDates: Record<string, string>; // module id → exam day, "YYYY-MM-DD"
+  autoGrade: boolean; // suggest Hard/Good/Easy from how long a right answer took
 };
 
-export const DEFAULTS: Settings = { newPerDay: 20, reviewsPerDay: 0, order: "mixed", shuffleOptions: true };
+export const DEFAULTS: Settings = {
+  newPerDay: 20,
+  reviewsPerDay: 0,
+  order: "mixed",
+  shuffleOptions: true,
+  retention: 0.9,
+  examDates: {},
+  autoGrade: true,
+};
 
 const KEY = "hippoqcm.settings";
 const AT_KEY = "hippoqcm.settings.at"; // unix ms of the save, here or on another device

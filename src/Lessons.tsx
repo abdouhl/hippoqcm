@@ -55,7 +55,7 @@ function ReadButton({ lesson, kind, onRead, onUndo }: { lesson: Lesson; kind: Re
 
 // Lesson pdf paths that have a summary page (public/summaries/index.json, written by scripts/summary.ts).
 let summaries: Promise<Set<string>> | null = null;
-function useHasSummary(pdf: string | undefined) {
+export function useHasSummary(pdf: string | undefined) {
   const [has, setHas] = useState(false);
   useEffect(() => {
     if (!pdf) return;

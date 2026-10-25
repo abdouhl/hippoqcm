@@ -71,6 +71,8 @@ Distribute by exam weight:
   if the lesson seems to, mention it to the user.
 - `explanation`: 1–3 sentences — the fact from the lesson, and why the tempting distractor is wrong.
 - `page`: physical page where the answer is taught.
+- `weight`: the exam weight of the question's topic from step 4 — the number of different exam sessions that asked it
+  (0 if never examined). The scheduler gives often-examined topics a higher target recall and reviews them first.
 - Image questions — decided by the module's exams, not by taste. The last line of `exams.txt` says
   `N questions, M with an image`, and image questions are tagged `(image …)`.
   - **M > 0** → write image questions in roughly the same proportion as the exams (M/N of your new questions,

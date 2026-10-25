@@ -88,7 +88,10 @@ function About() {
         <li>
           <b>Spaced repetition.</b> Each answer is graded (Again, Hard, Good, Easy). The FSRS algorithm then
           schedules the next review just before you are likely to forget it. Questions you know come back
-          less often, and the ones you miss come back sooner.
+          less often, and the ones you miss come back a few minutes later in the same session. A right answer
+          checked with "Not sure" counts as Hard, so a lucky guess isn't trusted. Topics that past exams ask
+          often are reviewed a little more, and with an exam date set in Settings, every question is
+          scheduled to come back before the exam.
         </li>
         <li>
           <b>Activity.</b> The grid on the home page shows how many questions you reviewed each day.

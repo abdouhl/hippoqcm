@@ -102,6 +102,8 @@ export default function Insights({ modules, onBack, onStudy }: Props) {
         </ul>
       )}
 
+      <Calibration rows={data.calibration ?? []} />
+
       <div className="review-head">
         <h2>Leeches · {data.leeches.length}</h2>
         {data.leeches.length > 0 && (
@@ -153,6 +155,45 @@ function ErrorPattern({ errors }: { errors: Data["errors"] }) {
         ))}
       </ul>
       <p>{advice}</p>
+    </section>
+  );
+}
+
+const MIN_CALIBRATION_REVIEWS = 30; // fewer reviews in total and the comparison is noise
+
+// How well the scheduler's predictions match what happened: of the reviews it gave a 70–79% chance,
+// were about 75% right? Well under means it schedules too far out for you; well over, too soon.
+function Calibration({ rows }: { rows: Data["calibration"] }) {
+  const total = rows.reduce((n, r) => n + r.reviews, 0);
+  if (total < MIN_CALIBRATION_REVIEWS) return null;
+  const predicted = rows.reduce((n, r) => n + (r.bucket + 0.5) * 10 * r.reviews, 0) / total;
+  const actual = pct(rows.reduce((n, r) => n + r.correct, 0), total);
+  const gap = actual - predicted;
+  const verdict =
+    gap < -8
+      ? "You remember less than predicted: questions come back too late for you. Raise the target recall in Settings."
+      : gap > 8
+        ? "You remember more than predicted: you could lower the target recall in Settings and review less."
+        : "Predictions match how you actually do.";
+
+  return (
+    <section>
+      <h2>Scheduler predictions · {total} reviews</h2>
+      <table className="insights-table">
+        <thead>
+          <tr><th>Predicted recall</th><th className="num">Reviews</th><th className="num">Actually right</th></tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.bucket}>
+              <td>{r.bucket * 10}–{r.bucket * 10 + 9}%</td>
+              <td className="num">{r.reviews}</td>
+              <td className="num">{pct(r.correct, r.reviews)}%</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="meta">{verdict}</p>
     </section>
   );
 }

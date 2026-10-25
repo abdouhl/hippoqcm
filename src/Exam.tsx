@@ -2,7 +2,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Rating } from "ts-fsrs";
 import type { Label, Lesson, Module, ReviewInput, StudyQuestion } from "../shared/types";
 import { getJSON, saveReviews } from "./api";
-import { scheduler, toCard, toRow } from "./fsrs";
+import { reviewFacts, schedule, toRow } from "./fsrs";
+import { ignoreKey, Kbd } from "./keys";
 
 const COUNTS = [10, 20, 30, 40];
 const PACES = [
@@ -87,7 +88,9 @@ export default function Exam({ module, lessons, onExit }: Props) {
   };
 
   // Grade, and feed answered questions into the spaced-repetition schedule: right = Good, wrong = Again.
-  // Unanswered ones are left alone — running out of time says little about what you know.
+  // Unanswered ones are left alone — running out of time says little about what you know. A right answer
+  // to a question not due yet is only logged: it was seen recently, so it proves little and would push
+  // the question further out.
   const submit = useCallback(
     (running: Running) => {
       if (submitted.current === running.startedAt) return;
@@ -98,13 +101,16 @@ export default function Exam({ module, lessons, onExit }: Props) {
         if (picked.length === 0) return [];
         const correct = isRight(q, picked);
         const rating = correct ? Rating.Good : Rating.Again;
+        const counts = !correct || !q.card || q.card.due <= now.getTime();
         return [{
           question_id: q.id,
           rating,
           correct,
           selected: [...picked].sort().join(""),
-          card: toRow(scheduler.repeat(toCard(q.card), now)[rating].card),
+          card: counts ? toRow(schedule(q, now)[rating].card) : null,
           reviewed_at: now.getTime(),
+          ...reviewFacts(q, now),
+          exam: true,
         }];
       });
       void saveReviews(reviews);
@@ -230,14 +236,24 @@ function Sitting({ module, exam, onChange, onSubmit }: {
     onChange({ ...exam, answers });
   };
 
-  // Keyboard: A–E toggle, ←/→ move between questions.
+  const submit = () => (unanswered > 0 ? setConfirming(true) : onSubmit(exam));
+
+  // Keyboard: A–E toggle, →/Enter next, ← previous, Home/End first/last, Shift+Enter submit
+  // (then Enter confirms, Esc keeps going).
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (ignoreKey(e)) return;
       const key = e.key.toUpperCase();
-      if (key.length === 1 && "ABCDE".includes(key) && question.options.some((o) => o.label === key)) toggle(key as Label);
+      if (confirming && e.key === "Enter") onSubmit(exam);
+      else if (confirming && e.key === "Escape") setConfirming(false);
+      else if (key.length === 1 && "ABCDE".includes(key) && question.options.some((o) => o.label === key)) toggle(key as Label);
+      else if (e.key === "Enter" && e.shiftKey) submit();
       else if (e.key === "ArrowRight" || e.key === "Enter") go(exam.index + 1);
       else if (e.key === "ArrowLeft") go(exam.index - 1);
+      else if (e.key === "Home") go(0);
+      else if (e.key === "End") go(exam.questions.length - 1);
+      else return;
+      e.preventDefault(); // don't also press the focused button
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -285,19 +301,23 @@ function Sitting({ module, exam, onChange, onSubmit }: {
           {confirming ? (
             <>
               <span className="meta">{unanswered} unanswered — submit anyway?</span>
-              <button className="primary" onClick={() => onSubmit(exam)}>Submit</button>
-              <button className="secondary" onClick={() => setConfirming(false)}>Keep going</button>
+              <button className="primary" onClick={() => onSubmit(exam)}>Submit <Kbd>↵</Kbd></button>
+              <button className="secondary" onClick={() => setConfirming(false)}>Keep going <Kbd>Esc</Kbd></button>
             </>
           ) : (
             <button
               className={last ? "primary" : "secondary"}
-              onClick={() => (unanswered > 0 ? setConfirming(true) : onSubmit(exam))}
+              onClick={submit}
             >
-              Submit exam
+              Submit exam <Kbd>⇧↵</Kbd>
             </button>
           )}
         </div>
       </article>
+      <p className="hint key-help meta">
+        <kbd>A</kbd>–<kbd>E</kbd> pick · <kbd>←</kbd> <kbd>→</kbd> previous / next · <kbd>Home</kbd> <kbd>End</kbd> first /
+        last · <kbd>⇧</kbd>+<kbd>↵</kbd> submit
+      </p>
     </main>
   );
 }

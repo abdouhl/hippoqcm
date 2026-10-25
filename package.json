@@ -11,6 +11,7 @@
     "db:migrate:local": "wrangler d1 migrations apply DB --local",
     "typecheck": "tsc -b",
     "admin": "bun scripts/admin/server.ts",
+    "optimize": "bun scripts/optimize.ts",
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.62.5",
     "@cloudflare/workers-types": "^5.20261002.1",
+    "@open-spaced-repetition/binding": "0.5.0",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.1",

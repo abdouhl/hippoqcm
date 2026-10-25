@@ -60,8 +60,18 @@ async function readsByLesson(db: D1Database, user: number): Promise<Map<number, 
   return reads;
 }
 
+// FSRS weights fitted for this user by scripts/optimize.ts, else the ones fitted on everyone's reviews.
+async function fsrsWeights(db: D1Database, user: number): Promise<number[] | null> {
+  const row = await db.prepare(
+    "SELECT w FROM fsrs_params WHERE user_id = ?1 OR user_id IS NULL ORDER BY user_id IS NULL LIMIT 1",
+  )
+    .bind(user)
+    .first<{ w: string }>();
+  return row ? (JSON.parse(row.w) as number[]) : null;
+}
+
 // Columns for a StudyQuestion row; expects `questions q LEFT JOIN cards c`.
-const QUESTION_COLUMNS = `q.id, q.module_id, q.stem, q.explanation, q.source, q.image, q.origin, q.pdf_page,
+const QUESTION_COLUMNS = `q.id, q.module_id, q.stem, q.explanation, q.source, q.image, q.origin, q.pdf_page, q.exam_weight,
   (SELECT l.pdf FROM question_lessons ql JOIN lessons l ON l.id = ql.lesson_id
    WHERE ql.question_id = q.id ORDER BY l.position LIMIT 1) AS pdf,
   c.due, c.stability, c.difficulty, c.elapsed_days, c.scheduled_days,
@@ -95,6 +105,7 @@ async function toStudyQuestions(db: D1Database, rows: Record<string, unknown>[])
     origin: q.origin as StudyQuestion["origin"],
     pdf: q.pdf as string | null,
     pdf_page: q.pdf_page as number | null,
+    exam_weight: q.exam_weight as number,
     options: byQuestion.get(q.id as number) ?? [],
     card:
       q.due == null
@@ -250,7 +261,7 @@ export default {
 
     // Weak spots: accuracy per module and lesson, leeches, and how wrong answers go wrong.
     if (url.pathname === "/api/insights" && request.method === "GET") {
-      const [modules, lessons, leeches, wrong] = await env.DB.batch([
+      const [modules, lessons, leeches, wrong, calibration] = await env.DB.batch([
         env.DB.prepare(
           `SELECT q.module_id, COUNT(*) AS reviews, SUM(r.correct) AS correct
            FROM review_log r JOIN questions q ON q.id = r.question_id
@@ -279,6 +290,14 @@ export default {
            FROM review_log r
            WHERE r.user_id = ?1 AND r.correct = 0`,
         ).bind(user),
+        // Graduated reviews only: learning steps are minutes apart and nearly always right.
+        env.DB.prepare(
+          `SELECT MIN(CAST(retrievability * 10 AS INTEGER), 9) AS bucket, COUNT(*) AS reviews, SUM(correct) AS correct
+           FROM review_log
+           WHERE user_id = ?1 AND retrievability IS NOT NULL AND state = 2
+           GROUP BY bucket
+           ORDER BY bucket`,
+        ).bind(user),
       ]);
 
       // Split wrong answers by what went wrong: ticked a false option, missed a true one, or both.
@@ -298,6 +317,7 @@ export default {
         lessons: lessons.results as Insights["lessons"],
         leeches: leeches.results as Insights["leeches"],
         errors,
+        calibration: calibration.results as Insights["calibration"],
       };
       return json(insights);
     }
@@ -327,6 +347,7 @@ export default {
           cards: cards.results as SnapshotUpdate["cards"],
           reads: reads.results as SnapshotUpdate["reads"],
           prefs,
+          fsrs_w: await fsrsWeights(env.DB, user),
           fetched_at: Date.now(),
         };
         return json(update);
@@ -364,6 +385,7 @@ export default {
         })),
         content_version,
         prefs,
+        fsrs_w: await fsrsWeights(env.DB, user),
         fetched_at: Date.now(),
       };
       return json(snapshot);
@@ -431,6 +453,17 @@ export default {
       await env.DB.batch(
         reviews.flatMap((r) => {
           const c = r.card;
+          const log = env.DB.prepare(
+            // OR IGNORE: a batch whose response was lost is sent again.
+            `INSERT OR IGNORE INTO review_log (question_id, rating, correct, selected, reviewed_at, user_id,
+                                               state, elapsed_days, retrievability, duration_ms, guessed, exam)
+             VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)`,
+          ).bind(
+            r.question_id, r.rating, r.correct ? 1 : 0, r.selected, r.reviewed_at, userId,
+            r.state ?? null, r.elapsed_days ?? null, r.retrievability ?? null, r.duration_ms ?? null,
+            r.guessed == null ? null : r.guessed ? 1 : 0, r.exam ? 1 : 0,
+          );
+          if (!c) return [log];
           return [
             env.DB.prepare(
               `INSERT INTO cards (question_id, due, stability, difficulty, elapsed_days, scheduled_days,
@@ -447,11 +480,7 @@ export default {
               r.question_id, c.due, c.stability, c.difficulty, c.elapsed_days, c.scheduled_days,
               c.learning_steps, c.reps, c.lapses, c.state, c.last_review, userId,
             ),
-            env.DB.prepare(
-              // OR IGNORE: a batch whose response was lost is sent again.
-              `INSERT OR IGNORE INTO review_log (question_id, rating, correct, selected, reviewed_at, user_id)
-               VALUES (?1, ?2, ?3, ?4, ?5, ?6)`,
-            ).bind(r.question_id, r.rating, r.correct ? 1 : 0, r.selected, r.reviewed_at, userId),
+            log,
           ];
         }),
       );

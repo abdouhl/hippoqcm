@@ -67,6 +67,7 @@ export type StudyQuestion = {
   origin: "exam" | "generated";
   pdf: string | null; // lesson PDF for generated questions, path under /lessons
   pdf_page: number | null;
+  exam_weight?: number; // exam sessions that asked this topic; missing in snapshots saved before it existed
   options: Option[];
   card: CardRow | null; // null = never reviewed
 };
@@ -76,8 +77,15 @@ export type ReviewInput = {
   rating: 1 | 2 | 3 | 4;
   correct: boolean;
   selected: string;
-  card: CardRow;
+  card: CardRow | null; // null = logged without moving the schedule (a mock-exam answer to a question not due yet)
   reviewed_at: number;
+  // What the scheduler knew before the answer, for fitting parameters (scripts/optimize.ts) and calibration.
+  state?: number;
+  elapsed_days?: number | null;
+  retrievability?: number | null;
+  duration_ms?: number | null;
+  guessed?: boolean;
+  exam?: boolean;
 };
 
 export type Insights = {
@@ -86,6 +94,8 @@ export type Insights = {
   leeches: { id: number; module_id: number; stem: string; lapses: number; reps: number }[];
   // Wrong answers split by cause: ticked a false option only, missed a true one only, or both.
   errors: { total: number; extra: number; missed: number; both: number };
+  // Reviews bucketed by the predicted chance of recall (bucket 7 = 70–79%), against how often they were right.
+  calibration: { bucket: number; reviews: number; correct: number }[];
 };
 
 // Offline copy of the deck tree and every unflagged question, from /api/snapshot.
@@ -95,6 +105,7 @@ export type Snapshot = {
   questions: (StudyQuestion & { lesson_ids: number[] })[];
   content_version: number; // bumped by any change to modules, lessons or questions
   prefs: SyncedPrefs;
+  fsrs_w: number[] | null; // FSRS weights fitted for this user (or everyone); null = defaults
   fetched_at: number; // unix ms
 };
 
@@ -107,6 +118,7 @@ export type SnapshotUpdate = {
   cards: ({ question_id: number } & CardRow)[];
   reads: { lesson_id: number; kind: ReadKind; read_at: number }[];
   prefs: SyncedPrefs;
+  fsrs_w: number[] | null;
   fetched_at: number;
 };
 
