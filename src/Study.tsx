@@ -7,7 +7,7 @@ import { formatInterval, reviewFacts, schedule, toRow } from "./fsrs";
 import { Icon } from "./icons";
 import { ignoreKey, Kbd } from "./keys";
 import { useHasSummary } from "./Lessons";
-import { buildQueue, displayOptions, hasExam, recordDone } from "./queue";
+import { buildQueue, displayOptions, hasExam, recordDone, type StudyOnly } from "./queue";
 import { getSettings } from "./prefs";
 import { accuracyTone, haptic, Ring, ScreenHeader, Skeleton } from "./ui";
 
@@ -33,11 +33,12 @@ function suggestedGrade(q: StudyQuestion, ms: number): Grade {
 type Props = {
   title: string;
   endpoint: string; // e.g. /api/lessons/3/study — "all=1" is appended for practice-all
+  only?: StudyOnly; // just new questions or just reviews
   backLabel: string;
   onExit: () => void;
 };
 
-export default function Study({ title, endpoint, backLabel, onExit }: Props) {
+export default function Study({ title, endpoint, only, backLabel, onExit }: Props) {
   const [queue, setQueue] = useState<StudyQuestion[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [index, setIndex] = useState(0);
@@ -72,7 +73,7 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
       // Cramming looks past due dates, so it needs every question.
       getJSON<StudyQuestion[]>(all || cram ? `${endpoint}${sep}all=1` : endpoint)
         .then((questions) => {
-          const built = buildQueue(questions, { all, cram, extraNew: more.fresh, extraReviews: more.reviews });
+          const built = buildQueue(questions, { all, cram, extraNew: more.fresh, extraReviews: more.reviews, only });
           setHeld({ fresh: built.heldNew, reviews: built.heldReviews });
           setExamAhead(hasExam(questions));
           startedAt.current = Date.now();
@@ -80,7 +81,7 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
         })
         .catch((e: Error) => setError(e.message));
     },
-    [endpoint],
+    [endpoint, only],
   );
 
   useEffect(() => load(false), [load]);
@@ -249,7 +250,15 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
           ) : (
             <>
               <span className="done-icon"><Icon name="check" size={36} /></span>
-              <h2 className="done-title">{practiceAll ? "No questions here yet" : cramming ? "Ready for the exam" : "Nothing due right now"}</h2>
+              <h2 className="done-title">{practiceAll
+                  ? "No questions here yet"
+                  : cramming
+                    ? "Ready for the exam"
+                    : only === "new"
+                      ? "No new questions left today"
+                      : only === "reviews"
+                        ? "No reviews due right now"
+                        : "Nothing due right now"}</h2>
             </>
           )}
           {held.fresh + held.reviews > 0 && (
@@ -273,7 +282,7 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
                 Learn more new questions
               </button>
             )}
-            {examAhead && !cramming && (
+            {examAhead && !cramming && only !== "new" && (
               <button className="secondary" onClick={() => load(false, extra, true)} title="Questions you're likely to have forgotten by exam day">
                 Cram for the exam
               </button>

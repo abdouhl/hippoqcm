@@ -5,7 +5,7 @@ import { Activity } from "./Activity";
 import type { StudyTarget } from "./Decks";
 import { Icon } from "./icons";
 import { useSettings } from "./prefs";
-import { plannedToday } from "./queue";
+import { plannedToday, type StudyOnly } from "./queue";
 import { SyncBadge } from "./SyncBadge";
 
 // Rough pace for the time estimate: a new question takes longer to read and think through.
@@ -46,7 +46,12 @@ export default function Today({ modules, onStudy, onOpenModule, onSettings, onAc
       const p = plannedToday(modules.filter((m) => Math.ceil(m.semester / 2) === y));
       return p.fresh + p.reviews > 0;
     }) ?? years[0] ?? 1;
-  const start = () => onStudy({ title: `Year ${year}`, endpoint: `/api/years/${year}/study` });
+  const start = (only?: StudyOnly) =>
+    onStudy({
+      title: only === "new" ? `Year ${year} · new` : only === "reviews" ? `Year ${year} · reviews` : `Year ${year}`,
+      endpoint: `/api/years/${year}/study`,
+      only,
+    });
 
   const exams = modules
     .filter((m) => settings.examDates[m.id] && daysUntil(settings.examDates[m.id]) >= 0)
@@ -85,7 +90,7 @@ export default function Today({ modules, onStudy, onOpenModule, onSettings, onAc
           <>
             <p className="hero-title"><Icon name="check" size={28} /> All caught up</p>
             <p className="meta">Nothing due right now. Come back tomorrow, or keep going with extra questions.</p>
-            <button className="secondary big" onClick={start}>Study anyway</button>
+            <button className="secondary big" onClick={() => start()}>Study anyway</button>
           </>
         ) : (
           <>
@@ -94,9 +99,20 @@ export default function Today({ modules, onStudy, onOpenModule, onSettings, onAc
               <span><b className="due">{reviews}</b> to review</span>
             </div>
             <p className="meta">About {minutes} min</p>
-            <button className="primary big" onClick={start}>
-              <Icon name="play" /> Start studying
+            <button className="primary big" onClick={() => start()}>
+              <Icon name="play" /> {fresh > 0 && reviews > 0 ? "Study both" : "Start studying"}
             </button>
+            {/* With both kinds waiting, either can be done on its own. */}
+            {fresh > 0 && reviews > 0 && (
+              <div className="hero-split">
+                <button className="secondary" onClick={() => start("new")}>
+                  Only new <b className="new">{fresh}</b>
+                </button>
+                <button className="secondary" onClick={() => start("reviews")}>
+                  Only reviews <b className="due">{reviews}</b>
+                </button>
+              </div>
+            )}
           </>
         )}
       </section>

@@ -2,12 +2,13 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import type { Lesson, Module } from "../shared/types";
 import Account from "./Account";
 import { getJSON } from "./api";
-import Decks from "./Decks";
+import Decks, { type StudyTarget } from "./Decks";
 import Exam from "./Exam";
 import { Icon, type IconName } from "./icons";
 import Insights from "./Insights";
 import { LessonPage, ModulePage } from "./Lessons";
 import { Footer, NotFound, StaticPage, isPage } from "./Pages";
+import type { StudyOnly } from "./queue";
 import Settings from "./Settings";
 import { SyncBadge } from "./SyncBadge";
 import Study from "./Study";
@@ -20,7 +21,7 @@ type View =
   | { kind: Tab }
   | { kind: "module"; module: Module }
   | { kind: "lesson"; module: Module; lesson: Lesson }
-  | { kind: "study"; title: string; endpoint: string; backLabel: string }
+  | { kind: "study"; title: string; endpoint: string; backLabel: string; only?: StudyOnly }
   | { kind: "exam"; module: Module; lessons?: Lesson[] }
   | { kind: "account"; incoming: string | null };
 
@@ -135,11 +136,11 @@ export default function App() {
   if (isPage(page)) return <StaticPage page={page} navigate={navigate} />;
   if (page !== "") return <NotFound navigate={navigate} />;
 
-  const study = (target: { title: string; endpoint: string }, backLabel: string) =>
+  const study = (target: StudyTarget, backLabel: string) =>
     open({ kind: "study", ...target, backLabel });
 
   if (view.kind === "study") {
-    return <Study title={view.title} endpoint={view.endpoint} backLabel={view.backLabel} onExit={back} />;
+    return <Study title={view.title} endpoint={view.endpoint} only={view.only} backLabel={view.backLabel} onExit={back} />;
   }
 
   if (view.kind === "exam") {

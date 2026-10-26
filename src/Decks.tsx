@@ -1,12 +1,13 @@
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import type { Lesson, Module } from "../shared/types";
 import { getJSON } from "./api";
+import type { StudyOnly } from "./queue";
 import { Icon } from "./icons";
 import { PHONE, Ring, useMedia } from "./ui";
 
 type Counts = { new_count: number; learn_count: number; review_count: number; question_count: number };
 
-export type StudyTarget = { title: string; endpoint: string };
+export type StudyTarget = { title: string; endpoint: string; only?: StudyOnly };
 
 const sum = (items: Counts[]): Counts => ({
   new_count: items.reduce((n, c) => n + c.new_count, 0),

@@ -9,6 +9,9 @@ import { getSettings } from "./prefs";
 
 const DONE_KEY = "hippoqcm.newToday";
 
+/** A session of only new questions or only reviews; unset = both. */
+export type StudyOnly = "new" | "reviews";
+
 // Days since the unix epoch in the local timezone, like ActivityDay.day.
 const today = () => Math.floor((Date.now() - new Date().getTimezoneOffset() * 60_000) / 86_400_000);
 
@@ -107,20 +110,27 @@ function spreadLessons(queue: StudyQuestion[]): StudyQuestion[] {
 /**
  * Build the session. `extraNew`/`extraReviews` raise each module's allowance (the "more" buttons);
  * `all` (practice everything) skips the caps; `cram` takes, on top of today's questions, every one
- * whose recall on exam day is predicted below target. `heldNew`/`heldReviews` count what was left out.
+ * whose recall on exam day is predicted below target; `only` keeps just new questions or just reviews.
+ * `heldNew`/`heldReviews` count what was left out by the daily caps.
  */
 export function buildQueue(
   questions: StudyQuestion[],
-  { all, cram = false, extraNew = 0, extraReviews = 0 }: { all: boolean; cram?: boolean; extraNew?: number; extraReviews?: number },
+  { all, cram = false, extraNew = 0, extraReviews = 0, only }: {
+    all: boolean;
+    cram?: boolean;
+    extraNew?: number;
+    extraReviews?: number;
+    only?: StudyOnly;
+  },
 ) {
   const settings = getSettings();
   const done = doneToday();
   const now = Date.now();
   const reviewLimit = all || cram || !settings.reviewsPerDay ? Infinity : settings.reviewsPerDay + extraReviews;
   const pool = buryRepeats(questions);
-  const seen = pool.filter((q) => q.card && (!cram || q.card.due <= now || needsCram(q)));
+  const seen = only === "new" ? [] : pool.filter((q) => q.card && (!cram || q.card.due <= now || needsCram(q)));
   const reviews = cap(byPriority(seen), done.reviews, reviewLimit);
-  const fresh = cap(shuffle(pool.filter((q) => !q.card)), done.counts, all ? Infinity : settings.newPerDay + extraNew);
+  const fresh = cap(shuffle(only === "reviews" ? [] : pool.filter((q) => !q.card)), done.counts, all ? Infinity : settings.newPerDay + extraNew);
 
   const r = reviews.kept; // already in priority order
   const f = fresh.kept;
