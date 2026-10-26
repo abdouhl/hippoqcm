@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import { isCode, newCode, normalizeCode } from "../shared/code";
 import type { Account, Lesson, LessonRead, Module, ReviewInput, Snapshot, SnapshotUpdate, StudyQuestion, SyncedPrefs } from "../shared/types";
+import { downloadFiles } from "./offline";
 import { getSettings, hasSavedSettings, type Settings, settingsSavedAt, storeSettings } from "./prefs";
 
 const TIMEOUT_MS = 8000;
@@ -399,25 +400,29 @@ export function refreshSnapshot(): Promise<boolean> {
   })());
 }
 
-// Have the service worker download the images, PDFs and summaries the snapshot refers to. Sent on
-// every pull, not only when questions change, so files added to an unchanged deck get cached too;
-// the worker skips the ones it already has.
+// Download the images, PDFs and summaries the snapshot refers to for offline use. Run on every pull,
+// not only when questions change, so files added to an unchanged deck get downloaded too; files
+// already saved are skipped.
 async function cacheFiles() {
-  if (!snapshot) return;
+  const urls = await offlineFiles();
+  if (urls) await downloadFiles(urls);
+}
+
+/** Every file the app shows offline, or null without a snapshot. */
+export async function offlineFiles(): Promise<string[] | null> {
+  if (!snapshot) return null;
   const pdfs = snapshot.lessons.map((l) => l.pdf);
   let summaries: string[] = [];
   try {
     const res = await fetch("/summaries/index.json", { signal: AbortSignal.timeout(TIMEOUT_MS) });
     if (res.ok) summaries = (await res.json()) as string[];
   } catch {}
-  const urls = [
-    ...snapshot.questions.flatMap((q) => (q.image ? [`/images/${q.image}`] : [])),
+  return [
     ...pdfs.map((pdf) => `/lessons/${pdf}`),
     "/summaries/index.json",
     ...pdfs.filter((pdf) => summaries.includes(pdf)).map((pdf) => `/summaries/${pdf.replace(/\.pdf$/, ".html")}`),
+    ...snapshot.questions.flatMap((q) => (q.image ? [`/images/${q.image}`] : [])),
   ];
-  const reg = await navigator.serviceWorker?.ready;
-  reg?.active?.postMessage({ type: "cache", urls });
 }
 
 /** Send everything waiting and pull everything new, like Anki's sync button. */

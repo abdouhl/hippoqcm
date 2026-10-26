@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Module } from "../shared/types";
-import { getJSON, saveSettings } from "./api";
+import { getJSON, offlineFiles, saveSettings } from "./api";
+import { downloadFiles, retryDownloads, useDownloadStatus } from "./offline";
 import { DEFAULTS, useSettings, type Settings as SettingsT } from "./prefs";
 
 const RETENTIONS = [80, 85, 88, 90, 92, 95, 97];
@@ -133,9 +134,55 @@ export default function Settings({ onBack }: { onBack: () => void }) {
         ))}
       </fieldset>
 
+      <OfflineFiles />
+
       <div className="actions start">
         <button className="secondary" onClick={() => set({ ...DEFAULTS, examDates: settings.examDates })}>Reset to defaults</button>
       </div>
     </main>
+  );
+}
+
+const mb = (bytes: number) => `${Math.round(bytes / 1e6)} MB`;
+
+// Lesson PDFs, summaries and question images download on their own after each sync; this shows how
+// far along that is and starts it again on demand.
+function OfflineFiles() {
+  const { running, done, total, failed, checkedAt } = useDownloadStatus();
+  const [used, setUsed] = useState<number | null>(null);
+  useEffect(() => {
+    if (!running) navigator.storage?.estimate?.().then((e) => setUsed(e.usage ?? null)).catch(() => {});
+  }, [running]);
+  const download = async () => {
+    const urls = await offlineFiles();
+    if (urls) await downloadFiles(urls);
+  };
+
+  let state: string;
+  if (!("serviceWorker" in navigator) || !import.meta.env.PROD) state = "Offline files need the installed app (production build).";
+  else if (running) state = `Downloading… ${done} of ${total} files`;
+  else if (checkedAt === null) state = "Not checked yet.";
+  else if (failed.length > 0) state = `${done} of ${total} files saved · ${failed.length} couldn't download${navigator.onLine ? "" : " (offline)"}.`;
+  else state = `✓ All ${total} files saved — lessons and summaries open without internet.`;
+
+  return (
+    <fieldset className="exam-setup">
+      <legend>Offline</legend>
+      <p className="meta">
+        Every lesson PDF, summary and question image is saved on this device after each sync, so the app works fully
+        without internet.{used !== null && <> Uses {mb(used)} of storage.</>}
+      </p>
+      {running && <progress className="download" max={total} value={done} />}
+      <p>{state}</p>
+      <div className="actions start">
+        {failed.length > 0 && !running ? (
+          <button onClick={() => void retryDownloads()}>Retry {failed.length} files</button>
+        ) : (
+          <button className="secondary" disabled={running} onClick={() => void download()}>
+            {checkedAt === null ? "Download for offline" : "Check for new files"}
+          </button>
+        )}
+      </div>
+    </fieldset>
   );
 }

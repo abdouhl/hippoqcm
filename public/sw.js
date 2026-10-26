@@ -1,7 +1,7 @@
 // Offline support. The app shell and static files are served from cache; /api is left to the
 // page, which falls back to its own offline snapshot (src/api.ts).
 // Bump when files change under the same URL (lesson PDFs are cached for good); see activate.
-const CACHE = "hippoqcm-v4";
+const CACHE = "hippoqcm-v5";
 // Hashed build output, and lesson files that are fetched once and kept.
 const STATIC = /^\/(assets|images|lessons)\/|^\/summaries\/.+\.(jpe?g|png|webp|svg)$|^\/[^/]+\.(svg|png|webmanifest)$/;
 // Summary pages and their index can be rewritten under the same URL: show the cached copy, refresh it.
@@ -14,9 +14,13 @@ self.addEventListener("install", (event) => {
       const res = await fetch("/", { cache: "no-cache" });
       const html = await res.clone().text();
       await cache.put("/", res);
-      // The built page links its hashed JS/CSS; cache them now so the first offline launch works.
+      // The built page links its hashed JS/CSS, and /precache.json lists every other built file (the
+      // PDF viewer, loaded on demand); cache them all now so the app works offline from the start.
       const linked = [...html.matchAll(/(?:src|href)="(\/[^"]+)"/g)].map((m) => m[1]);
-      await cache.addAll([...new Set(linked)]);
+      const built = await fetch("/precache.json", { cache: "no-cache" })
+        .then((r) => (r.ok ? r.json() : []))
+        .catch(() => []);
+      await cache.addAll([...new Set([...linked, ...built])]);
       await self.skipWaiting();
     })(),
   );
@@ -26,16 +30,17 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     (async () => {
       const old = (await caches.keys()).filter((key) => key !== CACHE);
-      // Keep the images already downloaded instead of fetching them all again. Lesson PDFs are
-      // fetched anew: v3 replaced the anatomy PDFs (English notes only) under the same URLs. v4 drops
-      // the summaries v3 cached as redirected responses, which browsers won't show in a frame.
+      // Keep the images, lesson PDFs and summaries already downloaded instead of fetching them all
+      // again; only the built app files are replaced. (v4 refetched PDFs and summaries: v3 had
+      // French-and-English anatomy PDFs, and summaries cached as redirected responses, which
+      // browsers won't show in a frame.)
       if (old.length > 0) {
         const cache = await caches.open(CACHE);
         for (const key of old) {
           const prev = await caches.open(key);
           for (const req of await prev.keys()) {
             const path = new URL(req.url).pathname;
-            if (path.startsWith("/images/") && !(await cache.match(req))) {
+            if (/^\/(images|lessons|summaries)\//.test(path) && !(await cache.match(req))) {
               const res = await prev.match(req);
               if (res && cacheable(res, path)) await cache.put(req, res);
             }
@@ -132,29 +137,3 @@ async function isShell(res) {
   if (!res.headers.get("content-type")?.includes("text/html")) return false;
   return (await res.text()).includes('<div id="root">');
 }
-
-// The page sends the images, PDFs and summaries its offline snapshot refers to; fetch the missing ones.
-self.addEventListener("message", (event) => {
-  if (event.data?.type !== "cache") return;
-  event.waitUntil(
-    (async () => {
-      const cache = await caches.open(CACHE);
-      for (const url of event.data.urls) {
-        try {
-          if (!(await cache.match(url, MATCH))) await put(cache, url, await fetchFollowing(new Request(url)));
-          // A summary page shows figures and a stylesheet of its own.
-          const page = url.endsWith(".html") && (await cache.match(url, MATCH));
-          if (page) {
-            const html = await page.text();
-            for (const [, ref] of html.matchAll(/(?:src|href)="([^"#:]+\.(?:css|jpe?g|png|webp|svg))"/g)) {
-              const asset = new URL(ref, new URL(url, self.location.origin)).pathname;
-              if (asset.startsWith("/summaries/") && !(await cache.match(asset, MATCH))) {
-                await put(cache, asset, await fetchFollowing(new Request(asset)));
-              }
-            }
-          }
-        } catch {}
-      }
-    })(),
-  );
-});

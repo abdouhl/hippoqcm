@@ -1,6 +1,21 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import type { Lesson, LessonRead, Module, ReadKind } from "../shared/types";
 import { addLessonRead, getJSON, undoLessonRead } from "./api";
+
+const PdfViewer = lazy(() => import("./PdfViewer"));
+
+// Touch screens can't show a PDF in a frame: they get the pdf.js viewer instead (src/PdfViewer.tsx).
+const TOUCH = "(hover: none), (max-width: 600px)";
+function useTouch() {
+  const [touch, setTouch] = useState(() => matchMedia(TOUCH).matches);
+  useEffect(() => {
+    const query = matchMedia(TOUCH);
+    const change = () => setTouch(query.matches);
+    query.addEventListener("change", change);
+    return () => query.removeEventListener("change", change);
+  }, []);
+  return touch;
+}
 
 function useLessons(moduleId: number) {
   const [lessons, setLessons] = useState<Lesson[] | null>(null);
@@ -175,6 +190,13 @@ export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
   const lesson = lessons?.find((l) => l.id === lessonId);
   const hasSummary = useHasSummary(lesson?.pdf);
   const [view, setView] = useState<ReadKind>("summary");
+  // A PDF page a summary links to ("/lessons/x.pdf#page=3"), shown in the PDF tab until the tabs are switched.
+  const [target, setTarget] = useState<{ url: string; page?: number } | null>(null);
+  const touch = useTouch();
+  const show = (kind: ReadKind) => {
+    setTarget(null);
+    setView(kind);
+  };
   // The read button counts whichever one is on screen.
   const kind: ReadKind = hasSummary ? view : "pdf";
 
@@ -191,9 +213,23 @@ export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
   if (!lessons) return <main>{header}<p>Loading…</p></main>;
   if (!lesson) return <main>{header}<p className="error">Lesson not found</p></main>;
 
-  const pdfUrl = `/lessons/${lesson.pdf}`;
+  const pdfUrl = target?.url ?? `/lessons/${lesson.pdf}`;
   const showSummary = hasSummary && view === "summary";
-  const docUrl = showSummary ? `/summaries/${lesson.pdf.replace(/\.pdf$/, ".html")}` : pdfUrl;
+  const docUrl = showSummary
+    ? `/summaries/${lesson.pdf.replace(/\.pdf$/, ".html")}`
+    : target?.page ? `${pdfUrl}#page=${target.page}` : pdfUrl;
+  // Links from the summary to a lesson PDF open in the PDF tab, not inside the summary's frame.
+  const catchPdfLinks = (frame: HTMLIFrameElement) => {
+    frame.contentDocument?.addEventListener("click", (e) => {
+      const link = (e.target as Element).closest?.("a[href]") as HTMLAnchorElement | null;
+      const url = link && new URL(link.href, location.href);
+      if (!url || url.origin !== location.origin || !url.pathname.match(/^\/lessons\/.+\.pdf$/)) return;
+      e.preventDefault();
+      const page = Number(url.hash.match(/page=(\d+)/)?.[1]) || undefined;
+      setView("pdf");
+      setTarget({ url: url.pathname, page });
+    });
+  };
   return (
     <main className="wide">
       {header}
@@ -210,19 +246,27 @@ export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
       <div className="pdf-bar">
         {hasSummary ? (
           <div className="chips">
-            <button className={showSummary ? "chip on" : "chip"} onClick={() => setView("summary")}>Summary</button>
-            <button className={showSummary ? "chip" : "chip on"} onClick={() => setView("pdf")}>PDF</button>
+            <button className={showSummary ? "chip on" : "chip"} onClick={() => show("summary")}>Summary</button>
+            <button className={showSummary ? "chip" : "chip on"} onClick={() => show("pdf")}>PDF</button>
           </div>
         ) : (
           <span className="meta">Lesson PDF</span>
         )}
         <a className="pdf-open" href={docUrl} target="_blank" rel="noreferrer">Open in new tab ↗</a>
       </div>
-      <iframe
-        className={showSummary ? "pdf summary" : "pdf"}
-        src={docUrl}
-        title={`${lesson.title} ${showSummary ? "summary" : "PDF"}`}
-      />
+      {showSummary || !touch ? (
+        <iframe
+          key={docUrl}
+          className={showSummary ? "pdf summary" : "pdf"}
+          src={docUrl}
+          title={`${lesson.title} ${showSummary ? "summary" : "PDF"}`}
+          onLoad={(e) => showSummary && catchPdfLinks(e.currentTarget)}
+        />
+      ) : (
+        <Suspense fallback={<p className="meta">Loading PDF…</p>}>
+          <PdfViewer url={pdfUrl} page={target?.page} title={`${lesson.title} PDF`} />
+        </Suspense>
+      )}
     </main>
   );
 }

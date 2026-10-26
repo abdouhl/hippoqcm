@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { Lesson, Module } from "../shared/types";
 import Account, { needsCodeReminder } from "./Account";
 import { getJSON, syncNow, useSyncStatus } from "./api";
@@ -14,7 +14,7 @@ type View =
   | { kind: "home" }
   | { kind: "module"; module: Module }
   | { kind: "lesson"; module: Module; lesson: Lesson }
-  | { kind: "study"; title: string; endpoint: string; back: View; backLabel: string }
+  | { kind: "study"; title: string; endpoint: string; backLabel: string }
   | { kind: "exam"; module: Module; lessons?: Lesson[] }
   | { kind: "insights" }
   | { kind: "settings" }
@@ -38,23 +38,54 @@ export default function App() {
   });
   const [path, setPath] = useState(() => window.location.pathname);
 
-  useEffect(() => {
-    const onPop = () => setPath(window.location.pathname);
-    window.addEventListener("popstate", onPop);
-    return () => window.removeEventListener("popstate", onPop);
-  }, []);
-
-  const navigate = useCallback((to: string) => {
-    if (to !== window.location.pathname) window.history.pushState(null, "", to);
-    setPath(to);
-    setView({ kind: "home" });
-    window.scrollTo(0, 0);
-  }, []);
-
   const loadModules = useCallback(() => {
     getJSON<Module[]>("/api/modules")
       .then(setModules)
       .catch((e: Error) => setError(e.message));
+  }, []);
+
+  // Each screen opened gets a history entry, so the phone's back button or swipe goes back a screen
+  // instead of closing the installed app. `stack` holds the screens under the current one.
+  const stack = useRef<View[]>([]);
+  const viewRef = useRef(view);
+  viewRef.current = view;
+
+  const open = useCallback((next: View) => {
+    stack.current.push(viewRef.current);
+    window.history.pushState({ depth: stack.current.length }, "");
+    viewRef.current = next;
+    setView(next);
+    window.scrollTo(0, 0);
+  }, []);
+
+  // In-app back buttons go through history too, so it stays in step with the screen shown.
+  const back = useCallback(() => {
+    if (stack.current.length > 0) window.history.back();
+    else setView({ kind: "home" });
+  }, []);
+
+  useEffect(() => {
+    const onPop = (e: PopStateEvent) => {
+      setPath(window.location.pathname);
+      const depth = typeof e.state?.depth === "number" ? e.state.depth : 0;
+      if (stack.current.length <= depth) return;
+      const left = viewRef.current.kind;
+      let prev = viewRef.current;
+      while (stack.current.length > depth) prev = stack.current.pop()!;
+      setView(prev);
+      if (left === "study" || left === "exam") loadModules(); // refresh due counts
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, [loadModules]);
+
+  const navigate = useCallback((to: string) => {
+    if (to !== window.location.pathname) window.history.pushState(null, "", to);
+    stack.current = [];
+    setPath(to);
+    setView({ kind: "home" });
+    window.scrollTo(0, 0);
   }, []);
 
   useEffect(loadModules, [loadModules]);
@@ -73,10 +104,7 @@ export default function App() {
         title={view.title}
         endpoint={view.endpoint}
         backLabel={view.backLabel}
-        onExit={() => {
-          setView(view.back);
-          loadModules(); // refresh due counts
-        }}
+        onExit={back}
       />
     );
   }
@@ -86,20 +114,17 @@ export default function App() {
       <Exam
         module={view.module}
         lessons={view.lessons}
-        onExit={() => {
-          setView({ kind: "module", module: view.module });
-          loadModules();
-        }}
+        onExit={back}
       />
     );
   }
 
   if (view.kind === "account") {
-    return <Account incoming={view.incoming} onBack={() => setView({ kind: "home" })} />;
+    return <Account incoming={view.incoming} onBack={back} />;
   }
 
   if (view.kind === "settings") {
-    return <Settings onBack={() => setView({ kind: "home" })} />;
+    return <Settings onBack={back} />;
   }
 
   if (view.kind === "insights") {
@@ -107,9 +132,9 @@ export default function App() {
     return (
       <Insights
         modules={modules}
-        onBack={() => setView({ kind: "home" })}
+        onBack={back}
         onStudy={({ title, endpoint }) =>
-          setView({ kind: "study", title, endpoint, back: view, backLabel: "Insights" })
+          open({ kind: "study", title, endpoint, backLabel: "Insights" })
         }
       />
     );
@@ -121,24 +146,22 @@ export default function App() {
     return (
       <ModulePage
         module={module}
-        onBack={() => setView({ kind: "home" })}
-        onOpenLesson={(lesson) => setView({ kind: "lesson", module, lesson })}
-        onExam={(lessons) => setView({ kind: "exam", module, lessons })}
+        onBack={back}
+        onOpenLesson={(lesson) => open({ kind: "lesson", module, lesson })}
+        onExam={(lessons) => open({ kind: "exam", module, lessons })}
         onStudyLessons={(lessons) =>
-          setView({
+          open({
             kind: "study",
             title: lessons.length === 1 ? lessons[0].title : `${module.name} · ${lessons.length} lessons`,
             endpoint: `/api/modules/${module.id}/study?ids=${lessons.map((l) => l.id).join(",")}`,
-            back: view,
             backLabel: module.name,
           })
         }
         onStudy={(lessonsOnly) =>
-          setView({
+          open({
             kind: "study",
             title: `${module.name} · S${module.semester}${lessonsOnly ? " · my lessons" : ""}`,
             endpoint: `/api/modules/${module.id}/study${lessonsOnly ? "?lessons=1" : ""}`,
-            back: view,
             backLabel: module.name,
           })
         }
@@ -151,13 +174,12 @@ export default function App() {
       <LessonPage
         module={view.module}
         lessonId={view.lesson.id}
-        onBack={() => setView({ kind: "module", module: view.module })}
+        onBack={back}
         onStudy={(lesson) =>
-          setView({
+          open({
             kind: "study",
             title: lesson.title,
             endpoint: `/api/lessons/${lesson.id}/study`,
-            back: { kind: "lesson", module: view.module, lesson },
             backLabel: "Lesson",
           })
         }
@@ -176,14 +198,14 @@ export default function App() {
       </h1>
       <nav className="home-nav">
         <span className="home-links">
-          <button className="link" onClick={() => setView({ kind: "insights" })}>📊 Insights</button>
-          <button className="link" onClick={() => setView({ kind: "settings" })}>⚙ Settings</button>
-          <button className="link" onClick={() => setView({ kind: "account", incoming: null })}>🔑 Save progress</button>
+          <button className="link" onClick={() => open({ kind: "insights" })}>📊 Insights</button>
+          <button className="link" onClick={() => open({ kind: "settings" })}>⚙ Settings</button>
+          <button className="link" onClick={() => open({ kind: "account", incoming: null })}>🔑 Save progress</button>
         </span>
         <SyncBadge />
       </nav>
       {needsCodeReminder() && (
-        <button className="code-reminder" onClick={() => setView({ kind: "account", incoming: null })}>
+        <button className="code-reminder" onClick={() => open({ kind: "account", incoming: null })}>
           <b>Don't lose your progress.</b> Save your sync code so you can restore it on another device or after
           clearing your browser. →
         </button>
@@ -191,10 +213,14 @@ export default function App() {
       <Decks
         modules={modules}
         onStudy={({ title, endpoint }) =>
-          setView({ kind: "study", title, endpoint, back: { kind: "home" }, backLabel: "Decks" })
+          open({ kind: "study", title, endpoint, backLabel: "Decks" })
         }
-        onOpenModule={(module) => setView({ kind: "module", module })}
-        onOpenLesson={(module, lesson) => setView({ kind: "lesson", module, lesson })}
+        onOpenModule={(module) => open({ kind: "module", module })}
+        onOpenLesson={(module, lesson) => {
+          // Put the module under the lesson, so back goes where the lesson's "← Module" says.
+          open({ kind: "module", module });
+          open({ kind: "lesson", module, lesson });
+        }}
       />
       <Footer navigate={navigate} />
     </main>
