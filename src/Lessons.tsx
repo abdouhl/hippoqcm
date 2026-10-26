@@ -1,21 +1,14 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import type { Lesson, LessonRead, Module, ReadKind } from "../shared/types";
 import { addLessonRead, getJSON, undoLessonRead } from "./api";
+import { Icon } from "./icons";
+import { ScreenHeader, Skeleton, useMedia } from "./ui";
 
 const PdfViewer = lazy(() => import("./PdfViewer"));
 
 // Touch screens can't show a PDF in a frame: they get the pdf.js viewer instead (src/PdfViewer.tsx).
 const TOUCH = "(hover: none), (max-width: 600px)";
-function useTouch() {
-  const [touch, setTouch] = useState(() => matchMedia(TOUCH).matches);
-  useEffect(() => {
-    const query = matchMedia(TOUCH);
-    const change = () => setTouch(query.matches);
-    query.addEventListener("change", change);
-    return () => query.removeEventListener("change", change);
-  }, []);
-  return touch;
-}
+const useTouch = () => useMedia(TOUCH);
 
 function useLessons(moduleId: number) {
   const [lessons, setLessons] = useState<Lesson[] | null>(null);
@@ -57,11 +50,11 @@ function ReadButton({ lesson, kind, onRead, onUndo }: { lesson: Lesson; kind: Re
         onClick={onRead}
         title={last ? `Read the ${NOUN[kind]} again (last ${formatDate(last.at)})` : `Mark the ${NOUN[kind]} as read`}
       >
-        {last ? `✓ ${NOUN[kind]} read ${reads.length}×` : `Mark ${NOUN[kind]} read`}
+        {last ? <><Icon name="check" size={14} /> {NOUN[kind]} read {reads.length}×</> : `Mark ${NOUN[kind]} read`}
       </button>
       {last && (
         <button className="read-undo" onClick={onUndo} title={`Undo the read of ${formatDate(last.at)}`} aria-label="Undo last read">
-          ↶
+          <Icon name="undo" size={14} />
         </button>
       )}
     </span>
@@ -108,14 +101,13 @@ export function ModulePage({ module, onBack, onOpenLesson, onStudy, onStudyLesso
 
   return (
     <main>
-      <header className="study-header">
-        <button className="link" onClick={onBack}>← Modules</button>
-        <span className="meta">S{module.semester}</span>
-      </header>
+      <ScreenHeader backLabel="Back" onBack={onBack}>
+        <span className="meta">Semester {module.semester}</span>
+      </ScreenHeader>
       <h1>{module.name}</h1>
       <div className="actions start">
         <button onClick={() => onStudy(false)} disabled={module.question_count === 0}>
-          Study module · {module.due_count} due
+          <Icon name="play" size={16} /> Study module · {module.due_count} due
         </button>
         {module.lesson_question_count > 0 && (
           <button className="secondary" onClick={() => onStudy(true)}>
@@ -123,7 +115,7 @@ export function ModulePage({ module, onBack, onOpenLesson, onStudy, onStudyLesso
           </button>
         )}
         <button className="secondary" onClick={() => onExam()} disabled={module.question_count === 0}>
-          ⏱ Mock exam
+          <Icon name="timer" size={16} /> Mock exam
         </button>
       </div>
 
@@ -153,7 +145,7 @@ export function ModulePage({ module, onBack, onOpenLesson, onStudy, onStudyLesso
             />
             <button className="module" onClick={() => onOpenLesson(l)}>
               <span className="name">
-                <span className={l.read_at ? "check" : "check unread"}>{l.read_at ? "✓" : "○"}</span> {l.title}
+                <span className={l.read_at ? "check" : "check unread"}><Icon name={l.read_at ? "check" : "book"} size={16} /></span> {l.title}
               </span>
               <span className="meta">
                 {l.question_count} Qs ({l.exam_count} exam) · {l.due_count} due
@@ -170,7 +162,7 @@ export function ModulePage({ module, onBack, onOpenLesson, onStudy, onStudyLesso
             Study {selection.length} lesson{selection.length === 1 ? "" : "s"}
           </button>
           <button className="secondary" onClick={() => onExam(selection)} disabled={selection.every((l) => l.question_count === 0)}>
-            ⏱ Mock exam on {selection.length === 1 ? "it" : "them"}
+            <Icon name="timer" size={16} /> Mock exam on {selection.length === 1 ? "it" : "them"}
           </button>
         </div>
       )}
@@ -201,16 +193,15 @@ export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
   const kind: ReadKind = hasSummary ? view : "pdf";
 
   const header = (
-    <header className="study-header">
-      <button className="link" onClick={onBack}>← {module.name}</button>
+    <ScreenHeader backLabel={module.name} onBack={onBack}>
       {lesson && (
         <ReadButton lesson={lesson} kind={kind} onRead={() => addRead(lesson, kind)} onUndo={() => undoRead(lesson, kind)} />
       )}
-    </header>
+    </ScreenHeader>
   );
 
   if (error) return <main>{header}<p className="error">{error}</p></main>;
-  if (!lessons) return <main>{header}<p>Loading…</p></main>;
+  if (!lessons) return <main>{header}<Skeleton /></main>;
   if (!lesson) return <main>{header}<p className="error">Lesson not found</p></main>;
 
   const pdfUrl = target?.url ?? `/lessons/${lesson.pdf}`;
@@ -252,7 +243,7 @@ export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
         ) : (
           <span className="meta">Lesson PDF</span>
         )}
-        <a className="pdf-open" href={docUrl} target="_blank" rel="noreferrer">Open in new tab ↗</a>
+        <a className="pdf-open" href={docUrl} target="_blank" rel="noreferrer">Open in new tab <Icon name="external" size={14} /></a>
       </div>
       {showSummary || !touch ? (
         <iframe

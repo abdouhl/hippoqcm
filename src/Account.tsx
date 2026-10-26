@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { formatCode } from "../shared/code";
 import type { Account as AccountData } from "../shared/types";
 import { deleteProgress, getAccount, getCode, switchCode } from "./api";
+import { Icon } from "./icons";
+import { ScreenHeader } from "./ui";
 
 // Set once the user has copied, shared or confirmed saving their code; hides the home reminder.
 const SAVED_KEY = "hippoqcm.codeSaved";
@@ -66,10 +68,9 @@ export default function Account({ incoming, onBack }: Props) {
   };
 
   const header = (
-    <header className="study-header">
-      <button className="link" onClick={onBack}>← Decks</button>
+    <ScreenHeader backLabel="Back" onBack={onBack}>
       <span className="meta">Save progress</span>
-    </header>
+    </ScreenHeader>
   );
 
   return (
@@ -90,9 +91,9 @@ export default function Account({ incoming, onBack }: Props) {
               : `${account.reviews} review${account.reviews === 1 ? "" : "s"} · ${account.cards} question${account.cards === 1 ? "" : "s"} studied, saved under this code.`}
         </p>
         <div className="actions start">
-          <button onClick={share} disabled={!code}>Share restore link</button>
+          <button onClick={share} disabled={!code}><Icon name="share" size={16} /> Share restore link</button>
           <button className="secondary" onClick={() => code && copy(formatCode(code), "Code copied.")} disabled={!code}>
-            Copy code
+            <Icon name="copy" size={16} /> Copy code
           </button>
         </div>
         {notice && <p className="ok-note">{notice}</p>}

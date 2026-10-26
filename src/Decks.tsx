@@ -1,6 +1,8 @@
-import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
-import type { ActivityDay, Lesson, Module } from "../shared/types";
+import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
+import type { Lesson, Module } from "../shared/types";
 import { getJSON } from "./api";
+import { Icon } from "./icons";
+import { PHONE, Ring, useMedia } from "./ui";
 
 type Counts = { new_count: number; learn_count: number; review_count: number; question_count: number };
 
@@ -53,7 +55,7 @@ function Row({ depth, label, counts, expanded, onToggle, onStudy, onDetails }: R
         <span className="toggle">
           {expanded !== undefined && (
             <button className="link" onClick={onToggle} aria-label={expanded ? "Collapse" : "Expand"}>
-              {expanded ? "−" : "+"}
+              <Icon name={expanded ? "down" : "next"} size={16} />
             </button>
           )}
         </span>
@@ -66,8 +68,8 @@ function Row({ depth, label, counts, expanded, onToggle, onStudy, onDetails }: R
       <td className={counts.review_count ? "num due" : "num zero"}>{counts.review_count}</td>
       <td className="gear">
         {onDetails && (
-          <button className="link" onClick={onDetails} aria-label="Details" title="Details">
-            ⚙
+          <button className="link" onClick={onDetails} aria-label="Details" title="Lessons and details">
+            <Icon name="next" size={18} />
           </button>
         )}
       </td>
@@ -82,7 +84,100 @@ type Props = {
   onOpenLesson: (module: Module, lesson: Lesson) => void;
 };
 
-export default function Decks({ modules, onStudy, onOpenModule, onOpenLesson }: Props) {
+export default function Decks(props: Props) {
+  const phone = useMedia(PHONE);
+  return (
+    <>
+      <h1 className="tab-title">Decks</h1>
+      {phone ? <DeckCards {...props} /> : <DeckTree {...props} />}
+    </>
+  );
+}
+
+const semesterLabel = (semester: number) => `Semester ${semester}`;
+const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
+
+// Phones: one card per module, grouped by semester. Tapping a card opens its lessons; the play
+// button studies it straight away.
+function DeckCards({ modules, onStudy, onOpenModule }: Props) {
+  const semesters = [...new Set(modules.map((m) => m.semester))].sort();
+  return (
+    <>
+      {semesters.map((semester) => {
+        const semModules = modules.filter((m) => m.semester === semester);
+        const total = sum(semModules);
+        if (total.question_count === 0) {
+          return (
+            <section key={semester} className="deck-section">
+              <h2 className="section-title">{semesterLabel(semester)}</h2>
+              <div className="card coming-soon">
+                <p><b>Coming soon</b></p>
+                <p className="meta">{semModules.map((m) => m.name).join(" · ")}</p>
+              </div>
+            </section>
+          );
+        }
+        return (
+          <section key={semester} className="deck-section">
+            <div className="section-head">
+              <h2 className="section-title">
+                {semesterLabel(semester)}
+                <small>{total.question_count.toLocaleString()} questions</small>
+              </h2>
+              <button
+                className="pill"
+                onClick={() => onStudy({ title: semesterLabel(semester), endpoint: `/api/semesters/${semester}/study` })}
+              >
+                <Icon name="play" size={14} /> Study all
+              </button>
+            </div>
+            <ul className="deck-cards">
+              {semModules.map((m) => {
+                const seen = m.question_count - m.new_count;
+                const due = m.learn_count + m.review_count;
+                const empty = m.question_count === 0;
+                return (
+                  <li key={m.id} className={empty ? "deck-card empty" : "deck-card"}>
+                    <button className="deck-card-main" onClick={() => onOpenModule(m)} disabled={empty}>
+                      <Ring value={m.question_count ? seen / m.question_count : 0} size={46}>
+                        {m.question_count ? `${Math.round((seen / m.question_count) * 100)}%` : "–"}
+                      </Ring>
+                      <span className="deck-card-text">
+                        <span className="name">{m.name}</span>
+                        <span className="meta">
+                          {empty ? "No questions yet" : `${plural(m.question_count, "question")}${m.lesson_count ? ` · ${plural(m.lesson_count, "lesson")}` : ""}`}
+                        </span>
+                        {!empty && (
+                          <span className="deck-counts">
+                            {m.new_count > 0 && <span className="count new">{m.new_count} new</span>}
+                            {due > 0 && <span className="count due">{due} due</span>}
+                            {m.new_count === 0 && due === 0 && <span className="count done"><Icon name="check" size={12} /> Done for now</span>}
+                          </span>
+                        )}
+                      </span>
+                    </button>
+                    {!empty && (
+                      <button
+                        className="deck-play"
+                        aria-label={`Study ${m.name}`}
+                        onClick={() => onStudy({ title: `${m.name} · S${m.semester}`, endpoint: `/api/modules/${m.id}/study` })}
+                      >
+                        <Icon name="play" size={18} />
+                      </button>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        );
+      })}
+    </>
+  );
+}
+
+// Wider screens: the Anki-style tree, down to single lessons.
+function DeckTree({ modules, onStudy, onOpenModule, onOpenLesson }: Props) {
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const { open, toggle } = useOpenNodes();
 
@@ -114,12 +209,20 @@ export default function Decks({ modules, onStudy, onOpenModule, onOpenLesson }: 
     for (const semester of [...new Set(yearModules.map((m) => m.semester))].sort()) {
       const semModules = yearModules.filter((m) => m.semester === semester);
       const sKey = `s${semester}`;
+      const semCounts = sum(semModules);
+      if (semCounts.question_count === 0) {
+        // Nothing to study yet: one muted row instead of a list of zeros.
+        rows.push(
+          <Row key={sKey} depth={1} label={<>S{semester} <span className="soon">coming soon</span></>} counts={semCounts} onStudy={() => {}} />,
+        );
+        continue;
+      }
       rows.push(
         <Row
           key={sKey}
           depth={1}
           label={`S${semester}`}
-          counts={sum(semModules)}
+          counts={semCounts}
           expanded={open.has(sKey)}
           onToggle={() => toggle(sKey)}
           onStudy={() => onStudy({ title: `Semester ${semester}`, endpoint: `/api/semesters/${semester}/study` })}
@@ -161,8 +264,7 @@ export default function Decks({ modules, onStudy, onOpenModule, onOpenLesson }: 
   }
 
   return (
-    <>
-      <table className="decks">
+    <table className="decks">
         <thead>
           <tr>
             <th className="deck-name">Deck</th>
@@ -173,132 +275,6 @@ export default function Decks({ modules, onStudy, onOpenModule, onOpenLesson }: 
           </tr>
         </thead>
         <tbody>{rows}</tbody>
-      </table>
-      <Activity refreshKey={modules} />
-    </>
-  );
-}
-
-// ---- Activity grid ---------------------------------------------------------
-
-const DAY_MS = 86_400_000;
-const WEEKS = 53;
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-// Local "epoch day" — the same numbering the /api/activity endpoint returns.
-const tzOffset = () => new Date().getTimezoneOffset() * 60_000;
-const localDay = (ms: number) => Math.floor((ms - tzOffset()) / DAY_MS);
-const dayToDate = (day: number) => new Date(day * DAY_MS + tzOffset());
-
-function level(count: number): number {
-  if (count === 0) return 0;
-  if (count < 10) return 1;
-  if (count < 30) return 2;
-  if (count < 60) return 3;
-  return 4;
-}
-
-function Activity({ refreshKey }: { refreshKey: unknown }) {
-  const [days, setDays] = useState<ActivityDay[] | null>(null);
-
-  useEffect(() => {
-    getJSON<ActivityDay[]>(`/api/activity?tz=${new Date().getTimezoneOffset()}`)
-      .then(setDays)
-      .catch(() => setDays([]));
-  }, [refreshKey]);
-
-  const today = localDay(Date.now());
-  const byDay = useMemo(() => new Map(days?.map((d) => [d.day, d.count])), [days]);
-
-  const stats = useMemo(() => {
-    const active = [...byDay.keys()].sort((a, b) => a - b);
-    const total = [...byDay.values()].reduce((a, b) => a + b, 0);
-    let longest = 0;
-    let run = 0;
-    for (let i = 0; i < active.length; i++) {
-      run = i > 0 && active[i] === active[i - 1] + 1 ? run + 1 : 1;
-      longest = Math.max(longest, run);
-    }
-    // Today without reviews yet doesn't break the streak.
-    let current = 0;
-    for (let d = byDay.has(today) ? today : today - 1; byDay.has(d); d--) current++;
-    const span = active.length ? today - active[0] + 1 : 0;
-    return {
-      todayCount: byDay.get(today) ?? 0,
-      average: active.length ? Math.round(total / active.length) : 0,
-      learnedPct: span ? Math.round((active.length / span) * 100) : 0,
-      longest,
-      current,
-    };
-  }, [byDay, today]);
-
-  if (!days) return null;
-
-  // Columns are weeks (Sunday first), the last column holds today.
-  const todayWeekday = dayToDate(today).getDay();
-  const start = today - todayWeekday - (WEEKS - 1) * 7;
-  const columns: { day: number; count: number }[][] = [];
-  for (let w = 0; w < WEEKS; w++) {
-    const col = [];
-    for (let d = 0; d < 7; d++) {
-      const day = start + w * 7 + d;
-      if (day > today) break;
-      col.push({ day, count: byDay.get(day) ?? 0 });
-    }
-    columns.push(col);
-  }
-  const monthLabel = (col: { day: number }[]) => {
-    const first = col.find((c) => dayToDate(c.day).getDate() === 1);
-    return first ? MONTHS[dayToDate(first.day).getMonth()] : "";
-  };
-
-  const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
-
-  return (
-    <section className="activity">
-      <p className="today">Studied {plural(stats.todayCount, "card")} today</p>
-      <div className="heatmap-scroll">
-        <div className="heatmap">
-          {columns.map((col, w) => (
-            <div className="week" key={w}>
-              <span className="month">{monthLabel(col)}</span>
-              {col.map((c) => (
-                <span
-                  key={c.day}
-                  className={`cell l${level(c.count)}${c.day === today ? " today" : ""}`}
-                  title={`${plural(c.count, "review")} on ${dayToDate(c.day).toLocaleDateString(undefined, {
-                    weekday: "short",
-                    day: "numeric",
-                    month: "short",
-                    year: "numeric",
-                  })}`}
-                />
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="activity-legend">
-        <span>Less</span>
-        {[0, 1, 2, 3, 4].map((l) => (
-          <span key={l} className={`cell l${l}`} />
-        ))}
-        <span>More</span>
-      </div>
-      <p className="activity-stats">
-        <span>
-          Daily average: <b>{plural(stats.average, "card")}</b>
-        </span>
-        <span>
-          Days learned: <b>{stats.learnedPct}%</b>
-        </span>
-        <span>
-          Longest streak: <b>{plural(stats.longest, "day")}</b>
-        </span>
-        <span>
-          Current streak: <b>{plural(stats.current, "day")}</b>
-        </span>
-      </p>
-    </section>
+    </table>
   );
 }

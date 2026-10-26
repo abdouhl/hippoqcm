@@ -1,12 +1,15 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Rating, State, type Grade } from "ts-fsrs";
 import type { Label, ReviewInput, StudyQuestion } from "../shared/types";
-import { flagQuestion, getJSON, LEECH_LAPSES, saveReviews } from "./api";
+import { useActivity } from "./Activity";
+import { flagQuestion, getJSON, LEECH_LAPSES, reviewDues, saveReviews } from "./api";
 import { formatInterval, reviewFacts, schedule, toRow } from "./fsrs";
+import { Icon } from "./icons";
 import { ignoreKey, Kbd } from "./keys";
 import { useHasSummary } from "./Lessons";
 import { buildQueue, displayOptions, hasExam, recordDone } from "./queue";
 import { getSettings } from "./prefs";
+import { accuracyTone, haptic, Ring, ScreenHeader, Skeleton } from "./ui";
 
 const GRADES: { rating: Grade; label: string }[] = [
   { rating: Rating.Hard, label: "Hard" },
@@ -114,10 +117,13 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
     setGuessed(unsure);
     setDuration(Date.now() - shownAt.current);
     setChecked(true);
+    const right = selected.size === correctSet.size && [...selected].every((l) => correctSet.has(l));
+    haptic(right ? 12 : [30, 60, 30]);
   };
 
   const toggle = (label: Label) => {
     if (checked) return;
+    haptic(5);
     setSelected((s) => {
       const next = new Set(s);
       next.has(label) ? next.delete(label) : next.add(label);
@@ -217,17 +223,21 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
   });
 
   const header = (
-    <header className="study-header">
-      <button className="link" onClick={onExit}>← {backLabel}</button>
+    <ScreenHeader backLabel={backLabel} onBack={onExit}>
       <span className="meta">
         {title}
-        {queue && queue.length > 0 && ` · ${Math.min(index + 1, queue.length)}/${queue.length}`}
+        {queue && queue.length > 0 && <b> · {Math.min(index + 1, queue.length)}/{queue.length}</b>}
       </span>
-    </header>
+      {queue && queue.length > 0 && (
+        <span className="session-progress" role="progressbar" aria-valuemin={0} aria-valuemax={queue.length} aria-valuenow={index}>
+          <span style={{ width: `${(index / queue.length) * 100}%` }} />
+        </span>
+      )}
+    </ScreenHeader>
   );
 
   if (error) return <main>{header}<p className="error">{error}</p></main>;
-  if (!queue) return <main>{header}<p>Loading…</p></main>;
+  if (!queue) return <main>{header}<Skeleton kind="question" /></main>;
 
   if (!question) {
     return (
@@ -235,12 +245,12 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
         {header}
         <div className="done">
           {stats.total > 0 ? (
-            <>
-              <h2>Session complete</h2>
-              <p className="score">{stats.correct}/{stats.total} correct</p>
-            </>
+            <SessionSummary correct={stats.correct} total={stats.total} startedAt={startedAt.current} />
           ) : (
-            <h2>{practiceAll ? "No questions here yet" : cramming ? "Ready for the exam" : "Nothing due right now"}</h2>
+            <>
+              <span className="done-icon"><Icon name="check" size={36} /></span>
+              <h2 className="done-title">{practiceAll ? "No questions here yet" : cramming ? "Ready for the exam" : "Nothing due right now"}</h2>
+            </>
           )}
           {held.fresh + held.reviews > 0 && (
             <p className="meta">
@@ -259,17 +269,17 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
               </button>
             )}
             {held.fresh > 0 && (
-              <button onClick={() => load(false, { ...extra, fresh: extra.fresh + (getSettings().newPerDay || 10) })}>
+              <button className={held.reviews > 0 ? "secondary" : undefined} onClick={() => load(false, { ...extra, fresh: extra.fresh + (getSettings().newPerDay || 10) })}>
                 Learn more new questions
               </button>
             )}
             {examAhead && !cramming && (
-              <button onClick={() => load(false, extra, true)} title="Questions you're likely to have forgotten by exam day">
+              <button className="secondary" onClick={() => load(false, extra, true)} title="Questions you're likely to have forgotten by exam day">
                 Cram for the exam
               </button>
             )}
             {!(practiceAll && stats.total === 0) && (
-              <button onClick={() => load(true)}>Practice all questions</button>
+              <button className={held.fresh + held.reviews > 0 ? "secondary" : undefined} onClick={() => load(true)}>Practice all questions</button>
             )}
             <button className="secondary" onClick={onExit}>Back to {backLabel.toLowerCase()}</button>
           </div>
@@ -279,23 +289,23 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
   }
 
   return (
-    <main>
+    <main className="study">
       {header}
-      <article className="question">
+      <article className="question" key={index}>
         <div className="question-meta">
           <span className="meta">
             {question.origin === "generated" ? <span className="badge">Generated</span> : question.source}
             {question.pdf && question.pdf_page && (
               <>
                 {" · "}
-                <a href={`/lessons/${question.pdf}#page=${question.pdf_page}`} target="_blank" rel="noreferrer">
-                  📄 p. {question.pdf_page}
+                <a className="page-link" href={`/lessons/${question.pdf}#page=${question.pdf_page}`} target="_blank" rel="noreferrer">
+                  <Icon name="file" size={14} /> p. {question.pdf_page}
                 </a>
               </>
             )}
           </span>
           <button className="link flag" onClick={flag} disabled={saving} title="Hide this question until it's fixed">
-            🚩 Flag
+            <Icon name="flag" size={14} /> Flag
           </button>
         </div>
         <p className="stem">{question.stem}</p>
@@ -311,9 +321,10 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
             }
             return (
               <li key={o.label}>
-                <button className={`option ${state}`} onClick={() => toggle(o.label)} disabled={checked}>
+                <button className={`option ${state}`} onClick={() => toggle(o.label)} disabled={checked} aria-pressed={isSel}>
                   <span className="label">{o.shown}</span>
-                  <span>{o.text}</span>
+                  <span className="text">{o.text}</span>
+                  <OptionMark state={state} />
                 </button>
               </li>
             );
@@ -323,6 +334,7 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
         {checked && question.explanation && <p className="explanation">{question.explanation}</p>}
         {leech && preview && (
           <p className="leech-note">
+            <Icon name="alert" size={16} />{" "}
             You've now forgotten this one {preview.record[Rating.Again].card.lapses} times. Going over it again won't fix
             it: work out why the answer is what it is
             {question.pdf && (
@@ -361,6 +373,7 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
           ) : (
             <div className="feedback">
               <p className={isCorrect ? "verdict ok" : "verdict bad"}>
+                <Icon name={isCorrect ? "check" : "x"} size={18} />{" "}
                 {isCorrect
                   ? "Correct!"
                   : `Incorrect — answer: ${options.filter((o) => o.is_correct).map((o) => o.shown).join(", ")}`}
@@ -399,5 +412,86 @@ export default function Study({ title, endpoint, backLabel, onExit }: Props) {
         <kbd>1</kbd> forgot · <kbd>2</kbd>–<kbd>4</kbd> Hard / Good / Easy · <kbd>Esc</kbd> back
       </p>
     </main>
+  );
+}
+
+/** ✓ on a right option (ticked or missed), ✗ on a wrongly ticked one: colour alone isn't enough. */
+export function OptionMark({ state }: { state: string }) {
+  if (state === "correct" || state === "missed") return <span className="mark"><Icon name="check" size={18} /></span>;
+  if (state === "wrong") return <span className="mark"><Icon name="x" size={18} /></span>;
+  return null;
+}
+
+const HEADLINES: [number, string][] = [
+  [90, "Excellent!"],
+  [75, "Nice work"],
+  [50, "Good effort"],
+  [0, "Keep at it"],
+];
+
+// End of a session: score, time, streak and what's coming tomorrow, with a little confetti for a good one.
+function SessionSummary({ correct, total, startedAt }: { correct: number; total: number; startedAt: number }) {
+  const { days, stats } = useActivity();
+  const pct = Math.round((correct / total) * 100);
+  const minutes = Math.max(1, Math.round((Date.now() - startedAt) / 60_000));
+  // Reviews saved this session may not have reached the activity count yet: today counts either way.
+  const streak = days ? stats.current + (stats.todayCount === 0 ? 1 : 0) : null;
+  const endOfTomorrow = new Date();
+  endOfTomorrow.setHours(24 * 2, 0, 0, 0);
+  const now = Date.now();
+  const tomorrow = reviewDues().filter((d) => d > now && d < endOfTomorrow.getTime()).length;
+
+  useEffect(() => {
+    if (pct >= 75) haptic([15, 50, 15]);
+  }, [pct]);
+
+  return (
+    <>
+      {pct >= 75 && <Confetti />}
+      <Ring value={correct / total} size={132} stroke={10} tone={accuracyTone(pct)}>
+        <span className="ring-big">{pct}%</span>
+      </Ring>
+      <h2 className="done-title">{HEADLINES.find(([min]) => pct >= min)![1]}</h2>
+      <dl className="stat-row">
+        <div><dt>Correct</dt><dd>{correct}/{total}</dd></div>
+        <div><dt>Time</dt><dd>{minutes} min</dd></div>
+        {streak !== null && (
+          <div><dt>Streak</dt><dd><Icon name="flame" size={16} className="flame" /> {streak} day{streak === 1 ? "" : "s"}</dd></div>
+        )}
+      </dl>
+      {tomorrow > 0 && <p className="meta">{tomorrow} review{tomorrow === 1 ? "" : "s"} coming up by tomorrow.</p>}
+    </>
+  );
+}
+
+const CONFETTI_COLORS = ["var(--accent)", "var(--coral)", "var(--ok)", "#fbbf24", "#a78bfa"];
+
+function Confetti() {
+  const pieces = useMemo(
+    () =>
+      Array.from({ length: 28 }, (_, i) => ({
+        left: Math.random() * 100,
+        delay: Math.random() * 0.4,
+        drift: (Math.random() - 0.5) * 160,
+        spin: Math.random() * 720 - 360,
+        color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+      })),
+    [],
+  );
+  return (
+    <div className="confetti" aria-hidden="true">
+      {pieces.map((p, i) => (
+        <span
+          key={i}
+          style={{
+            left: `${p.left}%`,
+            background: p.color,
+            animationDelay: `${p.delay}s`,
+            ["--drift" as string]: `${p.drift}px`,
+            ["--spin" as string]: `${p.spin}deg`,
+          }}
+        />
+      ))}
+    </div>
   );
 }

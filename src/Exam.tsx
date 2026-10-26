@@ -3,7 +3,10 @@ import { Rating } from "ts-fsrs";
 import type { Label, Lesson, Module, ReviewInput, StudyQuestion } from "../shared/types";
 import { getJSON, saveReviews } from "./api";
 import { reviewFacts, schedule, toRow } from "./fsrs";
+import { Icon } from "./icons";
 import { ignoreKey, Kbd } from "./keys";
+import { OptionMark } from "./Study";
+import { ScreenHeader } from "./ui";
 
 const COUNTS = [10, 20, 30, 40];
 const PACES = [
@@ -143,10 +146,9 @@ function Setup({ module, lessons, error, onStart, onExit }: {
 
   return (
     <main>
-      <header className="study-header">
-        <button className="link" onClick={onExit}>← {module.name}</button>
+      <ScreenHeader backLabel={module.name} onBack={onExit}>
         <span className="meta">Mock exam</span>
-      </header>
+      </ScreenHeader>
       <h1>Mock exam · {module.name}</h1>
       {lessons && <p className="meta">On {lessons.map((l) => l.title).join(", ")}</p>}
       <p className="meta">
@@ -262,11 +264,11 @@ function Sitting({ module, exam, onChange, onSubmit }: {
   const last = exam.index === exam.questions.length - 1;
 
   return (
-    <main>
+    <main className="study">
       <header className="study-header">
-        <span className="meta">Mock exam · {module.name} · {exam.index + 1}/{exam.questions.length}</span>
+        <span className="meta">Mock exam · {module.name} · <b>{exam.index + 1}/{exam.questions.length}</b></span>
         <span className={remaining !== null && remaining < 60_000 ? "timer low" : "timer"}>
-          {remaining === null ? `⏱ ${clock(now - exam.startedAt)}` : `⏳ ${clock(remaining)}`}
+          <Icon name="timer" size={16} /> {remaining === null ? clock(now - exam.startedAt) : clock(remaining)}
         </span>
       </header>
 
@@ -288,16 +290,16 @@ function Sitting({ module, exam, onChange, onSubmit }: {
         <ul className="options">
           {question.options.map((o) => (
             <li key={o.label}>
-              <button className={`option ${picked.includes(o.label) ? "selected" : ""}`} onClick={() => toggle(o.label)}>
+              <button className={`option ${picked.includes(o.label) ? "selected" : ""}`} onClick={() => toggle(o.label)} aria-pressed={picked.includes(o.label)}>
                 <span className="label">{o.label}</span>
-                <span>{o.text}</span>
+                <span className="text">{o.text}</span>
               </button>
             </li>
           ))}
         </ul>
         <div className="exam-nav">
-          <button className="secondary" onClick={() => go(exam.index - 1)} disabled={exam.index === 0}>← Previous</button>
-          {!last && <button className="secondary" onClick={() => go(exam.index + 1)}>Next →</button>}
+          <button className="secondary" onClick={() => go(exam.index - 1)} disabled={exam.index === 0} aria-label="Previous"><Icon name="back" /> <span className="hide-sm">Previous</span></button>
+          {!last && <button className="secondary" onClick={() => go(exam.index + 1)}>Next <Icon name="next" /></button>}
           {confirming ? (
             <>
               <span className="meta">{unanswered} unanswered — submit anyway?</span>
@@ -341,10 +343,9 @@ function Results({ module, exam, onRetry, onExit }: {
 
   return (
     <main>
-      <header className="study-header">
-        <button className="link" onClick={onExit}>← {module.name}</button>
+      <ScreenHeader backLabel={module.name} onBack={onExit}>
         <span className="meta">Mock exam results</span>
-      </header>
+      </ScreenHeader>
       <div className="done">
         <p className="score">{(correct / rows.length * 20).toFixed(2)}/20</p>
         <p>
@@ -368,7 +369,7 @@ function Results({ module, exam, onRetry, onExit }: {
           Mistakes only
         </label>
       </div>
-      {shown.length === 0 && <p className="meta">No mistakes. 🎉</p>}
+      {shown.length === 0 && <p className="meta">No mistakes — every answer right.</p>}
       <div className="review-list">
         {shown.map(({ q, picked, right }) => (
           <article className="question" key={q.id}>
@@ -388,7 +389,8 @@ function Results({ module, exam, onRetry, onExit }: {
                   <li key={o.label}>
                     <div className={`option ${state}`}>
                       <span className="label">{o.label}</span>
-                      <span>{o.text}</span>
+                      <span className="text">{o.text}</span>
+                      <OptionMark state={state} />
                     </div>
                   </li>
                 );

@@ -45,7 +45,7 @@ export function StaticPage({ page, navigate }: { page: PageKey; navigate: Naviga
   return (
     <main className="page">
       <header className="study-header">
-        <Link to="/" navigate={navigate}>← Decks</Link>
+        <Link to="/" navigate={navigate}>‹ Home</Link>
       </header>
       <h1>{title}</h1>
       <Body />

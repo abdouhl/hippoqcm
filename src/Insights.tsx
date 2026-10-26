@@ -2,19 +2,19 @@ import { useEffect, useState } from "react";
 import type { Insights as Data, Module } from "../shared/types";
 import { getJSON } from "./api";
 import type { StudyTarget } from "./Decks";
+import { Icon } from "./icons";
+import { accuracyTone, Skeleton } from "./ui";
 
 const MIN_LESSON_REVIEWS = 5; // below this, a lesson's accuracy is mostly noise
 
 const pct = (correct: number, total: number) => (total ? Math.round((correct / total) * 100) : 0);
-const accuracyClass = (p: number) => (p < 60 ? "acc bad" : p < 80 ? "acc mid" : "acc ok");
 
 type Props = {
   modules: Module[];
-  onBack: () => void;
   onStudy: (target: StudyTarget) => void;
 };
 
-export default function Insights({ modules, onBack, onStudy }: Props) {
+export default function Insights({ modules, onStudy }: Props) {
   const [data, setData] = useState<Data | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -24,15 +24,9 @@ export default function Insights({ modules, onBack, onStudy }: Props) {
       .catch((e: Error) => setError(e.message));
   }, []);
 
-  const header = (
-    <header className="study-header">
-      <button className="link" onClick={onBack}>← Decks</button>
-      <span className="meta">Insights</span>
-    </header>
-  );
-
-  if (error) return <main>{header}<p className="error">{error}</p></main>;
-  if (!data) return <main>{header}<p>Loading…</p></main>;
+  const title = <h1 className="tab-title">Insights</h1>;
+  if (error) return <>{title}<p className="error">{error}</p></>;
+  if (!data) return <>{title}<Skeleton kind="cards" /></>;
 
   const moduleName = new Map(modules.map((m) => [m.id, `${m.name} · S${m.semester}`]));
   const stats = new Map(data.modules.map((s) => [s.module_id, s]));
@@ -51,42 +45,49 @@ export default function Insights({ modules, onBack, onStudy }: Props) {
     .sort((a, b) => a.accuracy - b.accuracy)
     .slice(0, 8);
 
+  const totalReviews = moduleRows.reduce((n, r) => n + r.reviews, 0);
+
   return (
-    <main>
-      {header}
-      <h1>Insights</h1>
+    <>
+      {title}
+      {totalReviews === 0 && (
+        <div className="card empty-state">
+          <Icon name="insights" size={28} />
+          <p><b>Nothing to analyse yet</b></p>
+          <p className="meta">Answer a few questions and your accuracy, weak lessons and mistake patterns show up here.</p>
+        </div>
+      )}
 
       <ErrorPattern errors={data.errors} />
 
-      <h2>Modules</h2>
-      <table className="insights-table">
-        <thead>
-          <tr><th>Module</th><th>Seen</th><th className="num hide-sm">Reviews</th><th className="num">Accuracy</th></tr>
-        </thead>
-        <tbody>
-          {moduleRows.map(({ m, reviews, accuracy, seen }) => (
-            <tr key={m.id}>
-              <td>
-                <button className="link deck-link" onClick={() => onStudy({ title: moduleName.get(m.id)!, endpoint: `/api/modules/${m.id}/study` })}>
-                  {moduleName.get(m.id)}
-                </button>
-              </td>
-              <td>
-                <span className="progress" title={`${seen} of ${m.question_count} questions seen`}>
-                  <span style={{ width: `${pct(seen, m.question_count)}%` }} />
+      <h2 className="section-title">Modules</h2>
+      <ul className="insight-cards">
+        {moduleRows.map(({ m, reviews, accuracy, seen }) => (
+          <li key={m.id}>
+            <button
+              className="card insight-card"
+              onClick={() => onStudy({ title: moduleName.get(m.id)!, endpoint: `/api/modules/${m.id}/study` })}
+            >
+              <span className="insight-head">
+                <span className="name">{m.name}<small className="meta"> · S{m.semester}</small></span>
+                <span className={reviews ? `acc-big ${accuracyTone(accuracy)}` : "acc-big none"}>
+                  {reviews ? `${accuracy}%` : "—"}
                 </span>
-                <small className="meta"> {seen}/{m.question_count}</small>
-              </td>
-              <td className="num hide-sm">{reviews}</td>
-              <td className={`num ${reviews ? accuracyClass(accuracy) : "meta"}`}>{reviews ? `${accuracy}%` : "—"}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+              </span>
+              <span className="bar" title={`${seen} of ${m.question_count} questions seen`}>
+                <span style={{ width: `${pct(seen, m.question_count)}%` }} />
+              </span>
+              <span className="meta">
+                {seen}/{m.question_count} seen · {reviews} review{reviews === 1 ? "" : "s"}
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
 
-      <h2>Weakest lessons</h2>
+      <h2 className="section-title">Weakest lessons</h2>
       {weakLessons.length === 0 ? (
-        <p className="meta">Review lesson questions at least {MIN_LESSON_REVIEWS} times to see them ranked here.</p>
+        <p className="meta empty-line"><Icon name="target" size={16} /> Shows up once a lesson has {MIN_LESSON_REVIEWS}+ reviews.</p>
       ) : (
         <ul className="modules">
           {weakLessons.map((l) => (
@@ -94,7 +95,7 @@ export default function Insights({ modules, onBack, onStudy }: Props) {
               <button className="module" onClick={() => onStudy({ title: l.title, endpoint: `/api/lessons/${l.id}/study?all=1` })}>
                 <span className="name">{l.title}</span>
                 <span className="meta">
-                  {moduleName.get(l.module_id)} · {l.reviews} reviews · <b className={accuracyClass(l.accuracy)}>{l.accuracy}%</b>
+                  {moduleName.get(l.module_id)} · {l.reviews} reviews · <b className={`acc ${accuracyTone(l.accuracy)}`}>{l.accuracy}%</b>
                 </span>
               </button>
             </li>
@@ -104,27 +105,33 @@ export default function Insights({ modules, onBack, onStudy }: Props) {
 
       <Calibration rows={data.calibration ?? []} />
 
-      <div className="review-head">
-        <h2>Leeches · {data.leeches.length}</h2>
+      <div className="section-head">
+        <h2 className="section-title">Leeches · {data.leeches.length}</h2>
         {data.leeches.length > 0 && (
-          <button className="primary" onClick={() => onStudy({ title: "Leeches", endpoint: "/api/leeches/study?all=1" })}>
-            Study leeches
+          <button className="pill" onClick={() => onStudy({ title: "Leeches", endpoint: "/api/leeches/study?all=1" })}>
+            <Icon name="play" size={14} /> Study leeches
           </button>
         )}
       </div>
-      <p className="meta">
-        Questions you've forgotten 4 or more times. Repeating them won't fix them. Open the lesson page, work out why the
-        answer is what it is, then come back.
-      </p>
-      <ul className="leeches">
-        {data.leeches.map((l) => (
-          <li key={l.id}>
-            <span className="leech-stem">{l.stem.length > 160 ? `${l.stem.slice(0, 160)}…` : l.stem}</span>
-            <span className="meta">{moduleName.get(l.module_id)} · forgotten {l.lapses}× in {l.reps} reviews</span>
-          </li>
-        ))}
-      </ul>
-    </main>
+      {data.leeches.length === 0 ? (
+        <p className="meta empty-line"><Icon name="check" size={16} /> None — no question forgotten 4+ times.</p>
+      ) : (
+        <>
+          <p className="meta">
+            Forgotten 4+ times. Repeating them won't fix them: open the lesson, work out why the answer is what it is,
+            then come back.
+          </p>
+          <ul className="leeches">
+            {data.leeches.map((l) => (
+              <li key={l.id}>
+                <span className="leech-stem">{l.stem.length > 160 ? `${l.stem.slice(0, 160)}…` : l.stem}</span>
+                <span className="meta">{moduleName.get(l.module_id)} · forgotten {l.lapses}× in {l.reps} reviews</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </>
   );
 }
 
@@ -144,8 +151,8 @@ function ErrorPattern({ errors }: { errors: Data["errors"] }) {
         : "Your mistakes are split between ticking false options and leaving out true ones. Judge each option on its own.";
 
   return (
-    <section className="error-pattern">
-      <h2>How your wrong answers go wrong · {errors.total}</h2>
+    <section className="card error-pattern">
+      <h2 className="card-title">How your wrong answers go wrong · {errors.total}</h2>
       <div className="stack" role="img" aria-label={parts.map((p) => `${p.label} ${share(p.n)}%`).join(", ")}>
         {parts.map((p) => p.n > 0 && <span key={p.key} className={p.key} style={{ flexGrow: p.n }} />)}
       </div>
@@ -178,7 +185,7 @@ function Calibration({ rows }: { rows: Data["calibration"] }) {
 
   return (
     <section>
-      <h2>Scheduler predictions · {total} reviews</h2>
+      <h2 className="section-title">Scheduler predictions · {total} reviews</h2>
       <table className="insights-table">
         <thead>
           <tr><th>Predicted recall</th><th className="num">Reviews</th><th className="num">Actually right</th></tr>

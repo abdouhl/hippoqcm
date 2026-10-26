@@ -1,24 +1,36 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Lesson, Module } from "../shared/types";
-import Account, { needsCodeReminder } from "./Account";
-import { getJSON, syncNow, useSyncStatus } from "./api";
+import Account from "./Account";
+import { getJSON } from "./api";
 import Decks from "./Decks";
 import Exam from "./Exam";
+import { Icon, type IconName } from "./icons";
 import Insights from "./Insights";
 import { LessonPage, ModulePage } from "./Lessons";
 import { Footer, NotFound, StaticPage, isPage } from "./Pages";
 import Settings from "./Settings";
+import { SyncBadge } from "./SyncBadge";
 import Study from "./Study";
+import Today from "./Today";
+import { Skeleton, transition } from "./ui";
+
+type Tab = "home" | "decks" | "insights" | "settings";
 
 type View =
-  | { kind: "home" }
+  | { kind: Tab }
   | { kind: "module"; module: Module }
   | { kind: "lesson"; module: Module; lesson: Lesson }
   | { kind: "study"; title: string; endpoint: string; backLabel: string }
   | { kind: "exam"; module: Module; lessons?: Lesson[] }
-  | { kind: "insights" }
-  | { kind: "settings" }
   | { kind: "account"; incoming: string | null };
+
+const TABS: { kind: Tab; label: string; icon: IconName }[] = [
+  { kind: "home", label: "Today", icon: "today" },
+  { kind: "decks", label: "Decks", icon: "decks" },
+  { kind: "insights", label: "Insights", icon: "insights" },
+  { kind: "settings", label: "Settings", icon: "settings" },
+];
+const isTab = (kind: View["kind"]): kind is Tab => TABS.some((t) => t.kind === kind);
 
 // A restore link looks like https://…/#code=XXXX-XXXX-XXXX-XXXX. The code stays in the fragment so it
 // never reaches the server's logs; it's taken out of the address bar as soon as it's read.
@@ -50,19 +62,43 @@ export default function App() {
   const viewRef = useRef(view);
   viewRef.current = view;
 
-  const open = useCallback((next: View) => {
-    stack.current.push(viewRef.current);
-    window.history.pushState({ depth: stack.current.length }, "");
+  const show = (next: View) => {
     viewRef.current = next;
     setView(next);
     window.scrollTo(0, 0);
+  };
+
+  const open = useCallback((next: View) => {
+    stack.current.push(viewRef.current);
+    window.history.pushState({ depth: stack.current.length }, "");
+    transition(() => show(next), "forward");
   }, []);
 
   // In-app back buttons go through history too, so it stays in step with the screen shown.
   const back = useCallback(() => {
     if (stack.current.length > 0) window.history.back();
-    else setView({ kind: "home" });
+    else transition(() => show({ kind: "home" }), "back");
   }, []);
+
+  // Tabs sit side by side above Today: going from Today to a tab opens it (so back returns to Today),
+  // from one tab to another swaps it in place, and Today goes all the way back.
+  const switchTab = useCallback(
+    (tab: Tab) => {
+      const current = viewRef.current.kind;
+      if (tab === current) return window.scrollTo({ top: 0, behavior: "smooth" });
+      if (tab === "home") {
+        if (stack.current.length > 0) window.history.go(-stack.current.length);
+        else transition(() => show({ kind: "home" }), "tab");
+      } else if (current === "home") {
+        stack.current.push(viewRef.current);
+        window.history.pushState({ depth: stack.current.length }, "");
+        transition(() => show({ kind: tab }), "tab");
+      } else {
+        transition(() => show({ kind: tab }), "tab");
+      }
+    },
+    [],
+  );
 
   useEffect(() => {
     const onPop = (e: PopStateEvent) => {
@@ -72,9 +108,11 @@ export default function App() {
       const left = viewRef.current.kind;
       let prev = viewRef.current;
       while (stack.current.length > depth) prev = stack.current.pop()!;
-      setView(prev);
+      const update = () => show(prev);
+      // iOS already animates its swipe back; don't slide the screen a second time.
+      if ((e as PopStateEvent & { hasUAVisualTransition?: boolean }).hasUAVisualTransition) update();
+      else transition(update, isTab(prev.kind) && isTab(left) ? "tab" : "back");
       if (left === "study" || left === "exam") loadModules(); // refresh due counts
-      window.scrollTo(0, 0);
     };
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
@@ -84,8 +122,7 @@ export default function App() {
     if (to !== window.location.pathname) window.history.pushState(null, "", to);
     stack.current = [];
     setPath(to);
-    setView({ kind: "home" });
-    window.scrollTo(0, 0);
+    show({ kind: "home" });
   }, []);
 
   useEffect(loadModules, [loadModules]);
@@ -98,46 +135,19 @@ export default function App() {
   if (isPage(page)) return <StaticPage page={page} navigate={navigate} />;
   if (page !== "") return <NotFound navigate={navigate} />;
 
+  const study = (target: { title: string; endpoint: string }, backLabel: string) =>
+    open({ kind: "study", ...target, backLabel });
+
   if (view.kind === "study") {
-    return (
-      <Study
-        title={view.title}
-        endpoint={view.endpoint}
-        backLabel={view.backLabel}
-        onExit={back}
-      />
-    );
+    return <Study title={view.title} endpoint={view.endpoint} backLabel={view.backLabel} onExit={back} />;
   }
 
   if (view.kind === "exam") {
-    return (
-      <Exam
-        module={view.module}
-        lessons={view.lessons}
-        onExit={back}
-      />
-    );
+    return <Exam module={view.module} lessons={view.lessons} onExit={back} />;
   }
 
   if (view.kind === "account") {
     return <Account incoming={view.incoming} onBack={back} />;
-  }
-
-  if (view.kind === "settings") {
-    return <Settings onBack={back} />;
-  }
-
-  if (view.kind === "insights") {
-    if (!modules) return <main><p>Loading…</p></main>;
-    return (
-      <Insights
-        modules={modules}
-        onBack={back}
-        onStudy={({ title, endpoint }) =>
-          open({ kind: "study", title, endpoint, backLabel: "Insights" })
-        }
-      />
-    );
   }
 
   if (view.kind === "module") {
@@ -150,20 +160,22 @@ export default function App() {
         onOpenLesson={(lesson) => open({ kind: "lesson", module, lesson })}
         onExam={(lessons) => open({ kind: "exam", module, lessons })}
         onStudyLessons={(lessons) =>
-          open({
-            kind: "study",
-            title: lessons.length === 1 ? lessons[0].title : `${module.name} · ${lessons.length} lessons`,
-            endpoint: `/api/modules/${module.id}/study?ids=${lessons.map((l) => l.id).join(",")}`,
-            backLabel: module.name,
-          })
+          study(
+            {
+              title: lessons.length === 1 ? lessons[0].title : `${module.name} · ${lessons.length} lessons`,
+              endpoint: `/api/modules/${module.id}/study?ids=${lessons.map((l) => l.id).join(",")}`,
+            },
+            module.name,
+          )
         }
         onStudy={(lessonsOnly) =>
-          open({
-            kind: "study",
-            title: `${module.name} · S${module.semester}${lessonsOnly ? " · my lessons" : ""}`,
-            endpoint: `/api/modules/${module.id}/study${lessonsOnly ? "?lessons=1" : ""}`,
-            backLabel: module.name,
-          })
+          study(
+            {
+              title: `${module.name} · S${module.semester}${lessonsOnly ? " · my lessons" : ""}`,
+              endpoint: `/api/modules/${module.id}/study${lessonsOnly ? "?lessons=1" : ""}`,
+            },
+            module.name,
+          )
         }
       />
     );
@@ -175,88 +187,82 @@ export default function App() {
         module={view.module}
         lessonId={view.lesson.id}
         onBack={back}
-        onStudy={(lesson) =>
-          open({
-            kind: "study",
-            title: lesson.title,
-            endpoint: `/api/lessons/${lesson.id}/study`,
-            backLabel: "Lesson",
-          })
-        }
+        onStudy={(lesson) => study({ title: lesson.title, endpoint: `/api/lessons/${lesson.id}/study` }, "Lesson")}
       />
     );
   }
 
-  if (error) return <main><p className="error">Couldn't load modules: {error}</p></main>;
-  if (!modules) return <main><p>Loading…</p></main>;
-
-  return (
-    <main>
-      <h1 className="brand">
-        <img src="/logo.svg" alt="" width="36" height="36" />
-        <span><span>Hippo<em>QCM</em></span><small>Medical MCQs, spaced out</small></span>
-      </h1>
-      <nav className="home-nav">
-        <span className="home-links">
-          <button className="link" onClick={() => open({ kind: "insights" })}>📊 Insights</button>
-          <button className="link" onClick={() => open({ kind: "settings" })}>⚙ Settings</button>
-          <button className="link" onClick={() => open({ kind: "account", incoming: null })}>🔑 Save progress</button>
-        </span>
-        <SyncBadge />
-      </nav>
-      {needsCodeReminder() && (
-        <button className="code-reminder" onClick={() => open({ kind: "account", incoming: null })}>
-          <b>Don't lose your progress.</b> Save your sync code so you can restore it on another device or after
-          clearing your browser. →
-        </button>
-      )}
+  // The four tabs.
+  const openModule = (module: Module) => open({ kind: "module", module });
+  let screen;
+  if (view.kind === "settings") {
+    screen = <Settings onAccount={() => open({ kind: "account", incoming: null })} navigate={navigate} />;
+  } else if (error) {
+    screen = <p className="error">Couldn't load modules: {error}</p>;
+  } else if (!modules) {
+    screen = <Skeleton kind="cards" />;
+  } else if (view.kind === "insights") {
+    screen = <Insights modules={modules} onStudy={(t) => study(t, "Insights")} />;
+  } else if (view.kind === "decks") {
+    screen = (
       <Decks
         modules={modules}
-        onStudy={({ title, endpoint }) =>
-          open({ kind: "study", title, endpoint, backLabel: "Decks" })
-        }
-        onOpenModule={(module) => open({ kind: "module", module })}
+        onStudy={(t) => study(t, "Decks")}
+        onOpenModule={openModule}
         onOpenLesson={(module, lesson) => {
           // Put the module under the lesson, so back goes where the lesson's "← Module" says.
           open({ kind: "module", module });
           open({ kind: "lesson", module, lesson });
         }}
       />
-      <Footer navigate={navigate} />
-    </main>
+    );
+  } else {
+    screen = (
+      <Today
+        modules={modules}
+        onStudy={(t) => study(t, "Today")}
+        onOpenModule={openModule}
+        onSettings={() => switchTab("settings")}
+        onAccount={() => open({ kind: "account", incoming: null })}
+      />
+    );
+  }
+
+  return (
+    <>
+      <TabBar current={view.kind as Tab} onSwitch={switchTab} />
+      <main className="tab-main">
+        {screen}
+        {view.kind === "home" && <Footer navigate={navigate} />}
+      </main>
+    </>
   );
 }
 
-// "just now", "5 min ago", "3 h ago", "2 d ago".
-function ago(ms: number): string {
-  const min = Math.floor((Date.now() - ms) / 60_000);
-  if (min < 1) return "just now";
-  if (min < 60) return `${min} min ago`;
-  if (min < 60 * 24) return `${Math.floor(min / 60)} h ago`;
-  return `${Math.floor(min / 60 / 24)} d ago`;
-}
-
-// Sync state; tap to sync now. Shows when the app is offline or has reviews waiting to sync.
-function SyncBadge() {
-  const { online, pending, snapshotAt } = useSyncStatus();
-  const [syncing, setSyncing] = useState(false);
-  const sync = async () => {
-    setSyncing(true);
-    await syncNow();
-    setSyncing(false);
-  };
-  if (syncing) return <span className="sync">Syncing…</span>;
-  if (online && pending === 0) {
-    return snapshotAt ? (
-      <button className="sync ok" title="Saved for offline study. Tap to sync now" onClick={sync}>
-        ✓ Synced {ago(snapshotAt)}
-      </button>
-    ) : null;
-  }
+// Bottom tab bar on phones; on wider screens the same buttons sit in a top bar with the logo.
+function TabBar({ current, onSwitch }: { current: Tab; onSwitch: (tab: Tab) => void }) {
   return (
-    <button className="sync off" title="Tap to sync now" onClick={sync}>
-      {online ? "Syncing" : "Offline"}
-      {pending > 0 && ` · ${pending} change${pending === 1 ? "" : "s"} to sync`}
-    </button>
+    <nav className="tabbar" aria-label="Main">
+      <div className="tabbar-inner">
+        <span className="brand tabbar-brand">
+          <img src="/logo.svg" alt="" width="28" height="28" />
+          <span>Hippo<em>QCM</em></span>
+        </span>
+        <div className="tabs">
+          {TABS.map((t) => (
+            <button
+              key={t.kind}
+              className={t.kind === current ? "tab on" : "tab"}
+              aria-current={t.kind === current ? "page" : undefined}
+              onClick={() => onSwitch(t.kind)}
+            >
+              <Icon name={t.icon} size={22} />
+              <span>{t.label}</span>
+            </button>
+          ))}
+        </div>
+        <span className="tabbar-sync"><SyncBadge /></span>
+      </div>
+    </nav>
   );
 }

@@ -153,3 +153,20 @@ export function displayOptions(options: Option[]): (Option & { shown: Label })[]
   const movable = shuffle(options.filter((o) => !PINNED.test(o.text)));
   return options.map((o, i) => ({ ...(PINNED.test(o.text) ? o : movable.shift()!), shown: letters[i] }));
 }
+
+/**
+ * Roughly what today's sessions will bring up across these modules: new questions left under each
+ * module's daily allowance, and reviews due now (under the review cap when there is one).
+ */
+export function plannedToday(modules: { id: number; new_count: number; learn_count: number; review_count: number }[]) {
+  const { newPerDay, reviewsPerDay } = getSettings();
+  const done = doneToday();
+  let fresh = 0;
+  let reviews = 0;
+  for (const m of modules) {
+    fresh += Math.min(m.new_count, Math.max(0, newPerDay - (done.counts[m.id] ?? 0)));
+    const due = m.learn_count + m.review_count;
+    reviews += reviewsPerDay ? Math.min(due, Math.max(0, reviewsPerDay - (done.reviews[m.id] ?? 0))) : due;
+  }
+  return { fresh, reviews };
+}
