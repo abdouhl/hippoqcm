@@ -9,6 +9,7 @@ export type Settings = {
   retention: number; // chance of remembering a question when it comes back, 0.8–0.97; raised before an exam
   examDates: Record<string, string>; // module id → exam day, "YYYY-MM-DD"
   autoGrade: boolean; // suggest Hard/Good/Easy from how long a right answer took
+  skipModules: number[]; // module ids left out of today's session on the home tab
 };
 
 export const DEFAULTS: Settings = {
@@ -19,6 +20,7 @@ export const DEFAULTS: Settings = {
   retention: 0.9,
   examDates: {},
   autoGrade: true,
+  skipModules: [],
 };
 
 const KEY = "hippoqcm.settings";

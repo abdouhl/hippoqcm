@@ -536,8 +536,10 @@ function offlineAnswer(path: string): unknown {
     }
   };
   const all = url.searchParams.get("all") === "1";
+  // ?modules=1,2: only questions from those modules.
+  const moduleIds = url.searchParams.get("modules")?.split(",").map(Number);
   return s.questions
-    .filter((q) => inScope(q) && inLessons(q) && (all || !q.card || q.card.due <= now))
+    .filter((q) => inScope(q) && inLessons(q) && (!moduleIds || moduleIds.includes(q.module_id)) && (all || !q.card || q.card.due <= now))
     // Overdue reviews first, then unseen questions in exam order.
     .sort((a, b) => (a.card ? 0 : 1) - (b.card ? 0 : 1) || (a.card?.due ?? 0) - (b.card?.due ?? 0) || a.id - b.id);
 }

@@ -11,9 +11,9 @@ interface Env {
 
 const json = (data: unknown, status = 200) => Response.json(data, { status });
 
-// Lesson ids from "?ids=1,2,3".
-const idList = (url: URL): number[] =>
-  (url.searchParams.get("ids") ?? "").split(",").map(Number).filter((n) => Number.isInteger(n) && n > 0);
+// Lesson ids from "?ids=1,2,3" (or another list parameter, like "?modules=1,2").
+const idList = (url: URL, param = "ids"): number[] =>
+  (url.searchParams.get(param) ?? "").split(",").map(Number).filter((n) => Number.isInteger(n) && n > 0);
 
 // A question with this many lapses keeps slipping: it's a leech.
 const LEECH_LAPSES = 4;
@@ -201,6 +201,7 @@ export default {
 
     // Study queue for a whole year, a semester, a module (optionally only questions tied to a
     // lesson, or to the lessons listed in ?ids=1,2), one lesson, or every leech. Year n = semesters 2n-1 and 2n.
+    // ?modules=1,2 keeps only those modules' questions.
     const studyMatch = url.pathname.match(/^\/api\/(?:(years|semesters|modules|lessons)\/(\d+)|(leeches))\/study$/);
     if (studyMatch && request.method === "GET") {
       const onlyLessons = url.searchParams.get("lessons") === "1"
@@ -221,6 +222,7 @@ export default {
          WHERE ${scope} AND q.flagged = 0 AND (?2 = 1 OR c.question_id IS NULL OR c.due <= ?3)
            AND (?5 IS NULL OR q.id IN (SELECT question_id FROM question_lessons
                                        WHERE lesson_id IN (SELECT value FROM json_each(?5))))
+           AND (?6 IS NULL OR q.module_id IN (SELECT value FROM json_each(?6)))
          -- Overdue reviews first, then unseen questions in exam order.
          ORDER BY c.due IS NULL, c.due, q.id`,
       )
@@ -230,6 +232,7 @@ export default {
           Date.now(),
           user,
           url.searchParams.has("ids") ? JSON.stringify(idList(url)) : null,
+          url.searchParams.has("modules") ? JSON.stringify(idList(url, "modules")) : null,
         )
         .all<Record<string, unknown>>();
       return json(await toStudyQuestions(env.DB, results));

@@ -1,6 +1,7 @@
 // The home tab: what to study today in one tap, upcoming exams and the study streak.
 import type { Module } from "../shared/types";
 import { needsCodeReminder } from "./Account";
+import { saveSettings } from "./api";
 import { Activity } from "./Activity";
 import type { StudyTarget } from "./Decks";
 import { Icon } from "./icons";
@@ -35,21 +36,36 @@ type Props = {
 
 export default function Today({ modules, onStudy, onOpenModule, onSettings, onAccount }: Props) {
   const settings = useSettings();
-  const { fresh, reviews } = plannedToday(modules);
+  const skipped = (m: Module) => settings.skipModules.includes(m.id);
+
+  // Today's session is one year's questions: the first year with something to do (there's one for now).
+  const withQuestions = modules.filter((m) => m.question_count > 0);
+  const inYear = (y: number) => withQuestions.filter((m) => Math.ceil(m.semester / 2) === y);
+  const years = [...new Set(withQuestions.map((m) => Math.ceil(m.semester / 2)))].sort();
+  const year =
+    years.find((y) => {
+      const p = plannedToday(inYear(y).filter((m) => !skipped(m)));
+      return p.fresh + p.reviews > 0;
+    }) ?? years[0] ?? 1;
+  // The modules picked for the session; ones left out stay out until picked again.
+  const yearModules = inYear(year);
+  const picked = yearModules.filter((m) => !skipped(m));
+  const toggle = (m: Module) =>
+    saveSettings({
+      ...settings,
+      skipModules: skipped(m) ? settings.skipModules.filter((id) => id !== m.id) : [...settings.skipModules, m.id],
+    });
+
+  const { fresh, reviews } = plannedToday(picked);
   const minutes = Math.max(1, Math.round((fresh * NEW_SECONDS + reviews * REVIEW_SECONDS) / 60));
   const nothing = fresh + reviews === 0;
 
-  // Today's session is one year's questions: the first year with something to do (there's one for now).
-  const years = [...new Set(modules.filter((m) => m.question_count > 0).map((m) => Math.ceil(m.semester / 2)))].sort();
-  const year =
-    years.find((y) => {
-      const p = plannedToday(modules.filter((m) => Math.ceil(m.semester / 2) === y));
-      return p.fresh + p.reviews > 0;
-    }) ?? years[0] ?? 1;
+  const subset = picked.length < yearModules.length;
+  const scope = !subset ? `Year ${year}` : picked.length === 1 ? picked[0].name : `Year ${year} · ${picked.length} modules`;
   const start = (only?: StudyOnly) =>
     onStudy({
-      title: only === "new" ? `Year ${year} · new` : only === "reviews" ? `Year ${year} · reviews` : `Year ${year}`,
-      endpoint: `/api/years/${year}/study`,
+      title: only === "new" ? `${scope} · new` : only === "reviews" ? `${scope} · reviews` : scope,
+      endpoint: `/api/years/${year}/study${subset ? `?modules=${picked.map((m) => m.id).join(",")}` : ""}`,
       only,
     });
 
@@ -86,7 +102,18 @@ export default function Today({ modules, onStudy, onOpenModule, onSettings, onAc
 
       <section className={nothing ? "card hero done-today" : "card hero"}>
         <p className="eyebrow">Today's session</p>
-        {nothing ? (
+        {yearModules.length > 1 && (
+          <div className="chips module-picks" role="group" aria-label="Modules in today's session">
+            {yearModules.map((m) => (
+              <button key={m.id} className={skipped(m) ? "chip" : "chip on"} aria-pressed={!skipped(m)} onClick={() => toggle(m)}>
+                {m.name}
+              </button>
+            ))}
+          </div>
+        )}
+        {picked.length === 0 ? (
+          <p className="meta">Pick at least one module to study.</p>
+        ) : nothing ? (
           <>
             <p className="hero-title"><Icon name="check" size={28} /> All caught up</p>
             <p className="meta">Nothing due right now. Come back tomorrow, or keep going with extra questions.</p>
