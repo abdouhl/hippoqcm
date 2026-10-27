@@ -1,4 +1,5 @@
 // The home tab: what to study today in one tap, upcoming exams and the study streak.
+import { useState } from "react";
 import type { Module } from "../shared/types";
 import { needsCodeReminder } from "./Account";
 import { saveSettings } from "./api";
@@ -36,6 +37,7 @@ type Props = {
 
 export default function Today({ modules, onStudy, onOpenModule, onSettings, onAccount }: Props) {
   const settings = useSettings();
+  const [picking, setPicking] = useState(false);
   const skipped = (m: Module) => settings.skipModules.includes(m.id);
 
   // Today's session is one year's questions: the first year with something to do (there's one for now).
@@ -50,11 +52,9 @@ export default function Today({ modules, onStudy, onOpenModule, onSettings, onAc
   // The modules picked for the session; ones left out stay out until picked again.
   const yearModules = inYear(year);
   const picked = yearModules.filter((m) => !skipped(m));
+  const pick = (skip: number[]) => saveSettings({ ...settings, skipModules: skip });
   const toggle = (m: Module) =>
-    saveSettings({
-      ...settings,
-      skipModules: skipped(m) ? settings.skipModules.filter((id) => id !== m.id) : [...settings.skipModules, m.id],
-    });
+    pick(skipped(m) ? settings.skipModules.filter((id) => id !== m.id) : [...settings.skipModules, m.id]);
 
   const { fresh, reviews } = plannedToday(picked);
   const minutes = Math.max(1, Math.round((fresh * NEW_SECONDS + reviews * REVIEW_SECONDS) / 60));
@@ -101,14 +101,52 @@ export default function Today({ modules, onStudy, onOpenModule, onSettings, onAc
       )}
 
       <section className={nothing ? "card hero done-today" : "card hero"}>
-        <p className="eyebrow">Today's session</p>
-        {yearModules.length > 1 && (
-          <div className="chips module-picks" role="group" aria-label="Modules in today's session">
-            {yearModules.map((m) => (
-              <button key={m.id} className={skipped(m) ? "chip" : "chip on"} aria-pressed={!skipped(m)} onClick={() => toggle(m)}>
-                {m.name}
-              </button>
-            ))}
+        <div className="hero-top">
+          <p className="eyebrow">Today's session</p>
+          {yearModules.length > 1 && (
+            <button className={picking ? "module-toggle open" : "module-toggle"} aria-expanded={picking} onClick={() => setPicking(!picking)}>
+              <span>{!subset ? "All modules" : picked.length === 1 ? picked[0].name : `${picked.length} of ${yearModules.length} modules`}</span>
+              <Icon name="down" size={16} />
+            </button>
+          )}
+        </div>
+        {picking && (
+          <div className="module-picker">
+            <div className="module-picker-head">
+              <span className="meta">Study these modules</span>
+              {subset ? (
+                <button className="link" onClick={() => pick(settings.skipModules.filter((id) => !yearModules.some((m) => m.id === id)))}>
+                  Select all
+                </button>
+              ) : (
+                <button className="link" onClick={() => pick([...new Set([...settings.skipModules, ...yearModules.map((m) => m.id)])])}>
+                  Clear
+                </button>
+              )}
+            </div>
+            <ul>
+              {yearModules.map((m) => {
+                const p = plannedToday([m]);
+                return (
+                  <li key={m.id}>
+                    <button role="checkbox" aria-checked={!skipped(m)} onClick={() => toggle(m)}>
+                      <span className="box">{!skipped(m) && <Icon name="check" size={14} />}</span>
+                      <span className="name">{m.name}</span>
+                      <span className="meta">
+                        {p.fresh + p.reviews === 0 ? "done" : (
+                          <>
+                            {p.fresh > 0 && <><b className="new">{p.fresh}</b> new</>}
+                            {p.fresh > 0 && p.reviews > 0 && " · "}
+                            {p.reviews > 0 && <><b className="due">{p.reviews}</b> due</>}
+                          </>
+                        )}
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+            <button className="secondary" onClick={() => setPicking(false)}>Done</button>
           </div>
         )}
         {picked.length === 0 ? (
