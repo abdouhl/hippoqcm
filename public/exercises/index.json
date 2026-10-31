@@ -1,0 +1,25 @@
+[
+  {
+    "path": "s1/biophysics/set-1.html",
+    "title": "Set 1 — Biophysics of solutions",
+    "count": 6,
+    "lessons": [
+      "s1/biophysics/biophysics-of-solutions.pdf",
+      "s1/biophysics/biophysics-of-solutions-2.pdf",
+      "s1/biophysics/biophysics-of-solutions-3.pdf",
+      "s1/biophysics/biophysics-of-solutions-4.pdf"
+    ],
+    "pdf": "s1/biophysics/set-1.pdf"
+  },
+  {
+    "path": "s1/biophysics/set-2.html",
+    "title": "Set 2 — Biophysics of solutions: dialysis",
+    "count": 3,
+    "lessons": [
+      "s1/biophysics/biophysics-of-solutions-3.pdf",
+      "s1/biophysics/biophysics-of-solutions-4.pdf",
+      "s1/biophysics/biophysics-of-solutions-5.pdf"
+    ],
+    "pdf": "s1/biophysics/set-2.pdf"
+  }
+]

@@ -3,6 +3,7 @@ import type { Lesson, Module } from "../shared/types";
 import { getJSON } from "./api";
 import type { StudyOnly } from "./queue";
 import { Icon } from "./icons";
+import { setsOf, useAllExerciseSets } from "./Lessons";
 import { PHONE, Ring, useMedia } from "./ui";
 
 type Counts = { new_count: number; learn_count: number; review_count: number; question_count: number };
@@ -101,6 +102,7 @@ const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
 // Phones: one card per module, grouped by semester. Tapping a card opens its lessons; the play
 // button studies it straight away.
 function DeckCards({ modules, onStudy, onOpenModule }: Props) {
+  const exerciseSets = useAllExerciseSets();
   const semesters = [...new Set(modules.map((m) => m.semester))].sort();
   return (
     <>
@@ -147,6 +149,9 @@ function DeckCards({ modules, onStudy, onOpenModule }: Props) {
                         <span className="name">{m.name}</span>
                         <span className="meta">
                           {empty ? "No questions yet" : `${plural(m.question_count, "question")}${m.lesson_count ? ` · ${plural(m.lesson_count, "lesson")}` : ""}`}
+                          {setsOf(exerciseSets, m).length > 0 && (
+                            <span className="ex-tag"> · <Icon name="pencil" size={12} /> {plural(setsOf(exerciseSets, m).length, "exercise set")}</span>
+                          )}
                         </span>
                         {!empty && (
                           <span className="deck-counts">
@@ -181,6 +186,7 @@ function DeckCards({ modules, onStudy, onOpenModule }: Props) {
 function DeckTree({ modules, onStudy, onOpenModule, onOpenLesson }: Props) {
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const { open, toggle } = useOpenNodes();
+  const exerciseSets = useAllExerciseSets();
 
   useEffect(() => {
     getJSON<Lesson[]>("/api/lessons")
@@ -238,7 +244,16 @@ function DeckTree({ modules, onStudy, onOpenModule, onOpenLesson }: Props) {
           <Row
             key={mKey}
             depth={2}
-            label={m.name}
+            label={
+              <>
+                {m.name}
+                {setsOf(exerciseSets, m).length > 0 && (
+                  <span className="ex-tag meta" title="Exercise sets — open the module to see them">
+                    {" "}<Icon name="pencil" size={12} /> {plural(setsOf(exerciseSets, m).length, "exercise set")}
+                  </span>
+                )}
+              </>
+            }
             counts={m}
             expanded={moduleLessons.length > 0 ? open.has(mKey) : undefined}
             onToggle={() => toggle(mKey)}

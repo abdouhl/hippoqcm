@@ -1,0 +1,291 @@
+{
+  "semester": 1,
+  "module": "Physiology",
+  "title": "Autonomic nervous system",
+  "pdf": "s1/physiology/autonomic-nervous-system.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q22",
+    "EMD1 2022-2023 Q23",
+    "EMD1 2022-2023 Q24",
+    "EMD1 2022-2023 Q25",
+    "EMD1 2023-2024 Q13",
+    "EMD1 2023-2024 Q15",
+    "EMD1 2023-2024 Q16",
+    "EMD1 2024-2025 Q7"
+  ],
+  "questions": [
+    {
+      "stem": "About the autonomic nervous system:",
+      "options": [
+        "Its activity is predominantly voluntary",
+        "It regulates cardiac muscle, smooth muscle and glands",
+        "Its control centres lie in the CNS",
+        "\"Autonomic\" means independent of the brain"
+      ],
+      "answer": "BC",
+      "explanation": "The ANS is predominantly involuntary but not independent of the brain: autonomic = automatic, not autonomous. Its centres lie in the CNS.",
+      "page": 2,
+      "weight": 1
+    },
+    {
+      "stem": "Somatic versus autonomic motor systems:",
+      "options": [
+        "The somatic transmitter is ACh acting on nicotinic muscle (Nm) receptors",
+        "The somatic pathway uses one neuron from the CNS to the muscle",
+        "The autonomic pathway usually uses two neurons relayed in a peripheral ganglion",
+        "The effect of the somatic system on its target is excitatory or inhibitory"
+      ],
+      "answer": "ABC",
+      "explanation": "Somatic effects are always excitatory; autonomic effects can be excitatory or inhibitory, through ACh or NE depending on the pathway.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "About the components of the ANS:",
+      "options": [
+        "The parasympathetic division has a craniosacral origin and supports \"rest and digest\"",
+        "The enteric nervous system is an intrinsic gut network that can work on its own and is modulated by both divisions",
+        "The sympathetic division has a thoracolumbar origin and mobilizes the body for \"fight or flight\"",
+        "Sympathetic preganglionic neurons lie in the lateral horn of the spinal cord from T1 to L2"
+      ],
+      "answer": "ABCD",
+      "explanation": "Sympathetic preganglionic neurons lie in the lateral horn of the spinal cord from T1 to L2.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Which sympathetic ganglion — target pairs are correct?",
+      "options": [
+        "Sympathetic chain (paravertebral) — heart, lungs, sweat glands and blood vessels",
+        "Coeliac ganglion — stomach, liver, pancreas, spleen",
+        "Superior mesenteric ganglion — eye and salivary glands",
+        "Inferior mesenteric ganglion — distal colon, rectum, pelvic organs"
+      ],
+      "answer": "ABD",
+      "explanation": "The eye and salivary glands are supplied through the sympathetic chain; the superior mesenteric ganglion supplies the small intestine and proximal colon.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "The adrenal medulla:",
+      "options": [
+        "Releases about 80 % noradrenaline and 20 % adrenaline",
+        "Has chromaffin cells stimulated by preganglionic ACh through Nn receptors",
+        "Receives a postganglionic sympathetic fibre",
+        "Behaves like a modified sympathetic ganglion"
+      ],
+      "answer": "BD",
+      "explanation": "The preganglionic fibre reaches the adrenal medulla directly (no postganglionic neuron); it releases adrenaline (~80 %) and noradrenaline (~20 %) into the blood.",
+      "page": 4,
+      "weight": 1
+    },
+    {
+      "stem": "About the parasympathetic outflow:",
+      "options": [
+        "The vagus nerve carries most parasympathetic outflow",
+        "The otic ganglion supplies the submandibular gland",
+        "It arises from cranial nerves III, VII, IX, X and the sacral cord S2–S4",
+        "The ciliary ganglion supplies the lacrimal glands"
+      ],
+      "answer": "AC",
+      "explanation": "Ciliary ganglion → eye; pterygopalatine → lacrimal and nasal glands; submandibular ganglion → submandibular and sublingual glands; otic ganglion → parotid.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Comparing the two divisions:",
+      "options": [
+        "Parasympathetic: ganglia near or within the target organs",
+        "Sympathetic: usually short preganglionic and long postganglionic fibres",
+        "Parasympathetic: high divergence with widespread effects",
+        "Sympathetic: ganglia within the target organs"
+      ],
+      "answer": "AB",
+      "explanation": "Sympathetic ganglia lie near the vertebral column or abdominal arteries, with high divergence (widespread effects). Parasympathetic ganglia lie near/in organs: long pre, short post, localized effects.",
+      "page": 5,
+      "weight": 1
+    },
+    {
+      "stem": "About transmission in the autonomic ganglia:",
+      "options": [
+        "The preganglionic neuron releases ACh in both divisions",
+        "Sympathetic ganglia use NE acting on α receptors",
+        "The Nn receptor is a fast ligand-gated cation channel with no second messenger",
+        "ACh acts on neuronal nicotinic (Nn) receptors"
+      ],
+      "answer": "ACD",
+      "explanation": "Rule 1: every autonomic ganglion, sympathetic or parasympathetic, uses ACh on Nn receptors (fast ligand-gated channels).",
+      "page": 6,
+      "weight": 2
+    },
+    {
+      "stem": "At the target organ:",
+      "options": [
+        "Sympathetic postganglionic fibres always release NE, without exception",
+        "Parasympathetic fibres act on nicotinic muscle (Nm) receptors",
+        "Most sympathetic postganglionic fibres release NE onto α or β receptors",
+        "Parasympathetic postganglionic fibres release ACh onto muscarinic receptors"
+      ],
+      "answer": "CD",
+      "explanation": "Rule 2: parasympathetic ACh → M; most sympathetic NE → α/β. Eccrine sweat glands are the exception: sympathetic but cholinergic.",
+      "page": 6,
+      "weight": 2
+    },
+    {
+      "stem": "A patient taking a drug that blocks M₃ receptors notices that they sweat less. Which statements explain this?",
+      "options": [
+        "Sweat glands receive parasympathetic innervation",
+        "Sweat glands respond to NE acting on α₁ receptors",
+        "Eccrine sweat glands receive sympathetic cholinergic fibres",
+        "Sympathetic postganglionic fibres to sweat glands release ACh onto M₃ receptors"
+      ],
+      "answer": "CD",
+      "explanation": "Sweating is the key cholinergic exception of the sympathetic system (ACh → M₃). Sweat glands have no parasympathetic innervation.",
+      "page": 6,
+      "weight": 1
+    },
+    {
+      "stem": "About the special cases of sympathetic transmission:",
+      "options": [
+        "Adipose tissue uses NE normally, through β₃ receptors, for lipolysis",
+        "Eccrine sweat glands are the key cholinergic exception",
+        "The kidney uses NE normally, through β₁ receptors, to release renin",
+        "Bronchi depend mainly on circulating adrenaline acting on β₂ receptors"
+      ],
+      "answer": "ABCD",
+      "explanation": "Kidney (β₁) and adipose tissue (β₃) are not exceptions, just particular subtypes. The cholinergic exception is the eccrine sweat gland.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Which receptor — signalling pairs are correct?",
+      "options": [
+        "β₁, β₂, β₃ — mainly Gs → ↑ cAMP",
+        "M₂ — Gi/o, ↓ cAMP, and opening of K⁺ channels in the heart",
+        "α₂ — Gs → ↑ cAMP",
+        "α₁ — Gi/o → ↓ cAMP"
+      ],
+      "answer": "AB",
+      "explanation": "α₁ is coupled to Gq (IP₃/DAG → ↑ Ca²⁺); α₂ and M₂/M₄ to Gi/o. Memory aid: Gs = Stimulates cAMP, Gi = Inhibits cAMP, Gq = Ca²⁺.",
+      "page": 7,
+      "weight": 1
+    },
+    {
+      "stem": "Where are these receptors mainly located?",
+      "options": [
+        "β₁ — heart and kidney",
+        "β₃ — adipose tissue and detrusor",
+        "α₂ — presynaptic terminals, where they increase NE release",
+        "M₃ — smooth muscle of the gut, bronchi, bladder and iris, and glands"
+      ],
+      "answer": "ABD",
+      "explanation": "Presynaptic α₂ receptors reduce NE release (negative feedback); α₂ is also found on pancreatic β-cells.",
+      "page": 7,
+      "weight": 1
+    },
+    {
+      "stem": "The same receptor can have different effects depending on the tissue:",
+      "options": [
+        "Endothelial M₃ contracts the vessels directly",
+        "M₃ contracts the iris sphincter",
+        "Endothelial M₃ relaxes vascular smooth muscle by releasing nitric oxide",
+        "The organ response depends on the transmitter, the receptor subtype and the tissue"
+      ],
+      "answer": "BCD",
+      "explanation": "Endothelial M₃ acts indirectly: it releases NO, which relaxes the smooth muscle of the vessel wall.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "About visceral reflexes:",
+      "options": [
+        "A short reflex is integrated in the enteric plexus or an autonomic ganglion without passing through the CNS",
+        "Urination is an example of a long reflex",
+        "A long reflex passes through the spinal cord or brainstem",
+        "A short reflex coordinates several organs"
+      ],
+      "answer": "ABC",
+      "explanation": "Short reflexes are fast and local (small part of one organ, e.g. gut wall stretch); long reflexes go through the CNS and can coordinate several organs (bladder emptying).",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "During an exam, a student's heart speeds up and digestion slows. About the central control of the ANS:",
+      "options": [
+        "The cortex and limbic system adapt autonomic responses to emotions",
+        "The brainstem is the centre of the bladder and bowel emptying reflexes",
+        "The ANS has no central control: it is autonomous",
+        "The hypothalamus is the main coordinator of autonomic responses and homeostasis"
+      ],
+      "answer": "AD",
+      "explanation": "The ANS is controlled by a hierarchy: cortex/limbic system → hypothalamus → brainstem → spinal cord. Bladder and bowel emptying reflexes are spinal; the brainstem handles heart rate, blood pressure and breathing.",
+      "page": 8,
+      "weight": 1
+    },
+    {
+      "stem": "Autonomic effects on the heart and vessels:",
+      "options": [
+        "Most vessels have a rich parasympathetic innervation",
+        "Sympathetic: ↑ heart rate, via NE → β₁",
+        "Most vessels constrict through NE → α₁",
+        "Parasympathetic: ↓ heart rate, via ACh → Nn on the cardiac cells"
+      ],
+      "answer": "BC",
+      "explanation": "Parasympathetic slowing of the heart uses ACh → M₂ (Nn receptors are in the ganglia). Most blood vessels receive only sympathetic fibres: their tone is set by ↑ or ↓ sympathetic activity. Skeletal-muscle vessels dilate with circulating adrenaline (β₂).",
+      "page": 9,
+      "weight": 2
+    },
+    {
+      "stem": "Autonomic effects on the eye and bronchi:",
+      "options": [
+        "Accommodation for near vision is sympathetic",
+        "Pupil constriction is parasympathetic: ACh → M₃ on the sphincter",
+        "Bronchodilation is due mainly to circulating adrenaline acting on β₂",
+        "Pupil dilation is sympathetic: NE → α₁ on the radial dilator muscle"
+      ],
+      "answer": "BCD",
+      "explanation": "Near-vision accommodation is parasympathetic (ciliary muscle contraction, ACh → M₃); sympathetic β₂ causes slight ciliary relaxation for far vision.",
+      "page": 9,
+      "weight": 2
+    },
+    {
+      "stem": "About autonomic effects on the viscera:",
+      "options": [
+        "Bladder storage: the detrusor relaxes (NE → β₃) and the internal sphincter contracts (NE → α₁)",
+        "Bladder emptying: the detrusor contracts through ACh → M₃",
+        "Parasympathetic activity increases insulin and enzyme secretion through M₃",
+        "Bladder storage is a parasympathetic effect"
+      ],
+      "answer": "ABC",
+      "explanation": "Storage is sympathetic, emptying parasympathetic. In the pancreas, sympathetic NE → α₂ decreases insulin; parasympathetic ACh → M₃ increases it.",
+      "page": 9,
+      "weight": 2
+    },
+    {
+      "stem": "About salivary secretion:",
+      "options": [
+        "Parasympathetic stimulation gives a scant, protein-rich secretion",
+        "Salivation is an example of opposing effects of the two divisions",
+        "Salivation is an example of complementary effects of the two divisions",
+        "Sympathetic stimulation gives an abundant watery secretion through ACh → M₃"
+      ],
+      "answer": "C",
+      "explanation": "Parasympathetic: abundant watery secretion (ACh → M₃); sympathetic: scant, protein-rich secretion. Both stimulate secretion with different composition: complementary, not opposing, effects.",
+      "page": 9,
+      "weight": 2
+    },
+    {
+      "stem": "About sexual function and single innervation:",
+      "options": [
+        "Most blood vessels, sweat glands, the adrenal medulla and the kidney receive only sympathetic fibres",
+        "Erection is parasympathetic, through vasodilation via NO",
+        "Gut motility is increased by sympathetic activity",
+        "Emission and ejaculation are sympathetic, through NE → α₁"
+      ],
+      "answer": "ABD",
+      "explanation": "\"Point and Shoot\": parasympathetic = point (erection), sympathetic = shoot. The sympathetic system decreases gut motility; the parasympathetic increases it.",
+      "page": 9,
+      "weight": 0
+    }
+  ]
+}

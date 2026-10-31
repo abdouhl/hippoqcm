@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set 1 — Biophysics of solutions</title>
+<meta name="lessons" content="s1/biophysics/biophysics-of-solutions.pdf s1/biophysics/biophysics-of-solutions-2.pdf s1/biophysics/biophysics-of-solutions-3.pdf s1/biophysics/biophysics-of-solutions-4.pdf">
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Biophysics · Exercises</div>
+<h1>Set 1 — Biophysics of solutions</h1>
+<p class="meta">Pr B. Boutabia-Chéraitia · TD 2026-2027 · 6 exercises · solved with the lessons
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions.pdf">Solutions 1</a>,
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-2.pdf">2</a>,
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-3.pdf">3</a> and
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf">4</a> ·
+  <a href="/exercises/s1/biophysics/set-1.pdf">TD sheet</a></p>
+<ul class="toc">
+  <li><a target="_self" href="#laws">Laws used</a></li>
+  <li><a target="_self" href="#ex1">Ex. 1 · Vapor</a></li>
+  <li><a target="_self" href="#ex2">Ex. 2 · Chemical potential</a></li>
+  <li><a target="_self" href="#ex3">Ex. 3 · Osmolarity</a></li>
+  <li><a target="_self" href="#ex4">Ex. 4 · Urine</a></li>
+  <li><a target="_self" href="#ex5">Ex. 5 · Molar mass</a></li>
+  <li><a target="_self" href="#ex6">Ex. 6 · α</a></li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<div class="box essentials" id="laws">
+  <span class="label">Laws used in this set</span>
+  <div class="law"><span class="label">Vapor = ideal gas</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions.pdf#page=2">Solutions 1 · p. 2</a>
+    <div class="formula">P<sub>vapor</sub> · V = n R T<span class="where">SI units: Pa, m³, K · R = 8.31 J/(mol·K) · evaporation stops when P<sub>vapor</sub> = P<sub>sat</sub></span></div></div>
+  <div class="law"><span class="label">Chemical potential</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-2.pdf#page=4">Solutions 2 · p. 4</a>
+    <div class="formula">μ<sub>i</sub> = μ<sub>i</sub><sup>0</sup> + RT ln a<sub>i</sub><span class="where">two phases at equilibrium: equal T, P and chemical potentials</span></div></div>
+  <div class="law"><span class="label">Activity</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-2.pdf#page=2">Solutions 2 · p. 2</a>
+    <div class="formula">a<sub>i</sub> = γ<sub>i</sub> · <span class="frac"><span>C<sub>i</sub></span><span>C<sub>0</sub></span></span><span class="where">γ = 1 for ideal solutions · C<sub>0</sub> = 1 mol/L</span></div></div>
+  <div class="law"><span class="label">Osmolarity</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-3.pdf#page=1">Solutions 3 · p. 1–2</a>
+    <div class="formula">ω = Σ [1 + α<sub>i</sub>(β<sub>i</sub> − 1)] · C<sub>i</sub><span class="where">ω osmol/L · β = ions per molecule · α = dissociation coefficient (fully dissociated: α = 1 → ω = βC)</span></div></div>
+  <div class="law"><span class="label">Cryoscopy (Raoult)</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf#page=1">Solutions 4 · p. 1</a>
+    <div class="formula">ΔT<sub>sol</sub> = −K<sub>cr</sub> · ω<span class="where">water: K<sub>cr</sub> = 1.86 °C·L/osmol (°C·kg/osmol with osmolality)</span></div></div>
+  <div class="law"><span class="label">Iso-osmotic</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf#page=4">Solutions 4 · p. 4</a>
+    <div class="formula">semi-permeable membrane: isotonic ⇔ ω<sub>1</sub> = ω<sub>2</sub></div></div>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex1">
+  <h2><span class="num">Exercise 1</span> — Saturating vapor pressure <a class="page" href="/exercises/s1/biophysics/set-1.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <ol>
+      <li>What is the minimum mass of water (g) that must be introduced into a 5-litre chamber at 37 °C to obtain saturating water vapor?</li>
+      <li>The 5-litre chamber is compressed to a volume of 3 litres, and 0.219 g of water is then introduced into it. What would the vapor pressure be?</li>
+      <li>Same question as 2), but with a final chamber volume of V = 10 L.</li>
+    </ol>
+  </div>
+  <ul class="given"><li>P<sub>sat</sub>(37 °C) = 6.27 kPa</li><li>T = 37 + 273 = 310 K</li><li>M<sub>water</sub> = 18 g/mol</li><li>R = 8.31</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>The most water the chamber can hold as vapor is the amount that brings the vapor to P<sub>sat</sub>: n<sub>max</sub> = P<sub>sat</sub>V / RT.
+      Then compare the water you put in with n<sub>max</sub> for each volume.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>1) Minimum mass for saturation (V = 5 L)</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Ideal gas, at saturation <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions.pdf#page=2">p. 2</a>
+          <div class="formula">n<sub>max</sub> = <span class="frac"><span>P<sub>sat</sub> · V</span><span>R T</span></span></div></div>
+        <div class="calc">n<sub>max</sub> = 6270 × 5 × 10⁻³ / (8.31 × 310) = 1.217 × 10⁻² mol</div></li>
+      <li><div class="calc">m = n × M = 1.217 × 10⁻² × 18 = 0.219 g</div></li>
+    </ol>
+    <span class="answer">m<sub>min</sub> ≈ 0.219 g</span>
+    <h3>2) 0.219 g in V = 3 L</h3>
+    <ol class="steps">
+      <li><div class="calc">n<sub>max</sub>(3 L) = 6270 × 3 × 10⁻³ / (8.31 × 310) = 7.30 × 10⁻³ mol = 0.131 g</div></li>
+      <li><p>We have 0.219 g &gt; 0.131 g → the chamber is <b>saturated</b>: only 0.131 g is vapor, about 0.088 g stays liquid.
+        The vapor pressure is then P<sub>sat</sub>, which depends only on temperature.</p></li>
+    </ol>
+    <span class="answer">P<sub>vapor</sub> = P<sub>sat</sub> = 6.27 kPa</span>
+    <h3>3) 0.219 g in V = 10 L</h3>
+    <ol class="steps">
+      <li><div class="calc">n<sub>max</sub>(10 L) = 6270 × 10 × 10⁻³ / (8.31 × 310) = 2.43 × 10⁻² mol = 0.438 g</div></li>
+      <li><p>0.219 g &lt; 0.438 g → <b>everything evaporates</b> and the vapor is not saturated: P = nRT/V.</p>
+        <div class="calc">n = 0.219 / 18 = 1.217 × 10⁻² mol</div>
+        <div class="calc">P = 1.217 × 10⁻² × 8.31 × 310 / (10 × 10⁻³) = 3134 Pa</div></li>
+    </ol>
+    <span class="answer">P<sub>vapor</sub> ≈ 3.13 kPa (half of P<sub>sat</sub>: same water, double volume)</span>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>V in m³ (L × 10⁻³), T in K, P in Pa — R = 8.31 is SI.</li>
+        <li>Using P<sub>sat</sub> in 3): below n<sub>max</sub> the vapor pressure is nRT/V, smaller than P<sub>sat</sub>.</li>
+        <li>In 2) P<sub>vapor</sub> doesn't rise above P<sub>sat</sub>: the extra water just stays liquid.</li></ul></div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex2">
+  <h2><span class="num">Exercise 2</span> — Partition of a solute between two immiscible liquids <a class="page" href="/exercises/s1/biophysics/set-1.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <p>At temperature T, a solute A is dissolved in two immiscible liquids (1) and (2). μ<sub>1</sub><sup>0</sup> and μ<sub>2</sub><sup>0</sup>
+      are the standard chemical potentials of A in solvent (1) and in solvent (2). Both solutions are ideal.</p>
+    <ol>
+      <li>At equilibrium, what is the relationship between the chemical potential μ<sub>1</sub> of A in (1) and μ<sub>2</sub> of A in (2)?</li>
+      <li>Deduce that at equilibrium the concentrations C<sub>1</sub> and C<sub>2</sub> of A in (1) and (2) satisfy C<sub>2</sub>/C<sub>1</sub> = k,
+        where k is a constant to determine that depends only on temperature.</li>
+      <li>1 L of water (solvent 1) and 1 L of benzene (solvent 2) are poured into a container, then 1 mmol of phenol (solute A) is added; it dissolves
+        in both. Find C<sub>1</sub> and C<sub>2</sub>.</li>
+    </ol>
+  </div>
+  <ul class="given"><li>T = 298 K</li><li>μ<sub>1</sub><sup>0</sup> − μ<sub>2</sub><sup>0</sup> = −898 J/mol</li><li>V<sub>1</sub> = V<sub>2</sub> = 1 L</li><li>n = 1 mmol</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>Two phases at equilibrium have equal chemical potentials. Write μ = μ⁰ + RT ln a in each phase with a = C/C<sub>0</sub> (ideal), and isolate ln(C<sub>2</sub>/C<sub>1</sub>).
+      For 3), add the conservation of the 1 mmol.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>1) Equilibrium condition</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Two phases at equilibrium <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-2.pdf#page=4">p. 4</a>
+          <div class="formula">equal temperatures, pressures and chemical potentials</div></div></li>
+    </ol>
+    <span class="answer">μ<sub>1</sub> = μ<sub>2</sub></span>
+    <h3>2) The partition constant k</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Chemical potential + activity of an ideal solution (γ = 1)
+          <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-2.pdf#page=4">p. 4</a> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-2.pdf#page=2">p. 2</a>
+          <div class="formula">μ<sub>i</sub> = μ<sub>i</sub><sup>0</sup> + RT ln(C<sub>i</sub>/C<sub>0</sub>)</div></div>
+        <div class="calc">μ<sub>1</sub><sup>0</sup> + RT ln(C<sub>1</sub>/C<sub>0</sub>) = μ<sub>2</sub><sup>0</sup> + RT ln(C<sub>2</sub>/C<sub>0</sub>)</div>
+        <div class="calc">RT ln(C<sub>2</sub>/C<sub>1</sub>) = μ<sub>1</sub><sup>0</sup> − μ<sub>2</sub><sup>0</sup></div></li>
+      <li><div class="formula"><span class="frac"><span>C<sub>2</sub></span><span>C<sub>1</sub></span></span> = k = exp<span class="frac"><span>μ<sub>1</sub><sup>0</sup> − μ<sub>2</sub><sup>0</sup></span><span>R T</span></span></div>
+        <p>μ<sup>0</sup> depends only on T, so k depends only on T.</p></li>
+    </ol>
+    <span class="answer">k = exp[(μ<sub>1</sub><sup>0</sup> − μ<sub>2</sub><sup>0</sup>)/RT]</span>
+    <h3>3) Phenol between water and benzene</h3>
+    <ol class="steps">
+      <li><div class="calc">(μ<sub>1</sub><sup>0</sup> − μ<sub>2</sub><sup>0</sup>)/RT = −898 / (8.31 × 298) = −0.363</div>
+        <div class="calc">k = e<sup>−0.363</sup> = 0.696 ≈ 0.7</div></li>
+      <li><p>The 1 mmol is shared, and both volumes are 1 L: C<sub>1</sub> × 1 + C<sub>2</sub> × 1 = 1 mmol, with C<sub>2</sub> = k C<sub>1</sub>.</p>
+        <div class="calc">C<sub>1</sub> = 1 / (1 + k) = 1 / 1.696 = 0.590 mmol/L</div>
+        <div class="calc">C<sub>2</sub> = k C<sub>1</sub> = 0.696 × 0.590 = 0.410 mmol/L</div></li>
+    </ol>
+    <span class="answer">k ≈ 0.7 · C<sub>1</sub> (water) ≈ 0.59 mmol/L · C<sub>2</sub> (benzene) ≈ 0.41 mmol/L</span>
+    <p class="meta">Same as the sheet's answer (0.7; 0.59; 0.41). μ<sup>0</sup> is lower in water (μ<sub>1</sub><sup>0</sup> − μ<sub>2</sub><sup>0</sup> &lt; 0), so phenol prefers water: C<sub>1</sub> &gt; C<sub>2</sub>.</p>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>Sign: k = e<sup>(μ₁⁰ − μ₂⁰)/RT</sup> gives C<sub>2</sub>/C<sub>1</sub>, not C<sub>1</sub>/C<sub>2</sub> — inverting it swaps the two answers.</li>
+        <li>Equilibrium means equal <b>μ</b>, not equal μ<sup>0</sup> or equal concentrations.</li></ul></div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex3">
+  <h2><span class="num">Exercise 3</span> — Osmolarity of a mixture <a class="page" href="/exercises/s1/biophysics/set-1.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <p>1 litre of solution contains:</p>
+    <ul><li>10 mL of HCl at 1 mol/L</li><li>7.5 mL of H<sub>2</sub>SO<sub>4</sub> at 2 mol/L</li>
+      <li>5.55 g of CaCl<sub>2</sub> (M = 111 g/mol)</li><li>14.4 g of glucose (M = 180 g/mol)</li></ul>
+    <p>The electrolytes are fully dissociated. Calculate the osmolarity of the solution.</p>
+  </div>
+  <ul class="given"><li>V<sub>solution</sub> = 1 L</li><li>α = 1 for the electrolytes</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>Moles of each solute (stock volume × concentration, or mass / M), divide by 1 L, count the ions β of each, then add the ω<sub>i</sub>.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Osmolarity of several solutes <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-3.pdf#page=2">p. 2</a>
+          <div class="formula">ω = Σ [1 + α<sub>i</sub>(β<sub>i</sub> − 1)] C<sub>i</sub> = Σ β<sub>i</sub> C<sub>i</sub> (α = 1)</div></div></li>
+      <li><div class="table-wrap"><table>
+        <tr><th>Solute</th><th>C (mol/L)</th><th>β</th><th>ω (osmol/L)</th></tr>
+        <tr><td>HCl → H⁺ + Cl⁻</td><td>10 × 10⁻³ × 1 = 0.010</td><td>2</td><td>0.020</td></tr>
+        <tr><td>H<sub>2</sub>SO<sub>4</sub> → 2H⁺ + SO<sub>4</sub><sup>2−</sup></td><td>7.5 × 10⁻³ × 2 = 0.015</td><td>3</td><td>0.045</td></tr>
+        <tr><td>CaCl<sub>2</sub> → Ca<sup>2+</sup> + 2Cl⁻</td><td>5.55 / 111 = 0.050</td><td>3</td><td>0.150</td></tr>
+        <tr><td>Glucose (non-electrolyte)</td><td>14.4 / 180 = 0.080</td><td>1</td><td>0.080</td></tr>
+      </table></div></li>
+      <li><div class="calc">ω = 0.020 + 0.045 + 0.150 + 0.080 = 0.295 osmol/L</div></li>
+    </ol>
+    <span class="answer">ω = 0.295 osmol/L = 295 mosmol/L</span>
+    <p class="meta">Same as the sheet's answer — and close to plasma (≈ 300 mosmol/L).</p>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>β of H<sub>2</sub>SO<sub>4</sub> and CaCl<sub>2</sub> is 3, not 2.</li>
+        <li>Volumes of stock acid in mL: n = V(L) × C.</li>
+        <li>Glucose doesn't dissociate: ω = C.</li></ul></div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex4">
+  <h2><span class="num">Exercise 4</span> — Osmolarity of urine from its freezing point <a class="page" href="/exercises/s1/biophysics/set-1.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <p>In one litre of urine with a freezing-point depression of −1.4 °C, 11.7 g of NaCl and 15 g of urea (M = 60 g/mol) were found.</p>
+    <ol>
+      <li>Calculate the total osmolarity, then those of NaCl and of urea.</li>
+      <li>What can we conclude? Can this excess osmolarity be attributed to albumin (M<sub>al</sub> = 70 000 g/mol)? What other substance should be looked for?</li>
+    </ol>
+  </div>
+  <ul class="given"><li>ΔT = −1.4 °C</li><li>K<sub>cr</sub> = 1.86 °C·kg/osmol</li><li>M<sub>NaCl</sub> = 58.5 g/mol</li><li>V = 1 L</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>The freezing point gives the <b>total</b> osmolarity (every particle counts). The masses give the osmolarity of NaCl and urea only. Compare.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>1) Osmolarities</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Cryoscopic depression <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf#page=1">p. 1</a>
+          <div class="formula">ΔT<sub>sol</sub> = −K<sub>cr</sub> · ω ⇒ ω = |ΔT| / K<sub>cr</sub></div></div>
+        <div class="calc">ω<sub>total</sub> = 1.4 / 1.86 = 0.753 osmol/L</div>
+        <p class="meta">K is given per kg (osmolality); for dilute urine 1 kg of water ≈ 1 L, so we read the result as osmol/L.</p></li>
+      <li><div class="law"><span class="label">Law</span> Osmolarity <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-3.pdf#page=1">p. 1</a>
+          <div class="formula">ω = [1 + α(β − 1)] · C</div></div>
+        <div class="calc">NaCl: C = 11.7 / 58.5 = 0.200 mol/L, β = 2, α = 1 → ω = 0.400 osmol/L</div>
+        <div class="calc">Urea (non-electrolyte): C = 15 / 60 = 0.250 mol/L → ω = 0.250 osmol/L</div></li>
+    </ol>
+    <span class="answer">ω<sub>total</sub> ≈ 753 mosmol/L · ω<sub>NaCl</sub> = 400 mosmol/L · ω<sub>urea</sub> = 250 mosmol/L</span>
+    <div class="unsure">The sheet gives 393 mosmol/L for NaCl. With M<sub>NaCl</sub> = 23 + 35.5 = 58.5 g/mol, 11.7 g is exactly 0.2 mol → 400 mosmol/L;
+      393 corresponds to M = 59.5 g/mol, probably a slip in the key. Use the molar mass your teacher gives.</div>
+    <h3>2) Conclusion</h3>
+    <ol class="steps">
+      <li><div class="calc">ω<sub>excess</sub> = 753 − 400 − 250 ≈ 103 mosmol/L (≈ 110 with the sheet's 393)</div>
+        <p>NaCl and urea don't explain all the urine's particles: about 0.1 osmol/L comes from another solute.</p></li>
+      <li><p>Albumin doesn't dissociate (ω = C), so it would need:</p>
+        <div class="calc">m = 0.103 mol/L × 70 000 g/mol ≈ 7 200 g/L</div>
+        <p>— impossible (more than 7 kg per litre). Being so heavy, albumin brings very few osmoles per gram: it <b>can't</b> be the cause.</p></li>
+      <li><p>So look for a small, abundant molecule — typically <b>glucose</b> (glycosuria, as in diabetes).</p></li>
+    </ol>
+    <span class="answer">Excess ≈ 0.1 osmol/L — not albumin (would need ≈ 7 kg/L); look for glucose</span>
+    <div class="unsure">"Glucose in the urine of a diabetic" is the expected clinical answer but isn't taught in these lessons — it's general knowledge.</div>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>ΔT is negative: ω = |ΔT| / K.</li>
+        <li>Forgetting β = 2 for NaCl (ω = 0.2 instead of 0.4).</li>
+        <li>Big molecules (proteins) weigh a lot but count little in osmolarity — colligative properties count particles, not mass.</li></ul></div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex5">
+  <h2><span class="num">Exercise 5</span> — Molar mass by cryoscopy <a class="page" href="/exercises/s1/biophysics/set-1.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <p>4.6 g of ethyl alcohol (M = 46 g/mol) in 200 mL of pure solvent gives a solution that begins to deposit ice at −0.93 °C.
+      Next, 5.8 g of a non-ionizable compound of unknown molar mass is dissolved in 100 mL of the same solvent; ice starts to deposit at −0.59 °C.
+      Calculate the molar mass of the unknown substance. Freezing point of the pure solvent: 0 °C.</p>
+  </div>
+  <ul class="given"><li>m<sub>alc</sub> = 4.6 g in 0.2 L, ΔT<sub>1</sub> = −0.93 °C</li><li>m<sub>X</sub> = 5.8 g in 0.1 L, ΔT<sub>2</sub> = −0.59 °C</li><li>both non-electrolytes</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>K<sub>cr</sub> of this solvent isn't given: find it with the alcohol solution. Then use it to get ω of the unknown, hence its moles.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Cryoscopic depression <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf#page=1">p. 1</a>
+          <div class="formula">ΔT<sub>sol</sub> = −K<sub>cr</sub> · ω  (non-electrolyte: ω = C)</div></div>
+        <div class="calc">Alcohol: C = (4.6 / 46) / 0.2 = 0.1 / 0.2 = 0.5 mol/L</div>
+        <div class="calc">K<sub>cr</sub> = |ΔT<sub>1</sub>| / ω = 0.93 / 0.5 = 1.86 °C·L/osmol</div>
+        <p class="meta">That's water's constant: the solvent is water.</p></li>
+      <li><div class="calc">Unknown: ω = 0.59 / 1.86 = 0.317 osmol/L = C</div>
+        <div class="calc">n = C × V = 0.317 × 0.1 = 3.17 × 10⁻² mol</div></li>
+      <li><div class="calc">M = m / n = 5.8 / 3.17 × 10⁻² = 183 g/mol</div></li>
+    </ol>
+    <span class="answer">M ≈ 183 g/mol</span>
+    <p class="meta">Same as the sheet's answer. The solution volume is taken equal to the solvent volume (dilute solutions).</p>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>Concentration = moles ÷ volume <b>in litres</b>: 0.1 mol in 200 mL is 0.5 mol/L, not 0.1.</li>
+        <li>Different volumes (200 vs 100 mL) in the two solutions — don't reuse the first one.</li></ul></div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex6">
+  <h2><span class="num">Exercise 6</span> — Dissociation coefficient from iso-osmolarity <a class="page" href="/exercises/s1/biophysics/set-1.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <p>A 2.24 M ammonia (NH<sub>4</sub>OH) solution is iso-osmotic to a 1.4 M sodium chloride solution. Determine the dissociation coefficient α of NH<sub>4</sub>OH.
+      The membrane is considered semi-permeable.</p>
+  </div>
+  <ul class="given"><li>C<sub>NH₄OH</sub> = 2.24 mol/L</li><li>C<sub>NaCl</sub> = 1.4 mol/L, α = 1</li><li>semi-permeable membrane</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>Iso-osmotic → equal osmolarities. NaCl is fully dissociated; NH<sub>4</sub>OH (→ NH<sub>4</sub>⁺ + OH⁻) is a weak electrolyte: keep α in the formula.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Iso-osmotic, semi-permeable membrane <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf#page=4">p. 4</a>
+          <div class="formula">ω<sub>NH₄OH</sub> = ω<sub>NaCl</sub></div></div></li>
+      <li><div class="law"><span class="label">Law</span> Osmolarity <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-3.pdf#page=1">p. 1</a>
+          <div class="formula">ω = [1 + α(β − 1)] · C</div></div>
+        <div class="calc">NaCl: ω = 2 × 1.4 = 2.8 osmol/L</div>
+        <div class="calc">NH<sub>4</sub>OH (β = 2): 2.24 × (1 + α) = 2.8</div>
+        <div class="calc">1 + α = 2.8 / 2.24 = 1.25 → α = 0.25</div></li>
+    </ol>
+    <span class="answer">α = 0.25 (25 % of NH<sub>4</sub>OH is dissociated)</span>
+    <p class="meta">Same as the sheet's answer. 0 ≤ α ≤ 1 and α &lt; 1, as expected for a weak electrolyte.</p>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>Iso-osmotic means same <b>osmolarity</b>, not same molarity (2.24 ≠ 1.4).</li>
+        <li>With α &lt; 1, use 1 + α(β − 1), not α·β.</li></ul></div>
+  </details>
+</section>
+
+<footer>Exercises from "Problem Set 1: Biophysics of solutions", Pr B. Boutabia-Chéraitia, 1st-year medicine, Faculty of Medicine Annaba, 2026-2027.
+  Solutions written with the course's lessons (📄 = lesson PDF page); every number was computed and checked against the sheet's answers.
+  Check them against your TD corrections.</footer>
+</main>
+</body>
+</html>

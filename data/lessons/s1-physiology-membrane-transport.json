@@ -1,0 +1,322 @@
+{
+  "semester": 1,
+  "module": "Physiology",
+  "title": "Membrane transport",
+  "pdf": "s1/physiology/membrane-transport.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q6",
+    "EMD1 2023-2024 Q1",
+    "EMD1 2023-2024 Q2",
+    "EMD1 2023-2024 Q6",
+    "EMD1 2024-2025 Q2",
+    "EMD1 2024-2025 Q3",
+    "EMD1 2024-2025 Q4",
+    "EMD1 2024-2025 Q5",
+    "EMD1 2025-2026 Q1",
+    "EMD1 2025-2026 Q2",
+    "EMD1 2025-2026 Q3",
+    "EMD1 2025-2026 Q4",
+    "EMD1 2025-2026 Q5"
+  ],
+  "questions": [
+    {
+      "stem": "About the plasma membrane:",
+      "options": [
+        "It is about 70–100 nm thick",
+        "It separates the intracellular environment from the extracellular environment",
+        "It is a passive wall that lets all substances cross freely",
+        "Its glycoproteins and glycolipids act as a cellular \"ID\" that helps tell self from non-self"
+      ],
+      "answer": "BD",
+      "explanation": "The membrane is a thin (7–10 nm), dynamic, selective barrier — not a passive wall. Cell recognition relies on glycoproteins and glycolipids.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "A patient with chest pain has a raised blood troponin. Which statements are correct?",
+      "options": [
+        "Troponin I/T is the central biomarker of acute myocardial infarction",
+        "Cell injury disrupts the membrane and intracellular contents leak into the blood",
+        "Troponin is a non-specific marker of haemolysis",
+        "Troponin is the marker of rhabdomyolysis"
+      ],
+      "answer": "AB",
+      "explanation": "Membrane integrity is a diagnostic principle: injured cells leak their contents. Troponin = myocardial injury; LDH is the non-specific marker, CK/myoglobin the muscle (rhabdomyolysis) markers.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "About membrane phospholipids:",
+      "options": [
+        "Each has a hydrophobic head and two hydrophilic tails",
+        "Phosphatidylinositol is a precursor of the second messengers IP₃ and DAG",
+        "Phosphatidylserine is mainly in the outer leaflet",
+        "The hydrophobic core is a barrier to ions and polar molecules"
+      ],
+      "answer": "BD",
+      "explanation": "Phosphatidylserine is in the inner leaflet; its exposure on the outer surface is the \"eat-me\" signal of apoptosis. PC and sphingomyelin are the outer-leaflet phospholipids.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "About the movements of membrane phospholipids:",
+      "options": [
+        "Flip-flop usually requires enzymes such as flippases and scramblases",
+        "Rotation around the molecule's own axis is very rare",
+        "Lateral diffusion within a leaflet is fast",
+        "Flip-flop from one leaflet to the other is very frequent"
+      ],
+      "answer": "AC",
+      "explanation": "Lateral diffusion, rotation and flexion are fast; flip-flop is very rare because the polar head would have to cross the hydrophobic core.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Cholesterol in the plasma membrane:",
+      "options": [
+        "Increases the membrane's permeability to ions",
+        "Its synthesis in the liver is reduced by statins, which inhibit HMG-CoA reductase",
+        "Limits excessive fluidity at high temperature and prevents solidifying at low temperature",
+        "Forms lipid rafts with sphingolipids"
+      ],
+      "answer": "BCD",
+      "explanation": "Cholesterol buffers fluidity and decreases permeability to ions and small polar molecules. Statins inhibit HMG-CoA reductase → ↑ hepatic LDL receptors → ↓ circulating LDL.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "About membrane proteins and the glycocalyx:",
+      "options": [
+        "Blood groups are an example of glycocalyx-based recognition",
+        "Integral proteins are embedded in the bilayer, and many are transmembrane",
+        "The glycocalyx covers both faces of the membrane",
+        "Peripheral proteins cross the whole bilayer"
+      ],
+      "answer": "AB",
+      "explanation": "Peripheral proteins sit on one surface without crossing the bilayer. Sugar chains are found only on the outer surface.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "About the three classes of membrane transport:",
+      "options": [
+        "Primary active transport uses ATP directly (pumps)",
+        "Passive transport uses no ATP and goes down the gradient",
+        "Vesicular transport requires ATP",
+        "Active transport moves substances against their gradient"
+      ],
+      "answer": "ABCD",
+      "explanation": "Primary active transport uses ATP directly (pumps); secondary active transport uses the energy of an ion gradient. Vesicular transport needs ATP.",
+      "page": 6,
+      "weight": 3
+    },
+    {
+      "stem": "Which of the following cross the membrane by simple diffusion through the lipid bilayer?",
+      "options": [
+        "Steroid hormones such as cortisol",
+        "Glucose",
+        "Na⁺ and K⁺ ions",
+        "O₂ and CO₂"
+      ],
+      "answer": "AD",
+      "explanation": "Simple diffusion concerns small, non-polar, lipid-soluble molecules (gases, steroids, vitamins A, D, E, K). Charged ions and large glucose need facilitated diffusion.",
+      "page": 6,
+      "weight": 3
+    },
+    {
+      "stem": "Which changes increase the rate of simple diffusion (Fick's law)?",
+      "options": [
+        "A higher temperature",
+        "A thicker membrane",
+        "A larger molecule",
+        "A larger concentration gradient"
+      ],
+      "answer": "AD",
+      "explanation": "Rate ∝ surface × concentration difference × permeability / thickness. Permeability decreases with molecular size; thickening (fibrosis, oedema) slows diffusion.",
+      "page": 7,
+      "weight": 1
+    },
+    {
+      "stem": "About channels and carriers in facilitated diffusion:",
+      "options": [
+        "Carriers are slower than channels",
+        "Channels form water-filled pores and are very fast",
+        "Channels saturate, reaching a maximal rate (Vmax)",
+        "Carriers bind the molecule and change shape to release it on the other side"
+      ],
+      "answer": "ABD",
+      "explanation": "Saturation (Vmax when all carriers are busy) is a property of carriers; channels are rarely limiting and can pass millions of ions per second.",
+      "page": 8,
+      "weight": 3
+    },
+    {
+      "stem": "Which gate type — example pairs are correct?",
+      "options": [
+        "Voltage-gated — Na⁺ channels of the nerve impulse",
+        "Mechanically gated — hair cells of the inner ear",
+        "Ligand-gated — nicotinic ACh receptor at the neuromuscular junction",
+        "Ligand-gated — touch receptors"
+      ],
+      "answer": "ABC",
+      "explanation": "Touch receptors and hair cells are mechanically gated (stretch or pressure). Ligand-gated channels open when a specific molecule binds.",
+      "page": 7,
+      "weight": 1
+    },
+    {
+      "stem": "Insulin acts on a muscle cell after a meal. Which statements about glucose entry through GLUT4 are correct?",
+      "options": [
+        "Glucose crosses GLUT4 through a water-filled pore",
+        "Insulin increases the number of GLUT4 carriers, so more glucose enters",
+        "Transport by GLUT4 can be saturated",
+        "GLUT4 moves glucose against its gradient using ATP"
+      ],
+      "answer": "BC",
+      "explanation": "GLUT carriers perform facilitated diffusion: down the gradient, no ATP, saturable and regulated (insulin ↑ GLUT4 in muscle and fat). Pores are a feature of channels.",
+      "page": 8,
+      "weight": 3
+    },
+    {
+      "stem": "Osmosis:",
+      "options": [
+        "Moves water towards the side with less solute",
+        "Is the movement of water from the side with low solute concentration to the side with high solute concentration",
+        "Is fast through aquaporins, water channels that block ions and solutes",
+        "Requires ATP"
+      ],
+      "answer": "BC",
+      "explanation": "Osmosis is passive: water moves towards the higher solute concentration (less free water), slowly through the bilayer and rapidly through aquaporins.",
+      "page": 8,
+      "weight": 1
+    },
+    {
+      "stem": "A red blood cell is placed in a hypotonic solution:",
+      "options": [
+        "0.9 % NaCl is an example of such a solution",
+        "The cell shrinks (crenation)",
+        "The cell swells and may burst (haemolysis)",
+        "Water enters the cell"
+      ],
+      "answer": "CD",
+      "explanation": "Hypotonic = less solute outside: water enters, the cell swells and may lyse. Crenation occurs in hypertonic solutions; 0.9 % NaCl is isotonic.",
+      "page": 8,
+      "weight": 1
+    },
+    {
+      "stem": "During one cycle of the Na⁺/K⁺-ATPase:",
+      "options": [
+        "ATP hydrolysis phosphorylates the pump, which changes shape",
+        "3 Na⁺ bind to the pump on the inside",
+        "2 K⁺ bind to the pump on the inside",
+        "One net positive charge is moved out of the cell"
+      ],
+      "answer": "ABD",
+      "explanation": "3 Na⁺ bind inside → phosphorylation → Na⁺ released outside → 2 K⁺ bind outside → dephosphorylation → K⁺ released inside. 3 out / 2 in = one net charge out (electrogenic).",
+      "page": 9,
+      "weight": 3
+    },
+    {
+      "stem": "Roles of the Na⁺/K⁺ pump include:",
+      "options": [
+        "Secreting gastric acid; it is blocked by omeprazole",
+        "Maintaining the Na⁺ and K⁺ gradients and the resting potential",
+        "Controlling cell volume",
+        "Creating the Na⁺ gradient used by secondary active transport"
+      ],
+      "answer": "BCD",
+      "explanation": "The Na⁺/K⁺-ATPase is inhibited by digoxin. Gastric acid comes from the H⁺/K⁺-ATPase of parietal cells, blocked by proton pump inhibitors (omeprazole).",
+      "page": 9,
+      "weight": 3
+    },
+    {
+      "stem": "About the primary active transporters:",
+      "options": [
+        "SERCA pumps Ca²⁺ back into the sarcoplasmic reticulum so muscle can relax",
+        "The Na⁺/K⁺-ATPase is inhibited by digoxin",
+        "The H⁺/K⁺-ATPase of gastric parietal cells is blocked by proton pump inhibitors",
+        "CFTR, a Cl⁻ channel of the ABC family, is defective in cystic fibrosis"
+      ],
+      "answer": "ABCD",
+      "explanation": "The H⁺/K⁺-ATPase is stimulated by histamine, ACh and gastrin and inhibited by somatostatin.",
+      "page": 9,
+      "weight": 3
+    },
+    {
+      "stem": "Secondary active transport (cotransport):",
+      "options": [
+        "The Na⁺/Ca²⁺ exchanger (NCX) is a symport",
+        "The Na⁺-K⁺-2Cl⁻ cotransporter (NKCC) is an antiport",
+        "Usually uses the Na⁺ gradient created by the Na⁺/K⁺ pump",
+        "The transporter itself does not use ATP, but stops working if the Na⁺/K⁺ pump stops"
+      ],
+      "answer": "CD",
+      "explanation": "Symport = same direction (SGLT, NKCC, Na⁺-amino acids); antiport = opposite directions (NHE, NCX).",
+      "page": 10,
+      "weight": 3
+    },
+    {
+      "stem": "In an intestinal cell absorbing glucose:",
+      "options": [
+        "The basolateral Na⁺/K⁺-ATPase keeps intracellular Na⁺ low",
+        "The apical SGLT1 carries 2 Na⁺ with 1 glucose into the cell",
+        "Glucose leaves through basolateral GLUT2 by facilitated diffusion",
+        "Glucose exit at the basolateral membrane uses ATP directly"
+      ],
+      "answer": "ABC",
+      "explanation": "One cell uses all three mechanisms: secondary active (SGLT1, apical), passive (GLUT2, basolateral) and primary active (Na⁺/K⁺ pump, basolateral).",
+      "page": 10,
+      "weight": 3
+    },
+    {
+      "stem": "About oral rehydration solution and gliflozins:",
+      "options": [
+        "Gliflozins block SGLT2 and glucose reabsorption in the proximal tubule",
+        "Oral rehydration works because water is actively pumped into intestinal cells",
+        "Gliflozins block GLUT4 in muscle",
+        "Oral rehydration solution contains glucose and Na⁺ together because SGLT1 absorbs both and water follows by osmosis"
+      ],
+      "answer": "AD",
+      "explanation": "Water is never pumped: it follows the absorbed Na⁺ and glucose by osmosis. Gliflozins are SGLT2 inhibitors used in type 2 diabetes and heart failure.",
+      "page": 10,
+      "weight": 3
+    },
+    {
+      "stem": "About endocytosis:",
+      "options": [
+        "Phagocytosis takes up extracellular fluid and dissolved solutes non-selectively",
+        "Receptor-mediated endocytosis uses clathrin-coated vesicles and is saturable",
+        "Phagocytosis is performed by neutrophils, macrophages and dendritic cells",
+        "Pinocytosis is non-selective"
+      ],
+      "answer": "BCD",
+      "explanation": "Phagocytosis engulfs large solid particles after recognition; uptake of fluid and solutes is pinocytosis, done continuously by almost all cells.",
+      "page": 11,
+      "weight": 0
+    },
+    {
+      "stem": "A young patient has very high blood LDL because of a mutation of the LDL receptor:",
+      "options": [
+        "Receptor-mediated endocytosis of LDL fails",
+        "The defect concerns phagocytosis",
+        "Cholesterol stays in the blood and causes early atherosclerosis",
+        "Hepatocytes normally take up LDL by receptor-mediated endocytosis"
+      ],
+      "answer": "ACD",
+      "explanation": "Familial hypercholesterolaemia: the LDL receptor cannot mediate selective uptake (e.g. by hepatocytes), so LDL stays in the blood.",
+      "page": 11,
+      "weight": 0
+    },
+    {
+      "stem": "Exocytosis:",
+      "options": [
+        "Regulated release is triggered by a rise in Ca²⁺",
+        "Removes membrane from the cell surface",
+        "Uses SNARE proteins for vesicle fusion",
+        "Includes insulin secretion by pancreatic β cells"
+      ],
+      "answer": "ACD",
+      "explanation": "Exocytosis adds membrane to the cell surface (endocytosis removes it). Examples: neurotransmitter release, insulin, digestive enzymes.",
+      "page": 12,
+      "weight": 0
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biophysics of solutions 6 — Summary</title>
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Biophysics · Summary · Part 6 of 6</div>
+<h1>Biophysics of solutions — 6</h1>
+<p class="meta">Pr B. Boutabia-Chéraitia · slides 34–39 (diffusion across a membrane, D, dialysis, exercises 9–12) · 6 past exam questions (EMD1 2023–2026) ·
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-6.pdf">open the PDF</a></p>
+<p class="meta">Course parts: <a target="_self" href="biophysics-of-solutions.html">1 · States, Psat</a> ·
+  <a target="_self" href="biophysics-of-solutions-2.html">2 · Solutions, activity, ionic strength</a> ·
+  <a target="_self" href="biophysics-of-solutions-3.html">3 · Osmolarity</a> ·
+  <a target="_self" href="biophysics-of-solutions-4.html">4 · Colligative properties</a> ·
+  <a target="_self" href="biophysics-of-solutions-5.html">5 · Renal work, transport</a> ·
+  <b>6 · Membrane diffusion, dialysis</b></p>
+<ul class="toc">
+  <li><a target="_self" href="#essentials">Essentials</a></li>
+  <li><a target="_self" href="#membrane">Flux across a membrane</a></li>
+  <li><a target="_self" href="#permeability">Diffusive permeability</a></li>
+  <li><a target="_self" href="#coefficient">Diffusion coefficient D</a></li>
+  <li><a target="_self" href="#dialysis">Dialysis</a></li>
+  <li><a target="_self" href="#exercises">Exercises 9–12</a></li>
+  <li><a target="_self" href="#traps">Exam traps</a></li>
+  <li><a target="_self" href="#check">Self-check</a></li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<div class="box essentials" id="essentials">
+  <span class="label">If you remember only this</span>
+  <ul>
+    <li>Across a membrane: <b>J<sub>d</sub> = −D<sub>m</sub> dC/dx</b>, with <b>D<sub>m</sub> = D(1 − σ) S<sub>p</sub>/S</b> (diffusion coefficient of the solute <b>in the membrane</b> — smaller than D).</li>
+    <li>Initial diffusive flux: <b>J<sub>d,i</sub> = Q<sub>i</sub>/S = P |ΔC<sub>i</sub>|</b>, so <b>P = Q<sub>i</sub> / (S |ΔC<sub>i</sub>|) = J / ΔC</b>.</li>
+    <li><b>P = (D/l)(S′/S) = D<sub>m</sub>/l</b>, unit <b>m/s</b>: diffusive permeability per unit membrane area.</li>
+    <li><b>D = kT/f</b> (k = 1.38 × 10⁻²³ J/K); for a sphere <b>f = 6πηr</b> → <b>D = kT/(6πηr)</b>.</li>
+    <li><b>D = Cste · (T/η) · ∛(ρ/M)</b>: D <b>increases with T</b>, <b>decreases with viscosity η</b>, is <b>inversely proportional to the cube root of M</b>.</li>
+    <li>Friction <b>opposes</b> diffusion (f in the denominator); temperature favours it.</li>
+    <li>Dialysis purifies blood (urea, creatinine, excess K⁺, liquid) across a membrane: <b>hemodialysis outside</b> the body (dialyzer), <b>peritoneal dialysis inside</b> (peritoneum).</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="membrane"><span class="num">2-2.</span> Diffusive flux across a membrane
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-6.pdf#page=1">slide 34</a>
+  <span class="exam">2024-25 · 2025-26</span></h2>
+<p>Continuing part 5 (J<sub>d</sub> = Q/S): across a membrane, J<sub>d</sub> can also be written</p>
+<div class="formula">J<sub>d</sub> = −D<sub>m</sub> <span class="frac"><span>dC</span><span>dx</span></span> &nbsp;&nbsp;&nbsp;
+  D<sub>m</sub> = D (1 − σ) <span class="frac"><span>S<sub>p</sub></span><span>S</span></span>
+  <span class="where">D<sub>m</sub> = diffusion coefficient of the solute in the membrane · S<sub>p</sub> = total pore area (permeable and impermeable) · S = membrane surface</span></div>
+<p>Because (1 − σ) ≤ 1 and S<sub>p</sub>/S &lt; 1, the membrane <b>lowers</b> the diffusion coefficient (D<sub>m</sub> &lt; D).</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="permeability"><span class="num">2-3.</span> Initial diffusive flux and diffusive permeability
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-6.pdf#page=1">slide 34</a>
+  <span class="exam">2023-24 · 2024-25</span></h2>
+<div class="formula">J<sub>d,i</sub> = <span class="frac"><span>Q<sub>i</sub></span><span>S</span></span> = <span class="frac"><span>D</span><span>l</span></span> <span class="frac"><span>S′</span><span>S</span></span> |ΔC<sub>i</sub>| ≡ P |ΔC<sub>i</sub>|
+  <span class="where">Q<sub>i</sub> = initial molar flow rate (mol/s) · l = membrane thickness (pore length) · S′ = permeable pore area · ΔC<sub>i</sub> = initial concentration difference</span></div>
+<div class="formula">P = <span class="frac"><span>D</span><span>l</span></span> <span class="frac"><span>S′</span><span>S</span></span> = <span class="frac"><span>D<sub>m</sub></span><span>l</span></span> &nbsp;&nbsp; [P] = m/s
+  <span class="where">P = diffusive permeability per unit membrane area</span></div>
+<div class="box def"><span class="label">Use it backwards</span>
+  P = Q<sub>i</sub> / (S·|ΔC<sub>i</sub>|) — the ratio <b>flux / concentration difference</b>. And Q<sub>i</sub> = P·S·|ΔC<sub>i</sub>|.</div>
+<div class="box trap"><span class="label">Units</span>
+  Work in SI: cm² → ×10⁻⁴ m², µm → ×10⁻⁶ m, mmol/L = mol/m³, mol/L → ×10³ mol/m³, g/L = kg/m³ → ×10³ g/m³.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="coefficient"><span class="num">Remark</span> The diffusion coefficient D
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-6.pdf#page=1">slides 34–35</a>
+  <span class="exam">2023-24 · 2024-25 · 2025-26</span></h2>
+<div class="table-wrap"><table>
+  <tr><th>Relation</th><th>Meaning</th></tr>
+  <tr><td><b>D = kT / f</b></td><td>k = 1.38 × 10⁻²³ J/K, Boltzmann's constant · T in K · f = <b>friction coefficient</b> of the solvent on the diffusing particles</td></tr>
+  <tr><td><b>f = 6πηr</b></td><td>For <b>spherical</b> particles of radius r; η = <b>viscosity</b> coefficient (resistance to flow)</td></tr>
+  <tr><td>M = 𝒩m = 𝒩ρ·(4/3)πr³ ⇒ <b>r = Cste · ∛(M/ρ)</b></td><td>𝒩 = Avogadro's number, ρ = density of the particle</td></tr>
+  <tr><td><b>D = Cste · (T/η) · ∛(ρ/M)</b></td><td>D ↑ with T · D ↓ with η · D ∝ 1/∛M</td></tr>
+</table></div>
+<div class="box tip"><span class="label">Memory trick — comparing two cases</span>
+  Write D₁/D₂ and cancel what doesn't change: <b>D₁/D₂ = (T₁/T₂)(η₂/η₁)(ρ₁/ρ₂)<sup>1/3</sup>(M₂/M₁)<sup>1/3</sup></b>. Same solvent, same η, same density
+  → D₁/D₂ = (T₁/T₂)(M₂/M₁)<sup>1/3</sup>. Same particle → D ∝ T/η.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="dialysis"><span class="num">App.</span> Medical application: dialysis and hemodialysis
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-6.pdf#page=1">slides 35–36</a></h2>
+<div class="box def"><span class="label">Dialysis</span>
+  A method for <b>purifying</b> solutions. In medicine it purifies the blood of its waste products (urea, creatinine, excess potassium, or liquid…)
+  <b>across a membrane</b> when the kidneys can no longer do so.</div>
+<div class="table-wrap"><table>
+  <tr><th></th><th>Hemodialysis</th><th>Peritoneal dialysis</th></tr>
+  <tr><td><b>Where</b></td><td><b>Outside</b> the body</td><td><b>Inside</b> the body</td></tr>
+  <tr><td><b>Exchange between</b></td><td>Blood and a fluid called <b>dialysate</b></td><td>Blood and the dialysate</td></tr>
+  <tr><td><b>Membrane</b></td><td>An artificial filter, the <b>dialyzer</b></td><td>The <b>peritoneum</b>: richly vascularized membrane enveloping the abdominal organs and digestive tract</td></tr>
+</table></div>
+<div class="grid2">
+  <figure class="small"><img src="biophysics-of-solutions-6/hemodialysis.jpg" alt="Hemodialysis circuit: blood from the arm goes through the dialyzer and comes back purified; dialysate flows the other way and leaves as waste">
+    <figcaption>Hemodialysis: unfiltered blood leaves the arm, crosses the dialyzer and returns purified; dialysate enters and leaves as waste.
+      <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-6.pdf#page=1">slide 35</a></figcaption></figure>
+  <figure class="small"><img src="biophysics-of-solutions-6/peritoneal-dialysis.jpg" alt="Peritoneal dialysis: a bag of dialysate drains into the abdominal cavity, exchanges with blood across the peritoneum, then drains out as waste">
+    <figcaption>Peritoneal dialysis: the dialysate is put into the abdomen; exchanges happen across the peritoneum, then it drains as waste.
+      <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-6.pdf#page=2">slide 36</a></figcaption></figure>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="exercises"><span class="num">Ex.</span> Worked exercises 9–12
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-6.pdf#page=2">slides 36–39</a></h2>
+<div class="table-wrap"><table>
+  <tr><th>Exercise</th><th>Data</th><th>Solution</th></tr>
+  <tr><td><b>9</b> — P and D of a membrane</td><td>20 and 90 mmol/L, S = 3 cm², pores = 1 % of S, l = 10 µm, Q<sub>i</sub> = 4.2 pmol/s</td>
+    <td>P = Q<sub>i</sub>/(S|ΔC<sub>i</sub>|) = 4.2×10⁻¹² / (3×10⁻⁴ × 70) = <b>0.2 × 10⁻⁹ m/s</b>.<br>
+      σ = 0 ⇒ P = (D/l)(S<sub>p</sub>/S), S<sub>p</sub> = 10⁻²S ⇒ D = Pl·S/S<sub>p</sub> = 0.2×10⁻⁹ × 10⁻⁵ / 10⁻² = <b>0.2 × 10⁻¹² m²/s</b></td></tr>
+  <tr><td><b>10</b> — initial molar flow of sucrose</td><td>0.3 and 0.1 mol/L, S = 20 cm², l = 0.2 mm, P = 2.5 × 10⁻⁶ m/s</td>
+    <td>Q<sub>i</sub> = PS|ΔC<sub>i</sub>| = 2.5×10⁻⁶ × 20×10⁻⁴ × (0.3 − 0.1)×10³ = 10⁻⁶ mol/s = <b>1 µmol/s</b></td></tr>
+  <tr><td><b>11</b> — myoglobin radius, then molar mass</td><td>M = 17 kg/mol, D = 1.2 × 10⁻¹⁰ m²/s in water at 0 °C, η = 10⁻³ Pa·s</td>
+    <td>1) r = kT/(6πηD) = 1.38×10⁻²³ × 273 / (6π × 10⁻³ × 1.2×10⁻¹⁰) = <b>1.66 nm</b>.<br>
+      2) Same density and η: D₁/D₂ = (T₁/T₂)(M₂/M₁)<sup>1/3</sup> ⇒ <b>M₂ = M₁ (D₁/D₂ × T₂/T₁)³</b> (slide answer: 4880 g/mol, with D₂ = 0.65 at 37 °C)</td></tr>
+  <tr><td><b>12</b> — urea flow in an artificial kidney</td><td>S = 0.5 m², l = 50 µm, D<sub>m</sub> = 10⁻⁹ m²/s, blood urea 5 g/L, dialysate free of urea</td>
+    <td>|ΔC<sub>i</sub>| = C₀ − 0 = C₀ ⇒ Q<sub>i</sub> = (D<sub>m</sub>S/l)C₀ = (10⁻⁹ × 0.5 / 50×10⁻⁶) × 5×10³ = 5×10⁻² g/s = <b>50 mg/s</b></td></tr>
+</table></div>
+<div class="box trap"><span class="label">Exercise 11, part 2</span>
+  The slide gives D₂ = "0.65 m²/s" without its power of ten, and its answer (4880 g/mol) can't be reproduced from the stated values:
+  with D₁/D₂ = 1.2/0.65 and T₂/T₁ = 310/273, the formula gives about 1.6 × 10⁵ g/mol. Learn the method; ask the teacher for the intended data.</div>
+<div class="box"><span class="label">Exam calculations with this lesson</span>
+  <ul>
+    <li><b>2023-24 Q9</b> — 30 and 70 mmol/L, S = 4 cm², Q<sub>i</sub> = 4.2 pmol/s: P = 4.2×10⁻¹² / (4×10⁻⁴ × 40) = <b>0.26 × 10⁻⁹ m/s</b>.</li>
+    <li><b>2025-26 Q10</b> — myoglobin D = 1.22 × 10⁻¹⁰ at 0 °C, same viscosity: D ∝ T ⇒ D = 1.22×10⁻¹⁰ × 310/273 = <b>13.9 × 10⁻¹¹ SI</b>.</li>
+  </ul></div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="traps">Exam traps <span class="meta">— the wrong options past exams used</span></h2>
+<div class="box trap"><span class="label">False statements to recognise</span>
+  <ul>
+    <li>"D = k·T·f" — <b>false</b>: D = kT/<b>f</b>. <span class="exam">2024-25</span></li>
+    <li>"D decreases when temperature increases" / "temperature is not a driving factor" — <b>false</b>: D ∝ T; a high temperature ensures better diffusion.
+      <span class="exam">2023-24 · 2024-25</span></li>
+    <li>"Friction is a driving factor of diffusion" / "D is favoured by friction" — <b>false</b>: friction opposes it (f in the denominator).
+      <span class="exam">2023-24 · 2024-25 · 2025-26</span></li>
+    <li>"D is proportional to the cube root of the mass" — <b>false</b>: <b>inversely</b> proportional (∛(ρ/M)). <span class="exam">2024-25 · 2025-26</span></li>
+    <li>"D increases in the presence of a membrane" — <b>false</b>: D<sub>m</sub> = D(1 − σ)S<sub>p</sub>/S is smaller. <span class="exam">2024-25 · 2025-26</span></li>
+    <li>"In the presence of a dialysis membrane, D = j<sub>n</sub>/ΔC" — <b>false</b>: J/ΔC is the <b>permeability P</b> (key 2024-25: P = J<sub>n</sub>/ΔC is correct).
+      <span class="exam">2024-25 · 2025-26</span></li>
+    <li>"Diffusive permeability is proportional to the total membrane area" — <b>false</b>: P is per unit area, P = (D/l)(S′/S). <span class="exam">2024-25</span></li>
+    <li>"Fick's 1st law determines the equivalent / ionic concentration" — <b>false</b>: it gives the diffusion flow. <span class="exam">2023-24 · 2024-25</span></li>
+  </ul>
+</div>
+<p class="meta">2024-25 Q5's key says D "is independent of the particle's density when its shape is arbitrary". This lesson only gives the formula for
+  spherical particles (where ρ appears), so it doesn't decide that option — rely on the key.</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="check">Self-check <span class="meta">— answer, then tap to reveal</span></h2>
+<details class="card"><summary>Diffusion coefficient of a solute in a membrane?</summary><div>D<sub>m</sub> = D(1 − σ) S<sub>p</sub>/S — smaller than D.</div></details>
+<details class="card"><summary>Initial diffusive flux in terms of P?</summary><div>J<sub>d,i</sub> = Q<sub>i</sub>/S = P|ΔC<sub>i</sub>|.</div></details>
+<details class="card"><summary>Two expressions of P, and its unit?</summary><div>P = (D/l)(S′/S) = D<sub>m</sub>/l; m/s.</div></details>
+<details class="card"><summary>Relation between D and the friction coefficient?</summary><div>D = kT/f, with k = 1.38 × 10⁻²³ J/K.</div></details>
+<details class="card"><summary>Friction coefficient of a sphere?</summary><div>f = 6πηr (η = viscosity, r = radius).</div></details>
+<details class="card"><summary>How does D depend on T, η and M?</summary><div>D = Cste (T/η) ∛(ρ/M): ↑ with T, ↓ with η, inversely proportional to ∛M.</div></details>
+<details class="card"><summary>Q<sub>i</sub> = 4.2 pmol/s, S = 3 cm², ΔC = 70 mmol/L. P?</summary><div>4.2×10⁻¹² / (3×10⁻⁴ × 70) = 0.2 × 10⁻⁹ m/s.</div></details>
+<details class="card"><summary>P = 2.5 × 10⁻⁶ m/s, S = 20 cm², ΔC = 0.2 mol/L. Q<sub>i</sub>?</summary><div>2.5×10⁻⁶ × 20×10⁻⁴ × 200 = 10⁻⁶ mol/s = 1 µmol/s.</div></details>
+<details class="card"><summary>Radius of myoglobin from D = 1.2 × 10⁻¹⁰ m²/s at 0 °C in water (η = 10⁻³ Pa·s)?</summary><div>r = kT/(6πηD) ≈ 1.66 nm.</div></details>
+<details class="card"><summary>Same particle and solvent, from 0 °C to 37 °C: how does D change?</summary><div>D ∝ T: multiply by 310/273 (1.22 × 10⁻¹⁰ → 1.39 × 10⁻¹⁰).</div></details>
+<details class="card"><summary>Hemodialysis vs peritoneal dialysis?</summary><div>Hemodialysis: outside the body, blood ↔ dialysate through a dialyzer. Peritoneal: inside, across the peritoneum.</div></details>
+<details class="card"><summary>Artificial kidney: S = 0.5 m², l = 50 µm, D<sub>m</sub> = 10⁻⁹ m²/s, urea 5 g/L. Urea flow?</summary><div>(10⁻⁹ × 0.5 / 5×10⁻⁵) × 5000 g/m³ = 0.05 g/s = 50 mg/s.</div></details>
+
+<footer>Summary of "Biophysics of solutions" slides 34–39, Pr B. Boutabia-Chéraitia, 1st-year medicine, Faculty of Medicine Annaba.
+  🎯 = asked in past EMD1 exams. 📄 = page in the lesson PDF. Exam calculations reproduce the official keys with the course's formulas.</footer>
+</main>
+</body>
+</html>

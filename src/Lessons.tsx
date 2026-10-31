@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import type { Lesson, LessonRead, Module, ReadKind } from "../shared/types";
 import { addLessonRead, getJSON, undoLessonRead } from "./api";
 import { Icon } from "./icons";
@@ -76,19 +76,108 @@ export function useHasSummary(pdf: string | undefined) {
   return has;
 }
 
+// TD sets solved with the module's lessons (public/exercises/index.json, written by scripts/exercises.ts).
+export type ExerciseSet = { path: string; title: string; count: number; lessons: string[]; pdf: string | null };
+let exerciseSets: Promise<ExerciseSet[]> | null = null;
+const slug = (name: string) => name.toLowerCase().normalize("NFD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const loadExerciseSets = () =>
+  (exerciseSets ??= fetch("/exercises/index.json")
+    .then((r) => (r.ok ? r.json() : []))
+    .catch(() => []));
+export const setsOf = (all: ExerciseSet[], module: Module) =>
+  all.filter((s) => s.path.startsWith(`s${module.semester}/${slug(module.name)}/`));
+export function useAllExerciseSets() {
+  const [sets, setSets] = useState<ExerciseSet[]>([]);
+  useEffect(() => {
+    loadExerciseSets().then(setSets);
+  }, []);
+  return sets;
+}
+export function useExerciseSets(module: Module) {
+  const all = useAllExerciseSets();
+  return setsOf(all, module);
+}
+
+// Exercises ticked "done", per set path → section ids ("ex1"…). Kept on this device only.
+const DONE_KEY = "hippoqcm.exercisesDone";
+function readDone(): Record<string, string[]> {
+  try {
+    return JSON.parse(localStorage.getItem(DONE_KEY) ?? "{}") as Record<string, string[]>;
+  } catch {
+    return {};
+  }
+}
+const doneIn = (path: string) => readDone()[path] ?? [];
+function toggleDone(path: string, id: string) {
+  const all = readDone();
+  const ids = new Set(all[path] ?? []);
+  if (!ids.delete(id)) ids.add(id);
+  all[path] = [...ids];
+  try {
+    localStorage.setItem(DONE_KEY, JSON.stringify(all));
+  } catch {
+    // Private mode: the tick just won't be remembered.
+  }
+  return all[path];
+}
+
+// Which tab the module page shows, remembered for the session so coming back from a set keeps it.
+type ModuleTab = "lessons" | "exercises";
+const tabKey = (module: Module) => `hippoqcm.moduleTab.${module.id}`;
+function readTab(module: Module): ModuleTab {
+  try {
+    return sessionStorage.getItem(tabKey(module)) === "exercises" ? "exercises" : "lessons";
+  } catch {
+    return "lessons";
+  }
+}
+
+function ExerciseRow({ set, onOpen }: { set: ExerciseSet; onOpen: () => void }) {
+  const done = Math.min(doneIn(set.path).length, set.count);
+  return (
+    <li>
+      <button className="module" onClick={onOpen}>
+        <span className="name">
+          <span className={done === set.count ? "check" : "check unread"}>
+            <Icon name={done === set.count ? "check" : "pencil"} size={16} />
+          </span>{" "}
+          {set.title}
+        </span>
+        <span className="meta">
+          {set.count} exercise{set.count === 1 ? "" : "s"}
+          {done > 0 ? ` · ${done}/${set.count} done` : ""} · solved with {set.lessons.length} lesson
+          {set.lessons.length === 1 ? "" : "s"}
+        </span>
+      </button>
+    </li>
+  );
+}
+
 const formatDate = (ms: number) => new Date(ms).toLocaleDateString(undefined, { day: "numeric", month: "short" });
 
 type ModuleProps = {
   module: Module;
   onBack: () => void;
   onOpenLesson: (lesson: Lesson) => void;
+  onOpenExercises: (set: ExerciseSet) => void;
   onStudy: (lessonsOnly: boolean) => void;
   onStudyLessons: (lessons: Lesson[]) => void;
   onExam: (lessons?: Lesson[]) => void;
 };
 
-export function ModulePage({ module, onBack, onOpenLesson, onStudy, onStudyLessons, onExam }: ModuleProps) {
+export function ModulePage({ module, onBack, onOpenLesson, onOpenExercises, onStudy, onStudyLessons, onExam }: ModuleProps) {
   const { lessons, error, addRead, undoRead } = useLessons(module.id);
+  const exercises = useExerciseSets(module);
+  const [tab, setTabState] = useState<ModuleTab>(() => readTab(module));
+  const setTab = (next: ModuleTab) => {
+    setTabState(next);
+    try {
+      sessionStorage.setItem(tabKey(module), next);
+    } catch {
+      // Not remembered; harmless.
+    }
+  };
+  const showExercises = tab === "exercises" && exercises.length > 0;
   const [picked, setPicked] = useState<Set<number>>(new Set());
   const selection = lessons?.filter((l) => picked.has(l.id)) ?? [];
   const pick = (ids: number[]) => setPicked(new Set(ids));
@@ -119,7 +208,26 @@ export function ModulePage({ module, onBack, onOpenLesson, onStudy, onStudyLesso
         </button>
       </div>
 
-      <h2>Lessons</h2>
+      {exercises.length > 0 ? (
+        <div className="chips module-tabs" role="tablist">
+          <button role="tab" aria-selected={!showExercises} className={showExercises ? "chip" : "chip on"} onClick={() => setTab("lessons")}>
+            <Icon name="book" size={15} /> Lessons{lessons ? ` · ${lessons.length}` : ""}
+          </button>
+          <button role="tab" aria-selected={showExercises} className={showExercises ? "chip on" : "chip"} onClick={() => setTab("exercises")}>
+            <Icon name="pencil" size={15} /> Exercises · {exercises.length}
+          </button>
+        </div>
+      ) : (
+        <h2>Lessons</h2>
+      )}
+      {showExercises ? (
+        <ul className="modules">
+          {exercises.map((set) => (
+            <ExerciseRow key={set.path} set={set} onOpen={() => onOpenExercises(set)} />
+          ))}
+        </ul>
+      ) : (
+      <>
       {error && <p className="error">Couldn't load lessons: {error}</p>}
       {lessons && lessons.length === 0 && (
         <p className="meta">No lessons yet. Finish one, then run <code>/lesson path/to/lesson.pdf</code>.</p>
@@ -166,6 +274,8 @@ export function ModulePage({ module, onBack, onOpenLesson, onStudy, onStudyLesso
           </button>
         </div>
       )}
+      </>
+      )}
     </main>
   );
 }
@@ -175,10 +285,12 @@ type LessonProps = {
   lessonId: number;
   onBack: () => void;
   onStudy: (lesson: Lesson) => void;
+  onOpenExercises: (set: ExerciseSet) => void;
 };
 
-export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
+export function LessonPage({ module, lessonId, onBack, onStudy, onOpenExercises }: LessonProps) {
   const { lessons, error, addRead, undoRead } = useLessons(module.id);
+  const moduleSets = useExerciseSets(module);
   const lesson = lessons?.find((l) => l.id === lessonId);
   const hasSummary = useHasSummary(lesson?.pdf);
   const [view, setView] = useState<ReadKind>("summary");
@@ -204,6 +316,7 @@ export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
   if (!lessons) return <main>{header}<Skeleton /></main>;
   if (!lesson) return <main>{header}<p className="error">Lesson not found</p></main>;
 
+  const lessonSets = moduleSets.filter((set) => set.lessons.includes(lesson.pdf));
   const pdfUrl = target?.url ?? `/lessons/${lesson.pdf}`;
   const showSummary = hasSummary && view === "summary";
   const docUrl = showSummary
@@ -225,6 +338,16 @@ export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
     <main className="wide">
       {header}
       <h1>{lesson.title}</h1>
+      {lessonSets.length > 0 && (
+        <div className="lesson-exercises">
+          <span className="meta">Practice exercises:</span>
+          {lessonSets.map((set) => (
+            <button key={set.path} className="chip" onClick={() => onOpenExercises(set)}>
+              <Icon name="pencil" size={14} /> {set.title}
+            </button>
+          ))}
+        </div>
+      )}
       <div className="actions start">
         <button onClick={() => onStudy(lesson)} disabled={lesson.question_count === 0}>
           Practice · {lesson.due_count} due
@@ -256,6 +379,114 @@ export function LessonPage({ module, lessonId, onBack, onStudy }: LessonProps) {
       ) : (
         <Suspense fallback={<p className="meta">Loading PDF…</p>}>
           <PdfViewer url={pdfUrl} page={target?.page} title={`${lesson.title} PDF`} />
+        </Suspense>
+      )}
+    </main>
+  );
+}
+
+// One TD set: the worked exercises, and the TD sheet or a lesson PDF page its solutions link to.
+export function ExercisePage({ module, set, onBack }: { module: Module; set: ExerciseSet; onBack: () => void }) {
+  // A PDF the page links to ("/lessons/x.pdf#page=3"), or the TD sheet; null = the exercises.
+  const [target, setTarget] = useState<{ url: string; page?: number } | null>(null);
+  const touch = useTouch();
+  const pageUrl = `/exercises/${set.path}`;
+  const docUrl = !target ? pageUrl : target.page ? `${target.url}#page=${target.page}` : target.url;
+  const sheet = set.pdf && `/exercises/${set.pdf}`;
+  const [done, setDone] = useState<string[]>(() => doneIn(set.path));
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const frame = useRef<HTMLIFrameElement | null>(null);
+  const doneCount = Math.min(done.length, set.count);
+
+  const openSolutions = (open: boolean, doc = frame.current?.contentDocument) => {
+    doc?.querySelectorAll<HTMLDetailsElement>("details.solution").forEach((d) => (d.open = open));
+  };
+  const toggleSolutions = () => {
+    openSolutions(!solutionsOpen);
+    setSolutionsOpen(!solutionsOpen);
+  };
+
+  // Inside the exercises page: PDF links open below instead of inside the frame, and each exercise gets a
+  // "Mark done" button (ticks kept in localStorage, counted on the module page).
+  const setUpFrame = (el: HTMLIFrameElement) => {
+    frame.current = el;
+    const doc = el.contentDocument;
+    if (!doc) return;
+    doc.addEventListener("click", (e) => {
+      const link = (e.target as Element).closest?.("a[href]") as HTMLAnchorElement | null;
+      const url = link && new URL(link.href, location.href);
+      if (!url || url.origin !== location.origin || !url.pathname.match(/^\/(lessons|exercises)\/.+\.pdf$/)) return;
+      e.preventDefault();
+      setTarget({ url: url.pathname, page: Number(url.hash.match(/page=(\d+)/)?.[1]) || undefined });
+    });
+    const style = doc.createElement("style");
+    style.textContent = `
+      .ex-done { margin-left: 8px; vertical-align: middle; font: 600 0.8rem system-ui, sans-serif; padding: 4px 10px;
+        border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; }
+      .ex-done.on { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); }
+      section.exercise.done { border-color: var(--ok); }
+      .toc a.done::after { content: " ✓"; color: var(--ok); }`;
+    doc.head.append(style);
+    for (const section of doc.querySelectorAll<HTMLElement>("section.exercise[id]")) {
+      const heading = section.querySelector("h2");
+      if (!heading || heading.querySelector(".ex-done")) continue;
+      const button = doc.createElement("button");
+      button.type = "button";
+      button.className = "ex-done";
+      const tocLink = doc.querySelector<HTMLAnchorElement>(`.toc a[href="#${section.id}"]`);
+      const paint = (ids: string[]) => {
+        const on = ids.includes(section.id);
+        button.classList.toggle("on", on);
+        button.textContent = on ? "✓ Done" : "Mark done";
+        button.setAttribute("aria-pressed", String(on));
+        section.classList.toggle("done", on);
+        tocLink?.classList.toggle("done", on);
+      };
+      button.addEventListener("click", () => {
+        const ids = toggleDone(set.path, section.id);
+        paint(ids);
+        setDone(ids);
+      });
+      paint(doneIn(set.path));
+      heading.append(button);
+    }
+    if (solutionsOpen) openSolutions(true, doc);
+  };
+  return (
+    <main className="wide">
+      <ScreenHeader backLabel={module.name} onBack={onBack} />
+      <h1>{set.title}</h1>
+      <div className="actions start">
+        <span className="meta">
+          {doneCount}/{set.count} exercise{set.count === 1 ? "" : "s"} done
+        </span>
+        {!target && (
+          <button className="secondary" onClick={toggleSolutions}>
+            {solutionsOpen ? "Hide all solutions" : "Show all solutions"}
+          </button>
+        )}
+      </div>
+      <div className="pdf-bar">
+        <div className="chips">
+          <button className={target ? "chip" : "chip on"} onClick={() => setTarget(null)}>Exercises</button>
+          {sheet && (
+            <button className={target?.url === sheet ? "chip on" : "chip"} onClick={() => setTarget({ url: sheet })}>TD sheet</button>
+          )}
+          {target && target.url !== sheet && <button className="chip on">Lesson PDF{target.page ? ` · p. ${target.page}` : ""}</button>}
+        </div>
+        <a className="pdf-open" href={docUrl} target="_blank" rel="noreferrer">Open in new tab <Icon name="external" size={14} /></a>
+      </div>
+      {!target || !touch ? (
+        <iframe
+          key={docUrl}
+          className={target ? "pdf" : "pdf summary"}
+          src={docUrl}
+          title={`${set.title} ${target ? "PDF" : "exercises"}`}
+          onLoad={(e) => !target && setUpFrame(e.currentTarget)}
+        />
+      ) : (
+        <Suspense fallback={<p className="meta">Loading PDF…</p>}>
+          <PdfViewer url={target.url} page={target.page} title={`${set.title} PDF`} />
         </Suspense>
       )}
     </main>

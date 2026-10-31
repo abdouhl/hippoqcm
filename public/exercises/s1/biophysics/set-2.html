@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set 2 — Biophysics of solutions: dialysis</title>
+<meta name="lessons" content="s1/biophysics/biophysics-of-solutions-3.pdf s1/biophysics/biophysics-of-solutions-4.pdf s1/biophysics/biophysics-of-solutions-5.pdf">
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Biophysics · Exercises</div>
+<h1>Set 2 — Biophysics of solutions: dialysis</h1>
+<p class="meta">Pr B. Boutabia-Chéraitia · TD 2026-2027 · 3 exercises · solved with the lessons
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-3.pdf">Solutions 3</a>,
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf">4</a> and
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-5.pdf">5</a> ·
+  <a href="/exercises/s1/biophysics/set-2.pdf">TD sheet</a></p>
+<ul class="toc">
+  <li><a target="_self" href="#laws">Laws used</a></li>
+  <li><a target="_self" href="#ex1">Ex. 1 · Red cell</a></li>
+  <li><a target="_self" href="#ex2">Ex. 2 · Hemodialysis</a></li>
+  <li><a target="_self" href="#ex3">Ex. 3 · Peritoneal dialysis</a></li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<div class="box essentials" id="laws">
+  <span class="label">Laws used in this set</span>
+  <div class="law"><span class="label">Osmolarity</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-3.pdf#page=1">Solutions 3 · p. 1</a>
+    <div class="formula">ω = [1 + α(β − 1)] · C<span class="where">NaCl, fully dissociated: ω = 2C</span></div></div>
+  <div class="law"><span class="label">Osmotic pressure (van 't Hoff)</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf#page=3">Solutions 4 · p. 3</a>
+    <div class="formula">Δπ = (ω<sub>1</sub> − ω<sub>2</sub>) R T<span class="where">Pa, with ω in osmol/m³ (× 1000 from osmol/L) and T in K · water flows toward the higher ω</span></div></div>
+  <div class="law"><span class="label">Tonicity</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf#page=4">Solutions 4 · p. 4</a>
+    <div class="formula">isotonic ⇔ π<sub>1</sub> = π<sub>2</sub> ⇔ no water flow</div></div>
+  <div class="law"><span class="label">Diffusion to equilibrium</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-5.pdf#page=3">Solutions 5 · p. 3</a>
+    <div class="formula">C<sub>∞</sub> = <span class="frac"><span>C<sub>1i</sub>V<sub>1</sub> + C<sub>2i</sub>V<sub>2</sub></span><span>V<sub>1</sub> + V<sub>2</sub></span></span><span class="where">the solute diffuses until the concentrations are equal; total moles conserved</span></div></div>
+  <div class="law"><span class="label">Fick (mass flow rate)</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-5.pdf#page=4">Solutions 5 · p. 3–4</a>
+    <div class="formula">Q = <span class="frac"><span>dm</span><span>dt</span></span> = −D S′ <span class="frac"><span>dC<sub>p</sub></span><span>dx</span></span> ;  initial: Q<sub>i</sub> = <span class="frac"><span>D S′</span><span>l</span></span> |ΔC<sub>i</sub>|<span class="where">Q in kg/s with C<sub>p</sub> in kg/m³ · D in m²/s · l = membrane thickness</span></div></div>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex1">
+  <h2><span class="num">Exercise 1</span> — Force needed to burst a red blood cell <a class="page" href="/exercises/s1/biophysics/set-2.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <p>Calculate the force required to burst a red blood cell, knowing that isotonicity corresponds to 9 g/L of NaCl and complete hemolysis to 3 g/L of NaCl.
+      The erythrocyte is modelled as a cylinder of diameter d = 7 µm and thickness e = 1 µm. Its membrane is assumed to be semi-permeable.</p>
+  </div>
+  <ul class="given"><li>9 g/L NaCl (isotonic = inside the cell)</li><li>3 g/L NaCl (hemolysis)</li><li>d = 7 µm, e = 1 µm</li><li>M<sub>NaCl</sub> = 58.5 g/mol, α = 1</li><li>T = 37 °C = 310 K</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>The cell's content is isotonic to 9 g/L NaCl. In 3 g/L the outside is hypotonic: water rushes in, and the membrane bursts under the osmotic pressure
+      difference between the two. Force = pressure × surface of the cell.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Osmolarity <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-3.pdf#page=1">p. 1</a>
+          <div class="formula">ω = 2C (NaCl, α = 1, β = 2)</div></div>
+        <div class="calc">inside: ω<sub>1</sub> = 2 × 9 / 58.5 = 0.3077 osmol/L</div>
+        <div class="calc">outside at hemolysis: ω<sub>2</sub> = 2 × 3 / 58.5 = 0.1026 osmol/L</div>
+        <div class="calc">Δω = 0.2051 osmol/L = 205.1 osmol/m³</div></li>
+      <li><div class="law"><span class="label">Law</span> Osmotic pressure between two solutions <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf#page=3">p. 3</a>
+          <div class="formula">Δπ = (ω<sub>1</sub> − ω<sub>2</sub>) R T</div></div>
+        <div class="calc">Δπ = 205.1 × 8.31 × 310 = 5.28 × 10⁵ Pa</div></li>
+      <li><p>Surface of the cylinder (two discs + the side):</p>
+        <div class="calc">S = 2 × π(d/2)² + π d e = 2π(3.5 × 10⁻⁶)² + π × 7 × 10⁻⁶ × 1 × 10⁻⁶</div>
+        <div class="calc">S = 7.70 × 10⁻¹¹ + 2.20 × 10⁻¹¹ = 9.90 × 10⁻¹¹ m²</div></li>
+      <li><div class="calc">F = Δπ × S = 5.28 × 10⁵ × 9.90 × 10⁻¹¹ = 5.23 × 10⁻⁵ N</div></li>
+    </ol>
+    <span class="answer">Δπ ≈ 5.29 × 10⁵ Pa · F ≈ 5.23 × 10⁻⁵ N</span>
+    <p class="meta">Same as the sheet's answer (5.29 × 10⁵ Pa comes out with R = 8.314; with R = 8.31 you get 5.28 × 10⁵ — both fine).
+      The key uses the cylinder's <b>total</b> surface.</p>
+    <div class="unsure">The sheet doesn't state the temperature: body temperature, 37 °C = 310 K, is assumed (it reproduces the key).
+      F = P × S is the definition of pressure, not something these lessons teach.</div>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>Using one concentration (π = ωRT with 9 g/L): what matters is the <b>difference</b> between inside and outside.</li>
+        <li>ω × 1000 (osmol/L → osmol/m³) and T in K, or the pressure is off by 1000.</li>
+        <li>µm² → m²: (10⁻⁶)² = 10⁻¹².</li></ul></div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex2">
+  <h2><span class="num">Exercise 2</span> — Hemodialysis: the artificial kidney <a class="page" href="/exercises/s1/biophysics/set-2.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <p>An artificial kidney used in chronic hemodialysis has a diffusion membrane (Cuprophan) of surface S = 1 m². Across it, the patient's blood on one side and a
+      constantly renewed fluid (dialysate) — isotonic to plasma and free of urea — on the other side are brought into equilibrium. We consider only urea elimination.
+      Recall that water and urea diffuse relatively rapidly across cell membranes.</p>
+    <ol>
+      <li>Explain why: a) the renewed fluid must be isotonic to plasma; b) not only the blood but all the water of the body, of volume V = 40 L, is thereby cleared of urea.</li>
+      <li>Towards what value should the blood urea concentration c(t) tend after a very long hemodialysis? For what physiological reason does it not do so?</li>
+      <li>Assume the urea concentration gradient is uniform across the membrane's thickness, and its permeability to urea is P = 1.5 × 10⁻⁶ m/s.
+        If the initial uremia is C<sub>0</sub> = 2 g/L, calculate the initial mass flow rate of urea.</li>
+      <li>If the daily production of urea is 25 g/day, what will the patient's uremia be after a very long time?</li>
+    </ol>
+  </div>
+  <ul class="given"><li>S = 1 m²</li><li>V = 40 L</li><li>P = 1.5 × 10⁻⁶ m/s</li><li>C<sub>0</sub> = 2 g/L = 2 kg/m³</li><li>production 25 g/day</li><li>dialysate: urea = 0</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>1) Think of what an osmotic pressure difference would do to the blood's water. 2) The dialysate is renewed, so its urea stays at 0.
+      3) Fick with a uniform gradient: dC/dx = ΔC / l. 4) "After a very long time" = steady state: urea removed per second = urea produced per second.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>1) a) Why isotonic to plasma?</h3>
+    <div class="law"><span class="label">Law</span> Tonicity <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf#page=4">p. 4</a>
+      <div class="formula">isotonic ⇔ π<sub>1</sub> = π<sub>2</sub> ⇔ no water flow</div></div>
+    <p>Water moves toward the higher osmolarity. A hypotonic dialysate would push water into the blood (and then into the red cells → hemolysis); a hypertonic one would
+      dehydrate the patient. Isotonic: <b>no water exchange</b> — only urea (absent from the dialysate) diffuses out.</p>
+    <h3>1) b) Why all 40 L of body water?</h3>
+    <p>As blood loses urea, a concentration difference appears between blood and the interstitial and intracellular water. Urea (and water) cross cell and capillary
+      membranes quickly, so urea keeps diffusing from the tissues into the blood, which carries it to the dialyser. All the body water behaves as <b>one compartment of
+      40 L</b> that is cleared together.</p>
+    <h3>2) Limit of c(t)</h3>
+    <div class="law"><span class="label">Law</span> Diffusion until equal concentrations <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-5.pdf#page=3">p. 3</a>
+      <div class="formula">C<sub>∞</sub> = (C<sub>1i</sub>V<sub>1</sub> + C<sub>2i</sub>V<sub>2</sub>) / (V<sub>1</sub> + V<sub>2</sub>)</div></div>
+    <p>The dialysate is constantly renewed (its volume is in effect infinite, with urea = 0), so equal concentrations means c(t) → <b>0</b>.
+      It doesn't get there because the body (the liver) <b>keeps producing urea</b> (25 g/day, see 4): c(t) settles where elimination balances production.</p>
+    <span class="answer">c(t) → 0 in theory; not reached because urea is produced continuously</span>
+    <h3>3) Initial mass flow rate</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Fick's law with mass concentration <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-5.pdf#page=4">p. 4</a>
+          <div class="formula">Q = dm/dt = −D S′ dC<sub>p</sub>/dx</div>
+          <div class="formula">uniform gradient: Q<sub>i</sub> = <span class="frac"><span>D S′</span><span>l</span></span> |ΔC<sub>i</sub>|</div></div>
+        <p>The permeability groups the diffusion coefficient and the thickness: P = D / l (m²/s ÷ m = m/s). Taking S′ = S:</p>
+        <div class="formula">Q<sub>i</sub> = P · S · |ΔC<sub>i</sub>| = P · S · C<sub>0</sub></div></li>
+      <li><div class="calc">Q<sub>i</sub> = 1.5 × 10⁻⁶ × 1 × 2 = 3 × 10⁻⁶ kg/s</div>
+        <div class="calc">= 3 mg/s ≈ 10.8 g/h</div></li>
+    </ol>
+    <span class="answer">Q<sub>i</sub> = 3 × 10⁻⁶ kg/s = 3 mg/s (≈ 10.8 g/h)</span>
+    <div class="unsure">Permeability P = D/l isn't defined in your lessons (they stop at Fick's law with D, S′ and l) — it's the standard definition, from the
+      lesson's own Q<sub>i</sub> = (DS′/l)|ΔC<sub>i</sub>|. The pore area S′ is taken equal to the membrane surface S, as the sheet gives only S.</div>
+    <h3>4) Uremia after a very long time</h3>
+    <ol class="steps">
+      <li><p>Steady state: urea eliminated per second = urea produced per second, with the same law at concentration C<sub>∞</sub>:</p>
+        <div class="calc">production = 25 × 10⁻³ kg / 86 400 s = 2.89 × 10⁻⁷ kg/s</div>
+        <div class="calc">P · S · C<sub>∞</sub> = 2.89 × 10⁻⁷ → C<sub>∞</sub> = 2.89 × 10⁻⁷ / (1.5 × 10⁻⁶ × 1) = 0.193 kg/m³</div></li>
+    </ol>
+    <span class="answer">C<sub>∞</sub> ≈ 0.19 g/L</span>
+    <div class="unsure">This assumes the dialysis runs continuously (the sheet's "very long time"); the sheet gives no answer for this exercise.</div>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>g/L = kg/m³ — no conversion needed, but L ≠ m³ for volumes.</li>
+        <li>25 g/day must be turned into kg/s (÷ 86 400) before comparing with Q.</li>
+        <li>Thinking dialysis brings uremia to 0: production never stops.</li></ul></div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex3">
+  <h2><span class="num">Exercise 3</span> — Peritoneal dialysis <a class="page" href="/exercises/s1/biophysics/set-2.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <p>A patient arrives at the emergency department in septic shock with anuria. To compensate for the renal failure, a peritoneal dialysis session is decided:
+      a volume V<sub>e</sub> of a solution isotonic to plasma but free of urea is injected into the peritoneal cavity. Across the barrier formed by the capillary walls and
+      the peritoneum, a diffusion equilibrium is established over a surface S between the blood of the peritoneal vessels and the injected fluid.</p>
+    <ol>
+      <li>Explain why the volumes of the two compartments (internal and external) don't change during dialysis.</li>
+      <li>If C<sub>0</sub> is the initial uremia, what will the uremia C<sub>∞</sub> be at equilibrium? The body contains V<sub>i</sub> = 40 L, and V<sub>e</sub> = 2 L is injected.</li>
+      <li>After equilibrium, the fluid is aspirated and a second cycle is started, and so on. How many cycles are needed to bring the uremia from C<sub>0</sub> = 1.2 g/L
+        to the near-normal C<sub>n</sub> = 0.4 g/L?</li>
+      <li>Each cycle lasts τ = 20 min, and diffusion equilibrium is reached by its end. Calculate: a) the total duration of dialysis to reach 0.4 g/L;
+        b) the urea clearance — the virtual volume of blood completely cleared of its urea per unit of time — in mL/min.</li>
+    </ol>
+  </div>
+  <figure class="small">
+    <svg viewBox="0 0 760 210" role="img" aria-label="Body water, 40 litres at concentration C, separated by the peritoneal membrane from the injected fluid, 2 litres with no urea; urea diffuses from body to fluid until both reach C infinity">
+      <defs><marker id="pd-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="s-text"/></marker></defs>
+      <rect x="20" y="20" width="430" height="150" rx="12" class="s-accent"/>
+      <text x="235" y="70" text-anchor="middle" class="s-text" font-size="20" font-weight="600">Body water (internal)</text>
+      <text x="235" y="100" text-anchor="middle" class="s-text" font-size="17">V<tspan baseline-shift="sub" font-size="12">i</tspan> = 40 L · urea C<tspan baseline-shift="sub" font-size="12">0</tspan></text>
+      <line x1="470" y1="14" x2="470" y2="176" class="s-line" stroke-width="3" stroke-dasharray="7 5"/>
+      <rect x="490" y="20" width="250" height="150" rx="12" class="s-ok"/>
+      <text x="615" y="70" text-anchor="middle" class="s-text" font-size="20" font-weight="600">Injected fluid</text>
+      <text x="615" y="100" text-anchor="middle" class="s-text" font-size="17">V<tspan baseline-shift="sub" font-size="12">e</tspan> = 2 L · urea 0</text>
+      <line x1="380" y1="135" x2="565" y2="135" class="s-line" stroke-width="2.5" marker-end="url(#pd-arrow)"/>
+      <text x="420" y="126" text-anchor="middle" class="s-text" font-size="15">urea</text>
+      <text x="380" y="200" text-anchor="middle" class="s-muted" font-size="15">peritoneal membrane · isotonic → no water flow · equilibrium: C<tspan baseline-shift="sub" font-size="11">∞</tspan> on both sides</text>
+    </svg>
+    <figcaption><b>Only urea moves</b>, from the 40 L of body water into the 2 L of fluid, until both sides have the same concentration C<sub>∞</sub>.</figcaption>
+  </figure>
+  <ul class="given"><li>V<sub>i</sub> = 40 L</li><li>V<sub>e</sub> = 2 L, urea 0, isotonic</li><li>C<sub>0</sub> = 1.2 g/L → C<sub>n</sub> = 0.4 g/L</li><li>τ = 20 min per cycle</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>Each cycle is a diffusion to equal concentrations between 40 L (at the current uremia) and 2 L (at 0): the uremia is multiplied by the same factor every cycle.
+      Solve C<sub>0</sub> × factor<sup>n</sup> ≤ C<sub>n</sub> with logarithms.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>1) Volumes don't change</h3>
+    <div class="law"><span class="label">Law</span> Tonicity <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf#page=4">p. 4</a>
+      <div class="formula">isotonic ⇔ π<sub>1</sub> = π<sub>2</sub> ⇔ no water flow</div></div>
+    <p>The injected fluid is isotonic to plasma: no osmotic pressure difference, so no net water flow. Urea leaves the blood, but it diffuses freely across the barrier
+      and isn't osmotically active, so its movement doesn't drag water either. Both volumes stay the same.</p>
+    <h3>2) Uremia at equilibrium</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Diffusion until equal concentrations <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-5.pdf#page=3">p. 3</a>
+          <div class="formula">C<sub>∞</sub> = <span class="frac"><span>C<sub>1i</sub>V<sub>1</sub> + C<sub>2i</sub>V<sub>2</sub></span><span>V<sub>1</sub> + V<sub>2</sub></span></span></div></div>
+        <div class="calc">C<sub>∞</sub> = (C<sub>0</sub> × 40 + 0 × 2) / (40 + 2) = (40/42) C<sub>0</sub> = 0.952 C<sub>0</sub></div></li>
+    </ol>
+    <span class="answer">C<sub>∞</sub> = C<sub>0</sub> · V<sub>i</sub>/(V<sub>i</sub> + V<sub>e</sub>) = 0.952 C<sub>0</sub></span>
+    <h3>3) Number of cycles</h3>
+    <ol class="steps">
+      <li><p>Each new cycle starts from the previous equilibrium with fresh urea-free fluid, so every cycle multiplies the uremia by 40/42:</p>
+        <div class="calc">C<sub>n</sub> = C<sub>0</sub> × (40/42)<sup>n</sup></div></li>
+      <li><div class="calc">(42/40)<sup>n</sup> = C<sub>0</sub>/C<sub>n</sub> = 1.2/0.4 = 3</div>
+        <div class="calc">n = ln 3 / ln 1.05 = 1.0986 / 0.04879 = 22.5</div></li>
+      <li><p>n must be a whole number of cycles and the uremia must reach 0.4 g/L: after 22 cycles it is still 0.410 g/L, after 23 it is 0.391 g/L.</p></li>
+    </ol>
+    <span class="answer">n = 23 cycles</span>
+    <h3>4) a) Total duration</h3>
+    <div class="calc">t = 23 × 20 = 460 min</div>
+    <span class="answer">t = 460 min ≈ 7 h 40 min</span>
+    <h3>4) b) Urea clearance</h3>
+    <p>At the end of each cycle the 2 L of aspirated fluid contain urea at C<sub>∞</sub>, the blood's concentration at that moment: the urea removed is exactly what
+      V<sub>e</sub> = 2 L of blood would contain. So every 20 min, 2 L of blood is virtually cleared:</p>
+    <div class="calc">clearance = V<sub>e</sub> / τ = 2000 mL / 20 min = 100 mL/min</div>
+    <span class="answer">Clearance = 100 mL/min</span>
+    <div class="unsure">"Clearance" isn't defined in your lessons — the sheet defines it. Referred to the uremia at the <b>start</b> of each cycle instead,
+      the cleared volume is 2 × 40/42 = 1.90 L per cycle, i.e. 95 mL/min; 100 mL/min is the usual answer. The sheet gives no answer for this exercise.</div>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>Rounding n down to 22: the uremia would still be above 0.4 g/L.</li>
+        <li>Subtracting the same amount each cycle: it's the same <b>factor</b> (40/42), so the amount removed shrinks every cycle.</li>
+        <li>Using V<sub>i</sub> + V<sub>e</sub> = 42 L as the body's volume after injection: the fluid is aspirated at each cycle.</li></ul></div>
+  </details>
+</section>
+
+<footer>Exercises from "Problem Set 2: Biophysics of solutions. Dialysis", Pr B. Boutabia-Chéraitia, 1st-year medicine, Faculty of Medicine Annaba, 2026-2027.
+  Solutions written with the course's lessons (📄 = lesson PDF page); every number was computed with a script. ⚠️ notes mark what the lessons don't cover.
+  Check them against your TD corrections.</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cellular electrophysiology — Summary</title>
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Physiology · Summary</div>
+<h1>Cellular electrophysiology</h1>
+<p class="meta">From the 16-page handout (Dr A. Benahmed, 2026–2027) · 14 past exam questions (EMD1 2022–2026) cover this lesson ·
+  <a href="/lessons/s1/physiology/cellular-electrophysiology.pdf">open the PDF</a></p>
+<ul class="toc">
+  <li><a target="_self" href="#essentials">Essentials</a></li>
+  <li><a target="_self" href="#intro">Introduction</a></li>
+  <li><a target="_self" href="#neuron">Neuron</a></li>
+  <li><a target="_self" href="#properties">Membrane properties</a></li>
+  <li><a target="_self" href="#rmp">Resting potential</a></li>
+  <li><a target="_self" href="#ap">Action potential</a></li>
+  <li><a target="_self" href="#conduction">Conduction</a></li>
+  <li><a target="_self" href="#graded">Graded potentials</a></li>
+  <li><a target="_self" href="#traps">Exam traps</a></li>
+  <li><a target="_self" href="#check">Self-check</a></li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<div class="box essentials" id="essentials">
+  <span class="label">If you remember only this</span>
+  <ul>
+    <li><b>RMP</b> (inside negative, neuron ≈ −70 mV; <b>not the same in all cells</b>) = ion gradients kept by the <b>Na⁺/K⁺ pump</b> + <b>selective permeability
+      (PK ≫ PNa)</b> + <b>impermeant intracellular anions</b> (Gibbs–Donnan). It lies <b>close to EK</b> (−90 mV) because K⁺ leak dominates. NaV channels are <b>closed</b> at rest.</li>
+    <li><b>Nernst</b> = equilibrium potential of <b>one ion</b>: E ≈ (61.5/z)·log([out]/[in]) mV at 37 °C. EK ≈ −90, ENa ≈ +61, ECl ≈ −66, ECa ≈ +125 mV.
+      <b>GHK</b> = membrane potential for several ions.</li>
+    <li>Driving force = <b>Vm − Eion</b>; current I = g(Vm − Eion).</li>
+    <li><b>AP</b>: threshold ≈ −55 mV → <b>NaV open, Na⁺ in</b> (to ≈ +30 mV) → <b>NaV inactivate, KV open, K⁺ out</b> → afterhyperpolarization (KV close slowly) → rest.</li>
+    <li><b>All-or-none</b>: above threshold the AP is the same size; stimulus strength is coded by <b>firing frequency</b>. Absolute refractory period (NaV inactivated) →
+      no AP possible; relative → stronger stimulus needed.</li>
+    <li><b>TTX</b> and lidocaine block <b>NaV</b>; <b>TEA</b> blocks <b>K⁺</b> channels.</li>
+    <li><b>Myelinated</b> = <b>saltatory</b> (node to node), faster (2–120 m/s), cheaper; velocity ↑ with myelin, diameter, temperature.</li>
+    <li><b>Graded potentials</b>: local, amplitude ∝ stimulus, decrease with distance, <b>summable</b>, no threshold, no refractory period, depolarizing or hyperpolarizing.</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="intro"><span class="num">1.</span> Introduction
+  <a class="page" href="/lessons/s1/physiology/cellular-electrophysiology.pdf#page=2">p. 2–3</a></h2>
+<p>Cellular electrophysiology studies the <b>electrical properties</b> of cells and tissues: how signals are generated, transmitted and recorded (neuronal
+  communication, sensory perception, muscle contraction, heart rhythm, neurosecretion).</p>
+<div class="table-wrap"><table>
+  <tr><th>System</th><th>Electrical function</th><th>Disorder</th><th>Recording</th></tr>
+  <tr><td>Brain</td><td>Neuronal communication</td><td>Epilepsy</td><td>EEG</td></tr>
+  <tr><td>Peripheral nerve and muscle</td><td>Conduction and contraction</td><td>Neuropathies, myopathies</td><td>ENMG: EMG and nerve conduction studies</td></tr>
+  <tr><td>Heart</td><td>Rhythm and coordinated contraction</td><td>Arrhythmias</td><td>ECG</td></tr>
+</table></div>
+<p>A <b>pacemaker</b> delivers impulses to support the heart rhythm; <b>cardiac ablation</b> destroys tissue that generates or conducts abnormal rhythms.</p>
+<div class="box def"><span class="label">Excitable cell</span>
+  Responds to a sufficient stimulus by changing its membrane potential and can generate action potentials; excitability depends on <b>ion gradients</b> and
+  <b>ion channels</b>. Four types: <b>neuron</b> (APs carry information), <b>skeletal muscle fibre</b> (APs trigger contraction), <b>smooth muscle cell</b>
+  (many generate APs), <b>cardiac muscle cell</b> (APs coordinate the heartbeat).</div>
+<div class="flow"><span>Sufficient stimulus</span><span>depolarization</span><span>action potential</span><span>response: signal, contraction, secretion</span></div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="neuron"><span class="num">2.</span> Neuron electrophysiology
+  <a class="page" href="/lessons/s1/physiology/cellular-electrophysiology.pdf#page=3">p. 3</a></h2>
+<p>A circuit: <b>dendrites = input</b>, <b>soma = processor</b>, <b>axon = output cable</b>; information flows from dendrites and soma towards the axon terminals.</p>
+<div class="flow"><span>Dendrites, soma: graded potentials</span><span>axon hillock / initial segment: trigger zone, many NaV, AP initiated</span><span>axon: AP propagated</span><span>terminals: transmitter release</span></div>
+<div class="table-wrap"><table>
+  <tr><th>Part</th><th>Structure</th><th>Function</th></tr>
+  <tr><td><b>Soma</b></td><td>Nucleus, mitochondria, organelles; Nissl substance (rough ER, ribosomes)</td><td>Metabolism, protein synthesis; integrates synaptic inputs</td></tr>
+  <tr><td><b>Dendrites</b></td><td>Branching; dendritic spines ↑ synaptic surface</td><td>Receive neurotransmitter signals, produce local voltage changes</td></tr>
+  <tr><td><b>Axon</b></td><td>From the axon hillock; microscopic to &gt; 1 m; branches into terminals</td><td>Carries APs away from the soma</td></tr>
+  <tr><td><b>Myelin sheath</b></td><td>Lipid-rich wrapping: <b>Schwann cells (PNS)</b>, <b>oligodendrocytes (CNS)</b></td><td>Reduces current loss across the internode; speeds conduction</td></tr>
+  <tr><td><b>Nodes of Ranvier</b></td><td>Gaps between myelin segments, rich in NaV</td><td>Where the AP is regenerated (saltatory conduction)</td></tr>
+  <tr><td><b>Synapse</b></td><td>Junction between a neuron and another cell</td><td>Transmits the signal, usually chemically</td></tr>
+</table></div>
+<div class="box"><span class="label">Clinical link — demyelinating neuropathies</span>
+  Loss of myelin slows conduction and can cause conduction block: nerve conduction studies show <b>reduced velocity</b>, <b>prolonged latencies</b> or a
+  <b>drop in amplitude</b> across the affected segment.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="properties"><span class="num">3.</span> Electrical properties of excitable membranes
+  <a class="page" href="/lessons/s1/physiology/cellular-electrophysiology.pdf#page=4">p. 4</a></h2>
+<ul>
+  <li><b>Polarization</b>: a voltage exists across the membrane; at rest the inside is negative.</li>
+  <li><b>Excitability</b>: ability to change membrane potential in response to a stimulus (graded potential, AP, contraction or secretion).</li>
+  <li><b>Conduction</b>: ability to propagate an electrical signal along the membrane.</li>
+</ul>
+<div class="table-wrap"><table>
+  <tr><th>Potential</th><th>Main feature</th><th>Example</th></tr>
+  <tr><td>Resting membrane potential</td><td>Stable baseline at rest</td><td>Neuron ≈ −70 mV</td></tr>
+  <tr><td>Graded potential</td><td>Local; amplitude varies with the stimulus</td><td>EPSP, IPSP, receptor potential</td></tr>
+  <tr><td>Action potential</td><td>Rapid, regenerative, all-or-none, propagated</td><td>Axon, skeletal muscle</td></tr>
+  <tr><td>Pacemaker potential</td><td>Spontaneous depolarization towards threshold</td><td>Sinoatrial node</td></tr>
+  <tr><td>Slow waves</td><td>Slow rhythmic fluctuations</td><td>Gastrointestinal smooth muscle</td></tr>
+</table></div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="rmp"><span class="num">4.</span> Resting membrane potential
+  <a class="page" href="/lessons/s1/physiology/cellular-electrophysiology.pdf#page=5">p. 5–8</a>
+  <span class="exam">2022-23 · 2023-24 · 2025-26</span></h2>
+<div class="box def"><span class="label">RMP</span>
+  The voltage inside a cell relative to the extracellular fluid at rest, in mV (−70 mV = inside 70 mV negative). <b>All cells</b> have one, even those that never fire.</div>
+<div class="table-wrap"><table>
+  <tr><th>Category</th><th>Cell</th><th>Approximate RMP</th></tr>
+  <tr><td rowspan="3">Excitable</td><td>Neuron</td><td>≈ −70 mV</td></tr>
+  <tr><td>Skeletal muscle fibre</td><td>≈ −85 to −90 mV</td></tr>
+  <tr><td>Ventricular muscle cell</td><td>≈ −85 to −90 mV</td></tr>
+  <tr><td rowspan="2">Non-excitable</td><td>Red blood cell</td><td>≈ −10 mV</td></tr>
+  <tr><td>Epithelial cell, fibroblast, adipocyte</td><td>≈ −20 to −50 mV (very variable)</td></tr>
+</table></div>
+<p>A negative RMP alone does not make a cell excitable — the <b>channel types</b> matter. <b>Cardiac pacemaker cells have no stable resting potential.</b></p>
+<p><b>Demonstration (squid giant axon)</b>: both electrodes outside → 0 mV; the recording microelectrode penetrates the axon → stable negative voltage
+  (≈ −60 to −70 mV) = the RMP.</p>
+<h3>Origin of the resting potential</h3>
+<p>Unequal ion concentrations <b>+ selective permeability</b>: a concentration difference alone creates no voltage unless the membrane lets one ion cross more easily.
+  K⁺ is concentrated <b>inside</b>; Na⁺, Cl⁻ and free Ca²⁺ <b>outside</b>; impermeant anions (proteins⁻) are high inside.</p>
+<ul>
+  <li><b>Chemical force</b>: moves an ion from high to low concentration.</li>
+  <li><b>Electrical force</b>: depends on voltage and charge; a negative interior attracts cations, repels anions.</li>
+  <li>Together = the <b>electrochemical gradient</b>. Movement also needs an <b>open channel</b> for that ion.</li>
+</ul>
+<ol class="steps">
+  <li>Membrane permeable only to K⁺: K⁺ leaves down its gradient (Vm = 0, net efflux).</li>
+  <li>Charge separates: the inside becomes negative; the electrical force pulls K⁺ back.</li>
+  <li>Equilibrium: chemical = electrical force, no <b>net</b> K⁺ movement, Vm = EK ≈ −90 mV. The gradient still exists and ions still cross both ways at equal
+    rates; very few ions need to move.</li>
+</ol>
+<div class="formula">E<sub>ion</sub> = <span class="frac"><span>RT</span><span>zF</span></span> · ln <span class="frac"><span>[ion]<sub>out</sub></span><span>[ion]<sub>in</sub></span></span>
+  &nbsp;&nbsp; at 37 °C: E<sub>ion</sub> ≈ <span class="frac"><span>61.5</span><span>z</span></span> · log₁₀ <span class="frac"><span>[ion]<sub>out</sub></span><span>[ion]<sub>in</sub></span></span> mV
+  <span class="where">Nernst equation · z = signed charge: for Cl⁻ z = −1 reverses the sign; for Ca²⁺ z = +2 halves the factor (≈ 30.8 mV)</span></div>
+<p>Worked example: EK = 61.5 × log₁₀(4.8/140) = 61.5 × (−1.46) ≈ <b>−90 mV</b>.</p>
+<div class="table-wrap"><table>
+  <tr><th>Ion (mammalian)</th><th>Inside (mM)</th><th>Outside (mM)</th><th>E<sub>ion</sub> (37 °C)</th></tr>
+  <tr><td>K⁺</td><td>140</td><td>4.8</td><td><b>≈ −90 mV</b></td></tr>
+  <tr><td>Na⁺</td><td>15</td><td>145</td><td><b>≈ +61 mV</b></td></tr>
+  <tr><td>Cl⁻</td><td>10</td><td>120</td><td><b>≈ −66 mV</b></td></tr>
+  <tr><td>Free Ca²⁺</td><td>0.0001</td><td>1.2</td><td><b>≈ +125 mV</b></td></tr>
+</table></div>
+<p class="meta">The handout also gives classic squid-axon values (K⁺ 400/20, Na⁺ 50/440, Cl⁻ 40–150/560, Ca²⁺ 0.0001/10 mM in/out) — not for human cells.</p>
+<div class="formula">Driving force = V<sub>m</sub> − E<sub>ion</sub> &nbsp;&nbsp; I<sub>ion</sub> = g<sub>ion</sub> · (V<sub>m</sub> − E<sub>ion</sub>)
+  <span class="where">g = conductance (how many channels are open) · positive current = outward movement of positive charge · cations: positive force → ion leaves,
+  negative → ion enters; anions move opposite to the current</span></div>
+<div class="table-wrap"><table>
+  <tr><th>At Vm = −70 mV</th><th>E<sub>ion</sub></th><th>Chemical</th><th>Electrical</th><th>Vm − E<sub>ion</sub></th><th>Net movement</th></tr>
+  <tr><td>K⁺</td><td>−90</td><td>out</td><td>in</td><td>+20 mV</td><td>Out (moderate)</td></tr>
+  <tr><td>Na⁺</td><td>+61</td><td>in</td><td>in</td><td>−131 mV</td><td>In (strong)</td></tr>
+  <tr><td>Cl⁻</td><td>−66</td><td>in</td><td>out (repelled)</td><td>−4 mV</td><td>Out (weak)</td></tr>
+  <tr><td>Ca²⁺</td><td>+125</td><td>in</td><td>in</td><td>−195 mV</td><td>In (very strong)</td></tr>
+</table></div>
+<h3>Three mechanisms behind the RMP</h3>
+<div class="table-wrap"><table>
+  <tr><th>Mechanism</th><th>What it does</th></tr>
+  <tr><td><b>1. Na⁺/K⁺-ATPase</b></td><td>3 Na⁺ out, 2 K⁺ in per ATP: creates and maintains the gradients; <b>electrogenic</b> (adds a few mV of negativity)</td></tr>
+  <tr><td><b>2. Selective permeability</b></td><td>At rest <b>PK ≫ PNa</b> (many K⁺ leak channels, few Na⁺ leaks; NaV closed but available)</td></tr>
+  <tr><td><b>3. Impermeant intracellular anions</b></td><td>Proteins, nucleic acids, organic phosphates can't leave: shape the ion distribution (<b>Gibbs–Donnan</b>)</td></tr>
+</table></div>
+<p>Because K⁺ leak dominates, the RMP lies <b>close to EK</b>; the small Na⁺ leak pulls it towards ENa → ≈ −70 mV. Only a tiny charge excess next to the membrane
+  is needed; bulk fluids stay almost neutral.</p>
+<div class="formula">V<sub>m</sub> = 61.5 · log₁₀ <span class="frac"><span>P<sub>K</sub>[K⁺]<sub>out</sub> + P<sub>Na</sub>[Na⁺]<sub>out</sub> + P<sub>Cl</sub>[Cl⁻]<sub>in</sub></span><span>P<sub>K</sub>[K⁺]<sub>in</sub> + P<sub>Na</sub>[Na⁺]<sub>in</sub> + P<sub>Cl</sub>[Cl⁻]<sub>out</sub></span></span>
+  <span class="where">Goldman–Hodgkin–Katz · with PK : PNa = 1 : 0.05 (Cl⁻ ignored) → Vm ≈ −66 mV · the most permeant ion pulls Vm towards its own E<sub>ion</sub></span></div>
+<div class="box"><span class="label">Clinical link — plasma potassium</span>
+  <b>Hyperkalaemia</b> → EK less negative → RMP <b>depolarizes</b> → prolonged depolarization <b>inactivates NaV</b> → ↓ excitability: arrhythmias, muscle weakness.
+  <b>Hypokalaemia</b> → EK more negative → <b>hyperpolarization</b>, also impairing muscle and heart.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="ap"><span class="num">5.</span> The action potential
+  <a class="page" href="/lessons/s1/physiology/cellular-electrophysiology.pdf#page=9">p. 9–11</a>
+  <span class="exam">2022-23 · 2023-24 · 2024-25 · 2025-26</span></h2>
+<div class="box def"><span class="label">Action potential</span>
+  A rapid, transient, <b>regenerative reversal</b> of the membrane potential, triggered when depolarization reaches <b>threshold</b>; <b>all-or-none</b>.
+  Squid-axon demonstration: a subthreshold stimulus gives only a small local response; a suprathreshold one gives a full AP of constant amplitude and duration.</div>
+<figure>
+  <svg viewBox="0 0 760 320" role="img" aria-label="Action potential curve: rest at minus 70 mV, depolarization from threshold minus 55 to peak plus 30 mV, repolarization, afterhyperpolarization below rest, return to rest">
+    <line x1="60" y1="20" x2="60" y2="290" class="s-line" stroke-width="1.5"/>
+    <line x1="60" y1="290" x2="740" y2="290" class="s-line" stroke-width="1.5"/>
+    <text x="52" y="64" text-anchor="end" class="s-muted" font-size="13">+30</text>
+    <text x="52" y="124" text-anchor="end" class="s-muted" font-size="13">0</text>
+    <text x="52" y="234" text-anchor="end" class="s-muted" font-size="13">−55</text>
+    <text x="52" y="264" text-anchor="end" class="s-muted" font-size="13">−70</text>
+    <line x1="60" y1="120" x2="740" y2="120" class="s-line" stroke-width="0.6" stroke-dasharray="3 5"/>
+    <line x1="60" y1="230" x2="740" y2="230" class="s-line" stroke-width="0.6" stroke-dasharray="6 4"/>
+    <text x="736" y="224" text-anchor="end" class="s-muted" font-size="12">threshold</text>
+    <path d="M60 260 H190 Q215 260 225 230 L262 60 Q272 42 285 70 L340 260 Q352 284 380 282 Q450 278 520 264 Q560 260 740 260" class="s-coral" style="fill:none" stroke-width="3.5"/>
+    <text x="120" y="252" text-anchor="middle" class="s-text" font-size="13">rest</text>
+    <text x="210" y="100" text-anchor="end" class="s-text" font-size="13" font-weight="600">depolarization</text>
+    <text x="210" y="118" text-anchor="end" class="s-muted" font-size="12">NaV open · Na⁺ in</text>
+    <text x="320" y="100" class="s-text" font-size="13" font-weight="600">repolarization</text>
+    <text x="320" y="118" class="s-muted" font-size="12">NaV inactivated · KV open · K⁺ out</text>
+    <text x="380" y="310" class="s-text" font-size="13" font-weight="600">afterhyperpolarization</text>
+    <text x="420" y="250" class="s-muted" font-size="12">KV close slowly</text>
+    <text x="650" y="252" text-anchor="middle" class="s-text" font-size="13">return to rest</text>
+  </svg>
+  <figcaption>Schema of a neuronal AP (redrawn from Diagram 8's values): the rising phase moves Vm towards ENa, the falling phase towards EK; the
+    afterhyperpolarization goes below rest because KV channels close slowly.
+    <a class="page" href="/lessons/s1/physiology/cellular-electrophysiology.pdf#page=9">p. 9</a></figcaption>
+</figure>
+<div class="table-wrap"><table>
+  <tr><th>Phase</th><th>Voltage</th><th>NaV</th><th>KV</th><th>Dominant current</th></tr>
+  <tr><td>Rest</td><td>≈ −70 mV</td><td>Closed, available</td><td>Closed (leak K⁺ open)</td><td>Small K⁺ leak out</td></tr>
+  <tr><td>Depolarization</td><td>−55 → ≈ +30 mV</td><td><b>Open</b> (fast activation)</td><td>Mostly still closed</td><td><b>Na⁺ in</b></td></tr>
+  <tr><td>Repolarization</td><td>+30 → −70 mV</td><td><b>Inactivated</b></td><td><b>Open</b> (delayed)</td><td><b>K⁺ out</b></td></tr>
+  <tr><td>Afterhyperpolarization</td><td>Below −70 mV</td><td>Recovering (closed)</td><td>Still open, closing slowly</td><td>K⁺ out</td></tr>
+  <tr><td>Return to rest</td><td>≈ −70 mV</td><td>Closed, available</td><td>Closed</td><td>Leak; pump maintains gradients</td></tr>
+</table></div>
+<p>The AP reflects a change in <b>permeability, first to Na⁺, then to K⁺</b>; the two currents overlap in time.</p>
+<div class="flow"><span>depolarization reaches threshold</span><span>more NaV open</span><span>Na⁺ enters</span><span>further depolarization (positive feedback)</span></div>
+<p>The loop is stopped by <b>NaV inactivation</b> and the <b>delayed opening of KV</b>.</p>
+<h3>Voltage clamp and patch clamp</h3>
+<p>The <b>voltage clamp</b> holds the voltage at a chosen value; the injected current equals and opposes the ionic current, which can thus be measured.
+  Convention: <b>inward (Na⁺) current downwards</b> (negative), <b>outward (K⁺) upwards</b> (positive).</p>
+<div class="table-wrap"><table>
+  <tr><th>Step to 0 mV</th><th>Early current</th><th>Late current</th><th>Conclusion</th></tr>
+  <tr><td>Control</td><td>Transient inward</td><td>Sustained outward</td><td>Two separate currents</td></tr>
+  <tr><td>+ <b>TTX</b> (blocks NaV)</td><td>Absent</td><td>Outward remains</td><td>Late current = K⁺ (I<sub>K</sub>)</td></tr>
+  <tr><td>+ <b>TEA</b> (blocks KV)</td><td>Inward remains</td><td>Absent</td><td>Early current = Na⁺ (I<sub>Na</sub>)</td></tr>
+</table></div>
+<p>g<sub>Na</sub> rises very fast then falls by inactivation even if depolarization persists (rising phase); g<sub>K</sub> (delayed rectifier) rises more slowly and stays
+  high longer (falling phase, afterhyperpolarization). <b>Patch clamp</b>: a glass micropipette seals onto a small patch; records a single channel (square current
+  steps) or the whole cell; many single-channel openings sum to the macroscopic currents.</p>
+<h3>Voltage-gated channels</h3>
+<div class="flow"><span>Closed, available (activation gate closed)</span><span>Open (brief)</span><span>Inactivated within ≈ 1 ms (pore blocked)</span><span>repolarization: recovery</span></div>
+<p>An <b>inactivated NaV cannot reopen until the membrane repolarizes</b> — the basis of the absolute refractory period.</p>
+<div class="table-wrap"><table>
+  <tr><th>Feature</th><th>NaV channel</th><th>KV channel (delayed rectifier)</th></tr>
+  <tr><td>Structure</td><td><b>One α subunit with 4 domains (I–IV)</b></td><td><b>4 separate α subunits</b> around a central pore</td></tr>
+  <tr><td>Segments</td><td>Each domain: S1–S6</td><td>Each subunit: S1–S6</td></tr>
+  <tr><td>Voltage sensor</td><td>S4 of each domain</td><td>S4 of each subunit</td></tr>
+  <tr><td>Pore</td><td>S5–S6 loops of the four domains</td><td>S5–S6 region with selectivity filter</td></tr>
+  <tr><td>Gating</td><td>Fast activation, then fast inactivation</td><td>Delayed activation, little fast inactivation</td></tr>
+  <tr><td>Current</td><td>Inward, brief</td><td>Outward, slower, sustained</td></tr>
+</table></div>
+<h3>Threshold, all-or-none and refractory periods</h3>
+<div class="table-wrap"><table>
+  <tr><th>Stimulus</th><th>Response</th><th>Comment</th></tr>
+  <tr><td>Subthreshold</td><td>Local graded potential that fades</td><td>Size varies with the stimulus; no AP</td></tr>
+  <tr><td>Threshold (≈ −55 mV)</td><td>Full AP</td><td>Inward Na⁺ current becomes self-sustaining</td></tr>
+  <tr><td>Suprathreshold</td><td><b>Same AP</b></td><td>A stronger or longer stimulus raises <b>firing frequency</b>, not AP size</td></tr>
+</table></div>
+<div class="table-wrap"><table>
+  <tr><th></th><th>Absolute refractory period</th><th>Relative refractory period</th></tr>
+  <tr><td>When</td><td>Threshold → late repolarization (≈ 1 ms)</td><td>Late repolarization and afterhyperpolarization (a few ms)</td></tr>
+  <tr><td>Cause</td><td>NaV open or inactivated</td><td>Some NaV still inactivated; K⁺ conductance still high (hyperpolarized)</td></tr>
+  <tr><td>Stimulus needed</td><td><b>None works</b>, however strong</td><td>Stronger than normal</td></tr>
+  <tr><td>Consequence</td><td>Limits maximum firing frequency</td><td>Keeps propagation one-way</td></tr>
+</table></div>
+<div class="box"><span class="label">Pharmacology</span>
+  <b>Local anaesthetics</b> (lidocaine) block NaV and stop nerve conduction. <b>Tetrodotoxin</b> (puffer fish) blocks NaV; poisoning causes paralysis.
+  <b>TEA</b> (tetraethylammonium) blocks K⁺ channels.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="conduction"><span class="num">6.</span> Conduction of the action potential
+  <a class="page" href="/lessons/s1/physiology/cellular-electrophysiology.pdf#page=12">p. 12–13</a>
+  <span class="exam">2022-23</span></h2>
+<p>Recording at increasing distances: the AP appears <b>later</b> (latency ↑) but with the <b>same amplitude</b> — it is regenerated, not fading.</p>
+<div class="formula">Conduction velocity = <span class="frac"><span>distance</span><span>difference in latency</span></span>
+  <span class="where">e.g. sites 10 mm and 30 mm, latencies 0.5 and 1.5 ms → v = 20 mm / 1.0 ms = 20 m/s</span></div>
+<p><b>Mechanism</b>: positive charge entering the active region spreads inside the axon (<b>local current</b>) and depolarizes the next segment → threshold → its NaV
+  open → AP regenerated. The segment behind is <b>refractory</b>, so the impulse moves forward only (a stimulus in the middle of an axon sends APs both ways).</p>
+<div class="table-wrap"><table>
+  <tr><th></th><th>Unmyelinated axon</th><th>Myelinated axon</th></tr>
+  <tr><td>Mode</td><td><b>Continuous</b>: every patch regenerates the AP</td><td><b>Saltatory</b>: regenerated only at the nodes of Ranvier ("jumps")</td></tr>
+  <tr><td>Velocity</td><td>≈ 0.5–2 m/s</td><td>≈ 2–120 m/s</td></tr>
+  <tr><td>Energy cost</td><td>Higher (ion exchange along the whole membrane)</td><td>Lower (only at the nodes)</td></tr>
+  <tr><td>Example</td><td>C fibres (slow pain, autonomic)</td><td>Motor fibres, large sensory fibres</td></tr>
+</table></div>
+<p><b>Velocity increases</b> with myelination, <b>larger diameter</b> (lower internal resistance) and higher temperature (within physiological limits).</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="graded"><span class="num">7.</span> Graded potentials
+  <a class="page" href="/lessons/s1/physiology/cellular-electrophysiology.pdf#page=13">p. 13</a>
+  <span class="exam">2022-23 · 2023-24 · 2024-25</span></h2>
+<div class="box def"><span class="label">Graded potential</span>
+  A local change in membrane potential whose amplitude depends on the <b>strength and duration</b> of the stimulus; it can depolarize or hyperpolarize, spreads
+  passively and <b>decreases with distance</b>, is <b>not all-or-none</b>. Occurs in <b>dendrites, soma, sensory receptors, motor end plate</b>.</div>
+<ul>
+  <li><b>Temporal summation</b>: successive inputs at the <b>same synapse</b>, close enough in time to overlap.</li>
+  <li><b>Spatial summation</b>: inputs at <b>different synapses</b> at the same time.</li>
+  <li>At the initial segment <b>EPSPs add, IPSPs subtract</b>; if the sum reaches threshold → AP.</li>
+</ul>
+<div class="table-wrap"><table>
+  <tr><th>Type</th><th>Effect</th><th>Where</th></tr>
+  <tr><td>EPSP</td><td>Usually depolarizing; AP more likely</td><td>Postsynaptic membrane</td></tr>
+  <tr><td>IPSP</td><td>Hyperpolarizing or shunting; AP less likely</td><td>Postsynaptic membrane</td></tr>
+  <tr><td>Receptor (generator) potential</td><td>Amplitude ∝ stimulus intensity</td><td>Sensory receptors</td></tr>
+  <tr><td>Pacemaker potential</td><td>Slow spontaneous depolarization that triggers APs</td><td>Sinoatrial node, some smooth muscle</td></tr>
+</table></div>
+<div class="table-wrap"><table>
+  <tr><th>Feature</th><th>Graded potential</th><th>Action potential</th></tr>
+  <tr><td>Amplitude</td><td>Variable, ∝ stimulus</td><td>Stereotyped (all-or-none)</td></tr>
+  <tr><td>Spread</td><td>Passive, decreases with distance</td><td>Regenerated, constant amplitude</td></tr>
+  <tr><td>Summation</td><td><b>Yes</b> (temporal, spatial)</td><td>No</td></tr>
+  <tr><td>Threshold</td><td><b>None</b></td><td>Required</td></tr>
+  <tr><td>Refractory period</td><td>None</td><td>Yes</td></tr>
+  <tr><td>Direction</td><td>Depolarizing or hyperpolarizing</td><td>Always depolarizing</td></tr>
+  <tr><td>Main channels</td><td>Ligand- or mechanically gated</td><td>Voltage-gated Na⁺ and K⁺</td></tr>
+</table></div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="traps">Exam traps <span class="meta">— the wrong options past exams used</span></h2>
+<div class="box trap"><span class="label">False statements to recognise</span>
+  <ul>
+    <li>The RMP is mainly determined by the "Na⁺", "Cl⁻" or "Ca²⁺" gradient — <b>false</b>: the <b>K⁺</b> gradient. <span class="exam">2022-23</span></li>
+    <li>"Voltage-gated Na⁺ channels" are part of the ionic origin of the RMP — <b>false</b> (pump, Gibbs–Donnan and selective permeability are). <span class="exam">2023-24</span></li>
+    <li>The RMP "is identical in all cell types" — <b>false</b>. <span class="exam">2025-26</span></li>
+    <li>The Nernst equation calculates "the membrane potential" or "membrane permeability" — <b>false</b>: the equilibrium potential of <b>one ion</b> (GHK gives Vm).
+      <span class="exam">2025-26</span></li>
+    <li>All-or-none means the AP "is triggered for any intensity", "changes amplitude with the stimulus" or "can be partially triggered" — <b>false</b>.
+      <span class="exam">2023-24</span></li>
+    <li>The AP "depends on stimulus duration" — <b>false</b>: a longer stimulus changes frequency, not the AP. <span class="exam">2025-26</span></li>
+    <li>During the falling phase NaV channels "stay open" or "reopen" — <b>false</b>: they inactivate; once closed (recovered) they can open after a new stimulus.
+      <span class="exam">2024-25</span></li>
+    <li>Voltage-gated channels "are always open" / "are involved in protein synthesis" — <b>false</b>. <span class="exam">2023-24</span></li>
+    <li>"TEA", "curare" or "GABA" block Na⁺ channels — <b>false</b>: <b>TTX</b> does (TEA blocks K⁺ channels). <span class="exam">2022-23</span></li>
+    <li>Myelinated conduction "is slower" / "continuous" — <b>false</b>: saltatory and faster. <span class="exam">2022-23</span></li>
+    <li>Graded potentials "occur in any region", "have an amplitude independent of the stimulus", "have a threshold" — <b>false</b>. <span class="exam">2023-24</span></li>
+    <li>Postsynaptic potentials are "all-or-none" or "propagated, always hyperpolarizing" — <b>false</b>: gradable and summable.
+      <span class="exam">2022-23 · 2023-24 · 2024-25</span></li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="check">Self-check <span class="meta">— answer, then tap to reveal</span></h2>
+<details class="card"><summary>Name the four excitable cell types.</summary><div>Neuron, skeletal muscle fibre, smooth muscle cell, cardiac muscle cell.</div></details>
+<details class="card"><summary>Who makes myelin in the PNS and in the CNS?</summary><div>Schwann cells (PNS), oligodendrocytes (CNS).</div></details>
+<details class="card"><summary>RMP of a neuron, a skeletal muscle fibre and a red blood cell?</summary><div>≈ −70 mV; ≈ −85 to −90 mV; ≈ −10 mV.</div></details>
+<details class="card"><summary>Three mechanisms behind the RMP?</summary><div>Na⁺/K⁺ pump (gradients, electrogenic), selective permeability (PK ≫ PNa), impermeant intracellular anions (Gibbs–Donnan).</div></details>
+<details class="card"><summary>Why is the RMP close to EK but not equal to it?</summary><div>K⁺ leak dominates, but a small Na⁺ leak pulls Vm towards ENa (≈ −70 vs −90 mV).</div></details>
+<details class="card"><summary>Nernst at 37 °C; EK with [K⁺] 4.8 out and 140 in?</summary><div>E ≈ (61.5/z) log([out]/[in]); EK ≈ 61.5 × (−1.46) ≈ −90 mV.</div></details>
+<details class="card"><summary>Driving force on Na⁺ at −70 mV, and its direction?</summary><div>−70 − (+61) = −131 mV → strong entry.</div></details>
+<details class="card"><summary>What does hyperkalaemia do to the membrane?</summary><div>EK less negative → depolarization → NaV inactivation → ↓ excitability (arrhythmias, weakness).</div></details>
+<details class="card"><summary>Channel states during the rising and falling phases?</summary><div>Rising: NaV open, Na⁺ in. Falling: NaV inactivated, KV open, K⁺ out; KV close slowly → afterhyperpolarization.</div></details>
+<details class="card"><summary>In voltage clamp, what does TTX remove? TEA?</summary><div>TTX: the early inward Na⁺ current. TEA: the late outward K⁺ current.</div></details>
+<details class="card"><summary>How is stimulus strength coded if the AP is all-or-none?</summary><div>By firing frequency.</div></details>
+<details class="card"><summary>Absolute vs relative refractory period?</summary><div>Absolute: no AP possible (NaV open/inactivated). Relative: stronger stimulus needed (some NaV inactivated, gK high).</div></details>
+<details class="card"><summary>Sites 20 mm and 50 mm, latencies 1.0 and 2.5 ms: velocity?</summary><div>30 mm / 1.5 ms = 20 m/s.</div></details>
+<details class="card"><summary>Saltatory vs continuous conduction?</summary><div>Saltatory (myelinated): AP regenerated at nodes, 2–120 m/s, cheaper. Continuous (unmyelinated, C fibres): 0.5–2 m/s.</div></details>
+<details class="card"><summary>Temporal vs spatial summation?</summary><div>Temporal: successive inputs at the same synapse. Spatial: different synapses at the same time.</div></details>
+
+<footer>Summary of the handout "Cellular Electrophysiology" (Dr A. Benahmed), 1st-year medicine physiology, Faculty of Medicine Annaba.
+  🎯 = topic asked in past EMD1 exams (years shown). 📄 = page in the lesson PDF. Every fact here comes from the PDF; exam traps are taken from the official keys.</footer>
+</main>
+</body>
+</html>

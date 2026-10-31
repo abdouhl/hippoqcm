@@ -136,3 +136,38 @@ footer { margin-top: 40px; color: var(--muted); font-size: 0.85rem; border-top: 
 .formula .where { display: block; font-family: system-ui, sans-serif; font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
 .frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 2px; }
 .frac > span:first-child { border-bottom: 1px solid currentColor; padding: 0 3px; }
+
+/* Exercise (TD) pages: public/exercises/s<N>/<module>/<set>.html */
+section.exercise { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 4px 16px 14px; margin: 22px 0; }
+section.exercise > h2 { margin-top: 14px; border-bottom: 0; padding-bottom: 0; }
+.statement { border-left: 4px solid var(--border); padding-left: 12px; }
+.statement ol, .statement ul { padding-left: 22px; }
+.given { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; padding: 0; list-style: none; }
+.given > li { margin: 0; padding: 3px 9px; border-radius: 8px; background: var(--accent-bg); font-size: 0.88rem; }
+details.hint, details.solution { border-radius: 10px; margin: 10px 0; padding: 8px 14px; border: 1px solid var(--border); }
+details.hint { background: var(--violet-bg); border-color: transparent; }
+details.solution { background: var(--bg); }
+details.hint > summary, details.solution > summary { cursor: pointer; font-weight: 650; list-style: none; }
+details.hint > summary::-webkit-details-marker, details.solution > summary::-webkit-details-marker { display: none; }
+details.hint > summary { color: var(--violet); }
+details.hint > summary::before { content: "💡 "; }
+details.solution > summary { color: var(--ok); }
+details.solution > summary::before { content: "▸ "; }
+details.solution[open] > summary::before { content: "▾ "; }
+.law { background: var(--accent-bg); border-radius: 10px; padding: 8px 12px; margin: 8px 0; font-size: 0.92rem; }
+.law > .label, .box .law > .label { display: inline; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-right: 6px; }
+.law .formula { margin: 6px 0 2px; background: var(--surface); }
+/* Long substitutions wrap at their spaces, continuation lines indented. */
+.calc { font-family: "Cambria Math", "STIX Two Math", Cambria, Georgia, serif; font-size: 1.05rem; padding: 2px 0 2px 1.2em; text-indent: -1.2em; overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  section.exercise { padding: 4px 12px 12px; }
+  details.hint, details.solution { padding: 8px 10px; }
+  section.exercise ol.steps > li { padding-left: 34px; }
+  section.exercise table { font-size: 0.85rem; }
+  section.exercise th, section.exercise td { padding: 6px; }
+}
+.answer { display: inline-block; margin: 8px 0 2px; padding: 6px 12px; border-radius: 10px; background: var(--ok-bg); color: var(--ok); font-weight: 700; border: 1px solid var(--ok); }
+.answer::before { content: "✓ "; }
+.unsure { background: var(--warn-bg); color: var(--warn); border-radius: 10px; padding: 8px 12px; margin: 8px 0; font-size: 0.9rem; }
+.unsure::before { content: "⚠️ "; }
+@media print { details.hint, details.solution { break-inside: avoid; } }

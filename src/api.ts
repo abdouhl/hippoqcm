@@ -400,7 +400,7 @@ export function refreshSnapshot(): Promise<boolean> {
   })());
 }
 
-// Download the images, PDFs and summaries the snapshot refers to for offline use. Run on every pull,
+// Download the images, PDFs, summaries and exercise sets the snapshot refers to for offline use. Run on every pull,
 // not only when questions change, so files added to an unchanged deck get downloaded too; files
 // already saved are skipped.
 async function cacheFiles() {
@@ -412,15 +412,23 @@ async function cacheFiles() {
 export async function offlineFiles(): Promise<string[] | null> {
   if (!snapshot) return null;
   const pdfs = snapshot.lessons.map((l) => l.pdf);
-  let summaries: string[] = [];
-  try {
-    const res = await fetch("/summaries/index.json", { signal: AbortSignal.timeout(TIMEOUT_MS) });
-    if (res.ok) summaries = (await res.json()) as string[];
-  } catch {}
+  const index = async <T>(url: string, fallback: T): Promise<T> => {
+    try {
+      const res = await fetch(url, { signal: AbortSignal.timeout(TIMEOUT_MS) });
+      if (res.ok) return (await res.json()) as T;
+    } catch {}
+    return fallback;
+  };
+  const [summaries, exercises] = await Promise.all([
+    index<string[]>("/summaries/index.json", []),
+    index<{ path: string; pdf: string | null }[]>("/exercises/index.json", []),
+  ]);
   return [
     ...pdfs.map((pdf) => `/lessons/${pdf}`),
     "/summaries/index.json",
     ...pdfs.filter((pdf) => summaries.includes(pdf)).map((pdf) => `/summaries/${pdf.replace(/\.pdf$/, ".html")}`),
+    "/exercises/index.json",
+    ...exercises.flatMap((set) => [`/exercises/${set.path}`, ...(set.pdf ? [`/exercises/${set.pdf}`] : [])]),
     ...snapshot.questions.flatMap((q) => (q.image ? [`/images/${q.image}`] : [])),
   ];
 }

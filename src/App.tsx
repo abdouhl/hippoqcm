@@ -6,7 +6,7 @@ import Decks, { type StudyTarget } from "./Decks";
 import Exam from "./Exam";
 import { Icon, type IconName } from "./icons";
 import Insights from "./Insights";
-import { LessonPage, ModulePage } from "./Lessons";
+import { ExercisePage, type ExerciseSet, LessonPage, ModulePage } from "./Lessons";
 import { Footer, NotFound, StaticPage, isPage } from "./Pages";
 import type { StudyOnly } from "./queue";
 import Settings from "./Settings";
@@ -21,6 +21,7 @@ type View =
   | { kind: Tab }
   | { kind: "module"; module: Module }
   | { kind: "lesson"; module: Module; lesson: Lesson }
+  | { kind: "exercises"; module: Module; set: ExerciseSet }
   | { kind: "study"; title: string; endpoint: string; backLabel: string; only?: StudyOnly }
   | { kind: "exam"; module: Module; lessons?: Lesson[] }
   | { kind: "account"; incoming: string | null };
@@ -159,6 +160,7 @@ export default function App() {
         module={module}
         onBack={back}
         onOpenLesson={(lesson) => open({ kind: "lesson", module, lesson })}
+        onOpenExercises={(set) => open({ kind: "exercises", module, set })}
         onExam={(lessons) => open({ kind: "exam", module, lessons })}
         onStudyLessons={(lessons) =>
           study(
@@ -189,8 +191,13 @@ export default function App() {
         lessonId={view.lesson.id}
         onBack={back}
         onStudy={(lesson) => study({ title: lesson.title, endpoint: `/api/lessons/${lesson.id}/study` }, "Lesson")}
+        onOpenExercises={(set) => open({ kind: "exercises", module: view.module, set })}
       />
     );
+  }
+
+  if (view.kind === "exercises") {
+    return <ExercisePage module={view.module} set={view.set} onBack={back} />;
   }
 
   // The four tabs.

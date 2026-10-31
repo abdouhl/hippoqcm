@@ -3,9 +3,9 @@
 // Bump when files change under the same URL (lesson PDFs are cached for good); see activate.
 const CACHE = "hippoqcm-v5";
 // Hashed build output, and lesson files that are fetched once and kept.
-const STATIC = /^\/(assets|images|lessons)\/|^\/summaries\/.+\.(jpe?g|png|webp|svg)$|^\/[^/]+\.(svg|png|webmanifest)$/;
-// Summary pages and their index can be rewritten under the same URL: show the cached copy, refresh it.
-const SUMMARY = /^\/summaries\/.+\.(html|css|json)$/;
+const STATIC = /^\/(assets|images|lessons)\/|^\/(summaries|exercises)\/.+\.(jpe?g|png|webp|svg|pdf)$|^\/[^/]+\.(svg|png|webmanifest)$/;
+// Summary and exercise pages and their indexes can be rewritten under the same URL: show the cached copy, refresh it.
+const SUMMARY = /^\/(summaries|exercises)\/.+\.(html|css|json)$/;
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -40,7 +40,7 @@ self.addEventListener("activate", (event) => {
           const prev = await caches.open(key);
           for (const req of await prev.keys()) {
             const path = new URL(req.url).pathname;
-            if (/^\/(images|lessons|summaries)\//.test(path) && !(await cache.match(req))) {
+            if (/^\/(images|lessons|summaries|exercises)\//.test(path) && !(await cache.match(req))) {
               const res = await prev.match(req);
               if (res && cacheable(res, path)) await cache.put(req, res);
             }

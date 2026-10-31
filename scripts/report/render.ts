@@ -2,8 +2,9 @@
 // headless Chrome by scripts/report.ts (CLI and admin panel alike, so prints always match).
 //
 // Pages are A4. Stamps are what gets printed onto a sheet the student already wrote on: a figure,
-// a chapter number with its underline, or a line of text, each placed y cm from the sheet's top
-// edge, shifted by the printer offset measured with the calibration page. Without an x, figures
+// a chapter number with its underline, an INTRODUCTION/CONCLUSION heading, a page number or a line
+// of text, each placed y cm from the sheet's top edge (for headings, chapters and page numbers, y is
+// where the letters sit, so they line up with a ruled line), shifted by the printer offset measured with the calibration page. Without an x, figures
 // and chapters sit exactly as in the typed report: in the text column, a figure together with the
 // one sharing its row.
 
@@ -28,6 +29,8 @@ export type Settings = { name: string; group: string; offset_x_cm: number; offse
 export type StampItem =
   | { kind: "figure"; fig: number | string; x?: number; y: number; w?: number; caption?: boolean }
   | { kind: "chapter"; n: number; x?: number; y: number; line?: number; title?: string }
+  | { kind: "heading"; text: string; x?: number; y: number }
+  | { kind: "page"; n: number; total?: number; x?: number; y?: number }
   | { kind: "text"; text: string; x: number; y: number; size?: number };
 
 // Where the page finds its files: URL prefixes (ending in "/") for the report folder and the assets.
@@ -208,6 +211,10 @@ const SHEET_CSS = `
   .chap .n { width: .75cm; height: .75cm; background: var(--red); color: #fff; border-radius: 3px; font-weight: bold; font-size: 14pt;
              display: flex; align-items: center; justify-content: center; }
   .chap .line { border-bottom: 1.5px solid var(--blue); height: .75cm; font-size: 14pt; font-weight: bold; color: var(--blue); line-height: .75cm; padding-left: 2pt; }
+  /* Same look as the typed report's h1 and its page counter. */
+  .heading { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .heading text { font-family: "Times New Roman", Times, serif; font-size: 14pt; font-weight: bold; fill: var(--blue); letter-spacing: .5px; }
+  .pageno text { font-family: "Times New Roman", Times, serif; font-size: 12pt; font-weight: normal; letter-spacing: 0; fill: #1a1a1a; }
   /* On screen only: the sheet with a 1 cm grid, so placements can be checked before printing. */
   @media screen {
     body.preview { background: #9aa3ad; padding: 1cm; }
@@ -219,11 +226,29 @@ const SHEET_CSS = `
   @media print { .ruler { display: none; } }
 `;
 
+// Page numbers end at x and sit on y: the last line of the 10 mm lined paper (assets/lined-paper-10mm.pdf).
+export const PAGE_X = 20;
+export const PAGE_Y = 29;
+
+// A chapter title's baseline, from the top of its .75 cm line box (14 pt Times: half-leading
+// plus ascent), so a chapter can be placed by where its letters sit.
+export const CHAPTER_BASELINE = 0.54;
+
 // Room left for a chapter's underline: up to the text column's right edge.
 export const chapterLine = (x = TEXT_LEFT) => Math.round((TEXT_LEFT + TEXT_WIDTH - x - 1) * 10) / 10;
 
 function stampItem(r: Report, it: StampItem, urls: Urls) {
-  const at = `left:${it.x ?? TEXT_LEFT}cm;top:${it.y}cm`;
+  // SVG text is placed by its baseline, which is exactly what y means for a heading or page number.
+  if (it.kind === "page") {
+    const label = it.total ? `${it.n} / ${it.total}` : String(it.n);
+    return `<svg class="heading pageno"><text x="${it.x ?? PAGE_X}cm" y="${it.y ?? PAGE_Y}cm" text-anchor="end">${label}</text></svg>`;
+  }
+  if (it.kind === "heading") {
+    const [x, anchor] = it.x === undefined ? [TEXT_LEFT + TEXT_WIDTH / 2, "middle"] : [it.x, "start"];
+    return `<svg class="heading"><text x="${x}cm" y="${it.y}cm" text-anchor="${anchor}">${esc(it.text.toUpperCase())}</text></svg>`;
+  }
+  const top = it.kind === "chapter" ? Math.round((it.y - CHAPTER_BASELINE) * 100) / 100 : it.y;
+  const at = `left:${it.x ?? TEXT_LEFT}cm;top:${top}cm`;
   if (it.kind === "figure" && it.x === undefined) {
     const all = numberedFigures(r);
     const row = findFigure(r, it.fig).row.map((id) => figureHtml(all.find((f) => f.id === id)!, urls, it.caption !== false));

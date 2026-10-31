@@ -41,6 +41,18 @@ const n = (v: number | null | undefined) => (v == null ? "NULL" : String(Math.tr
 
 // --- Production (remote D1) through wrangler -------------------------------------------------
 
+// With --json, wrangler reports failures as {"error": {"text", "notes": [{"text"}], …}} on stdout;
+// pull out the readable part instead of the tail of that object.
+function wranglerError(out: string, err: string) {
+  try {
+    const { error } = JSON.parse(out.slice(out.indexOf("{")));
+    const notes = (error.notes ?? []).map((note: { text: string }) => note.text);
+    return [error.text, ...notes].filter(Boolean).join(" — ");
+  } catch {
+    return (err || out).trim().split("\n").slice(-3).join(" ");
+  }
+}
+
 // Wrangler runs fail when several overlap, so they queue up one at a time.
 let wranglerQueue: Promise<unknown> = Promise.resolve();
 function remote<T>(sql: string): Promise<T[]> {
@@ -50,7 +62,7 @@ function remote<T>(sql: string): Promise<T[]> {
       stderr: "pipe",
     });
     const [out, err] = await Promise.all([new Response(proc.stdout).text(), new Response(proc.stderr).text()]);
-    if ((await proc.exited) !== 0) throw new Error((err || out).trim().split("\n").slice(-3).join(" "));
+    if ((await proc.exited) !== 0) throw new Error(wranglerError(out, err));
     return JSON.parse(out.slice(out.indexOf("[")))[0].results as T[];
   };
   const result = wranglerQueue.then(run, run);

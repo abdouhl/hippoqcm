@@ -10,8 +10,10 @@
 //   bun scripts/report.ts print <slug> <item>...            stamps for a handwritten sheet, e.g.
 //        fig 3 y=12 [nocap]                                 figure 3 as in the typed report (with its row partner), top at 12 cm
 //        fig 3 x=2 y=12 [w=9]                               …or alone, top-left corner at (2, 12) cm, 9 cm wide
-//        chapter 6 y=4 [x=2] [line=14] [title="…"]          red number box + underline to write the title on
-//        text "Page 3" x=18 y=28 [size=12]
+//        chapter 6 y=4 [x=2] [line=14] [title="…"]          red number box + underline to write the title on; y = where the letters sit
+//        heading INTRODUCTION y=3 [x=2]                     INTRODUCTION/CONCLUSION as in the typed report (centred without x); y = where the letters sit
+//        page 3 [of=5] [x=20] [y=29]                        page number ending at x, sitting on y (the lined paper's last line)
+//        text "Note" x=18 y=28 [size=12]
 //   bun scripts/report.ts calibrate                         calibration sheet for the printer offset
 //   bun scripts/report.ts settings [name=…] [group=…] [dx=…] [dy=…]
 // print/calibrate write a PDF under data/reports/<slug>/print/ and open it in Preview (--no-open to skip).
@@ -19,7 +21,7 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import {
-  calibrationPage, chapterLine, coverPage, findFigure, numberedFigures, reportPage, ROW_GAP, stampPage, TEXT_LEFT, TEXT_WIDTH,
+  calibrationPage, CHAPTER_BASELINE, chapterLine, coverPage, findFigure, numberedFigures, PAGE_X, PAGE_Y, reportPage, ROW_GAP, stampPage, TEXT_LEFT, TEXT_WIDTH,
   type Report, type Settings, type StampItem, type Urls,
 } from "./report/render";
 
@@ -84,7 +86,16 @@ const round = (v: number) => Math.round(v * 10) / 10;
 export function stampBox(slug: string, r: Report, it: StampItem) {
   if (it.kind === "chapter") {
     const x = it.x ?? TEXT_LEFT;
-    return { label: `Chapter ${it.n}`, x0: x, y0: it.y, x1: round(x + 1 + (it.line ?? chapterLine(it.x))), y1: round(it.y + 0.8) };
+    const y0 = round(it.y - CHAPTER_BASELINE);
+    return { label: `Chapter ${it.n}`, x0: x, y0, x1: round(x + 1 + (it.line ?? chapterLine(it.x))), y1: round(y0 + 0.8) };
+  }
+  if (it.kind === "heading") {
+    const x0 = it.x ?? TEXT_LEFT;
+    return { label: it.text, x0, y0: round(it.y - 0.35), x1: it.x === undefined ? TEXT_LEFT + TEXT_WIDTH : round(x0 + it.text.length * 0.4), y1: it.y };
+  }
+  if (it.kind === "page") {
+    const x = it.x ?? PAGE_X, y = it.y ?? PAGE_Y;
+    return { label: `Page ${it.n}`, x0: round(x - 1), y0: round(y - 0.3), x1: x, y1: y };
   }
   if (it.kind === "text") return { label: "Text", x0: it.x, y0: it.y, x1: it.x, y1: it.y };
   const f = findFigure(r, it.fig);
@@ -114,19 +125,21 @@ export function parseItems(args: string[]): StampItem[] {
       return v;
     };
     const x = num("x"), y = num("y");
+    if (cur.kind === "page") return void items.push({ kind: "page", n: Number(cur.arg), total: num("of"), x, y });
     if (y === undefined) throw new Error(`${cur.kind} ${cur.arg ?? ""}: needs y= (cm from the top edge)`);
     if (cur.kind === "fig") items.push({ kind: "figure", fig: String(cur.arg), x, y, w: num("w"), caption: !cur.nocap });
+    else if (cur.kind === "heading") items.push({ kind: "heading", text: String(cur.arg).toUpperCase(), x, y });
     else if (cur.kind === "chapter") items.push({ kind: "chapter", n: Number(cur.arg), x, y, line: num("line"), title: cur.title as string | undefined });
     else if (x === undefined) throw new Error(`text "${cur.arg}": needs x= and y= (cm)`);
     else items.push({ kind: "text", text: String(cur.arg), x, y, size: num("size") });
   };
   for (let i = 0; i < args.length; i++) {
     const a = args[i];
-    if (["fig", "figure", "chapter", "text"].includes(a)) {
+    if (["fig", "figure", "chapter", "heading", "page", "text"].includes(a)) {
       flush();
       cur = { kind: a === "figure" ? "fig" : a, arg: args[++i] };
       if (cur.arg === undefined) throw new Error(`${a} needs a value`);
-    } else if (!cur) throw new Error(`Expected fig, chapter or text, got "${a}"`);
+    } else if (!cur) throw new Error(`Expected fig, chapter, heading, page or text, got "${a}"`);
     else if (a === "nocap") cur.nocap = true;
     else if (a.includes("=")) cur[a.slice(0, a.indexOf("="))] = a.slice(a.indexOf("=") + 1);
     else throw new Error(`Don't understand "${a}"`);

@@ -47,6 +47,8 @@ type ReportSettings = { name: string; group: string; offset_x_cm: number; offset
 type SheetItem =
   | { kind: "figure"; fig: number; x?: number; y: number; w?: number; caption?: boolean }
   | { kind: "chapter"; n: number; x?: number; y: number; line?: number; title?: string }
+  | { kind: "heading"; text: string; x?: number; y: number }
+  | { kind: "page"; n: number; total?: number; x?: number; y?: number }
   | { kind: "text"; text: string; x: number; y: number; size?: number };
 
 const LABELS = ["A", "B", "C", "D", "E"];
@@ -409,7 +411,7 @@ function ReportsPanel({ onError }: { onError: (m: string) => void }) {
               {detail.log && <pre className="log">{detail.log}</pre>}
             </div>
           )}
-          {(detail.figures.length > 0 || detail.chapters.length > 0) && <SheetBuilder key={detail.slug} detail={detail} />}
+          <SheetBuilder key={detail.slug} detail={detail} />
         </>
       )}
     </>
@@ -446,6 +448,7 @@ function PrinterCard({ onError }: { onError: (m: string) => void }) {
       {field("offset_y_cm", "Offset Y (cm)", 100, true)}
       <button className="primary" disabled={JSON.stringify(s) === JSON.stringify(saved)} onClick={save}>Save</button>
       <a href="/report-calibration.pdf" target="_blank" rel="noreferrer" title="Print once on blank paper, measure, enter the offsets">Calibration page</a>
+      <a href="/report-assets/lined-paper-10mm.pdf" target="_blank" rel="noreferrer" title="A4, a line every 1 cm from y = 1 to 29 cm: print it, write on it, then print the stamps on it">Lined paper (10 mm)</a>
     </div>
   );
 }
@@ -485,7 +488,7 @@ function NewReportForm({ onCreated, onError }: { onCreated: (slug: string) => vo
   );
 }
 
-// Places figures, chapter numbers and text on an A4 sheet the student already wrote on.
+// Places figures, chapter numbers, INTRODUCTION/CONCLUSION, page numbers and text on an A4 sheet the student already wrote on.
 function SheetBuilder({ detail }: { detail: ReportDetail }) {
   const key = `sheet:${detail.slug}`;
   const [items, setItems] = useState<SheetItem[]>(() => {
@@ -522,12 +525,16 @@ function SheetBuilder({ detail }: { detail: ReportDetail }) {
         <div className="actions">
           <strong>Print on a written sheet</strong>
           <span className="spacer" />
+          <button onClick={() => add({ kind: "heading", text: "INTRODUCTION", y: 2.5 })}>+ Introduction</button>
           <button onClick={() => add({ kind: "chapter", n: 1, y: 2.5 })}>+ Chapter</button>
+          <button onClick={() => add({ kind: "heading", text: "CONCLUSION", y: 2.5 })}>+ Conclusion</button>
+          <button onClick={() => add({ kind: "page", n: (items.find((it) => it.kind === "page") as { n: number } | undefined)?.n ?? 1 })}>+ Page no.</button>
           <button onClick={() => add({ kind: "text", text: "", x: 18.5, y: 28 })}>+ Text</button>
           <button disabled={!items.length} onClick={() => setItems([])}>Clear</button>
         </div>
         <p className="muted" style={{ fontSize: 12, margin: 0 }}>
-          y = cm from the paper's top edge. Leave x empty to place it exactly as in the typed report (figures sharing a row print
+          y = cm from the paper's top edge; for Introduction, Conclusion, chapters and page numbers it's the bottom of the letters, so
+          put it on a ruled line (the lined paper has one every cm, from 1 to 29). A page number ends at its x. Leave x empty to place it exactly as in the typed report (figures sharing a row print
           together); set x (and w) to put a figure anywhere. Put the written sheet back in the printer the way the calibration page
           says, then print at 100% / Actual size.
         </p>
@@ -559,9 +566,25 @@ function SheetBuilder({ detail }: { detail: ReportDetail }) {
                 </label>
               </>
             )}
+            {it.kind === "heading" && (
+              <>
+                <input value={it.text} list="headings" placeholder="Heading" onChange={(e) => set(i, { text: e.target.value.toUpperCase() })} />
+                <datalist id="headings">
+                  <option value="INTRODUCTION" />
+                  <option value="CONCLUSION" />
+                </datalist>
+              </>
+            )}
+            {it.kind === "page" && (
+              <>
+                <strong style={{ fontSize: 13 }}>Page</strong>
+                {num(i, "n", it.n, "no.", 1)}
+                {num(i, "total", it.total, "of", 1, "—")}
+              </>
+            )}
             {it.kind === "text" && <input value={it.text} placeholder="Text" onChange={(e) => set(i, { text: e.target.value })} />}
-            {num(i, "x", it.x, "x", 0.1, it.kind === "text" ? "" : "auto")}
-            {num(i, "y", it.y, "y")}
+            {num(i, "x", it.x, "x", 0.1, it.kind === "text" ? "" : it.kind === "page" ? "20" : it.kind === "heading" ? "centre" : "auto")}
+            {num(i, "y", it.y, "y", 0.1, it.kind === "page" ? "29" : "")}
             {it.kind === "text" && num(i, "size", it.size ?? 12, "pt", 1)}
             <button onClick={() => setItems(items.filter((_, j) => j !== i))} title="Remove">✕</button>
           </div>

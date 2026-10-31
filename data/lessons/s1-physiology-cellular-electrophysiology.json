@@ -1,0 +1,349 @@
+{
+  "semester": 1,
+  "module": "Physiology",
+  "title": "Cellular electrophysiology",
+  "pdf": "s1/physiology/cellular-electrophysiology.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q4",
+    "EMD1 2022-2023 Q12",
+    "EMD1 2022-2023 Q13",
+    "EMD1 2022-2023 Q14",
+    "EMD1 2023-2024 Q3",
+    "EMD1 2023-2024 Q4",
+    "EMD1 2023-2024 Q5",
+    "EMD1 2023-2024 Q6",
+    "EMD1 2023-2024 Q10",
+    "EMD1 2024-2025 Q6",
+    "EMD1 2024-2025 Q12",
+    "EMD1 2025-2026 Q6",
+    "EMD1 2025-2026 Q7",
+    "EMD1 2025-2026 Q8"
+  ],
+  "questions": [
+    {
+      "stem": "About electrophysiology in medicine:",
+      "options": [
+        "Electroneuromyography studies peripheral nerves and muscles",
+        "Electroencephalography records brain activity; its failure can cause epilepsy",
+        "Cardiac ablation destroys tissue that generates or conducts abnormal rhythms",
+        "Electrocardiography records the heart rhythm; its disorders are arrhythmias"
+      ],
+      "answer": "ABCD",
+      "explanation": "A pacemaker delivers impulses to support the rhythm; ablation destroys tissue that generates or conducts abnormal rhythms.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "About the functional zones of a neuron:",
+      "options": [
+        "Nodes of Ranvier are where the action potential is regenerated",
+        "The axon hillock and initial segment form the trigger zone, rich in NaV channels, where the AP is initiated",
+        "Myelin is made by oligodendrocytes in the peripheral nervous system",
+        "Dendrites produce graded potentials"
+      ],
+      "answer": "ABD",
+      "explanation": "Myelin: Schwann cells in the PNS, oligodendrocytes in the CNS. Nodes of Ranvier are rich in NaV channels (saltatory conduction).",
+      "page": 3,
+      "weight": 1
+    },
+    {
+      "stem": "A patient has a demyelinating neuropathy. Nerve conduction studies may show:",
+      "options": [
+        "Faster conduction because the AP has fewer internodes to cross",
+        "Reduced conduction velocity",
+        "Conduction block with a drop in response amplitude",
+        "Prolonged latencies"
+      ],
+      "answer": "BCD",
+      "explanation": "Loss of myelin slows conduction and can block it: reduced velocity, prolonged latencies or a drop in amplitude across the affected segment.",
+      "page": 3,
+      "weight": 1
+    },
+    {
+      "stem": "About the types of membrane potential:",
+      "options": [
+        "A graded potential has a constant amplitude whatever the stimulus",
+        "A pacemaker potential is a spontaneous depolarization towards threshold, as in the sinoatrial node",
+        "Slow waves are typical of the sinoatrial node",
+        "The resting potential of a typical neuron is about −70 mV"
+      ],
+      "answer": "BD",
+      "explanation": "Graded potentials (EPSP, IPSP, receptor potential) are local and their amplitude varies with the stimulus; the all-or-none signal is the action potential.",
+      "page": 4,
+      "weight": 3
+    },
+    {
+      "stem": "About resting membrane potential values:",
+      "options": [
+        "Red blood cell ≈ −90 mV",
+        "A negative resting potential is enough to make a cell excitable",
+        "Skeletal muscle fibre ≈ −85 to −90 mV",
+        "Cardiac pacemaker cells have no stable resting potential"
+      ],
+      "answer": "CD",
+      "explanation": "All cells have a membrane potential. Excitable cells are usually more negative, but excitability depends on the types of channel, not on the RMP value alone.",
+      "page": 5,
+      "weight": 3
+    },
+    {
+      "stem": "About the ion distribution at rest:",
+      "options": [
+        "A voltage needs both unequal concentrations and selective permeability",
+        "Na⁺, Cl⁻ and free Ca²⁺ are concentrated outside",
+        "Impermeant anions (proteins) are concentrated inside",
+        "K⁺ is concentrated inside the cell"
+      ],
+      "answer": "ABCD",
+      "explanation": "A concentration difference creates no voltage unless the membrane lets one ion cross more easily than others: the RMP needs gradients + selective permeability.",
+      "page": 5,
+      "weight": 3
+    },
+    {
+      "stem": "Using the Nernst equation at 37 °C, with [Na⁺]out = 145 mM and [Na⁺]in = 15 mM, the Na⁺ equilibrium potential is about:",
+      "options": [
+        "+61 mV",
+        "−90 mV",
+        "+125 mV",
+        "−61 mV"
+      ],
+      "answer": "A",
+      "explanation": "E = 61.5 × log10(145/15) ≈ 61.5 × 0.99 ≈ +61 mV. Positive because Na⁺ (z = +1) is more concentrated outside; +125 mV is ECa, −90 mV is EK.",
+      "page": 6,
+      "weight": 1
+    },
+    {
+      "stem": "About the equilibrium potential of an ion:",
+      "options": [
+        "At equilibrium, the chemical and electrical forces on the ion are equal and opposite",
+        "For Ca²⁺, z = +2 halves the factor (≈ 30.8 mV)",
+        "At equilibrium, the ion stops crossing the membrane",
+        "For Cl⁻, z = −1 reverses the sign of the equation"
+      ],
+      "answer": "ABD",
+      "explanation": "At equilibrium the gradient still exists and ions still cross in both directions, at equal rates: there is no net movement.",
+      "page": 6,
+      "weight": 1
+    },
+    {
+      "stem": "At Vm = −70 mV, with the channels open:",
+      "options": [
+        "K⁺ has a driving force of about −20 mV and enters",
+        "Na⁺ has a driving force of about −131 mV and enters strongly",
+        "Cl⁻ enters strongly",
+        "Ca²⁺ enters very strongly"
+      ],
+      "answer": "BD",
+      "explanation": "Driving force = Vm − Eion. For Cl⁻ (Eion ≈ −66 mV) it is −4 mV: a weak outward movement, because anions move opposite to the current.",
+      "page": 6,
+      "weight": 1
+    },
+    {
+      "stem": "Why is the resting potential about −70 mV?",
+      "options": [
+        "A small Na⁺ leak pulls it slightly towards ENa",
+        "The electrogenic Na⁺/K⁺ pump directly adds a few millivolts of negativity",
+        "Voltage-gated Na⁺ channels are open at rest",
+        "K⁺ leak conductance dominates at rest, so the RMP lies close to EK"
+      ],
+      "answer": "ABD",
+      "explanation": "At rest NaV channels are closed (available). The RMP comes from pump-maintained gradients, PK ≫ PNa and trapped intracellular anions (Gibbs–Donnan).",
+      "page": 7,
+      "weight": 3
+    },
+    {
+      "stem": "The Goldman–Hodgkin–Katz (GHK) equation:",
+      "options": [
+        "Shows that the most permeant ion pulls Vm towards its own equilibrium potential",
+        "Gives the membrane potential for several permeant ions, weighted by their permeabilities",
+        "Gives the equilibrium potential of a single ion",
+        "With PK : PNa = 1 : 0.05 and mammalian values, gives about −90 mV"
+      ],
+      "answer": "AB",
+      "explanation": "The Nernst equation gives the equilibrium potential of one ion; the GHK equation gives Vm when several ions are permeant.",
+      "page": 7,
+      "weight": 3
+    },
+    {
+      "stem": "A patient with rhabdomyolysis develops hyperkalaemia. Which statements are correct?",
+      "options": [
+        "The resting membrane potential depolarizes",
+        "The membrane hyperpolarizes",
+        "EK becomes less negative",
+        "Prolonged depolarization inactivates NaV channels and reduces excitability"
+      ],
+      "answer": "ACD",
+      "explanation": "Hyperkalaemia → less negative EK → RMP depolarizes → NaV inactivation → arrhythmias and muscle weakness. Hyperpolarization is the effect of hypokalaemia.",
+      "page": 8,
+      "weight": 3
+    },
+    {
+      "stem": "About the phases of a neuronal action potential:",
+      "options": [
+        "Afterhyperpolarization: KV channels stay open and close slowly",
+        "Repolarization: NaV channels are inactivated and KV channels open, K⁺ leaves",
+        "Return to rest: leak channels and the pump maintain the gradients",
+        "Depolarization: NaV channels open, Na⁺ enters and Vm moves towards ENa"
+      ],
+      "answer": "ABCD",
+      "explanation": "NaV activation is fast; KV (delayed rectifier) activation is delayed. The peak (≈ +30 mV) is limited by NaV inactivation and the delayed K⁺ current.",
+      "page": 9,
+      "weight": 3
+    },
+    {
+      "stem": "About the rising phase of the action potential:",
+      "options": [
+        "The loop is stopped by the Na⁺/K⁺ pump",
+        "Depolarization opens more NaV channels, Na⁺ enters and depolarizes further (positive feedback)",
+        "The loop is stopped by NaV inactivation and the delayed opening of KV channels",
+        "The AP reflects a change in permeability, first to Na⁺, then to K⁺"
+      ],
+      "answer": "BCD",
+      "explanation": "The regenerative loop is ended by NaV inactivation and delayed KV opening; the pump only maintains the gradients at rest.",
+      "page": 9,
+      "weight": 3
+    },
+    {
+      "stem": "In a voltage-clamp experiment with a step to 0 mV:",
+      "options": [
+        "With TTX, the late outward current remains",
+        "With TEA, the late outward current is absent",
+        "By convention, the inward Na⁺ current is drawn upwards",
+        "With TEA, the early transient inward current disappears"
+      ],
+      "answer": "AB",
+      "explanation": "TTX blocks NaV (early inward INa disappears), TEA blocks KV (late outward IK). Convention: inward current downwards (negative), outward upwards.",
+      "page": 10,
+      "weight": 2
+    },
+    {
+      "stem": "About the voltage-gated Na⁺ channel (NaV):",
+      "options": [
+        "Its voltage sensor is the S4 segment of each domain",
+        "At rest it is closed but available",
+        "It inactivates within about 1 ms",
+        "An inactivated channel can reopen at once if the stimulus is strong enough"
+      ],
+      "answer": "ABC",
+      "explanation": "An inactivated NaV cannot reopen until the membrane repolarizes: this is the basis of the absolute refractory period.",
+      "page": 10,
+      "weight": 3
+    },
+    {
+      "stem": "NaV versus KV channels:",
+      "options": [
+        "The voltage sensor is the S4 segment in both channels",
+        "Both have six transmembrane segments (S1–S6) per domain or subunit",
+        "KV is made of 4 separate α subunits around a central pore",
+        "NaV is one α subunit with 4 homologous domains (I–IV)"
+      ],
+      "answer": "ABCD",
+      "explanation": "KV (delayed rectifier) has delayed activation and little fast inactivation, giving a slower, sustained outward current.",
+      "page": 10,
+      "weight": 1
+    },
+    {
+      "stem": "A neuron receives a suprathreshold stimulus that is then made stronger:",
+      "options": [
+        "The action potential becomes larger",
+        "The action potential keeps the same amplitude",
+        "The firing frequency increases",
+        "A subthreshold stimulus would only give a local graded potential that fades"
+      ],
+      "answer": "BCD",
+      "explanation": "All-or-none: above threshold the AP is stereotyped; stimulus strength is coded by firing frequency, not AP size.",
+      "page": 11,
+      "weight": 3
+    },
+    {
+      "stem": "About the refractory periods:",
+      "options": [
+        "The relative refractory period limits the maximum firing frequency",
+        "During the relative refractory period, a stronger-than-normal stimulus is needed",
+        "The relative refractory period is due to all NaV channels being open",
+        "During the absolute refractory period, no stimulus can trigger an AP, however strong"
+      ],
+      "answer": "BD",
+      "explanation": "Relative refractory period: some NaV still inactivated and K⁺ conductance still high (membrane hyperpolarized). Refractoriness keeps propagation one-way.",
+      "page": 11,
+      "weight": 1
+    },
+    {
+      "stem": "About tetrodotoxin and local anaesthetics:",
+      "options": [
+        "Both block voltage-gated Na⁺ channels",
+        "Tetrodotoxin poisoning causes paralysis",
+        "Tetraethylammonium (TEA) blocks Na⁺ channels",
+        "Lidocaine blocks voltage-gated K⁺ channels"
+      ],
+      "answer": "AB",
+      "explanation": "Lidocaine and TTX block NaV and stop conduction; TEA blocks K⁺ channels.",
+      "page": 11,
+      "weight": 2
+    },
+    {
+      "stem": "An axon is stimulated and the AP is recorded 20 mm and 50 mm from the stimulus, with latencies of 1.0 ms and 2.5 ms. The conduction velocity is:",
+      "options": [
+        "30 m/s",
+        "50 m/s",
+        "2 m/s",
+        "20 m/s"
+      ],
+      "answer": "D",
+      "explanation": "v = distance difference / latency difference = 30 mm / 1.5 ms = 20 mm/ms = 20 m/s.",
+      "page": 12,
+      "weight": 1
+    },
+    {
+      "stem": "About the conduction of the action potential:",
+      "options": [
+        "C fibres are fast myelinated motor fibres",
+        "Continuous conduction in unmyelinated axons costs more energy",
+        "In myelinated axons it is saltatory, at about 2–120 m/s",
+        "A stimulus applied in the middle of an axon sends APs in both directions"
+      ],
+      "answer": "BCD",
+      "explanation": "C fibres (slow pain, autonomic) are unmyelinated, ≈ 0.5–2 m/s. Normally the refractory segment behind the AP keeps it moving forward only.",
+      "page": 12,
+      "weight": 1
+    },
+    {
+      "stem": "Which change increases conduction velocity?",
+      "options": [
+        "A larger axon diameter",
+        "A smaller axon diameter",
+        "Loss of myelin",
+        "A lower temperature"
+      ],
+      "answer": "A",
+      "explanation": "A larger diameter lowers internal resistance; myelin and higher temperature also speed conduction.",
+      "page": 13,
+      "weight": 1
+    },
+    {
+      "stem": "Graded potentials compared with action potentials:",
+      "options": [
+        "Action potentials depend mainly on ligand-gated channels",
+        "Graded potentials can depolarize or hyperpolarize",
+        "Action potentials summate",
+        "Graded potentials have no threshold and no refractory period"
+      ],
+      "answer": "BD",
+      "explanation": "Only graded potentials summate (temporal, spatial); APs are always depolarizing and use voltage-gated Na⁺ and K⁺ channels.",
+      "page": 13,
+      "weight": 3
+    },
+    {
+      "stem": "Two EPSPs arrive at the same synapse close together in time, and the result reaches threshold at the initial segment:",
+      "options": [
+        "This is spatial summation",
+        "Summation takes place at the trigger zone (initial segment)",
+        "IPSPs arriving at the same time would subtract",
+        "This is temporal summation"
+      ],
+      "answer": "BCD",
+      "explanation": "Temporal summation = successive inputs at the same synapse; spatial = different synapses at the same time. EPSPs add and IPSPs subtract at the initial segment.",
+      "page": 13,
+      "weight": 3
+    }
+  ]
+}

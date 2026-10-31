@@ -765,3 +765,11 @@ kbd {
   kbd.hint { display: inline-block; margin-left: 4px; }
   p.hint.key-help { display: block; text-align: center; margin-top: 12px; }
 }
+
+/* Lessons | Exercises switch on the module page. */
+.module-tabs { margin: 28px 0 12px; }
+.module-tabs .chip { display: inline-flex; align-items: center; gap: 6px; }
+.lesson-exercises { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 4px 0 12px; }
+.lesson-exercises .chip { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; padding: 6px 12px; }
+.ex-tag { display: inline-flex; align-items: center; gap: 4px; }
+.ex-tag.meta { margin-left: 8px; }

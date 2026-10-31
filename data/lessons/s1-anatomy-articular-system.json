@@ -4,10 +4,7 @@
   "title": "Articular system",
   "pdf": "s1/anatomy/articular-system.pdf",
   "exam_questions": [
-    "EMD1 2023-2024 Q18",
     "EMD1 2023-2024 Q19",
-    "EMD1 2023-2024 Q20",
-    "EMD1 2024-2025 Q20",
     "EMD1 2024-2025 Q21",
     "EMD1 2024-2025 Q22",
     "EMD1 2025-2026 Q37",
@@ -15,277 +12,256 @@
   ],
   "questions": [
     {
-      "stem": "About the classification of joints:",
+      "stem": "A joint (articulation) is the junction between two or more skeletal components:",
       "options": [
-        "Synarthroses are fibrous and immobile joints",
-        "Amphiarthroses are fibrous and immobile joints",
-        "Diarthroses are synovial and mobile joints",
-        "Amphiarthroses are cartilaginous and semi-mobile joints",
-        "The articular system is studied by myology"
-      ],
-      "answer": "ACD",
-      "explanation": "By structure/mobility: synarthroses = fibrous/immobile, amphiarthroses = cartilaginous/semi-mobile, diarthroses = synovial/mobile. The articular system is studied by arthrology.",
-      "page": 1
-    },
-    {
-      "stem": "Synarthroses:",
-      "options": [
-        "Include the gomphosis uniting a tooth to its socket",
-        "Have no articular cartilage",
-        "Include the synfibroses of the skull and face",
-        "Are semi-mobile joints",
-        "Include the pubic symphysis"
-      ],
-      "answer": "ABC",
-      "explanation": "Synarthroses are immobile fibrous joints without articular cartilage (synfibroses, syndesmoses, gomphosis). The pubic symphysis is an amphiarthrosis (semi-mobile).",
-      "page": 1
-    },
-    {
-      "stem": "The interosseous membrane between the two bones of the forearm is an example of:",
-      "options": [
-        "A synfibrosis",
-        "A syndesmosis",
-        "A symphysis",
-        "A synchondrosis",
-        "A gomphosis"
-      ],
-      "answer": "B",
-      "explanation": "Syndesmoses unite bony surfaces distant from each other by connective tissue: interosseous membrane of forearm/leg, ligamenta flava between vertebrae.",
-      "page": 1
-    },
-    {
-      "stem": "Synchondroses:",
-      "options": [
-        "Are permanent fibrous joints of the skull",
-        "Are located between the epiphysis and the diaphysis of long bones",
-        "Are synovial joints",
-        "Correspond to the growth plate responsible for longitudinal growth",
-        "Are temporary joints during growth"
+        "Its only role is to guide and enable movement",
+        "It can connect two bones, as in the sacroiliac joint",
+        "The scientific study of joints is called myology",
+        "It can connect two cartilages, as in the larynx",
+        "The sternochondral joint connects a bone and a cartilage"
       ],
       "answer": "BDE",
-      "explanation": "Synchondroses (amphiarthroses) are temporary: the growth (conjugation) plate between epiphysis and diaphysis. Trauma can cause epiphyseal detachment.",
-      "page": 1
+      "explanation": "A joint connects two bones, two cartilages or a bone and a cartilage; joints are studied by arthrology (myology = muscles). They both enable movement and provide stability/consolidation.",
+      "page": 1,
+      "weight": 0
     },
     {
-      "stem": "Symphyses:",
+      "stem": "Joints are classified into three anatomical types according to the nature of the tissue joining the skeletal components:",
       "options": [
-        "Are reinforced by peripheral ligaments",
-        "Are exemplified by the pubic symphysis",
-        "Have a synovial membrane",
-        "Unite bony surfaces by a mixed fibrous and fibrocartilaginous structure",
-        "Are semi-mobile joints"
+        "Diarthroses are united by fibrous connective tissue that may ossify",
+        "Amphiarthroses are also called immovable joints",
+        "Amphiarthroses are united by cartilaginous tissue",
+        "Diarthroses are also called freely movable or synovial joints",
+        "Synarthroses are united by fibrous connective tissue"
       ],
-      "answer": "ABDE",
-      "explanation": "Symphyses are amphiarthroses with reduced mobility; a synovial membrane characterizes diarthroses.",
-      "page": 1
+      "answer": "CDE",
+      "explanation": "Synarthroses = immovable/fibrous, amphiarthroses = slightly movable/cartilaginous, diarthroses = freely movable/synovial. Secondary ossification concerns the fibrous tissue of synarthroses.",
+      "page": 1,
+      "weight": 2
     },
     {
-      "stem": "Synovial joints (diarthroses) are characterized by:",
+      "stem": "Which of the following are synarthroses (fibrous joints)?",
       "options": [
-        "Being a minority of the limb joints",
-        "Epiphyseal articular surfaces covered with hyaline cartilage",
-        "An articular cavity",
-        "An articular gap of a few centimetres",
-        "A synovial membrane"
-      ],
-      "answer": "BCE",
-      "explanation": "The articular gap is only a few millimetres, and synovial joints make up the majority of limb joints.",
-      "page": 1
-    },
-    {
-      "stem": "Articular (hyaline) cartilage of synovial joints:",
-      "options": [
-        "Has a thickness inversely proportional to the pressure it supports",
-        "Has the same thickness in all joints",
-        "Its degeneration is responsible for arthrosis (osteoarthritis)",
-        "Is richly vascularized",
-        "Is smooth and bluish-white"
-      ],
-      "answer": "CE",
-      "explanation": "Thickness varies with the pressure supported, so it is not constant between joints. Also false: \"Has a thickness inversely proportional to the pressure it supports\"; \"Is richly vascularized\".",
-      "page": 2
-    },
-    {
-      "stem": "About the articular capsule:",
-      "options": [
-        "The synovial membrane is poorly vascularized and not innervated",
-        "It is a fibrous sleeve inserting around the articular surfaces",
-        "Its external part is the fibrous membrane",
-        "The synovial membrane lines the external face of the capsule",
-        "Its internal part is the synovial membrane"
-      ],
-      "answer": "BCE",
-      "explanation": "The synovial membrane lines the inner face of the capsule and is richly vascularized and innervated.",
-      "page": 2
-    },
-    {
-      "stem": "Synovial fluid (synovia):",
-      "options": [
-        "Facilitates the gliding of the articular surfaces",
-        "Is secreted by the fibrous membrane",
-        "Is secreted by the synovial membrane",
-        "Plays no role in the nutrition of the articular surfaces",
-        "Is opaque and watery"
-      ],
-      "answer": "AC",
-      "explanation": "Synovia is produced by the synovial membrane, not the fibrous membrane. Also false: \"Is opaque and watery\"; \"Plays no role in the nutrition of the articular surfaces\".",
-      "page": 2
-    },
-    {
-      "stem": "After a knee injury, a patient has blood in the joint cavity. This is called:",
-      "options": [
-        "Hydarthrosis",
-        "Luxation",
-        "Hemarthrosis",
-        "Bursitis",
-        "Arthrosis"
-      ],
-      "answer": "C",
-      "explanation": "Hemarthrosis = blood effusion in a joint after trauma. Hydarthrosis = effusion/hypersecretion of synovial fluid.",
-      "page": null
-    },
-    {
-      "stem": "About the stabilizers of a synovial joint:",
-      "options": [
-        "Tendons of periarticular muscles are the means of active stabilization",
-        "Ligaments are fibrous bands uniting the constituent parts of the joint",
-        "Ligaments are the means of passive stabilization",
-        "Tendons of periarticular muscles are passive stabilizers",
-        "Ligaments are the means of active stabilization"
-      ],
-      "answer": "ABC",
-      "explanation": "Ligaments = passive stabilization; periarticular muscle tendons = active stabilization.",
-      "page": 2
-    },
-    {
-      "stem": "The means of adaptation of synovial joints:",
-      "options": [
-        "Are of three types: labrum, meniscus and disc",
-        "Are interposed between the capsule and the synovial membrane",
-        "Are fibrocartilaginous structures",
-        "Are richly vascularized, so their tears heal well",
-        "Exist in all joints, whatever their congruence"
-      ],
-      "answer": "AC",
-      "explanation": "Fibrocartilages are devoid of vessels and nerves; this lack of vascularization prevents healing of tears. Also false: \"Exist in all joints, whatever their congruence\"; \"Are interposed between the capsule and the synovial membrane\".",
-      "page": 2
-    },
-    {
-      "stem": "Match the means of adaptation with its example:",
-      "options": [
-        "Meniscus: the coxofemoral joint",
-        "Labrum: the scapulohumeral and coxofemoral joints",
-        "Labrum: the intervertebral disc",
-        "Meniscus: the knee and the acromioclavicular joint",
-        "Disc: the intervertebral disc and the sternoclavicular joint"
-      ],
-      "answer": "BDE",
-      "explanation": "Menisci: knee (medial and lateral), acromioclavicular. Labrum: shoulder and hip. Disc: intervertebral, sternoclavicular.",
-      "page": 2
-    },
-    {
-      "stem": "The labrum (articular lip):",
-      "options": [
-        "Is a fibrocartilaginous ring",
-        "Increases the depth and surface area of the articular zone",
-        "Its main role is shock absorption of pressure and traction",
-        "Inserts on the periphery of the bony articular zone",
-        "Is found in the knee"
-      ],
-      "answer": "ABD",
-      "explanation": "Shock absorption and distribution of pressure/traction is the role of discs; the knee has menisci.",
-      "page": 2
-    },
-    {
-      "stem": "A footballer has a torn meniscal fragment causing symptoms. Why must it usually be removed?",
-      "options": [
-        "Because the meniscus heals spontaneously in a few days",
-        "Because fibrocartilage is devoid of vessels, so the tear cannot heal",
-        "Because the meniscus is richly innervated and always painful",
-        "Because the meniscus is made of hyaline cartilage",
-        "Because the meniscus is an active stabilizer"
-      ],
-      "answer": "B",
-      "explanation": "The absence of vascularization prevents healing of a fibrocartilaginous tear, so a symptomatic torn fragment must be removed (e.g. by arthroscopy).",
-      "page": 3
-    },
-    {
-      "stem": "Match the type of synovial joint with its example:",
-      "options": [
-        "Spheroid (enarthrosis): scapulohumeral and coxofemoral joints",
-        "Trochoid (pivot): humero-ulnar joint",
-        "Sellar (saddle): carpometacarpal joint of the thumb",
-        "Plane (arthrodia): proximal radio-ulnar joint",
-        "Ellipsoid (condylar): radiocarpal joint"
-      ],
-      "answer": "ACE",
-      "explanation": "The humero-ulnar joint is trochlear (ginglymus); radio-ulnar joints are trochoid; the acromioclavicular joint is plane.",
-      "page": 3
-    },
-    {
-      "stem": "How many axes of mobility does each joint type have?",
-      "options": [
-        "Spheroid: three axes",
-        "Sellar: two axes",
-        "Ellipsoid: three axes",
-        "Trochlear: two axes",
-        "Ellipsoid: one axis"
-      ],
-      "answer": "AB",
-      "explanation": "Spheroid 3 axes (great mobility), ellipsoid and sellar 2 axes, trochlear (hinge) 1 axis. Also false: \"Ellipsoid: one axis\"; \"Trochlear: two axes\".",
-      "page": 3
-    },
-    {
-      "stem": "A sellar (saddle) joint:",
-      "options": [
-        "Unites two inverted spherical surfaces",
-        "Unites surfaces convex in one direction and concave in the other",
-        "Is also called a joint by reciprocal reception",
-        "Has two axes of mobility",
-        "Unites two flat surfaces"
-      ],
-      "answer": "BCD",
-      "explanation": "Flat surfaces = plane joint (arthrodia); inverted spheres = spheroid joint.",
-      "page": 3
-    },
-    {
-      "stem": "About articular mechanics:",
-      "options": [
-        "Extension \"opens\" the joint",
-        "Flexion \"closes\" the joint around a transverse axis",
-        "Lateral rotation moves the anterior face of the segment outward",
-        "Medial rotation moves the anterior face of the segment outward",
-        "Abduction is performed around a vertical axis"
-      ],
-      "answer": "ABC",
-      "explanation": "Abduction/adduction occur around a sagittal axis; medial rotation moves the anterior face inward.",
-      "page": 4
-    },
-    {
-      "stem": "About exploration and pathology of joints:",
-      "options": [
-        "Clinical examination is unilateral and only passive",
-        "A luxation (dislocation) is a loss of contact between two articular surfaces",
-        "Ultrasound and especially MRI show the articular cartilage and fibrocartilages",
-        "Arthrosis is an infectious arthritis",
-        "A sprain is a loss of contact between two articular surfaces"
+        "The glenohumeral joint",
+        "The interosseous membranes",
+        "Cranial and facial sutures",
+        "The pubic symphysis",
+        "The intervertebral joints"
       ],
       "answer": "BC",
-      "explanation": "Arthrosis is degenerative; arthritis is infectious or inflammatory. Also false: \"Clinical examination is unilateral and only passive\"; \"A sprain is a loss of contact between two articular surfaces\".",
-      "page": 4
+      "explanation": "Synarthroses: distal tibiofibular joint, interosseous membranes, cranial and facial sutures, fusion of ilium/ischium/pubis. Pubic symphysis and intervertebral joints are amphiarthroses; the glenohumeral joint is a diarthrosis.",
+      "page": 2,
+      "weight": 2
     },
     {
-      "stem": "Arthroscopy:",
+      "stem": "Amphiarthroses:",
       "options": [
-        "Is a direct endoscopy of the joint cavities",
-        "Is an injection of contrast medium into the joint",
-        "Is the simplest and most practised joint examination",
-        "Can be used to remove torn meniscal fragments",
-        "Visualizes intra-articular structures"
+        "Join the bony elements by cartilaginous tissue forming a fibrocartilaginous block",
+        "Are typically located along the midline",
+        "Are slightly movable joints",
+        "Have a joint cavity lined by a synovial membrane",
+        "Include the distal tibiofibular joint"
+      ],
+      "answer": "ABC",
+      "explanation": "Amphiarthroses are cartilaginous (fibrocartilaginous block), slightly movable, typically midline (intervertebral joints, pubic symphysis). The distal tibiofibular joint is a synarthrosis; a synovial membrane belongs to diarthroses.",
+      "page": 2,
+      "weight": 2
+    },
+    {
+      "stem": "About the articular surfaces of a diarthrosis (synovial joint):",
+      "options": [
+        "They can be located at the angles and surfaces of flat bones",
+        "They are covered with fibrocartilage",
+        "When they are incongruent, adapting fibrocartilaginous structures interpose to ensure a proper fit",
+        "They have defined geometric shapes",
+        "They are located at the epiphyses of long bones"
+      ],
+      "answer": "ACDE",
+      "explanation": "Articular surfaces sit at the epiphyses of long bones or the angles/surfaces of flat bones, have defined shapes and are covered with smooth hyaline cartilage (not fibrocartilage).",
+      "page": 2,
+      "weight": 2
+    },
+    {
+      "stem": "About the retaining structures (means of union) of a synovial joint:",
+      "options": [
+        "Passive ligaments actively mobilize the joint",
+        "The synovial membrane is one of the three retaining structures",
+        "Active ligaments are the tendons of muscles adjacent to the joint",
+        "The articular capsule is a fibrous envelope enclosing the joint cavity",
+        "Passive ligaments are fibrous bands that reinforce the capsule"
+      ],
+      "answer": "CDE",
+      "explanation": "The three retaining structures are the capsule, passive ligaments (reinforce the capsule) and active ligaments (adjacent tendons that stabilize and actively mobilize). The synovial membrane is a separate, fourth structure.",
+      "page": 2,
+      "weight": 2
+    },
+    {
+      "stem": "The synovial membrane of a diarthrodial joint:",
+      "options": [
+        "Attaches at the margins of the articular cartilages",
+        "Covers the surface of the articular cartilage",
+        "Is the fibrous envelope enclosing the joint cavity",
+        "Lines the internal surface of the articular capsule",
+        "Is the specialized gliding membrane of the joint"
       ],
       "answer": "ADE",
-      "explanation": "Contrast injection is arthrography; the simplest and most practised examination is standard radiography.",
-      "page": 4
+      "explanation": "The synovial membrane lines the inner surface of the capsule and stops at the margins of the articular cartilages — it does not cover them. The fibrous envelope is the capsule.",
+      "page": 2,
+      "weight": 2
+    },
+    {
+      "stem": "Synovial fluid (synovia) has a triple function. Which of the following are its functions?",
+      "options": [
+        "Nutritional support for the articular cartilage",
+        "Fibrous reinforcement of the articular capsule",
+        "Resorption of metabolic waste products",
+        "Vascularization of the articular cartilage",
+        "Lubrication to reduce friction during movement"
+      ],
+      "answer": "ACE",
+      "explanation": "Synovia resorbs waste, nourishes the cartilage and lubricates. The cartilage is avascular — that is why it depends on synovia for nutrition; passive ligaments reinforce the capsule.",
+      "page": 2,
+      "weight": 2
+    },
+    {
+      "stem": "Diarthroses are classified into six types according to the shape of their articular surfaces. Which type — mobility pairs are correct?",
+      "options": [
+        "Ellipsoid joint — uniaxial",
+        "Spheroid joint — multiaxial (three axes)",
+        "Saddle joint — biaxial",
+        "Cylindrical joint — uniaxial (rotation)",
+        "Ginglymus joint — biaxial"
+      ],
+      "answer": "BCD",
+      "explanation": "Spheroid = 3 axes; ellipsoid and saddle = 2 axes; ginglymus and cylindrical = 1 axis (cylindrical = rotation); plane = limited gliding in multiple directions.",
+      "page": 3,
+      "weight": 1
+    },
+    {
+      "stem": "Which joint — type pairs are correct?",
+      "options": [
+        "Proximal radioulnar joint — cylindrical",
+        "Trapeziometacarpal joint — saddle",
+        "Acromioclavicular joint — ellipsoid",
+        "Radiocarpal joint — ginglymus",
+        "Glenohumeral joint — spheroid"
+      ],
+      "answer": "ABE",
+      "explanation": "Glenohumeral = spheroid, radiocarpal = ellipsoid, humeroulnar = ginglymus, proximal radioulnar = cylindrical, acromioclavicular = plane, thumb carpometacarpal (trapeziometacarpal) = saddle.",
+      "page": 3,
+      "weight": 1
+    },
+    {
+      "stem": "A joint has elliptical articular surfaces, one concave and one convex, and moves around two axes:",
+      "options": [
+        "The radiocarpal (wrist) joint is an example",
+        "It is a uniaxial joint",
+        "The humeroulnar joint is an example",
+        "It is an ellipsoid joint",
+        "It is a spheroid joint"
+      ],
+      "answer": "AD",
+      "explanation": "Elliptical concave/convex surfaces with two axes define the ellipsoid joint (radiocarpal). The humeroulnar joint is a pulley-shaped ginglymus (one axis); spheroid joints have three axes.",
+      "page": 3,
+      "weight": 1
+    },
+    {
+      "stem": "Plane joints:",
+      "options": [
+        "Have flat or nearly flat articular surfaces",
+        "Are uniaxial joints",
+        "Are exemplified by the acromioclavicular joint",
+        "Permit limited gliding movements in multiple directions",
+        "Are made of a central bony pivot surrounded by a ring"
+      ],
+      "answer": "ACD",
+      "explanation": "Plane joints are multiaxial with limited gliding (e.g. acromioclavicular). A central pivot in a ring is the cylindrical joint.",
+      "page": 3,
+      "weight": 1
+    },
+    {
+      "stem": "Adapting structures:",
+      "options": [
+        "Are intra-articular fibrocartilaginous structures",
+        "Are interposed between non-congruent articular surfaces",
+        "Are made of hyaline cartilage",
+        "Are present in all synovial joints",
+        "Are of three types: meniscus, labrum and articular disc"
+      ],
+      "answer": "ABE",
+      "explanation": "Adapting structures are fibrocartilaginous, found only where articular surfaces are non-congruent, to ensure alignment and congruence; hyaline cartilage covers the articular surfaces.",
+      "page": 3,
+      "weight": 2
+    },
+    {
+      "stem": "About the types of adapting structures:",
+      "options": [
+        "A labrum is a mobile crescentic plate",
+        "An articular disc is a complete partition dividing the joint cavity",
+        "A meniscus is a mobile crescentic fibrocartilaginous plate, as in the knee",
+        "The glenoid labrum is an example of an articular disc",
+        "A labrum is a fixed ring attached to the margin of a socket that deepens the joint cavity"
+      ],
+      "answer": "BCE",
+      "explanation": "Meniscus = mobile crescent (knee); labrum = fixed ring deepening a socket (glenoid labrum); disc = complete partition (sternoclavicular joint).",
+      "page": 3,
+      "weight": 2
+    },
+    {
+      "stem": "On an MRI of the sternoclavicular joint, a complete fibrocartilaginous partition divides the joint cavity into two. This structure is:",
+      "options": [
+        "The fibrocartilaginous block of an amphiarthrosis",
+        "The articular capsule",
+        "An articular disc",
+        "A meniscus",
+        "A labrum"
+      ],
+      "answer": "C",
+      "explanation": "A complete intra-articular partition dividing the cavity is an articular disc — the lesson's example is the sternoclavicular joint. A meniscus is a crescent and a labrum a ring at a socket margin.",
+      "page": 4,
+      "weight": 2
+    },
+    {
+      "stem": "About movements of synovial joints:",
+      "options": [
+        "Flexion brings a body part forward or decreases the angle between segments",
+        "Abduction moves a body part away from the median plane",
+        "Extension decreases the angle between segments",
+        "Adduction moves a body part away from the median plane",
+        "Joint mobility ranges from 0° to 180°"
+      ],
+      "answer": "ABE",
+      "explanation": "Flexion decreases the angle (forward), extension increases it (backward); abduction moves away from and adduction toward the median plane. Each movement has an axis and a plane, range 0°–180°.",
+      "page": 4,
+      "weight": 1
+    },
+    {
+      "stem": "Which related movements are correctly matched with their fundamental movement?",
+      "options": [
+        "Radial and ulnar deviation of the radiocarpal joint — rotation",
+        "Radial and ulnar deviation of the radiocarpal joint — abduction–adduction",
+        "Dorsiflexion and plantarflexion of the talocrural joint — flexion–extension",
+        "Pronation and supination of the forearm — flexion–extension",
+        "Pronation and supination of the forearm — rotation"
+      ],
+      "answer": "BCE",
+      "explanation": "Dorsi/plantarflexion (talocrural) are flexion–extension, radial/ulnar deviation (radiocarpal) are abduction–adduction, pronation/supination (forearm) are rotations.",
+      "page": 4,
+      "weight": 1
+    },
+    {
+      "stem": "About rotation and circumduction:",
+      "options": [
+        "Circumduction combines adduction, abduction, flexion and extension in sequence",
+        "Circumduction is a simple rotation around a single axis",
+        "External rotation directs a body part outward (medial to lateral)",
+        "Circumduction is a composite, circular movement",
+        "Internal rotation directs a body part inward (lateral to medial)"
+      ],
+      "answer": "ACDE",
+      "explanation": "Circumduction is not a rotation: it is the sequential combination of four primary movements (adduction, abduction, flexion, extension).",
+      "page": 4,
+      "weight": 1
     }
   ]
 }
