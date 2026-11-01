@@ -21,6 +21,7 @@
   --new: #2563eb;
   --shadow-color: rgb(15 23 42 / 0.07);
   --l1: #c6dcf5; --l2: #7fb0e8; --l3: #3b7fd1; --l4: #1e5aa8;
+  --m-new: #e1e8f1; --m-learning: #9cc3ee; --m-young: #4a8ad6; --m-mature: #174a8c; /* card maturity, light → dark */
   --radius: 14px;
   --shadow: 0 1px 2px var(--shadow-color), 0 4px 14px var(--shadow-color);
   --tabbar-h: 60px;
@@ -49,6 +50,7 @@
     --new: #60a5fa;
     --shadow-color: rgb(0 0 0 / 0.35);
     --l1: #12345a; --l2: #1b5591; --l3: #2f7ad0; --l4: #6aa8ff;
+  --m-new: #26354b; --m-learning: #3a70b4; --m-young: #4f90e3; --m-mature: #a6cdff;
     color-scheme: dark;
   }
 }
@@ -73,6 +75,7 @@
   --new: #60a5fa;
   --shadow-color: rgb(0 0 0 / 0.35);
   --l1: #12345a; --l2: #1b5591; --l3: #2f7ad0; --l4: #6aa8ff;
+  --m-new: #26354b; --m-learning: #3a70b4; --m-young: #4f90e3; --m-mature: #a6cdff;
   color-scheme: dark;
 }
 
@@ -542,8 +545,8 @@ div.option { cursor: default; animation: none; }
 .empty-state b { color: var(--text); }
 .empty-line { display: flex; align-items: center; gap: 8px; }
 .insight-cards { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
-.insight-card { width: 100%; margin: 0; text-align: left; color: var(--text); cursor: pointer; display: flex; flex-direction: column; gap: 8px; font: inherit; }
-.insight-card:hover { border-color: var(--accent); }
+.insight-card { width: 100%; margin: 0; text-align: left; color: var(--text); display: flex; flex-direction: column; gap: 8px; font: inherit; }
+.insight-cards > li.wide { grid-column: 1 / -1; }
 .insight-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
 .acc-big { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .acc-big.none { color: var(--muted); font-weight: 500; }
@@ -568,6 +571,60 @@ div.option { cursor: default; animation: none; }
 .leeches { list-style: none; padding: 0; display: grid; gap: 8px; }
 .leeches li { display: flex; flex-direction: column; gap: 4px; padding: 10px 12px; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--error); border-radius: 10px; }
 .leech-stem { line-height: 1.4; }
+
+.stat-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-bottom: 12px; }
+.stat-tile { margin: 0; display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; }
+.stat-tile .acc-big small { font-size: 0.9rem; font-weight: 500; }
+.trend { font-size: 0.78rem; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.trend.up { color: var(--ok); }
+.trend.down { color: var(--error); }
+.trend.flat { color: var(--muted); }
+.insight-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.insight-actions .spacer { flex: 1; }
+.insight-actions .pill { padding: 5px 12px; }
+
+.trend-card .meta { margin: -6px 0 8px; }
+.chart-wrap { position: relative; }
+.chart-wrap svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart-wrap .grid { stroke: var(--border); stroke-width: 1; }
+.chart-wrap .ref { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 4 4; }
+.chart-wrap .axis { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.chart-wrap .value { fill: var(--text); font-size: 12px; font-weight: 700; }
+.chart-wrap .hit { fill: transparent; cursor: pointer; }
+.chart-wrap .wbar { fill: var(--l3); pointer-events: none; }
+.chart-wrap .wbar.on { fill: var(--l4); }
+.chart-wrap .empty-dot { fill: var(--border-strong); pointer-events: none; }
+.chart-tip {
+  position: absolute; top: -4px; transform: translate(-50%, -100%); pointer-events: none; white-space: nowrap;
+  display: flex; flex-direction: column; gap: 2px; padding: 6px 10px; font-size: 0.8rem;
+  background: var(--surface); border: 1px solid var(--border-strong); border-radius: 8px; box-shadow: var(--shadow);
+}
+
+.habit + .habit { border-top: 1px solid var(--border); margin-top: 12px; padding-top: 12px; }
+.habit-label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+.habit-row { display: grid; grid-template-columns: 90px 1fr 44px 48px; align-items: center; gap: 10px; padding: 3px 0; font-size: 0.9rem; }
+.habit-row .acc { text-align: right; font-variant-numeric: tabular-nums; }
+.habit-n { text-align: right; font-variant-numeric: tabular-nums; }
+.habit-n::after { content: " rev."; }
+.habit p { margin: 6px 0 0; }
+.habit-time { display: flex; gap: 24px; font-size: 0.95rem; }
+.mini-bar { display: inline-block; vertical-align: middle; width: 48px; height: 6px; margin-right: 8px; border-radius: 3px; background: var(--surface-3); overflow: hidden; }
+.mini-bar.wide { width: 100%; margin: 0; }
+.mini-bar > span { display: block; height: 100%; border-radius: 3px; }
+.mini-bar > .ok { background: var(--ok); }
+.mini-bar > .mid { background: var(--coral); }
+.mini-bar > .bad { background: var(--error); }
+
+.stack.maturity { height: 8px; border-radius: 4px; background: none; }
+.m-new { background: var(--m-new); }
+.m-learning { background: var(--m-learning); }
+.m-young { background: var(--m-young); }
+.m-mature { background: var(--m-mature); }
+.maturity-legend { margin: 0; justify-content: flex-end; font-size: 0.78rem; color: var(--muted); }
+.lesson-table { margin-top: 4px; box-shadow: none; }
+.lesson-table tr.clickable { cursor: pointer; }
+.lesson-table tr.clickable:hover td { background: var(--surface-2); }
+.lesson-table td:first-child { max-width: 0; width: 55%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* ---- Settings ------------------------------------------------------------------------------- */
 .settings-group { padding: 6px 16px 10px; }
@@ -752,6 +809,9 @@ html[data-nav="tab"]::view-transition-new(root) { animation-name: vt-fade-in; an
   .streak-card { flex-direction: column; align-items: stretch; }
   .week-strip { justify-content: space-between; }
   .insight-cards { grid-template-columns: 1fr; }
+  .stat-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lesson-table .mini-bar { display: none; }
+  .lesson-table th:nth-child(4), .lesson-table td:nth-child(4) { display: none; }
   .setting input[type="date"] { min-width: 140px; }
 }
 

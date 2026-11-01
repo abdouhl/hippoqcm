@@ -7,7 +7,7 @@ import { Database } from "bun:sqlite";
 import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { fileUrls, imageSize, readSettings, stampBox, toPdf } from "../report";
 import {
-  calibrationPage, coverPage, numberedFigures, reportPage as renderReport, stampPage,
+  calibrationPage, coverPage, numberedFigures, numberedTables, reportPage as renderReport, stampPage,
   type Report, type Settings, type StampItem,
 } from "../report/render";
 import index from "./index.html";
@@ -420,8 +420,13 @@ async function patchLesson(id: number, patch: { title?: string; position?: numbe
     // Generated questions point at their lesson by title.
     statements.push(`UPDATE questions SET source = ${q(`Lesson: ${patch.title}`)} WHERE module_id = ${l.module_id} AND origin = 'generated' AND source = ${q(`Lesson: ${l.title}`)};`);
   }
-  if (patch.position !== undefined) sets.push(`position = ${n(patch.position)}`);
   if (sets.length) statements.unshift(`UPDATE lessons SET ${sets.join(", ")} WHERE id = ${id};`);
+  if (patch.position !== undefined) {
+    // Move within the module and renumber, so positions stay 1..n with no ties.
+    const order = moduleLessonIds(l.module_id).filter((x) => x !== id);
+    order.splice(Math.max(0, Math.min(order.length, Math.trunc(patch.position) - 1)), 0, id);
+    statements.push(...renumber(l.module_id, order));
+  }
   await record(`L${id} [${l.title}]: ${Object.keys(patch).join(", ")}`, statements);
 
   if (sets.some((s) => s.startsWith("title"))) {
@@ -432,6 +437,25 @@ async function patchLesson(id: number, patch: { title?: string; position?: numbe
     await Bun.write(file.path, next);
     return [`Updated ${file.path}`];
   }
+  return [];
+}
+
+function moduleLessonIds(moduleId: number) {
+  return (db.query("SELECT id FROM lessons WHERE module_id = ? ORDER BY position, id").all(moduleId) as { id: number }[]).map((r) => r.id);
+}
+
+// UPDATEs for lessons whose position changes when the module is ordered as `order`.
+function renumber(moduleId: number, order: number[]) {
+  const current = db.query("SELECT id, position FROM lessons WHERE module_id = ?").all(moduleId) as { id: number; position: number }[];
+  const pos = new Map(current.map((r) => [r.id, r.position]));
+  return order.flatMap((lid, i) => (pos.get(lid) === i + 1 ? [] : [`UPDATE lessons SET position = ${i + 1} WHERE id = ${lid};`]));
+}
+
+async function reorderLessons(moduleId: number, ids: number[]) {
+  const own = moduleLessonIds(moduleId);
+  if (ids.length !== own.length || own.some((id) => !ids.includes(id))) throw new Error("Order must list every lesson of the module exactly once");
+  const m = db.query("SELECT semester, name FROM modules WHERE id = ?").get(moduleId) as { semester: number; name: string };
+  await record(`S${m.semester} ${m.name}: reorder lessons`, renumber(moduleId, ids));
   return [];
 }
 
@@ -533,8 +557,10 @@ function listReports() {
 async function getReport(slug: string) {
   const r = (await Bun.file(reportPath(slug)).json()) as Report;
   let figures: (Omit<ReturnType<typeof numberedFigures>[number], "row"> & { aspect: number | null; row: number[]; height_cm: number })[] = [];
+  let tables: { n: number; caption: string; height_cm: number }[] = [];
   let error: string | null = null;
   try {
+    tables = numberedTables(r).map((t) => ({ n: t.n, caption: t.caption.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&"), height_cm: stampBox(slug, r, { kind: "table", n: t.n, y: 0 }).y1 }));
     const all = numberedFigures(r);
     figures = all.map((f) => {
       const size = existsSync(`${REPORTS}/${slug}/${f.file}`) ? imageSize(`${REPORTS}/${slug}/${f.file}`) : null;
@@ -542,7 +568,7 @@ async function getReport(slug: string) {
     });
   } catch (e) { error = (e as Error).message; }
   const log = existsSync(`${REPORTS}/${slug}/generate.log`) ? readFileSync(`${REPORTS}/${slug}/generate.log`, "utf8").slice(-4000) : "";
-  return { slug, report: r, figures, chapters: r.chapters.map((c) => c.title), error, log, generating: generating.has(slug) };
+  return { slug, report: r, figures, tables, chapters: r.chapters.map((c) => c.title), error, log, generating: generating.has(slug) };
 }
 
 // A new report starts as a request: title, notes and uploaded sources, for the /report skill to write.
@@ -696,6 +722,9 @@ const server = Bun.serve({
     },
     "/api/lessons/:id": {
       PATCH: handle(async (req) => ({ notes: await patchLesson(Number(req.params.id), await req.json()) })),
+    },
+    "/api/modules/:id/lesson-order": {
+      PUT: handle(async (req) => ({ notes: await reorderLessons(Number(req.params.id), ((await req.json()) as { ids: number[] }).ids.map(Number)) })),
     },
     "/api/drive": {
       GET: handle(() => driveView(readDrive())),

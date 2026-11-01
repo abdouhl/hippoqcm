@@ -38,6 +38,7 @@ type ReportDetail = {
   slug: string;
   report: { title: string; subtitle?: string; module: string; academic_year: string; request?: { notes?: string; sources?: string[]; status?: string } };
   figures: ReportFigure[];
+  tables: { n: number; caption: string; height_cm: number }[]; // height in the text column, with caption
   chapters: string[];
   error: string | null;
   log: string;
@@ -46,12 +47,19 @@ type ReportDetail = {
 type ReportSettings = { name: string; group: string; offset_x_cm: number; offset_y_cm: number };
 type SheetItem =
   | { kind: "figure"; fig: number; x?: number; y: number; w?: number; caption?: boolean }
+  | { kind: "table"; n: number; x?: number; y: number; w?: number; caption?: boolean }
   | { kind: "chapter"; n: number; x?: number; y: number; line?: number; title?: string }
   | { kind: "heading"; text: string; x?: number; y: number }
   | { kind: "page"; n: number; total?: number; x?: number; y?: number }
   | { kind: "text"; text: string; x: number; y: number; size?: number };
 
 const LABELS = ["A", "B", "C", "D", "E"];
+
+const swap = (ids: number[], a: number, b: number) => {
+  const next = [...ids];
+  [next[a], next[b]] = [next[b], next[a]];
+  return next;
+};
 
 async function api<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(path, { ...init, headers: { "Content-Type": "application/json" } });
@@ -128,6 +136,21 @@ function App() {
     await Promise.all([loadMeta(), loadBatch(), loadQuestions()]);
   };
 
+  const [dragging, setDragging] = useState<number | null>(null);
+  const [dropAt, setDropAt] = useState<{ id: number; after: boolean } | null>(null);
+  const reorder = async (moduleId: number, ids: number[]) => {
+    // Show the new order right away; the reload below confirms it.
+    const rank = new Map(ids.map((id, i) => [id, i + 1]));
+    setLessons((ls) => [...ls].map((l) => (rank.has(l.id) ? { ...l, position: rank.get(l.id)! } : l)).sort((a, b) => a.module_id - b.module_id || a.position - b.position));
+    try {
+      const { notes } = await api<{ notes: string[] }>(`/api/modules/${moduleId}/lesson-order`, { method: "PUT", body: JSON.stringify({ ids }) });
+      await afterWrite(notes);
+    } catch (e) {
+      say((e as Error).message);
+      await loadMeta();
+    }
+  };
+
   const prodFlagged = new Set((prodFlags ?? []).map((f) => f.id));
   const mismatched = (prodFlags ?? []).filter((f) => !f.matches_local);
   const current = view.kind === "module" ? modules.find((m) => m.id === view.module) : undefined;
@@ -169,11 +192,38 @@ function App() {
                   </button>
                   {active && (
                     <>
-                      {lessons.filter((l) => l.module_id === m.id).map((l) => (
-                        <button key={l.id} className={`nav lesson ${view.lesson === l.id ? "active" : ""}`} onClick={() => setView({ kind: "module", module: m.id, lesson: l.id })}>
-                          <span>{l.title}</span>
-                          <span className="count">{l.questions}</span>
-                        </button>
+                      {lessons.filter((l) => l.module_id === m.id).map((l, i, list) => (
+                        <div
+                          key={l.id}
+                          className={`lesson-row ${dragging === l.id ? "dragging" : ""} ${dropAt?.id === l.id ? `drop-${dropAt.after ? "after" : "before"}` : ""}`}
+                          draggable
+                          onDragStart={(e) => { setDragging(l.id); e.dataTransfer.effectAllowed = "move"; }}
+                          onDragEnd={() => { setDragging(null); setDropAt(null); }}
+                          onDragOver={(e) => {
+                            if (dragging === null) return;
+                            e.preventDefault();
+                            const r = e.currentTarget.getBoundingClientRect();
+                            setDropAt({ id: l.id, after: e.clientY > r.top + r.height / 2 });
+                          }}
+                          onDrop={(e) => {
+                            e.preventDefault();
+                            if (dragging === null || !dropAt) return;
+                            const ids = list.map((x) => x.id).filter((x) => x !== dragging);
+                            ids.splice(ids.indexOf(dropAt.id) + (dropAt.after ? 1 : 0), 0, dragging);
+                            setDragging(null);
+                            setDropAt(null);
+                            void reorder(m.id, ids);
+                          }}
+                        >
+                          <button className={`nav lesson ${view.lesson === l.id ? "active" : ""}`} onClick={() => setView({ kind: "module", module: m.id, lesson: l.id })}>
+                            <span><span className="muted">{i + 1}.</span> {l.title}</span>
+                            <span className="count">{l.questions}</span>
+                          </button>
+                          <span className="move">
+                            <button title="Move up" disabled={i === 0} onClick={() => void reorder(m.id, swap(list.map((x) => x.id), i, i - 1))}>↑</button>
+                            <button title="Move down" disabled={i === list.length - 1} onClick={() => void reorder(m.id, swap(list.map((x) => x.id), i, i + 1))}>↓</button>
+                          </span>
+                        </div>
                       ))}
                       <button className={`nav lesson ${view.unlinked ? "active" : ""}`} onClick={() => setView({ kind: "module", module: m.id, unlinked: true })}>
                         <span className="muted">Not in any lesson</span>
@@ -488,7 +538,7 @@ function NewReportForm({ onCreated, onError }: { onCreated: (slug: string) => vo
   );
 }
 
-// Places figures, chapter numbers, INTRODUCTION/CONCLUSION, page numbers and text on an A4 sheet the student already wrote on.
+// Places figures, tables, chapter numbers, INTRODUCTION/CONCLUSION, page numbers and text on an A4 sheet the student already wrote on.
 function SheetBuilder({ detail }: { detail: ReportDetail }) {
   const key = `sheet:${detail.slug}`;
   const [items, setItems] = useState<SheetItem[]>(() => {
@@ -535,7 +585,7 @@ function SheetBuilder({ detail }: { detail: ReportDetail }) {
         <p className="muted" style={{ fontSize: 12, margin: 0 }}>
           y = cm from the paper's top edge; for Introduction, Conclusion, chapters and page numbers it's the bottom of the letters, so
           put it on a ruled line (the lined paper has one every cm, from 1 to 29). A page number ends at its x. Leave x empty to place it exactly as in the typed report (figures sharing a row print
-          together); set x (and w) to put a figure anywhere. Put the written sheet back in the printer the way the calibration page
+          together); set x (and w) to put a figure or table anywhere. Put the written sheet back in the printer the way the calibration page
           says, then print at 100% / Actual size.
         </p>
         {items.map((it, i) => (
@@ -551,6 +601,20 @@ function SheetBuilder({ detail }: { detail: ReportDetail }) {
                   {it.x === undefined && (fig(it.fig)?.row.length ?? 1) > 1 ? `with Fig ${fig(it.fig)!.row.filter((n) => n !== it.fig).join(", ")} · ` : ""}
                   ends y≈{bottom(it)}
                 </span>
+              </>
+            )}
+            {it.kind === "table" && (
+              <>
+                <select value={it.n} onChange={(e) => set(i, { n: Number(e.target.value) })}>
+                  {(detail.tables ?? []).map((t) => <option key={t.n} value={t.n}>Table {t.n}: {t.caption.replace(/^Table \d+\.\s*/, "").slice(0, 50)}</option>)}
+                </select>
+                {it.x !== undefined && num(i, "w", it.w, "w", 0.1, "16.3")}
+                <label className="num"><input type="checkbox" checked={it.caption !== false} onChange={(e) => set(i, { caption: e.target.checked })} />caption</label>
+                {it.x === undefined && it.caption !== false && (
+                  <span className="muted" style={{ fontSize: 12, whiteSpace: "nowrap" }} title="Where it ends on the sheet: write again below this">
+                    ends y≈{Math.round((it.y + (detail.tables.find((t) => t.n === it.n)?.height_cm ?? 0)) * 10) / 10}
+                  </span>
+                )}
               </>
             )}
             {it.kind === "chapter" && (
@@ -611,6 +675,20 @@ function SheetBuilder({ detail }: { detail: ReportDetail }) {
             </button>
           ))}
         </div>
+
+        {(detail.tables ?? []).length > 0 && (
+          <>
+            <strong style={{ marginTop: 8 }}>Tables</strong>
+            <div className="gallery">
+              {detail.tables.map((t) => (
+                <button key={t.n} className="thumb" onClick={() => add({ kind: "table", n: t.n, y: 3 })} title="Add to the sheet">
+                  <span><b>{t.caption ? t.caption.split(".")[0] + "." : `Table ${t.n}.`}</b> {t.caption.replace(/^Table \d+\.\s*/, "")}</span>
+                  <span className="muted">↕ {t.height_cm} cm · + add</span>
+                </button>
+              ))}
+            </div>
+          </>
+        )}
       </div>
       <div className="sheet-preview">
         <iframe title="Sheet preview" src={`/report/${detail.slug}/sheet?preview=1&items=${q}`} />

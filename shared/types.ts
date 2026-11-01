@@ -88,9 +88,19 @@ export type ReviewInput = {
   exam?: boolean;
 };
 
+// Review counts for one slice; recent_* cover the last RECENT_DAYS days, avg_ms the timed answers.
+export type ReviewStats = { reviews: number; correct: number; recent_reviews: number; recent_correct: number; avg_ms: number | null };
+
 export type Insights = {
-  modules: { module_id: number; reviews: number; correct: number }[];
-  lessons: { id: number; module_id: number; title: string; reviews: number; correct: number }[];
+  recent_days: number;
+  modules: ({ module_id: number } & ReviewStats)[];
+  lessons: ({ id: number; module_id: number; title: string; position: number } & ReviewStats)[];
+  // Cards per module by maturity: learning/relearning, young (stability < 21 d), mature (≥ 21 d).
+  maturity: { module_id: number; learning: number; young: number; mature: number }[];
+  // Reviews per local week (week = Monday-start index: epoch day of its Monday = week * 7 - 3).
+  weeks: { week: number; reviews: number; correct: number }[];
+  // Reviews split by "Not sure", question origin and outcome, with total answer time for the timed ones.
+  breakdown: { guessed: 0 | 1; origin: "exam" | "generated"; correct: 0 | 1; reviews: number; timed: number; total_ms: number }[];
   leeches: { id: number; module_id: number; stem: string; lapses: number; reps: number }[];
   // Wrong answers split by cause: ticked a false option only, missed a true one only, or both.
   errors: { total: number; extra: number; missed: number; both: number };

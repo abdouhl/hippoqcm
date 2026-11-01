@@ -5,11 +5,12 @@
 // Usage:
 //   bun scripts/report.ts list
 //   bun scripts/report.ts build <slug> [out.pdf]            full typed report (cover + text + figures)
-//   bun scripts/report.ts figures <slug>                    figure numbers, ids and captions
+//   bun scripts/report.ts figures <slug>                    figure and table numbers, ids, captions and heights
 //   bun scripts/report.ts print <slug> cover                cover with name and group, to print on blank paper
 //   bun scripts/report.ts print <slug> <item>...            stamps for a handwritten sheet, e.g.
 //        fig 3 y=12 [nocap]                                 figure 3 as in the typed report (with its row partner), top at 12 cm
 //        fig 3 x=2 y=12 [w=9]                               …or alone, top-left corner at (2, 12) cm, 9 cm wide
+//        table 1 y=12 [x=2 w=12] [nocap]                    table 1 with its caption, in the text column (or at x, w cm wide)
 //        chapter 6 y=4 [x=2] [line=14] [title="…"]          red number box + underline to write the title on; y = where the letters sit
 //        heading INTRODUCTION y=3 [x=2]                     INTRODUCTION/CONCLUSION as in the typed report (centred without x); y = where the letters sit
 //        page 3 [of=5] [x=20] [y=29]                        page number ending at x, sitting on y (the lined paper's last line)
@@ -21,7 +22,7 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import {
-  calibrationPage, CHAPTER_BASELINE, chapterLine, coverPage, findFigure, numberedFigures, PAGE_X, PAGE_Y, reportPage, ROW_GAP, stampPage, TEXT_LEFT, TEXT_WIDTH,
+  calibrationPage, CHAPTER_BASELINE, chapterLine, coverPage, findFigure, findTable, numberedFigures, numberedTables, PAGE_X, PAGE_Y, reportPage, ROW_GAP, stampPage, tableHeight, TEXT_LEFT, TEXT_WIDTH,
   type Report, type Settings, type StampItem, type Urls,
 } from "./report/render";
 
@@ -98,6 +99,10 @@ export function stampBox(slug: string, r: Report, it: StampItem) {
     return { label: `Page ${it.n}`, x0: round(x - 1), y0: round(y - 0.3), x1: x, y1: y };
   }
   if (it.kind === "text") return { label: "Text", x0: it.x, y0: it.y, x1: it.x, y1: it.y };
+  if (it.kind === "table") {
+    const x = it.x ?? TEXT_LEFT, w = it.x === undefined ? TEXT_WIDTH : it.w ?? TEXT_WIDTH;
+    return { label: `Table ${it.n}`, x0: x, y0: it.y, x1: round(x + w), y1: round(it.y + tableHeight(findTable(r, it.n), w, it.caption !== false)) };
+  }
   const f = findFigure(r, it.fig);
   if (it.x !== undefined) {
     const w = it.w ?? f.width_cm ?? 12;
@@ -127,7 +132,8 @@ export function parseItems(args: string[]): StampItem[] {
     const x = num("x"), y = num("y");
     if (cur.kind === "page") return void items.push({ kind: "page", n: Number(cur.arg), total: num("of"), x, y });
     if (y === undefined) throw new Error(`${cur.kind} ${cur.arg ?? ""}: needs y= (cm from the top edge)`);
-    if (cur.kind === "fig") items.push({ kind: "figure", fig: String(cur.arg), x, y, w: num("w"), caption: !cur.nocap });
+    if (cur.kind === "table") items.push({ kind: "table", n: Number(cur.arg), x, y, w: num("w"), caption: !cur.nocap });
+    else if (cur.kind === "fig") items.push({ kind: "figure", fig: String(cur.arg), x, y, w: num("w"), caption: !cur.nocap });
     else if (cur.kind === "heading") items.push({ kind: "heading", text: String(cur.arg).toUpperCase(), x, y });
     else if (cur.kind === "chapter") items.push({ kind: "chapter", n: Number(cur.arg), x, y, line: num("line"), title: cur.title as string | undefined });
     else if (x === undefined) throw new Error(`text "${cur.arg}": needs x= and y= (cm)`);
@@ -135,11 +141,11 @@ export function parseItems(args: string[]): StampItem[] {
   };
   for (let i = 0; i < args.length; i++) {
     const a = args[i];
-    if (["fig", "figure", "chapter", "heading", "page", "text"].includes(a)) {
+    if (["fig", "figure", "table", "chapter", "heading", "page", "text"].includes(a)) {
       flush();
       cur = { kind: a === "figure" ? "fig" : a, arg: args[++i] };
       if (cur.arg === undefined) throw new Error(`${a} needs a value`);
-    } else if (!cur) throw new Error(`Expected fig, chapter, heading, page or text, got "${a}"`);
+    } else if (!cur) throw new Error(`Expected fig, table, chapter, heading, page or text, got "${a}"`);
     else if (a === "nocap") cur.nocap = true;
     else if (a.includes("=")) cur[a.slice(0, a.indexOf("="))] = a.slice(a.indexOf("=") + 1);
     else throw new Error(`Don't understand "${a}"`);
@@ -173,6 +179,10 @@ async function main() {
         const b = stampBox(slug, r, { kind: "figure", fig: f.n, y: 0 });
         const with_ = f.row.length > 1 ? `  (row with ${f.row.filter((id) => id !== f.id).map((id) => `fig ${numberedFigures(r).find((x) => x.id === id)!.n}`).join(", ")})` : "";
         console.log(`${String(f.n).padStart(2)}  ${f.id.padEnd(18)} ↕ ${b.y1} cm  ${f.caption}${with_}`);
+      }
+      for (const t of numberedTables(r)) {
+        const b = stampBox(slug, r, { kind: "table", n: t.n, y: 0 });
+        console.log(`table ${t.n}  ↕ ${b.y1} cm  ${t.caption.replace(/<[^>]+>/g, "")}`);
       }
       r.chapters.forEach((c, i) => console.log(`chapter ${i + 1}: ${c.title}`));
       return;

@@ -28,6 +28,7 @@ export type Settings = { name: string; group: string; offset_x_cm: number; offse
 
 export type StampItem =
   | { kind: "figure"; fig: number | string; x?: number; y: number; w?: number; caption?: boolean }
+  | { kind: "table"; n: number; x?: number; y: number; w?: number; caption?: boolean }
   | { kind: "chapter"; n: number; x?: number; y: number; line?: number; title?: string }
   | { kind: "heading"; text: string; x?: number; y: number }
   | { kind: "page"; n: number; total?: number; x?: number; y?: number }
@@ -73,6 +74,41 @@ export function findFigure(r: Report, ref: number | string) {
   const f = typeof ref === "number" || /^\d+$/.test(String(ref)) ? all.find((x) => x.n === Number(ref)) : all.find((x) => x.id === ref);
   if (!f) throw new Error(`No figure ${ref} (the report has ${all.length})`);
   return f;
+}
+
+// Tables are written inline in the HTML: an optional <div class="tcap">…</div> caption, then the
+// <table>. Numbered from 1 in reading order.
+const TABLE = /(?:<div class="tcap">([\s\S]*?)<\/div>\s*)?(<table[\s\S]*?<\/table>)/g;
+
+export function numberedTables(r: Report) {
+  const html = [r.intro ?? "", ...r.chapters.map((c) => c.html), r.conclusion ?? ""].join("\n");
+  return [...html.matchAll(TABLE)].map(([, caption, table], i) => ({ n: i + 1, caption: caption ?? "", table }));
+}
+
+export function findTable(r: Report, n: number) {
+  const all = numberedTables(r);
+  const t = all.find((x) => x.n === Number(n));
+  if (!t) throw new Error(`No table ${n} (the report has ${all.length})`);
+  return t;
+}
+
+// Height in cm a table takes when printed w cm wide: caption plus each row's tallest cell (12 pt Times
+// ≈ 0.19 cm per character, 0.57 cm per line at 1.35 spacing, 0.28 cm of padding and border a row).
+export function tableHeight(t: ReturnType<typeof numberedTables>[number], w: number, withCaption = true) {
+  const text = (h: string) => h.replace(/<[^>]+>/g, "").replace(/&[a-z]+;|&#\d+;/g, "x");
+  let h = 0;
+  for (const [row] of t.table.matchAll(/<tr[\s\S]*?<\/tr>/g)) {
+    const cells = [...row.matchAll(/<t[hd]([^>]*)>([\s\S]*?)<\/t[hd]>/g)];
+    const fixed = cells.map(([, attrs]) => Number(attrs.match(/width:\s*([\d.]+)%/)?.[1] ?? 0));
+    const rest = (100 - fixed.reduce((a, b) => a + b, 0)) / Math.max(1, fixed.filter((f) => !f).length);
+    const lines = cells.map(([, , body], i) => {
+      const cw = Math.max(1, ((fixed[i] || rest) / 100) * w - 0.5);
+      return body.split(/<br\s*\/?>/).reduce((n, part) => n + Math.max(1, Math.ceil((text(part).length * 0.19) / cw)), 0);
+    });
+    h += Math.max(1, ...lines) * 0.57 + 0.28;
+  }
+  const cap = withCaption && t.caption ? Math.ceil((text(t.caption).length * 0.19) / w) * 0.64 + 0.07 : 0;
+  return Math.round((cap + h) * 10) / 10;
 }
 
 const BASE_CSS = `
@@ -199,6 +235,14 @@ const SHEET_CSS = `
   .fig img.photo { border: 1px solid #c9d3de; }
   .fig .cap { text-align: center; line-height: 1.4; margin-top: 3pt; }
   .fig .cap b { color: var(--blue); }
+  /* Tables: same look as the typed report's. */
+  .tbl .tcap { text-align: center; line-height: 1.5; margin-bottom: 2pt; }
+  .tbl .tcap b { color: var(--blue); }
+  .tbl table { border-collapse: collapse; width: 100%; }
+  .tbl th, .tbl td { border: 1px solid #8aa0b6; padding: 4pt 7pt; line-height: 1.35; text-align: left; vertical-align: top; }
+  .tbl th { background: var(--blue); color: #fff; }
+  .tbl tr:nth-child(even) td { background: var(--soft); }
+  .tbl .sw { display: inline-block; width: 10pt; height: 10pt; border: 1px solid #555; vertical-align: -1pt; margin-right: 3pt; }
   /* Figure rows laid out like the typed report's (same rules as REPORT_CSS, without the margins). */
   .block figure { margin: 0; text-align: center; }
   .block figure img { max-width: 100%; }
@@ -215,11 +259,14 @@ const SHEET_CSS = `
   .heading { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
   .heading text { font-family: "Times New Roman", Times, serif; font-size: 14pt; font-weight: bold; fill: var(--blue); letter-spacing: .5px; }
   .pageno text { font-family: "Times New Roman", Times, serif; font-size: 12pt; font-weight: normal; letter-spacing: 0; fill: #1a1a1a; }
-  /* On screen only: the sheet with a 1 cm grid, so placements can be checked before printing. */
+  /* On screen only: the sheet drawn as the 10 mm lined paper (assets/lined-paper-10mm.pdf: a blue
+     rule every 1 cm from the top, 1 to 29 cm) plus faint 1 cm columns, so placements can be checked
+     against the real lines before printing. Never printed. */
   @media screen {
     body.preview { background: #9aa3ad; padding: 1cm; }
     body.preview .sheet { margin: 0 auto; background-color: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.35);
-      background-image: linear-gradient(#e3e9f0 1px, transparent 1px), linear-gradient(90deg, #e3e9f0 1px, transparent 1px);
+      background-image: linear-gradient(transparent calc(1cm - 1px), #7aa3d6 0),
+        linear-gradient(90deg, #eef2f6 1px, transparent 1px);
       background-size: 1cm 1cm; }
     body.preview .ruler { position: absolute; font: 9px system-ui; color: #7a8796; }
   }
@@ -249,6 +296,12 @@ function stampItem(r: Report, it: StampItem, urls: Urls) {
   }
   const top = it.kind === "chapter" ? Math.round((it.y - CHAPTER_BASELINE) * 100) / 100 : it.y;
   const at = `left:${it.x ?? TEXT_LEFT}cm;top:${top}cm`;
+  if (it.kind === "table") {
+    const t = findTable(r, it.n);
+    const w = it.x === undefined ? TEXT_WIDTH : it.w ?? TEXT_WIDTH;
+    const cap = it.caption !== false && t.caption ? `<div class="tcap">${t.caption}</div>` : "";
+    return `<div class="item tbl" style="${at};width:${w}cm">${cap}${t.table}</div>`;
+  }
   if (it.kind === "figure" && it.x === undefined) {
     const all = numberedFigures(r);
     const row = findFigure(r, it.fig).row.map((id) => figureHtml(all.find((f) => f.id === id)!, urls, it.caption !== false));

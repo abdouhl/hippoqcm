@@ -17,6 +17,8 @@ const idList = (url: URL, param = "ids"): number[] =>
 
 // A question with this many lapses keeps slipping: it's a leech.
 const LEECH_LAPSES = 4;
+const INSIGHTS_RECENT_DAYS = 14; // "lately" on the Insights screen, compared against everything before
+const INSIGHTS_WEEKS = 12; // weeks shown in the accuracy trend
 
 // The caller's sync code, from "Authorization: Bearer <code>"; null if missing or malformed.
 function codeOf(request: Request): string | null {
@@ -264,21 +266,28 @@ export default {
 
     // Weak spots: accuracy per module and lesson, leeches, and how wrong answers go wrong.
     if (url.pathname === "/api/insights" && request.method === "GET") {
-      const [modules, lessons, leeches, wrong, calibration] = await env.DB.batch([
+      const offset = (Number(url.searchParams.get("tz")) || 0) * 60_000;
+      const now = Date.now();
+      const since = now - INSIGHTS_RECENT_DAYS * 86_400_000;
+      // ?2 = start of the recent window. Answer times over 10 min are someone who walked away.
+      const stats = `COUNT(*) AS reviews, SUM(r.correct) AS correct,
+                     SUM(r.reviewed_at >= ?2) AS recent_reviews, SUM(CASE WHEN r.reviewed_at >= ?2 THEN r.correct ELSE 0 END) AS recent_correct,
+                     AVG(CASE WHEN r.duration_ms BETWEEN 1 AND 600000 THEN r.duration_ms END) AS avg_ms`;
+      const [modules, lessons, leeches, wrong, calibration, maturity, weeks, breakdown] = await env.DB.batch([
         env.DB.prepare(
-          `SELECT q.module_id, COUNT(*) AS reviews, SUM(r.correct) AS correct
+          `SELECT q.module_id, ${stats}
            FROM review_log r JOIN questions q ON q.id = r.question_id
            WHERE r.user_id = ?1
            GROUP BY q.module_id`,
-        ).bind(user),
+        ).bind(user, since),
         env.DB.prepare(
-          `SELECT l.id, l.module_id, l.title, COUNT(*) AS reviews, SUM(r.correct) AS correct
+          `SELECT l.id, l.module_id, l.title, l.position, ${stats}
            FROM review_log r
            JOIN question_lessons ql ON ql.question_id = r.question_id
            JOIN lessons l ON l.id = ql.lesson_id
            WHERE r.user_id = ?1
            GROUP BY l.id`,
-        ).bind(user),
+        ).bind(user, since),
         env.DB.prepare(
           `SELECT q.id, q.module_id, q.stem, c.lapses, c.reps
            FROM cards c JOIN questions q ON q.id = c.question_id
@@ -301,6 +310,30 @@ export default {
            GROUP BY bucket
            ORDER BY bucket`,
         ).bind(user),
+        env.DB.prepare(
+          `SELECT q.module_id,
+                  SUM(c.state IN (1, 3)) AS learning,
+                  SUM(c.state = 2 AND c.stability < 21) AS young,
+                  SUM(c.state = 2 AND c.stability >= 21) AS mature
+           FROM cards c JOIN questions q ON q.id = c.question_id
+           WHERE c.user_id = ?1 AND c.state > 0 AND q.flagged = 0
+           GROUP BY q.module_id`,
+        ).bind(user),
+        env.DB.prepare(
+          `SELECT (CAST((reviewed_at - ?2) / 86400000 AS INTEGER) + 3) / 7 AS week, COUNT(*) AS reviews, SUM(correct) AS correct
+           FROM review_log
+           WHERE user_id = ?1 AND reviewed_at >= ?3
+           GROUP BY week
+           ORDER BY week`,
+        ).bind(user, offset, now - INSIGHTS_WEEKS * 7 * 86_400_000),
+        env.DB.prepare(
+          `SELECT COALESCE(r.guessed, 0) AS guessed, q.origin, r.correct, COUNT(*) AS reviews,
+                  SUM(r.duration_ms BETWEEN 1 AND 600000) AS timed,
+                  COALESCE(SUM(CASE WHEN r.duration_ms BETWEEN 1 AND 600000 THEN r.duration_ms END), 0) AS total_ms
+           FROM review_log r JOIN questions q ON q.id = r.question_id
+           WHERE r.user_id = ?1
+           GROUP BY 1, 2, 3`,
+        ).bind(user),
       ]);
 
       // Split wrong answers by what went wrong: ticked a false option, missed a true one, or both.
@@ -316,8 +349,12 @@ export default {
       }
 
       const insights: Insights = {
+        recent_days: INSIGHTS_RECENT_DAYS,
         modules: modules.results as Insights["modules"],
         lessons: lessons.results as Insights["lessons"],
+        maturity: maturity.results as Insights["maturity"],
+        weeks: weeks.results as Insights["weeks"],
+        breakdown: breakdown.results as Insights["breakdown"],
         leeches: leeches.results as Insights["leeches"],
         errors,
         calibration: calibration.results as Insights["calibration"],

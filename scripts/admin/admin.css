@@ -56,6 +56,14 @@ a { color: var(--accent); }
 .nav.lesson { padding-left: 30px; font-size: 13px; }
 .nav .count { color: var(--muted); font-weight: 400; font-variant-numeric: tabular-nums; }
 .nav .flag { color: var(--error); }
+.lesson-row { position: relative; cursor: grab; }
+.lesson-row.dragging { opacity: 0.4; }
+.lesson-row.drop-before { box-shadow: inset 0 2px 0 var(--accent); }
+.lesson-row.drop-after { box-shadow: inset 0 -2px 0 var(--accent); }
+.lesson-row .move { display: none; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); gap: 2px; }
+.lesson-row:hover .move { display: flex; }
+.lesson-row:hover .nav .count { visibility: hidden; }
+.lesson-row .move button { padding: 0 6px; font-size: 12px; line-height: 18px; }
 
 .main { overflow-y: auto; }
 .topbar {
