@@ -1,0 +1,212 @@
+{
+  "semester": 1,
+  "module": "Biophysics",
+  "title": "Biophysics of solutions 7",
+  "pdf": "s1/biophysics/biophysics-of-solutions-7.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q15",
+    "EMD1 2024-2025 Q14",
+    "EMD1 2024-2025 Q17",
+    "EMD1 2025-2026 Q15",
+    "EMD1 2025-2026 Q17"
+  ],
+  "questions": [
+    {
+      "stem": "About the faraday and the equivalent, the correct propositions are:",
+      "options": [
+        "The faraday is the electric charge carried by one electron",
+        "1 F = N_A × e ≈ 96 500 C",
+        "1 mole of Na⁺ corresponds to 2 Eq",
+        "1 mole of Ca²⁺ corresponds to 2 Eq",
+        "The equivalent is the amount of a substance that carries one faraday of electric charge"
+      ],
+      "answer": "BDE",
+      "explanation": "The faraday is the charge of one MOLE of electrons: 1 F = N_A × e = 96 500 C. One equivalent carries 1 F, so 1 mol of a monovalent ion (Na⁺) is 1 Eq and 1 mol of Ca²⁺ is 2 Eq.",
+      "page": 1,
+      "weight": 1
+    },
+    {
+      "stem": "About the equivalent concentration Ce of an ion i of valence zᵢ and molar concentration Cᵢ, the correct propositions are:",
+      "options": [
+        "Ce is expressed in mol/l",
+        "For an ion of valence −2, Ce = −2Cᵢ",
+        "Ce = |zᵢ|·Cᵢ",
+        "In a solution where [Al³⁺] = 1 mol/l, Ce(Al³⁺) = 3 Eq/l",
+        "The equivalent concentration of an ion always equals its molar concentration"
+      ],
+      "answer": "CD",
+      "explanation": "Ce = |zᵢ|Cᵢ, in Eq/l; the absolute value makes it positive for anions (a divalent anion gives Ce = 2Cᵢ). It equals the molar concentration only for monovalent ions, e.g. Al³⁺ at 1 mol/l gives 3 Eq/l.",
+      "page": 1,
+      "weight": 2
+    },
+    {
+      "stem": "About the total equivalent concentration of a solution and the electroneutrality condition, the correct propositions are:",
+      "options": [
+        "Electroneutrality is written Ce⁺ = Ce⁻",
+        "Ce = 2Ce⁺ = 2Ce⁻",
+        "Ce = Ce⁺ − Ce⁻",
+        "Ce⁻ = Σ|zᵢ⁻|Cᵢ⁻ is the total equivalent concentration of anions",
+        "Electroneutrality requires equal molar concentrations of cations and anions"
+      ],
+      "answer": "ABD",
+      "explanation": "Ce = Ce⁺ + Ce⁻ with Ce± = Σ|zᵢ±|Cᵢ±; electroneutrality is Ce⁺ = Ce⁻, hence Ce = 2Ce⁺ = 2Ce⁻. It is the equivalents that balance, not the moles: in 2 mol/l CaCl₂, [Ca²⁺] = 2 mol/l but [Cl⁻] = 4 mol/l.",
+      "page": 1,
+      "weight": 2
+    },
+    {
+      "stem": "1 l of a solution contains 1 mole of Na₂SO₄ and 2 moles of KCl (totally dissociated). The equivalent concentration Ce of this solution is:",
+      "options": [
+        "3 Eq/l",
+        "4 Eq/l",
+        "7 Eq/l",
+        "8 Eq/l",
+        "12 Eq/l"
+      ],
+      "answer": "D",
+      "explanation": "Ce⁺ = 1×[Na⁺] + 1×[K⁺] = 2 + 2 = 4 Eq/l; Ce⁻ = 2×[SO₄²⁻] + 1×[Cl⁻] = 2 + 2 = 4 Eq/l; Ce = 2Ce⁺ = 8 Eq/l. 4 Eq/l is only Ce⁺, and 7 is the total ionic molar concentration (ignores |z|).",
+      "page": 2,
+      "weight": 2
+    },
+    {
+      "stem": "0.5 l of a solution contains 0.1 mole of AlCl₃ (totally dissociated). The correct propositions are:",
+      "options": [
+        "[Cl⁻] = 0.6 mol/l",
+        "Ce⁺ = 0.2 Eq/l",
+        "Ce⁻ = 0.6 Eq/l",
+        "Ce = 1.2 Eq/l",
+        "The total ionic molar concentration equals Ce"
+      ],
+      "answer": "ACD",
+      "explanation": "[AlCl₃] = 0.1/0.5 = 0.2 mol/l → [Al³⁺] = 0.2 mol/l, [Cl⁻] = 0.6 mol/l. Ce⁺ = 3 × 0.2 = 0.6 Eq/l (not 0.2, which forgets z), Ce⁻ = 0.6 Eq/l, Ce = 1.2 Eq/l, while the ionic molar concentration is only 0.8 mol/l.",
+      "page": 2,
+      "weight": 2
+    },
+    {
+      "stem": "Two compartments (1) and (2) of equal volume are separated by a dialysis membrane. (1) contains salt AB at C; (2) contains AB at C and a protein PrBz (Pr^z⁻ + zB⁺) at C′. Initially:",
+      "options": [
+        "Pr^z⁻ cannot cross the membrane",
+        "[B⁺]₁ = [B⁺]₂ = C",
+        "B⁺ diffuses from (2) to (1)",
+        "A⁻ has a concentration gradient across the membrane",
+        "[B⁺]₂ = C + zC′"
+      ],
+      "answer": "ACE",
+      "explanation": "In (2), B⁺ comes from both AB and PrBz, so [B⁺]₂ = C + zC′ > [B⁺]₁ = C, and B⁺ diffuses from (2) to (1). A⁻ starts at C on both sides (no gradient) yet still moves, dragged by B⁺ for electroneutrality. Pr^z⁻ is non-diffusible.",
+      "page": 2,
+      "weight": 3
+    },
+    {
+      "stem": "In the same Donnan experiment (protein Pr^z⁻ in compartment (2)), n moles of B⁺ (x = n/V) have crossed the membrane at equilibrium. The correct propositions are:",
+      "options": [
+        "[A⁻]₁ = C − x",
+        "A⁻ diffuses from (1) to (2)",
+        "[A⁻]₁ > [A⁻]₂",
+        "[B⁺]₂ > [B⁺]₁",
+        "[A⁻]₂ / [A⁻]₁ = [B⁺]₁ / [B⁺]₂"
+      ],
+      "answer": "CDE",
+      "explanation": "x moles of B⁺ and of A⁻ go from (2) to (1), so [A⁻]₁ = [B⁺]₁ = C + x, [A⁻]₂ = C − x, [B⁺]₂ = C + zC′ − x. Hence [A⁻]₁ > [A⁻]₂ and [B⁺]₂ > [B⁺]₁: same-sign ions end up unequally distributed, with the inverse ratio [A⁻]₂/[A⁻]₁ = [B⁺]₁/[B⁺]₂.",
+      "page": 4,
+      "weight": 3
+    },
+    {
+      "stem": "In a Donnan experiment, (1) contains NaCl at C = 0.1 mol/l; (2) contains NaCl at 0.1 mol/l and a protein PrNa₂₀ (z = 20) at C′ = 2 mmol/l. Using x = zCC′/(4C + zC′), the Cl⁻ concentration in (2) at equilibrium is approximately:",
+      "options": [
+        "100 mmol/l",
+        "109.1 mmol/l",
+        "130.9 mmol/l",
+        "90.9 mmol/l",
+        "95.5 mmol/l"
+      ],
+      "answer": "D",
+      "explanation": "zC′ = 20 × 0.002 = 0.04 mol/l; x = (20 × 0.1 × 0.002)/(0.4 + 0.04) ≈ 9.1 mmol/l. [Cl⁻]₂ = C − x ≈ 90.9 mmol/l. 109.1 mmol/l is [Cl⁻]₁ = [Na⁺]₁ = C + x, and 130.9 mmol/l is [Na⁺]₂ = C + zC′ − x.",
+      "page": 4,
+      "weight": 3
+    },
+    {
+      "stem": "In a Donnan experiment (protein anion in compartment (2)), at equilibrium [Na⁺]₁ = [Cl⁻]₁ = 0.15 mol/l and [Na⁺]₂ = 0.18 mol/l. The correct propositions are:",
+      "options": [
+        "[Cl⁻]₂ = 0.125 mol/l",
+        "[Cl⁻]₂ = 0.18 mol/l",
+        "[Na⁺]₂·[Cl⁻]₂ = [Na⁺]₁·[Cl⁻]₁",
+        "[Cl⁻]₂ > [Cl⁻]₁",
+        "The equivalent concentration of the protein ion in (2) is 55 mEq/l"
+      ],
+      "answer": "ACE",
+      "explanation": "[Cl⁻]₂/[Cl⁻]₁ = [Na⁺]₁/[Na⁺]₂ gives the equal products, so [Cl⁻]₂ = 0.15²/0.18 = 0.125 mol/l, lower than in (1). Electroneutrality in (2): [Na⁺]₂ = [Cl⁻]₂ + z[Pr] → z[Pr] = 0.18 − 0.125 = 0.055 Eq/l = 55 mEq/l.",
+      "page": 4,
+      "weight": 3
+    },
+    {
+      "stem": "The figure shows a Donnan set-up: the macro-ion Pr^z⁻ is retained in compartment (2) and E is the transmembrane electric field. The correct propositions are:",
+      "options": [
+        "The side of the membrane in contact with (2) is negatively charged",
+        "V₁ > V₂",
+        "The membrane potential V₂ − V₁ is positive",
+        "Pr^z⁻ repels B⁺ towards compartment (1)",
+        "The electric field always points from (+) to (−)"
+      ],
+      "answer": "ABE",
+      "explanation": "Pr^z⁻ attracts B⁺ and repels A⁻, so the side in contact with (2) is negative and the side facing (1) positive. E points from (+) to (−), i.e. from (1) to (2), so V₁ > V₂ and V₂ − V₁ < 0.",
+      "page": 3,
+      "weight": 2,
+      "image": "s1/lessons/biophysics-of-solutions-7-g1.png"
+    },
+    {
+      "stem": "About the Nernst equation, the correct propositions are:",
+      "options": [
+        "V₂ − V₁ = −(RT/zF)·ln(C₂/C₁)",
+        "V₂ − V₁ = −(kT/ze)·ln(C₂/C₁)",
+        "It applies to the non-diffusible ions",
+        "kT/ze = RT/zF because F = N_A·e and R = N_A·k",
+        "In E = −(V₂ − V₁)/l, l is the membrane thickness"
+      ],
+      "answer": "ABDE",
+      "explanation": "The lesson writes the Nernst equation for diffusible ions as V₂ − V₁ = −(RT/zF)ln(C₂/C₁), equivalently −(kT/ze)ln(C₂/C₁), since F = N_A·e and R = N_A·k. E = −(V₂ − V₁)/l with l the membrane thickness. It does not apply to the retained Pr^z⁻.",
+      "page": 3,
+      "weight": 2
+    },
+    {
+      "stem": "At 37°C, the Cl⁻ concentration is 100 mmol/l in compartment (1) and 10 mmol/l in compartment (2). Using the Nernst equation (R = 8.31 SI, F = 96 500 C/mol), the potential V₂ − V₁ for Cl⁻ is approximately:",
+      "options": [
+        "+61.5 mV",
+        "−26.7 mV",
+        "−61.5 mV",
+        "+26.7 mV",
+        "−59.5 mV"
+      ],
+      "answer": "C",
+      "explanation": "V₂ − V₁ = −(RT/zF)ln(C₂/C₁) with z = −1: = +(8.31 × 310/96 500) × ln(0.1) = 0.0267 × (−2.303) ≈ −61.5 mV. +61.5 mV forgets that z = −1 for Cl⁻, ±26.7 mV uses log₁₀ instead of ln, and −59.5 mV uses 300 K instead of 310 K.",
+      "page": 3,
+      "weight": 2
+    },
+    {
+      "stem": "About the Donnan (Gibbs–Donnan) equilibrium equation, the correct propositions are:",
+      "options": [
+        "It is obtained by writing that two diffusible ions see the same potential V₂ − V₁",
+        "Applied to A⁻ and B⁺, it gives [A⁻]₂/[A⁻]₁ = [B⁺]₂/[B⁺]₁",
+        "(1/z)·ln([I]₂/[I]₁) = (1/z′)·ln([I′]₂/[I′]₁) for two diffusible ions I and I′",
+        "It can be written with equivalent concentrations: (1/z)·ln(Ce₂(I)/Ce₁(I)) = (1/z′)·ln(Ce₂(I′)/Ce₁(I′))",
+        "It is applied to the non-diffusible macro-ion Pr^z⁻"
+      ],
+      "answer": "ACD",
+      "explanation": "Equating the Nernst expressions of V₂ − V₁ for two diffusible ions gives (1/z)ln([I]₂/[I]₁) = (1/z′)ln([I′]₂/[I′]₁); since Ce = |z|[I], the same ratio holds with Ce. With z = −1 and +1 it gives the INVERSE ratio [A⁻]₂/[A⁻]₁ = [B⁺]₁/[B⁺]₂.",
+      "page": 4,
+      "weight": 3
+    },
+    {
+      "stem": "Which of the following solutions (totally dissociated) have a total equivalent concentration Ce = 2 Eq/l?",
+      "options": [
+        "NaCl at 1 mol/l",
+        "CaCl₂ at 1 mol/l",
+        "CaCl₂ at 0.5 mol/l",
+        "NaCl at 0.5 mol/l",
+        "AlCl₃ at 1/3 mol/l"
+      ],
+      "answer": "ACE",
+      "explanation": "Ce = 2Ce⁺. NaCl 1 mol/l: Ce⁺ = 1 → 2 Eq/l. CaCl₂ 0.5 mol/l: Ce⁺ = 2 × 0.5 = 1 → 2 Eq/l. AlCl₃ 1/3 mol/l: Ce⁺ = 3 × 1/3 = 1 → 2 Eq/l. CaCl₂ 1 mol/l gives 4 Eq/l and NaCl 0.5 mol/l gives 1 Eq/l.",
+      "page": 1,
+      "weight": 2
+    }
+  ]
+}
