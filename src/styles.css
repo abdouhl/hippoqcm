@@ -495,6 +495,10 @@ div.option { cursor: default; animation: none; }
 .grades { display: flex; gap: 8px; flex-wrap: wrap; }
 .grades button { flex-direction: column; gap: 0; min-width: 84px; }
 .grades button.suggested { outline: 3px solid var(--coral); outline-offset: 2px; }
+.badge.calc { display: inline-flex; align-items: center; gap: 3px; margin-left: 6px; background: var(--surface-2); color: var(--warn); vertical-align: 1px; }
+.mental { margin-top: 10px; background: var(--surface-2); border-left: 3px solid var(--warn); padding: 10px 14px; border-radius: 0 10px 10px 0; line-height: 1.5; }
+.mental p { margin: 0; white-space: pre-line; }
+.mental .mental-title { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--warn); margin-bottom: 4px; }
 .explanation { color: var(--text); background: var(--surface-2); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 0 10px 10px 0; line-height: 1.5; }
 .leech-note { border-left: 3px solid var(--error); background: var(--bad-bg); padding: 10px 14px; border-radius: 0 10px 10px 0; }
 .leech-note .icon { color: var(--error); }
@@ -833,3 +837,26 @@ kbd {
 .lesson-exercises .chip { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; padding: 6px 12px; }
 .ex-tag { display: inline-flex; align-items: center; gap: 4px; }
 .ex-tag.meta { margin-left: 8px; }
+
+/* Past papers and mock exam results */
+.readiness { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 16px 0 0; }
+.readiness b, .paper-history b { font-variant-numeric: tabular-nums; }
+.readiness .ok, .paper-history .ok { color: var(--ok); }
+.readiness .bad, .paper-history .bad { color: var(--error); }
+.warn { color: var(--warn); font-weight: 600; }
+.notice { display: flex; align-items: flex-start; gap: 8px; color: var(--warn); margin: 0 0 16px; }
+.notice svg { flex: none; margin-top: 3px; }
+.paper-history { margin: 0 0 16px; }
+.done .paper-history { margin: 8px 0 0; }
+.done .verdict { margin: 0 0 4px; }
+.exam-breakdown { margin: 0 0 16px; }
+.exam-breakdown ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.exam-breakdown li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(60px, 140px) auto; align-items: center; gap: 10px; }
+.exam-breakdown .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.exam-breakdown .bar { height: 8px; border-radius: 4px; background: var(--surface-2); overflow: hidden; }
+.exam-breakdown .fill { display: block; height: 100%; border-radius: 4px; }
+.exam-breakdown .fill.ok { background: var(--ok); }
+.exam-breakdown .fill.bad { background: var(--error); }
+.exam-breakdown .meta { font-variant-numeric: tabular-nums; min-width: 3.5em; text-align: right; }
+.exam-breakdown p { margin: 0 0 6px; }
+.review-list .question { scroll-margin-top: 16px; }

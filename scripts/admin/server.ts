@@ -264,7 +264,7 @@ type OptionRow = { label: string; text: string; is_correct: 0 | 1 };
 
 function questionsWhere(where: string, params: (string | number)[], limit = 300) {
   const rows = db.query(
-    `SELECT q.id, q.module_id, q.stem, q.explanation, q.source, q.image, q.origin, q.pdf_page, q.flagged,
+    `SELECT q.id, q.module_id, q.stem, q.explanation, q.source, q.image, q.origin, q.pdf_page, q.flagged, q.calc, q.mental,
             (SELECT l.pdf FROM question_lessons ql JOIN lessons l ON l.id = ql.lesson_id
              WHERE ql.question_id = q.id ORDER BY l.position LIMIT 1) AS pdf,
             (SELECT json_group_array(lesson_id) FROM question_lessons WHERE question_id = q.id) AS lesson_ids,
@@ -301,6 +301,8 @@ type QuestionPatch = {
   explanation?: string | null;
   image?: string | null;
   pdf_page?: number | null;
+  calc?: boolean;
+  mental?: string | null;
   flagged?: boolean;
   options?: OptionRow[];
   lesson_ids?: number[];
@@ -328,6 +330,8 @@ async function patchQuestion(id: number, patch: QuestionPatch) {
   if (patch.explanation !== undefined) sets.push(`explanation = ${q(patch.explanation || null)}`);
   if (patch.image !== undefined) sets.push(`image = ${q(patch.image || null)}`);
   if (patch.pdf_page !== undefined) sets.push(`pdf_page = ${n(patch.pdf_page)}`);
+  if (patch.calc !== undefined) sets.push(`calc = ${patch.calc ? 1 : 0}`);
+  if (patch.mental !== undefined) sets.push(`mental = ${q(patch.mental || null)}`);
   if (patch.flagged !== undefined) sets.push(`flagged = ${patch.flagged ? 1 : 0}`);
 
   const statements: string[] = [];
@@ -360,7 +364,9 @@ async function patchQuestion(id: number, patch: QuestionPatch) {
   const what = Object.keys(patch).filter((k) => k !== "lesson_ids" || linkChanges.length);
   await record(`Q${id} [${row.source}]: ${what.join(", ")}`, statements);
 
-  const content = patch.stem !== undefined || patch.explanation !== undefined || patch.image !== undefined || patch.pdf_page !== undefined || patch.options;
+  // calc/mental only live in lesson drafts (exam banks don't carry them; exam_mental tips stay in the DB).
+  const calcInDraft = row.origin === "generated" && (patch.calc !== undefined || patch.mental !== undefined);
+  const content = patch.stem !== undefined || patch.explanation !== undefined || patch.image !== undefined || patch.pdf_page !== undefined || patch.options || calcInDraft;
   // The DB edit is recorded by now; JSON trouble is reported, not thrown.
   const tryJson = async (fn: () => Promise<string | string[]>) => {
     try { notes.push(...[await fn()].flat()); } catch (e) { notes.push(`JSON not updated: ${(e as Error).message}`); }
@@ -371,6 +377,8 @@ async function patchQuestion(id: number, patch: QuestionPatch) {
       if (patch.explanation !== undefined) patch.explanation ? (jq.explanation = patch.explanation) : delete jq.explanation;
       if (patch.image !== undefined) patch.image ? (jq.image = patch.image) : delete jq.image;
       if (patch.pdf_page !== undefined && row.origin === "generated" && patch.pdf_page) jq.page = patch.pdf_page;
+      if (calcInDraft && patch.calc !== undefined) patch.calc ? (jq.calc = true) : delete jq.calc;
+      if (calcInDraft && patch.mental !== undefined) patch.mental ? (jq.mental = patch.mental) : delete jq.mental;
       if (patch.options) {
         jq.options = patch.options.map((o) => o.text);
         jq.answer = patch.options.filter((o) => o.is_correct).map((o) => o.label).join("");

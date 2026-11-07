@@ -14,6 +14,8 @@ type Question = {
   origin: "exam" | "generated";
   pdf_page: number | null;
   flagged: 0 | 1;
+  calc: number;
+  mental: string | null;
   pdf: string | null;
   lesson_ids: number[];
   options: Option[];
@@ -765,6 +767,8 @@ function Editor({ question: q, flagged, lessons, onSaved, onError }: { question:
   const [image, setImage] = useState(q.image ?? "");
   const [page, setPage] = useState(q.pdf_page == null ? "" : String(q.pdf_page));
   const [isFlagged, setIsFlagged] = useState(flagged);
+  const [calc, setCalc] = useState(q.calc > 0);
+  const [mental, setMental] = useState(q.mental ?? "");
   const [links, setLinks] = useState<number[]>(q.lesson_ids);
   const [busy, setBusy] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
@@ -776,6 +780,8 @@ function Editor({ question: q, flagged, lessons, onSaved, onError }: { question:
   if (image !== (q.image ?? "")) patch.image = image || null;
   if (page !== (q.pdf_page == null ? "" : String(q.pdf_page))) patch.pdf_page = page ? Number(page) : null;
   if (isFlagged !== flagged) patch.flagged = isFlagged;
+  if (calc !== q.calc > 0) patch.calc = calc;
+  if (mental !== (q.mental ?? "")) patch.mental = mental || null;
   if ([...links].sort().join() !== [...q.lesson_ids].sort().join()) patch.lesson_ids = links;
   const dirty = Object.keys(patch).length > 0;
 
@@ -826,6 +832,15 @@ function Editor({ question: q, flagged, lessons, onSaved, onError }: { question:
       <label className="field">
         Explanation
         <textarea rows={2} value={explanation} onChange={(e) => setExplanation(e.target.value)} />
+      </label>
+
+      <label className="field">
+        <span>
+          <input type="checkbox" checked={calc} onChange={(e) => setCalc(e.target.checked)} /> Needs a calculation (no calculator in the exam)
+        </span>
+        {calc && (
+          <textarea rows={2} value={mental} onChange={(e) => setMental(e.target.value)} placeholder="Without a calculator: rounding, memorised values, which options an estimate rules out…" />
+        )}
       </label>
 
       <div className="cols">

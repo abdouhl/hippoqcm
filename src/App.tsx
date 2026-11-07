@@ -23,7 +23,7 @@ type View =
   | { kind: "lesson"; module: Module; lesson: Lesson }
   | { kind: "exercises"; module: Module; set: ExerciseSet }
   | { kind: "study"; title: string; endpoint: string; backLabel: string; only?: StudyOnly }
-  | { kind: "exam"; module: Module; lessons?: Lesson[] }
+  | { kind: "exam"; module: Module; lessons?: Lesson[]; paper?: string }
   | { kind: "account"; incoming: string | null };
 
 const TABS: { kind: Tab; label: string; icon: IconName }[] = [
@@ -145,7 +145,7 @@ export default function App() {
   }
 
   if (view.kind === "exam") {
-    return <Exam module={view.module} lessons={view.lessons} onExit={back} />;
+    return <Exam module={view.module} lessons={view.lessons} paper={view.paper} onExit={back} />;
   }
 
   if (view.kind === "account") {
@@ -162,6 +162,7 @@ export default function App() {
         onOpenLesson={(lesson) => open({ kind: "lesson", module, lesson })}
         onOpenExercises={(set) => open({ kind: "exercises", module, set })}
         onExam={(lessons) => open({ kind: "exam", module, lessons })}
+        onPaper={(paper) => open({ kind: "exam", module, paper })}
         onStudyLessons={(lessons) =>
           study(
             {
@@ -179,6 +180,9 @@ export default function App() {
             },
             module.name,
           )
+        }
+        onStudyCalc={() =>
+          study({ title: `${module.name} · calculations`, endpoint: `/api/modules/${module.id}/study?calc=1` }, module.name)
         }
       />
     );

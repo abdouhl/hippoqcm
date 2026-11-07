@@ -1,5 +1,6 @@
 // Study preferences, kept on this device and synced under its code (saveSettings in api.ts).
 import { useEffect, useState } from "react";
+import type { Scoring } from "../shared/types";
 
 export type Settings = {
   newPerDay: number; // new questions per module per day
@@ -10,6 +11,7 @@ export type Settings = {
   examDates: Record<string, string>; // module id → exam day, "YYYY-MM-DD"
   autoGrade: boolean; // suggest Hard/Good/Easy from how long a right answer took
   skipModules: number[]; // module ids left out of today's session on the home tab
+  examScoring: Scoring; // how mock exams and past papers are graded out of 20
 };
 
 export const DEFAULTS: Settings = {
@@ -21,6 +23,7 @@ export const DEFAULTS: Settings = {
   examDates: {},
   autoGrade: true,
   skipModules: [],
+  examScoring: "all-or-nothing",
 };
 
 const KEY = "hippoqcm.settings";

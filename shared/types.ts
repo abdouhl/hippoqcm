@@ -9,6 +9,7 @@ export type Module = {
   review_count: number; // graduated reviews, due now
   lesson_count: number;
   lesson_question_count: number; // questions linked to at least one lesson
+  calc_count?: number; // questions that need a calculation; missing from servers older than it
 };
 
 // One "mark as read" press, of the lesson PDF or of its summary page.
@@ -68,6 +69,9 @@ export type StudyQuestion = {
   pdf: string | null; // lesson PDF for generated questions, path under /lessons
   pdf_page: number | null;
   exam_weight?: number; // exam sessions that asked this topic; missing in snapshots saved before it existed
+  calc?: number; // 1 = answering needs a calculation (done without a calculator in the exam); missing in older snapshots
+  mental?: string | null; // how to do that calculation by hand: shortcuts, rounding, which options estimation rules out
+  lesson_ids?: number[]; // lessons the question is linked to; missing in older snapshots
   options: Option[];
   card: CardRow | null; // null = never reviewed
 };
@@ -108,6 +112,24 @@ export type Insights = {
   calibration: { bucket: number; reviews: number; correct: number }[];
 };
 
+// How a mock exam is graded; chosen in Settings.
+export type Scoring = "all-or-nothing" | "partial";
+
+// A past exam paper of a module, rebuilt from question sources like "EMD1 2024-2025 Q17".
+export type Paper = { paper: string; count: number; missing: number[] }; // missing = question numbers not in the app
+
+// One mock exam handed in.
+export type ExamAttempt = {
+  started_at: number; // unix ms
+  module_id: number;
+  paper: string | null; // "EMD1 2024-2025"; null = random mock exam
+  submitted_at: number;
+  questions: number;
+  correct: number; // answers exactly right
+  score: number; // out of 20, under `scoring`
+  scoring: Scoring;
+};
+
 // Offline copy of the deck tree and every unflagged question, from /api/snapshot.
 export type Snapshot = {
   modules: Pick<Module, "id" | "semester" | "name">[];
@@ -115,6 +137,7 @@ export type Snapshot = {
   questions: (StudyQuestion & { lesson_ids: number[] })[];
   content_version: number; // bumped by any change to modules, lessons or questions
   prefs: SyncedPrefs;
+  attempts?: ExamAttempt[]; // this user's handed-in mock exams; missing from older servers
   fsrs_w: number[] | null; // FSRS weights fitted for this user (or everyone); null = defaults
   fetched_at: number; // unix ms
 };
@@ -128,6 +151,7 @@ export type SnapshotUpdate = {
   cards: ({ question_id: number } & CardRow)[];
   reads: { lesson_id: number; kind: ReadKind; read_at: number }[];
   prefs: SyncedPrefs;
+  attempts?: ExamAttempt[];
   fsrs_w: number[] | null;
   fetched_at: number;
 };

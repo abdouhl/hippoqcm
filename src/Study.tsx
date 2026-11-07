@@ -304,6 +304,11 @@ export default function Study({ title, endpoint, only, backLabel, onExit }: Prop
         <div className="question-meta">
           <span className="meta">
             {question.origin === "generated" ? <span className="badge">Generated</span> : question.source}
+            {(question.calc ?? 0) > 0 && (
+              <span className="badge calc" title="Needs a calculation: work it out by hand, no calculator in the exam">
+                <Icon name="calc" size={12} /> No calculator
+              </span>
+            )}
             {question.pdf && question.pdf_page && (
               <>
                 {" · "}
@@ -341,6 +346,7 @@ export default function Study({ title, endpoint, only, backLabel, onExit }: Prop
         </ul>
 
         {checked && question.explanation && <p className="explanation">{question.explanation}</p>}
+        {checked && question.mental && <MentalTip text={question.mental} />}
         {leech && preview && (
           <p className="leech-note">
             <Icon name="alert" size={16} />{" "}
@@ -421,6 +427,16 @@ export default function Study({ title, endpoint, only, backLabel, onExit }: Prop
         <kbd>1</kbd> forgot · <kbd>2</kbd>–<kbd>4</kbd> Hard / Good / Easy · <kbd>Esc</kbd> back
       </p>
     </main>
+  );
+}
+
+/** How to do a question's calculation by hand, shown with the answer. */
+export function MentalTip({ text }: { text: string }) {
+  return (
+    <div className="mental">
+      <p className="mental-title"><Icon name="calc" size={15} /> Without a calculator</p>
+      <p>{text}</p>
+    </div>
   );
 }
 

@@ -3,7 +3,8 @@
 // writes wait in an outbox that is sent once the server is reachable again.
 import { useEffect, useState } from "react";
 import { isCode, newCode, normalizeCode } from "../shared/code";
-import type { Account, Lesson, LessonRead, Module, ReviewInput, Snapshot, SnapshotUpdate, StudyQuestion, SyncedPrefs } from "../shared/types";
+import { byPaperOrder, listPapers, paperOf } from "../shared/papers";
+import type { Account, ExamAttempt, Lesson, LessonRead, Module, ReviewInput, Snapshot, SnapshotUpdate, StudyQuestion, SyncedPrefs } from "../shared/types";
 import { downloadFiles } from "./offline";
 import { getSettings, hasSavedSettings, type Settings, settingsSavedAt, storeSettings } from "./prefs";
 
@@ -207,6 +208,16 @@ export async function saveReviews(reviews: ReviewInput[]): Promise<void> {
   await enqueue({ path: "/api/reviews", body: reviews });
 }
 
+/** Record a handed-in mock exam locally right away, then send it. */
+export async function saveAttempt(attempt: ExamAttempt): Promise<void> {
+  await ready;
+  if (snapshot) {
+    snapshot.attempts = [...(snapshot.attempts ?? []), attempt];
+    await saveSnapshot();
+  }
+  await enqueue({ path: "/api/exam-attempts", body: attempt });
+}
+
 /** Save study settings here right away, and under this code once the server is reachable. */
 export async function saveSettings(settings: Settings): Promise<void> {
   const at = Date.now();
@@ -374,7 +385,7 @@ export function refreshSnapshot(): Promise<boolean> {
       if (!res.ok) return false;
       const data = (await res.json()) as Snapshot | SnapshotUpdate;
       // A review made while the download was in flight is missing from it: keep ours, pull next time.
-      if (outbox.some((o) => o.path === "/api/reviews")) return false;
+      if (outbox.some((o) => o.path === "/api/reviews" || o.path === "/api/exam-attempts")) return false;
       if ("questions" in data) {
         snapshot = data;
       } else if (snapshot) {
@@ -384,6 +395,7 @@ export function refreshSnapshot(): Promise<boolean> {
         const lessons = new Map(snapshot.lessons.map((l) => [l.id, l]));
         for (const r of data.reads) lessons.get(r.lesson_id)?.reads.push({ kind: r.kind, at: r.read_at });
         snapshot.prefs = data.prefs;
+        snapshot.attempts = data.attempts ?? snapshot.attempts;
         snapshot.fsrs_w = data.fsrs_w;
         snapshot.fetched_at = data.fetched_at;
       }
@@ -477,7 +489,7 @@ function isComputable(path: string): boolean {
     p === "/api/modules" ||
     /^\/api\/(?:modules\/\d+\/)?lessons$/.test(p) ||
     /^\/api\/(?:(?:years|semesters|modules|lessons)\/\d+|leeches)\/study$/.test(p) ||
-    /^\/api\/modules\/\d+\/exam$/.test(p)
+    /^\/api\/modules\/\d+\/(?:exam|papers|attempts)$/.test(p)
   );
 }
 
@@ -497,6 +509,7 @@ function offlineAnswer(path: string): unknown {
         ...counts(qs, now),
         lesson_count: s.lessons.filter((l) => l.module_id === m.id).length,
         lesson_question_count: qs.filter((q) => q.lesson_ids.length > 0).length,
+        calc_count: qs.filter((q) => (q.calc ?? 0) > 0).length,
       };
     });
   }
@@ -523,8 +536,22 @@ function offlineAnswer(path: string): unknown {
   const ids = url.searchParams.get("ids")?.split(",").map(Number);
   const inLessons = (q: Snapshot["questions"][number]) => !ids || q.lesson_ids.some((l) => ids.includes(l));
 
+  const papers = p.match(/^\/api\/modules\/(\d+)\/papers$/);
+  if (papers) {
+    return listPapers(s.questions.filter((q) => q.module_id === Number(papers[1]) && q.origin === "exam").map((q) => q.source));
+  }
+
+  const attempts = p.match(/^\/api\/modules\/(\d+)\/attempts$/);
+  if (attempts) return (s.attempts ?? []).filter((a) => a.module_id === Number(attempts[1]));
+
   const exam = p.match(/^\/api\/modules\/(\d+)\/exam$/);
   if (exam) {
+    const paper = url.searchParams.get("paper");
+    if (paper) {
+      return byPaperOrder(
+        s.questions.filter((q) => q.module_id === Number(exam[1]) && q.origin === "exam" && paperOf(q.source)?.paper === paper),
+      );
+    }
     const examOnly = url.searchParams.get("origin") === "exam";
     const n = Math.min(Number(url.searchParams.get("n")) || 20, 200);
     const pool = s.questions.filter((q) => q.module_id === Number(exam[1]) && (!examOnly || q.origin === "exam") && inLessons(q));
@@ -546,8 +573,10 @@ function offlineAnswer(path: string): unknown {
   const all = url.searchParams.get("all") === "1";
   // ?modules=1,2: only questions from those modules.
   const moduleIds = url.searchParams.get("modules")?.split(",").map(Number);
+  // ?calc=1: only questions that need a calculation.
+  const calcOnly = url.searchParams.get("calc") === "1";
   return s.questions
-    .filter((q) => inScope(q) && inLessons(q) && (!moduleIds || moduleIds.includes(q.module_id)) && (all || !q.card || q.card.due <= now))
+    .filter((q) => inScope(q) && inLessons(q) && (!moduleIds || moduleIds.includes(q.module_id)) && (!calcOnly || (q.calc ?? 0) > 0) && (all || !q.card || q.card.due <= now))
     // Overdue reviews first, then unseen questions in exam order.
     .sort((a, b) => (a.card ? 0 : 1) - (b.card ? 0 : 1) || (a.card?.due ?? 0) - (b.card?.due ?? 0) || a.id - b.id);
 }

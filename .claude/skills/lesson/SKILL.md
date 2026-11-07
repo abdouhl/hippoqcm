@@ -70,6 +70,14 @@ Distribute by exam weight:
   you'd need outside knowledge to justify the key, drop the question. Never contradict an official exam key;
   if the lesson seems to, mention it to the user.
 - `explanation`: 1–3 sentences — the fact from the lesson, and why the tempting distractor is wrong.
+- `calc` / `mental` — **no calculator is allowed in the exam.** Set `"calc": true` on every question whose answer
+  needs a numeric calculation (plugging values into a formula, a ratio, a log, a unit conversion; not merely
+  recalling a number), and give `mental`: 1–3 sentences on how to do it by hand, fast. Round the data to friendly
+  numbers, use memorised values (log 2 ≈ 0.3, log 3 ≈ 0.48, ln 10 ≈ 2.3, RT/F ≈ 26.7 mV at 37 °C, 1/3 ≈ 0.33…),
+  work in powers of ten, and say which options an order-of-magnitude, sign or unit check already eliminates.
+  Write numeric options far enough apart that a careful estimate picks the right one, as in the real exams.
+  For linked exam questions that need a calculation, add the same kind of tip under `exam_mental` (keyed like
+  `exam_questions`); `migrate` then tags those exam questions too.
 - `page`: physical page where the answer is taught.
 - `weight`: the exam weight of the question's topic from step 4 — the number of different exam sessions that asked it
   (0 if never examined). The scheduler gives often-examined topics a higher target recall and reviews them first.

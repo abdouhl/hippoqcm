@@ -11,6 +11,8 @@ const PATHS = {
   file: <><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" /><path d="M14 3v5h5" /><path d="M9 13h6M9 17h4" /></>,
   pencil: <><path d="M17 3.5a2.1 2.1 0 0 1 3 3L7.5 19 3 20.5 4.5 16z" /><path d="m15 5.5 3 3" /></>,
   book: <><path d="M4 19V5.5A2.5 2.5 0 0 1 6.5 3H20v14H6.5A2.5 2.5 0 0 0 4 19.5 2.5 2.5 0 0 0 6.5 22H20v-5" /></>,
+  // A pencil-and-paper sum: + − × = on a card, for questions worked out by hand.
+  calc: <><rect x="4" y="3" width="16" height="18" rx="2" /><path d="M8 7.5h8" /><path d="M8 12h2M9 11v2" /><path d="M14 12h2" /><path d="m8.3 15.8 1.4 1.4M9.7 15.8l-1.4 1.4" /><path d="M14 15.5h2M14 17.5h2" /></>,
   timer: <><circle cx="12" cy="13" r="8" /><path d="M12 9v4l2.5 2.5" /><path d="M10 2h4" /></>,
   key: <><circle cx="7.5" cy="15.5" r="4.5" /><path d="m10.7 12.3 9.8-9.8" /><path d="m16 7 3 3" /><path d="m18.5 4.5 2 2" /></>,
   check: <path d="M20 6 9 17l-5-5" />,

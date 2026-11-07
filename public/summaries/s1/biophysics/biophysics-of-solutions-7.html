@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biophysics of solutions 7 — Summary</title>
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Biophysics · Summary · Part 7 of 7</div>
+<h1>Biophysics of solutions — 7</h1>
+<p class="meta">Pr B. Boutabia-Chéraitia · slides 40–46 (Donnan equilibrium: faraday, equivalents, Nernst equation, Gibbs-Donnan equation) · 4 pages · 5 past exam questions (EMD1 2022–2026) ·
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf">open the PDF</a></p>
+<p class="meta">Course parts: <a target="_self" href="biophysics-of-solutions.html">1 · States, Psat</a> ·
+  <a target="_self" href="biophysics-of-solutions-2.html">2 · Solutions, activity, ionic strength</a> ·
+  <a target="_self" href="biophysics-of-solutions-3.html">3 · Osmolarity</a> ·
+  <a target="_self" href="biophysics-of-solutions-4.html">4 · Colligative properties</a> ·
+  <a target="_self" href="biophysics-of-solutions-5.html">5 · Renal work, transport</a> ·
+  <a target="_self" href="biophysics-of-solutions-6.html">6 · Membrane diffusion, dialysis</a> ·
+  <b>7 · Donnan equilibrium</b></p>
+<ul class="toc">
+  <li><a target="_self" href="#essentials">Essentials</a></li>
+  <li><a target="_self" href="#definitions">Definitions</a></li>
+  <li><a target="_self" href="#nernst">Nernst equation</a></li>
+  <li><a target="_self" href="#donnan">Donnan equation</a></li>
+  <li><a target="_self" href="#exams">Exam calculations</a></li>
+  <li><a target="_self" href="#traps">Exam traps</a></li>
+  <li><a target="_self" href="#check">Self-check</a></li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<div class="box essentials" id="essentials">
+  <span class="label">If you remember only this</span>
+  <ul>
+    <li><b>1 F = 𝒩<sub>A</sub> × e = 96 500 C</b> (charge of one mole of electrons). 1 mol Na⁺ = 1 Eq, 1 mol Ca²⁺ = 2 Eq.</li>
+    <li>Equivalent concentration <b>C<sub>e</sub> = |z|·C</b> (Eq/L). Electroneutrality: <b>C<sub>e</sub>⁺ = C<sub>e</sub>⁻</b>, so <b>C<sub>e</sub> = 2C<sub>e</sub>⁺ = 2C<sub>e</sub>⁻</b>.</li>
+    <li>Donnan set-up: a <b>non-diffusible charged protein Pr<sup>z−</sup></b> on side (2); the diffusible ions B⁺ <b>and</b> A⁻ move until equilibrium, and their concentrations end up <b>unequal</b> on the two sides.</li>
+    <li>At equilibrium: <b>[A⁻]₁ &gt; [A⁻]₂</b> and <b>[B⁺]₂ &gt; [B⁺]₁</b>; the protein side is <b>negative</b>, the field E goes (1) → (2), so <b>V₁ &gt; V₂</b>.</li>
+    <li><b>Nernst</b> (each diffusible ion): <b>V₂ − V₁ = −(RT/zF) ln(C₂/C₁) = −(kT/ze) ln(C₂/C₁)</b>; T in kelvin.</li>
+    <li><b>Gibbs-Donnan</b>: (1/z) ln([I]₂/[I]₁) = (1/z′) ln([I′]₂/[I′]₁) → for A⁻ and B⁺: <b>[A⁻]₂/[A⁻]₁ = [B⁺]₁/[B⁺]₂</b>, i.e. <b>[A⁻]₁[B⁺]₁ = [A⁻]₂[B⁺]₂</b>.</li>
+    <li>Amount that crosses: <b>x = zCC′ / (4C + zC′)</b>.</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="definitions"><span class="num">2-3-1.</span> Definitions
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=1">slides 40–42</a></h2>
+<div class="table-wrap"><table>
+  <tr><th>Term</th><th>Definition</th><th>Formula / example</th></tr>
+  <tr><td><span class="term">Faraday (F)</span></td><td>The electric charge carried by <b>one mole of electrons</b></td><td><b>1 F = 𝒩<sub>A</sub> × e = 96 500 C</b></td></tr>
+  <tr><td><span class="term">Equivalent (Eq)</span></td><td>The amount of a substance that carries <b>one faraday</b> of electric charge</td><td>1 mol Na⁺ → 1 Eq · 1 mol Ca²⁺ → <b>2 Eq</b></td></tr>
+  <tr><td><span class="term">Equivalent concentration C<sub>e</sub></span></td><td>Of an ion i of valence z<sub>i</sub> and concentration C<sub>i</sub></td><td><b>C<sub>e</sub> = |z<sub>i</sub>| C<sub>i</sub></b>, unit <b>Eq/L</b>. [Al³⁺] = 1 mol/L, z = 3 ⇒ C<sub>e</sub> = 3 Eq/L</td></tr>
+  <tr><td><span class="term">Total equivalent concentration</span></td><td>Of a solution: cations + anions</td><td><b>C<sub>e</sub> = C<sub>e</sub>⁺ + C<sub>e</sub>⁻</b>, with C<sub>e</sub>⁺ = Σ|z<sub>i</sub>⁺|C<sub>i</sub>⁺ and C<sub>e</sub>⁻ = Σ|z<sub>i</sub>⁻|C<sub>i</sub>⁻</td></tr>
+  <tr><td><span class="term">Electroneutrality</span></td><td>Condition in any solution</td><td><b>C<sub>e</sub>⁺ = C<sub>e</sub>⁻ ⇒ C<sub>e</sub> = 2C<sub>e</sub>⁺ = 2C<sub>e</sub>⁻</b></td></tr>
+</table></div>
+<div class="box"><span class="label">Worked exercise (slides 41–42)</span>
+  1 L contains <b>2 mol CaCl₂</b> and <b>1 mol NaOH</b>. Equivalent concentration?
+  <ol class="steps">
+    <li>CaCl₂ → Ca²⁺ + 2Cl⁻ ⇒ [Ca²⁺] = 2 mol/L, [Cl⁻] = 4 mol/L.</li>
+    <li>NaOH → Na⁺ + OH⁻ ⇒ [Na⁺] = 1 mol/L, [OH⁻] = 1 mol/L.</li>
+    <li>C<sub>e</sub>⁺ = 2 × 2 + 1 × 1 = <b>5 Eq/L</b>; C<sub>e</sub>⁻ = 1 × 4 + 1 × 1 = <b>5 Eq/L</b> (electroneutral ✓).</li>
+    <li>C<sub>e</sub> = 2C<sub>e</sub>⁺ = <b>10 Eq/L</b>.</li>
+  </ol></div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="nernst"><span class="num">2-3-2.</span> Nernst equation
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=2">slides 42–45</a>
+  <span class="exam">2024-25 · 2025-26</span></h2>
+<h3>The Donnan set-up</h3>
+<ul>
+  <li>Two compartments (1) and (2) of <b>equal volume V</b>, separated by a <b>non-sliding dialysis membrane</b>.</li>
+  <li>(1): salt AB, [AB]₁ = C → A⁻ + B⁺, both <b>diffusible</b>.</li>
+  <li>(2): salt AB, [AB]₂ = C, <b>and</b> protein PrB<sub>z</sub>, [PrB<sub>z</sub>]₂ = C′ → Pr<sup>z−</sup> + zB⁺. <b>Pr<sup>z−</sup> is non-diffusible.</b></li>
+</ul>
+<div class="table-wrap"><table>
+  <tr><th></th><th>Compartment (1)</th><th>Compartment (2)</th></tr>
+  <tr><td><b>Initially</b></td><td>[A⁻]₁ = C<br>[B⁺]₁ = C</td><td>[A⁻]₂ = C<br>[B⁺]₂ = <b>C + zC′</b><br>[Pr<sup>z−</sup>]₂ = C′</td></tr>
+  <tr><td><b>At equilibrium</b></td><td>[B⁺]₁ = <b>C + x</b><br>[A⁻]₁ = <b>C + x</b></td><td>[B⁺]₂ = <b>C + zC′ − x</b><br>[A⁻]₂ = <b>C − x</b><br>[Pr<sup>z−</sup>]₂ = C′</td></tr>
+</table></div>
+<ol class="steps">
+  <li>[B⁺]₂ &gt; [B⁺]₁ ⇒ <b>n moles of B⁺</b> (concentration <b>x = n/V</b>) diffuse from (2) → (1).</li>
+  <li>They are <b>accompanied by n moles of A⁻</b> to ensure electroneutrality — A⁻ moves although it started at the same concentration on both sides.</li>
+  <li>At equilibrium: <b>[A⁻]₁ &gt; [A⁻]₂</b>, and still <b>[B⁺]₂ &gt; [B⁺]₁</b>.</li>
+</ol>
+
+<figure>
+  <svg viewBox="0 0 760 370" role="img" aria-label="Donnan equilibrium: compartment 1 with B+ and A- at C+x, compartment 2 with B+ at C+zC'-x, A- at C-x and the non-diffusible protein at C'. The membrane side facing the protein is negative, the other side positive; the transmembrane field E points from 1 to 2, so V1 is higher than V2. n moles of B+ and A- crossed from 2 to 1.">
+    <defs><marker id="dn1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="s-text"/></marker></defs>
+    <line x1="300" y1="38" x2="460" y2="38" class="s-line" stroke-width="2.5" marker-end="url(#dn1)"/>
+    <text x="380" y="18" text-anchor="middle" class="s-text" font-size="15" font-weight="700">E (transmembrane field): (1) → (2)</text>
+    <rect x="20" y="54" width="340" height="250" rx="10" class="s-accent" stroke-width="2"/>
+    <rect x="400" y="54" width="340" height="250" rx="10" class="s-violet" stroke-width="2"/>
+    <line x1="380" y1="44" x2="380" y2="306" class="s-line" stroke-width="3" stroke-dasharray="8 6"/>
+    <text x="190" y="84" text-anchor="middle" class="s-text" font-size="18" font-weight="700">(1) salt AB</text>
+    <text x="570" y="84" text-anchor="middle" class="s-text" font-size="18" font-weight="700">(2) salt AB + protein</text>
+    <text x="190" y="140" text-anchor="middle" class="s-text" font-size="17">[B⁺]₁ = C + x</text>
+    <text x="190" y="180" text-anchor="middle" class="s-text" font-size="17">[A⁻]₁ = C + x</text>
+    <text x="570" y="130" text-anchor="middle" class="s-text" font-size="17">[B⁺]₂ = C + zC′ − x</text>
+    <text x="570" y="166" text-anchor="middle" class="s-text" font-size="17">[A⁻]₂ = C − x</text>
+    <text x="570" y="202" text-anchor="middle" class="s-text" font-size="17" font-weight="700">[Prᶻ⁻]₂ = C′</text>
+    <text x="570" y="224" text-anchor="middle" class="s-muted" font-size="13">non-diffusible</text>
+    <text x="190" y="280" text-anchor="middle" class="s-text" font-size="16" font-weight="700">V₁ (higher)</text>
+    <text x="570" y="280" text-anchor="middle" class="s-text" font-size="16" font-weight="700">V₂ (lower)</text>
+    <text x="364" y="110" text-anchor="middle" class="s-text" font-size="20" font-weight="700">+</text>
+    <text x="364" y="170" text-anchor="middle" class="s-text" font-size="20" font-weight="700">+</text>
+    <text x="364" y="230" text-anchor="middle" class="s-text" font-size="20" font-weight="700">+</text>
+    <text x="396" y="110" text-anchor="middle" class="s-text" font-size="20" font-weight="700">−</text>
+    <text x="396" y="170" text-anchor="middle" class="s-text" font-size="20" font-weight="700">−</text>
+    <text x="396" y="230" text-anchor="middle" class="s-text" font-size="20" font-weight="700">−</text>
+    <line x1="470" y1="325" x2="290" y2="325" class="s-line" stroke-width="2.5" marker-end="url(#dn1)"/>
+    <text x="380" y="355" text-anchor="middle" class="s-text" font-size="15">n mol B⁺ + n mol A⁻ cross (2) → (1) · x = n/V</text>
+  </svg>
+  <figcaption>Learn the equilibrium values and the signs: the side touching Pr<sup>z−</sup> is <b>negative</b>, the field E points from (+) to (−), i.e. (1) → (2), so <b>V₁ &gt; V₂</b>. Redrawn from the slides' tables and schema.
+    <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=3">slide 44</a></figcaption>
+</figure>
+
+<h3>The transmembrane electric field</h3>
+<ul>
+  <li>Everything happens as if the retained macro-ions Pr<sup>z−</sup> in (2) <b>attract B⁺</b> (force F₊ = q<sub>B⁺</sub>E) and <b>repel A⁻</b> (force F₋ = q<sub>A⁻</sub>E).</li>
+  <li><span class="term">E</span> = <b>transmembrane</b> (transmembranaire) electric field; it <b>always points from (+) to (−)</b>.</li>
+  <li>The membrane side in contact with Pr<sup>z−</sup> is <b>negatively</b> charged, the other side <b>positively</b>. E: (1) → (2) ⇒ <b>V₁ &gt; V₂</b>.</li>
+</ul>
+<div class="formula">E = − <span class="frac"><span>V₂ − V₁</span><span>l</span></span>
+  <span class="where">V₂ − V₁ = membrane potential · V₂, V₁ = electrochemical potentials · l = membrane thickness</span></div>
+
+<h3>Nernst equation</h3>
+<div class="formula">V₂ − V₁ = − <span class="frac"><span>RT</span><span>zF</span></span> ln <span class="frac"><span>C₂</span><span>C₁</span></span> = − <span class="frac"><span>kT</span><span>ze</span></span> ln <span class="frac"><span>C₂</span><span>C₁</span></span>
+  <span class="where">Nernst equation for <b>diffusible</b> ions · the two forms are equal because F = 𝒩<sub>A</sub>·e and R = 𝒩<sub>A</sub>·k ⇒ kT/ze = RT/zF</span></div>
+<div class="box trap"><span class="label">In calculations</span>
+  T in <b>kelvin</b> (17 °C = 290 K, 27 °C = 300 K); keep the sign of z; result in volts → ×1000 for mV. Keep track of which side is "2" (exams: 2 = axoplasm, 1 = outside).</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="donnan"><span class="num">2-3-3.</span> Donnan equilibrium equation
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=3">slides 45–46</a>
+  <span class="exam">2022-23 · 2024-25 · 2025-26</span></h2>
+<ol class="steps">
+  <li>Ion I (valence z): V₂ − V₁ = −(kT/ze) ln([I]₂/[I]₁). Ion I′ (valence z′): V₂ − V₁ = −(kT/z′e) ln([I′]₂/[I′]₁).</li>
+  <li>Same membrane potential for both ⇒</li>
+</ol>
+<div class="formula"><span class="frac"><span>1</span><span>z</span></span> ln <span class="frac"><span>[I]₂</span><span>[I]₁</span></span> = <span class="frac"><span>1</span><span>z′</span></span> ln <span class="frac"><span>[I′]₂</span><span>[I′]₁</span></span>
+  <span class="where"><b>Donnan equilibrium</b> equation, or <b>Gibbs-Donnan</b> equation. Equivalently with C<sub>e</sub>: since C<sub>e</sub>(I) = |z|[I], [I]₂/[I]₁ = C<sub>e2</sub>(I)/C<sub>e1</sub>(I)</span></div>
+<h3>Application to A⁻ (z = −1) and B⁺ (z = +1)</h3>
+<div class="flow"><span>−ln([A⁻]₂/[A⁻]₁) = ln([B⁺]₂/[B⁺]₁)</span><i>⇒</i><span>ln([A⁻]₂/[A⁻]₁) = ln([B⁺]₁/[B⁺]₂)</span><i>⇒</i><span><b>[A⁻]₂/[A⁻]₁ = [B⁺]₁/[B⁺]₂</b></span></div>
+<ul>
+  <li>Consequence: <b>[A⁻]₁ &gt; [A⁻]₂ ⇒ [B⁺]₂ &gt; [B⁺]₁</b>.</li>
+  <li>Rearranged: <b>[A⁻]₁·[B⁺]₁ = [A⁻]₂·[B⁺]₂</b> — the form used in exam calculations.</li>
+</ul>
+<h3>Value of x</h3>
+<div class="formula"><span class="frac"><span>C − x</span><span>C + x</span></span> = <span class="frac"><span>C + x</span><span>C − x + zC′</span></span> ⇒ x = <span class="frac"><span>zCC′</span><span>4C + zC′</span></span></div>
+<div class="box tip"><span class="label">Memory trick</span>
+  "Protein side: positive ions pile up, negative ions are pushed out." The non-diffusible anion keeps B⁺ on its side and A⁻ away — and the side holding it is the negative one.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="exams"><span class="num">Ex.</span> Exam calculations with this lesson</h2>
+<div class="table-wrap"><table>
+  <tr><th>Question</th><th>Data</th><th>Solution (official key)</th></tr>
+  <tr><td><b>2022-23 Q15</b> — Donnan</td><td>[Na⁺]<sub>I</sub> = 0.57, [Na⁺]<sub>II</sub> = 0.714 osmol/L, protein in II. [Cl⁻]<sub>II</sub>?</td>
+    <td>Side I (no protein): [Cl⁻]<sub>I</sub> = [Na⁺]<sub>I</sub> = 0.57. [Cl⁻]<sub>II</sub> = [Na⁺]<sub>I</sub>[Cl⁻]<sub>I</sub>/[Na⁺]<sub>II</sub> = 0.57²/0.714 = <b>0.455 osmol/L = 455 mosmol/L</b> (A)</td></tr>
+  <tr><td><b>2025-26 Q15</b> — Donnan</td><td>[Na⁺]<sub>i</sub>[Cl⁻]<sub>i</sub> = 0.16 (osmol/L)², [Cl⁻]<sub>ii</sub> = 0.457, z = 18. Protein osmolarity?</td>
+    <td>[Na⁺]<sub>ii</sub> = 0.16/0.457 = 0.350. Electroneutrality on the protein side: z·[Pr] = |0.457 − 0.350| = 0.107 ⇒ [Pr] = 0.107/18 ≈ <b>6 mosmol/L</b> (D)</td></tr>
+  <tr><td><b>2024-25 Q17</b> — Nernst K⁺</td><td>C<sub>axoplasm</sub> = 100, C<sub>ext</sub> = 4 mmol/L, 17 °C</td>
+    <td>−(8.31 × 290 / 96 500) × ln(100/4) = −0.02497 × 3.219 = <b>−80.4 mV</b> (C)</td></tr>
+  <tr><td><b>2025-26 Q17</b> — Nernst Na⁺</td><td>C<sub>axoplasm</sub> = 20, C<sub>ext</sub> = 120 mmol/L, 27 °C</td>
+    <td>−(8.31 × 300 / 96 500) × ln(20/120) = 0.02583 × 1.792 = <b>+46.3 mV</b> (D)</td></tr>
+</table></div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="traps">Exam traps <span class="meta">— the wrong options past exams used</span></h2>
+<div class="box trap"><span class="label">False statements to recognise (2024-25 Q14, only C is correct)</span>
+  <ul>
+    <li>"The macromolecule is not necessarily charged" — <b>false</b>: it is the charged, non-diffusible Pr<sup>z−</sup> that creates the field and the unequal distribution. <span class="exam">2024-25</span></li>
+    <li>"Only ions initially presenting a concentration gradient diffuse" — <b>false</b>: A⁻ starts at C on both sides, yet n moles of A⁻ cross with B⁺ to keep electroneutrality. <span class="exam">2024-25</span></li>
+    <li>"The Donnan ratio expresses the ratio of ion concentrations of opposite sign" — <b>false</b> per the key: the Donnan equation compares the concentrations of <b>the same ion</b> on both sides ([A⁻]₂/[A⁻]₁ = [B⁺]₁/[B⁺]₂). <span class="exam">2024-25</span></li>
+    <li>"The osmotic pressure is called oncotic pressure" — <b>false</b> per the key (oncotic pressure is not covered in these slides). <span class="exam">2024-25</span></li>
+    <li>✅ True: "there is an inequality of ion concentrations of the same sign on either side of the membrane at equilibrium".</li>
+  </ul>
+</div>
+<div class="box trap"><span class="label">Calculation traps</span>
+  <ul>
+    <li>Forgetting °C → K, or the minus sign of Nernst: the K⁺ answer is <b>negative</b> (−80.4 mV), the Na⁺ answer <b>positive</b> (+46.3 mV). <span class="exam">2024-25 · 2025-26</span></li>
+    <li>In Donnan exercises the compartment <b>without</b> protein has [cation] = [anion]; only the protein side is unequal. <span class="exam">2022-23 · 2025-26</span></li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="check">Self-check <span class="meta">— answer, then tap to reveal</span></h2>
+<details class="card"><summary>What is the faraday, and its value?</summary><div>The charge of one mole of electrons: 1 F = 𝒩<sub>A</sub> × e = 96 500 C.</div></details>
+<details class="card"><summary>How many equivalents in 1 mol Ca²⁺? In 1 mol/L Al³⁺?</summary><div>2 Eq; C<sub>e</sub> = 3 Eq/L.</div></details>
+<details class="card"><summary>1 L with 2 mol CaCl₂ and 1 mol NaOH: total equivalent concentration?</summary><div>C<sub>e</sub>⁺ = C<sub>e</sub>⁻ = 5 Eq/L ⇒ C<sub>e</sub> = 10 Eq/L.</div></details>
+<details class="card"><summary>Initial and equilibrium concentrations of the Donnan set-up?</summary><div>Initially (1): A⁻ = B⁺ = C; (2): A⁻ = C, B⁺ = C + zC′, Pr = C′. Equilibrium (1): C + x each; (2): B⁺ = C + zC′ − x, A⁻ = C − x.</div></details>
+<details class="card"><summary>Why does A⁻ cross the membrane when it had no gradient?</summary><div>It accompanies the n moles of B⁺ that leave (2), to ensure electroneutrality.</div></details>
+<details class="card"><summary>Which side is negative, which way does E point, which potential is higher?</summary><div>The protein side (2) is negative; E points (1) → (2); V₁ &gt; V₂.</div></details>
+<details class="card"><summary>Relation between E and the membrane potential?</summary><div>E = −(V₂ − V₁)/l, l = membrane thickness.</div></details>
+<details class="card"><summary>Write the Nernst equation in its two forms.</summary><div>V₂ − V₁ = −(RT/zF) ln(C₂/C₁) = −(kT/ze) ln(C₂/C₁).</div></details>
+<details class="card"><summary>Gibbs-Donnan equation, and its form for A⁻/B⁺?</summary><div>(1/z) ln([I]₂/[I]₁) = (1/z′) ln([I′]₂/[I′]₁) ⇒ [A⁻]₂/[A⁻]₁ = [B⁺]₁/[B⁺]₂.</div></details>
+<details class="card"><summary>Expression of x?</summary><div>x = zCC′/(4C + zC′).</div></details>
+<details class="card"><summary>K⁺: 100 mmol/L inside, 4 outside, 17 °C. Nernst potential?</summary><div>−(8.31 × 290/96 500) ln 25 = −80.4 mV.</div></details>
+<details class="card"><summary>Na⁺: 20 mmol/L inside, 120 outside, 27 °C?</summary><div>+46.3 mV.</div></details>
+<details class="card"><summary>[Na⁺]<sub>I</sub> = 0.57, [Na⁺]<sub>II</sub> = 0.714 osmol/L (protein in II). [Cl⁻]<sub>II</sub>?</summary><div>0.57²/0.714 = 455 mosmol/L.</div></details>
+
+<footer>Summary of "Biophysics of solutions" slides 40–46, Pr B. Boutabia-Chéraitia, 1st-year medicine, Faculty of Medicine Annaba.
+  🎯 = asked in past EMD1 exams. 📄 = page in the lesson PDF. Exam calculations reproduce the official keys with the course's formulas.</footer>
+</main>
+</body>
+</html>

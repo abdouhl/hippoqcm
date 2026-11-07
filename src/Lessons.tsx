@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
-import type { Lesson, LessonRead, Module, ReadKind } from "../shared/types";
+import type { ExamAttempt, Lesson, LessonRead, Module, Paper, ReadKind } from "../shared/types";
 import { addLessonRead, getJSON, undoLessonRead } from "./api";
+import { formatScore, useAttempts } from "./Exam";
 import { Icon } from "./icons";
 import { ScreenHeader, Skeleton, useMedia } from "./ui";
 
@@ -122,11 +123,12 @@ function toggleDone(path: string, id: string) {
 }
 
 // Which tab the module page shows, remembered for the session so coming back from a set keeps it.
-type ModuleTab = "lessons" | "exercises";
+type ModuleTab = "lessons" | "exercises" | "papers";
 const tabKey = (module: Module) => `hippoqcm.moduleTab.${module.id}`;
 function readTab(module: Module): ModuleTab {
   try {
-    return sessionStorage.getItem(tabKey(module)) === "exercises" ? "exercises" : "lessons";
+    const tab = sessionStorage.getItem(tabKey(module));
+    return tab === "exercises" || tab === "papers" ? tab : "lessons";
   } catch {
     return "lessons";
   }
@@ -153,6 +155,57 @@ function ExerciseRow({ set, onOpen }: { set: ExerciseSet; onOpen: () => void }) 
   );
 }
 
+// A module's past exam papers, newest first; [] while loading or offline without a copy.
+function usePapers(moduleId: number): Paper[] {
+  const [papers, setPapers] = useState<Paper[]>([]);
+  useEffect(() => {
+    getJSON<Paper[]>(`/api/modules/${moduleId}/papers`).then(setPapers).catch(() => {});
+  }, [moduleId]);
+  return papers;
+}
+
+const READINESS_PAPERS = 3; // "exam readiness" averages the latest tries at this many different papers
+
+/** Average of the latest score on each of the most recently sat papers, or null before any. */
+export function readiness(attempts: ExamAttempt[]): { score: number; papers: number } | null {
+  const latest = new Map<string, number>();
+  for (const a of [...attempts].sort((x, y) => y.submitted_at - x.submitted_at)) {
+    if (a.paper && !latest.has(a.paper) && latest.size < READINESS_PAPERS) latest.set(a.paper, a.score);
+  }
+  if (latest.size === 0) return null;
+  const scores = [...latest.values()];
+  return { score: scores.reduce((t, x) => t + x, 0) / scores.length, papers: scores.length };
+}
+
+function PaperRow({ paper, attempts, onOpen }: { paper: Paper; attempts: ExamAttempt[]; onOpen: () => void }) {
+  const best = attempts.length ? Math.max(...attempts.map((a) => a.score)) : null;
+  const last = attempts.at(-1);
+  return (
+    <li>
+      <button className="module" onClick={onOpen}>
+        <span className="name">
+          <span className={best !== null && best >= 10 ? "check" : "check unread"}>
+            <Icon name={best !== null && best >= 10 ? "check" : "file"} size={16} />
+          </span>{" "}
+          {paper.paper}
+        </span>
+        <span className="meta">
+          {paper.count} Qs
+          {paper.missing.length > 0 && <> · <span className="warn">{paper.missing.length} missing</span></>}
+          {last ? (
+            <>
+              {" "}· last {formatScore(last.score)}/20
+              {attempts.length > 1 && <> · best {formatScore(best!)} · {attempts.length}×</>}
+            </>
+          ) : (
+            " · not sat yet"
+          )}
+        </span>
+      </button>
+    </li>
+  );
+}
+
 const formatDate = (ms: number) => new Date(ms).toLocaleDateString(undefined, { day: "numeric", month: "short" });
 
 type ModuleProps = {
@@ -161,13 +214,18 @@ type ModuleProps = {
   onOpenLesson: (lesson: Lesson) => void;
   onOpenExercises: (set: ExerciseSet) => void;
   onStudy: (lessonsOnly: boolean) => void;
+  onStudyCalc: () => void;
   onStudyLessons: (lessons: Lesson[]) => void;
   onExam: (lessons?: Lesson[]) => void;
+  onPaper: (paper: string) => void;
 };
 
-export function ModulePage({ module, onBack, onOpenLesson, onOpenExercises, onStudy, onStudyLessons, onExam }: ModuleProps) {
+export function ModulePage({ module, onBack, onOpenLesson, onOpenExercises, onStudy, onStudyCalc, onStudyLessons, onExam, onPaper }: ModuleProps) {
   const { lessons, error, addRead, undoRead } = useLessons(module.id);
   const exercises = useExerciseSets(module);
+  const papers = usePapers(module.id);
+  const attempts = useAttempts(module.id) ?? [];
+  const ready = readiness(attempts);
   const [tab, setTabState] = useState<ModuleTab>(() => readTab(module));
   const setTab = (next: ModuleTab) => {
     setTabState(next);
@@ -178,6 +236,8 @@ export function ModulePage({ module, onBack, onOpenLesson, onOpenExercises, onSt
     }
   };
   const showExercises = tab === "exercises" && exercises.length > 0;
+  const showPapers = tab === "papers" && papers.length > 0;
+  const showLessons = !showExercises && !showPapers;
   const [picked, setPicked] = useState<Set<number>>(new Set());
   const selection = lessons?.filter((l) => picked.has(l.id)) ?? [];
   const pick = (ids: number[]) => setPicked(new Set(ids));
@@ -203,24 +263,53 @@ export function ModulePage({ module, onBack, onOpenLesson, onOpenExercises, onSt
             Only my lessons · {module.lesson_question_count} Qs
           </button>
         )}
+        {(module.calc_count ?? 0) > 0 && (
+          <button className="secondary" onClick={onStudyCalc} title="Only the questions you have to work out by hand: no calculator in the exam">
+            <Icon name="calc" size={16} /> Calculation drill · {module.calc_count} Qs
+          </button>
+        )}
         <button className="secondary" onClick={() => onExam()} disabled={module.question_count === 0}>
           <Icon name="timer" size={16} /> Mock exam
         </button>
       </div>
 
-      {exercises.length > 0 ? (
+      {ready && (
+        <p className="readiness meta">
+          <Icon name="target" size={16} /> Exam readiness{" "}
+          <b className={ready.score >= 10 ? "ok" : "bad"}>{formatScore(ready.score)}/20</b> · your latest score on the{" "}
+          {ready.papers === 1 ? "last past paper" : `last ${ready.papers} past papers`} you sat
+        </p>
+      )}
+
+      {exercises.length > 0 || papers.length > 0 ? (
         <div className="chips module-tabs" role="tablist">
-          <button role="tab" aria-selected={!showExercises} className={showExercises ? "chip" : "chip on"} onClick={() => setTab("lessons")}>
+          <button role="tab" aria-selected={showLessons} className={showLessons ? "chip on" : "chip"} onClick={() => setTab("lessons")}>
             <Icon name="book" size={15} /> Lessons{lessons ? ` · ${lessons.length}` : ""}
           </button>
-          <button role="tab" aria-selected={showExercises} className={showExercises ? "chip on" : "chip"} onClick={() => setTab("exercises")}>
-            <Icon name="pencil" size={15} /> Exercises · {exercises.length}
-          </button>
+          {papers.length > 0 && (
+            <button role="tab" aria-selected={showPapers} className={showPapers ? "chip on" : "chip"} onClick={() => setTab("papers")}>
+              <Icon name="file" size={15} /> Past papers · {papers.length}
+            </button>
+          )}
+          {exercises.length > 0 && (
+            <button role="tab" aria-selected={showExercises} className={showExercises ? "chip on" : "chip"} onClick={() => setTab("exercises")}>
+              <Icon name="pencil" size={15} /> Exercises · {exercises.length}
+            </button>
+          )}
         </div>
       ) : (
         <h2>Lessons</h2>
       )}
-      {showExercises ? (
+      {showPapers ? (
+        <>
+          <p className="meta">The real exams, whole and in their order, graded out of 20.</p>
+          <ul className="modules">
+            {papers.map((p) => (
+              <PaperRow key={p.paper} paper={p} attempts={attempts.filter((a) => a.paper === p.paper)} onOpen={() => onPaper(p.paper)} />
+            ))}
+          </ul>
+        </>
+      ) : showExercises ? (
         <ul className="modules">
           {exercises.map((set) => (
             <ExerciseRow key={set.path} set={set} onOpen={() => onOpenExercises(set)} />

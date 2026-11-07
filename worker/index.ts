@@ -1,6 +1,7 @@
 import { hashCode, isCode, normalizeCode } from "../shared/code";
+import { byPaperOrder, listPapers } from "../shared/papers";
 import type {
-  Account, ActivityDay, Insights, LessonRead, Option, ReadKind, ReviewInput, Snapshot, SnapshotUpdate, StudyQuestion,
+  Account, ActivityDay, ExamAttempt, Insights, LessonRead, Option, ReadKind, ReviewInput, Snapshot, SnapshotUpdate, StudyQuestion,
   SyncedPrefs,
 } from "../shared/types";
 
@@ -73,11 +74,16 @@ async function fsrsWeights(db: D1Database, user: number): Promise<number[] | nul
 }
 
 // Columns for a StudyQuestion row; expects `questions q LEFT JOIN cards c`.
-const QUESTION_COLUMNS = `q.id, q.module_id, q.stem, q.explanation, q.source, q.image, q.origin, q.pdf_page, q.exam_weight,
+const QUESTION_COLUMNS = `q.id, q.module_id, q.stem, q.explanation, q.source, q.image, q.origin, q.pdf_page, q.exam_weight, q.calc, q.mental,
   (SELECT l.pdf FROM question_lessons ql JOIN lessons l ON l.id = ql.lesson_id
    WHERE ql.question_id = q.id ORDER BY l.position LIMIT 1) AS pdf,
+  (SELECT json_group_array(lesson_id) FROM question_lessons WHERE question_id = q.id) AS lesson_ids,
   c.due, c.stability, c.difficulty, c.elapsed_days, c.scheduled_days,
   c.learning_steps, c.reps, c.lapses, c.state, c.last_review`;
+
+const ATTEMPT_COLUMNS = "started_at, module_id, paper, submitted_at, questions, correct, score, scoring";
+const attemptsQuery = (db: D1Database, user: number) =>
+  db.prepare(`SELECT ${ATTEMPT_COLUMNS} FROM exam_attempts WHERE user_id = ?1 ORDER BY submitted_at`).bind(user);
 
 // Attach options to question rows. The ids go in as one JSON param — D1 caps bound parameters at 100.
 async function toStudyQuestions(db: D1Database, rows: Record<string, unknown>[]): Promise<StudyQuestion[]> {
@@ -108,6 +114,9 @@ async function toStudyQuestions(db: D1Database, rows: Record<string, unknown>[])
     pdf: q.pdf as string | null,
     pdf_page: q.pdf_page as number | null,
     exam_weight: q.exam_weight as number,
+    calc: q.calc as number,
+    mental: q.mental as string | null,
+    lesson_ids: JSON.parse((q.lesson_ids as string | null) ?? "[]") as number[],
     options: byQuestion.get(q.id as number) ?? [],
     card:
       q.due == null
@@ -144,6 +153,7 @@ export default {
                 COALESCE(SUM(c.state IN (1, 3) AND c.due <= ?1), 0) AS learn_count,
                 COALESCE(SUM(c.state = 2 AND c.due <= ?1), 0) AS review_count,
                 COALESCE(SUM(EXISTS (SELECT 1 FROM question_lessons ql WHERE ql.question_id = q.id)), 0) AS lesson_question_count,
+                COALESCE(SUM(q.calc > 0), 0) AS calc_count,
                 (SELECT COUNT(*) FROM lessons l WHERE l.module_id = m.id) AS lesson_count
          FROM modules m
          LEFT JOIN questions q ON q.module_id = m.id AND q.flagged = 0
@@ -203,7 +213,7 @@ export default {
 
     // Study queue for a whole year, a semester, a module (optionally only questions tied to a
     // lesson, or to the lessons listed in ?ids=1,2), one lesson, or every leech. Year n = semesters 2n-1 and 2n.
-    // ?modules=1,2 keeps only those modules' questions.
+    // ?modules=1,2 keeps only those modules' questions; ?calc=1 only the ones that need a calculation.
     const studyMatch = url.pathname.match(/^\/api\/(?:(years|semesters|modules|lessons)\/(\d+)|(leeches))\/study$/);
     if (studyMatch && request.method === "GET") {
       const onlyLessons = url.searchParams.get("lessons") === "1"
@@ -225,6 +235,7 @@ export default {
            AND (?5 IS NULL OR q.id IN (SELECT question_id FROM question_lessons
                                        WHERE lesson_id IN (SELECT value FROM json_each(?5))))
            AND (?6 IS NULL OR q.module_id IN (SELECT value FROM json_each(?6)))
+           AND (?7 = 0 OR q.calc > 0)
          -- Overdue reviews first, then unseen questions in exam order.
          ORDER BY c.due IS NULL, c.due, q.id`,
       )
@@ -235,6 +246,7 @@ export default {
           user,
           url.searchParams.has("ids") ? JSON.stringify(idList(url)) : null,
           url.searchParams.has("modules") ? JSON.stringify(idList(url, "modules")) : null,
+          url.searchParams.get("calc") === "1" ? 1 : 0,
         )
         .all<Record<string, unknown>>();
       return json(await toStudyQuestions(env.DB, results));
@@ -243,6 +255,19 @@ export default {
     // Random sample of a module's questions for a mock exam, ignoring due dates; ?ids=1,2 limits it to those lessons.
     const examMatch = url.pathname.match(/^\/api\/modules\/(\d+)\/exam$/);
     if (examMatch && request.method === "GET") {
+      // ?paper=EMD1 2024-2025: that whole past paper, in its order.
+      const paper = url.searchParams.get("paper");
+      if (paper) {
+        const { results } = await env.DB.prepare(
+          `SELECT ${QUESTION_COLUMNS}
+           FROM questions q
+           LEFT JOIN cards c ON c.question_id = q.id AND c.user_id = ?3
+           WHERE q.module_id = ?1 AND q.flagged = 0 AND q.origin = 'exam' AND substr(q.source, 1, length(?2) + 2) = ?2 || ' Q'`,
+        )
+          .bind(Number(examMatch[1]), paper, user)
+          .all<Record<string, unknown>>();
+        return json(byPaperOrder(await toStudyQuestions(env.DB, results)));
+      }
       const { results } = await env.DB.prepare(
         `SELECT ${QUESTION_COLUMNS}
          FROM questions q
@@ -262,6 +287,28 @@ export default {
         )
         .all<Record<string, unknown>>();
       return json(await toStudyQuestions(env.DB, results));
+    }
+
+    // A module's past exam papers, newest first.
+    const papersMatch = url.pathname.match(/^\/api\/modules\/(\d+)\/papers$/);
+    if (papersMatch && request.method === "GET") {
+      const { results } = await env.DB.prepare(
+        "SELECT source FROM questions WHERE module_id = ?1 AND flagged = 0 AND origin = 'exam'",
+      )
+        .bind(Number(papersMatch[1]))
+        .all<{ source: string | null }>();
+      return json(listPapers(results.map((r) => r.source)));
+    }
+
+    // The caller's handed-in mock exams for a module, oldest first.
+    const attemptsMatch = url.pathname.match(/^\/api\/modules\/(\d+)\/attempts$/);
+    if (attemptsMatch && request.method === "GET") {
+      const { results } = await env.DB.prepare(
+        `SELECT ${ATTEMPT_COLUMNS} FROM exam_attempts WHERE user_id = ?1 AND module_id = ?2 ORDER BY submitted_at`,
+      )
+        .bind(user, Number(attemptsMatch[1]))
+        .all<ExamAttempt>();
+      return json(results);
     }
 
     // Weak spots: accuracy per module and lesson, leeches, and how wrong answers go wrong.
@@ -374,31 +421,32 @@ export default {
       const prefs: SyncedPrefs = p ? { settings: JSON.parse(p.settings), updated_at: p.updated_at } : null;
 
       if (Number(url.searchParams.get("content")) === content_version) {
-        const [cards, reads] = await env.DB.batch([
+        const [cards, reads, attempts] = await env.DB.batch([
           env.DB.prepare(
             `SELECT question_id, due, stability, difficulty, elapsed_days, scheduled_days,
                     learning_steps, reps, lapses, state, last_review
              FROM cards WHERE user_id = ?1`,
           ).bind(user),
           env.DB.prepare("SELECT lesson_id, kind, read_at FROM lesson_read_log WHERE user_id = ?1 ORDER BY read_at").bind(user),
+          attemptsQuery(env.DB, user),
         ]);
         const update: SnapshotUpdate = {
           content_version,
           cards: cards.results as SnapshotUpdate["cards"],
           reads: reads.results as SnapshotUpdate["reads"],
           prefs,
+          attempts: attempts.results as ExamAttempt[],
           fsrs_w: await fsrsWeights(env.DB, user),
           fetched_at: Date.now(),
         };
         return json(update);
       }
 
-      const [modules, lessons, links, questions] = await env.DB.batch([
+      const [modules, lessons, questions, attempts] = await env.DB.batch([
         env.DB.prepare("SELECT id, semester, name FROM modules ORDER BY semester, name"),
         env.DB.prepare(
           "SELECT id, module_id, title, pdf, position, completed_at FROM lessons ORDER BY module_id, position",
         ),
-        env.DB.prepare("SELECT question_id, lesson_id FROM question_lessons"),
         env.DB.prepare(
           `SELECT ${QUESTION_COLUMNS}
            FROM questions q
@@ -406,12 +454,8 @@ export default {
            WHERE q.flagged = 0
            ORDER BY q.id`,
         ).bind(user),
+        attemptsQuery(env.DB, user),
       ]);
-      const lessonIds = new Map<number, number[]>();
-      for (const { question_id, lesson_id } of links.results as { question_id: number; lesson_id: number }[]) {
-        if (!lessonIds.has(question_id)) lessonIds.set(question_id, []);
-        lessonIds.get(question_id)!.push(lesson_id);
-      }
       const reads = await readsByLesson(env.DB, user);
       const snapshot: Snapshot = {
         modules: modules.results as Snapshot["modules"],
@@ -421,10 +465,11 @@ export default {
         })),
         questions: (await toStudyQuestions(env.DB, questions.results as Record<string, unknown>[])).map((q) => ({
           ...q,
-          lesson_ids: lessonIds.get(q.id) ?? [],
+          lesson_ids: q.lesson_ids ?? [],
         })),
         content_version,
         prefs,
+        attempts: attempts.results as ExamAttempt[],
         fsrs_w: await fsrsWeights(env.DB, user),
         fetched_at: Date.now(),
       };
@@ -523,6 +568,28 @@ export default {
             log,
           ];
         }),
+      );
+      return json({ ok: true });
+    }
+
+    // Handed-in mock exams (one or a batch); a resent one is ignored.
+    if (url.pathname === "/api/exam-attempts" && request.method === "POST") {
+      const code = codeOf(request);
+      if (!code) return json({ error: "Sync code required" }, 503);
+      const body = (await request.json()) as ExamAttempt | ExamAttempt[];
+      const attempts = Array.isArray(body) ? body : [body];
+      if (attempts.length === 0) return json({ ok: true });
+      const userId = await writerId(code, env.DB);
+      await env.DB.batch(
+        attempts.map((a) =>
+          env.DB.prepare(
+            `INSERT OR IGNORE INTO exam_attempts (user_id, started_at, module_id, paper, submitted_at, questions, correct, score, scoring)
+             VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9)`,
+          ).bind(
+            userId, a.started_at, a.module_id, a.paper ?? null, a.submitted_at, a.questions, a.correct, a.score,
+            a.scoring === "partial" ? "partial" : "all-or-nothing",
+          ),
+        ),
       );
       return json({ ok: true });
     }

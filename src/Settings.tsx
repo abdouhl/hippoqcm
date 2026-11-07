@@ -15,6 +15,15 @@ const ORDERS: { value: SettingsT["order"]; label: string }[] = [
   { value: "new-first", label: "New first" },
 ];
 
+const SCORINGS: { value: SettingsT["examScoring"]; label: string; help: string }[] = [
+  { value: "all-or-nothing", label: "All or nothing", help: "A question scores only if you tick exactly the true options." },
+  {
+    value: "partial",
+    label: "Partial credit",
+    help: "Ticking any false option scores 0; otherwise you get the share of the true options you ticked.",
+  },
+];
+
 const THEMES: { value: Theme; label: string; icon: IconName }[] = [
   { value: "auto", label: "Auto", icon: "auto" },
   { value: "light", label: "Light", icon: "sun" },
@@ -135,6 +144,29 @@ export default function Settings({ onAccount, navigate }: Props) {
           </span>
           <input className="switch" type="checkbox" checked={settings.autoGrade} onChange={(e) => set({ autoGrade: e.target.checked })} />
         </label>
+      </section>
+
+      <section className="card settings-group">
+        <h2 className="card-title">Mock exams</h2>
+        <div className="setting stacked">
+          <span>
+            Scoring
+            <small className="meta">{SCORINGS.find((o) => o.value === settings.examScoring)?.help}</small>
+          </span>
+          <div className="segmented" role="radiogroup" aria-label="How mock exams are graded">
+            {SCORINGS.map((o) => (
+              <button
+                key={o.value}
+                role="radio"
+                aria-checked={o.value === settings.examScoring}
+                className={o.value === settings.examScoring ? "on" : undefined}
+                onClick={() => set({ examScoring: o.value })}
+              >
+                {o.label}
+              </button>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="card settings-group">

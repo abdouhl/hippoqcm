@@ -3,8 +3,11 @@
 //   "semester": 1, "module": "Cytology", "title": "Plasma membrane",
 //   "pdf": "s1/cytology/plasma-membrane.pdf",            // under public/lessons/
 //   "exam_questions": ["EMD1 2024-2025 Q3", ...],          // past exam questions covered by this lesson
-//   "questions": [{ "stem", "options", "answer", "explanation", "page", "weight", "image"? }]  // generated
+//   "exam_mental": { "EMD1 2024-2025 Q3": "tip", ... },    // optional: linked exam questions that need a calculation
+//   "questions": [{ "stem", "options", "answer", "explanation", "page", "weight", "image"?, "calc"?, "mental"? }]  // generated
 //   // weight = number of exam sessions that asked the question's topic (0 = never); it raises the topic's priority
+//   // calc = true when answering needs a calculation (exams allow no calculator); mental = how to do it by hand,
+//   // required with calc. An exam_mental entry tags that exam question the same way.
 // }
 //
 // Usage:
@@ -16,13 +19,14 @@ import { existsSync, readdirSync } from "node:fs";
 
 type BankQuestion = { stem: string; options: string[]; answer: string; explanation?: string; image?: string };
 type Bank = { semester: 1 | 2; module: string; source: string; questions: BankQuestion[] };
-type LessonQuestion = BankQuestion & { page: number; weight?: number };
+type LessonQuestion = BankQuestion & { page: number; weight?: number; calc?: boolean; mental?: string };
 type Draft = {
   semester: 1 | 2;
   module: string;
   title: string;
   pdf: string;
   exam_questions: string[];
+  exam_mental?: Record<string, string>;
   questions: LessonQuestion[];
 };
 
@@ -48,6 +52,10 @@ async function validate(draft: Draft) {
   if (!existsSync(`public/lessons/${draft.pdf}`)) errors.push(`missing PDF public/lessons/${draft.pdf}`);
   for (const key of draft.exam_questions) if (!exams.has(key)) errors.push(`unknown exam question "${key}"`);
   if (new Set(draft.exam_questions).size !== draft.exam_questions.length) errors.push("duplicate exam_questions");
+  for (const [key, tip] of Object.entries(draft.exam_mental ?? {})) {
+    if (!draft.exam_questions.includes(key)) errors.push(`exam_mental: "${key}" isn't in exam_questions`);
+    if (!tip.trim()) errors.push(`exam_mental: empty tip for "${key}"`);
+  }
   draft.questions.forEach((q, i) => {
     const n = `G${i + 1}`;
     if (q.options.length < 4 || q.options.length > 5) errors.push(`${n}: expected 4 or 5 options`);
@@ -56,6 +64,8 @@ async function validate(draft: Draft) {
     if (!Number.isInteger(q.page) || q.page < 1) errors.push(`${n}: missing page`);
     if (q.weight !== undefined && !(Number.isInteger(q.weight) && q.weight >= 0)) errors.push(`${n}: weight must be a whole number ≥ 0`);
     if (!q.explanation) errors.push(`${n}: missing explanation`);
+    if (q.calc && !q.mental?.trim()) errors.push(`${n}: calc question without a mental tip`);
+    if (q.mental && !q.calc) errors.push(`${n}: mental tip on a question not marked calc`);
     if (q.image && !existsSync(`public/images/${q.image}`)) errors.push(`${n}: missing image public/images/${q.image}`);
   });
   if (errors.length) throw new Error(`Draft is invalid:\n  ${errors.join("\n  ")}`);
@@ -83,14 +93,18 @@ if (cmd === "exams") {
     `${draft.exam_questions.length} past exam questions + ${draft.questions.length} generated`,
     "",
     "## Past exam questions linked",
-    ...draft.exam_questions.map((k) => `- [${k}] ${exams.get(k)!.stem}`),
+    ...draft.exam_questions.flatMap((k) => [
+      `- [${k}] ${exams.get(k)!.stem}`,
+      ...(draft.exam_mental?.[k] ? [`  🧮 ${draft.exam_mental[k]}`] : []),
+    ]),
     "",
     "## Generated questions",
   ];
   draft.questions.forEach((q, i) => {
-    lines.push("", `G${i + 1}. ${q.stem}   (p. ${q.page}${q.image ? `, image ${q.image}` : ""})`);
+    lines.push("", `G${i + 1}. ${q.stem}   (p. ${q.page}${q.image ? `, image ${q.image}` : ""}${q.calc ? ", no calculator" : ""})`);
     q.options.forEach((o, j) => lines.push(`   ${q.answer.includes(LABELS[j]) ? "✓" : " "} ${LABELS[j]}. ${o}`));
     lines.push(`   ↳ ${q.explanation}`);
+    if (q.mental) lines.push(`   🧮 ${q.mental}`);
   });
   console.log(lines.join("\n"));
 } else if (cmd === "migrate") {
@@ -119,11 +133,17 @@ if (cmd === "exams") {
         "\n  );",
     );
   }
+  for (const [key, tip] of Object.entries(draft.exam_mental ?? {})) {
+    lines.push(
+      `UPDATE questions SET calc = 1, mental = ${q(tip)} WHERE module_id = ${moduleId} AND origin = 'exam' AND source = ${q(key)};`,
+    );
+  }
   draft.questions.forEach((g, i) => {
     lines.push(
       `\n-- G${i + 1}`,
-      `INSERT INTO questions (module_id, stem, explanation, source, image, origin, pdf_page, exam_weight) VALUES ` +
-        `(${moduleId}, ${q(g.stem)}, ${q(g.explanation)}, ${q(`Lesson: ${draft.title}`)}, ${q(g.image)}, 'generated', ${g.page}, ${g.weight ?? 0});`,
+      `INSERT INTO questions (module_id, stem, explanation, source, image, origin, pdf_page, exam_weight, calc, mental) VALUES ` +
+        `(${moduleId}, ${q(g.stem)}, ${q(g.explanation)}, ${q(`Lesson: ${draft.title}`)}, ${q(g.image)}, 'generated', ${g.page}, ${g.weight ?? 0}, ` +
+        `${g.calc ? 1 : 0}, ${q(g.calc ? g.mental : null)});`,
       `INSERT INTO question_lessons (question_id, lesson_id) VALUES ((SELECT MAX(id) FROM questions), ${lessonId});`,
       `INSERT INTO options (question_id, label, text, is_correct) VALUES\n` +
         g.options
