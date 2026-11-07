@@ -95,6 +95,9 @@ export default function Insights({ modules, onStudy }: Props) {
   const avgMs = timed ? breakdown.reduce((n, b) => n + b.total_ms, 0) / timed : null;
   const mastered = moduleRows.reduce((n, r) => n + r.mat.mature, 0);
   const questions = moduleRows.reduce((n, r) => n + r.m.question_count, 0);
+  const lessonsRead = new Map((data.lessons_read ?? []).map((r) => [r.module_id, r.read]));
+  const readTotal = modules.reduce((n, m) => n + Math.min(lessonsRead.get(m.id) ?? 0, m.lesson_count), 0);
+  const lessonTotal = modules.reduce((n, m) => n + m.lesson_count, 0);
   const thisWeek = data.weeks?.at(-1);
   const currentWeek = Math.floor((Math.floor((Date.now() - new Date().getTimezoneOffset() * 60_000) / DAY_MS) + 3) / 7);
 
@@ -130,6 +133,11 @@ export default function Insights({ modules, onStudy }: Props) {
               <b className="acc-big">{seconds(avgMs)}</b>
               <span className="meta">average answer time</span>
             </div>
+            <div className="card stat-tile">
+              <span className="meta">Lessons read</span>
+              <b className="acc-big">{readTotal}<small className="meta">/{lessonTotal}</small></b>
+              <span className="meta">{pct(readTotal, lessonTotal)}% of all lessons</span>
+            </div>
           </div>
 
           <WeeklyTrend weeks={data.weeks ?? []} currentWeek={currentWeek} overall={pct(total.correct, total.reviews)} />
@@ -160,6 +168,7 @@ export default function Insights({ modules, onStudy }: Props) {
                 <span className="meta">
                   {m.question_count - mat.new}/{m.question_count} seen · {plural(reviews, "review")}
                   {s?.avg_ms ? ` · ${seconds(s.avg_ms)}/q` : ""}
+                  {m.lesson_count ? ` · ${Math.min(lessonsRead.get(m.id) ?? 0, m.lesson_count)}/${m.lesson_count} lessons read` : ""}
                   {m.learn_count + m.review_count ? ` · ${m.learn_count + m.review_count} due` : ""}
                 </span>
                 <span className="insight-actions">

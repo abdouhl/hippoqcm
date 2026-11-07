@@ -35,10 +35,13 @@ type Props = {
   onAccount: () => void;
 };
 
-export default function Today({ modules, onStudy, onOpenModule, onSettings, onAccount }: Props) {
+export default function Today({ modules: allModules, onStudy, onOpenModule, onSettings, onAccount }: Props) {
   const settings = useSettings();
   const [picking, setPicking] = useState(false);
   const skipped = (m: Module) => settings.skipModules.includes(m.id);
+
+  // New questions on the home tab come only from lessons you've marked read.
+  const modules = allModules.map((m) => ({ ...m, new_count: m.read_new_count ?? m.new_count }));
 
   // Today's session is one year's questions: the first year with something to do (there's one for now).
   const withQuestions = modules.filter((m) => m.question_count > 0);
@@ -65,7 +68,7 @@ export default function Today({ modules, onStudy, onOpenModule, onSettings, onAc
   const start = (only?: StudyOnly) =>
     onStudy({
       title: only === "new" ? `${scope} · new` : only === "reviews" ? `${scope} · reviews` : scope,
-      endpoint: `/api/years/${year}/study${subset ? `?modules=${picked.map((m) => m.id).join(",")}` : ""}`,
+      endpoint: `/api/years/${year}/study?readnew=1${subset ? `&modules=${picked.map((m) => m.id).join(",")}` : ""}`,
       only,
     });
 
@@ -197,7 +200,7 @@ export default function Today({ modules, onStudy, onOpenModule, onSettings, onAc
           <ul className="exam-list">
             {exams.map(({ m, date, days }) => (
               <li key={m.id}>
-                <button className="row-link" onClick={() => onOpenModule(m)}>
+                <button className="row-link" onClick={() => onOpenModule(allModules.find((a) => a.id === m.id) ?? m)}>
                   <span className={days <= 14 ? "countdown soon" : "countdown"}>
                     <b>{days}</b>
                     <small>{days === 1 ? "day" : "days"}</small>
@@ -217,7 +220,7 @@ export default function Today({ modules, onStudy, onOpenModule, onSettings, onAc
         )}
       </section>
 
-      <Activity refreshKey={modules} />
+      <Activity refreshKey={allModules} />
     </>
   );
 }

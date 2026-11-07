@@ -576,7 +576,7 @@ div.option { cursor: default; animation: none; }
 .leeches li { display: flex; flex-direction: column; gap: 4px; padding: 10px 12px; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--error); border-radius: 10px; }
 .leech-stem { line-height: 1.4; }
 
-.stat-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-bottom: 12px; }
+.stat-tiles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin-bottom: 12px; }
 .stat-tile { margin: 0; display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; }
 .stat-tile .acc-big small { font-size: 0.9rem; font-weight: 500; }
 .trend { font-size: 0.78rem; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -814,6 +814,7 @@ html[data-nav="tab"]::view-transition-new(root) { animation-name: vt-fade-in; an
   .week-strip { justify-content: space-between; }
   .insight-cards { grid-template-columns: 1fr; }
   .stat-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat-tiles > :last-child:nth-child(odd) { grid-column: 1 / -1; }
   .lesson-table .mini-bar { display: none; }
   .lesson-table th:nth-child(4), .lesson-table td:nth-child(4) { display: none; }
   .setting input[type="date"] { min-width: 140px; }

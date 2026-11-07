@@ -154,6 +154,9 @@ export default {
                 COALESCE(SUM(c.state = 2 AND c.due <= ?1), 0) AS review_count,
                 COALESCE(SUM(EXISTS (SELECT 1 FROM question_lessons ql WHERE ql.question_id = q.id)), 0) AS lesson_question_count,
                 COALESCE(SUM(q.calc > 0), 0) AS calc_count,
+                COALESCE(SUM(q.id IS NOT NULL AND c.question_id IS NULL AND EXISTS (
+                  SELECT 1 FROM question_lessons ql JOIN lesson_read_log r ON r.lesson_id = ql.lesson_id
+                  WHERE ql.question_id = q.id AND r.user_id = ?2)), 0) AS read_new_count,
                 (SELECT COUNT(*) FROM lessons l WHERE l.module_id = m.id) AS lesson_count
          FROM modules m
          LEFT JOIN questions q ON q.module_id = m.id AND q.flagged = 0
@@ -213,7 +216,8 @@ export default {
 
     // Study queue for a whole year, a semester, a module (optionally only questions tied to a
     // lesson, or to the lessons listed in ?ids=1,2), one lesson, or every leech. Year n = semesters 2n-1 and 2n.
-    // ?modules=1,2 keeps only those modules' questions; ?calc=1 only the ones that need a calculation.
+    // ?modules=1,2 keeps only those modules' questions; ?calc=1 only the ones that need a calculation;
+    // ?readnew=1 keeps unseen questions only when they belong to a lesson marked read.
     const studyMatch = url.pathname.match(/^\/api\/(?:(years|semesters|modules|lessons)\/(\d+)|(leeches))\/study$/);
     if (studyMatch && request.method === "GET") {
       const onlyLessons = url.searchParams.get("lessons") === "1"
@@ -236,6 +240,10 @@ export default {
                                        WHERE lesson_id IN (SELECT value FROM json_each(?5))))
            AND (?6 IS NULL OR q.module_id IN (SELECT value FROM json_each(?6)))
            AND (?7 = 0 OR q.calc > 0)
+           -- ?readnew=1: unseen questions only from lessons marked read.
+           AND (?8 = 0 OR c.question_id IS NOT NULL OR EXISTS (
+             SELECT 1 FROM question_lessons ql JOIN lesson_read_log r ON r.lesson_id = ql.lesson_id
+             WHERE ql.question_id = q.id AND r.user_id = ?4))
          -- Overdue reviews first, then unseen questions in exam order.
          ORDER BY c.due IS NULL, c.due, q.id`,
       )
@@ -247,6 +255,7 @@ export default {
           url.searchParams.has("ids") ? JSON.stringify(idList(url)) : null,
           url.searchParams.has("modules") ? JSON.stringify(idList(url, "modules")) : null,
           url.searchParams.get("calc") === "1" ? 1 : 0,
+          url.searchParams.get("readnew") === "1" ? 1 : 0,
         )
         .all<Record<string, unknown>>();
       return json(await toStudyQuestions(env.DB, results));
@@ -320,7 +329,7 @@ export default {
       const stats = `COUNT(*) AS reviews, SUM(r.correct) AS correct,
                      SUM(r.reviewed_at >= ?2) AS recent_reviews, SUM(CASE WHEN r.reviewed_at >= ?2 THEN r.correct ELSE 0 END) AS recent_correct,
                      AVG(CASE WHEN r.duration_ms BETWEEN 1 AND 600000 THEN r.duration_ms END) AS avg_ms`;
-      const [modules, lessons, leeches, wrong, calibration, maturity, weeks, breakdown] = await env.DB.batch([
+      const [modules, lessons, leeches, wrong, calibration, maturity, weeks, breakdown, lessonsRead] = await env.DB.batch([
         env.DB.prepare(
           `SELECT q.module_id, ${stats}
            FROM review_log r JOIN questions q ON q.id = r.question_id
@@ -381,6 +390,13 @@ export default {
            WHERE r.user_id = ?1
            GROUP BY 1, 2, 3`,
         ).bind(user),
+        // Lessons marked read (PDF or summary) at least once, per module.
+        env.DB.prepare(
+          `SELECT l.module_id, COUNT(DISTINCT l.id) AS read
+           FROM lesson_read_log r JOIN lessons l ON l.id = r.lesson_id
+           WHERE r.user_id = ?1
+           GROUP BY l.module_id`,
+        ).bind(user),
       ]);
 
       // Split wrong answers by what went wrong: ticked a false option, missed a true one, or both.
@@ -405,6 +421,7 @@ export default {
         leeches: leeches.results as Insights["leeches"],
         errors,
         calibration: calibration.results as Insights["calibration"],
+        lessons_read: lessonsRead.results as Insights["lessons_read"],
       };
       return json(insights);
     }

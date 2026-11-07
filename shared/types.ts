@@ -10,6 +10,7 @@ export type Module = {
   lesson_count: number;
   lesson_question_count: number; // questions linked to at least one lesson
   calc_count?: number; // questions that need a calculation; missing from servers older than it
+  read_new_count?: number; // never seen, linked to a lesson you've marked read; missing from older servers
 };
 
 // One "mark as read" press, of the lesson PDF or of its summary page.
@@ -110,6 +111,8 @@ export type Insights = {
   errors: { total: number; extra: number; missed: number; both: number };
   // Reviews bucketed by the predicted chance of recall (bucket 7 = 70–79%), against how often they were right.
   calibration: { bucket: number; reviews: number; correct: number }[];
+  // Lessons marked read (PDF or summary) at least once, per module; missing from older servers.
+  lessons_read?: { module_id: number; read: number }[];
 };
 
 // How a mock exam is graded; chosen in Settings.
