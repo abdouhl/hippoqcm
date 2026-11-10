@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biophysics of solutions 8 — Summary</title>
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Biophysics · Summary · Part 8 of 8</div>
+<h1>Biophysics of solutions — 8</h1>
+<p class="meta">Pr B. Boutabia-Chéraitia · slides 48–56 (oncotic pressure, Exercise 13: five dialysis/Donnan experiments, memo, notions of fluid biophysics) · 5 pages · 3 past exam questions (EMD1 2024–2026) ·
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf">open the PDF</a></p>
+<p class="meta">Course parts: <a target="_self" href="biophysics-of-solutions.html">1 · States, Psat</a> ·
+  <a target="_self" href="biophysics-of-solutions-2.html">2 · Solutions, activity, ionic strength</a> ·
+  <a target="_self" href="biophysics-of-solutions-3.html">3 · Osmolarity</a> ·
+  <a target="_self" href="biophysics-of-solutions-4.html">4 · Colligative properties</a> ·
+  <a target="_self" href="biophysics-of-solutions-5.html">5 · Renal work, transport</a> ·
+  <a target="_self" href="biophysics-of-solutions-6.html">6 · Membrane diffusion, dialysis</a> ·
+  <a target="_self" href="biophysics-of-solutions-7.html">7 · Donnan equilibrium</a> ·
+  <b>8 · Oncotic pressure, fluids</b></p>
+<ul class="toc">
+  <li><a target="_self" href="#essentials">Essentials</a></li>
+  <li><a target="_self" href="#oncotic">Oncotic pressure</a></li>
+  <li><a target="_self" href="#ex13">Exercise 13</a></li>
+  <li><a target="_self" href="#memo">Memo</a></li>
+  <li><a target="_self" href="#fluids">Fluid biophysics</a></li>
+  <li><a target="_self" href="#traps">Exam traps</a></li>
+  <li><a target="_self" href="#check">Self-check</a></li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<div class="box essentials" id="essentials">
+  <span class="label">If you remember only this</span>
+  <ul>
+    <li>Across a dialysis membrane: <b>Δπ = Δω<sub>i</sub>·RT + ω<sub>p</sub>·RT</b>. The <span class="term">oncotic pressure</span> is <b>only the protein term ω<sub>p</sub>RT</b>: how easily proteins attract water.</li>
+    <li>Water goes toward the <b>higher total osmolarity</b> (ω₂ &gt; ω₁ ⇒ H₂O (1) → (2)).</li>
+    <li>Without a charged protein, each diffusible ion just averages: <b>C<sub>∞</sub> = (C₁ + C₂)/2</b> on both sides ⇒ Δω<sub>i</sub> = 0, no membrane potential.</li>
+    <li><b>Undissociated</b> (uncharged) protein: ions equal on both sides, <b>Δπ = CRT</b> (oncotic pressure only); the counter-pressure is applied on the protein side.</li>
+    <li><b>Dissociated</b> protein PrNa<sub>z</sub> in (1), NaCl in (2): x of Cl⁻ <b>and</b> x of Na⁺ cross (2) → (1); at equilibrium <b>[Na⁺]₁ = zC + x, [Cl⁻]₁ = x, [Na⁺]₂ = [Cl⁻]₂ = C′ − x</b>: the <b>Donnan effect</b>. <b>Δπ = (zC − 2C′ + 4x + C)RT</b>.</li>
+    <li>The protein side is <b>negative</b>; E points (2) → (1) ⇒ <b>V₂ &gt; V₁</b>; V₁ − V₂ = −(RT/zF) ln(C₁/C₂).</li>
+    <li>Same protein, same concentration on both sides ⇒ <b>no Donnan effect</b>, potential = 0.</li>
+    <li>Fluids: laminar at <b>low</b> velocity (parallel streamlines), turbulent at <b>high</b> velocity; <b>[η] = Pl = Pa·s</b>; perfect fluid η = 0, real fluid η ≠ 0; <b>Q<sub>V</sub> = dV/dt</b> in m³/s.</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="oncotic"><span class="num">2-4.</span> Oncotic pressure
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=1">slide 48</a>
+  <span class="exam">2024-25</span></h2>
+<p>Dialysis membrane between (1) and (2); compartment (2) holds a protein (osmolarity ω<sub>p</sub>) besides the diffusible ions (ω<sub>i</sub>).</p>
+<ol class="steps">
+  <li>At equilibrium ω₂ &gt; ω₁ ⇒ <b>H₂O: (1) → (2)</b>.</li>
+  <li>Osmotic pressure: Δπ = (ω₂ − ω₁)RT.</li>
+  <li>ω₂ − ω₁ = [(ω<sub>i</sub>)₂ + ω<sub>p</sub>] − (ω<sub>i</sub>)₁ = [(ω<sub>i</sub>)₂ − (ω<sub>i</sub>)₁] + ω<sub>p</sub> ≡ <b>Δω<sub>i</sub> + ω<sub>p</sub></b>.</li>
+</ol>
+<div class="formula">Δπ = Δω<sub>i</sub>·RT + ω<sub>p</sub>·RT
+  <span class="where">Δω<sub>i</sub>RT: part due to the unequal diffusible ions · <b>ω<sub>p</sub>RT: oncotic pressure</b></span></div>
+<div class="box def"><span class="label">Oncotic pressure</span>
+  <b>ω<sub>p</sub>RT</b>: the osmotic pressure <b>due to proteins</b>. It expresses the ease with which proteins attract water.</div>
+<div class="box trap"><span class="label">Don't confuse</span>
+  Oncotic pressure is <b>not</b> "the osmotic pressure": it is only the protein part. Δπ equals ω<sub>p</sub>RT only when Δω<sub>i</sub> = 0 (experiment 2 below).</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="ex13"><span class="num">Ex. 13</span> Five experiments across a dialysis membrane
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=1">slides 48–53</a>
+  <span class="exam">2022-23 · 2023-24 · 2024-25 · 2025-26</span></h2>
+<p>A dialysis membrane separates a chamber into (1) and (2) of <b>equal volume</b>, same temperature. Na⁺ and Cl⁻ cross it; proteins don't. When a diffusible ion has no reason to stay unequal, it ends at <b>C<sub>∞</sub> = (C<sub>1i</sub> + C<sub>2i</sub>)/2</b> on both sides.</p>
+<div class="box trap"><span class="label">Watch the numbering</span>
+  Here the protein is in <b>(1)</b>; in part 7 it was in (2). Always locate the protein first: its side is the negative one.</div>
+
+<div class="table-wrap"><table>
+  <tr><th>Exp.</th><th>(1) initially</th><th>(2) initially</th><th>(1) at equilibrium</th><th>(2) at equilibrium</th><th>Result</th></tr>
+  <tr><td><b>1</b> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=1">p. 1</a></td><td>NaCl C</td><td>NaCl C′</td><td>Na⁺ = Cl⁻ = <b>(C + C′)/2</b></td><td>Na⁺ = Cl⁻ = <b>(C + C′)/2</b></td><td>Simple averaging</td></tr>
+  <tr><td><b>2</b> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=2">p. 2</a></td><td><b>Undissociated</b> protein C</td><td>NaCl C′</td><td>Pr = C; Na⁺ = Cl⁻ = <b>C′/2</b></td><td>Na⁺ = Cl⁻ = <b>C′/2</b></td><td>Δω<sub>i</sub> = 0 ⇒ <b>Δπ = CRT</b></td></tr>
+  <tr><td><b>3</b> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=3">p. 3</a></td><td>PrNa<sub>z</sub> C: Pr<sup>z−</sup> = C, Na⁺ = zC</td><td>NaCl C′</td><td>Pr<sup>z−</sup> = C; Cl⁻ = <b>x</b>; Na⁺ = <b>zC + x</b></td><td>Cl⁻ = Na⁺ = <b>C′ − x</b></td><td><b>Donnan effect</b>, membrane potential</td></tr>
+  <tr><td><b>4</b> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=3">p. 3</a></td><td colspan="2">Exp. 3 at equilibrium + a voltage <b>opposite</b> to its membrane potential</td><td>Cl⁻ = <b>C′/2</b>; Na⁺ = <b>(zC + C′)/2</b></td><td>Cl⁻ = <b>C′/2</b>; Na⁺ = <b>(zC + C′)/2</b></td><td>V₁ − V₂ = 0 ⇒ C₁ = C₂</td></tr>
+  <tr><td><b>5</b> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=4">p. 4</a></td><td>PrNa<sub>z</sub> C</td><td>NaCl C′ <b>+ PrNa<sub>z</sub> C</b></td><td>Pr = C; Na⁺ = <b>(C′ + 2zC)/2</b>; Cl⁻ = <b>C′/2</b></td><td>Pr = C; Na⁺ = <b>(C′ + 2zC)/2</b>; Cl⁻ = <b>C′/2</b></td><td>[Pr]₁ = [Pr]₂ ⇒ <b>no Donnan effect</b>, potential 0</td></tr>
+</table></div>
+
+<h3>Experiment 2 — undissociated protein in (1), NaCl in (2)</h3>
+<ol class="steps">
+  <li>Na⁺ and Cl⁻ diffuse (2) → (1) until [Na⁺]₁ = [Na⁺]₂ and [Cl⁻]₁ = [Cl⁻]₂ = C′/2.</li>
+  <li>ω₁ &gt; ω₂ ⇒ <b>water diffuses (2) → (1)</b>; Δπ points (2) → (1).</li>
+  <li>(ω<sub>i</sub>)₁ = (ω<sub>Na⁺</sub>)₁ + (ω<sub>Cl⁻</sub>)₁ = C′ = (ω<sub>i</sub>)₂ ⇒ Δω<sub>i</sub> = 0 ⇒ <b>Δπ = ω<sub>p</sub>RT = CRT</b>.</li>
+  <li>To stop the water flow: apply a pressure <b>equal to CRT, opposite to Δπ</b>, i.e. from <b>(1) → (2)</b> (on the protein side).</li>
+</ol>
+
+<h3>Experiment 3 — fully dissociated PrNa<sub>z</sub> in (1), NaCl in (2)</h3>
+<ol class="steps">
+  <li>PrNa<sub>z</sub> → Pr<sup>z−</sup> + zNa⁺. Cl⁻ exists only in (2) ⇒ <b>n moles of Cl⁻</b> (concentration <b>x = n/V</b>) diffuse (2) → (1).</li>
+  <li>They are <b>accompanied by n moles of Na⁺</b> at the same concentration x.</li>
+  <li>Equilibrium: [Pr<sup>z−</sup>]₁ = C, [Cl⁻]₁ = x, [Na⁺]₁ = zC + x; [Cl⁻]₂ = [Na⁺]₂ = C′ − x.</li>
+</ol>
+<div class="formula">Δπ = [((ω<sub>i</sub>)₁ − (ω<sub>i</sub>)₂) + ω<sub>p</sub>]RT = [(zC + x + x) − (2C′ − 2x) + C]RT = <b>(zC − 2C′ + 4x + C)RT</b></div>
+
+<figure>
+  <svg viewBox="0 0 760 360" role="img" aria-label="Experiment 3 at equilibrium: compartment 1 contains the protein Pr z minus at C, Cl minus at x and Na plus at zC plus x; compartment 2 contains Cl minus and Na plus at C prime minus x. The membrane face on side 1 is negative, on side 2 positive. The field E points from 2 to 1, so V2 is greater than V1. x of Cl minus and x of Na plus crossed from 2 to 1.">
+    <defs><marker id="on8a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="s-text"/></marker></defs>
+    <line x1="460" y1="38" x2="300" y2="38" class="s-line" stroke-width="2.5" marker-end="url(#on8a)"/>
+    <text x="380" y="20" text-anchor="middle" class="s-text" font-size="15" font-weight="700">E: (2) → (1), so V₂ &gt; V₁</text>
+    <rect x="20" y="54" width="340" height="240" rx="10" class="s-violet" stroke-width="2"/>
+    <rect x="400" y="54" width="340" height="240" rx="10" class="s-accent" stroke-width="2"/>
+    <line x1="380" y1="44" x2="380" y2="298" class="s-line" stroke-width="3" stroke-dasharray="8 6"/>
+    <text x="190" y="84" text-anchor="middle" class="s-text" font-size="18" font-weight="700">(1) protein side</text>
+    <text x="570" y="84" text-anchor="middle" class="s-text" font-size="18" font-weight="700">(2) NaCl side</text>
+    <text x="190" y="128" text-anchor="middle" class="s-text" font-size="17" font-weight="700">[Prᶻ⁻]₁ = C</text>
+    <text x="190" y="150" text-anchor="middle" class="s-muted" font-size="13">non-diffusible</text>
+    <text x="190" y="188" text-anchor="middle" class="s-text" font-size="17">[Na⁺]₁ = zC + x</text>
+    <text x="190" y="224" text-anchor="middle" class="s-text" font-size="17">[Cl⁻]₁ = x</text>
+    <text x="570" y="150" text-anchor="middle" class="s-text" font-size="17">[Na⁺]₂ = C′ − x</text>
+    <text x="570" y="190" text-anchor="middle" class="s-text" font-size="17">[Cl⁻]₂ = C′ − x</text>
+    <text x="190" y="274" text-anchor="middle" class="s-text" font-size="16" font-weight="700">V₁ (lower)</text>
+    <text x="570" y="274" text-anchor="middle" class="s-text" font-size="16" font-weight="700">V₂ (higher)</text>
+    <text x="356" y="110" text-anchor="middle" class="s-text" font-size="28" font-weight="700">−</text>
+    <text x="356" y="170" text-anchor="middle" class="s-text" font-size="28" font-weight="700">−</text>
+    <text x="356" y="230" text-anchor="middle" class="s-text" font-size="28" font-weight="700">−</text>
+    <text x="396" y="110" text-anchor="middle" class="s-text" font-size="20" font-weight="700">+</text>
+    <text x="396" y="170" text-anchor="middle" class="s-text" font-size="20" font-weight="700">+</text>
+    <text x="396" y="230" text-anchor="middle" class="s-text" font-size="20" font-weight="700">+</text>
+    <line x1="470" y1="315" x2="290" y2="315" class="s-line" stroke-width="2.5" marker-end="url(#on8a)"/>
+    <text x="380" y="345" text-anchor="middle" class="s-text" font-size="15">x of Cl⁻ + x of Na⁺ cross (2) → (1) · x = n/V</text>
+  </svg>
+  <figcaption>Learn the equilibrium table and the signs: the membrane face touching Pr<sup>z−</sup> is <b>negative</b>, E goes from (+) to (−), i.e. <b>(2) → (1)</b>, so <b>V₂ &gt; V₁</b> and V₁ − V₂ &lt; 0. Redrawn from the slide's tables and E-field schematic.
+    <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=3">slide 51</a></figcaption>
+</figure>
+
+<h3>Membrane potential (exp. 3)
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=3">slides 51–52</a>
+  <span class="exam">2024-25 · 2025-26</span></h3>
+<div class="formula">V₁ − V₂ = − <span class="frac"><span>RT</span><span>zF</span></span> ln <span class="frac"><span>C₁</span><span>C₂</span></span>
+  <span class="where">applied to any diffusible ion, with its own valence z</span></div>
+<div class="table-wrap"><table>
+  <tr><th>Ion</th><th>z</th><th>V₁ − V₂</th></tr>
+  <tr><td>Cl⁻</td><td>−1</td><td>−(RT/(−1)F) ln(x/(C′ − x)) = <b>−(RT/F) ln((C′ − x)/x)</b></td></tr>
+  <tr><td>Na⁺</td><td>+1</td><td><b>−(RT/F) ln((zC + x)/(C′ − x))</b></td></tr>
+</table></div>
+<p>Both give the same potential (that equality is the Donnan equation of part 7).</p>
+
+<h3>Experiment 4 — opposing voltage
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=3">slide 52</a></h3>
+<div class="flow"><span>Opposite voltage</span><i>⇒</i><span>V₁ − V₂ = 0</span><i>⇒</i><span>−(RT/zF) ln(C₁/C₂) = 0</span><i>⇒</i><span><b>C₁ = C₂</b></span></div>
+<ul>
+  <li>[Cl⁻]₁ = [Cl⁻]₂ = (C′ − x + x)/2 = <b>C′/2</b>.</li>
+  <li>[Na⁺]₁ = [Na⁺]₂ = (zC + x + C′ − x)/2 = <b>(zC + C′)/2</b>.</li>
+</ul>
+
+<h3>Experiment 5 — the same protein on both sides
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=4">slide 53</a></h3>
+<ul>
+  <li>[Pr<sup>z−</sup>]₁ = [Pr<sup>z−</sup>]₂ = C ⇒ <b>no Donnan effect</b>: the diffusible ions simply average.</li>
+  <li>Na⁺: (zC + C′ + zC)/2 = <b>(C′ + 2zC)/2</b>; Cl⁻: <b>C′/2</b>, on both sides.</li>
+  <li>C₁ = C₂ ⇒ <b>V₁ − V₂ = 0</b>: the membrane potential is zero.</li>
+</ul>
+<div class="box tip"><span class="label">Memory trick</span>
+  "No charge or no difference ⇒ no Donnan." An uncharged protein (exp. 2) or a charged protein on both sides (exp. 5) leaves every ion equal on both sides. You only get a Donnan effect from a <b>charged</b> protein on <b>one</b> side (exp. 3).</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="memo"><span class="num">Memo</span>
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=4">slide 56</a></h2>
+<div class="table-wrap"><table>
+  <tr><th>Membrane</th><th>What happens</th></tr>
+  <tr><td><span class="term">Semipermeable</span></td><td>The particles that <b>cannot diffuse</b> make water move and thus generate <b>osmotic pressure</b>: they are <b>osmotically active</b>.</td></tr>
+  <tr><td><span class="term">Dialysis, in Donnan equilibrium</span></td><td>At first the diffusible particles diffuse across until equilibrium. <b>At equilibrium they stop diffusing</b> and, <b>together with the non-diffusible protein</b>, contribute to the osmotic pressure.</td></tr>
+</table></div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="fluids"><span class="num">2-5.</span> Notions of fluid biophysics
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=4">slides 56, 55</a></h2>
+<div class="table-wrap"><table>
+  <tr><th>Term</th><th>Definition</th></tr>
+  <tr><td><span class="term">Fluids</span></td><td><b>Liquids and gases</b></td></tr>
+  <tr><td><span class="term">Flow</span></td><td>The overall motion of a fluid</td></tr>
+  <tr><td><span class="term">Streamline</span></td><td>A curve <b>tangent to the velocity vector</b> at every point</td></tr>
+  <tr><td><span class="term">Laminar flow</span></td><td>At <b>low</b> velocities ⇒ streamlines are <b>parallel</b></td></tr>
+  <tr><td><span class="term">Turbulent flow</span></td><td>At <b>high</b> velocities ⇒ <b>disordered</b></td></tr>
+  <tr><td><span class="term">Viscosity</span></td><td>Stickiness: <b>resistance to the laminar flow</b> of a fluid. η = viscosity coefficient; <b>[η] = poiseuille (Pl), 1 Pl = 1 Pa·s</b></td></tr>
+  <tr><td><span class="term">Perfect fluid</span></td><td>Zero viscosity: <b>η = 0</b></td></tr>
+  <tr><td><span class="term">Real fluid</span></td><td>Non-zero viscosity: <b>η ≠ 0</b></td></tr>
+  <tr><td><span class="term">Volumetric flow rate</span></td><td><b>Q<sub>V</sub> = dV/dt</b>, [Q<sub>V</sub>] = <b>m³/s</b>; dV = volume of fluid passing through a given surface during dt</td></tr>
+</table></div>
+
+<figure>
+  <svg viewBox="0 0 760 250" role="img" aria-label="Left: a curved streamline with three velocity vectors v1, v2, v3, each tangent to the curve. Middle: laminar flow drawn as parallel arrows. Right: turbulent flow drawn as disordered swirling arrows.">
+    <defs><marker id="on8b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="s-text"/></marker>
+      <marker id="on8c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="s-coral"/></marker></defs>
+    <text x="125" y="26" text-anchor="middle" class="s-text" font-size="15" font-weight="700">Streamline</text>
+    <path d="M20,190 Q125,60 235,170" fill="none" class="s-line" stroke-width="2.5" marker-end="url(#on8b)"/>
+    <line x1="40" y1="167" x2="82" y2="125" class="s-coral" stroke-width="3" marker-end="url(#on8c)"/>
+    <text x="40" y="132" class="s-text" font-size="14">v₁</text>
+    <line x1="105" y1="116" x2="160" y2="116" class="s-coral" stroke-width="3" marker-end="url(#on8c)"/>
+    <text x="126" y="104" class="s-text" font-size="14">v₂</text>
+    <line x1="200" y1="135" x2="232" y2="168" class="s-coral" stroke-width="3" marker-end="url(#on8c)"/>
+    <text x="214" y="128" class="s-text" font-size="14">v₃</text>
+    <text x="125" y="232" text-anchor="middle" class="s-muted" font-size="13">tangent to v at every point</text>
+
+    <text x="380" y="26" text-anchor="middle" class="s-text" font-size="15" font-weight="700">Laminar (low v)</text>
+    <line x1="290" y1="70" x2="470" y2="70" class="s-coral" stroke-width="2"/>
+    <line x1="300" y1="100" x2="460" y2="100" class="s-line" stroke-width="2.5" marker-end="url(#on8b)"/>
+    <line x1="300" y1="130" x2="460" y2="130" class="s-line" stroke-width="2.5" marker-end="url(#on8b)"/>
+    <line x1="300" y1="160" x2="460" y2="160" class="s-line" stroke-width="2.5" marker-end="url(#on8b)"/>
+    <line x1="290" y1="190" x2="470" y2="190" class="s-coral" stroke-width="2"/>
+    <text x="380" y="232" text-anchor="middle" class="s-muted" font-size="13">parallel streamlines</text>
+
+    <text x="635" y="26" text-anchor="middle" class="s-text" font-size="15" font-weight="700">Turbulent (high v)</text>
+    <line x1="545" y1="70" x2="725" y2="70" class="s-coral" stroke-width="2"/>
+    <path d="M560,140 q20,-40 40,-5 q10,30 -15,25" fill="none" class="s-line" stroke-width="2.5" marker-end="url(#on8b)"/>
+    <path d="M610,105 q30,-15 45,15" fill="none" class="s-line" stroke-width="2.5" marker-end="url(#on8b)"/>
+    <path d="M625,170 q-5,-35 30,-25 q20,10 5,30" fill="none" class="s-line" stroke-width="2.5" marker-end="url(#on8b)"/>
+    <path d="M670,100 q35,10 25,45 q-10,25 -30,15" fill="none" class="s-line" stroke-width="2.5" marker-end="url(#on8b)"/>
+    <line x1="545" y1="190" x2="725" y2="190" class="s-coral" stroke-width="2"/>
+    <text x="635" y="232" text-anchor="middle" class="s-muted" font-size="13">disordered</text>
+  </svg>
+  <figcaption>A streamline follows the velocity vectors (each v is tangent to it). At low velocity the streamlines stay parallel (laminar); at high velocity the flow becomes disordered (turbulent). Redrawn from the slides' sketches.
+    <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=5">slide 55</a></figcaption>
+</figure>
+<div class="box trap"><span class="label">Units</span>
+  1 Pl = 1 Pa<b>·</b>s (a product, not Pa/s). For Q<sub>V</sub>, convert both volume (1 L = 10⁻³ m³) and time (1 min = 60 s): 5 L/min ≈ 8.3 × 10⁻⁵ m³/s.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="traps">Exam traps <span class="meta">— the wrong options past exams used</span></h2>
+<div class="box trap"><span class="label">2024-25 Q14 "In Donnan equilibrium" (only C is correct)</span>
+  <ul>
+    <li>"The osmotic pressure is called oncotic pressure": <b>false</b>. Oncotic pressure is only the <b>protein term ω<sub>p</sub>RT</b> of Δπ = Δω<sub>i</sub>RT + ω<sub>p</sub>RT. <span class="exam">2024-25</span></li>
+    <li>"The macromolecule is not necessarily charged": <b>false</b>. Exp. 2 shows that an <b>undissociated</b> protein leaves Na⁺ and Cl⁻ equal on both sides: no Donnan effect. <span class="exam">2024-25</span></li>
+    <li>"Only ions initially presenting a concentration gradient diffuse": <b>false</b>. Diffusible ions move together to keep electroneutrality (in exp. 3, n mol of Na⁺ accompany the n mol of Cl⁻). <span class="exam">2024-25</span></li>
+    <li>✅ True: "inequality of ion concentrations of the same sign on either side at equilibrium". In exp. 3, [Na⁺]₁ = zC + x ≠ [Na⁺]₂ = C′ − x, and [Cl⁻]₁ = x ≠ [Cl⁻]₂ = C′ − x.</li>
+  </ul>
+</div>
+<div class="box trap"><span class="label">Calculation traps</span>
+  <ul>
+    <li>Nernst: T in <b>kelvin</b>, keep the minus sign and the sign of z, use <b>ln</b> (not log). The protein side is the <b>negative</b> side. <span class="exam">2024-25 · 2025-26</span></li>
+    <li>In exp. 3 Δπ is <b>not</b> CRT: the unequal ions add Δω<sub>i</sub> = zC − 2C′ + 4x. Only exp. 2 (uncharged protein) gives Δπ = CRT.</li>
+    <li>x leaves (2) for <b>both</b> ions: (ω<sub>i</sub>)₂ = 2C′ − 2x, hence the <b>4x</b>.</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="check">Self-check <span class="meta">— answer, then tap to reveal</span></h2>
+<details class="card"><summary>Split Δπ across a dialysis membrane. Which term is the oncotic pressure?</summary><div>Δπ = Δω<sub>i</sub>RT + ω<sub>p</sub>RT; the oncotic pressure is ω<sub>p</sub>RT, the osmotic pressure due to proteins.</div></details>
+<details class="card"><summary>ω₂ &gt; ω₁: which way does water go?</summary><div>(1) → (2), toward the higher osmolarity.</div></details>
+<details class="card"><summary>Exp. 1: NaCl 0.2 mol/L in (1), 0.1 mol/L in (2). Equilibrium?</summary><div>Na⁺ = Cl⁻ = 0.15 mol/L on both sides; Δπ = 0, potential 0.</div></details>
+<details class="card"><summary>Exp. 2: undissociated protein C in (1), NaCl C′ in (2). Ions, Δπ, counter-pressure?</summary><div>Na⁺ = Cl⁻ = C′/2 on both sides; Δπ = CRT, water (2) → (1); apply CRT from (1) → (2).</div></details>
+<details class="card"><summary>Exp. 3: equilibrium concentrations?</summary><div>(1): Pr<sup>z−</sup> = C, Cl⁻ = x, Na⁺ = zC + x. (2): Na⁺ = Cl⁻ = C′ − x.</div></details>
+<details class="card"><summary>Exp. 3: why does Na⁺ cross into (1) although (1) already holds zC of it?</summary><div>The n mol of Cl⁻ that diffuse (2) → (1) are accompanied by n mol of Na⁺ (electroneutrality).</div></details>
+<details class="card"><summary>Exp. 3: Δπ?</summary><div>(zC − 2C′ + 4x + C)RT.</div></details>
+<details class="card"><summary>Exp. 3: direction of E, which potential is higher, sign of V₁ − V₂?</summary><div>E: (2) → (1); V₂ &gt; V₁; V₁ − V₂ = −(RT/zF) ln(C₁/C₂) &lt; 0.</div></details>
+<details class="card"><summary>V₁ − V₂ written with Cl⁻ and with Na⁺?</summary><div>Cl⁻: −(RT/F) ln((C′ − x)/x). Na⁺: −(RT/F) ln((zC + x)/(C′ − x)).</div></details>
+<details class="card"><summary>Exp. 4: an opposite voltage is applied. New concentrations?</summary><div>V₁ − V₂ = 0 ⇒ C₁ = C₂: Cl⁻ = C′/2, Na⁺ = (zC + C′)/2 on both sides.</div></details>
+<details class="card"><summary>Exp. 5: same PrNa<sub>z</sub> at C on both sides, NaCl C′ in (2)?</summary><div>No Donnan effect: Na⁺ = (C′ + 2zC)/2, Cl⁻ = C′/2 on both sides; potential 0.</div></details>
+<details class="card"><summary>Semipermeable vs dialysis membrane: which particles make the osmotic pressure?</summary><div>Semipermeable: the non-diffusible ones (osmotically active). Dialysis at Donnan equilibrium: the diffusible particles together with the non-diffusible protein.</div></details>
+<details class="card"><summary>Laminar vs turbulent flow?</summary><div>Laminar: low velocity, parallel streamlines. Turbulent: high velocity, disordered.</div></details>
+<details class="card"><summary>Unit of η? Perfect vs real fluid?</summary><div>Poiseuille, 1 Pl = 1 Pa·s. Perfect: η = 0; real: η ≠ 0.</div></details>
+<details class="card"><summary>Definition and unit of the volumetric flow rate?</summary><div>Q<sub>V</sub> = dV/dt, volume through a surface per unit time, in m³/s.</div></details>
+
+<footer>Summary of "Biophysics of solutions" slides 48–56, Pr B. Boutabia-Chéraitia, 1st-year medicine, Faculty of Medicine Annaba.
+  🎯 = asked in past EMD1 exams. 📄 = page in the lesson PDF. The PDF skips slide 54 and shows slide 56 before 55.</footer>
+</main>
+</body>
+</html>

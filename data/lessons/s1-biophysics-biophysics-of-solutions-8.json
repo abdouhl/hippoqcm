@@ -1,0 +1,262 @@
+{
+  "semester": 1,
+  "module": "Biophysics",
+  "title": "Biophysics of solutions 8",
+  "pdf": "s1/biophysics/biophysics-of-solutions-8.pdf",
+  "exam_questions": [
+    "EMD1 2024-2025 Q14",
+    "EMD1 2024-2025 Q17",
+    "EMD1 2025-2026 Q17"
+  ],
+  "questions": [
+    {
+      "stem": "About oncotic pressure, the correct propositions are:",
+      "options": [
+        "It is the term ωₚRT of the osmotic pressure Δπ = Δωᵢ·RT + ωₚ·RT",
+        "It is the osmotic pressure due to the diffusible ions",
+        "It expresses the ease with which proteins attract water",
+        "It always equals the total osmotic pressure Δπ, whatever the distribution of the diffusible ions",
+        "It is the osmotic pressure due to the proteins"
+      ],
+      "answer": "ACE",
+      "explanation": "Oncotic pressure is ωₚRT, the osmotic pressure due to proteins; it expresses how easily proteins attract water. The total Δπ also contains Δωᵢ·RT from the diffusible ions, so the two are equal only when Δωᵢ = 0.",
+      "page": 1,
+      "weight": 1
+    },
+    {
+      "stem": "Two compartments are separated by a dialysis membrane; compartment (2) contains a protein of osmolarity ωₚ. At equilibrium ω₂ > ω₁. The correct propositions are:",
+      "options": [
+        "Δπ = ωₚRT in all cases",
+        "Water flows from (1) to (2)",
+        "ω₂ − ω₁ = Δωᵢ + ωₚ, where Δωᵢ = (ωᵢ)₂ − (ωᵢ)₁ is the difference of diffusible-ion osmolarities",
+        "Water flows from (2) to (1)",
+        "If the diffusible ions had the same total osmolarity on both sides, Δπ would reduce to the oncotic pressure"
+      ],
+      "answer": "BCE",
+      "explanation": "Water moves toward the higher total osmolarity: ω₂ > ω₁ ⇒ (1) → (2). ω₂ − ω₁ = [(ωᵢ)₂ + ωₚ] − (ωᵢ)₁ = Δωᵢ + ωₚ, so Δπ = Δωᵢ·RT + ωₚ·RT, which is ωₚRT only when Δωᵢ = 0.",
+      "page": 1,
+      "weight": 4
+    },
+    {
+      "stem": "A dialysis membrane separates two compartments of equal volume: (1) contains NaCl at 0.2 mol/l and (2) NaCl at 0.1 mol/l. At equilibrium:",
+      "options": [
+        "[Na⁺]₁ = [Na⁺]₂ = 0.15 mol/l",
+        "[Cl⁻]₁ = 0.2 mol/l and [Cl⁻]₂ = 0.1 mol/l",
+        "[Na⁺]₁ = [Na⁺]₂ = 0.3 mol/l",
+        "The osmotic pressure between the two compartments is zero",
+        "The membrane potential V₁ − V₂ is zero"
+      ],
+      "answer": "ADE",
+      "explanation": "Both ions cross the dialysis membrane, so each ends at C∞ = (C₁ + C₂)/2 = 0.15 mol/l on both sides (0.3 forgets to halve). With Δωᵢ = 0 and no protein, Δπ = 0, and C₁ = C₂ gives V₁ − V₂ = 0.",
+      "page": 1,
+      "weight": 4,
+      "calc": true,
+      "mental": "Equal volumes: just average, (0.2 + 0.1)/2 = 0.15 mol/l. Everything is the same on both sides, so Δπ and the potential are both zero, no calculation needed."
+    },
+    {
+      "stem": "Across a dialysis membrane, an undissociated protein at concentration C is poured into (1) and a NaCl solution at concentration C′ into (2) (equal volumes). At equilibrium:",
+      "options": [
+        "[Na⁺]₁ > [Na⁺]₂",
+        "[Na⁺]₁ = [Cl⁻]₁ = C′/2",
+        "Δπ = (C + C′)RT",
+        "Δπ = CRT, with water flowing from (2) to (1)",
+        "To cancel the water flux, a pressure equal to CRT must be applied from (1) toward (2)"
+      ],
+      "answer": "BDE",
+      "explanation": "The uncharged protein retains no ions: Na⁺ and Cl⁻ simply equalise at C′/2 on both sides, so Δωᵢ = 0 and Δπ = ωₚRT = CRT, water going (2) → (1). The counter-pressure CRT is applied in the opposite direction, (1) → (2).",
+      "page": 2,
+      "weight": 4
+    },
+    {
+      "stem": "Across a dialysis membrane, compartment (1) receives an undissociated protein at 2 mmol/l and compartment (2) NaCl at 100 mmol/l (equal volumes, T = 300 K, R = 8.31 SI). The pressure that must be applied to cancel the water flux at equilibrium is about:",
+      "options": [
+        "2.5 kPa",
+        "254 kPa",
+        "5.0 kPa",
+        "5.0 Pa",
+        "125 kPa"
+      ],
+      "answer": "C",
+      "explanation": "Na⁺ and Cl⁻ are at 50 mmol/l on both sides, so Δωᵢ = 0 and Δπ = CRT = 2 mol/m³ × 8.31 × 300 ≈ 5 000 Pa. 254 kPa wrongly adds the salt; 5.0 Pa forgets that 1 mmol/l = 1 mol/m³.",
+      "page": 2,
+      "weight": 4,
+      "calc": true,
+      "mental": "RT at 300 K ≈ 8.31 × 300 ≈ 2 500 J/mol. 2 mmol/l = 2 mol/m³, so Δπ ≈ 2 × 2 500 = 5 000 Pa. The salt cancels out, which eliminates every option in the hundreds of kPa."
+    },
+    {
+      "stem": "Across a dialysis membrane, a fully dissociated protein PrNa_z (concentration C) is poured into (1) and NaCl (concentration C′) into (2). The correct propositions are:",
+      "options": [
+        "Initially, Cl⁻ diffuses from (2) to (1)",
+        "Each mole of Cl⁻ that crosses is accompanied by one mole of Na⁺ in the same direction",
+        "The proteinate Pr^z⁻ diffuses from (1) to (2)",
+        "At equilibrium, [Na⁺]₁ = zC + x and [Na⁺]₂ = C′ − x, x being the concentration of Cl⁻ that crossed",
+        "At equilibrium, [Cl⁻]₁ = [Cl⁻]₂"
+      ],
+      "answer": "ABD",
+      "explanation": "Only Cl⁻ has a pure (2) → (1) gradient; n moles of Cl⁻ cross with n moles of Na⁺ (electroneutrality), giving [Cl⁻]₁ = x, [Na⁺]₁ = zC + x, [Na⁺]₂ = [Cl⁻]₂ = C′ − x. The protein cannot cross, and Cl⁻ stays unequal (x vs C′ − x): that is the Donnan effect.",
+      "page": 3,
+      "weight": 4
+    },
+    {
+      "stem": "In the same experiment (PrNa_z at C in (1), NaCl at C′ in (2), x = concentration of Cl⁻ that crossed into (1)), the osmotic pressure at equilibrium is:",
+      "options": [
+        "Δπ = (zC − 2C′ + 4x + C)RT",
+        "Δπ = CRT",
+        "Δπ = (zC + 2x − 2C′ + C)RT",
+        "Δπ = (zC − 2C′ + 4x)RT + CRT",
+        "Δπ = (zC + 2C′ + C)RT"
+      ],
+      "answer": "AD",
+      "explanation": "(ωᵢ)₁ = (zC + x) + x and (ωᵢ)₂ = 2(C′ − x), so Δωᵢ = zC − 2C′ + 4x; adding the oncotic term C gives A, and D is the same expression split into Δωᵢ·RT + ωₚRT. Option C forgets that x also leaves (2), and CRT alone ignores the unequal ions.",
+      "page": 3,
+      "weight": 4
+    },
+    {
+      "stem": "In a Donnan experiment, (1) contains PrNa₁₅ at C = 10 mmol/l and (2) NaCl at C′ = 150 mmol/l. At equilibrium x = 50 mmol/l of Cl⁻ has crossed into (1). The osmolarity difference ω₁ − ω₂ responsible for Δπ is:",
+      "options": [
+        "10 mosmol/l",
+        "60 mosmol/l",
+        "200 mosmol/l",
+        "260 mosmol/l",
+        "460 mosmol/l"
+      ],
+      "answer": "B",
+      "explanation": "ω₁ = [Pr] + [Na⁺]₁ + [Cl⁻]₁ = 10 + (150 + 50) + 50 = 260; ω₂ = 2(150 − 50) = 200; difference 60 mosmol/l = zC − 2C′ + 4x + C. 10 is the oncotic part alone, which ignores the unequal ion distribution.",
+      "page": 3,
+      "weight": 4,
+      "calc": true,
+      "mental": "Fill the equilibrium table: (1) has 10 + 200 + 50 = 260, (2) has 100 + 100 = 200. Subtract: 60. Or plug into zC − 2C′ + 4x + C = 150 − 300 + 200 + 10."
+    },
+    {
+      "stem": "The figure shows the membrane at equilibrium in a Donnan experiment (fully dissociated proteinate Pr^z⁻ in (1), NaCl in (2)) with the electric field E across it. The correct propositions are:",
+      "options": [
+        "Compartment (1) is at the higher potential, since the field points toward it",
+        "V₁ − V₂ > 0",
+        "The field points from (2) to (1), so V₂ > V₁",
+        "The face on the proteinate side (1) is negative",
+        "The potential difference is given by V₁ − V₂ = −(RT/zF)·ln(C₁/C₂) applied to a diffusible ion"
+      ],
+      "answer": "CDE",
+      "explanation": "E points from the higher to the lower potential: (2) → (1) means V₂ > V₁, so V₁ − V₂ < 0 and the proteinate side is the negative face. The value comes from V₁ − V₂ = −(RT/zF)·ln(C₁/C₂) for Na⁺ or Cl⁻.",
+      "page": 3,
+      "weight": 2,
+      "image": "s1/lessons/biophysics-of-solutions-8-g1.png"
+    },
+    {
+      "stem": "At Donnan equilibrium at 37 °C, [Na⁺]₁ = 200, [Cl⁻]₁ = 50, [Na⁺]₂ = [Cl⁻]₂ = 100 (mmol/l); the proteinate is in (1). The membrane potential V₁ − V₂ is about:",
+      "options": [
+        "+18.5 mV",
+        "−8.0 mV",
+        "−37 mV",
+        "−18.5 mV",
+        "−9.3 mV"
+      ],
+      "answer": "D",
+      "explanation": "For Na⁺: V₁ − V₂ = −(RT/F)·ln(200/100) = −26.7 × ln 2 ≈ −18.5 mV; Cl⁻ (z = −1) gives the same: −(RT/F)·ln(100/50). −8.0 mV uses log₁₀ instead of ln; a positive value contradicts the negative proteinate side.",
+      "page": 3,
+      "weight": 2,
+      "calc": true,
+      "mental": "RT/F ≈ 26.7 mV at 37 °C and ln 2 ≈ 0.69: 26.7 × 0.7 ≈ 18.7 → 18.5 mV. The protein side is negative, so the sign is minus; checking with Cl⁻ (ratio 100/50 = 2 again) confirms the value."
+    },
+    {
+      "stem": "A voltage opposite to the membrane potential is applied to the Donnan system at equilibrium (PrNa_z at C in (1), NaCl at C′ in (2)). In the new equilibrium:",
+      "options": [
+        "V₁ − V₂ = 0, so each diffusible ion has the same concentration on both sides",
+        "The proteinate becomes equally distributed between (1) and (2)",
+        "[Cl⁻]₁ = [Cl⁻]₂ = C′/2",
+        "[Na⁺]₁ = [Na⁺]₂ = (zC + C′)/2",
+        "[Na⁺]₁ stays equal to zC + x"
+      ],
+      "answer": "ACD",
+      "explanation": "With V₁ − V₂ = 0, −(RT/zF)·ln(C₁/C₂) = 0 ⇒ C₁ = C₂ for each diffusible ion: [Cl⁻] = (x + C′ − x)/2 = C′/2 and [Na⁺] = (zC + x + C′ − x)/2 = (zC + C′)/2. The protein still cannot cross.",
+      "page": 3,
+      "weight": 2
+    },
+    {
+      "stem": "Across a dialysis membrane, (1) contains PrNa_z at C, and (2) contains NaCl at C′ plus the same PrNa_z at the same concentration C. At equilibrium:",
+      "options": [
+        "[Na⁺]₁ = zC",
+        "There is no Donnan effect, since [Pr^z⁻]₁ = [Pr^z⁻]₂",
+        "[Na⁺]₁ = [Na⁺]₂ = (C′ + 2zC)/2",
+        "[Cl⁻]₁ = [Cl⁻]₂ = C′/2",
+        "The membrane potential is zero"
+      ],
+      "answer": "BCDE",
+      "explanation": "With the same proteinate on both sides, the diffusible ions just equalise: Na⁺ averages zC and C′ + zC to (C′ + 2zC)/2, Cl⁻ averages to C′/2. C₁ = C₂ for every ion, so V₁ − V₂ = 0: no Donnan effect.",
+      "page": 4,
+      "weight": 4
+    },
+    {
+      "stem": "About osmotically active particles and Donnan equilibrium, the correct propositions are:",
+      "options": [
+        "Across a semipermeable membrane, particles that cannot diffuse cause water to move and generate osmotic pressure",
+        "Particles that can cross the membrane are said to be osmotically active",
+        "In Donnan equilibrium, the diffusible ions keep diffusing indefinitely across the dialysis membrane",
+        "At Donnan equilibrium, only the non-diffusible protein contributes to the osmotic pressure",
+        "At Donnan equilibrium, the diffusible particles, together with the non-diffusible protein, contribute to the osmotic pressure"
+      ],
+      "answer": "AE",
+      "explanation": "Non-diffusible particles are the osmotically active ones across a semipermeable membrane. Across a dialysis membrane, diffusible particles diffuse until equilibrium, then stop, and together with the protein contribute to the osmotic pressure (Δπ = Δωᵢ·RT + ωₚRT).",
+      "page": 4,
+      "weight": 4
+    },
+    {
+      "stem": "About fluids and their flow, the correct propositions are:",
+      "options": [
+        "A streamline is perpendicular to the velocity vector at every point",
+        "Fluids are liquids and gases",
+        "Flow is the overall motion of a fluid",
+        "A streamline is a curve that is tangent to the velocity vector at every point",
+        "Only liquids are fluids"
+      ],
+      "answer": "BCD",
+      "explanation": "Fluids are liquids and gases; flow is their overall motion; a streamline is tangent (not perpendicular) to the velocity vector at every point.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "About laminar flow, turbulent flow and viscosity, the correct propositions are:",
+      "options": [
+        "In laminar flow, the streamlines are parallel",
+        "Turbulent flow occurs at high velocities and is disordered",
+        "Flow is laminar at high velocities",
+        "Viscosity is the resistance of a fluid to laminar flow",
+        "In turbulent flow, the streamlines are parallel"
+      ],
+      "answer": "ABD",
+      "explanation": "Flow is laminar at low velocities (parallel streamlines) and turbulent at high velocities (disordered). Viscosity is the stickiness, the resistance to the laminar flow of a fluid.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "About the viscosity coefficient η, the correct propositions are:",
+      "options": [
+        "A real fluid has zero viscosity",
+        "η is expressed in poiseuille (Pl), with 1 Pl = 1 Pa·s",
+        "1 Pl = 1 Pa/s",
+        "A perfect fluid has an infinite viscosity",
+        "A perfect fluid has η = 0"
+      ],
+      "answer": "BE",
+      "explanation": "[η] = poiseuille, 1 Pl = 1 Pa·s (a product, not a quotient). A perfect fluid has η = 0; a real fluid has η ≠ 0.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "A pump delivers 5 litres of liquid per minute. Its volumetric flow rate Q_V = dV/dt in SI units is about:",
+      "options": [
+        "8.3 × 10⁻² m³/s",
+        "0.3 m³/s",
+        "5 × 10⁻³ m³/s",
+        "8.3 × 10⁻⁸ m³/s",
+        "8.3 × 10⁻⁵ m³/s"
+      ],
+      "answer": "E",
+      "explanation": "Q_V = dV/dt in m³/s: 5 l = 5 × 10⁻³ m³ per 60 s ⇒ 8.3 × 10⁻⁵ m³/s. 8.3 × 10⁻² forgets the l → m³ conversion; 5 × 10⁻³ forgets the minute → second one.",
+      "page": 5,
+      "weight": 0,
+      "calc": true,
+      "mental": "1 l = 10⁻³ m³ and 1 min = 60 s: 5/60 ≈ 0.083, times 10⁻³ gives 8.3 × 10⁻⁵ m³/s. Two conversions, so the answer must be far below 10⁻² — only options D and E are that small, and D (10⁻⁸) has one conversion too many."
+    }
+  ]
+}
