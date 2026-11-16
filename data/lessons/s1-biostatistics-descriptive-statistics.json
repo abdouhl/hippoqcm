@@ -1,0 +1,493 @@
+{
+  "semester": 1,
+  "module": "Biostatistics",
+  "title": "Descriptive statistics",
+  "pdf": "s1/biostatistics/descriptive-statistics.pdf",
+  "exam_questions": [
+    "EMD1 2018-2019 Q1",
+    "EMD1 2018-2019 Q2",
+    "EMD1 2018-2019 Q5",
+    "EMD1 2018-2019 Q6",
+    "EMD1 2018-2019 Q7",
+    "EMD1 2018-2019 Q8",
+    "EMD1 2018-2019 Q9",
+    "EMD1 2018-2019 Q10",
+    "EMD1 2018-2019 Q11",
+    "EMD1 2021-2022 Q5",
+    "EMD1 2021-2022 Q6",
+    "EMD1 2021-2022 Q7",
+    "EMD1 2021-2022 Q8",
+    "EMD1 2021-2022 Q9",
+    "EMD1 2021-2022 Q16",
+    "EMD1 2022-2023 Q6",
+    "EMD1 2022-2023 Q7",
+    "EMD1 2022-2023 Q8",
+    "EMD1 2022-2023 Q9",
+    "EMD1 2022-2023 Q10",
+    "EMD1 2022-2023 Q11",
+    "EMD1 2023-2024 Q1",
+    "EMD1 2023-2024 Q5",
+    "EMD1 2023-2024 Q6",
+    "EMD1 2023-2024 Q7",
+    "EMD1 2024-2025 Q5",
+    "EMD1 2024-2025 Q6",
+    "EMD1 2024-2025 Q7",
+    "EMD1 2024-2025 Q8",
+    "EMD1 2024-2025 Q9",
+    "EMD1 2024-2025 Q10",
+    "EMD1 2025-2026 Q5",
+    "EMD1 2025-2026 Q7",
+    "EMD1 2025-2026 Q8",
+    "EMD1 2025-2026 Q9",
+    "EMD1 2025-2026 Q10",
+    "EMD2 2017-2018 Q1",
+    "EMD2 2017-2018 Q2",
+    "EMD2 2017-2018 Q4",
+    "EMD2 2017-2018 Q5",
+    "EMD2 2017-2018 Q6",
+    "EMD2 2017-2018 Q7",
+    "EMD2 2017-2018 Q8",
+    "EMD2 2017-2018 Q9",
+    "EMD2 2017-2018 Q10",
+    "EMD2 2017-2018 Q11",
+    "EMD2 2017-2018 Q12",
+    "EMD2 2017-2018 Q13",
+    "EMD2 2017-2018 Q14",
+    "EMD2 2017-2018 Q15",
+    "EMD2 2017-2018 Q16",
+    "EMD2 2017-2018 Q17",
+    "EMD2 2017-2018 Q18",
+    "EMD2 2017-2018 Q19",
+    "EMD2 2017-2018 Q20"
+  ],
+  "exam_mental": {
+    "EMD1 2018-2019 Q6": "n = 19, log₁₀19 ≈ 1.28 (between log 10 = 1 and log 20 ≈ 1.3): nc ≈ 1 + 3.33 × 1.28 ≈ 1 + 4.3 = 5.3 → 5 classes.",
+    "EMD1 2018-2019 Q7": "Range e = 2.42 − 0.48 = 1.94; a = 1.94 / 5 = 0.388 → round up to 0.39 so the 5 classes cover the maximum.",
+    "EMD1 2018-2019 Q8": "Classes from 0.48 by 0.39 hold 3, 8, 4, 2, 2 values. n/2 = 9.5 falls in [0.87; 1.26[ (cumulative 3 → 11): Me = 0.87 + 0.39 × (9.5 − 3)/8 = 0.87 + 0.39 × 0.81 ≈ 0.87 + 0.32 = 1.19.",
+    "EMD1 2018-2019 Q9": "Modal class [0.87; 1.26[ (8 values): d₁ = 8 − 3 = 5, d₂ = 8 − 4 = 4. Mo = 0.87 + 0.39 × 5/9 ≈ 0.87 + 0.217 = 1.087. It must lie inside the modal class, which rules out 1.3 and 1.4.",
+    "EMD1 2018-2019 Q10": "Class centres 0.675, 1.065, 1.455, 1.845, 2.235 with counts 3, 8, 4, 2, 2: Σnᵢxᵢ ≈ 2.03 + 8.52 + 5.82 + 3.69 + 4.47 = 24.5, then 24.5 / 19 ≈ 1.29. Option D (24) is the sum, not the mean.",
+    "EMD1 2018-2019 Q11": "Var = Σnᵢxᵢ²/n − x̄²: Σnᵢxᵢ² ≈ 1.37 + 9.07 + 8.47 + 6.81 + 9.99 ≈ 35.7, so 35.7/19 ≈ 1.879 and 1.879 − 1.29² (1.666) ≈ 0.21. 0.80/0.81 forget to subtract x̄².",
+    "EMD1 2021-2022 Q5": "Centres 9.2, 10.8, …, 18.8 (step 1.6) with counts 7, 9, 9, 10, 8, 3, 4. Work from 14 (the middle centre): deviations in steps of 1.6 are −3,−2,−1,0,1,2,3 → Σnᵢdᵢ = −21 −18 −9 +0 +8 +6 +12 = −22, so x̄ = 14 + 1.6 × (−22/50) = 14 − 0.704 = 13.296.",
+    "EMD1 2021-2022 Q6": "With the same coded deviations d (steps of 1.6 around 14): Σnᵢdᵢ² = 63 + 36 + 9 + 0 + 8 + 12 + 36 = 164, so Var(d) = 164/50 − 0.44² = 3.28 − 0.194 = 3.086 and σ = 1.6 × √3.086 ≈ 1.6 × 1.757 ≈ 2.81.",
+    "EMD1 2021-2022 Q7": "n/2 = 25; cumulative counts 7, 16, 25 → Me is the upper bound of the 3rd class: 8.4 + 3 × 1.6 = 13.2.",
+    "EMD1 2021-2022 Q8": "Modal class [13.2; 14.8[ (10): d₁ = 10 − 9 = 1, d₂ = 10 − 8 = 2 → Mo = 13.2 + 1.6 × 1/3 ≈ 13.733.",
+    "EMD1 2021-2022 Q9": "Q1: n/4 = 12.5 in [10; 11.6[ (cum 7 → 16): 10 + 1.6 × 5.5/9 ≈ 10.98. Q3: 3n/4 = 37.5 in [14.8; 16.4[ (cum 35 → 43): 14.8 + 1.6 × 2.5/8 = 15.3. IQR ≈ 15.3 − 10.98 = 4.32.",
+    "EMD1 2022-2023 Q7": "The decreasing cumulative count at the smallest value includes everybody: n = n↘(3) = 25.",
+    "EMD1 2022-2023 Q8": "Counts from the decreasing cumulatives: 25−21 = 4, 21−13 = 8, 13−7 = 6, 7. Σnᵢxᵢ = 12 + 56 + 72 + 98 = 238, and 238/25 = 9.52.",
+    "EMD1 2022-2023 Q9": "Σnᵢxᵢ² = 36 + 392 + 864 + 1372 = 2664, so 2664/25 = 106.56; 106.56 − 9.52² (90.63) = 15.93.",
+    "EMD1 2022-2023 Q10": "Recover the counts first (4, 8, 6, 7): the largest is 8, for x = 7. Don't pick 14 just because its decreasing cumulative is listed last.",
+    "EMD1 2022-2023 Q11": "n = 25 is odd → Me = x₁₃. Cumulative counts 4, 12, 18: the 13th value is in the x = 12 group.",
+    "EMD1 2023-2024 Q5": "From the table's row totals: x̄ = Σnᵢ.xᵢ/100 and Var = Σnᵢ.xᵢ²/100 − x̄². With n = 100, dividing is just moving the decimal point. Check that the second number is a variance (≈ 36.7, σ ≈ 6), not a standard deviation.",
+    "EMD1 2023-2024 Q6": "Same method with the column totals. Then check the pair is (mean; σ): √19.63 ≈ 4.43, so (24.15; 19.63) gives the variance instead of σ.",
+    "EMD1 2023-2024 Q7": "ρ = cov/(σX·σY) with σX = √36.66 ≈ 6.05 and σY ≈ 4.43 (product ≈ 26.8); cov = Σnᵢⱼxᵢyⱼ/100 − x̄ȳ. ρ ≈ 0.58 corresponds to cov ≈ 15.5.",
+    "EMD1 2024-2025 Q5": "x̄ = Σnᵢ.xᵢ/234, Var = Σnᵢ.xᵢ²/234 − x̄². Check: σ ≈ √208 ≈ 14.4 is plausible for ages spread over several decades, while 15.6 would mean σ ≈ 4.",
+    "EMD1 2024-2025 Q6": "Same with the sleep-time margins. Check the second number is σ: 2.38² ≈ 5.7, so options with 5.69 have confused variance and σ.",
+    "EMD1 2024-2025 Q7": "Older people sleep less, so cov must be negative, which leaves −26.13 or −11.22. cov = Σnᵢⱼxᵢyⱼ/n − x̄ȳ.",
+    "EMD1 2024-2025 Q8": "ρ = −26.13 / (√208.35 × 2.38) ≈ −26.13 / (14.43 × 2.38 ≈ 34.3) ≈ −0.76. The sign must match the covariance, which leaves −34% or −76%.",
+    "EMD1 2024-2025 Q9": "a = cov/σX² = −26.13/208.35 ≈ −0.125; b = ȳ − a·x̄ = 10.18 + 0.125 × 19.18 ≈ 10.18 + 2.4 ≈ 12.5. Only one option has a ≈ −0.12 and b ≈ 12.5.",
+    "EMD1 2024-2025 Q10": "y = −0.12 × 66 + 12.48 = −7.92 + 12.48 ≈ 4.6 → about 5 hours.",
+    "EMD1 2025-2026 Q5": "n = Σnᵢ = 40 + 36 + 28 + 16 + 6 = 126.",
+    "EMD1 2025-2026 Q7": "Σnᵢxᵢ = 0 + 36 + 56 + 48 + 24 = 164 and Σnᵢxᵢ² = 0 + 36 + 112 + 144 + 96 = 388. Var = 388/126 − (164/126)² ≈ 3.08 − 1.30² (1.69) ≈ 1.39, so σ ≈ 1.18 ≈ 1.20.",
+    "EMD1 2025-2026 Q9": "n = 126 is even → Me = (x₆₃ + x₆₄)/2. Cumulative counts 40, 76: both the 63rd and 64th values are 1.",
+    "EMD1 2025-2026 Q10": "3n/4 = 94.5 → take x₉₅. Cumulative counts 40, 76, 104: the 95th value is 2.",
+    "EMD2 2017-2018 Q4": "The decreasing cumulative count at the smallest value includes everybody: n = n↘(3) = 25.",
+    "EMD2 2017-2018 Q5": "Counts 4, 8, 6, 7 (differences of the decreasing cumulatives): Σnᵢxᵢ = 12 + 56 + 72 + 98 = 238, and 238/25 = 9.52.",
+    "EMD2 2017-2018 Q6": "Σnᵢxᵢ² = 36 + 392 + 864 + 1372 = 2664, so 2664/25 = 106.56; 106.56 − 9.52² (90.63) = 15.93.",
+    "EMD2 2017-2018 Q7": "√15.93: 4² = 16, so the answer is just under 4 → 3.99.",
+    "EMD2 2017-2018 Q8": "Largest count is 8, for x = 7.",
+    "EMD2 2017-2018 Q9": "n = 25 odd → Me = x₁₃; cumulative counts 4, 12, 18 → x₁₃ = 12.",
+    "EMD2 2017-2018 Q10": "Q1: n/4 = 6.25 → x₇ = 7 (cumulative 4, 12). Q3: 3n/4 = 18.75 → x₁₉ = 14 (cumulative 18, 25). IQR = 14 − 7 = 7.",
+    "EMD2 2017-2018 Q11": "CV = 100 × 3.99/9.52; 4/9.5 ≈ 0.42, so about 41.9%.",
+    "EMD2 2017-2018 Q12": "x̄ = Σnᵢ.xᵢ/n using the row margins of the table; it must lie between the smallest and largest weights shown.",
+    "EMD2 2017-2018 Q13": "ȳ = Σn.ⱼyⱼ/n using the column margins.",
+    "EMD2 2017-2018 Q14": "σX = √(Σnᵢ.xᵢ²/n − x̄²). Shift the values first (e.g. subtract 49) to keep the squares small; the variance doesn't change.",
+    "EMD2 2017-2018 Q15": "Same as for X: shift heights by 159 before squaring, then take √.",
+    "EMD2 2017-2018 Q16": "cov = Σnᵢⱼxᵢyⱼ/n − x̄ȳ; with shifted values (x − 49, y − 159) the products stay small and the covariance is unchanged.",
+    "EMD2 2017-2018 Q17": "ρ = 24.44 / (5.3 × 5.8) = 24.44 / 30.7 ≈ 0.80.",
+    "EMD2 2017-2018 Q18": "a = cov/σX² = 24.44 / 5.3² (28.1) ≈ 0.87; b = ȳ − a·x̄ = 159 − 0.87 × 49.125 ≈ 159 − 42.7 = 116.3.",
+    "EMD2 2017-2018 Q19": "y = 0.87 × 50 + 116.26 = 43.5 + 116.26 ≈ 159.8 → 160 cm."
+  },
+  "questions": [
+    {
+      "stem": "A researcher measures the blood glucose of every one of the 1,200 patients hospitalized in a hospital. About this study:",
+      "options": [
+        "It is a census (exhaustive survey)",
+        "Each patient is a statistical unit (individual)",
+        "Blood glucose is a quantitative continuous variable",
+        "The 1,200 patients form a sample, not the population"
+      ],
+      "answer": "ABC",
+      "explanation": "When the observed sample is the entire population, the survey is a census; a survey (sondage) observes only a proper subset. Glucose is measured on a continuous scale.",
+      "page": 14,
+      "weight": 0
+    },
+    {
+      "stem": "Which of the following classifications is (are) correct?",
+      "options": [
+        "Military rank: qualitative nominal variable",
+        "Number of hospital admissions per year: quantitative discrete variable",
+        "Degree in higher education: qualitative ordinal variable",
+        "Weight: quantitative discrete variable"
+      ],
+      "answer": "BC",
+      "explanation": "Military rank and degree are ordered categories (qualitative ordinal). Weight, like height or age, is quantitative continuous; counts (children, rooms, admissions) are discrete.",
+      "page": 17,
+      "weight": 3
+    },
+    {
+      "stem": "Which of these variables is (are) quantitative continuous?",
+      "options": [
+        "Height",
+        "Number of children",
+        "Hemoglobin rate",
+        "Marital status"
+      ],
+      "answer": "AC",
+      "explanation": "Height, age, weight, speed and rates are continuous; number of children is discrete; marital status is qualitative nominal.",
+      "page": 18,
+      "weight": 3
+    },
+    {
+      "stem": "About the frequencies of a statistical series with k classes and n individuals:",
+      "options": [
+        "0 ≤ fᵢ ≤ 1",
+        "The relative frequencies fᵢ sum to 1",
+        "The percentage is pᵢ = fᵢ / 100",
+        "The counts nᵢ sum to k"
+      ],
+      "answer": "AB",
+      "explanation": "fᵢ = nᵢ/n, so each lies between 0 and 1 and they sum to 1; the counts sum to n (not k), and pᵢ = fᵢ × 100.",
+      "page": 20,
+      "weight": 3
+    },
+    {
+      "stem": "A variable takes the values 1, 2, 3, 4 with counts 5, 10, 15, 10. Which statement(s) is (are) correct?",
+      "options": [
+        "The increasing cumulative count at x = 3 is 30",
+        "The decreasing cumulative count at x = 3 is 25",
+        "The relative frequency of x = 2 is 0.25",
+        "The decreasing cumulative count at x = 1 is 5"
+      ],
+      "answer": "ABC",
+      "explanation": "n = 40. Increasing at 3: 5 + 10 + 15 = 30; decreasing at 3: 15 + 10 = 25; f₂ = 10/40 = 0.25. The decreasing count at the smallest value is the whole sample (40).",
+      "page": 27,
+      "weight": 3,
+      "calc": true,
+      "mental": "Add from the left for ↗ (5+10+15) and from the right for ↘ (10+15). The ↘ count at the first value is always n = 40, which rules out D."
+    },
+    {
+      "stem": "100 observations are collected. Using the lesson's rule, the number of classes is:",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "10"
+      ],
+      "answer": "C",
+      "explanation": "nc = 1 + (10/3)·log₁₀(n) = 1 + (10/3) × 2 = 7.67, rounded to 8 classes.",
+      "page": 22,
+      "weight": 2,
+      "calc": true,
+      "mental": "log₁₀100 = 2 exactly, so nc = 1 + 20/3 = 1 + 6.67 = 7.67 → 8."
+    },
+    {
+      "stem": "The same 100 observations range from 2.5 to 9.7. With the number of classes given by the lesson's rule, the class width (amplitude) is:",
+      "options": [
+        "0.72",
+        "0.9",
+        "1.03",
+        "7.2"
+      ],
+      "answer": "B",
+      "explanation": "Range e = 9.7 − 2.5 = 7.2; nc = 8; a = e/nc = 7.2/8 = 0.9. 1.03 divides by 7 classes, 0.72 by 10, and 7.2 is the range itself.",
+      "page": 23,
+      "weight": 2,
+      "calc": true,
+      "mental": "7.2 / 8: 8 × 0.9 = 7.2 exactly. The width must be smaller than the range, which rules out 7.2."
+    },
+    {
+      "stem": "About the histogram:",
+      "options": [
+        "The surface of each rectangle, not its height, is proportional to the frequency",
+        "It is used for a quantitative continuous variable",
+        "It is the usual graph for a nominal qualitative variable",
+        "The width of a class is called its amplitude"
+      ],
+      "answer": "ABD",
+      "explanation": "The histogram shows counts per class interval for a continuous quantitative variable, with areas proportional to frequencies; qualitative variables use bar or pie charts.",
+      "page": 24,
+      "weight": 1
+    },
+    {
+      "stem": "Concerning the histogram (figure), which statement(s) is (are) correct?",
+      "options": [
+        "The modal class is the class labelled 6",
+        "The class labelled 5 has a count of 10",
+        "The class labelled 13 has a count of 5",
+        "The class labelled 10 has a larger count than the class labelled 7"
+      ],
+      "answer": "AB",
+      "explanation": "Read the heights: 3, 10, 24, 16, 6, 11, 14, 7, 5, 2, 2. The class labelled 6 (24) is the tallest; class 13 has 2, and class 10 (14) is below class 7 (16).",
+      "page": 25,
+      "weight": 1,
+      "image": "s1/lessons/descriptive-statistics-g1.png"
+    },
+    {
+      "stem": "Concerning the types of graphs (figure), which statement(s) is (are) correct?",
+      "options": [
+        "Graph 1 can represent a nominal qualitative variable such as profession",
+        "Graph 5 is a histogram, used for a continuous quantitative variable",
+        "Graph 4 (stick diagram) is used for a continuous quantitative variable",
+        "In graph 5 the height of the rectangles, not their area, is proportional to the counts"
+      ],
+      "answer": "AB",
+      "explanation": "1 and 2 are bar charts (nominal, ordinal), 3 a pie chart (nominal), 4 a stick diagram (discrete quantitative), 5 a histogram (continuous), where area is proportional to frequency.",
+      "page": 26,
+      "weight": 1,
+      "image": "s1/lessons/descriptive-statistics-g2.png"
+    },
+    {
+      "stem": "About the mode:",
+      "options": [
+        "It can be defined for a qualitative as well as a quantitative variable",
+        "The series 2, 4, 4, 6, 9, 9 is bimodal",
+        "It is the value in the middle of the ordered series",
+        "The series 1, 1, 4, 7, 7, 7, 15 has mode 1"
+      ],
+      "answer": "AB",
+      "explanation": "The mode is the most frequent value (4 and 9 here, so bimodal); the middle value is the median. In C's series, 7 appears three times, so Mo = 7.",
+      "page": 30,
+      "weight": 5
+    },
+    {
+      "stem": "The number of medical consultations per year X takes the values 0, 1, 2, 3 with counts 10, 20, 15, 5. The arithmetic mean is:",
+      "options": [
+        "1.5",
+        "1.63",
+        "1.3",
+        "2.6"
+      ],
+      "answer": "C",
+      "explanation": "x̄ = Σnᵢxᵢ/n = (0 + 20 + 30 + 15)/50 = 65/50 = 1.3. 1.5 is the plain average of the values, ignoring counts; 1.63 divides by 40.",
+      "page": 35,
+      "weight": 7,
+      "calc": true,
+      "mental": "Σnᵢxᵢ = 0 + 20 + 30 + 15 = 65; n = 10 + 20 + 15 + 5 = 50; 65/50 = 1.3."
+    },
+    {
+      "stem": "A continuous variable is grouped into [0; 10[ (4), [10; 20[ (10) and [20; 30[ (6). The arithmetic mean is:",
+      "options": [
+        "11",
+        "16",
+        "21",
+        "6.67"
+      ],
+      "answer": "B",
+      "explanation": "For classes use the centres 5, 15, 25: (20 + 150 + 150)/20 = 16. Using lower bounds gives 11, upper bounds 21.",
+      "page": 36,
+      "weight": 7,
+      "calc": true,
+      "mental": "Centres 5, 15, 25 → 4×5 + 10×15 + 6×25 = 20 + 150 + 150 = 320; 320/20 = 16. The mean must lie inside the middle, heaviest class, which rules out 6.67."
+    },
+    {
+      "stem": "About the median Me of a discrete series of n ordered values:",
+      "options": [
+        "The values must be arranged in increasing order",
+        "If n = 2p + 1, Me = xₚ₊₁",
+        "If n = 2p, Me = xₚ",
+        "Me equals the second quartile Q₂"
+      ],
+      "answer": "ABD",
+      "explanation": "For n even (2p), Me = (xₚ + xₚ₊₁)/2, the average of the two middle values.",
+      "page": 39,
+      "weight": 5
+    },
+    {
+      "stem": "A variable takes the values 1, 2, 3, 4, 5 with counts 3, 5, 8, 6, 3. The median is:",
+      "options": [
+        "2",
+        "2.5",
+        "3",
+        "4"
+      ],
+      "answer": "C",
+      "explanation": "n = 25 is odd (2p + 1 with p = 12), so Me = x₁₃. Cumulative counts 3, 8, 16: the 13th value is 3.",
+      "page": 40,
+      "weight": 5,
+      "calc": true,
+      "mental": "n = 25 → middle rank 13. Running total 3, 8, 16 passes 13 at x = 3."
+    },
+    {
+      "stem": "Hemoglobin classes: [10; 20[ (6), [20; 30[ (14), [30; 40[ (10). The mode Mo is about:",
+      "options": [
+        "25",
+        "23.33",
+        "26.67",
+        "28"
+      ],
+      "answer": "C",
+      "explanation": "Modal class [20; 30[: d₁ = 14 − 6 = 8, d₂ = 14 − 10 = 4. Mo = 20 + 10 × 8/(8 + 4) = 26.67. 23.33 swaps d₁ and d₂; 25 is just the class centre.",
+      "page": 42,
+      "weight": 5,
+      "calc": true,
+      "mental": "Mo = 20 + 10 × 8/12 = 20 + 6.67. The mode leans toward the larger neighbour (10 above vs 6 below), so it must exceed 25."
+    },
+    {
+      "stem": "Same classes: [10; 20[ (6), [20; 30[ (14), [30; 40[ (10). The median Me is about:",
+      "options": [
+        "25",
+        "26.43",
+        "26.67",
+        "21.43"
+      ],
+      "answer": "B",
+      "explanation": "n = 30, n/2 = 15 falls in [20; 30[ (cumulative 6 → 20): Me = 20 + 10 × (15 − 6)/(20 − 6) = 20 + 90/14 ≈ 26.43. 26.67 is the mode.",
+      "page": 44,
+      "weight": 5,
+      "calc": true,
+      "mental": "9/14 ≈ 0.64, so Me ≈ 20 + 6.4 = 26.4."
+    },
+    {
+      "stem": "X takes the values 1, 2, 3 with counts 2, 4, 4. Its variance is:",
+      "options": [
+        "5.40",
+        "0.75",
+        "3.24",
+        "0.56"
+      ],
+      "answer": "D",
+      "explanation": "x̄ = 22/10 = 2.2; Σnᵢxᵢ²/n = 54/10 = 5.4; V = 5.4 − 2.2² = 5.4 − 4.84 = 0.56. 5.40 forgets to subtract x̄², and 0.75 ≈ σ.",
+      "page": 45,
+      "weight": 7,
+      "calc": true,
+      "mental": "2.2² = 4.84; 5.4 − 4.84 = 0.56. A variance can't exceed the mean of squares, and here σ ≈ 0.75, so 0.75 is the standard deviation, not the variance."
+    },
+    {
+      "stem": "In a group of women, hemoglobin has mean 125 g/L and standard deviation 10 g/L. The coefficient of variation is:",
+      "options": [
+        "12.5%",
+        "8%",
+        "0.08%",
+        "80%"
+      ],
+      "answer": "B",
+      "explanation": "CV = 100 × σ/x̄ = 100 × 10/125 = 8%. 12.5% inverts the ratio.",
+      "page": 46,
+      "weight": 1,
+      "calc": true,
+      "mental": "10/125 = 2/25 = 0.08 → 8%."
+    },
+    {
+      "stem": "About quartiles and quantiles:",
+      "options": [
+        "25% of the values are below Q₁ and 75% above it",
+        "Q₂ is the median",
+        "The interquartile range is IQR = Q₃ − Q₁",
+        "Percentiles (centiles) divide the distribution into 100 equal parts"
+      ],
+      "answer": "ABCD",
+      "explanation": "All true: quartiles split into 4 parts, deciles into 10, percentiles into 100; Q₂ is the median.",
+      "page": 52,
+      "weight": 3
+    },
+    {
+      "stem": "X takes the values 1, 2, 3, 4, 5 with counts 2, 4, 6, 5, 3 (n = 20). Following the lesson's method, the interquartile range is:",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "answer": "B",
+      "explanation": "n/4 = 5 → Q₁ = x₅ = 2 (cumulative 2, 6); 3n/4 = 15 → Q₃ = x₁₅ = 4 (cumulative 12, 17). IQR = 4 − 2 = 2.",
+      "page": 48,
+      "weight": 3,
+      "calc": true,
+      "mental": "Running totals 2, 6, 12, 17, 20: the 5th value is 2, the 15th is 4."
+    },
+    {
+      "stem": "Classes [0; 10[ (6), [10; 20[ (20), [20; 30[ (14), n = 40. The first quartile Q₁ is:",
+      "options": [
+        "10",
+        "16.67",
+        "12",
+        "15"
+      ],
+      "answer": "C",
+      "explanation": "n/4 = 10 falls in [10; 20[ (cumulative 6 → 26): Q₁ = 10 + 10 × (10 − 6)/(26 − 6) = 10 + 2 = 12.",
+      "page": 49,
+      "weight": 3,
+      "calc": true,
+      "mental": "(10 − 6)/20 = 0.2 of the width 10 = 2, so Q₁ = 12."
+    },
+    {
+      "stem": "About two statistical variables X and Y:",
+      "options": [
+        "If X and Y are independent, Cov(X, Y) = 0",
+        "If Cov(X, Y) = 0, X and Y are necessarily independent",
+        "If Cov(X, Y) = 0, X and Y are said to be uncorrelated",
+        "X and Y are independent if and only if fᵢⱼ = fᵢ. × f.ⱼ for all i, j"
+      ],
+      "answer": "ACD",
+      "explanation": "Independence implies zero covariance, but the converse is not true: zero covariance only means uncorrelated.",
+      "page": 57,
+      "weight": 3
+    },
+    {
+      "stem": "About the linear correlation coefficient ρ(X, Y):",
+      "options": [
+        "−1 ≤ ρ ≤ 1",
+        "ρ changes if heights are converted from centimetres to metres",
+        "ρ = Cov(X, Y) / (σX·σY)",
+        "ρ = 0 implies that X and Y are independent"
+      ],
+      "answer": "AC",
+      "explanation": "ρ is invariant under a change of origin and unit. ρ = 0 only means uncorrelated, not independent.",
+      "page": 59,
+      "weight": 3
+    },
+    {
+      "stem": "For two variables, Cov(X, Y) = 12, σX = 4 and σY = 5. The linear correlation coefficient is:",
+      "options": [
+        "0.15",
+        "−0.6",
+        "0.6",
+        "2.4"
+      ],
+      "answer": "C",
+      "explanation": "ρ = 12/(4 × 5) = 0.6; its sign follows the covariance, and 2.4 is impossible since |ρ| ≤ 1.",
+      "page": 58,
+      "weight": 3,
+      "calc": true,
+      "mental": "4 × 5 = 20; 12/20 = 0.6. A positive covariance rules out −0.6, and |ρ| ≤ 1 rules out 2.4."
+    },
+    {
+      "stem": "For a two-variable series: x̄ = 10, ȳ = 50, Cov(X, Y) = 8, σX² = 4. The regression line of Y on X is:",
+      "options": [
+        "y = 0.5x + 45",
+        "y = 2x + 30",
+        "y = 2x + 50",
+        "y = 8x − 30"
+      ],
+      "answer": "B",
+      "explanation": "a = Cov/σX² = 8/4 = 2; b = ȳ − a·x̄ = 50 − 20 = 30. The line passes through (x̄, ȳ): 2 × 10 + 30 = 50.",
+      "page": 60,
+      "weight": 2,
+      "calc": true,
+      "mental": "a = 8/4 = 2. Then check each option at x = 10: only y = 2x + 30 gives ȳ = 50."
+    },
+    {
+      "stem": "In a contingency table of X (rows) and Y (columns):",
+      "options": [
+        "nᵢⱼ is the joint (partial) frequency of the couple (xᵢ, yⱼ)",
+        "nᵢ. is the marginal frequency of xᵢ",
+        "nᵢ. is obtained by summing nᵢⱼ over i",
+        "n.ⱼ is obtained by summing nᵢⱼ over i"
+      ],
+      "answer": "ABD",
+      "explanation": "nᵢ. is a row total (sum over j), n.ⱼ a column total (sum over i).",
+      "page": 55,
+      "weight": 3
+    }
+  ]
+}

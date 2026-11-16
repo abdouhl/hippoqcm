@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descriptive statistics — Summary</title>
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Biostatistics · Summary</div>
+<h1>Descriptive statistics</h1>
+<p class="meta">From the 56-slide course PDF (Dr. M. Bouhadjar, 2026-2027) · 55 past exam questions (EMD1 2018–2026, EMD2 2017-18) cover this lesson ·
+  <a href="/lessons/s1/biostatistics/descriptive-statistics.pdf">open the PDF</a></p>
+<ul class="toc">
+  <li><a target="_self" href="#essentials">Essentials</a></li>
+  <li><a target="_self" href="#intro">Introduction</a></li>
+  <li><a target="_self" href="#vocab">Vocabulary &amp; variables</a></li>
+  <li><a target="_self" href="#classes">Frequencies &amp; classes</a></li>
+  <li><a target="_self" href="#graphs">Graphs</a></li>
+  <li><a target="_self" href="#position">Mode, mean, median</a></li>
+  <li><a target="_self" href="#dispersion">Dispersion</a></li>
+  <li><a target="_self" href="#bivariate">Two variables</a></li>
+  <li><a target="_self" href="#traps">Exam traps</a></li>
+  <li><a target="_self" href="#check">Self-check</a></li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<div class="box essentials" id="essentials">
+  <span class="label">If you remember only this</span>
+  <ul>
+    <li>Variables: <b>qualitative</b> (nominal or ordinal) vs <b>quantitative</b> (<b>discrete</b> = counts; <b>continuous</b> = measures
+      such as height, weight, age, rates).</li>
+    <li>Classes: number <b>n<sub>c</sub> = 1 + (10/3)·log₁₀ n</b>; width (amplitude) <b>a = e / n<sub>c</sub></b> with range e = x<sub>max</sub> − x<sub>min</sub>.</li>
+    <li>Mean <b>x̄ = (1/n) Σ n<sub>i</sub>x<sub>i</sub></b>, with x<sub>i</sub> = the <b>class centre</b> for a continuous variable.</li>
+    <li>Variance <b>V = (1/n) Σ n<sub>i</sub>x<sub>i</sub>² − x̄²</b>; standard deviation <b>σ = √V</b>; CV = 100·σ/x̄.</li>
+    <li>Median (discrete): n = 2p+1 → <b>x<sub>p+1</sub></b>; n = 2p → <b>(x<sub>p</sub> + x<sub>p+1</sub>)/2</b>. Me = Q₂. IQR = Q₃ − Q₁.</li>
+    <li>Continuous mode: <b>Mo = a<sub>i</sub> + a·d₁/(d₁ + d₂)</b> in the modal class; continuous median/quartiles by interpolation in the class that contains n/2 (n/4, 3n/4).</li>
+    <li>Two variables: <b>cov = (1/n) ΣΣ n<sub>ij</sub>x<sub>i</sub>y<sub>j</sub> − x̄ȳ</b>; <b>ρ = cov/(σ<sub>X</sub>σ<sub>Y</sub>)</b>, −1 ≤ ρ ≤ 1;
+      regression of Y on X: <b>a = cov/σ<sub>X</sub>²</b>, <b>b = ȳ − a·x̄</b>.</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="intro"><span class="num">I.</span> Introduction <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=7">p. 7–13</a></h2>
+<div class="box def"><span class="label">Definition</span>
+  <b>Statistics</b> is the study of observable variations: a method that consists in <b>collecting</b> numerical data on large populations,
+  then <b>analysing</b> and <b>interpreting</b> them. It is used to validate experimental or observational results, especially in biology,
+  "where variations are the rule".</div>
+<ul>
+  <li>The module has two units: <b>Biostatistics I = descriptive statistics</b> (this lesson) and <b>Biostatistics II</b> = probability
+    calculations, probability distributions and inferential ("differential") statistics.</li>
+  <li>Three phases in the history of statistics:
+    <ul>
+      <li>Antiquity → end of the 19th century: mainly <b>counting techniques</b>.</li>
+      <li>Late 19th century → 1960s: <b>mathematical statistics</b>, mainly the English school (K. Pearson, W. Gosset "Student", R. Fisher, J. Neyman).</li>
+      <li>Since the 1960s: considerable growth thanks to computational and graphical tools (medicine, agronomy, sociology, industry…).</li>
+    </ul></li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="vocab"><span class="num">II.</span> Statistical vocabulary
+  <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=14">p. 14–18</a>
+  <span class="exam">2017-18 (EMD2) · 2018-19 · 2021-22</span></h2>
+<div class="table-wrap"><table>
+  <tr><th>Term</th><th>Meaning</th></tr>
+  <tr><td><b>Population</b> (Ω)</td><td>The set under consideration in the study</td></tr>
+  <tr><td><b>Individual</b> / statistical unit (ω)</td><td>Each element of the population</td></tr>
+  <tr><td><b>Sample</b> (échantillon)</td><td>Subset of the population on which the observations are made</td></tr>
+  <tr><td><b>Census</b> (recensement)</td><td>Survey where the observed sample is the <b>entire population</b> (exhaustive)</td></tr>
+  <tr><td><b>Survey</b> (sondage)</td><td>Survey where the sample is a <b>proper subset</b> of the population (non-exhaustive)</td></tr>
+  <tr><td><b>Characteristic</b> (caractère)</td><td>The property observed in the population or sample; when it is the subject of the study it is the <b>statistical variable</b></td></tr>
+  <tr><td><b>Modalities</b> (modalités)</td><td>The different values taken by a variable</td></tr>
+  <tr><td><b>Variable</b></td><td>Characteristic common to all individuals whose value varies from one individual to another</td></tr>
+</table></div>
+
+<h3>Types of statistical variables</h3>
+<figure>
+  <svg viewBox="0 0 760 250" role="img" aria-label="Variables are qualitative (nominal or ordinal) or quantitative (discrete or continuous), with examples">
+    <defs><marker id="ds-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="s-text"/></marker></defs>
+    <rect x="40" y="14" width="300" height="56" rx="10" class="s-violet" stroke-width="2"/>
+    <text x="190" y="40" text-anchor="middle" class="s-text" font-size="18" font-weight="700">Qualitative</text>
+    <text x="190" y="60" text-anchor="middle" class="s-muted" font-size="13">cannot be expressed in numbers</text>
+    <rect x="420" y="14" width="300" height="56" rx="10" class="s-accent" stroke-width="2"/>
+    <text x="570" y="40" text-anchor="middle" class="s-text" font-size="18" font-weight="700">Quantitative</text>
+    <text x="570" y="60" text-anchor="middle" class="s-muted" font-size="13">measurable, expressed numerically</text>
+    <path d="M190 70 V88 M110 88 H270 M570 70 V88 M490 88 H650" class="s-line" stroke-width="2"/>
+    <line x1="110" y1="88" x2="110" y2="108" class="s-line" stroke-width="2" marker-end="url(#ds-ah)"/>
+    <line x1="270" y1="88" x2="270" y2="108" class="s-line" stroke-width="2" marker-end="url(#ds-ah)"/>
+    <line x1="490" y1="88" x2="490" y2="108" class="s-line" stroke-width="2" marker-end="url(#ds-ah)"/>
+    <line x1="650" y1="88" x2="650" y2="108" class="s-line" stroke-width="2" marker-end="url(#ds-ah)"/>
+    <rect x="40" y="112" width="140" height="120" rx="8" class="s-violet" stroke-width="1.5"/>
+    <text x="110" y="136" text-anchor="middle" class="s-text" font-size="16" font-weight="700">Nominal</text>
+    <text x="110" y="162" text-anchor="middle" class="s-muted" font-size="13">sex</text>
+    <text x="110" y="182" text-anchor="middle" class="s-muted" font-size="13">profession</text>
+    <text x="110" y="202" text-anchor="middle" class="s-muted" font-size="13">marital status</text>
+    <rect x="200" y="112" width="140" height="120" rx="8" class="s-violet" stroke-width="1.5"/>
+    <text x="270" y="136" text-anchor="middle" class="s-text" font-size="16" font-weight="700">Ordinal</text>
+    <text x="270" y="162" text-anchor="middle" class="s-muted" font-size="13">military rank</text>
+    <text x="270" y="182" text-anchor="middle" class="s-muted" font-size="13">degree in higher</text>
+    <text x="270" y="200" text-anchor="middle" class="s-muted" font-size="13">education</text>
+    <rect x="420" y="112" width="140" height="120" rx="8" class="s-accent" stroke-width="1.5"/>
+    <text x="490" y="136" text-anchor="middle" class="s-text" font-size="16" font-weight="700">Discrete</text>
+    <text x="490" y="162" text-anchor="middle" class="s-muted" font-size="13">number of children</text>
+    <text x="490" y="182" text-anchor="middle" class="s-muted" font-size="13">number of rooms</text>
+    <rect x="580" y="112" width="140" height="120" rx="8" class="s-accent" stroke-width="1.5"/>
+    <text x="650" y="136" text-anchor="middle" class="s-text" font-size="16" font-weight="700">Continuous</text>
+    <text x="650" y="162" text-anchor="middle" class="s-muted" font-size="13">height, age, weight</text>
+    <text x="650" y="182" text-anchor="middle" class="s-muted" font-size="13">speed, rate</text>
+  </svg>
+  <figcaption><b>The 4 types and the lesson's examples.</b> Counts are discrete; measurements (including concentrations and rates) are
+    continuous. <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=17">p. 17–18</a></figcaption>
+</figure>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="classes"><span class="num">III.</span> Frequencies and forming the classes
+  <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=19">p. 19–23</a>
+  <span class="exam">2017-18 (EMD2) · 2018-19 · 2022-23 · 2025-26</span></h2>
+<div class="table-wrap"><table>
+  <tr><th>Indication</th><th>Notation</th><th>Rule</th></tr>
+  <tr><td><b>Frequency (count)</b> of class i</td><td>n<sub>i</sub></td><td>Σ n<sub>i</sub> = <b>n</b> (total number of individuals)</td></tr>
+  <tr><td><b>Relative frequency</b></td><td>f<sub>i</sub> = n<sub>i</sub>/n</td><td>0 ≤ f<sub>i</sub> ≤ 1, Σ f<sub>i</sub> = 1</td></tr>
+  <tr><td><b>Percentage</b></td><td>p<sub>i</sub> = f<sub>i</sub> × 100</td><td>Σ p<sub>i</sub> = 100%</td></tr>
+  <tr><td><b>Increasing cumulative</b> count (croissant)</td><td>n↗ = n₁ + … + n<sub>i</sub></td><td>the last one equals n</td></tr>
+  <tr><td><b>Decreasing cumulative</b> count (décroissant)</td><td>n↘ = n<sub>k</sub> + n<sub>k−1</sub> + … + n<sub>i</sub></td><td>the <b>first</b> one equals n</td></tr>
+</table></div>
+<p>Notation: X = the character studied, n = sample size, k = number of classes (modalities), x₁…x<sub>k</sub> the modalities with counts n₁…n<sub>k</sub>
+  <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=27">p. 27–28</a>.</p>
+
+<h3>How to form the classes</h3>
+<ol class="steps">
+  <li>Arrange the data in <b>increasing order</b> and compute the <b>range</b>: e = x<sub>max</sub> − x<sub>min</sub>.</li>
+  <li>Number of classes (n = number of observations):
+    <div class="formula">n<sub>c</sub> = 1 + <span class="frac"><span>10</span><span>3</span></span> log₁₀(n)</div></li>
+  <li>Class width = <b>amplitude</b>:
+    <div class="formula">a = <span class="frac"><span>e</span><span>n<sub>c</sub></span></span></div></li>
+</ol>
+<div class="box tip"><span class="label">Worked from past exams</span>
+  n = 19 → log₁₀19 ≈ 1.28 → n<sub>c</sub> ≈ 5.3 → <b>5</b> classes (2018-19). n = 50 → n<sub>c</sub> ≈ 6.7 → <b>7</b> classes (2021-22). n = 100 → log = 2 → n<sub>c</sub> = 7.7 → 8.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="graphs"><span class="num">IV.</span> Graphical representations
+  <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=24">p. 24–26</a>
+  <span class="exam">2017-18 (EMD2)</span></h2>
+<div class="box def"><span class="label">Histogram</span>
+  Displays the counts of a variable by <b>class interval</b>. Used for a <b>quantitative continuous</b> variable: rectangles whose
+  <b>surface (not height)</b> is proportional to the counts.</div>
+<div class="grid2">
+  <figure>
+    <img src="descriptive-statistics/histogram.jpg" alt="Histogram of counts by class, from class 4 to class 14; the tallest bar (24) is at class 6" loading="lazy">
+    <figcaption><b>Reading a histogram:</b> the tallest rectangle is the <b>modal class</b> (here class 6, count 24). Counts read 3, 10, 24, 16, 6,
+      11, 14, 7, 5, 2, 2. "Effectif" = count. <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=25">p. 25</a></figcaption>
+  </figure>
+  <figure>
+    <img src="descriptive-statistics/graph-types.jpg" alt="Which graph for which variable: bar charts and pie chart for qualitative, stick diagram and histogram for quantitative, plus cumulative curves" loading="lazy">
+    <figcaption><b>Which graph for which variable.</b> Qualitative nominal: bar chart (diagramme en barres) or pie chart (circulaire);
+      ordinal: bar chart with modalities in order. Quantitative discrete: <b>stick diagram</b> (bâtons); continuous: <b>histogram</b>.
+      Both quantitative types also get cumulative count/frequency curves. <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=26">p. 26</a></figcaption>
+  </figure>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="position"><span class="num">V.</span> Univariate series — position parameters (central values)
+  <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=29">p. 29–44</a>
+  <span class="exam">2017-18 (EMD2) · 2018-19 · 2021-22 · 2022-23 · 2023-24 · 2024-25 · 2025-26</span></h2>
+
+<h3>The lesson's two worked examples <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=31">p. 31–34</a></h3>
+<div class="grid2">
+  <div class="table-wrap"><table>
+    <tr><th colspan="5">Ex. 1 — discrete: Biostatistics notes of 38 students</th></tr>
+    <tr><th>x<sub>i</sub></th><th>n<sub>i</sub></th><th>n↗</th><th>n↘</th><th>n<sub>i</sub>x<sub>i</sub></th></tr>
+    <tr><td>3</td><td>4</td><td>4</td><td>38</td><td>12</td></tr>
+    <tr><td>8</td><td>7</td><td>11</td><td>34</td><td>56</td></tr>
+    <tr><td>13</td><td>12</td><td>23</td><td>27</td><td>156</td></tr>
+    <tr><td>15</td><td>10</td><td>33</td><td>15</td><td>150</td></tr>
+    <tr><td>18</td><td>5</td><td>38</td><td>5</td><td>90</td></tr>
+    <tr><td><b>Σ</b></td><td><b>38</b></td><td></td><td></td><td><b>464</b> (Σn<sub>i</sub>x<sub>i</sub>² = 6382)</td></tr>
+  </table></div>
+  <div class="table-wrap"><table>
+    <tr><th colspan="5">Ex. 2 — continuous: hemoglobin (g/L) of 56 women</th></tr>
+    <tr><th>Class</th><th>n<sub>i</sub></th><th>centre</th><th>n↗</th><th>n<sub>i</sub>x<sub>i</sub></th></tr>
+    <tr><td>[100; 110[</td><td>8</td><td>105</td><td>8</td><td>840</td></tr>
+    <tr><td>[110; 120[</td><td>10</td><td>115</td><td>18</td><td>1150</td></tr>
+    <tr><td>[120; 130[</td><td>20</td><td>125</td><td>38</td><td>2500</td></tr>
+    <tr><td>[130; 140[</td><td>12</td><td>135</td><td>50</td><td>1620</td></tr>
+    <tr><td>[140; 150[</td><td>6</td><td>145</td><td>56</td><td>870</td></tr>
+    <tr><td><b>Σ</b></td><td><b>56</b></td><td></td><td></td><td><b>6980</b> (Σn<sub>i</sub>x<sub>i</sub>² = 1 190 300)</td></tr>
+  </table></div>
+</div>
+
+<h3>1. Mode <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=29">p. 29–30, 41–43</a></h3>
+<div class="box def"><span class="label">Definition</span>
+  The <b>mode</b> Mo of a variable (<b>qualitative or quantitative</b>) is the value observed most often = the one with the
+  <b>largest count</b> (or frequency).</div>
+<ul>
+  <li>1, 1, 4, 8, 7, 7, 7, 15, 18, 10, 5, 13 → <b>Mo = 7</b>. &nbsp; 6, 4, 7, 12, 11, 16, 17, 14, 18 → <b>no mode</b>.
+    &nbsp; 5, 5, 5, 7, 9, 8, 8, 8, … → <b>Mo₁ = 5 and Mo₂ = 8</b>: two modes = <b>bimodal</b> distribution.</li>
+  <li><b>Modal class</b> (continuous variable): the class at the <b>maximum of the histogram</b> (unimodal distribution).</li>
+</ul>
+<div class="formula">Mo = a<sub>i</sub> + a · <span class="frac"><span>d₁</span><span>d₁ + d₂</span></span>
+  <span class="where">a<sub>i</sub> = lower bound of the modal class · a = b<sub>i</sub> − a<sub>i</sub> its amplitude · d₁ = n<sub>i</sub> − n<sub>i−1</sub> (vs previous class) · d₂ = n<sub>i</sub> − n<sub>i+1</sub> (vs next class)</span></div>
+<p>Ex. 2: modal class [120; 130[, d₁ = 20 − 10 = 10, d₂ = 20 − 12 = 8 → Mo = 120 + 10 × 10/18 = <b>125.56</b>.</p>
+
+<h3>2. Arithmetic mean <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=35">p. 35–37</a></h3>
+<div class="formula">x̄ = <span class="frac"><span>1</span><span>n</span></span> Σ<sub>i=1</sub><sup>k</sup> n<sub>i</sub>x<sub>i</sub>
+  <span class="where">x<sub>i</sub> = the i-th modality (discrete) or the <b>centre (midpoint) of class i</b> (continuous); n = Σ n<sub>i</sub></span></div>
+<p>Ex. 1: x̄ = 464/38 = <b>12.21</b>. &nbsp; Ex. 2: x̄ = 6980/56 = <b>124.64</b> g/L.</p>
+
+<h3>3. Median <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=38">p. 38–40, 44</a></h3>
+<div class="box def"><span class="label">Definition</span>
+  The median Me is the <b>middle value</b>: as many observations below it as above it. The values must be arranged in <b>increasing order</b>.</div>
+<div class="table-wrap"><table>
+  <tr><th>Discrete variable</th><th>Me</th></tr>
+  <tr><td>n <b>odd</b>: n = 2p + 1</td><td><b>x<sub>p+1</sub></b></td></tr>
+  <tr><td>n <b>even</b>: n = 2p</td><td><b>(x<sub>p</sub> + x<sub>p+1</sub>) / 2</b></td></tr>
+</table></div>
+<p>Ex. 1: n = 38 = 2 × 19 → Me = (x₁₉ + x₂₀)/2 = (13 + 13)/2 = <b>13</b>.</p>
+<p>Continuous variable: find the class where the increasing cumulative count reaches n/2, then interpolate:</p>
+<div class="formula">Me = a<sub>i</sub> + a · <span class="frac"><span>n/2 − n↗<sub>i−1</sub></span><span>n↗<sub>i</sub> − n↗<sub>i−1</sub></span></span></div>
+<p>Ex. 2: n/2 = 28 ∈ [120; 130[ → Me = 120 + 10 × (28 − 18)/(38 − 18) = <b>125</b>.</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="dispersion"><span class="num">VI.</span> Dispersion parameters
+  <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=45">p. 45–52</a>
+  <span class="exam">2017-18 (EMD2) · 2018-19 · 2021-22 · 2022-23 · 2023-24 · 2024-25 · 2025-26</span></h2>
+
+<h3>1. Variance and standard deviation <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=45">p. 45</a></h3>
+<p>The most used measure of dispersion, with the quadratic mean deviation (standard deviation). <b>V(X) = σ<sub>X</sub>²</b> = the square of the standard deviation:</p>
+<div class="formula">σ<sub>X</sub> = √( <span class="frac"><span>1</span><span>n</span></span> Σ n<sub>i</sub>x<sub>i</sub>² − x̄² )
+  &nbsp;&nbsp;⇔&nbsp;&nbsp; V(X) = <span class="frac"><span>1</span><span>n</span></span> Σ n<sub>i</sub>x<sub>i</sub>² − x̄²</div>
+<div class="box tip"><span class="label">Check your options</span>
+  Exams often pair a mean with a variance <i>or</i> a standard deviation: if the second number squared doesn't give the other option, you
+  have mixed them up (e.g. σ = 4.43 ⇔ V = 19.63).</div>
+
+<h3>2. Coefficient of variation <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=46">p. 46</a></h3>
+<p>Relative dispersion, in <b>%</b>:</p>
+<div class="formula">CV<sub>X</sub> = 100 · <span class="frac"><span>σ<sub>X</sub></span><span>x̄</span></span></div>
+
+<h3>3. Quartiles and interquartile range <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=47">p. 47–49</a></h3>
+<ul>
+  <li><b>3 quartiles</b> split the series into <b>4 parts of equal frequency</b>: <b>Q₁</b> (lower quartile: 25% of values below, 75% above),
+    <b>Q₂ = median</b> (50/50), <b>Q₃</b> (upper quartile: 75% below, 25% above).</li>
+  <li><span class="term">Interquartile range</span>: <b>IQR = Q₃ − Q₁</b>.</li>
+  <li>Discrete: Q₁ = the value of rank n/4, Q₃ = rank 3n/4 — a non-integer rank is rounded <b>up</b>.
+    Ex. 1: n/4 = 9.5 → 10 → <b>Q₁ = x₁₀ = 8</b>; Q₂ = x₁₉ = 13; 3n/4 = 28.5 → 29 → <b>Q₃ = x₂₉ = 15</b>; <b>IQR = 7</b>.</li>
+  <li>Continuous: same interpolation as the median, with n/4 and 3n/4. Ex. 2: n/4 = 14 ∈ [110; 120[ → Q₁ = 110 + 10 × (14 − 8)/(18 − 8) = <b>116</b>;
+    3n/4 = 42 ∈ [130; 140[ → Q₃ = 130 + 10 × (42 − 38)/(50 − 38) = <b>130.33</b>.</li>
+</ul>
+
+<h3>4. Quantiles <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=50">p. 50–52</a></h3>
+<p><span class="term">Quantiles</span> = the values of the variable that bound a partition into classes of <b>equal frequency</b>:
+  median → 2 parts, <b>quartiles → 4</b>, <b>deciles → 10</b>, <b>percentiles (centiles) → 100</b>, … n equal parts.</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="bivariate"><span class="num">VII.</span> Study of two statistical variables
+  <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=53">p. 53–60</a>
+  <span class="exam">2017-18 (EMD2) · 2018-19 · 2023-24 · 2024-25</span></h2>
+<p>Two <b>quantitative</b> characters X and Y measured on the same population of size n. First look at the <b>scatter plot</b>
+  (nuage de points), then summarise the data in a <b>contingency table</b>:</p>
+<div class="table-wrap"><table>
+  <tr><th>X \ Y</th><th>y₁ … y<sub>j</sub> … y<sub>l</sub></th><th>Marginal</th></tr>
+  <tr><td>x<sub>i</sub></td><td>n<sub>i1</sub> … <b>n<sub>ij</sub></b> … n<sub>il</sub></td><td><b>n<sub>i.</sub></b> = Σ<sub>j</sub> n<sub>ij</sub> (row total)</td></tr>
+  <tr><td>Marginal</td><td><b>n<sub>.j</sub></b> = Σ<sub>i</sub> n<sub>ij</sub> (column total)</td><td><b>n</b></td></tr>
+</table></div>
+<ul>
+  <li><b>n<sub>ij</sub></b> = partial (joint) frequency of the couple (x<sub>i</sub>, y<sub>j</sub>); n<sub>i.</sub> and n<sub>.j</sub> = marginal frequencies.</li>
+  <li>Marginal means: <b>x̄ = (1/n) Σ n<sub>i.</sub>x<sub>i</sub></b>, <b>ȳ = (1/n) Σ n<sub>.j</sub>y<sub>j</sub></b> (use the row/column totals).</li>
+</ul>
+
+<div class="table-wrap"><table>
+  <tr><th>Notion</th><th>Formula / rule</th></tr>
+  <tr><td><b>Independence</b> <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=56">p. 56</a></td>
+      <td>X and Y independent ⇔ for all i, j: f<sub>ij</sub> = n<sub>ij</sub>/n = f<sub>i.</sub> × f<sub>.j</sub> = (n<sub>i.</sub>/n)(n<sub>.j</sub>/n)</td></tr>
+  <tr><td><b>Covariance</b></td><td>cov(X, Y) = (1/n) Σ<sub>i</sub>Σ<sub>j</sub> n<sub>ij</sub>x<sub>i</sub>y<sub>j</sub> <b>− x̄ȳ</b></td></tr>
+  <tr><td>Independence ⇒ cov</td><td>Independent ⇒ <b>cov = 0</b>; the <b>converse is false</b>. cov = 0 ⇒ X, Y are <b>uncorrelated</b> (non corrélées).</td></tr>
+  <tr><td><b>Linear correlation coefficient</b> <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=58">p. 58–59</a></td>
+      <td>ρ(X, Y) = cov(X, Y) / (σ<sub>X</sub>σ<sub>Y</sub>); <b>−1 ≤ ρ ≤ 1</b>; invariant under a change of <b>origin and unit</b>; ρ = 0 ⇒ uncorrelated</td></tr>
+  <tr><td><b>Y = aX + b</b></td><td>cov(X, Y) = a·σ<sub>X</sub>²; <b>σ<sub>Y</sub>² = a²σ<sub>X</sub>²</b> (b disappears); ρ = +1 or −1 depending on the sign of a</td></tr>
+  <tr><td><b>Regression line of Y on X</b> <a class="page" href="/lessons/s1/biostatistics/descriptive-statistics.pdf#page=60">p. 60</a></td>
+      <td>Y = aX + b with <b>a = cov(X, Y)/σ<sub>X</sub>²</b> and <b>b = ȳ − a·x̄</b> (the line passes through (x̄, ȳ))</td></tr>
+</table></div>
+<div class="box trap"><span class="label">Slide 59 typo</span>
+  The slide writes "ρ = 1 if a &gt; 1 and ρ = −1 if a &lt; 1". From cov = aσ<sub>X</sub>² and σ<sub>Y</sub> = |a|σ<sub>X</sub>, the sign of ρ is the
+  sign of <b>a</b>: ρ = 1 if a &gt; 0, ρ = −1 if a &lt; 0.</div>
+<div class="box tip"><span class="label">Fast checks without a calculator</span>
+  The sign of ρ and of the slope a is the sign of the covariance. The regression line must give ȳ at x = x̄ — test each option.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="traps">Exam traps <span class="meta">— the wrong options past exams keep using</span></h2>
+<div class="box trap"><span class="label">False statements that keep coming back</span>
+  <ul>
+    <li>Standard deviation written <b>without the square root</b>, or without "− x̄²", or with ȳ instead of x̄ — false: σ = √[(1/n)Σn<sub>i</sub>x<sub>i</sub>² − x̄²].
+      <span class="exam">2018-19</span></li>
+    <li>Covariance = (1/n)ΣΣn<sub>ij</sub>x<sub>i</sub>y<sub>j</sub> <b>alone</b> — false: subtract x̄ȳ. <span class="exam">2018-19</span></li>
+    <li>For n = 2p + 1, Me = (x<sub>p</sub> + x<sub>p+1</sub>)/2 — false: that's for n even; n odd → x<sub>p+1</sub>. <span class="exam">2022-23</span></li>
+    <li>If Y = aX + b, σ<sub>Y</sub>² = a²σ<sub>X</sub>² <b>+ b</b> — false: a shift doesn't change dispersion. <span class="exam">2023-24</span></li>
+    <li>"Population = 66 students" from a decreasing-cumulative table — false: n is the <b>first</b> decreasing cumulative count (25), not the sum of the column.
+      <span class="exam">2 sessions</span></li>
+    <li>Mode = the last value or the one with the largest cumulative count — false: recover the counts first, then take the largest count.
+      <span class="exam">2 sessions</span></li>
+    <li>A continuous variable is shown by a pie chart / bar chart / stick diagram — false: <b>histogram</b>. <span class="exam">2017-18</span></li>
+    <li>Sturges with log₁₀ a or n + … — false: n<sub>c</sub> = 1 + (10/3)log₁₀ <b>n</b>. <span class="exam">2017-18</span></li>
+    <li>A measured concentration is "quantitative discrete" — false: <b>continuous</b>; a number of unfit bottles is <b>discrete</b>.
+      <span class="exam">2018-19 · 2021-22</span></li>
+    <li>Pairs like (mean; 19.63) offered as (mean; σ) — 19.63 is the <b>variance</b> (σ ≈ 4.43). <span class="exam">2023-24 · 2024-25</span></li>
+    <li>A positive correlation offered when the covariance is negative — ρ always has the covariance's sign. <span class="exam">2024-25</span></li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="check">Self-check <span class="meta">— answer, then tap to reveal</span></h2>
+<details class="card"><summary>Census vs survey (sondage)?</summary>
+  <div>Census: the observed sample is the whole population (exhaustive). Survey: a proper subset (non-exhaustive).</div></details>
+<details class="card"><summary>Classify: weight, number of children, military rank, profession.</summary>
+  <div>Quantitative continuous · quantitative discrete · qualitative ordinal · qualitative nominal.</div></details>
+<details class="card"><summary>How many classes for n = 19 observations, and what width if the range is 1.94?</summary>
+  <div>n<sub>c</sub> = 1 + (10/3)log₁₀19 ≈ 5.3 → 5 classes; a = 1.94/5 ≈ 0.39.</div></details>
+<details class="card"><summary>In a histogram, what is proportional to the counts?</summary>
+  <div>The surface of each rectangle (not its height).</div></details>
+<details class="card"><summary>Give the decreasing cumulative count at the first value of a series of n individuals.</summary>
+  <div>n — it includes everybody.</div></details>
+<details class="card"><summary>What value of x<sub>i</sub> do you use to compute the mean of a continuous variable grouped in classes?</summary>
+  <div>The class centre (midpoint).</div></details>
+<details class="card"><summary>Median of a discrete series with n = 38? With n = 25?</summary>
+  <div>n = 38 = 2 × 19 → (x₁₉ + x₂₀)/2. n = 25 = 2 × 12 + 1 → x₁₃.</div></details>
+<details class="card"><summary>Formula of the mode for a continuous variable? What are d₁ and d₂?</summary>
+  <div>Mo = a<sub>i</sub> + a·d₁/(d₁ + d₂); d₁ = modal count − previous count, d₂ = modal count − next count.</div></details>
+<details class="card"><summary>Write the variance and the coefficient of variation.</summary>
+  <div>V = (1/n)Σn<sub>i</sub>x<sub>i</sub>² − x̄², σ = √V; CV = 100·σ/x̄ (%).</div></details>
+<details class="card"><summary>Q₁, Q₂, Q₃ and the IQR?</summary>
+  <div>Q₁: 25% below; Q₂ = median; Q₃: 75% below. IQR = Q₃ − Q₁.</div></details>
+<details class="card"><summary>Does cov(X, Y) = 0 mean X and Y are independent?</summary>
+  <div>No. Independence ⇒ cov = 0, not the reverse; cov = 0 only means uncorrelated.</div></details>
+<details class="card"><summary>Does ρ change if heights are converted from cm to m?</summary>
+  <div>No: ρ is invariant under a change of origin and unit.</div></details>
+<details class="card"><summary>Slope and intercept of the regression line of Y on X?</summary>
+  <div>a = cov(X, Y)/σ<sub>X</sub>², b = ȳ − a·x̄.</div></details>
+
+<footer>Summary of the course "Descriptive statistics" (Dr. Meriem Bouhadjar), 1st-year medicine biostatistics, Faculty of Medicine Annaba, 2026-2027.
+  🎯 = topic asked in past EMD exams (years shown). 📄 = page in the lesson PDF (slides are repeated as build-up pages, so page numbers jump).
+  Every fact here comes from the PDF; exam traps are taken from the official keys.</footer>
+</main>
+</body>
+</html>

@@ -27,7 +27,7 @@ type RemoteFlag = { id: number; source: string | null; matches_local: boolean };
 type DriveFile = { id: string; path: string; url: string; modified: string; first_seen: number; status: "new" | "updated" | "seen" };
 type Drive = { checked_at: number | null; total: number; pending: DriveFile[]; baseline?: boolean };
 // What the main pane shows: one module (optionally one lesson or its unlinked questions), the flag queue, or new Drive files.
-type View = { kind: "flags" } | { kind: "all" } | { kind: "drive" } | { kind: "reports" } | { kind: "module"; module: number; lesson?: number; unlinked?: boolean };
+type View = { kind: "flags" } | { kind: "all" } | { kind: "drive" } | { kind: "reports" } | { kind: "publish" } | { kind: "module"; module: number; lesson?: number; unlinked?: boolean };
 type ReportSummary = { slug: string; title: string; status: string; created_at: number };
 type ReportFigure = { id: string; n: number; file: string; caption: string; width_cm?: number; aspect: number | null; row: number[]; height_cm: number };
 
@@ -97,7 +97,7 @@ function App() {
   const loadBatch = useCallback(async (refresh = false) => setBatch(await api<Batch>(`/api/batch${refresh ? "?refresh=1" : ""}`)), []);
 
   const loadQuestions = useCallback(async () => {
-    if (view.kind === "drive" || view.kind === "reports") return;
+    if (view.kind === "drive" || view.kind === "reports" || view.kind === "publish") return;
     const p = new URLSearchParams();
     if (view.kind === "module") {
       p.set("module", String(view.module));
@@ -173,6 +173,9 @@ function App() {
         </button>
         <button className={`nav ${view.kind === "reports" ? "active" : ""}`} onClick={() => setView({ kind: "reports" })}>
           <span>Reports (TP)</span>
+        </button>
+        <button className={`nav ${view.kind === "publish" ? "active" : ""}`} onClick={() => setView({ kind: "publish" })}>
+          <span>Commit & deploy</span>
         </button>
         <button className={`nav ${view.kind === "all" ? "active" : ""}`} onClick={() => setView({ kind: "all" })}>
           <span>All questions</span>
@@ -273,6 +276,8 @@ function App() {
             <DrivePanel drive={drive} onChange={setDrive} onError={say} />
           ) : view.kind === "reports" ? (
             <ReportsPanel onError={say} />
+          ) : view.kind === "publish" ? (
+            <PublishPanel onError={say} onDeployed={() => void loadBatch(true)} />
           ) : (
           <>
           {view.kind === "flags" && questions?.length === 0 && <p className="muted">Nothing flagged. 🎉</p>}
@@ -362,6 +367,190 @@ function DrivePanel({ drive, onChange, onError }: { drive: Drive | null; onChang
           </div>
         );
       })}
+    </>
+  );
+}
+
+// --- Commit, push to GitHub, deploy ------------------------------------------------------------------
+
+type DeployRun = { running: boolean; started: number; ended: number | null; code: number | null; log: string };
+type GitState = {
+  branch: string;
+  upstream: string | null;
+  ahead: number;
+  behind: number;
+  files: { path: string; status: string }[];
+  log: { hash: string; subject: string; at: number }[];
+  unapplied: string[] | null;
+  remote_error: string | null;
+  deploy: DeployRun | null;
+};
+
+const STATUS_LABEL: Record<string, string> = { M: "modified", A: "added", D: "deleted", R: "renamed", "??": "new" };
+const statusLabel = (s: string) => STATUS_LABEL[s] ?? STATUS_LABEL[s.trim()[0]] ?? s;
+
+function PublishPanel({ onError, onDeployed }: { onError: (m: string) => void; onDeployed: () => void }) {
+  const [g, setG] = useState<GitState | null>(null);
+  const [picked, setPicked] = useState<Set<string>>(new Set());
+  const [message, setMessage] = useState("");
+  const [busy, setBusy] = useState<string | null>(null);
+  const [confirmDeploy, setConfirmDeploy] = useState(false);
+  const [deploy, setDeploy] = useState<DeployRun | null>(null);
+
+  const apply = (s: GitState) => {
+    setG(s);
+    setDeploy(s.deploy);
+    // New files start ticked; files that went away drop out.
+    setPicked((prev) => {
+      const known = new Set(g?.files.map((f) => f.path));
+      return new Set(s.files.map((f) => f.path).filter((p) => prev.has(p) || !known.has(p)));
+    });
+  };
+  const load = async () => {
+    try { apply(await api<GitState>("/api/git")); } catch (e) { onError((e as Error).message); }
+  };
+  useEffect(() => void load(), []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Follow the deploy log while it runs.
+  useEffect(() => {
+    if (!deploy?.running) return;
+    const t = setInterval(async () => {
+      const d = await api<DeployRun | null>("/api/deploy").catch(() => null);
+      setDeploy(d);
+      if (d && !d.running) {
+        onDeployed();
+        void load();
+      }
+    }, 1500);
+    return () => clearInterval(t);
+  }, [deploy?.running]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const step = async (label: string, fn: () => Promise<void>) => {
+    setBusy(label);
+    try { await fn(); } catch (e) { onError((e as Error).message); await load(); } finally { setBusy(null); }
+  };
+  const doCommit = async () => {
+    apply(await api<GitState>("/api/git/commit", { method: "POST", body: JSON.stringify({ message, paths: [...picked] }) }));
+    setMessage("");
+  };
+  const doPush = async () => apply(await api<GitState>("/api/git/push", { method: "POST" }));
+  const doDeploy = async () => {
+    setConfirmDeploy(false);
+    setDeploy(await api<DeployRun>("/api/deploy", { method: "POST" }));
+  };
+
+  if (!g) return <p className="muted">Reading git status…</p>;
+  const all = g.files.length > 0 && picked.size === g.files.length;
+  const canCommit = picked.size > 0 && message.trim() !== "" && !busy;
+  const toggle = (p: string) => setPicked((s) => { const n = new Set(s); if (n.has(p)) n.delete(p); else n.add(p); return n; });
+
+  return (
+    <>
+      <div className="lesson-head">
+        <strong>{g.branch}</strong>
+        <span className="muted">
+          {g.upstream
+            ? g.ahead || g.behind
+              ? `${g.ahead ? `${g.ahead} commit${g.ahead === 1 ? "" : "s"} not pushed` : ""}${g.ahead && g.behind ? " · " : ""}${g.behind ? `${g.behind} behind ${g.upstream}` : ""}`
+              : `in sync with ${g.upstream}`
+            : "not on GitHub yet"}
+        </span>
+        <span className="spacer" />
+        <button disabled={!!busy} onClick={() => void step("refresh", load)}>↻ Refresh</button>
+      </div>
+      {g.behind > 0 && <div className="banner" style={{ margin: 0 }}>GitHub has commits you don't: pull them in a terminal (<code>git pull</code>) before pushing.</div>}
+
+      <div className="card publish">
+        <div className="actions">
+          <strong>Changes</strong>
+          <span className="muted">{g.files.length ? `${picked.size} of ${g.files.length} selected` : "Nothing to commit"}</span>
+          <span className="spacer" />
+          {g.files.length > 0 && <button onClick={() => setPicked(all ? new Set() : new Set(g.files.map((f) => f.path)))}>{all ? "Select none" : "Select all"}</button>}
+        </div>
+        {g.files.length > 0 && (
+          <>
+            <div className="files">
+              {g.files.map((f) => (
+                <label key={f.path}>
+                  <input type="checkbox" checked={picked.has(f.path)} onChange={() => toggle(f.path)} />
+                  <span className={`tag ${f.status === "??" || f.status === "A" ? "green" : f.status === "D" ? "red" : ""}`}>{statusLabel(f.status)}</span>
+                  <code>{f.path}</code>
+                </label>
+              ))}
+            </div>
+            <textarea rows={2} value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Commit message: what changed (e.g. Add oogenesis and spermatogenesis lessons)" />
+            <div className="actions">
+              <span className="spacer" />
+              <button disabled={!canCommit} onClick={() => void step("commit", doCommit)}>{busy === "commit" ? "Committing…" : "Commit"}</button>
+              <button className="primary" disabled={!canCommit} onClick={() => void step("commit", async () => { await doCommit(); await doPush(); })}>
+                {busy === "commit" ? "Working…" : "Commit & push"}
+              </button>
+            </div>
+          </>
+        )}
+        {g.ahead > 0 && (
+          <div className="actions">
+            <span className="muted">{g.ahead} commit{g.ahead === 1 ? "" : "s"} waiting to go to GitHub</span>
+            <span className="spacer" />
+            <button className="primary" disabled={!!busy || g.behind > 0} onClick={() => void step("push", doPush)}>{busy === "push" ? "Pushing…" : "Push to GitHub"}</button>
+          </div>
+        )}
+        {!g.upstream && g.files.length === 0 && (
+          <div className="actions"><span className="spacer" /><button className="primary" disabled={!!busy} onClick={() => void step("push", doPush)}>Push to GitHub</button></div>
+        )}
+      </div>
+
+      <div className="card publish">
+        <div className="actions">
+          <strong>Deploy to production</strong>
+          <span className="muted">build, run the new migrations on the live database, upload the site</span>
+        </div>
+        {g.remote_error ? (
+          <span className="muted">Couldn't read production migrations ({g.remote_error})</span>
+        ) : g.unapplied?.length ? (
+          <div className="muted" style={{ fontSize: 13 }}>
+            Migrations production hasn't run yet: {g.unapplied.map((m) => <code key={m} style={{ marginRight: 6 }}>{m}</code>)}
+          </div>
+        ) : (
+          <span className="muted" style={{ fontSize: 13 }}>Production has run every migration; a deploy still uploads the latest code, PDFs and summaries.</span>
+        )}
+        {(g.files.length > 0 || g.ahead > 0) && (
+          <div className="muted" style={{ fontSize: 13 }}>
+            Note: a deploy ships what's on disk, so the {g.files.length ? "uncommitted changes" : "unpushed commits"} go live too even though GitHub doesn't have them.
+          </div>
+        )}
+        <div className="actions">
+          {deploy && (
+            <span className={`tag ${deploy.running ? "" : deploy.code === 0 ? "green" : "red"}`}>
+              {deploy.running ? "deploying…" : deploy.code === 0 ? `deployed ${new Date(deploy.ended!).toLocaleTimeString()}` : `failed (exit ${deploy.code})`}
+            </span>
+          )}
+          <span className="spacer" />
+          {confirmDeploy ? (
+            <>
+              <span className="muted">Update the live site now?</span>
+              <button className="primary" onClick={() => void step("deploy", doDeploy)}>Yes, deploy</button>
+              <button onClick={() => setConfirmDeploy(false)}>Cancel</button>
+            </>
+          ) : (
+            <button className="primary" disabled={!!busy || !!deploy?.running} onClick={() => setConfirmDeploy(true)}>
+              {deploy?.running ? "Deploying…" : "Deploy"}
+            </button>
+          )}
+        </div>
+        {deploy?.log && <pre className="log">{deploy.log}</pre>}
+      </div>
+
+      <div className="card publish">
+        <strong>Recent commits</strong>
+        {g.log.map((c) => (
+          <div key={c.hash} className="commit">
+            <code className="muted">{c.hash}</code>
+            <span>{c.subject}</span>
+            <span className="muted">{new Date(c.at).toLocaleString()}</span>
+          </div>
+        ))}
+      </div>
     </>
   );
 }

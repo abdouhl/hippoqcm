@@ -144,3 +144,11 @@ a.button:hover { border-color: var(--accent); }
 @media (max-width: 1100px) { .sheet-builder { grid-template-columns: 1fr; } }
 a.button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 a.button.disabled { opacity: 0.5; pointer-events: none; }
+
+/* Commit & deploy */
+.publish { display: grid; gap: 8px; padding: 10px 12px; }
+.publish .files { display: grid; gap: 2px; max-height: 320px; overflow-y: auto; border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; background: var(--bg); }
+.publish .files label { display: flex; gap: 8px; align-items: center; font-size: 13px; min-width: 0; }
+.publish .files input { width: auto; }
+.publish .files code { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.publish .commit { display: grid; grid-template-columns: 70px 1fr auto; gap: 10px; font-size: 13px; }

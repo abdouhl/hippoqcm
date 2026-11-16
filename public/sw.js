@@ -1,10 +1,15 @@
 // Offline support. The app shell and static files are served from cache; /api is left to the
 // page, which falls back to its own offline snapshot (src/api.ts).
 // Bump when files change under the same URL (lesson PDFs are cached for good); see activate.
-const CACHE = "hippoqcm-v6";
+const CACHE = "hippoqcm-v7";
 // Files replaced under the same URL since the previous cache version: not carried over, so they are
-// downloaded again. (v6: this year's anatomy handouts replaced last year's.)
-const REFETCH = new Set(["/lessons/s1/anatomy/muscular-system.pdf", "/lessons/s1/anatomy/articular-system.pdf"]);
+// downloaded again. (v6/v7: this year's anatomy handouts replaced last year's; v6's entries are kept
+// for clients that skipped v6.)
+const REFETCH = new Set([
+  "/lessons/s1/anatomy/muscular-system.pdf",
+  "/lessons/s1/anatomy/articular-system.pdf",
+  "/lessons/s1/anatomy/thoracic-limb-bones.pdf",
+]);
 // Hashed build output, and lesson files that are fetched once and kept.
 const STATIC = /^\/(assets|images|lessons)\/|^\/(summaries|exercises)\/.+\.(jpe?g|png|webp|svg|pdf)$|^\/[^/]+\.(svg|png|webmanifest)$/;
 // Summary and exercise pages and their indexes can be rewritten under the same URL: show the cached copy, refresh it.

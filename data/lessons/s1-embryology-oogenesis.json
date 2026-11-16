@@ -1,0 +1,357 @@
+{
+  "semester": 1,
+  "module": "Embryology",
+  "title": "Oogenesis",
+  "pdf": "s1/embryology/oogenesis.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q2",
+    "EMD1 2022-2023 Q3",
+    "EMD1 2022-2023 Q4",
+    "EMD1 2022-2023 Q5",
+    "EMD1 2022-2023 Q6",
+    "EMD1 2022-2023 Q7",
+    "EMD1 2022-2023 Q8",
+    "EMD1 2022-2023 Q9",
+    "EMD1 2022-2023 Q13",
+    "EMD1 2023-2024 Q1",
+    "EMD1 2024-2025 Q1",
+    "EMD1 2024-2025 Q3",
+    "EMD1 2024-2025 Q4",
+    "EMD1 2024-2025 Q14",
+    "EMD1 2024-2025 Q18",
+    "EMD1 2025-2026 Q3",
+    "EMD1 2025-2026 Q9",
+    "EMD1 2025-2026 Q13",
+    "EMD1 2025-2026 Q14"
+  ],
+  "questions": [
+    {
+      "stem": "About the gonadal activity of the ovary:",
+      "options": [
+        "Its endocrine function is the secretion of estrogens and progesterone",
+        "Its exocrine function corresponds to oogenesis",
+        "In women, reproductive activity is continuous between puberty and menopause",
+        "In men, gonadal activity declines with age but does not completely cease"
+      ],
+      "answer": "ABD",
+      "explanation": "The ovary has an endocrine (hormones) and an exocrine (gametes) function. Female reproductive activity is CYCLICAL and limited to puberty–menopause; male activity is continuous and only declines with age.",
+      "page": 1,
+      "weight": 2
+    },
+    {
+      "stem": "About the ovary:",
+      "options": [
+        "The ovarian cortex contains the various stages of folliculogenesis",
+        "The medulla is loose connective tissue rich in blood and lymphatic vessels and nerves",
+        "Each ovary measures about 3 cm in width and 1 cm in length",
+        "Folliculogenesis takes place in the medulla"
+      ],
+      "answer": "AB",
+      "explanation": "Folliculogenesis happens in the cortex (periphery); the medulla is the vascular central part. Each ovary is about 1 cm wide and 3 cm long, not the reverse.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "About the female genital tract:",
+      "options": [
+        "The Fallopian tubes measure 10 to 14 cm and partially cover the ovaries",
+        "From outside to inside, the uterine wall comprises the serosa, the myometrium and the endometrium",
+        "Cervical mucus selects and facilitates the passage of spermatozoa into the uterine cavity",
+        "The myometrium is the layer whose thickness and secretory activity vary during the cycle"
+      ],
+      "answer": "ABC",
+      "explanation": "The myometrium is a thick smooth-muscle layer; it is the endometrium (mucosa) whose thickness, vascularization and secretion vary with the cycle.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "About the primordial follicle:",
+      "options": [
+        "Primordial follicles start to form around the 7th month of gestation",
+        "It contains a primary oocyte arrested in prophase I, surrounded by a few flattened follicular cells",
+        "At birth each ovary contains about one million primordial follicles",
+        "Between birth and puberty folliculogenesis is active and the follicular reserve increases"
+      ],
+      "answer": "ABC",
+      "explanation": "Between birth and puberty folliculogenesis is quiescent and about 60% of the reserve degenerates; the stock is non-renewable.",
+      "page": 3,
+      "weight": 3
+    },
+    {
+      "stem": "An ovary contains about 1,000,000 primordial follicles at birth, and about 60% of them degenerate before puberty. About how many remain in this ovary at puberty?",
+      "options": ["60,000", "400,000", "600,000", "4,000,000"],
+      "answer": "B",
+      "explanation": "40% of 1,000,000 = 400,000 per ovary, the figure the lesson gives for puberty. 600,000 is the number that degenerated, not the number left.",
+      "page": 3,
+      "weight": 3,
+      "calc": true,
+      "mental": "What remains is 100 − 60 = 40%: 0.4 × 10⁶ = 4 × 10⁵ = 400,000. 600,000 is the trap (the degenerated part); 4,000,000 is more than you started with, so it is impossible."
+    },
+    {
+      "stem": "Which features distinguish a primary follicle from a primordial follicle?",
+      "options": [
+        "A single layer of cuboidal (instead of flattened) follicular cells",
+        "The appearance of a zona pellucida between the oocyte and the follicular cells",
+        "An oocyte arrested in prophase I",
+        "An undifferentiated theca separated from the follicular cells by the Slavjanski membrane"
+      ],
+      "answer": "ABD",
+      "explanation": "Both follicles contain a primary oocyte arrested in prophase I, so this does not distinguish them. The primary follicle adds cuboidal cells, a zona pellucida, a theca and the Slavjanski membrane.",
+      "page": 4,
+      "weight": 3
+    },
+    {
+      "stem": "About the secondary and tertiary (cavitary) follicles:",
+      "options": [
+        "In the secondary follicle, the follicular cell layers multiply to form the granulosa",
+        "The theca interna is fibrous and the theca externa is cellular",
+        "In the tertiary follicle, fluid-filled antral cavities appear within the granulosa",
+        "In the tertiary follicle, the theca interna cells acquire the ability to secrete estrogens"
+      ],
+      "answer": "ACD",
+      "explanation": "The theca splits into an inner CELLULAR theca interna (which becomes estrogen-secreting) and an outer FIBROUS theca externa.",
+      "page": 4,
+      "weight": 3
+    },
+    {
+      "stem": "About the mature (Graafian) follicle:",
+      "options": [
+        "It reaches about 2.5 mm in diameter",
+        "Its antral cavities fuse into a single antrum folliculi filled with follicular fluid",
+        "The innermost layer of the cumulus oophorus, adjacent to the zona pellucida, becomes the corona radiata",
+        "The first polar body is expelled outside the zona pellucida"
+      ],
+      "answer": "BC",
+      "explanation": "The Graafian follicle is about 2.5 cm wide. When meiosis I is completed a few hours before ovulation, the first polar body stays WITHIN the zona pellucida.",
+      "page": 5,
+      "weight": 3
+    },
+    {
+      "stem": "Concerning the histological section (figure), which statement(s) is (are) correct?",
+      "options": [
+        "It is a mature (Graafian) follicle",
+        "Cavity 5 is filled with follicular fluid and results from the fusion of the antral cavities",
+        "Layer 3 derives from the innermost layer of the cumulus oophorus, next to structure 2",
+        "Layer 4 is the theca interna"
+      ],
+      "answer": "ABC",
+      "explanation": "1 = oocyte, 2 = zona pellucida, 3 = corona radiata, 4 = granulosa, 5 = antrum folliculi. A single large antrum marks the mature follicle; layer 4 is the granulosa (follicular cells), not a theca.",
+      "page": 5,
+      "weight": 3,
+      "image": "s1/lessons/oogenesis-g1.png"
+    },
+    {
+      "stem": "About ovulation:",
+      "options": [
+        "It occurs under the influence of an LH and FSH surge and of the pressure of the follicular fluid",
+        "The cell expelled from the ovary is the primary oocyte",
+        "The oocyte leaves with the zona pellucida, the corona radiata and part of the cumulus oophorus, and enters the outer third of the Fallopian tube",
+        "It occurs about 36 hours after the LH peak"
+      ],
+      "answer": "ACD",
+      "explanation": "The primary oocyte completes meiosis I a few hours before ovulation, so the expelled cell is the SECONDARY oocyte arrested in metaphase II.",
+      "page": 6,
+      "weight": 3
+    },
+    {
+      "stem": "The yellowish colour of the corpus luteum is due to:",
+      "options": [
+        "Lutein pigment secreted by the luteinized follicular cells",
+        "Estrogens secreted by the theca interna",
+        "The thecal capillaries that invade the granulosa",
+        "The remains of the degenerating oocyte"
+      ],
+      "answer": "A",
+      "explanation": "After the Slavjanski membrane disappears, thecal capillaries grow into the granulosa and the follicular cells become luteinized cells secreting lutein pigment, which gives the yellow colour (luteinization).",
+      "page": 6,
+      "weight": 2
+    },
+    {
+      "stem": "About the fate of the corpus luteum:",
+      "options": [
+        "In the absence of fertilization it becomes a gestational corpus luteum",
+        "In case of fertilization it persists for about three months, then the placenta takes over steroid production",
+        "Its degeneration gives the corpus albicans, which is phagocytosed by macrophages",
+        "The menstrual (progestational) corpus luteum lives about three months"
+      ],
+      "answer": "BC",
+      "explanation": "Without fertilization it is a menstrual (progestational) corpus luteum living about 14 days; only with fertilization does it become gestational and persist about three months.",
+      "page": 6,
+      "weight": 2
+    },
+    {
+      "stem": "In the corpus luteum, which cell–hormone pairs are correct?",
+      "options": [
+        "Lutein cells derived from the granulosa → progesterone",
+        "Theca interna → estrogens",
+        "Granulosa lutein cells → estrogens only",
+        "Theca externa → progesterone"
+      ],
+      "answer": "AB",
+      "explanation": "Granulosa cells become lutein cells that secrete progesterone, while the theca interna keeps producing estrogens.",
+      "page": 6,
+      "weight": 2
+    },
+    {
+      "stem": "A 19-year-old competitive runner with low body weight consults for irregular cycles. Based on the lesson:",
+      "options": [
+        "Intense physical activity may delay ovulation",
+        "Low body weight can disturb ovulation",
+        "Such ovulatory disorders are generally reversible",
+        "Obesity, by contrast, has no effect on ovulation"
+      ],
+      "answer": "ABC",
+      "explanation": "Both excess weight (obesity) and low weight or eating disorders disturb ovulation; vigorous exercise can delay it, and these dysfunctions are generally reversible.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "About the uterine cycle (average 28 days):",
+      "options": [
+        "The endometrium reaches its maximal thickness during the secretory phase",
+        "The proliferative phase is marked by the 'uterine lace' pattern",
+        "The average 28-day duration is identical in all women",
+        "The first day of menstruation marks the beginning of a new cycle"
+      ],
+      "answer": "AD",
+      "explanation": "The 'uterine lace' (spiral arteries, tortuous glands) belongs to the secretory phase; the proliferative phase is regeneration with gland elongation. 28 days is only a conventional reference.",
+      "page": 7,
+      "weight": 1
+    },
+    {
+      "stem": "In the absence of fertilization, menstruation is triggered by:",
+      "options": [
+        "Regression of the corpus luteum 10–12 days later, with a sharp fall in progesterone and estrogens",
+        "The LH surge",
+        "A rise in estrogen secretion",
+        "The formation of a new corpus luteum"
+      ],
+      "answer": "A",
+      "explanation": "The progestational corpus luteum regresses, progesterone and estrogen levels fall, and the endometrium detaches.",
+      "page": 7,
+      "weight": 1
+    },
+    {
+      "stem": "Concerning the diagram of the uterine lining (figure), which statement(s) is (are) correct?",
+      "options": [
+        "In phase I, the endometrium is shed, leaving a thin residual layer",
+        "Phase II corresponds to days 14–28",
+        "In phase III, glands become tortuous and glycogen secretion increases",
+        "The corpus luteum shown above phase III contains lutein cells secreting progesterone"
+      ],
+      "answer": "ACD",
+      "explanation": "I = menstrual phase (days 0–4), II = proliferative phase (days 4–14), III = secretory phase (days 14–28), which follows ovulation and the formation of the corpus luteum.",
+      "page": 8,
+      "weight": 1,
+      "image": "s1/lessons/oogenesis-g2.png"
+    },
+    {
+      "stem": "About the multiplication phase of oogenesis:",
+      "options": [
+        "It involves the oogonia, diploid stem cells dividing by mitosis",
+        "It occurs during embryonic and fetal life",
+        "Oogonia are located in the medullary zone of the embryonic ovary",
+        "Most oogonia degenerate around the 7th month of intrauterine life"
+      ],
+      "answer": "ABD",
+      "explanation": "Oogonia lie in the CORTICAL zone of the embryonic ovary; they multiply only before birth, giving a non-renewable stock of primary oocytes.",
+      "page": 8,
+      "weight": 3
+    },
+    {
+      "stem": "Which chromosome number / DNA content pairs are correct?",
+      "options": [
+        "Primary oocyte after DNA replication: 2n, 4q",
+        "Secondary oocyte: n, 2q",
+        "First polar body: n, q",
+        "Oogonium: n, 2q"
+      ],
+      "answer": "AB",
+      "explanation": "Meiosis I splits the primary oocyte (2n, 4q) into a secondary oocyte and a first polar body that are both n, 2q. Oogonia are diploid (2n).",
+      "page": 9,
+      "weight": 2
+    },
+    {
+      "stem": "About the growth phase of oogenesis:",
+      "options": [
+        "The primary oocyte greatly increases in size",
+        "It involves intense synthesis of RNA and proteins needed for fertilization and early development",
+        "Primary oocytes do not complete meiosis I before puberty because of a meiosis-inhibiting factor secreted by follicular cells",
+        "Fewer than 500 oocytes will reach ovulation during a woman's reproductive life"
+      ],
+      "answer": "ABCD",
+      "explanation": "All four are stated in the lesson: of about 400,000 follicles left at puberty, fewer than 500 ovulate.",
+      "page": 9,
+      "weight": 3
+    },
+    {
+      "stem": "About the maturation phase of oogenesis:",
+      "options": [
+        "The first meiotic division is highly unequal, the secondary oocyte keeping most of the cytoplasm",
+        "The second meiotic division arrests in prophase II",
+        "Without fertilization, the oocyte completes meiosis and then degenerates",
+        "If fertilization occurs, meiosis is completed, giving the ovum (ovotide) and a second polar body"
+      ],
+      "answer": "AD",
+      "explanation": "Meiosis II arrests at METAPHASE II and is only completed if a spermatozoon fertilizes the oocyte; otherwise the oocyte is expelled, still in metaphase II, and degenerates.",
+      "page": 9,
+      "weight": 3
+    },
+    {
+      "stem": "A primary oocyte completes oogenesis after fertilization. How many ova (functional female gametes) does it give?",
+      "options": ["1", "2", "4", "8"],
+      "answer": "A",
+      "explanation": "Female meiosis is unequal: one primary oocyte gives a single ovum, the other products being polar bodies. Compare spermatogenesis, where one spermatocyte I gives 4 spermatids.",
+      "page": 9,
+      "weight": 3
+    },
+    {
+      "stem": "Concerning the diagram of oogenesis (figure), which statement(s) is (are) correct?",
+      "options": [
+        "Cell 1 multiplies by mitosis during embryonic and fetal life",
+        "Cell 2 is arrested in prophase I and is already present at birth",
+        "Cell 3 is arrested in metaphase I",
+        "Cell 5 forms even in the absence of fertilization"
+      ],
+      "answer": "AB",
+      "explanation": "1 = oogonium, 2 = primary oocyte, 3 = secondary oocyte (arrested in METAPHASE II), 4 = first polar body, 5 = ovum, which forms only if a spermatozoon penetrates.",
+      "page": 10,
+      "weight": 3,
+      "image": "s1/lessons/oogenesis-g3.png"
+    },
+    {
+      "stem": "About the hypothalamic–pituitary control of the ovary:",
+      "options": [
+        "FSH rises during the follicular (preovulatory) phase and peaks together with LH at ovulation",
+        "The main LH surge occurs about 36 hours before ovulation and induces progesterone secretion",
+        "Progesterone inhibits FSH secretion, while estrogens inhibit LH release",
+        "GnRH is released at a rate of two to three pulses per day"
+      ],
+      "answer": "AB",
+      "explanation": "Feedback is the other way round: progesterone inhibits LH and estrogens inhibit FSH. GnRH pulses occur two to three times per HOUR.",
+      "page": 10,
+      "weight": 3
+    },
+    {
+      "stem": "Which hormone promotes follicular growth and estradiol production?",
+      "options": ["FSH", "LH", "Progesterone", "GnRH"],
+      "answer": "A",
+      "explanation": "FSH promotes follicular growth and estradiol production; LH triggers ovulation and progesterone secretion, and GnRH acts on the pituitary.",
+      "page": 11,
+      "weight": 3
+    },
+    {
+      "stem": "In a 25-year-old woman, the oocytes held in the primordial follicles of her ovaries:",
+      "options": [
+        "Are primary oocytes arrested in prophase I",
+        "Were formed before her birth",
+        "Are continuously renewed by mitoses of oogonia",
+        "Are haploid"
+      ],
+      "answer": "AB",
+      "explanation": "The stock of primary oocytes (2n) is formed in fetal life and is non-renewable; oogonia no longer divide after birth.",
+      "page": 9,
+      "weight": 2
+    }
+  ]
+}

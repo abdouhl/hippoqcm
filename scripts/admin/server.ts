@@ -674,6 +674,76 @@ const pdfResponse = (path: string, name: string, download: boolean) =>
     },
   });
 
+// --- Publish: commit, push to GitHub, deploy ---------------------------------------------------
+
+// git never prompts here (no terminal): a push without stored credentials fails instead of hanging.
+async function git(...args: string[]) {
+  const proc = Bun.spawn(["git", ...args], { stdout: "pipe", stderr: "pipe", env: { ...process.env, GIT_TERMINAL_PROMPT: "0" } });
+  const [out, err] = await Promise.all([new Response(proc.stdout).text(), new Response(proc.stderr).text()]);
+  if ((await proc.exited) !== 0) throw new Error((err || out).trim() || `git ${args[0]} failed`);
+  return out;
+}
+
+async function gitStatus() {
+  const branch = (await git("rev-parse", "--abbrev-ref", "HEAD")).trim();
+  // -z: NUL-separated, paths unquoted; a rename is followed by its old path as an extra entry.
+  const raw = (await git("status", "--porcelain", "-z", "--untracked-files=all")).split("\0").filter(Boolean);
+  const files: { path: string; status: string }[] = [];
+  for (let i = 0; i < raw.length; i++) {
+    const status = raw[i].slice(0, 2);
+    files.push({ path: raw[i].slice(3), status: status.trim() || status });
+    if (status[0] === "R" || status[0] === "C") i++;
+  }
+  let ahead = 0, behind = 0, upstream: string | null = null;
+  try {
+    upstream = (await git("rev-parse", "--abbrev-ref", "@{upstream}")).trim();
+    [behind, ahead] = (await git("rev-list", "--left-right", "--count", `${upstream}...HEAD`)).trim().split(/\s+/).map(Number);
+  } catch { /* no upstream yet: the first push sets it */ }
+  const log = (await git("log", "-8", "--format=%h%x00%s%x00%ct")).trim().split("\n").filter(Boolean).map((l) => {
+    const [hash, subject, t] = l.split("\0");
+    return { hash, subject, at: Number(t) * 1000 };
+  });
+  const { names, error } = await refreshRemoteApplied();
+  const unapplied = error ? null : migrationFiles().filter((f) => !names.has(f));
+  return { branch, upstream, ahead, behind, files, log, unapplied, remote_error: error ?? null, deploy: deployView() };
+}
+
+async function commit({ message, paths }: { message: string; paths: string[] }) {
+  if (!message?.trim()) throw new Error("Write a commit message");
+  if (!paths?.length) throw new Error("Pick at least one file");
+  // Stage exactly the chosen paths (deletions included), and only commit those.
+  await git("add", "-A", "--", ...paths);
+  await git("commit", "-m", message.trim(), "--", ...paths);
+  return gitStatus();
+}
+
+async function push() {
+  const branch = (await git("rev-parse", "--abbrev-ref", "HEAD")).trim();
+  await git("push", "--set-upstream", "origin", branch);
+  return gitStatus();
+}
+
+// `bun run deploy` (build, remote migrations, wrangler deploy) runs in the background; the panel follows its log.
+let deployRun: { running: boolean; started: number; ended: number | null; code: number | null; log: string } | null = null;
+const deployView = () => deployRun && { ...deployRun, log: deployRun.log.slice(-20_000) };
+
+function startDeploy() {
+  if (deployRun?.running) throw new Error("A deploy is already running");
+  const run = (deployRun = { running: true, started: Date.now(), ended: null as number | null, code: null as number | null, log: "" });
+  const proc = Bun.spawn(["bun", "run", "deploy"], { stdout: "pipe", stderr: "pipe", stdin: "ignore", env: { ...process.env, CI: "1", FORCE_COLOR: "0" } });
+  const follow = async (stream: ReadableStream<Uint8Array>) => {
+    const dec = new TextDecoder();
+    for await (const chunk of stream) run.log += dec.decode(chunk, { stream: true }).replace(/\x1b\[[0-9;]*[A-Za-z]/g, "");
+  };
+  void Promise.all([follow(proc.stdout), follow(proc.stderr), proc.exited]).then(([, , code]) => {
+    run.running = false;
+    run.ended = Date.now();
+    run.code = code;
+    void refreshRemoteApplied(true); // the deploy applied the pending migrations
+  });
+  return deployView();
+}
+
 // --- HTTP ------------------------------------------------------------------------------------
 
 const ok = (data: unknown) => Response.json(data);
@@ -758,6 +828,13 @@ const server = Bun.serve({
         await Bun.write(`${REPORTS}/settings.json`, JSON.stringify(s, null, 2) + "\n");
         return s;
       }),
+    },
+    "/api/git": handle(() => gitStatus()),
+    "/api/git/commit": { POST: handle(async (req) => commit(await req.json())) },
+    "/api/git/push": { POST: handle(() => push()) },
+    "/api/deploy": {
+      GET: handle(() => deployView()),
+      POST: handle(() => startDeploy()),
     },
     "/report/:slug/:page": reportPage,
     "/report-calibration.pdf": async () => {

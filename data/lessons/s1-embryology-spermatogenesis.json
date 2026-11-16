@@ -1,0 +1,367 @@
+{
+  "semester": 1,
+  "module": "Embryology",
+  "title": "Spermatogenesis",
+  "pdf": "s1/embryology/spermatogenesis.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q2",
+    "EMD1 2022-2023 Q27",
+    "EMD1 2023-2024 Q1",
+    "EMD1 2023-2024 Q2",
+    "EMD1 2023-2024 Q3",
+    "EMD1 2023-2024 Q4",
+    "EMD1 2023-2024 Q5",
+    "EMD1 2024-2025 Q2",
+    "EMD1 2024-2025 Q4",
+    "EMD1 2024-2025 Q7",
+    "EMD1 2024-2025 Q14",
+    "EMD1 2024-2025 Q18",
+    "EMD1 2025-2026 Q3",
+    "EMD1 2025-2026 Q13"
+  ],
+  "questions": [
+    {
+      "stem": "About spermatogenesis in general:",
+      "options": [
+        "It begins at puberty and continues without interruption until advanced age",
+        "It takes place in the epididymis",
+        "It produces spermatozoa containing 23 chromosomes",
+        "Gonocytes (primordial germ cells) first appear at puberty"
+      ],
+      "answer": "AC",
+      "explanation": "Spermatogenesis starts at puberty, is continuous, and takes place in the seminiferous tubules of the testis, producing haploid (23-chromosome) spermatozoa. Gonocytes appear during the first weeks of embryonic development, not at puberty.",
+      "page": 1,
+      "weight": 1
+    },
+    {
+      "stem": "About the structure of the testis:",
+      "options": [
+        "It is surrounded by the tunica albuginea, a poorly extensible fibrous capsule",
+        "The mediastinum testis (corpus of Highmore) is a thickening of the albuginea at the lower pole",
+        "It contains 200 to 300 lobules, each holding 1 to 4 seminiferous tubules",
+        "The seminiferous tubules of a lobule converge into a straight tubule that communicates with the rete testis"
+      ],
+      "answer": "ACD",
+      "explanation": "The albuginea thickens at the UPPER pole to form the mediastinum testis, which contains the rete testis. Each of the 200–300 lobules holds 1–4 seminiferous tubules that drain through a 1 mm straight tubule into the rete testis.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "A spermatozoon formed in a seminiferous tubule reaches the epididymal duct. Which route did it follow?",
+      "options": [
+        "Seminiferous tubule → straight tubule → rete testis → efferent ductules → epididymal duct",
+        "Seminiferous tubule → rete testis → straight tubule → efferent ductules → epididymal duct",
+        "Seminiferous tubule → straight tubule → rete testis → epididymal duct → efferent ductules",
+        "Seminiferous tubule → straight tubule → efferent ductules → rete testis → epididymal duct"
+      ],
+      "answer": "A",
+      "explanation": "Tubules converge into straight tubules, which open into the rete testis (in the mediastinum); efferent ductules in the head of the epididymis then continue into the epididymal duct.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "About the cells of the seminiferous tubule and of the interstitium:",
+      "options": [
+        "Leydig cells lie in the wall of the seminiferous tubules, between the germ cells",
+        "Sertoli cells span the entire thickness of the epithelium and are linked to one another by tight junctions",
+        "From the periphery to the lumen one finds spermatogonia, primary spermatocytes, secondary spermatocytes, spermatids, then spermatozoa",
+        "Leydig cells form cords or isolated clusters around capillaries in the loose connective tissue and secrete testosterone"
+      ],
+      "answer": "BCD",
+      "explanation": "Leydig cells are interstitial: they sit in the connective tissue BETWEEN the tubules, not in the tubule wall. The tubule wall holds only Sertoli cells and germ cells, layered from the basement membrane toward the lumen in the order of spermatogenesis.",
+      "page": 3,
+      "weight": 3
+    },
+    {
+      "stem": "About the Sertoli cell:",
+      "options": [
+        "It carries membrane receptors for LH",
+        "It produces ABP (Androgen-Binding Protein)",
+        "It is a large, roughly pyramidal cell with multiple cytoplasmic processes",
+        "Germ cells divide inside its cytoplasm"
+      ],
+      "answer": "BC",
+      "explanation": "FSH (not LH) binds membrane receptors on Sertoli cells and stimulates ABP formation; LH acts on Leydig cells. Germ cells lie between Sertoli cells, connected to them by junctions, not inside them.",
+      "page": 3,
+      "weight": 3
+    },
+    {
+      "stem": "About the multiplication phase of spermatogenesis:",
+      "options": [
+        "It concerns the spermatogonia, diploid stem cells lying against the basement membrane",
+        "Its successive mitoses maintain the spermatogonial pool",
+        "One spermatogonium gives rise to 4 primary spermatocytes",
+        "The primary spermatocytes it produces are haploid"
+      ],
+      "answer": "ABC",
+      "explanation": "The last mitosis of the spermatogonia produces primary spermatocytes, which are still diploid (2n); haploidy is only reached after the first meiotic division.",
+      "page": 4,
+      "weight": 4
+    },
+    {
+      "stem": "About the maturation phase of spermatogenesis:",
+      "options": [
+        "It is preceded by a growth phase",
+        "The primary spermatocyte undergoes the equational division",
+        "Each secondary spermatocyte gives 2 spermatids with n chromosomes",
+        "One primary spermatocyte gives 8 spermatids"
+      ],
+      "answer": "AC",
+      "explanation": "The primary spermatocyte (2n) undergoes the REDUCTIONAL division (meiosis I) into 2 spermatocytes II (n); each undergoes the equational division into 2 spermatids, so one spermatocyte I gives 4 spermatids.",
+      "page": 5,
+      "weight": 4
+    },
+    {
+      "stem": "Ten spermatogonia each complete one round of the sequence described in the lesson (last mitosis → meiosis). How many spermatids are obtained?",
+      "options": [
+        "40",
+        "80",
+        "160",
+        "320"
+      ],
+      "answer": "C",
+      "explanation": "One spermatogonium gives 4 primary spermatocytes, and each primary spermatocyte gives 4 spermatids, so 16 spermatids per spermatogonium, i.e. 160 for 10. 40 forgets meiosis (counts only spermatocytes I).",
+      "page": 5,
+      "weight": 4,
+      "calc": true,
+      "mental": "Chain the two ×4 factors: 4 × 4 = 16 spermatids per spermatogonium, then × 10 = 160. If you got 40 you stopped at the spermatocytes I; 320 doubles a step that doesn't exist."
+    },
+    {
+      "stem": "Which of the following transitions involve a cell division?",
+      "options": [
+        "Spermatogonium → primary spermatocyte",
+        "Primary spermatocyte → secondary spermatocytes",
+        "Spermatid → spermatozoon",
+        "Spermatozoon in the testis → motile spermatozoon in the epididymis"
+      ],
+      "answer": "AB",
+      "explanation": "Primary spermatocytes come from the last spermatogonial mitosis, and spermatocytes II from the first meiotic division. Spermiogenesis (spermatid → spermatozoon) involves no division, and epididymal maturation is purely functional.",
+      "page": 5,
+      "weight": 4
+    },
+    {
+      "stem": "The phases of spermatogenesis in the correct chronological order are:",
+      "options": [
+        "Multiplication – growth – maturation – differentiation",
+        "Multiplication – maturation – growth – differentiation",
+        "Growth – multiplication – differentiation – maturation",
+        "Multiplication – differentiation – growth – maturation"
+      ],
+      "answer": "A",
+      "explanation": "Spermatogonia multiply by mitosis, the spermatocyte I grows, meiosis forms the maturation phase, and spermiogenesis (differentiation) turns spermatids into spermatozoa.",
+      "page": 5,
+      "weight": 4
+    },
+    {
+      "stem": "About spermiogenesis:",
+      "options": [
+        "It involves no cell division",
+        "The acrosome forms from the condensation of Golgi vesicles",
+        "The flagellum forms from microtubules arising from the proximal centriole",
+        "It includes a reduction of the spermatid's cytoplasm"
+      ],
+      "answer": "ABD",
+      "explanation": "Spermiogenesis is pure differentiation: cytoplasmic reduction, an acrosome from Golgi vesicles, and a flagellum from microtubules arising from the DISTAL centriole.",
+      "page": 5,
+      "weight": 3
+    },
+    {
+      "stem": "Concerning the diagram (figure), which statement(s) is (are) correct?",
+      "options": [
+        "Cell 1 renews itself, maintaining the stem-cell pool",
+        "The division from 2 to 3 is the reductional division",
+        "The transition from 1 to 2 is the first meiotic division",
+        "The transformation of 4 into 5 takes place in the epididymis"
+      ],
+      "answer": "AB",
+      "explanation": "1 = spermatogonium (2n), whose mitoses both renew the pool and give primary spermatocytes (2, still 2n); 2 → 3 is meiosis I (reductional, 2n → n). 4 → 5 is spermiogenesis, which happens in the seminiferous tubule of the testis.",
+      "page": 6,
+      "weight": 4,
+      "image": "s1/lessons/spermatogenesis-g1.png"
+    },
+    {
+      "stem": "Concerning the diagram (figure), which statement(s) is (are) correct?",
+      "options": [
+        "It shows the transformation of a spermatid into a spermatozoon, without division",
+        "Structure 1 derives from Golgi vesicles",
+        "Element 2 is excess cytoplasm that is eliminated",
+        "Segment 3 contains the mitochondria that supply energy for flagellar movement"
+      ],
+      "answer": "ABCD",
+      "explanation": "This is spermiogenesis: 1 is the acrosome cap (condensed Golgi vesicles), 2 the excess cytoplasm removed by cytoplasmic reduction, 3 the middle piece with its helical mitochondrial sheath.",
+      "page": 6,
+      "weight": 3,
+      "image": "s1/lessons/spermatogenesis-g2.png"
+    },
+    {
+      "stem": "Concerning the regulation diagram (figure), which statement(s) is (are) correct?",
+      "options": [
+        "Cell 1 binds FSH through membrane receptors and produces ABP",
+        "Cell 2 lies in the wall of the seminiferous tubule",
+        "Product 3 is inhibin, which exerts negative feedback on FSH only",
+        "Product 4 mostly passes free into the blood"
+      ],
+      "answer": "AC",
+      "explanation": "1 = Sertoli cell, 2 = Leydig cell (interstitial, outside the tubule), 3 = inhibin, 4 = testosterone. Most testosterone enters the cytoplasm and binds ABP; only the free fraction passes into the blood.",
+      "page": 10,
+      "weight": 3,
+      "image": "s1/lessons/spermatogenesis-g3.png"
+    },
+    {
+      "stem": "About the functional maturation of spermatozoa in the epididymis:",
+      "options": [
+        "Spermatozoa leaving the testis are barely motile",
+        "They acquire their motility under the action of androgens secreted by the Leydig cells",
+        "They acquire their ability to fuse with the oocyte membrane",
+        "The molecules that recognize the zona pellucida are set up"
+      ],
+      "answer": "ABD",
+      "explanation": "In the epididymis spermatozoa gain motility and zona-pellucida binding, but are DECAPACITATED by the seminal fluid: their fertilizing (fusion) ability is suppressed.",
+      "page": 7,
+      "weight": 1
+    },
+    {
+      "stem": "About decapacitation and capacitation:",
+      "options": [
+        "Decapacitation occurs in the epididymis through the action of the seminal fluid",
+        "A decapacitated spermatozoon temporarily loses its ability to fuse with other membranes",
+        "To become fertilizing, the ejaculated spermatozoon must undergo capacitation in the female genital tract",
+        "The ejaculated spermatozoon is immediately able to fertilize"
+      ],
+      "answer": "ABC",
+      "explanation": "The ejaculated spermatozoon is still decapacitated and cannot fertilize; capacitation happens later, in the female genital tract.",
+      "page": 13,
+      "weight": 1
+    },
+    {
+      "stem": "About the head of the spermatozoon:",
+      "options": [
+        "The acrosome covers the posterior two-thirds of the nucleus",
+        "The nucleus occupies most of the head",
+        "The acrosome contains hyaluronidases, acrosin and the Corona Penetrating Enzyme",
+        "Its plasma membrane has particular morphological features"
+      ],
+      "answer": "BC",
+      "explanation": "The acrosome is a flattened vesicle over the ANTERIOR two-thirds of the nucleus, full of hydrolytic enzymes used to cross the oocyte envelopes; the plasma membrane is conventional.",
+      "page": 8,
+      "weight": 2
+    },
+    {
+      "stem": "About the neck, middle piece and flagellum of the spermatozoon:",
+      "options": [
+        "The mitochondria are arranged in a helix around the flagellum in the middle piece",
+        "The mitochondria that power the flagellum are located in the end piece",
+        "The middle piece contains the centriole that gives rise to the flagellum",
+        "Along the flagellum, the middle piece, principal piece and end piece have decreasing diameters"
+      ],
+      "answer": "ACD",
+      "explanation": "The energy supply (mitochondrial sheath) is in the middle piece, not the end piece; the flagellum narrows from middle piece to principal piece to end piece.",
+      "page": 9,
+      "weight": 2
+    },
+    {
+      "stem": "Under the light microscope, the spermatozoon shows three parts:",
+      "options": [
+        "Head, neck, flagellum",
+        "Head, acrosome, tail",
+        "Head, middle piece, end piece",
+        "Nucleus, acrosome, flagellum"
+      ],
+      "answer": "A",
+      "explanation": "The three visible parts are the head, the neck (the narrow portion joining head and flagellum) and the flagellum; the acrosome belongs to the head and the middle/end pieces belong to the flagellum.",
+      "page": 8,
+      "weight": 2
+    },
+    {
+      "stem": "A 20-year-old man has both testes still in the abdomen (bilateral cryptorchidism). Which finding(s) is (are) expected?",
+      "options": [
+        "Seminiferous tubules almost devoid of gametes",
+        "Maintained testosterone production by the Leydig cells",
+        "Loss of male secondary sexual characteristics",
+        "Sterility"
+      ],
+      "answer": "ABD",
+      "explanation": "Undescended testes produce no spermatozoa (sterility) but their interstitial Leydig cells keep secreting testosterone, so secondary sexual characteristics are preserved.",
+      "page": 9,
+      "weight": 1
+    },
+    {
+      "stem": "Why does an undescended (cryptorchid) testis fail to produce spermatozoa?",
+      "options": [
+        "Normal spermatogenesis needs the slight cooling obtained when the testes migrate into the scrotum",
+        "Its Leydig cells stop secreting testosterone",
+        "It contains no Sertoli cells",
+        "The pituitary stops secreting FSH"
+      ],
+      "answer": "A",
+      "explanation": "The lesson attributes the arrest to the lack of scrotal cooling; testosterone secretion by Leydig cells is maintained.",
+      "page": 9,
+      "weight": 1
+    },
+    {
+      "stem": "About the neuroendocrine control of the testis:",
+      "options": [
+        "GnRH is produced in a pulsatile way by hypothalamic neurons, and its production greatly increases at puberty",
+        "GnRH acts directly on Sertoli cells",
+        "LH ensures the multiplication of Leydig cells",
+        "Free testosterone exerts negative feedback on LH secretion"
+      ],
+      "answer": "ACD",
+      "explanation": "GnRH acts on the pituitary, triggering FSH and LH secretion; it does not act on the testis directly. LH drives Leydig cells, and free testosterone feeds back negatively on LH (via the hypothalamus or the pituitary).",
+      "page": 10,
+      "weight": 3
+    },
+    {
+      "stem": "About inhibin:",
+      "options": [
+        "It is secreted by Sertoli cells in response to FSH",
+        "It is secreted by Leydig cells",
+        "It exerts negative feedback on LH secretion",
+        "It can act directly on the pituitary gonadotroph cells, or indirectly by decreasing GnRH secretion"
+      ],
+      "answer": "AD",
+      "explanation": "FSH triggers inhibin secretion by Sertoli cells, and inhibin lowers FSH secretion (hypothalamus or pituitary). The negative feedback on LH comes from free testosterone.",
+      "page": 10,
+      "weight": 3
+    },
+    {
+      "stem": "A semen analysis concludes oligoasthenoteratozoospermia (OATS). This means:",
+      "options": [
+        "Oligozoospermia: the spermatozoa are too few to fertilize an oocyte",
+        "Asthenozoospermia: the spermatozoa have an abnormal shape",
+        "Teratozoospermia: the spermatozoa have an abnormal shape",
+        "A varicocele is among its possible causes"
+      ],
+      "answer": "ACD",
+      "explanation": "Astheno- refers to weak motility, terato- to abnormal shape. Causes listed include genital infections, varicocele, smoking, obesity, heat, radiation, medications and stress.",
+      "page": 12,
+      "weight": 0
+    },
+    {
+      "stem": "About the factors influencing spermatogenesis:",
+      "options": [
+        "About 25% of men who contract mumps after puberty become infertile",
+        "Endocrine disorders account for most cases of male infertility",
+        "Some men produce antibodies against their own spermatozoa, causing poor motility or agglutination",
+        "Anticancer treatments affect spermatogenesis only temporarily"
+      ],
+      "answer": "AC",
+      "explanation": "Endocrine disorders explain only about 2–5% of male infertility, and radiation or anticancer treatments may act temporarily or permanently.",
+      "page": 12,
+      "weight": 0
+    },
+    {
+      "stem": "From the standpoint of chromosomal complement, about spermatozoa:",
+      "options": [
+        "Meiosis yields equal numbers of 22 + X and 22 + Y spermatozoa",
+        "X- and Y-bearing spermatozoa can be distinguished morphologically",
+        "X- and Y-bearing spermatozoa can be separated in vitro",
+        "Their highly compacted haploid genome protects them against genotoxic agents"
+      ],
+      "answer": "ACD",
+      "explanation": "Separating the XY pair at meiosis gives equal numbers of X- and Y-bearing spermatozoa, which look identical but can be separated in vitro.",
+      "page": 12,
+      "weight": 1
+    }
+  ]
+}
