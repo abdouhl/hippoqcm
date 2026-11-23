@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set 4 — Probabilities</title>
+<meta name="lessons" content="">
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Biostatistics · Exercises</div>
+<h1>Set 4 — Probabilities</h1>
+<p class="meta">Dr Bouhadjar · Series 4 · 2026-2027 · 4 exercises ·
+  <a href="/exercises/s1/biostatistics/set-4.pdf">TD sheet</a></p>
+<p class="unsure">The probability lesson isn't in your app yet (Biostatistics only has <a href="/lessons/s1/biostatistics/descriptive-statistics.pdf">Descriptive statistics</a>).
+  These solutions use the standard first-year rules: counting with combinations, conditional probability, total probability and Bayes.
+  When you add the probability lesson, check that they match its notation.</p>
+<ul class="toc">
+  <li><a target="_self" href="#laws">Laws used</a></li>
+  <li><a target="_self" href="#ex1">Ex. 1 · Capsules (draws)</a></li>
+  <li><a target="_self" href="#ex2">Ex. 2 · Influenza vaccine</a></li>
+  <li><a target="_self" href="#ex3">Ex. 3 · Screening test</a></li>
+  <li><a target="_self" href="#ex4">Ex. 4 · Three machines</a></li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<div class="box essentials" id="laws">
+  <span class="label">Laws used in this set (standard probability rules: not in your lessons yet)</span>
+  <div class="law"><span class="label">Equiprobability</span>
+    <div class="formula">P(E) = <span class="frac"><span>number of favourable cases</span><span>number of possible cases</span></span></div></div>
+  <div class="law"><span class="label">Combinations</span>
+    <div class="formula">C<sub>n</sub><sup>k</sup> = <span class="frac"><span>n!</span><span>k! (n − k)!</span></span><span class="where">number of ways to choose k objects among n, order not counted (simultaneous draw)</span></div></div>
+  <div class="law"><span class="label">Complement</span>
+    <div class="formula">P(Ē) = 1 − P(E)</div></div>
+  <div class="law"><span class="label">Conditional probability, multiplication rule</span>
+    <div class="formula">P(A | B) = <span class="frac"><span>P(A ∩ B)</span><span>P(B)</span></span> ⇔ P(A ∩ B) = P(A | B) · P(B)</div></div>
+  <div class="law"><span class="label">Total probability</span>
+    <div class="formula">P(T) = Σ P(T | B<sub>i</sub>) · P(B<sub>i</sub>)<span class="where">B<sub>1</sub>, B<sub>2</sub>, … = a partition (they don't overlap and together cover every case), e.g. A and Ā</span></div></div>
+  <div class="law"><span class="label">Bayes' formula</span>
+    <div class="formula">P(B<sub>k</sub> | T) = <span class="frac"><span>P(T | B<sub>k</sub>) · P(B<sub>k</sub>)</span><span>Σ P(T | B<sub>i</sub>) · P(B<sub>i</sub>)</span></span></div></div>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex1">
+  <h2><span class="num">Exercise 1</span> — Drawing capsules <a class="page" href="/exercises/s1/biostatistics/set-4.pdf#page=1">sheet p. 1</a></h2>
+  <div class="statement">
+    <p><b>I.</b> A box contains nine capsules of a medication, all of the same size but of different colours, so that the draws are equiprobable. Four capsules are white, five are black. Three capsules are drawn <b>simultaneously</b> from the box. Compute the probability of each event:</p>
+    <ol>
+      <li>A: “All capsules are white”</li>
+      <li>B: “The capsules are of different colours”</li>
+      <li>C: “There are more white capsules than black capsules”</li>
+    </ol>
+    <p><b>II.</b> The same experiment is repeated, but this time the three capsules are drawn <b>successively without replacement</b>.</p>
+    <ol>
+      <li>Compute the probability that the three drawn capsules are of the same colour.</li>
+      <li>Answer the same question if the three capsules are drawn <b>with replacement</b> after each draw.</li>
+    </ol>
+  </div>
+  <ul class="given"><li>9 capsules: 4 white (W), 5 black (B)</li><li>3 capsules drawn</li><li>I: simultaneous · II.1: one by one, without replacement · II.2: with replacement</li></ul>
+  <details class="hint"><summary>Hint</summary><p>Simultaneous draw → order doesn't count → count with combinations C<sub>9</sub><sup>3</sup>. For B, think of the opposite event. For C, “more white than black” among 3 means 3 white or 2 white + 1 black. In part II, multiply the probabilities draw by draw. The box changes after each draw only when there is no replacement.</p></details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>I. Simultaneous draw</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Combinations · equiprobability
+          <div class="formula">P(E) = <span class="frac"><span>favourable</span><span>C<sub>9</sub><sup>3</sup></span></span></div></div>
+        <div class="calc">Possible cases: C<sub>9</sub><sup>3</sup> = <span class="frac"><span>9 × 8 × 7</span><span>3 × 2 × 1</span></span> = 84</div></li>
+    </ol>
+    <h3>1) A: all three white</h3>
+    <ol class="steps">
+      <li><div class="calc">Favourable: C<sub>4</sub><sup>3</sup> = 4</div>
+        <div class="calc">P(A) = <span class="frac"><span>4</span><span>84</span></span> = <span class="frac"><span>1</span><span>21</span></span> ≈ 0.048</div></li>
+    </ol>
+    <span class="answer">P(A) = 1/21 ≈ 0.048</span>
+    <h3>2) B: capsules of different colours</h3>
+    <p class="unsure">There are only two colours, so three capsules can never all be of three different colours. The event is read as “the capsules are <b>not all of the same colour</b>” (the draw contains both colours).</p>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Complement
+          <div class="formula">P(B) = 1 − P(<span class="ov">B</span>)</div></div>
+        <p><span class="ov">B</span> = “all the same colour” = 3 white <b>or</b> 3 black.</p>
+        <div class="calc">C<sub>4</sub><sup>3</sup> + C<sub>5</sub><sup>3</sup> = 4 + 10 = 14</div>
+        <div class="calc">P(<span class="ov">B</span>) = <span class="frac"><span>14</span><span>84</span></span> = <span class="frac"><span>1</span><span>6</span></span></div>
+        <div class="calc">P(B) = 1 − <span class="frac"><span>1</span><span>6</span></span> = <span class="frac"><span>5</span><span>6</span></span> ≈ 0.833</div></li>
+      <li><p>Direct check: 2W + 1B or 1W + 2B → C<sub>4</sub><sup>2</sup>·C<sub>5</sub><sup>1</sup> + C<sub>4</sub><sup>1</sup>·C<sub>5</sub><sup>2</sup> = 6 × 5 + 4 × 10 = 70, and 70/84 = 5/6 ✓</p></li>
+    </ol>
+    <span class="answer">P(B) = 5/6 ≈ 0.833</span>
+    <h3>3) C: more white than black</h3>
+    <ol class="steps">
+      <li><p>Among 3 capsules, “more white than black” means 3W (0B) or 2W + 1B.</p>
+        <div class="calc">3W: C<sub>4</sub><sup>3</sup> = 4</div>
+        <div class="calc">2W + 1B: C<sub>4</sub><sup>2</sup> × C<sub>5</sub><sup>1</sup> = 6 × 5 = 30</div>
+        <div class="calc">P(C) = <span class="frac"><span>4 + 30</span><span>84</span></span> = <span class="frac"><span>34</span><span>84</span></span> = <span class="frac"><span>17</span><span>42</span></span> ≈ 0.405</div></li>
+    </ol>
+    <span class="answer">P(C) = 17/42 ≈ 0.405</span>
+
+    <h3>II.1) Successively, without replacement: same colour</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Multiplication rule (conditional probabilities)
+          <div class="formula">P(W<sub>1</sub> ∩ W<sub>2</sub> ∩ W<sub>3</sub>) = P(W<sub>1</sub>) · P(W<sub>2</sub> | W<sub>1</sub>) · P(W<sub>3</sub> | W<sub>1</sub> ∩ W<sub>2</sub>)</div></div>
+        <p>After each draw there is one capsule fewer in the box, and one fewer of the colour drawn.</p>
+        <div class="calc">P(WWW) = <span class="frac"><span>4</span><span>9</span></span> × <span class="frac"><span>3</span><span>8</span></span> × <span class="frac"><span>2</span><span>7</span></span> = <span class="frac"><span>24</span><span>504</span></span> = <span class="frac"><span>1</span><span>21</span></span></div>
+        <div class="calc">P(BBB) = <span class="frac"><span>5</span><span>9</span></span> × <span class="frac"><span>4</span><span>8</span></span> × <span class="frac"><span>3</span><span>7</span></span> = <span class="frac"><span>60</span><span>504</span></span> = <span class="frac"><span>5</span><span>42</span></span></div>
+        <div class="calc">P(same colour) = <span class="frac"><span>24 + 60</span><span>504</span></span> = <span class="frac"><span>84</span><span>504</span></span> = <span class="frac"><span>1</span><span>6</span></span> ≈ 0.167</div></li>
+      <li><p>This is the same result as P(<span class="ov">B</span>) in I.2. When you draw without replacement, drawing one by one or all at once gives the same probabilities for events that don't depend on the order.</p></li>
+    </ol>
+    <span class="answer">P(same colour, without replacement) = 1/6 ≈ 0.167</span>
+
+    <h3>II.2) With replacement: same colour</h3>
+    <ol class="steps">
+      <li><p>The capsule is put back each time, so the box is the same at every draw (9 capsules, 4 W, 5 B) and the three draws are independent.</p>
+        <div class="calc">P(WWW) = (4/9)³ = <span class="frac"><span>64</span><span>729</span></span></div>
+        <div class="calc">P(BBB) = (5/9)³ = <span class="frac"><span>125</span><span>729</span></span></div>
+        <div class="calc">P(same colour) = <span class="frac"><span>64 + 125</span><span>729</span></span> = <span class="frac"><span>189</span><span>729</span></span> = <span class="frac"><span>7</span><span>27</span></span> ≈ 0.259</div></li>
+    </ol>
+    <span class="answer">P(same colour, with replacement) = 7/27 ≈ 0.259</span>
+    <div class="box trap"><span class="label">Trap</span> Using arrangements (order counted) for a simultaneous draw: there the order doesn't count, so use C<sub>n</sub><sup>k</sup>. In II.1, forgetting to remove the drawn capsule (writing 4/9 × 4/9 × 4/9), which is the <i>with</i>-replacement calculation. For C, forgetting the case “3 white, 0 black”.</div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex2">
+  <h2><span class="num">Exercise 2</span> — Influenza vaccine <a class="page" href="/exercises/s1/biostatistics/set-4.pdf#page=1">sheet p. 1</a></h2>
+  <div class="statement">
+    <p>During an influenza epidemic, one third of the population is vaccinated. One out of 10 sick individuals is vaccinated, and the probability that a randomly chosen person is sick is 0.25. What is the probability that a vaccinated individual is sick nonetheless?</p>
+  </div>
+  <ul class="given"><li>V = “vaccinated”, M = “sick”</li><li>P(V) = 1/3</li><li>P(V | M) = 1/10</li><li>P(M) = 0.25</li><li>Asked: P(M | V)</li></ul>
+  <details class="hint"><summary>Hint</summary><p>“One out of 10 sick individuals is vaccinated” is a probability <b>given sick</b>. You need the reverse conditional, so find P(V ∩ M) first, then divide by P(V).</p></details>
+  <details class="solution"><summary>Solution</summary>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Multiplication rule
+          <div class="formula">P(V ∩ M) = P(V | M) · P(M)</div></div>
+        <div class="calc">P(V ∩ M) = 0.1 × 0.25 = 0.025</div></li>
+      <li><div class="law"><span class="label">Law</span> Conditional probability (Bayes)
+          <div class="formula">P(M | V) = <span class="frac"><span>P(V ∩ M)</span><span>P(V)</span></span></div></div>
+        <div class="calc">P(M | V) = <span class="frac"><span>0.025</span><span>1/3</span></span> = 0.025 × 3 = 0.075</div></li>
+      <li><p>Check: 7.5 % of vaccinated people fall sick, against 25 % in the whole population. The vaccine reduces the risk, which makes sense.</p></li>
+    </ol>
+    <span class="answer">P(M | V) = 0.075 = 7.5 %</span>
+    <div class="box trap"><span class="label">Trap</span> Confusing P(V | M) = 0.1 (the proportion of the sick who are vaccinated) with P(M | V), which is the question. Also, dividing by 3 instead of by 1/3.</div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex3">
+  <h2><span class="num">Exercise 3</span> — Screening test for “Phona disease” <a class="page" href="/exercises/s1/biostatistics/set-4.pdf#page=1">sheet p. 1</a></h2>
+  <div class="statement">
+    <p>I take a test to find out whether I am unknowingly affected by Phona disease.</p>
+    <ul>
+      <li>If I am affected, the probability that the test is positive is 98 %;</li>
+      <li>If I am not affected, the probability that the test is positive is 6 %.</li>
+    </ul>
+    <p>At my age, one person out of 150 is unknowingly affected; the remaining 149 are healthy. Let A be the event “I am affected” and T the event “the test is positive”.</p>
+    <ol>
+      <li>Express the information of the statement in terms of the events A, Ā, T and <span class="ov">T</span>.</li>
+      <li>What is the probability that the test is positive and that I am not affected?</li>
+      <li>Compute P(T).</li>
+      <li>What is the probability that I am affected given that my test is positive?</li>
+    </ol>
+  </div>
+  <ul class="given"><li>P(T | A) = 0.98</li><li>P(T | Ā) = 0.06</li><li>P(A) = 1/150</li></ul>
+  <details class="hint"><summary>Hint</summary><p>Draw a probability tree: first branch A / Ā, second branch T / <span class="ov">T</span>. Question 2 is an intersection (multiply along one path), question 3 is the total probability (add the paths that end in T), and question 4 is Bayes.</p></details>
+  <details class="solution"><summary>Solution</summary>
+    <figure><svg viewBox="0 0 520 230" role="img" aria-label="Probability tree: A 1/150 then T 0.98, T-bar 0.02; A-bar 149/150 then T 0.06, T-bar 0.94">
+      <line x1="30" y1="115" x2="170" y2="55" class="s-line" stroke-width="1.5"/>
+      <line x1="30" y1="115" x2="170" y2="175" class="s-line" stroke-width="1.5"/>
+      <line x1="200" y1="55" x2="340" y2="25" class="s-line" stroke-width="1.5"/>
+      <line x1="200" y1="55" x2="340" y2="85" class="s-line" stroke-width="1.5"/>
+      <line x1="200" y1="175" x2="340" y2="145" class="s-line" stroke-width="1.5"/>
+      <line x1="200" y1="175" x2="340" y2="205" class="s-line" stroke-width="1.5"/>
+      <text x="185" y="60" text-anchor="middle" class="s-text" font-size="17" font-weight="600">A</text>
+      <text x="185" y="180" text-anchor="middle" class="s-text" font-size="17" font-weight="600">Ā</text>
+      <text x="90" y="72" text-anchor="middle" class="s-muted" font-size="14">1/150</text>
+      <text x="90" y="168" text-anchor="middle" class="s-muted" font-size="14">149/150</text>
+      <text x="265" y="30" text-anchor="middle" class="s-muted" font-size="14">0.98</text>
+      <text x="265" y="88" text-anchor="middle" class="s-muted" font-size="14">0.02</text>
+      <text x="265" y="150" text-anchor="middle" class="s-muted" font-size="14">0.06</text>
+      <text x="265" y="208" text-anchor="middle" class="s-muted" font-size="14">0.94</text>
+      <text x="352" y="30" class="s-text" font-size="16">T  → 0.00653</text>
+      <text x="352" y="90" class="s-text" font-size="16"><tspan text-decoration="overline">T</tspan>  → 0.00013</text>
+      <text x="352" y="150" class="s-text" font-size="16">T  → 0.0596</text>
+      <text x="352" y="210" class="s-text" font-size="16"><tspan text-decoration="overline">T</tspan>  → 0.9337</text>
+    </svg></figure>
+    <h3>1) The data as probabilities</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Complement (also within a condition)
+          <div class="formula">P(Ā) = 1 − P(A) ;  P(<span class="ov">T</span> | A) = 1 − P(T | A)</div></div>
+        <div class="calc">P(A) = <span class="frac"><span>1</span><span>150</span></span> ;  P(Ā) = <span class="frac"><span>149</span><span>150</span></span></div>
+        <div class="calc">P(T | A) = 0.98 ;  P(<span class="ov">T</span> | A) = 0.02</div>
+        <div class="calc">P(T | Ā) = 0.06 ;  P(<span class="ov">T</span> | Ā) = 0.94</div></li>
+    </ol>
+    <span class="answer">P(A) = 1/150, P(Ā) = 149/150, P(T | A) = 0.98, P(T | Ā) = 0.06 (and P(<span class="ov">T</span> | A) = 0.02, P(<span class="ov">T</span> | Ā) = 0.94)</span>
+    <h3>2) Positive and not affected: P(T ∩ Ā)</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Multiplication rule
+          <div class="formula">P(T ∩ Ā) = P(T | Ā) · P(Ā)</div></div>
+        <div class="calc">P(T ∩ Ā) = 0.06 × <span class="frac"><span>149</span><span>150</span></span> = <span class="frac"><span>149</span><span>2500</span></span> = 0.0596</div></li>
+    </ol>
+    <span class="answer">P(T ∩ Ā) = 0.0596 ≈ 6 %</span>
+    <h3>3) P(T)</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Total probability (partition A, Ā)
+          <div class="formula">P(T) = P(T | A) · P(A) + P(T | Ā) · P(Ā)</div></div>
+        <div class="calc">P(T ∩ A) = 0.98 × <span class="frac"><span>1</span><span>150</span></span> = 0.006533</div>
+        <div class="calc">P(T) = 0.006533 + 0.0596 = 0.06613</div></li>
+    </ol>
+    <span class="answer">P(T) = 124/1875 ≈ 0.066</span>
+    <h3>4) Affected given a positive test: P(A | T)</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Bayes' formula
+          <div class="formula">P(A | T) = <span class="frac"><span>P(T | A) · P(A)</span><span>P(T)</span></span></div></div>
+        <div class="calc">P(A | T) = <span class="frac"><span>0.006533</span><span>0.06613</span></span> = <span class="frac"><span>49</span><span>496</span></span> ≈ 0.0988</div></li>
+      <li><p>Only ≈ 10 % of positive tests are real cases. The disease is rare (1/150), so the 6 % false positives among the 149 healthy people outnumber the true positives.</p></li>
+    </ol>
+    <span class="answer">P(A | T) = 49/496 ≈ 0.099 (≈ 10 %)</span>
+    <div class="box trap"><span class="label">Trap</span> Answering 0.98 for question 4: that is P(T | A), not P(A | T). In question 2, answering 0.06: that is P(T | Ā), while the question asks for the intersection “positive <b>and</b> not affected”.</div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex4">
+  <h2><span class="num">Exercise 4</span> — Defective products from three machines <a class="page" href="/exercises/s1/biostatistics/set-4.pdf#page=1">sheet p. 1–2</a></h2>
+  <div class="statement">
+    <p>In a factory, machines A, B and C provide 25 %, 35 % and 40 % of the total production respectively. The percentages of defective products made by A, B and C are 5 %, 4 % and 2 % respectively. A product is selected at random from the total production and is found to be defective. What is the probability that it comes from machine A?</p>
+  </div>
+  <ul class="given"><li>P(A) = 0.25, P(B) = 0.35, P(C) = 0.40</li><li>D = “defective”: P(D | A) = 0.05, P(D | B) = 0.04, P(D | C) = 0.02</li><li>Asked: P(A | D)</li></ul>
+  <details class="hint"><summary>Hint</summary><p>A, B and C form a partition (every product comes from exactly one machine). Find P(D) with the total probability formula, then reverse the condition with Bayes.</p></details>
+  <details class="solution"><summary>Solution</summary>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Total probability
+          <div class="formula">P(D) = P(D | A)·P(A) + P(D | B)·P(B) + P(D | C)·P(C)</div></div>
+        <div class="calc">P(D ∩ A) = 0.05 × 0.25 = 0.0125</div>
+        <div class="calc">P(D ∩ B) = 0.04 × 0.35 = 0.014</div>
+        <div class="calc">P(D ∩ C) = 0.02 × 0.40 = 0.008</div>
+        <div class="calc">P(D) = 0.0125 + 0.014 + 0.008 = 0.0345</div></li>
+      <li><div class="law"><span class="label">Law</span> Bayes' formula
+          <div class="formula">P(A | D) = <span class="frac"><span>P(D | A) · P(A)</span><span>P(D)</span></span></div></div>
+        <div class="calc">P(A | D) = <span class="frac"><span>0.0125</span><span>0.0345</span></span> = <span class="frac"><span>25</span><span>69</span></span> ≈ 0.362</div></li>
+      <li><p>Check: P(B | D) ≈ 0.406 and P(C | D) ≈ 0.232, and 0.362 + 0.406 + 0.232 = 1 ✓. Machine A makes only 25 % of the products but 36 % of the defective ones, because it has the highest defect rate.</p></li>
+    </ol>
+    <span class="answer">P(A | D) = 25/69 ≈ 0.362 (≈ 36 %)</span>
+    <div class="box trap"><span class="label">Trap</span> Answering 0.25 (the share of production, i.e. before knowing the product is defective) or 0.05 (P(D | A)). Also, adding the percentages 5 + 4 + 2 instead of weighting each one by its machine's share.</div>
+  </details>
+</section>
+
+<footer>Exercises from TD Series 4 “Probabilities” (Dr Bouhadjar, 2026-2027). The probability lesson isn't in the app yet, so these solutions use standard probability rules. Check them against your TD corrections.</footer>
+</main>
+</body>
+</html>

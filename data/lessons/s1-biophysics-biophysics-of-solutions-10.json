@@ -1,0 +1,272 @@
+{
+  "semester": 1,
+  "module": "Biophysics",
+  "title": "Biophysics of solutions 10",
+  "pdf": "s1/biophysics/biophysics-of-solutions-10.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "For a dialysis membrane, about the solvent fluxes:",
+      "options": [
+        "The diffusive flux of solvent is J_d = LΔπ",
+        "The convective flux of solvent is J_c = LΔP",
+        "The net solvent flux is the vector sum J_net = J_c + J_d",
+        "The convective flux of solvent is J_c = P|ΔC|",
+        "The net solvent flux carries no solute across the membrane"
+      ],
+      "answer": "ABC",
+      "explanation": "For the solvent, J_d = LΔπ and J_c = LΔP, and J_net = J_c + J_d. P|ΔC| is the diffusive flux of the solute, not of the solvent, and J_net does carry a solute flux along with it (J_cs = J_net·C̄s).",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "Across a dialysis membrane, the convective flux of solute J_cs carried by the net solvent flux:",
+      "options": [
+        "Is J_cs = J_net·C̄s",
+        "Uses C̄s = the concentration of the more concentrated compartment",
+        "Uses C̄s = (C₁s + C₂s) / 2",
+        "Is J_cs = P|ΔCs|",
+        "Is not zero when C₁s = C₂s, provided J_net ≠ 0"
+      ],
+      "answer": "ACE",
+      "explanation": "J_cs = J_net·C̄s with C̄s the mean of the two concentrations, so it exists whenever solvent flows, even with no concentration difference. P|ΔCs| is the diffusive solute flux, which does vanish when ΔCs = 0.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "A dialysis membrane separates two solutions of a solute at C₁ = 12 mmol/L and C₂ = 8 mmol/L. The net solvent flux is J_net = 2×10⁻⁸ m/s. The convective flux of solute J_cs (in mol·m⁻²·s⁻¹) is:",
+      "options": [
+        "2×10⁻⁷",
+        "8×10⁻⁸",
+        "2×10⁻¹⁰",
+        "4×10⁻⁷",
+        "2×10⁻⁵"
+      ],
+      "answer": "A",
+      "explanation": "J_cs = J_net·C̄s with C̄s = (12 + 8)/2 = 10 mmol/L = 10 mol/m³, so J_cs = 2×10⁻⁸ × 10 = 2×10⁻⁷. Using ΔC = 4 gives 8×10⁻⁸ (that is the wrong concentration), and the sum 20 gives 4×10⁻⁷.",
+      "page": 1,
+      "weight": 0,
+      "calc": true,
+      "mental": "1 mmol/L = 1 mol/m³, so C̄s = 10 mol/m³; 2×10⁻⁸ × 10 = 2×10⁻⁷. 2×10⁻¹⁰ comes from leaving C̄s in mol/L (0.01), and 2×10⁻⁵ is 100× too big — a powers-of-ten check removes both."
+    },
+    {
+      "stem": "For a biological membrane, whose selectivity is described by the reflection coefficient σ:",
+      "options": [
+        "The diffusive flux of solvent is J_d = LσΔπ",
+        "The convective flux of solvent is J_c = LσΔP",
+        "Darcy's law of filtration gives J_c = (P_f·V_me / RT)·ΔP",
+        "L = P_f·V_me / RT",
+        "The filtration coefficient P_f is expressed in m²·s/kg"
+      ],
+      "answer": "ACD",
+      "explanation": "Only the diffusive (osmotic) solvent flux carries σ: J_d = LσΔπ, while J_c = LΔP (Darcy's law, with L = P_fV_me/RT). P_f is in m/s; m²·s/kg is the unit of L.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "About Darcy's law of filtration J_c = (P_f·V_me / RT)·ΔP:",
+      "options": [
+        "V_me is the molar volume of water, V_me = 18 cm³",
+        "P_f is the membrane filtration coefficient, in m/s",
+        "V_me is the molar volume of the solute",
+        "J_c is proportional to the temperature T",
+        "J_c increases when the pressure difference ΔP increases"
+      ],
+      "answer": "ABE",
+      "explanation": "V_me is the molar volume of water (18 cm³), P_f the filtration coefficient in m/s, and J_c is proportional to ΔP. T is in the denominator, so J_c is inversely, not directly, proportional to T.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "Across a biological membrane, the convective solute flux is J_cs = (1 − σ)·J_net·C̄s. Therefore:",
+      "options": [
+        "(1 − σ) is the membrane transmission coefficient",
+        "σ is the membrane transmission coefficient",
+        "For a solute to which the membrane is impermeable (σ = 1), J_cs = 0",
+        "For σ = 0, the expression becomes that of the dialysis membrane, J_cs = J_net·C̄s",
+        "The net solute flux is the vector sum of J_cs and the diffusive flux J_ds = P|ΔCs|"
+      ],
+      "answer": "ACDE",
+      "explanation": "σ is the reflection coefficient and (1 − σ) the transmission coefficient: σ = 1 stops all convective transport of the solute, σ = 0 gives back J_cs = J_net·C̄s. The net solute flux is J_cs + J_ds.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "A capillary membrane is impermeable to albumin but lets glucose and other small molecules through. About its reflection coefficients:",
+      "options": [
+        "σ (albumin) = 1",
+        "σ (albumin) = 0",
+        "σ (glucose) = 0",
+        "σ (glucose) = 1",
+        "The transmission coefficient for albumin is 1"
+      ],
+      "answer": "AC",
+      "explanation": "A solute that cannot cross is fully reflected (σ = 1); a freely crossing one has σ = 0. The transmission coefficient for albumin is 1 − σ = 0, not 1.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "A capillary membrane is impermeable to albumin (M = 40 000 g/mol). Plasma contains 40 g/L of albumin and the interstitial medium none. At 37 °C (R = 8.31 SI), the osmotic pressure difference generated by albumin is about:",
+      "options": [
+        "2.6 kPa (≈ 19 mmHg)",
+        "2.6 Pa",
+        "9.7 mmHg",
+        "2.6 MPa",
+        "39 mmHg"
+      ],
+      "answer": "A",
+      "explanation": "Δπ = ω·RT = (40/40 000 mol/L = 1 mol/m³) × 8.31 × 310 ≈ 2 576 Pa ≈ 19.4 mmHg (1 mmHg = 133 Pa). 9.7 mmHg is the value for 20 g/L in the lesson's exercise; 2.6 Pa comes from leaving ω in mol/L.",
+      "page": 4,
+      "weight": 3,
+      "calc": true,
+      "mental": "40/40 000 = 10⁻³ mol/L = 1 mol/m³, so Δπ = RT ≈ 8.3 × 310 ≈ 2 600 Pa; ÷133 ≈ 20 mmHg. The Pa and MPa options are off by 10³ — a unit check removes them; 9.7 is half, i.e. the 20 g/L case."
+    },
+    {
+      "stem": "About the Starling phenomenon:",
+      "options": [
+        "It describes water exchange between plasma and the interstitial medium",
+        "The capillary wall is modeled as a dialysis membrane",
+        "P_a is the blood pressure at the exit (venular end) of the capillary",
+        "P_int is the pressure in the interstitial medium",
+        "ΔP_v = P_v − P_int"
+      ],
+      "answer": "ABDE",
+      "explanation": "Starling describes plasma ↔ interstitial water exchange through a capillary wall treated as a dialysis membrane. P_a is the pressure at the entrance (arteriolar end) and P_v at the exit, with P_a > P_v.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "In the Starling model, the osmotic pressure difference Δπ between plasma and the interstitial medium:",
+      "options": [
+        "Is due to the plasma proteins, since ω_int ≈ ω_i",
+        "Equals (ω_i + ω_p)·RT",
+        "Equals ω_p·RT",
+        "Draws water from the interstitial medium toward the plasma",
+        "Draws water from the plasma toward the interstitial medium"
+      ],
+      "answer": "ACD",
+      "explanation": "ω_plasma = ω_i + ω_p and ω_int ≈ ω_i, so Δπ = (ω_plasma − ω_int)RT = ω_p·RT, due to the proteins only. Δπ acts from the interstitial medium toward the plasma; it is ΔP that pushes water out of the plasma.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Under normal conditions, in the Starling model:",
+      "options": [
+        "ΔP_a ≈ 10 mmHg",
+        "ΔP_v ≈ 25 mmHg",
+        "Δπ ≈ 25 mmHg",
+        "At the venular end, water returns from the interstitial medium to the plasma",
+        "At the venular end, ΔP_v > Δπ"
+      ],
+      "answer": "CD",
+      "explanation": "Normal values: ΔP_a ≈ 40 mmHg, ΔP_v ≈ 10 mmHg, Δπ ≈ 25 mmHg. At the venular end Δπ > ΔP_v, so water goes back from the interstitial medium to the plasma; 25 mmHg is Δπ, not ΔP_v.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Under normal conditions (ΔP_a ≈ 40 mmHg, Δπ ≈ 25 mmHg), with L = 10⁻¹¹ m²·s/kg and 1 mmHg ≈ 133 Pa, the net water flux at the arteriolar end of the capillary is about:",
+      "options": [
+        "2×10⁻⁸ m/s, from the plasma to the interstitial medium",
+        "2×10⁻⁸ m/s, from the interstitial medium to the plasma",
+        "1.5×10⁻¹⁰ m/s",
+        "8.6×10⁻⁸ m/s",
+        "2×10⁻⁵ m/s"
+      ],
+      "answer": "A",
+      "explanation": "ΔP_a > Δπ, so J_net,a = L(ΔP_a − Δπ) = 10⁻¹¹ × 15 × 133 ≈ 2×10⁻⁸ m/s and water leaves the plasma. 1.5×10⁻¹⁰ forgets the mmHg → Pa conversion; 8.6×10⁻⁸ adds the pressures instead of subtracting.",
+      "page": 2,
+      "weight": 0,
+      "calc": true,
+      "mental": "40 − 25 = 15 mmHg ≈ 15 × 133 ≈ 2 000 Pa; × 10⁻¹¹ = 2×10⁻⁸ m/s. Direction: the bigger force at the arteriolar end is ΔP_a, so water goes out — this already removes B."
+    },
+    {
+      "stem": "In the Starling model, the condition J_net,a = J_net,v (no water accumulation) leads to:",
+      "options": [
+        "Δπ = (ΔP_a + ΔP_v) / 2, the mean pressure difference",
+        "Δπ = ΔP_a − ΔP_v",
+        "ΔP_a − Δπ = Δπ − ΔP_v",
+        "With ΔP_a = 40 mmHg and ΔP_v = 10 mmHg, it is satisfied for Δπ ≈ 30 mmHg",
+        "Δπ = ΔP_a + ΔP_v"
+      ],
+      "answer": "AC",
+      "explanation": "J_net,a = L(ΔP_a − Δπ) and J_net,v = L(Δπ − ΔP_v); equating them gives Δπ = (ΔP_a + ΔP_v)/2. With 40 and 10 mmHg this is 25 mmHg, not 30 (30 is the difference).",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "In a capillary, ΔP_a − Δπ > Δπ − ΔP_v. Then:",
+      "options": [
+        "Δπ is lower than the mean pressure difference (ΔP_a + ΔP_v)/2",
+        "Δπ is higher than the mean pressure difference (ΔP_a + ΔP_v)/2",
+        "The extravascular medium is hyperhydrated: edema",
+        "The extravascular medium is dehydrated",
+        "More water leaves the plasma at the arteriolar end than returns at the venular end"
+      ],
+      "answer": "ACE",
+      "explanation": "ΔP_a − Δπ > Δπ − ΔP_v means J_net,a > J_net,v and Δπ < ΔP̄: water accumulates outside the vessels, i.e. edema. Dehydration of the extravascular medium is the opposite case, Δπ > ΔP̄.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "A patient has P_a = 50 mmHg and P_v = 20 mmHg (P_int = 0 as reference) and Δπ = 25 mmHg. According to the Starling model:",
+      "options": [
+        "The mean pressure difference ΔP̄ = 30 mmHg",
+        "The mean pressure difference ΔP̄ = 35 mmHg",
+        "At the arteriolar end, the driving pressure of the net water flux is 25 mmHg",
+        "The extravascular medium becomes dehydrated",
+        "Edema forms"
+      ],
+      "answer": "BCE",
+      "explanation": "ΔP̄ = (50 + 20)/2 = 35 mmHg > Δπ = 25 mmHg, so edema forms. At the arteriolar end J_net,a = L(ΔP_a − Δπ) = L × 25 mmHg. 30 mmHg is the difference P_a − P_v, not the mean.",
+      "page": 3,
+      "weight": 0,
+      "calc": true,
+      "mental": "Mean of 50 and 20 is 35; compare with 25 → ΔP̄ > Δπ → edema, which already rules out D. Arteriolar driving pressure: 50 − 25 = 25."
+    },
+    {
+      "stem": "A patient has a plasma albumin concentration of 20 g/L (M = 40 000 g/mol), P_a = 45 mmHg, P_v = 15 mmHg, P_int = 0, 37 °C. The capillary is impermeable to albumin only. Then:",
+      "options": [
+        "Δπ ≈ 9.7 mmHg",
+        "At the venular end, water returns from the interstitial medium to the plasma",
+        "Water leaves the plasma at both ends of the capillary",
+        "ΔP̄ = 30 mmHg > Δπ, so edema forms",
+        "The reflection coefficient of the membrane for albumin is 0"
+      ],
+      "answer": "ACD",
+      "explanation": "Δπ = (0.5 mol/m³)·RT ≈ 1 288 Pa ≈ 9.7 mmHg. Both P_a = 45 and P_v = 15 exceed Δπ, so water leaves the plasma at both ends, and ΔP̄ = 30 mmHg > Δπ → edema. σ(albumin) = 1 since the wall is impermeable to it.",
+      "page": 4,
+      "weight": 3,
+      "calc": true,
+      "mental": "20/40 000 = 0.5 mol/m³; RT ≈ 2 600 Pa, so Δπ ≈ 1 300 Pa ≈ 1 300/133 ≈ 10 mmHg. P_v = 15 > 10 settles the venular direction; (45 + 15)/2 = 30."
+    },
+    {
+      "stem": "The figure shows the two forces acting on water at the arteriolar end of a capillary, under normal conditions (Starling model). About it:",
+      "options": [
+        "The ΔP arrow represents the hydrostatic pressure difference pushing water from the plasma to the interstitial medium",
+        "The Δπ arrow represents the osmotic pressure difference drawing water from the interstitial medium into the plasma",
+        "At this end ΔP_a > Δπ, so the net water flux goes from the plasma to the interstitial medium",
+        "At this end J_net,a = L(Δπ − ΔP_a)",
+        "At this end Δπ is about 40 mmHg"
+      ],
+      "answer": "ABC",
+      "explanation": "ΔP pushes water out of the plasma, Δπ (plasma proteins) pulls it back. At the arteriolar end ΔP_a ≈ 40 mmHg > Δπ ≈ 25 mmHg, so J_net,a = L(ΔP_a − Δπ) points toward the interstitial medium; 40 mmHg is ΔP_a, not Δπ.",
+      "page": 2,
+      "weight": 0,
+      "image": "s1/lessons/biophysics-of-solutions-10-g1.png"
+    },
+    {
+      "stem": "In the Starling exercise of the lesson, the pressure units are related by 1 mmHg =",
+      "options": [
+        "133 Pa",
+        "1.36 cmH₂O",
+        "13.6 cmH₂O",
+        "760 Pa",
+        "1.33 Pa"
+      ],
+      "answer": "AB",
+      "explanation": "The lesson converts 1 mmHg = 1.36 cmH₂O = 133 Pa. 13.6 cmH₂O and 1.33 Pa are off by a factor of 10 and 100; 760 relates mmHg to the atmosphere, not to Pa.",
+      "page": 4,
+      "weight": 0
+    }
+  ]
+}

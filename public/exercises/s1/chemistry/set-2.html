@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set 2 — Bohr model</title>
+<meta name="lessons" content="s1/chemistry/light-and-the-bohr-atom.pdf">
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Chemistry · Exercises</div>
+<h1>Set 2 — Bohr model</h1>
+<p class="meta">Dr Boudiaf · TD series 2, 2026-2027 · 4 exercises · solved with the lesson
+  <a href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf">Light and the Bohr atom</a> ·
+  <a href="/exercises/s1/chemistry/set-2.pdf">TD sheet</a></p>
+<ul class="toc">
+  <li><a target="_self" href="#laws">Laws used</a></li>
+  <li><a target="_self" href="#ex1">Ex. 1 · Bohr's hydrogen atom</a></li>
+  <li><a target="_self" href="#ex2">Ex. 2 · Photoelectric effect</a></li>
+  <li><a target="_self" href="#ex3">Ex. 3 · X photon</a></li>
+  <li><a target="_self" href="#ex4">Ex. 4 · Transition 2 → 6</a></li>
+</ul>
+
+<div class="box essentials" id="laws">
+  <span class="label">Laws used in this set</span>
+  <div class="law"><span class="label">Photon energy</span> <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=6">Bohr atom · p. 6</a>
+    <div class="formula">E = hν = <span class="frac"><span>hc</span><span>λ</span></span><span class="where">E in J · λ in m · ν = c/λ in Hz (<a href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=3">p. 3</a>) · 1 eV = 1.602 × 10⁻¹⁹ J</span></div></div>
+  <div class="law"><span class="label">De Broglie relation</span> <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=7">p. 7</a>
+    <div class="formula">λ = <span class="frac"><span>h</span><span>mv</span></span><span class="where">m in kg · v in m/s · λ in m</span></div></div>
+  <div class="law"><span class="label">Bohr's postulates</span> <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=11">p. 11</a>
+    <div class="formula">mvr = n <span class="frac"><span>h</span><span>2π</span></span> ;  ΔE = |E<sub>n1</sub> − E<sub>n2</sub>| = hν</div></div>
+  <div class="law"><span class="label">Stable orbit</span> <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=13">p. 13</a>
+    <div class="formula">‖F<sub>c</sub>‖ = ‖F<sub>a</sub>‖ ⇒ <span class="frac"><span>mv²</span><span>r</span></span> = <span class="frac"><span>ke²</span><span>r²</span></span><span class="where">k = 1/4πε<sub>0</sub> = 9 × 10⁹ (SI)</span></div></div>
+  <div class="law"><span class="label">Orbit radius</span> <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=14">p. 14</a>
+    <div class="formula">r<sub>n</sub> = <span class="frac"><span>h²</span><span>4kπ²me²</span></span> n² = a<sub>0</sub> n²<span class="where">a<sub>0</sub> = 0.53 Å (first Bohr radius)</span></div></div>
+  <div class="law"><span class="label">Total energy</span> <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=16">p. 15–17</a>
+    <div class="formula">E<sub>T</sub> = E<sub>c</sub> + E<sub>p</sub> = <span class="frac"><span>mv²</span><span>2</span></span> − <span class="frac"><span>ke²</span><span>r</span></span> = − <span class="frac"><span>ke²</span><span>2r</span></span> = − <span class="frac"><span>2k²π²me⁴</span><span>h²</span></span> · <span class="frac"><span>1</span><span>n²</span></span><span class="where">E<sub>n</sub> = E<sub>1</sub>/n² with E<sub>1</sub> = −13.6 eV</span></div></div>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex1">
+  <h2><span class="num">Exercise 1</span> — The hydrogen atom according to Bohr <a class="page" href="/exercises/s1/chemistry/set-2.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <ol>
+      <li>Write, for the two forces, the condition that keeps the electron on its trajectory.</li>
+      <li>Deduce the radius r of the orbit travelled by the electron.</li>
+      <li>Write the expression of the possible values of the system's total energy.</li>
+      <li>Why is the value n = 0 of the quantum number forbidden?</li>
+      <li>Calculate the energies (in eV) of the first three energy states.</li>
+      <li>Of these three states, from which is it easiest to remove the electron from the hydrogen atom?</li>
+      <li>What is the ionization energy of the hydrogen atom in its ground state?</li>
+    </ol>
+  </div>
+  <ul class="given"><li>h = 6.626 × 10⁻³⁴ J·s</li><li>m<sub>e</sub> = 9.109 × 10⁻³¹ kg</li><li>e = 1.602 × 10⁻¹⁹ C</li><li>k = 9 × 10⁹ SI</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>Two forces act on the electron: the centrifugal force and the electrostatic attraction of the nucleus. Set them equal, then combine with
+      Bohr's quantization of the angular momentum to eliminate v. Energy = kinetic + potential; once you have r<sub>n</sub>, E<sub>n</sub> follows.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>1) Equilibrium condition</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Stable orbit <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=13">p. 13</a>
+          <div class="formula">F<sub>c</sub> = <span class="frac"><span>mv²</span><span>r</span></span> (centrifugal) ;  F<sub>a</sub> = <span class="frac"><span>k(−e)(+e)</span><span>r²</span></span> (attraction)</div></div>
+        <p>For a stationary orbit the two forces cancel: the vectors add up to zero, <b>F</b><sub>a</sub> + <b>F</b><sub>c</sub> = <b>0</b>, so their magnitudes are equal.</p>
+        <div class="calc">‖F<sub>c</sub>‖ = ‖F<sub>a</sub>‖ ⇒ mv²/r = ke²/r² ⇒ mv² = ke²/r   (1)</div></li>
+    </ol>
+    <span class="answer">mv²/r = ke²/r², i.e. mv² = ke²/r</span>
+
+    <h3>2) Radius of the orbit</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Bohr's 2nd postulate <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=11">p. 11</a>
+          <div class="formula">mvr = n <span class="frac"><span>h</span><span>2π</span></span></div></div>
+        <div class="calc">m²v²r² = n²h²/4π² ⇒ mv² = n²h² / (4π²mr²)   (2)</div></li>
+      <li><div class="law"><span class="label">Law</span> Orbit radius <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=14">p. 13–14</a>
+          <div class="formula">(1) = (2) ⇒ ke²/r = n²h² / (4π²mr²)</div></div>
+        <div class="calc">r<sub>n</sub> = n² · h² / (4kπ²me²) = a<sub>0</sub> n²</div>
+        <div class="calc">a<sub>0</sub> = (6.626 × 10⁻³⁴)² / (4 × 9 × 10⁹ × π² × 9.109 × 10⁻³¹ × (1.602 × 10⁻¹⁹)²) = 5.29 × 10⁻¹¹ m = 0.529 Å</div></li>
+    </ol>
+    <span class="answer">r<sub>n</sub> = <span class="frac"><span>h²</span><span>4kπ²me²</span></span> n² = 0.529 n² Å</span>
+
+    <h3>3) Total energy</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Total energy <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=16">p. 15–16</a>
+          <div class="formula">E<sub>T</sub> = E<sub>c</sub> + E<sub>p</sub> ;  E<sub>c</sub> = mv²/2 ;  E<sub>p</sub> = −ke²/r</div></div>
+        <div class="calc">with (1), E<sub>c</sub> = ke²/2r ⇒ E<sub>T</sub> = ke²/2r − ke²/r = −ke²/2r</div>
+        <div class="calc">replace r by r<sub>n</sub>: E<sub>n</sub> = − (2k²π²me⁴ / h²) · 1/n²</div>
+        <div class="calc">E<sub>1</sub> = − 2 × (9 × 10⁹)² × π² × 9.109 × 10⁻³¹ × (1.602 × 10⁻¹⁹)⁴ / (6.626 × 10⁻³⁴)² = −2.18 × 10⁻¹⁸ J = −13.6 eV</div></li>
+    </ol>
+    <span class="answer">E<sub>n</sub> = − <span class="frac"><span>2k²π²me⁴</span><span>h²</span></span> · <span class="frac"><span>1</span><span>n²</span></span> = <span class="frac"><span>−13.6</span><span>n²</span></span> eV  (n = 1, 2, 3 …)</span>
+
+    <h3>4) Why n = 0 is forbidden</h3>
+    <p>With n = 0: r<sub>0</sub> = a<sub>0</sub> × 0² = 0 — the electron would sit on the nucleus (and mvr = 0: no orbital motion), and E = −13.6/0² is not
+      defined (→ −∞). The atom would not exist, so n is a whole number ≥ 1.</p>
+    <span class="answer">n = 0 gives r = 0 (electron in the nucleus) and an infinite energy: impossible, n ≥ 1</span>
+
+    <h3>5) The first three energy states</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Energy levels <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=17">p. 17–18</a>
+          <div class="formula">E<sub>n</sub> = −13.6 / n² (eV)</div></div>
+        <div class="calc">E<sub>1</sub> = −13.6 / 1 = −13.6 eV</div>
+        <div class="calc">E<sub>2</sub> = −13.6 / 4 = −3.40 eV</div>
+        <div class="calc">E<sub>3</sub> = −13.6 / 9 = −1.51 eV</div></li>
+    </ol>
+    <span class="answer">E<sub>1</sub> = −13.6 eV · E<sub>2</sub> = −3.40 eV · E<sub>3</sub> = −1.51 eV</span>
+
+    <h3>6) Easiest state to ionize</h3>
+    <p>Removing the electron means bringing it to E<sub>∞</sub> = 0; the energy needed is 0 − E<sub>n</sub> = 13.6/n² eV: 13.6, 3.40 and 1.51 eV.
+      The smallest is for n = 3 — the farthest orbit, where the electron is least bound.</p>
+    <span class="answer">From n = 3 (only 1.51 eV needed)</span>
+
+    <h3>7) Ionization energy from the ground state</h3>
+    <div class="calc">E<sub>i</sub> = E<sub>∞</sub> − E<sub>1</sub> = 0 − (−13.6) = 13.6 eV = 13.6 × 1.602 × 10⁻¹⁹ = 2.18 × 10⁻¹⁸ J</div>
+    <span class="answer">E<sub>i</sub> = 13.6 eV ≈ 2.18 × 10⁻¹⁸ J</span>
+    <p class="meta">With the sheet's constants the full formula gives −13.64 eV; the lesson rounds it to −13.6 eV, used everywhere below.</p>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>Forgetting the minus sign: a bound electron has a <b>negative</b> energy; E<sub>∞</sub> = 0 is the ionized state.</li>
+        <li>Thinking the lowest level is the easiest to ionize: it's the most stable, so the hardest.</li>
+        <li>Squaring n: E<sub>2</sub> = −13.6/4, not −13.6/2.</li></ul></div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex2">
+  <h2><span class="num">Exercise 2</span> — Electrons ejected from sodium <a class="page" href="/exercises/s1/chemistry/set-2.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <p>To eject electrons from a sodium metal surface, a mercury-vapour lamp emitting a line at 2537 Å is used.</p>
+    <ol>
+      <li>Calculate the energy of the incident photon.</li>
+      <li>What will be the energy of an ejected electron, given that the threshold energy needed to remove an electron from a sodium surface is 2.3 eV?</li>
+      <li>What is the nature of this energy (potential, kinetic or other)?</li>
+      <li>What is the wavelength of the wave that de Broglie's theory associates with this electron?</li>
+    </ol>
+  </div>
+  <ul class="given"><li>λ = 2537 Å = 2.537 × 10⁻⁷ m</li><li>W<sub>0</sub> = 2.3 eV</li><li>h = 6.626 × 10⁻³⁴ J·s</li><li>c = 3.0 × 10⁸ m/s</li><li>m<sub>e</sub> = 9.109 × 10⁻³¹ kg</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>Photon energy from its wavelength (convert Å to m). Part of that energy pulls the electron out of the metal (the threshold); the rest is carried by the moving
+      electron. From that energy find its speed, then use de Broglie.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>1) Energy of the photon</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Photon energy <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=6">p. 6</a>
+          <div class="formula">E = hc / λ</div></div>
+        <div class="calc">E = 6.626 × 10⁻³⁴ × 3.0 × 10⁸ / 2.537 × 10⁻⁷ = 7.84 × 10⁻¹⁹ J</div>
+        <div class="calc">E = 7.835 × 10⁻¹⁹ / 1.602 × 10⁻¹⁹ = 4.89 eV</div></li>
+    </ol>
+    <span class="answer">E ≈ 7.84 × 10⁻¹⁹ J ≈ 4.89 eV</span>
+
+    <h3>2) Energy of the ejected electron</h3>
+    <p>The photon gives all its energy to one electron: 2.3 eV are used to tear it from the metal, the remainder stays with the electron.</p>
+    <div class="calc">E<sub>c</sub> = E − W<sub>0</sub> = 4.89 − 2.3 = 2.59 eV = 2.59 × 1.602 × 10⁻¹⁹ = 4.15 × 10⁻¹⁹ J</div>
+    <span class="answer">E<sub>c</sub> ≈ 2.59 eV ≈ 4.15 × 10⁻¹⁹ J</span>
+
+    <h3>3) Nature of this energy</h3>
+    <p>The electron is free and moving away from the surface: its energy is <b>kinetic</b>, E<sub>c</sub> = ½mv².</p>
+    <span class="answer">Kinetic energy</span>
+
+    <h3>4) De Broglie wavelength</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Kinetic energy <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=15">p. 15</a>
+          <div class="formula">E<sub>c</sub> = mv²/2 ⇒ v = √(2E<sub>c</sub>/m)</div></div>
+        <div class="calc">v = √(2 × 4.151 × 10⁻¹⁹ / 9.109 × 10⁻³¹) = 9.55 × 10⁵ m/s</div></li>
+      <li><div class="law"><span class="label">Law</span> De Broglie <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=7">p. 7</a>
+          <div class="formula">λ = h / mv</div></div>
+        <div class="calc">λ = 6.626 × 10⁻³⁴ / (9.109 × 10⁻³¹ × 9.546 × 10⁵) = 7.62 × 10⁻¹⁰ m = 7.62 Å</div></li>
+    </ol>
+    <span class="answer">λ ≈ 7.62 × 10⁻¹⁰ m = 7.62 Å (v ≈ 9.55 × 10⁵ m/s)</span>
+    <div class="unsure">The threshold relation E<sub>c</sub> = hν − W<sub>0</sub> (photoelectric effect, Einstein) is not in your lesson yet — it's the standard energy balance
+      the sheet expects. The English version of the sheet drops the "2.3 eV"; it is taken from the French version.</div>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>1 Å = 10⁻¹⁰ m (not 10⁻⁹): 2537 Å = 253.7 nm.</li>
+        <li>Mixing J and eV in E − W<sub>0</sub>: convert both to the same unit first.</li>
+        <li>Using the photon's energy (4.89 eV) for the electron's speed: only what's left after the threshold becomes kinetic.</li>
+        <li>Using the photon's λ = hc/E for the electron: de Broglie uses its <b>momentum</b> mv.</li></ul></div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex3">
+  <h2><span class="num">Exercise 3</span> — An X photon ejects an inner electron <a class="page" href="/exercises/s1/chemistry/set-2.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <p>An X photon of wavelength 150 pm ejects an electron from an inner shell of an atom. The ejected electron has a speed of 2.1 × 10⁷ m/s.
+      What is the energy of the photon, and the (kinetic) energy of the electron — and its energy in the atom?</p>
+  </div>
+  <ul class="given"><li>λ = 150 pm = 1.50 × 10⁻¹⁰ m</li><li>v = 2.1 × 10⁷ m/s</li><li>m<sub>e</sub> = 9.109 × 10⁻³¹ kg</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>Photon: E = hc/λ. Ejected electron: ½mv². The difference between the two is what it cost to pull the electron out of its shell — its binding energy
+      in the atom.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Photon energy <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=6">p. 6</a>
+          <div class="formula">E = hc / λ</div></div>
+        <div class="calc">E = 6.626 × 10⁻³⁴ × 3.0 × 10⁸ / 1.50 × 10⁻¹⁰ = 1.33 × 10⁻¹⁵ J = 8.27 × 10³ eV</div></li>
+      <li><div class="law"><span class="label">Law</span> Kinetic energy <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=15">p. 15</a>
+          <div class="formula">E<sub>c</sub> = mv²/2</div></div>
+        <div class="calc">E<sub>c</sub> = ½ × 9.109 × 10⁻³¹ × (2.1 × 10⁷)² = 2.01 × 10⁻¹⁶ J = 1.25 × 10³ eV</div></li>
+      <li><p>Energy balance: the photon's energy = energy to free the electron + kinetic energy it leaves with.</p>
+        <div class="calc">E<sub>binding</sub> = E − E<sub>c</sub> = 1.325 × 10⁻¹⁵ − 2.009 × 10⁻¹⁶ = 1.12 × 10⁻¹⁵ J = 7.02 × 10³ eV</div>
+        <p>So the electron's energy in its shell was E = −1.12 × 10⁻¹⁵ J ≈ −7.02 keV (bound ⇒ negative).</p></li>
+    </ol>
+    <span class="answer">E<sub>photon</sub> ≈ 1.33 × 10⁻¹⁵ J (8.27 keV) · E<sub>c</sub> ≈ 2.01 × 10⁻¹⁶ J (1.25 keV) · energy in the atom ≈ −1.12 × 10⁻¹⁵ J (−7.02 keV)</span>
+    <div class="unsure">The question is garbled on the sheet ("its kinetic energy of the electron in the atom"). The page gives the kinetic energy of the ejected
+      electron and the electron's (binding) energy in the atom, E<sub>c</sub> − E<sub>photon</sub>. The balance E = W + E<sub>c</sub> is the same as in Ex. 2 — not
+      in the lesson yet.</div>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>1 pm = 10⁻¹² m: 150 pm = 1.5 × 10⁻¹⁰ m (= 1.5 Å).</li>
+        <li>Forgetting the ½ in ½mv².</li>
+        <li>Squaring the speed: (2.1 × 10⁷)² = 4.41 × 10¹⁴.</li></ul></div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex4">
+  <h2><span class="num">Exercise 4</span> — Absorption from the 1st to the 5th excited state <a class="page" href="/exercises/s1/chemistry/set-2.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <ol>
+      <li>Calculate the absorption energy, in eV and in J, of a transition from the first excited state to the fifth excited state of the hydrogen atom.</li>
+      <li>Represent this transition on an energy diagram.</li>
+      <li>Calculate the wavelength, and the speed associated with this wavelength.</li>
+    </ol>
+  </div>
+  <ul class="given"><li>hydrogen: E<sub>n</sub> = −13.6/n² eV</li><li>1st excited state, 5th excited state</li><li>h, c, 1 eV = 1.602 × 10⁻¹⁹ J</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>The ground state is n = 1, so the k-th excited state is n = k + 1. ΔE = E<sub>final</sub> − E<sub>initial</sub> (positive for absorption), then λ = hc/ΔE.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>1) Absorption energy</h3>
+    <ol class="steps">
+      <li><p>Ground state n = 1 ⇒ 1st excited state n = 2, 5th excited state n = 6.</p></li>
+      <li><div class="law"><span class="label">Law</span> Bohr's 3rd postulate <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=11">p. 11</a> · levels <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=17">p. 17</a>
+          <div class="formula">ΔE = |E<sub>6</sub> − E<sub>2</sub>| ;  E<sub>n</sub> = −13.6/n² eV</div></div>
+        <div class="calc">E<sub>2</sub> = −13.6/4 = −3.40 eV ;  E<sub>6</sub> = −13.6/36 = −0.378 eV</div>
+        <div class="calc">ΔE = −0.378 − (−3.40) = 3.02 eV</div>
+        <div class="calc">ΔE = 3.022 × 1.602 × 10⁻¹⁹ = 4.84 × 10⁻¹⁹ J</div></li>
+    </ol>
+    <span class="answer">ΔE ≈ 3.02 eV ≈ 4.84 × 10⁻¹⁹ J (absorbed)</span>
+
+    <h3>2) Energy diagram</h3>
+    <figure>
+      <svg viewBox="0 0 560 330" role="img" aria-label="Energy diagram of hydrogen: levels n = 1 at −13.6 eV, n = 2 at −3.40, n = 3 at −1.51, n = 4 at −0.85, n = 5 at −0.54, n = 6 at −0.38 and infinity at 0 eV; an upward arrow from n = 2 to n = 6 marks the absorption of 3.02 eV">
+        <defs><marker id="ab-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--coral)"/></marker></defs>
+        <line x1="120" y1="300" x2="120" y2="20" class="s-line" stroke-width="1.5"/>
+        <text x="110" y="16" text-anchor="end" class="s-muted" font-size="14">E (eV)</text>
+        <line x1="130" y1="24" x2="400" y2="24" class="s-line" stroke-width="2" stroke-dasharray="6 4"/><text x="410" y="22" class="s-text" font-size="15">n = ∞ · 0</text>
+        <line x1="130" y1="44" x2="400" y2="44" class="s-line" stroke-width="2.5" style="stroke:var(--coral)"/><text x="410" y="53" class="s-text" font-size="15">n = 6 · −0.38</text>
+        <line x1="130" y1="60" x2="400" y2="60" class="s-line" stroke-width="2"/><text x="410" y="73" class="s-text" font-size="15">n = 5 · −0.54</text>
+        <line x1="130" y1="78" x2="400" y2="78" class="s-line" stroke-width="2"/><text x="410" y="92" class="s-text" font-size="15">n = 4 · −0.85</text>
+        <line x1="130" y1="112" x2="400" y2="112" class="s-line" stroke-width="2"/><text x="410" y="117" class="s-text" font-size="15">n = 3 · −1.51</text>
+        <line x1="130" y1="170" x2="400" y2="170" class="s-line" stroke-width="2.5" style="stroke:var(--coral)"/><text x="410" y="175" class="s-text" font-size="15">n = 2 · −3.40</text>
+        <line x1="130" y1="290" x2="400" y2="290" class="s-line" stroke-width="2"/><text x="410" y="295" class="s-text" font-size="15">n = 1 · −13.6</text>
+        <text x="20" y="295" class="s-muted" font-size="14">ground</text>
+        <text x="20" y="175" class="s-muted" font-size="14">1st excited</text>
+        <text x="20" y="49" class="s-muted" font-size="14">5th excited</text>
+        <line x1="265" y1="168" x2="265" y2="48" class="s-line" stroke-width="3" style="stroke:var(--coral)" marker-end="url(#ab-arrow)"/>
+        <text x="275" y="140" class="s-text" font-size="15" font-weight="600">ΔE = 3.02 eV</text>
+        <text x="275" y="158" class="s-muted" font-size="14">absorption ↑</text>
+        <line x1="112" y1="235" x2="128" y2="225" class="s-line" stroke-width="1.5"/><line x1="112" y1="243" x2="128" y2="233" class="s-line" stroke-width="1.5"/>
+      </svg>
+      <figcaption>Absorption: the electron climbs from n = 2 to n = 6 (upward arrow). The scale is broken between n = 1 and n = 2, as in the lesson's diagram.</figcaption>
+    </figure>
+
+    <h3>3) Wavelength and "speed"</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Photon energy <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=6">p. 6</a>
+          <div class="formula">ΔE = hc / λ ⇒ λ = hc / ΔE</div></div>
+        <div class="calc">λ = 6.626 × 10⁻³⁴ × 3.0 × 10⁸ / 4.842 × 10⁻¹⁹ = 4.11 × 10⁻⁷ m = 411 nm (violet, visible)</div></li>
+      <li><div class="law"><span class="label">Law</span> Frequency <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=3">p. 3</a>
+          <div class="formula">ν = c / λ</div></div>
+        <div class="calc">ν = 3.0 × 10⁸ / 4.106 × 10⁻⁷ = 7.31 × 10¹⁴ Hz</div>
+        <p>The light itself travels at c = 3.0 × 10⁸ m/s.</p></li>
+    </ol>
+    <span class="answer">λ ≈ 411 nm · ν ≈ 7.31 × 10¹⁴ Hz (speed of the radiation = c = 3 × 10⁸ m/s)</span>
+    <div class="unsure">"The speed associated with this wavelength" is ambiguous. Read as the frequency ν (the usual pair λ, ν) — given above. If your teacher means the speed of
+      an electron whose de Broglie wavelength is 411 nm: v = h/(mλ) = 6.626 × 10⁻³⁴ / (9.109 × 10⁻³¹ × 4.106 × 10⁻⁷) ≈ 1.77 × 10³ m/s.</div>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>"5th excited state" is n = 6, not n = 5 (the ground state is n = 1, not an excited state).</li>
+        <li>ΔE in eV in λ = hc/ΔE: convert to joules first.</li>
+        <li>Sign: absorption ⇒ the electron goes <b>up</b>; ΔE &gt; 0 is absorbed, not emitted.</li></ul></div>
+  </details>
+</section>
+
+<footer>Exercises from "Série de TD N° 2 — Modèle de Bohr" / "Tutorial Series No. 2: Bohr Model", Faculty of Medicine, Badji Mokhtar University Annaba, 2026-2027
+  (constants as given on the sheet). Solutions written with the course's lesson (📄 = lesson PDF page); every number was computed with a script.
+  ⚠️ notes mark what the lesson doesn't cover. Check them against your TD corrections.</footer>
+</main>
+</body>
+</html>

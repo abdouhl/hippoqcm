@@ -21,5 +21,52 @@
       "s1/biophysics/biophysics-of-solutions-5.pdf"
     ],
     "pdf": "s1/biophysics/set-2.pdf"
+  },
+  {
+    "path": "s1/biophysics/set-3.html",
+    "title": "Set 3 — Biophysics of solutions: Donnan equilibrium",
+    "count": 3,
+    "lessons": [
+      "s1/biophysics/biophysics-of-solutions-3.pdf",
+      "s1/biophysics/biophysics-of-solutions-4.pdf",
+      "s1/biophysics/biophysics-of-solutions-5.pdf",
+      "s1/biophysics/biophysics-of-solutions-7.pdf",
+      "s1/biophysics/biophysics-of-solutions-8.pdf"
+    ],
+    "pdf": "s1/biophysics/set-3.pdf"
+  },
+  {
+    "path": "s1/biostatistics/set-1.html",
+    "title": "Set 1 — Descriptive statistics",
+    "count": 2,
+    "lessons": [
+      "s1/biostatistics/descriptive-statistics.pdf"
+    ],
+    "pdf": "s1/biostatistics/set-1.pdf"
+  },
+  {
+    "path": "s1/biostatistics/set-4.html",
+    "title": "Set 4 — Probabilities",
+    "count": 4,
+    "lessons": [],
+    "pdf": "s1/biostatistics/set-4.pdf"
+  },
+  {
+    "path": "s1/chemistry/set-2.html",
+    "title": "Set 2 — Bohr model",
+    "count": 4,
+    "lessons": [
+      "s1/chemistry/light-and-the-bohr-atom.pdf"
+    ],
+    "pdf": "s1/chemistry/set-2.pdf"
+  },
+  {
+    "path": "s1/chemistry/set-3.html",
+    "title": "Set 3 — Bohr model: spectra and hydrogen-like ions",
+    "count": 5,
+    "lessons": [
+      "s1/chemistry/light-and-the-bohr-atom.pdf"
+    ],
+    "pdf": "s1/chemistry/set-3.pdf"
   }
 ]

@@ -136,6 +136,8 @@ footer { margin-top: 40px; color: var(--muted); font-size: 0.85rem; border-top: 
 .formula .where { display: block; font-family: system-ui, sans-serif; font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
 .frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 2px; }
 .frac > span:first-child { border-bottom: 1px solid currentColor; padding: 0 3px; }
+.frac > span { text-indent: 0; }
+.ov { text-decoration: overline; }
 
 /* Exercise (TD) pages: public/exercises/s<N>/<module>/<set>.html */
 section.exercise { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 4px 16px 14px; margin: 22px 0; }

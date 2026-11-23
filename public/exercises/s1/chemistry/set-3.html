@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set 3 — Bohr model: spectra and hydrogen-like ions</title>
+<meta name="lessons" content="s1/chemistry/light-and-the-bohr-atom.pdf">
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Chemistry · Exercises</div>
+<h1>Set 3 — Bohr model: spectra and hydrogen-like ions</h1>
+<p class="meta">Dr Boudiaf · TD series 3, 2026-2027 · 5 exercises · solved with the lesson
+  <a href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf">Light and the Bohr atom</a> ·
+  <a href="/exercises/s1/chemistry/set-3.pdf">TD sheet</a></p>
+<p class="unsure">Your lesson stops at the energy diagram of hydrogen (p. 18). This set also uses three things the lesson doesn't teach yet:
+  the <b>spectral series</b> (Lyman, Balmer, Paschen…), <b>hydrogen-like ions</b> (Z in E<sub>n</sub> and r<sub>n</sub>) and <b>counting emission lines</b>.
+  They are marked “not in your lessons yet” where they are used; check them against your TD correction.</p>
+<ul class="toc">
+  <li><a target="_self" href="#laws">Laws used</a></li>
+  <li><a target="_self" href="#ex1">Ex. 1 · Levels, 3→2, 121.7 nm</a></li>
+  <li><a target="_self" href="#ex2">Ex. 2 · Balmer series, n₂ and n₃</a></li>
+  <li><a target="_self" href="#ex3">Ex. 3 · The B⁴⁺ ion</a></li>
+  <li><a target="_self" href="#ex4">Ex. 4 · Wavelengths, He⁺ in the Sun</a></li>
+  <li><a target="_self" href="#ex5">Ex. 5 · Absorbed or not?</a></li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<div class="box essentials" id="laws">
+  <span class="label">Laws used in this set</span>
+  <div class="law"><span class="label">Photon energy</span> <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=6">Bohr atom · p. 6</a>
+    <div class="formula">E = hν = <span class="frac"><span>hc</span><span>λ</span></span> ⇔ λ = <span class="frac"><span>hc</span><span>E</span></span><span class="where">E in J · λ in m · sheet data: h = 6.62 × 10⁻³⁴ J·s, c = 3.00 × 10⁸ m/s, 1 eV = 1.60 × 10⁻¹⁹ J, 1 nm = 10⁻⁹ m</span></div></div>
+  <div class="law"><span class="label">Transition (Bohr's postulate)</span> <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=11">p. 11</a>
+    <div class="formula">ΔE = |E<sub>n1</sub> − E<sub>n2</sub>| = hν<span class="where">going up = absorption · going down = emission</span></div></div>
+  <div class="law"><span class="label">Energy levels of hydrogen</span> <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=17">p. 16–17</a> · <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=18">diagram p. 18</a>
+    <div class="formula">E<sub>n</sub> = − <span class="frac"><span>13.6</span><span>n²</span></span> (eV)<span class="where">n = 1 ground state · n ≥ 2 excited states · n = ∞ ionized (E = 0)</span></div></div>
+  <div class="law"><span class="label">Orbit radius</span> <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=14">p. 14</a> · <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=17">a₀ p. 17</a>
+    <div class="formula">r<sub>n</sub> = a<sub>0</sub> n²<span class="where">a<sub>0</sub> = 0.53 Å (0.529 Å), the first Bohr radius</span></div></div>
+  <div class="law"><span class="label">Visible light</span> <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=4">p. 4</a>
+    <div class="formula">390 nm ≤ λ<sub>visible</sub> ≤ 760 nm<span class="where">shorter → ultraviolet · longer → infrared</span></div></div>
+  <div class="law"><span class="label">Hydrogen-like ion (not in your lessons yet)</span>
+    <div class="formula">E<sub>n</sub> = − 13.6 <span class="frac"><span>Z²</span><span>n²</span></span> (eV) ;  r<sub>n</sub> = a<sub>0</sub> <span class="frac"><span>n²</span><span>Z</span></span><span class="where">an ion with a single electron (He⁺, Li²⁺, Be³⁺, B⁴⁺…): the Bohr calculation with a nucleus of charge +Ze</span></div></div>
+  <div class="law"><span class="label">Spectral series (not in your lessons yet)</span>
+    <div class="formula">lower level n = 1 Lyman · 2 Balmer · 3 Paschen · 4 Brackett<span class="where">1st line = from the next level (n + 1) · last line (limit) = from n = ∞</span></div></div>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex1">
+  <h2><span class="num">Exercise 1</span> — Energy levels of hydrogen <a class="page" href="/exercises/s1/chemistry/set-3.pdf#page=1">sheet p. 1</a></h2>
+  <div class="statement">
+    <p>The energy levels of the hydrogen atom are given by E<sub>n</sub> = −13.6/n² (in eV).</p>
+    <ol>
+      <li>Calculate the values of the 4 lowest energy levels.</li>
+      <li>Place the levels on a diagram.</li>
+      <li>Which is the ground level?</li>
+      <li>Consider the transition from level 3 to level 2.
+        <ol type="a"><li>Represent this transition on the diagram. Is the radiation emitted or absorbed?</li>
+        <li>Calculate the wavelength of this transition.</li>
+        <li>To which region of light does this radiation belong?</li></ol></li>
+      <li>The atom absorbs a photon of wavelength λ = 121.7 nm.
+        <ol type="a"><li>Which transition causes this absorption?</li><li>Represent this transition on the diagram.</li></ol></li>
+    </ol>
+    <p>Data: h = 6.62 × 10⁻³⁴ J·s, c = 3.00 × 10⁸ m·s⁻¹, 1 eV = 1.60 × 10⁻¹⁹ J, 1 nm = 10⁻⁹ m.</p>
+  </div>
+  <ul class="given"><li>E<sub>n</sub> = −13.6/n² eV</li><li>transition 3 → 2</li><li>λ = 121.7 nm absorbed</li></ul>
+  <details class="hint"><summary>Hint</summary><p>Put n = 1, 2, 3, 4 into the formula. A transition to a <b>lower</b> level releases energy. For the wavelength, compute ΔE in joules, then λ = hc/ΔE. For 5, compute the photon's energy in eV and look for the two levels whose energy difference matches it.</p></details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>1) The four lowest levels</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Energy levels <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=17">p. 17</a>
+          <div class="formula">E<sub>n</sub> = − 13.6 / n² (eV)</div></div>
+        <div class="calc">E<sub>1</sub> = −13.6/1 = −13.6 eV</div>
+        <div class="calc">E<sub>2</sub> = −13.6/4 = −3.40 eV</div>
+        <div class="calc">E<sub>3</sub> = −13.6/9 = −1.51 eV</div>
+        <div class="calc">E<sub>4</sub> = −13.6/16 = −0.85 eV</div></li>
+    </ol>
+    <span class="answer">E₁ = −13.6 eV · E₂ = −3.40 eV · E₃ = −1.51 eV · E₄ = −0.85 eV</span>
+    <h3>2) Diagram (with the transitions of 4a and 5b)</h3>
+    <figure><svg viewBox="0 0 560 353" role="img" aria-label="Energy diagram of hydrogen, levels n=1 to 4: emission 3 to 2 and absorption 1 to 2"><line x1="70" y1="341" x2="70" y2="18" class="s-line" stroke-width="1.5"/><polygon points="70,10 65,20 75,20" style="fill:var(--text)"/><text x="78" y="22" class="s-muted" font-size="13">E<tspan font-size="10" dy="3">n</tspan><tspan dy="-3"> (eV)</tspan></text><line x1="70" y1="327.6" x2="450" y2="327.6" class="s-line" stroke-width="1.5"/><text x="64" y="331.6" text-anchor="end" class="s-text" font-size="12">−13.60</text><text x="456" y="331.6" class="s-text" font-size="13">n = 1</text><line x1="70" y1="183.8" x2="450" y2="183.8" class="s-line" stroke-width="1.5"/><text x="64" y="187.8" text-anchor="end" class="s-text" font-size="12">−3.40</text><text x="456" y="187.8" class="s-text" font-size="13">n = 2</text><line x1="70" y1="135.9" x2="450" y2="135.9" class="s-line" stroke-width="1.5"/><text x="64" y="139.9" text-anchor="end" class="s-text" font-size="12">−1.51</text><text x="456" y="139.9" class="s-text" font-size="13">n = 3</text><line x1="70" y1="111.9" x2="450" y2="111.9" class="s-line" stroke-width="1.5"/><text x="64" y="115.9" text-anchor="end" class="s-text" font-size="12">−0.85</text><text x="456" y="115.9" class="s-text" font-size="13">n = 4</text><line x1="70" y1="40.0" x2="450" y2="40.0" class="s-line" stroke-width="1.5"/><text x="64" y="44.0" text-anchor="end" class="s-text" font-size="12">0</text><text x="456" y="44.0" class="s-text" font-size="13">n = ∞</text><line x1="150" y1="135.9" x2="150" y2="174.8" style="stroke:var(--coral)" stroke-width="2.5"/><polygon points="150,183.8 144,174.8 156,174.8" style="fill:var(--coral)"/><text x="158" y="163.9" font-size="12" style="fill:var(--coral)" font-family="system-ui, sans-serif">3→2: emission, 657 nm</text><line x1="300" y1="327.6" x2="300" y2="192.8" style="stroke:var(--ok)" stroke-width="2.5"/><polygon points="300,183.8 294,192.8 306,192.8" style="fill:var(--ok)"/><text x="308" y="259.7" font-size="12" style="fill:var(--ok)" font-family="system-ui, sans-serif">1→2: absorption, 121.7 nm</text></svg><figcaption>Energy scale squeezed toward the top, like the lesson's diagram (<a href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=18">p. 18</a>). Red = emission (down), green = absorption (up).</figcaption></figure>
+    <h3>3) Ground level</h3>
+    <p>The ground level is the lowest one (the most stable): <b>n = 1</b>, E₁ = −13.6 eV.</p>
+    <span class="answer">Ground state: n = 1 (E₁ = −13.6 eV)</span>
+    <h3>4) Transition 3 → 2</h3>
+    <ol class="steps">
+      <li><p>a) The electron goes from n = 3 (−1.51 eV) <b>down</b> to n = 2 (−3.40 eV): the atom loses energy, so a photon is <b>emitted</b> (red arrow).</p></li>
+      <li><div class="law"><span class="label">Law</span> Transition <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=11">p. 11</a> · photon energy <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=6">p. 6</a>
+          <div class="formula">ΔE = |E<sub>3</sub> − E<sub>2</sub>| = <span class="frac"><span>hc</span><span>λ</span></span></div></div>
+        <div class="calc">ΔE = |−1.51 − (−3.40)| = 13.6 × (1/4 − 1/9) = 1.89 eV</div>
+        <div class="calc">ΔE = 1.89 × 1.60 × 10⁻¹⁹ = 3.02 × 10⁻¹⁹ J</div>
+        <div class="calc">λ = <span class="frac"><span>6.62 × 10⁻³⁴ × 3.00 × 10⁸</span><span>3.02 × 10⁻¹⁹</span></span> = 6.57 × 10⁻⁷ m = 657 nm</div></li>
+      <li><div class="law"><span class="label">Law</span> Visible spectrum <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=4">p. 4</a>
+          <div class="formula">390 nm ≤ λ ≤ 760 nm</div></div>
+        <p>c) 390 &lt; 657 &lt; 760 nm, so the radiation is <b>visible</b> (red).</p></li>
+    </ol>
+    <span class="answer">a) emitted · b) λ = 657 nm · c) visible light (red)</span>
+    <h3>5) Absorption of λ = 121.7 nm</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Photon energy <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=6">p. 6</a>
+          <div class="formula">E = hc / λ</div></div>
+        <div class="calc">E = <span class="frac"><span>6.62 × 10⁻³⁴ × 3.00 × 10⁸</span><span>121.7 × 10⁻⁹</span></span> = 1.63 × 10⁻¹⁸ J = <span class="frac"><span>1.63 × 10⁻¹⁸</span><span>1.60 × 10⁻¹⁹</span></span> = 10.2 eV</div></li>
+      <li><p>The atom starts in its ground state (n = 1). After absorbing the photon:</p>
+        <div class="calc">E<sub>final</sub> = E<sub>1</sub> + 10.2 = −13.6 + 10.2 = −3.40 eV = E<sub>2</sub></div>
+        <div class="calc">Check: E<sub>2</sub> − E<sub>1</sub> = −3.40 + 13.6 = 10.2 eV ✓</div></li>
+    </ol>
+    <span class="answer">a) transition n = 1 → n = 2 (absorption) · b) green arrow on the diagram</span>
+    <div class="box trap"><span class="label">Trap</span> Putting ΔE in eV directly into λ = hc/ΔE (convert to J first, × 1.60 × 10⁻¹⁹). Writing λ in m and comparing it to the visible range in nm. Calling 3 → 2 an absorption: going <b>down</b> = emission.</div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex2">
+  <h2><span class="num">Exercise 2</span> — Hydrogen: lines, Balmer series, unknown levels <a class="page" href="/exercises/s1/chemistry/set-3.pdf#page=1">sheet p. 1</a></h2>
+  <div class="statement">
+    <p>We study a hydrogen atom using the Bohr model.</p>
+    <ol>
+      <li>The hydrogen atom is excited to level n = 5:
+        <ol type="a"><li>How many lines can be emitted when it returns to the ground state?</li><li>What is the radius of the ground-state orbit?</li></ol></li>
+      <li>Calculate the wavelength and the energy of the first four lines and of the last line of the Balmer series.</li>
+      <li>The atom, in its first excited state (n₁), absorbs a photon of wavelength λ₁ = 410 nm and reaches a level n₂. Then, going from n₂ to a level n₃, it emits radiation of energy 0.472 eV. Find n₂ and n₃.</li>
+    </ol>
+  </div>
+  <ul class="given"><li>excited level n = 5</li><li>Balmer: lower level n = 2</li><li>n₁ = 2 (1st excited state)</li><li>λ₁ = 410 nm</li><li>emitted: 0.472 eV</li></ul>
+  <details class="hint"><summary>Hint</summary><p>1a) Count every possible jump downward between levels 5, 4, 3, 2, 1. 2) Balmer lines end on n = 2: the first ones come from n = 3, 4, 5, 6, the last from n = ∞. 3) Add the photon's energy to E₂ to find E<sub>n₂</sub>, then subtract 0.472 eV to find E<sub>n₃</sub>; turn each energy back into n with n² = 13.6/|E|.</p></details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>1a) Number of emitted lines from n = 5</h3>
+    <p class="unsure">Counting the lines is not in your lessons yet. Each pair of levels between 1 and n gives one line, so the count is n(n − 1)/2.</p>
+    <ol class="steps">
+      <li><p>The electron can come down directly or by steps. Each pair of levels (upper → lower) gives one line:</p>
+        <div class="calc">from 5: 5→4, 5→3, 5→2, 5→1 (4) · from 4: 4→3, 4→2, 4→1 (3) · from 3: 3→2, 3→1 (2) · from 2: 2→1 (1)</div>
+        <div class="calc">N = 4 + 3 + 2 + 1 = <span class="frac"><span>5 × 4</span><span>2</span></span> = 10 lines</div></li>
+    </ol>
+    <span class="answer">10 lines</span>
+    <h3>1b) Radius of the ground-state orbit</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Orbit radius <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=14">p. 14</a>
+          <div class="formula">r<sub>n</sub> = a<sub>0</sub> n²</div></div>
+        <div class="calc">r<sub>1</sub> = a<sub>0</sub> × 1² = 0.53 Å = 0.53 × 10⁻¹⁰ m</div></li>
+    </ol>
+    <span class="answer">r₁ = a₀ = 0.53 Å (the lesson gives 0.529 Å, p. 17)</span>
+    <h3>2) Balmer series</h3>
+    <p class="unsure">The series names are not in your lessons yet. The Balmer series is the set of lines that end on n = 2.</p>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Transition + photon energy <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=11">p. 11</a>
+          <div class="formula">ΔE = 13.6 (<span class="frac"><span>1</span><span>2²</span></span> − <span class="frac"><span>1</span><span>n²</span></span>) eV ;  λ = <span class="frac"><span>hc</span><span>ΔE</span></span></div></div>
+        <div class="calc">1st line, 3→2: ΔE = 13.6 × (1/4 − 1/9) = 1.89 eV = 3.02 × 10⁻¹⁹ J → λ = 1.986 × 10⁻²⁵ / 3.02 × 10⁻¹⁹ = 657 nm</div>
+        <div class="calc">2nd line, 4→2: ΔE = 13.6 × (1/4 − 1/16) = 2.55 eV = 4.08 × 10⁻¹⁹ J → λ = 487 nm</div>
+        <div class="calc">3rd line, 5→2: ΔE = 13.6 × (1/4 − 1/25) = 2.86 eV = 4.57 × 10⁻¹⁹ J → λ = 435 nm</div>
+        <div class="calc">4th line, 6→2: ΔE = 13.6 × (1/4 − 1/36) = 3.02 eV = 4.84 × 10⁻¹⁹ J → λ = 411 nm</div>
+        <div class="calc">last line, ∞→2: ΔE = 13.6 × 1/4 = 3.40 eV = 5.44 × 10⁻¹⁹ J → λ = 365 nm</div></li>
+    </ol>
+    <div class="table-wrap"><table>
+      <tr><th>Line</th><th>Transition</th><th>ΔE (eV)</th><th>ΔE (J)</th><th>λ (nm)</th></tr>
+      <tr><td>1st</td><td>3 → 2</td><td>1.89</td><td>3.02 × 10⁻¹⁹</td><td>657</td></tr>
+      <tr><td>2nd</td><td>4 → 2</td><td>2.55</td><td>4.08 × 10⁻¹⁹</td><td>487</td></tr>
+      <tr><td>3rd</td><td>5 → 2</td><td>2.86</td><td>4.57 × 10⁻¹⁹</td><td>435</td></tr>
+      <tr><td>4th</td><td>6 → 2</td><td>3.02</td><td>4.84 × 10⁻¹⁹</td><td>411</td></tr>
+      <tr><td>last</td><td>∞ → 2</td><td>3.40</td><td>5.44 × 10⁻¹⁹</td><td>365</td></tr>
+    </table></div>
+    <span class="answer">657, 487, 435, 411 nm (visible) and 365 nm for the last line (near UV)</span>
+    <h3>3) Finding n₂ and n₃</h3>
+    <figure><svg viewBox="0 0 560 209" role="img" aria-label="Levels n=2, 4, 6: absorption 2 to 6 then emission 6 to 4"><line x1="70" y1="197" x2="70" y2="18" class="s-line" stroke-width="1.5"/><polygon points="70,10 65,20 75,20" style="fill:var(--text)"/><text x="78" y="22" class="s-muted" font-size="13">E<tspan font-size="10" dy="3">n</tspan><tspan dy="-3"> (eV)</tspan></text><line x1="70" y1="183.8" x2="450" y2="183.8" class="s-line" stroke-width="1.5"/><text x="64" y="187.8" text-anchor="end" class="s-text" font-size="12">−3.40</text><text x="456" y="187.8" class="s-text" font-size="13">n = 2</text><line x1="70" y1="111.9" x2="450" y2="111.9" class="s-line" stroke-width="1.5"/><text x="64" y="115.9" text-anchor="end" class="s-text" font-size="12">−0.85</text><text x="456" y="115.9" class="s-text" font-size="13">n = 4</text><line x1="70" y1="87.9" x2="450" y2="87.9" class="s-line" stroke-width="1.5"/><text x="64" y="91.9" text-anchor="end" class="s-text" font-size="12">−0.38</text><text x="456" y="91.9" class="s-text" font-size="13">n = 6</text><line x1="70" y1="40.0" x2="450" y2="40.0" class="s-line" stroke-width="1.5"/><text x="64" y="44.0" text-anchor="end" class="s-text" font-size="12">0</text><text x="456" y="44.0" class="s-text" font-size="13">n = ∞</text><line x1="150" y1="183.8" x2="150" y2="96.9" style="stroke:var(--ok)" stroke-width="2.5"/><polygon points="150,87.9 144,96.9 156,96.9" style="fill:var(--ok)"/><text x="158" y="139.9" font-size="12" style="fill:var(--ok)" font-family="system-ui, sans-serif">absorbs 410 nm (+3.03 eV)</text><line x1="330" y1="87.9" x2="330" y2="102.9" style="stroke:var(--coral)" stroke-width="2.5"/><polygon points="330,111.9 324,102.9 336,102.9" style="fill:var(--coral)"/><text x="338" y="103.9" font-size="12" style="fill:var(--coral)" font-family="system-ui, sans-serif">emits 0.472 eV</text></svg></figure>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Photon energy <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=6">p. 6</a>
+          <div class="formula">E = hc / λ</div></div>
+        <div class="calc">E = <span class="frac"><span>6.62 × 10⁻³⁴ × 3.00 × 10⁸</span><span>410 × 10⁻⁹</span></span> = 4.84 × 10⁻¹⁹ J = 3.03 eV</div></li>
+      <li><div class="law"><span class="label">Law</span> Absorption: E<sub>n₂</sub> = E<sub>n₁</sub> + hν <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=11">p. 11</a>
+          <div class="formula">E<sub>n</sub> = −13.6/n² ⇒ n² = 13.6 / |E<sub>n</sub>|</div></div>
+        <div class="calc">E<sub>n₂</sub> = −3.40 + 3.03 = −0.373 eV</div>
+        <div class="calc">n₂² = 13.6 / 0.373 = 36.5 ≈ 36 ⇒ n₂ = 6 (E<sub>6</sub> = −0.378 eV)</div></li>
+      <li><p>Emission: the atom loses 0.472 eV.</p>
+        <div class="calc">E<sub>n₃</sub> = E<sub>6</sub> − 0.472 = −0.378 − 0.472 = −0.850 eV</div>
+        <div class="calc">n₃² = 13.6 / 0.850 = 16.0 ⇒ n₃ = 4</div></li>
+      <li><p>Check: 410 nm is exactly the 4th Balmer line (6 → 2) found in question 2 ✓</p></li>
+    </ol>
+    <span class="answer">n₂ = 6 · n₃ = 4</span>
+    <div class="box trap"><span class="label">Trap</span> Answering 4 lines for 1a (only the direct jumps 5→4, 5→3, 5→2, 5→1). Taking n₁ = 1: the “1st excited state” is n = 2. In question 3, use the exact E₆ = −0.378 eV for the next step, not the rounded −0.373 eV.</div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex3">
+  <h2><span class="num">Exercise 3</span> — The hydrogen-like ion of boron <a class="page" href="/exercises/s1/chemistry/set-3.pdf#page=1">sheet p. 1</a></h2>
+  <div class="statement">
+    <p>We are interested in the hydrogen-like ion of boron (<sub>5</sub>B).</p>
+    <ol>
+      <li>What is the hydrogen-like ion of boron?</li>
+      <li>What is the wavelength of the 2nd line of the Paschen series? Calculate the energy emitted during this transition.</li>
+      <li>What is the ionization energy of this ion in eV?</li>
+      <li>The electron of this ion, in a level n, absorbs a photon of wavelength 19.5 nm and reaches level 2n. What is the radius of the orbit of level n?</li>
+      <li>Its electron is on a level n₁ of energy −37.8 eV. It absorbs radiation and reaches a level n₂ whose radius is 6.77 Å. Find n₁ and n₂, and λ<sub>n₁,n₂</sub>.</li>
+    </ol>
+  </div>
+  <ul class="given"><li>Z = 5</li><li>Paschen: lower level n = 3</li><li>λ = 19.5 nm (n → 2n)</li><li>E<sub>n₁</sub> = −37.8 eV</li><li>r<sub>n₂</sub> = 6.77 Å</li></ul>
+  <details class="hint"><summary>Hint</summary><p>A hydrogen-like ion keeps only one electron, so the Bohr formulas apply with the nucleus charge Z: energies × Z², radii ÷ Z. The 2nd Paschen line is 5 → 3. In 4, write ΔE between n and 2n as a function of n and solve for n.</p></details>
+  <details class="solution"><summary>Solution</summary>
+    <p class="unsure">Hydrogen-like ions are not in your lessons yet. The formulas E<sub>n</sub> = −13.6 Z²/n² and r<sub>n</sub> = a<sub>0</sub>n²/Z are the Bohr model with a nucleus of charge +Ze (standard first-year chemistry).</p>
+    <h3>1) The ion</h3>
+    <p>Boron has Z = 5, so 5 electrons. Its hydrogen-like ion keeps only <b>one</b> electron, so it has lost 4: <b>B⁴⁺</b>.</p>
+    <span class="answer">B⁴⁺ (Z = 5, one electron)</span>
+    <h3>2) 2nd line of the Paschen series</h3>
+    <ol class="steps">
+      <li><p>Paschen = lines that end on n = 3. 1st line: 4 → 3; <b>2nd line: 5 → 3</b>.</p>
+        <div class="law"><span class="label">Law</span> Hydrogen-like levels + transition <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=11">p. 11</a>
+          <div class="formula">ΔE = 13.6 Z² (<span class="frac"><span>1</span><span>3²</span></span> − <span class="frac"><span>1</span><span>5²</span></span>)</div></div>
+        <div class="calc">ΔE = 13.6 × 25 × (1/9 − 1/25) = 340 × 0.0711 = 24.2 eV</div>
+        <div class="calc">ΔE = 24.2 × 1.60 × 10⁻¹⁹ = 3.87 × 10⁻¹⁸ J</div>
+        <div class="calc">λ = <span class="frac"><span>6.62 × 10⁻³⁴ × 3.00 × 10⁸</span><span>3.87 × 10⁻¹⁸</span></span> = 5.13 × 10⁻⁸ m = 51.3 nm</div></li>
+    </ol>
+    <span class="answer">λ = 51.3 nm · emitted energy ΔE = 24.2 eV = 3.87 × 10⁻¹⁸ J</span>
+    <h3>3) Ionization energy</h3>
+    <ol class="steps">
+      <li><p>Ionization takes the electron from the ground state (n = 1) to n = ∞ (E = 0).</p>
+        <div class="calc">E<sub>i</sub> = 0 − E<sub>1</sub> = 13.6 × Z² = 13.6 × 25 = 340 eV</div></li>
+    </ol>
+    <span class="answer">E<sub>i</sub> = 340 eV (25 times that of hydrogen)</span>
+    <h3>4) Level n, then the radius r<sub>n</sub></h3>
+    <ol class="steps">
+      <li><div class="calc">E<sub>photon</sub> = <span class="frac"><span>6.62 × 10⁻³⁴ × 3.00 × 10⁸</span><span>19.5 × 10⁻⁹</span></span> = 1.02 × 10⁻¹⁷ J = 63.7 eV</div></li>
+      <li><div class="calc">ΔE(n → 2n) = 13.6 Z² (<span class="frac"><span>1</span><span>n²</span></span> − <span class="frac"><span>1</span><span>4n²</span></span>) = 340 × <span class="frac"><span>3</span><span>4n²</span></span> = <span class="frac"><span>255</span><span>n²</span></span></div>
+        <div class="calc">n² = 255 / 63.7 = 4.01 ⇒ n = 2 (the electron goes 2 → 4)</div></li>
+      <li><div class="law"><span class="label">Law</span> Radius, with Z
+          <div class="formula">r<sub>n</sub> = a<sub>0</sub> n² / Z</div></div>
+        <div class="calc">r<sub>2</sub> = 0.53 × 2² / 5 = 0.424 Å</div></li>
+    </ol>
+    <span class="answer">n = 2 · r₂ = 0.424 Å</span>
+    <h3>5) n₁, n₂ and λ<sub>n₁,n₂</sub></h3>
+    <ol class="steps">
+      <li><div class="calc">E<sub>n₁</sub> = −340 / n₁² = −37.8 ⇒ n₁² = 340 / 37.8 = 8.99 ⇒ n₁ = 3</div></li>
+      <li><div class="calc">r<sub>n₂</sub> = 0.53 × n₂² / 5 = 6.77 ⇒ n₂² = 6.77 × 5 / 0.53 = 63.9 ⇒ n₂ = 8</div></li>
+      <li><div class="calc">ΔE = 340 × (1/9 − 1/64) = 32.5 eV = 5.19 × 10⁻¹⁸ J</div>
+        <div class="calc">λ<sub>3,8</sub> = <span class="frac"><span>1.986 × 10⁻²⁵</span><span>5.19 × 10⁻¹⁸</span></span> = 3.82 × 10⁻⁸ m = 38.2 nm</div></li>
+    </ol>
+    <span class="answer">n₁ = 3 · n₂ = 8 · λ = 38.2 nm</span>
+    <div class="box trap"><span class="label">Trap</span> Forgetting Z² in the energy (that gives hydrogen's values, 25 times too small) or forgetting the ÷ Z in the radius. Taking 4 → 3 as the 2nd Paschen line: that is the 1st one. Writing B⁵⁺: that would have no electron left.</div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex4">
+  <h2><span class="num">Exercise 4</span> — Wavelengths, Balmer extremes, an ion in the Sun <a class="page" href="/exercises/s1/chemistry/set-3.pdf#page=1">sheet p. 1</a></h2>
+  <div class="statement">
+    <ol>
+      <li>Calculate the wavelengths of the transitions λ<sub>4→3</sub> and λ<sub>5→2</sub> of the hydrogen atom.</li>
+      <li>Calculate the extreme wavelengths of the Balmer series of the hydrogen atom. Represent these two electronic transitions on a diagram graduated in energy.</li>
+      <li>The study of sunlight's spectrum reveals a series whose arrival level is n = 4, and one of its extreme wavelengths (the shortest) is λ<sub>∞</sub> = 364.55 nm. Find Z and the ionized element <sub>Z</sub>X⁺ present in the Sun to which this series can be attributed.</li>
+    </ol>
+  </div>
+  <ul class="given"><li>transitions 4 → 3 and 5 → 2 (H)</li><li>Balmer: arrival level n = 2</li><li>series ending on n = 4: λ<sub>min</sub> = 364.55 nm</li></ul>
+  <details class="hint"><summary>Hint</summary><p>The longest wavelength of a series comes from the smallest energy jump (the next level down), and the shortest from the largest jump (from ∞). In 3, the shortest line is ∞ → 4: write its energy with Z² and solve for Z.</p></details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>1) λ<sub>4→3</sub> and λ<sub>5→2</sub></h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Transition + photon energy <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=11">p. 11</a> · <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=6">p. 6</a>
+          <div class="formula">ΔE = |E<sub>n1</sub> − E<sub>n2</sub>| ;  λ = hc / ΔE</div></div>
+        <div class="calc">4→3: ΔE = 13.6 × (1/9 − 1/16) = 0.661 eV = 1.06 × 10⁻¹⁹ J → λ = 1.986 × 10⁻²⁵ / 1.06 × 10⁻¹⁹ = 1.88 × 10⁻⁶ m = 1878 nm (infrared)</div>
+        <div class="calc">5→2: ΔE = 13.6 × (1/4 − 1/25) = 2.86 eV = 4.57 × 10⁻¹⁹ J → λ = 435 nm (visible, violet-blue)</div></li>
+    </ol>
+    <span class="answer">λ<sub>4→3</sub> ≈ 1878 nm (1.88 µm) · λ<sub>5→2</sub> = 435 nm</span>
+    <h3>2) Extreme wavelengths of the Balmer series</h3>
+    <ol class="steps">
+      <li><p>Balmer lines end on n = 2 (not in your lessons yet, see Ex. 2). The <b>longest</b> λ is the smallest jump (3 → 2); the <b>shortest</b> λ is the largest jump (∞ → 2).</p>
+        <div class="calc">λ<sub>max</sub> = λ<sub>3→2</sub>: ΔE = 1.89 eV → λ = 657 nm</div>
+        <div class="calc">λ<sub>min</sub> = λ<sub>∞→2</sub>: ΔE = 3.40 eV = 5.44 × 10⁻¹⁹ J → λ = 365 nm</div></li>
+    </ol>
+    <figure><svg viewBox="0 0 560 209" role="img" aria-label="Balmer series extremes: 3 to 2 (longest wavelength) and infinity to 2 (shortest)"><line x1="70" y1="197" x2="70" y2="18" class="s-line" stroke-width="1.5"/><polygon points="70,10 65,20 75,20" style="fill:var(--text)"/><text x="78" y="22" class="s-muted" font-size="13">E<tspan font-size="10" dy="3">n</tspan><tspan dy="-3"> (eV)</tspan></text><line x1="70" y1="183.8" x2="450" y2="183.8" class="s-line" stroke-width="1.5"/><text x="64" y="187.8" text-anchor="end" class="s-text" font-size="12">−3.40</text><text x="456" y="187.8" class="s-text" font-size="13">n = 2</text><line x1="70" y1="135.9" x2="450" y2="135.9" class="s-line" stroke-width="1.5"/><text x="64" y="139.9" text-anchor="end" class="s-text" font-size="12">−1.51</text><text x="456" y="139.9" class="s-text" font-size="13">n = 3</text><line x1="70" y1="111.9" x2="450" y2="111.9" class="s-line" stroke-width="1.5"/><text x="64" y="115.9" text-anchor="end" class="s-text" font-size="12">−0.85</text><text x="456" y="115.9" class="s-text" font-size="13">n = 4</text><line x1="70" y1="40.0" x2="450" y2="40.0" class="s-line" stroke-width="1.5"/><text x="64" y="44.0" text-anchor="end" class="s-text" font-size="12">0</text><text x="456" y="44.0" class="s-text" font-size="13">n = ∞</text><line x1="130" y1="135.9" x2="130" y2="174.8" style="stroke:var(--coral)" stroke-width="2.5"/><polygon points="130,183.8 124,174.8 136,174.8" style="fill:var(--coral)"/><text x="138" y="167.3" font-size="12" style="fill:var(--coral)" font-family="system-ui, sans-serif">λ max = 657 nm</text><line x1="330" y1="40.0" x2="330" y2="174.8" style="stroke:var(--coral)" stroke-width="2.5"/><polygon points="330,183.8 324,174.8 336,174.8" style="fill:var(--coral)"/><text x="338" y="167.3" font-size="12" style="fill:var(--coral)" font-family="system-ui, sans-serif">λ min = 365 nm</text></svg><figcaption>Both are emissions (arrows down), drawn on the upper part of the hydrogen energy diagram (<a href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=18">lesson p. 18</a>).</figcaption></figure>
+    <span class="answer">λ<sub>max</sub> = 657 nm (3 → 2) · λ<sub>min</sub> = 365 nm (∞ → 2)</span>
+    <h3>3) Z of the ion in the Sun</h3>
+    <ol class="steps">
+      <li><p>The series ends on n = 4; its shortest line is ∞ → 4. For a hydrogen-like ion (not in your lessons yet):</p>
+        <div class="calc">E = <span class="frac"><span>hc</span><span>λ</span></span> = <span class="frac"><span>6.62 × 10⁻³⁴ × 3.00 × 10⁸</span><span>364.55 × 10⁻⁹</span></span> = 5.45 × 10⁻¹⁹ J = 3.40 eV</div>
+        <div class="calc">E = 13.6 × Z² × (<span class="frac"><span>1</span><span>4²</span></span> − 0) ⇒ Z² = <span class="frac"><span>16 × 3.40</span><span>13.6</span></span> = 4.01 ⇒ Z = 2</div></li>
+      <li><p>Z = 2 is helium. With one electron, it is the ion He⁺, which fits <sub>Z</sub>X⁺. Hydrogen's own ∞ → 4 line would be at 4 × 364.55 = 1458 nm, so this series can't come from hydrogen.</p></li>
+    </ol>
+    <span class="answer">Z = 2 → He⁺ (helium ion)</span>
+    <div class="box trap"><span class="label">Trap</span> Swapping the extremes: the largest energy jump gives the <b>shortest</b> wavelength. In 3, forgetting Z² and concluding it is hydrogen.</div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex5">
+  <h2><span class="num">Exercise 5</span> — Absorbed, not absorbed, or ionized? <a class="page" href="/exercises/s1/chemistry/set-3.pdf#page=1">sheet p. 1</a></h2>
+  <div class="statement">
+    <ol>
+      <li>A hydrogen atom is in its ground state. It is irradiated with a monochromatic beam of wavelength λ<sub>a</sub> = 97.25 nm. The experiment is repeated with λ<sub>b</sub> = 101.33 nm, then λ<sub>c</sub> = 82.67 nm. What happens in each case?</li>
+      <li>The absorption spectrum of a hydrogen-like ion shows two wavelengths, 6.4 nm and 7.6 nm. What are the corresponding energies? What is the atomic number of this hydrogen-like ion, and which species is it?</li>
+    </ol>
+  </div>
+  <ul class="given"><li>H in ground state (n = 1, E₁ = −13.6 eV)</li><li>λ<sub>a</sub> = 97.25 nm · λ<sub>b</sub> = 101.33 nm · λ<sub>c</sub> = 82.67 nm</li><li>ion: 6.4 nm and 7.6 nm absorbed</li></ul>
+  <details class="hint"><summary>Hint</summary><p>A photon is absorbed only if its energy lands the electron <b>exactly</b> on a level (or beyond 13.6 eV, which ionizes the atom). For each λ: E = hc/λ in eV, then E₁ + E, and check whether it equals a level −13.6/n².</p></details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>1) The three beams</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Photon energy <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=6">p. 6</a> · transition <a class="page" href="/lessons/s1/chemistry/light-and-the-bohr-atom.pdf#page=11">p. 11</a>
+          <div class="formula">E = hc/λ ; absorbed only if E<sub>1</sub> + E = E<sub>n</sub> = −13.6/n²</div></div>
+        <div class="calc">Possible jumps from n = 1: E₂ − E₁ = 10.20 eV · E₃ − E₁ = 12.09 eV · E₄ − E₁ = 12.75 eV · E₅ − E₁ = 13.06 eV · E<sub>∞</sub> − E₁ = 13.6 eV</div></li>
+      <li><p><b>λ<sub>a</sub> = 97.25 nm</b></p>
+        <div class="calc">E = 1.986 × 10⁻²⁵ / 97.25 × 10⁻⁹ = 2.04 × 10⁻¹⁸ J = 12.76 eV</div>
+        <div class="calc">E₁ + E = −13.6 + 12.76 = −0.837 eV ⇒ n² = 13.6/0.837 = 16.3 ≈ 16 ⇒ n = 4 (E₄ = −0.85 eV)</div>
+        <p>The energy matches 1 → 4 (12.75 eV, the small gap is rounding): the photon is <b>absorbed</b> and the atom is excited to n = 4.</p></li>
+      <li><p><b>λ<sub>b</sub> = 101.33 nm</b></p>
+        <div class="calc">E = 1.986 × 10⁻²⁵ / 101.33 × 10⁻⁹ = 1.96 × 10⁻¹⁸ J = 12.25 eV</div>
+        <div class="calc">E₁ + E = −13.6 + 12.25 = −1.35 eV ⇒ n² = 13.6/1.35 = 10.1 → n = 3.17, not an integer</div>
+        <p>−1.35 eV falls between E₃ (−1.51) and E₄ (−0.85): no level. The photon is <b>not absorbed</b> and the atom stays in its ground state.</p></li>
+      <li><p><b>λ<sub>c</sub> = 82.67 nm</b></p>
+        <div class="calc">E = 1.986 × 10⁻²⁵ / 82.67 × 10⁻⁹ = 2.40 × 10⁻¹⁸ J = 15.01 eV &gt; 13.6 eV</div>
+        <div class="calc">E<sub>c</sub> (electron) = 15.01 − 13.6 = 1.41 eV</div>
+        <p>The photon carries more than the ionization energy: the atom is <b>ionized</b> (H → H⁺ + e⁻). The extra 1.41 eV becomes the ejected electron's kinetic energy.</p></li>
+    </ol>
+    <span class="answer">λ<sub>a</sub>: absorbed, 1 → 4 · λ<sub>b</sub>: not absorbed · λ<sub>c</sub>: ionization, electron leaves with E<sub>c</sub> ≈ 1.41 eV</span>
+    <h3>2) The hydrogen-like ion</h3>
+    <ol class="steps">
+      <li><div class="calc">E(6.4 nm) = 1.986 × 10⁻²⁵ / 6.4 × 10⁻⁹ = 3.10 × 10⁻¹⁷ J = 194 eV</div>
+        <div class="calc">E(7.6 nm) = 1.986 × 10⁻²⁵ / 7.6 × 10⁻⁹ = 2.61 × 10⁻¹⁷ J = 163 eV</div></li>
+      <li><p>An absorption spectrum starts from the ground state (n = 1). The two lines are the first two absorptions: the smaller energy (7.6 nm) is 1 → 2, the larger (6.4 nm) is 1 → 3. For a hydrogen-like ion (not in your lessons yet), E<sub>n</sub> = −13.6 Z²/n²:</p>
+        <div class="calc">1 → 2: 163 = 13.6 Z² (1 − 1/4) = 10.2 Z² ⇒ Z² = 16.0</div>
+        <div class="calc">1 → 3: 194 = 13.6 Z² (1 − 1/9) = 12.09 Z² ⇒ Z² = 16.0 ✓</div>
+        <div class="calc">Z = 4 → beryllium, with one electron: Be³⁺</div></li>
+    </ol>
+    <p class="unsure">The sheet doesn't say which transitions the two lines are. I assumed the first two absorptions from the ground state (1 → 2 and 1 → 3), since an absorption spectrum starts from n = 1. The energies would also fit 2 → 4 and 2 → 6 with Z = 8 (O⁷⁺), but that would need the ion to start in an excited state.</p>
+    <span class="answer">E = 194 eV (6.4 nm) and 163 eV (7.6 nm) · Z = 4 → Be³⁺</span>
+    <div class="box trap"><span class="label">Trap</span> Thinking that any photon with less than 13.6 eV is absorbed: it has to match a jump <b>exactly</b>. And a photon with more than 13.6 eV is not “too strong”: it ionizes the atom, and the surplus becomes kinetic energy.</div>
+  </details>
+</section>
+
+<footer>Exercises from TD series 3 “The Bohr model” (Dr Boudiaf, 2026-2027; English version of the sheet, constants from the sheet's data). Solutions written with the lesson Light and the Bohr atom (📄 = lesson PDF page); spectral series and hydrogen-like ions are not in that lesson yet. Check them against your TD corrections.</footer>
+</main>
+</body>
+</html>

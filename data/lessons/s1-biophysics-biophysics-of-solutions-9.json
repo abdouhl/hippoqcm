@@ -1,0 +1,244 @@
+{
+  "semester": 1,
+  "module": "Biophysics",
+  "title": "Biophysics of solutions 9",
+  "pdf": "s1/biophysics/biophysics-of-solutions-9.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "About Poiseuille's formula Qᵥ = (πR⁴ / 8ηL)·ΔP for a horizontal cylindrical pipe:",
+      "options": [
+        "It is valid only for laminar flows",
+        "The volumetric flow rate Qᵥ is proportional to the viscosity η",
+        "The pressure P decreases with the distance traveled by the fluid",
+        "The pressure P increases along the direction of the flow",
+        "ΔP = P₁ − P₂ is called the pressure loss (overpressure)"
+      ],
+      "answer": "ACE",
+      "explanation": "Poiseuille's law holds only for laminar flow; ΔP = P₁ − P₂ > 0 is the pressure loss, since P decreases along the path. Qᵥ is inversely proportional to η (η is in the denominator), not proportional.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "Laminar flow in a horizontal pipe: the radius R is halved while ΔP, the length L and the viscosity η are unchanged. The volumetric flow rate Qᵥ is:",
+      "options": [
+        "Divided by 2",
+        "Divided by 4",
+        "Divided by 8",
+        "Multiplied by 16",
+        "Divided by 16"
+      ],
+      "answer": "E",
+      "explanation": "Qᵥ = πR⁴ΔP / (8ηL) varies as R⁴, so halving R gives (1/2)⁴ = 1/16 of the flow. Dividing by 4 would be an R² law; a smaller radius can only lower the flow.",
+      "page": 1,
+      "weight": 0,
+      "calc": true,
+      "mental": "Only the R⁴ factor changes: (1/2)⁴ = 1/16. A narrower pipe can't increase the flow, so 'multiplied by 16' is out straight away."
+    },
+    {
+      "stem": "About the hydraulic flow resistance R of a horizontal pipe of length L and radius R₀ (laminar flow):",
+      "options": [
+        "R is proportional to the fourth power of the radius",
+        "R = ΔP / Qᵥ",
+        "R decreases when the viscosity of the fluid increases",
+        "R = 8ηL / (πR₀⁴)",
+        "R doubles when the length of the pipe doubles"
+      ],
+      "answer": "BDE",
+      "explanation": "R = ΔP/Qᵥ = 8ηL/(πR₀⁴): it is proportional to η and L and inversely proportional to R₀⁴. So a longer pipe or a more viscous fluid raises the resistance, and a wider pipe lowers it.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "In the analogy between electricity and the biophysics of fluids:",
+      "options": [
+        "The electric current I corresponds to the pressure P",
+        "The electric current I corresponds to the volumetric flow rate Qᵥ",
+        "The electrical resistance corresponds to the viscosity η of the fluid",
+        "ΔV = V₁ − V₂ > 0 corresponds to ΔP = P₁ − P₂ > 0",
+        "Ohm's law ΔV = RI corresponds to ΔP = R·Qᵥ"
+      ],
+      "answer": "BDE",
+      "explanation": "Current I ↔ volumetric flow rate Qᵥ, potential difference ΔV ↔ pressure difference ΔP, electrical resistance ↔ hydraulic resistance R, so ΔV = RI ↔ ΔP = RQᵥ. Viscosity is only one factor inside the hydraulic resistance.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "A fluid flows in laminar regime through a horizontal pipe with a pressure loss ΔP = 600 Pa and a volumetric flow rate Qᵥ = 2×10⁻⁶ m³/s. Its hydraulic resistance is:",
+      "options": [
+        "3.3×10⁻⁹ Pa·s/m³",
+        "1.2×10⁻³ Pa·s/m³",
+        "3×10⁵ Pa·s/m³",
+        "3×10⁸ Pa·s/m³",
+        "3×10¹¹ Pa·s/m³"
+      ],
+      "answer": "D",
+      "explanation": "R = ΔP/Qᵥ = 600 / (2×10⁻⁶) = 3×10⁸ Pa·s/m³. 3.3×10⁻⁹ is the inverse ratio Qᵥ/ΔP and 1.2×10⁻³ is the product ΔP·Qᵥ.",
+      "page": 1,
+      "weight": 0,
+      "calc": true,
+      "mental": "600/2 = 300 = 3×10², and dividing by 10⁻⁶ adds 6 to the exponent: 3×10⁸. A resistance must come out large here (big ΔP over a tiny flow), which already rules out the 10⁻⁹ and 10⁻³ options."
+    },
+    {
+      "stem": "Two compartments (1) and (2), with osmolarities ω₁ and ω₂ and pressures P₁ and P₂, are separated by a membrane. The correct propositions are:",
+      "options": [
+        "If P₁ ≠ P₂, a convective flux Jc of solvent goes from the high-pressure side to the low-pressure side",
+        "If ω₁ ≠ ω₂, a diffusive flux Jd of solvent goes from the high-concentration side to the low-concentration side",
+        "If P₁ ≠ P₂, a convective flux Jc of solvent goes from the low-pressure side to the high-pressure side",
+        "A convective flux of solvent exists only if ω₁ ≠ ω₂",
+        "If ω₁ ≠ ω₂, a diffusive flux Jd of solvent goes from the low-concentration side to the high-concentration side"
+      ],
+      "answer": "AE",
+      "explanation": "A concentration difference drives a diffusive solvent flux from low to high concentration; a pressure difference drives a convective solvent flux from high to low pressure. The convective flux depends on P₁ ≠ P₂, not on the osmolarities.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "A membrane of thickness l and surface area S has Nₚ pores, cylinders of radius a and length l. The correct propositions are:",
+      "options": [
+        "The number of pores per unit surface area is p = Nₚ / S",
+        "The volumetric flow rate through one pore is qᵥ = πa⁴ΔP / (8ηl)",
+        "The total volumetric flow rate is Qᵥ = qᵥ / Nₚ",
+        "The convective permeability of the membrane is L = p·πa⁴ / (8ηl)",
+        "The total volumetric flow rate can be written Qᵥ = S·L·ΔP"
+      ],
+      "answer": "ABDE",
+      "explanation": "Each pore obeys Poiseuille, qᵥ = πa⁴ΔP/(8ηl); the Nₚ pores add up, Qᵥ = Nₚqᵥ = pSqᵥ = S·(pπa⁴/8ηl)·ΔP = SLΔP. The flows are multiplied by Nₚ, not divided.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "About the units used for convective transport:",
+      "options": [
+        "The convective flux Jc is expressed in m³/s",
+        "The convective permeability L is expressed in m/(Pa·s)",
+        "The convective permeability L is expressed in m/s",
+        "The convective flux Jc is expressed in m/s",
+        "The hydraulic flow resistance R is expressed in Pa·s/m³"
+      ],
+      "answer": "BDE",
+      "explanation": "Jc = Qᵥ/S = LΔP is in m/s, so L = Jc/ΔP is in m/(Pa·s); R = ΔP/Qᵥ is in Pa·s/m³. m³/s is the unit of the volumetric flow rate Qᵥ, and m/s is the unit of Jc, not of L.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "About a cylindrical membrane pore of radius a and length l, crossed by a fluid of viscosity η:",
+      "options": [
+        "8ηl / (πa⁴) is the hydraulic conductance of the pore",
+        "πa⁴ / (8ηl) is the hydraulic conductance of the pore",
+        "L = p·πa⁴ / (8ηl) is the hydraulic conductance per unit surface area of the membrane",
+        "8ηl / (πa⁴) is the hydraulic resistance of the pore",
+        "L is the hydraulic resistance per unit surface area of the membrane"
+      ],
+      "answer": "BCD",
+      "explanation": "8ηl/(πa⁴) is the hydraulic resistance of a pore; its inverse πa⁴/(8ηl) is the pore's hydraulic conductance, and multiplying by p gives L, the conductance per unit surface area. L is a conductance, not a resistance.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "A membrane of convective permeability L = 2×10⁻¹¹ m/(Pa·s) and surface area S = 2 cm² is subjected to a pressure difference ΔP = 5×10³ Pa. The correct propositions are:",
+      "options": [
+        "The convective flux is Jc = 2.5×10⁸ m/s",
+        "The volumetric flow rate is Qᵥ = 2×10⁻¹¹ m³/s",
+        "The convective flux is Jc = 1×10⁻⁷ m/s",
+        "The volumetric flow rate is Qᵥ = 2×10⁻⁷ m³/s",
+        "The convective flux is Jc = 4×10⁻¹⁵ m/s"
+      ],
+      "answer": "BC",
+      "explanation": "Jc = LΔP = 2×10⁻¹¹ × 5×10³ = 10⁻⁷ m/s, and Qᵥ = S·Jc = 2×10⁻⁴ m² × 10⁻⁷ = 2×10⁻¹¹ m³/s. 2×10⁻⁷ forgets to convert cm² to m²; 2.5×10⁸ divides ΔP by L.",
+      "page": 2,
+      "weight": 0,
+      "calc": true,
+      "mental": "2×5 = 10, exponents −11 + 3 = −8, so Jc = 10×10⁻⁸ = 10⁻⁷ m/s. Then 2 cm² = 2×10⁻⁴ m², times 10⁻⁷ gives 2×10⁻¹¹ m³/s. A flux of 2.5×10⁸ m/s is physically absurd, so that option is out at once."
+    },
+    {
+      "stem": "About filtration and ultrafiltration:",
+      "options": [
+        "Filtering a solution through a porous membrane makes the solvent move under a pressure gradient while the solute particles are retained",
+        "Filtration is driven by the concentration gradient of the solute",
+        "Filtration relies on the principle of sieving",
+        "Ultrafiltration uses a semi-permeable membrane with a pore diameter between 0.001 µm and 0.1 µm",
+        "Ultrafiltration uses a membrane with a pore diameter between 1 µm and 10 µm"
+      ],
+      "answer": "ACD",
+      "explanation": "Filtration is the convective solvent flux through a porous membrane: it is driven by a pressure gradient and retains the solutes (sieving). It is called ultrafiltration when the membrane is semi-permeable with pores of 0.001–0.1 µm.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "In the figure, the membrane is semi-permeable, ω₁ > ω₂, and an overpressure applied on side (1) gives P₁ > P₂ with ΔP > Δπ. The correct propositions are:",
+      "options": [
+        "The diffusive flux of water Jd goes from (2) to (1)",
+        "The net solvent flux goes from (2) to (1)",
+        "The convective flux of water Jc goes from (1) to (2)",
+        "The diffusive flux is given by Jd = L·ΔP",
+        "This situation corresponds to ultrafiltration"
+      ],
+      "answer": "ACE",
+      "explanation": "P₁ > P₂ pushes water (1) → (2) with Jc = LΔP; ω₁ > ω₂ pulls water (2) → (1) with Jd = LΔπ. Since ΔP > Δπ, Jc > Jd and the net flux follows Jc, from (1) to (2): this is ultrafiltration.",
+      "page": 2,
+      "weight": 0,
+      "image": "s1/lessons/biophysics-of-solutions-9-g1.png"
+    },
+    {
+      "stem": "Across a semi-permeable membrane, with ΔP = P₁ − P₂ and Δπ = (ω₁ − ω₂)RT, the correct propositions are:",
+      "options": [
+        "The effective filtration pressure is Peff = ΔP − Δπ",
+        "The effective filtration pressure is Peff = ΔP + Δπ",
+        "If ΔP > Δπ, then Jc > Jd",
+        "The net solvent flux is Jnet = Jc − Jd = L·Peff",
+        "The ultrafiltration rate is Q_uf = S·L·Peff"
+      ],
+      "answer": "ACDE",
+      "explanation": "The two fluxes are opposed, so Jnet = Jc − Jd = L(ΔP − Δπ) = L·Peff, and Q_uf = S·Jnet = S·L·Peff. The osmotic pressure works against the applied pressure, so it is subtracted, not added.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "A semi-permeable membrane (L = 10⁻¹² m/(Pa·s), S = 2 m²) separates two solutions with ω₁ − ω₂ = 0.1 osmol/L at 27 °C. An overpressure ΔP = P₁ − P₂ = 3.5×10⁵ Pa is applied on side (1). (R = 8.31 SI) The correct propositions are:",
+      "options": [
+        "Δπ ≈ 2.5×10⁵ Pa",
+        "The effective filtration pressure is Peff ≈ 6×10⁵ Pa",
+        "The effective filtration pressure is Peff ≈ 1×10⁵ Pa",
+        "The net solvent flux is Jnet ≈ 1×10⁻⁷ m/s",
+        "The ultrafiltration rate is Q_uf ≈ 2×10⁻⁷ m³/s"
+      ],
+      "answer": "ACDE",
+      "explanation": "Δπ = ΔωRT = 100 osmol/m³ × 8.31 × 300 ≈ 2.5×10⁵ Pa; Peff = ΔP − Δπ ≈ 1×10⁵ Pa (6×10⁵ adds them). Jnet = L·Peff ≈ 10⁻⁷ m/s and Q_uf = S·Jnet ≈ 2×10⁻⁷ m³/s.",
+      "page": 2,
+      "weight": 0,
+      "calc": true,
+      "mental": "Convert 0.1 osmol/L to 100 osmol/m³; RT ≈ 8.31 × 300 ≈ 2500, so Δπ ≈ 100 × 2500 = 2.5×10⁵ Pa. Then 3.5 − 2.5 = 1 → Peff = 10⁵ Pa, Jnet = 10⁻¹² × 10⁵ = 10⁻⁷ m/s, and ×2 m² gives 2×10⁻⁷ m³/s."
+    },
+    {
+      "stem": "Across a dialysis membrane, the net solvent flux Jnet carries a solute (s) along with it. The correct propositions are:",
+      "options": [
+        "The convective flux of solute is Jcs = Jnet·C̄s",
+        "The mean solute concentration is C̄s = C₁s + C₂s",
+        "The diffusive flux of solute is Jds = P·|ΔCs|",
+        "The diffusive flux of solute is Jds = L·ΔP",
+        "The net solute flux is the vector sum of the convective and diffusive solute fluxes"
+      ],
+      "answer": "ACE",
+      "explanation": "The solute is dragged by the solvent, Jcs = Jnet·C̄s with C̄s = (C₁s + C₂s)/2 (the mean, not the sum), and it also diffuses, Jds = P|ΔCs|; the net solute flux is Jcs + Jds (vectors). L·ΔP is the convective flux of solvent.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Across a dialysis membrane, the net solvent flux is Jnet = 2×10⁻⁶ m/s. The solute concentrations are C₁s = 40 mmol/L and C₂s = 10 mmol/L. The convective flux of solute Jcs is:",
+      "options": [
+        "1×10⁻⁴ mol·m⁻²·s⁻¹",
+        "6×10⁻⁵ mol·m⁻²·s⁻¹",
+        "5×10⁻⁵ mol·m⁻²·s⁻¹",
+        "5×10⁻⁸ mol·m⁻²·s⁻¹",
+        "8×10⁻⁸ mol·m⁻²·s⁻¹"
+      ],
+      "answer": "C",
+      "explanation": "C̄s = (40 + 10)/2 = 25 mmol/L = 25 mol/m³, so Jcs = Jnet·C̄s = 2×10⁻⁶ × 25 = 5×10⁻⁵ mol·m⁻²·s⁻¹. 1×10⁻⁴ uses the sum, 6×10⁻⁵ the difference, and 5×10⁻⁸ keeps C̄s in mol/L.",
+      "page": 3,
+      "weight": 0,
+      "calc": true,
+      "mental": "mmol/L = mol/m³, so C̄s = 25 mol/m³ with no conversion. 2 × 25 = 50 → 50×10⁻⁶ = 5×10⁻⁵."
+    }
+  ]
+}

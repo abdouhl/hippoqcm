@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set 3 — Biophysics of solutions: Donnan equilibrium</title>
+<meta name="lessons" content="s1/biophysics/biophysics-of-solutions-3.pdf s1/biophysics/biophysics-of-solutions-4.pdf s1/biophysics/biophysics-of-solutions-5.pdf s1/biophysics/biophysics-of-solutions-7.pdf s1/biophysics/biophysics-of-solutions-8.pdf">
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Biophysics · Exercises</div>
+<h1>Set 3 — Biophysics of solutions: Donnan equilibrium</h1>
+<p class="meta">Pr B. Boutabia-Chéraitia · TD 2026-2027 · 3 exercises · solved with the lessons
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-3.pdf">Solutions 3</a>,
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf">4</a>,
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-5.pdf">5</a>,
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf">7</a> and
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf">8</a> ·
+  <a href="/exercises/s1/biophysics/set-3.pdf">TD sheet</a></p>
+<ul class="toc">
+  <li><a target="_self" href="#laws">Laws used</a></li>
+  <li><a target="_self" href="#ex1">Ex. 1 · Electroneutrality</a></li>
+  <li><a target="_self" href="#ex2">Ex. 2 · Neutral macromolecule</a></li>
+  <li><a target="_self" href="#ex3">Ex. 3 · Donnan equilibrium</a></li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<div class="box essentials" id="laws">
+  <span class="label">Laws used in this set</span>
+  <div class="law"><span class="label">Equivalent concentration</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=1">Solutions 7 · p. 1</a>
+    <div class="formula">C<sub>e</sub> = |z<sub>i</sub>| C<sub>i</sub><span class="where">C<sub>e</sub> in Eq/L · C<sub>i</sub> in mol/L · 1 mol of Mg²⁺ = 2 Eq</span></div></div>
+  <div class="law"><span class="label">Electroneutrality</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=1">Solutions 7 · p. 1</a>
+    <div class="formula">C<sub>e</sub><sup>+</sup> = C<sub>e</sub><sup>−</sup> ,  C<sub>e</sub><sup>±</sup> = Σ |z<sub>i</sub>| C<sub>i</sub><sup>±</sup></div></div>
+  <div class="law"><span class="label">Osmolarity (several solutes)</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-3.pdf#page=2">Solutions 3 · p. 2</a>
+    <div class="formula">ω = Σ ω<sub>i</sub> = Σ [1 + α<sub>i</sub>(β<sub>i</sub> − 1)] C<sub>i</sub><span class="where">NaCl, KCl (α = 1, β = 2): ω = 2C · undissociated molecule: ω = C</span></div></div>
+  <div class="law"><span class="label">Osmotic pressure</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf#page=3">Solutions 4 · p. 3</a>
+    <div class="formula">Δπ = (ω<sub>2</sub> − ω<sub>1</sub>) R T<span class="where">Pa with ω in osmol/m³ and T in K · water flows toward the higher ω</span></div></div>
+  <div class="law"><span class="label">Diffusion to equilibrium</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-5.pdf#page=2">Solutions 5 · p. 2</a>
+    <div class="formula">C<sub>∞</sub> = <span class="frac"><span>C<sub>1i</sub> + C<sub>2i</sub></span><span>2</span></span><span class="where">equal volumes, no Donnan effect</span></div></div>
+  <div class="law"><span class="label">Donnan equilibrium (Gibbs-Donnan)</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=4">Solutions 7 · p. 3–4</a>
+    <div class="formula"><span class="frac"><span>1</span><span>z</span></span> ln <span class="frac"><span>[I]<sub>2</sub></span><span>[I]<sub>1</sub></span></span> = <span class="frac"><span>1</span><span>z′</span></span> ln <span class="frac"><span>[I′]<sub>2</sub></span><span>[I′]<sub>1</sub></span></span>  ⇒  <span class="frac"><span>[A⁻]<sub>2</sub></span><span>[A⁻]<sub>1</sub></span></span> = <span class="frac"><span>[B⁺]<sub>1</sub></span><span>[B⁺]<sub>2</sub></span></span><span class="where">i.e. [B⁺]<sub>1</sub>[A⁻]<sub>1</sub> = [B⁺]<sub>2</sub>[A⁻]<sub>2</sub> for a monovalent salt</span></div></div>
+  <div class="law"><span class="label">Oncotic pressure</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=1">Solutions 8 · p. 1</a>
+    <div class="formula">Δπ = Δω<sub>i</sub> RT + ω<sub>p</sub> RT<span class="where">Δω<sub>i</sub> = unequal diffusible ions · ω<sub>p</sub>RT = oncotic pressure of the macromolecule</span></div></div>
+  <div class="law"><span class="label">Nernst equation</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=3">Solutions 7 · p. 3</a>
+    <div class="formula">V<sub>2</sub> − V<sub>1</sub> = − <span class="frac"><span>RT</span><span>zF</span></span> ln <span class="frac"><span>C<sub>2</sub></span><span>C<sub>1</sub></span></span><span class="where">F = 96 500 C · z with its sign (Cl⁻: z = −1)</span></div></div>
+  <div class="law"><span class="label">Transmembrane field</span> <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=3">Solutions 7 · p. 3</a>
+    <div class="formula">E = − <span class="frac"><span>V<sub>2</sub> − V<sub>1</sub></span><span>l</span></span><span class="where">V/m · l = membrane thickness · E points from (+) to (−)</span></div></div>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex1">
+  <h2><span class="num">Exercise 1</span> — Magnesium from the electrolyte balance <a class="page" href="/exercises/s1/biophysics/set-3.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <p>The equivalent concentration of anions in an intracellular fluid is 170 mEq/L. The only cations whose concentrations are high enough to contribute
+      to the overall electrolyte balance are Na⁺ (23 g/mol), K⁺ (39 g/mol) and Mg²⁺ (24 g/mol).
+      Given that Cp<sub>Na⁺</sub> = 0.46 g/L and Cp<sub>K⁺</sub> = 4.48 g/L, calculate Cp<sub>Mg²⁺</sub>.</p>
+  </div>
+  <ul class="given"><li>C<sub>e</sub><sup>−</sup> = 170 mEq/L</li><li>Cp<sub>Na⁺</sub> = 0.46 g/L, M = 23 g/mol</li><li>Cp<sub>K⁺</sub> = 4.48 g/L, M = 39 g/mol</li><li>M<sub>Mg</sub> = 24 g/mol</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>The fluid is electrically neutral: the cations carry as many equivalents as the anions. Convert each mass concentration into mEq/L
+      (watch the valence of Mg²⁺), and Mg²⁺ supplies what is missing.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Equivalent concentration <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=1">p. 1</a>
+          <div class="formula">C = Cp / M ,  C<sub>e</sub> = |z| C</div></div>
+        <div class="calc">[Na⁺] = 0.46 / 23 = 0.020 mol/L = 20 mmol/L ⇒ C<sub>e</sub>(Na⁺) = 1 × 20 = 20 mEq/L</div>
+        <div class="calc">[K⁺] = 4.48 / 39 = 0.1149 mol/L = 114.87 mmol/L ⇒ C<sub>e</sub>(K⁺) = 114.87 mEq/L</div></li>
+      <li><div class="law"><span class="label">Law</span> Electroneutrality <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=1">p. 1</a>
+          <div class="formula">C<sub>e</sub><sup>+</sup> = C<sub>e</sub>(Na⁺) + C<sub>e</sub>(K⁺) + C<sub>e</sub>(Mg²⁺) = C<sub>e</sub><sup>−</sup></div></div>
+        <div class="calc">C<sub>e</sub>(Mg²⁺) = 170 − 20 − 114.87 = 35.13 mEq/L</div></li>
+      <li><p>Mg²⁺ has z = 2: one mole carries 2 Eq.</p>
+        <div class="calc">[Mg²⁺] = 35.13 / 2 = 17.56 mmol/L</div>
+        <div class="calc">Cp<sub>Mg²⁺</sub> = 17.56 × 10⁻³ × 24 = 0.421 g/L</div></li>
+    </ol>
+    <span class="answer">Cp<sub>Mg²⁺</sub> ≈ 0.42 g/L  (C<sub>e</sub> = 35.1 mEq/L, 17.6 mmol/L)</span>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>Forgetting z = 2 for Mg²⁺: 35.13 × 24 / 1000 = 0.84 g/L is twice the answer.</li>
+        <li>Adding the masses in g/L: electroneutrality is written in <b>equivalents</b>, never in g/L or in mol/L.</li></ul></div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex2">
+  <h2><span class="num">Exercise 2</span> — Ions and an undissociated macromolecule <a class="page" href="/exercises/s1/biophysics/set-3.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <p>Two compartments (1) and (2) have the same volume, 1 L. Compartment (1) contains 100 mmol of NaCl and 2 mmol of an undissociated macromolecule;
+      compartment (2) contains 99 mmol of KCl and 4 mmol of the same macromolecule.</p>
+    <ol>
+      <li>The two compartments are separated by a perfectly semi-permeable membrane. What is observed?</li>
+      <li>The two compartments are separated by a membrane permeable to water and to inorganic ions only. Consider in turn the ionic fluxes and the flow of water.
+        <ol type="a">
+          <li>How will the inorganic ions be distributed after an infinite time?</li>
+          <li>If this distribution is reached without any net fluid flow, can the system be in equilibrium? Why or why not?</li>
+          <li>What must be done so that the liquid levels in the two compartments stay unchanged? At the temperature of the experiment,
+            one mole of solute per litre exerts an osmotic pressure of 24 atm.</li>
+        </ol></li>
+    </ol>
+  </div>
+  <ul class="given"><li>V<sub>1</sub> = V<sub>2</sub> = 1 L</li><li>(1): NaCl 100 mmol/L + macromolecule 2 mmol/L</li><li>(2): KCl 99 mmol/L + macromolecule 4 mmol/L</li><li>macromolecule undissociated (no charge)</li><li>RT = 24 atm per osmol/L</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>1) Only water crosses: compare the total osmolarities. 2) The macromolecule is not charged, so there is no Donnan effect: each ion simply diffuses until
+      its concentration is the same on both sides. Then recompute the osmolarities — what is still unequal? The pressure that stops water is the osmotic pressure
+      difference, applied on the side water goes to.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>1) Perfectly semi-permeable membrane</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Osmolarity <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-3.pdf#page=2">p. 2</a>
+          <div class="formula">ω = Σ [1 + α<sub>i</sub>(β<sub>i</sub> − 1)] C<sub>i</sub></div></div>
+        <p>NaCl and KCl are strong electrolytes (α = 1, β = 2); the macromolecule is undissociated (ω = C).</p>
+        <div class="calc">ω<sub>1</sub> = 2 × 100 + 2 = 202 mosmol/L</div>
+        <div class="calc">ω<sub>2</sub> = 2 × 99 + 4 = 202 mosmol/L</div></li>
+      <li><div class="law"><span class="label">Law</span> Osmotic pressure <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-4.pdf#page=3">p. 3</a>
+          <div class="formula">Δπ = (ω<sub>2</sub> − ω<sub>1</sub>) RT</div></div>
+        <div class="calc">Δπ = (202 − 202) × RT = 0</div></li>
+    </ol>
+    <span class="answer">The solutions are isotonic: no net water flow, nothing changes (levels stay equal)</span>
+
+    <h3>2) a) Distribution of the inorganic ions</h3>
+    <p>The macromolecule is undissociated, so it carries no charge: there is no Donnan effect. Each ion diffuses down its own gradient
+      (Na⁺ and Cl⁻ from (1) to (2), K⁺ from (2) to (1)) until its concentration is the same on both sides (volumes stay 1 L).</p>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Diffusion to equilibrium <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-5.pdf#page=2">Solutions 5 · p. 2</a>
+          <div class="formula">C<sub>∞</sub> = (C<sub>1i</sub> + C<sub>2i</sub>) / 2</div></div>
+        <div class="calc">[Na⁺]<sub>1</sub> = [Na⁺]<sub>2</sub> = (100 + 0) / 2 = 50 mmol/L</div>
+        <div class="calc">[K⁺]<sub>1</sub> = [K⁺]<sub>2</sub> = (0 + 99) / 2 = 49.5 mmol/L</div>
+        <div class="calc">[Cl⁻]<sub>1</sub> = [Cl⁻]<sub>2</sub> = (100 + 99) / 2 = 99.5 mmol/L</div>
+        <p>Check electroneutrality on each side: 50 + 49.5 = 99.5 mEq/L of cations = 99.5 mEq/L of Cl⁻ ✓</p></li>
+    </ol>
+    <span class="answer">Each side: Na⁺ 50 mmol/L · K⁺ 49.5 mmol/L · Cl⁻ 99.5 mmol/L</span>
+
+    <h3>2) b) Is it an equilibrium?</h3>
+    <ol class="steps">
+      <li><div class="calc">ω<sub>1</sub> = 50 + 49.5 + 99.5 + 2 = 201 mosmol/L</div>
+        <div class="calc">ω<sub>2</sub> = 50 + 49.5 + 99.5 + 4 = 203 mosmol/L</div></li>
+      <li><div class="law"><span class="label">Law</span> Oncotic pressure <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=1">Solutions 8 · p. 1</a>
+          <div class="formula">Δπ = Δω<sub>i</sub> RT + Δω<sub>p</sub> RT</div></div>
+        <p>The diffusible ions are now equal (Δω<sub>i</sub> = 0); only the macromolecule, which cannot cross, still differs:</p>
+        <div class="calc">Δω = ω<sub>2</sub> − ω<sub>1</sub> = 4 − 2 = 2 mosmol/L = 0.002 osmol/L</div>
+        <div class="calc">Δπ = 0.002 × 24 = 0.048 atm  (≈ 4.86 × 10³ Pa ≈ 36.5 mmHg)</div></li>
+    </ol>
+    <span class="answer">No: ω<sub>2</sub> &gt; ω<sub>1</sub>, so water still flows (1) → (2) under Δπ = 0.048 atm</span>
+    <p>The ions are in diffusion equilibrium, but not the water: the system is not in equilibrium. At the start (question 1) the excess of salt in (1)
+      compensated the excess of macromolecule in (2); once the ions have equalised, only the macromolecule's oncotic pressure remains.</p>
+
+    <h3>2) c) Keeping the levels unchanged</h3>
+    <p>As in the lesson's Exercise 13 (<a href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=2">Solutions 8 · p. 2</a>), apply to the compartment
+      that receives the water a pressure equal to Δπ, in the opposite direction.</p>
+    <div class="calc">P = Δπ = 0.048 atm, applied on compartment (2)</div>
+    <span class="answer">Exert an overpressure of 0.048 atm (≈ 36.5 mmHg) on compartment (2)</span>
+    <div class="unsure">Assumed: no Donnan effect because the macromolecule is "undissociated" (neutral). Another way to keep the levels is to add
+      2 mmol/L of an impermeant solute to compartment (1) so that ω<sub>1</sub> = ω<sub>2</sub>; the lesson's method (and the 24 atm the sheet gives) points
+      to the counter-pressure. 0.048 atm → mmHg and Pa uses 1 atm = 760 mmHg = 101 325 Pa.</div>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>Concluding from question 1 that nothing ever happens: once ions can cross, the balance between salt and macromolecule breaks.</li>
+        <li>Counting the macromolecule as an electrolyte: undissociated ⇒ ω = C, and no Donnan effect.</li>
+        <li>Using 24 atm × 4 mmol/L: only the <b>difference</b> (2 mmol/L) creates the pressure.</li>
+        <li>Applying the pressure on (1): it goes on the side the water flows <b>to</b>, i.e. (2).</li></ul></div>
+  </details>
+</section>
+
+<!-- ───────────────────────────────────────── -->
+<section class="exercise" id="ex3">
+  <h2><span class="num">Exercise 3</span> — Donnan equilibrium with a charged macromolecule <a class="page" href="/exercises/s1/biophysics/set-3.pdf#page=1">sheet</a></h2>
+  <div class="statement">
+    <p>A container is divided into two compartments (1) and (2) by a dialysis membrane. A different NaCl solution is poured into each compartment, and one of
+      them also contains a non-diffusible but electrolytic macromolecule. At equilibrium:</p>
+    <p>[Na⁺]<sub>1</sub> · [Cl⁻]<sub>1</sub> = 0.16 (osmol/L)² ;  [Cl⁻]<sub>2</sub> = 0.457 osmol/L.</p>
+    <ol>
+      <li>Calculate [Na⁺]<sub>2</sub>.</li>
+      <li>On which side is the charged macromolecule? Give the sign of its charge and calculate its osmolarity, given that the absolute value of its valence is 18.</li>
+      <li>Calculate the osmotic pressure exerted by one compartment on the other, at 17 °C.</li>
+      <li>Calculate the Donnan potential and the transmembrane field, given that the membrane is 10 µm thick. Draw this field.</li>
+    </ol>
+  </div>
+  <ul class="given"><li>[Na⁺]<sub>1</sub>[Cl⁻]<sub>1</sub> = 0.16 (osmol/L)²</li><li>[Cl⁻]<sub>2</sub> = 0.457 osmol/L</li><li>|z| = 18</li><li>T = 17 °C = 290 K</li><li>l = 10 µm = 10⁻⁵ m</li><li>R = 8.31 J/(mol·K), F = 96 500 C</li></ul>
+  <details class="hint"><summary>Hint</summary>
+    <p>The Donnan equation for Na⁺ and Cl⁻ says the product [Na⁺][Cl⁻] is the same on both sides. In the compartment without the macromolecule, [Na⁺] = [Cl⁻].
+      In the other one, electroneutrality tells you what charge the macro-ion must carry. Then: Δω → Δπ, Nernst → potential, E = −ΔV/l.</p>
+  </details>
+  <details class="solution"><summary>Solution</summary>
+    <h3>1) [Na⁺]<sub>2</sub></h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Donnan equilibrium <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=4">Solutions 7 · p. 4</a>
+          <div class="formula"><span class="frac"><span>[Cl⁻]<sub>2</sub></span><span>[Cl⁻]<sub>1</sub></span></span> = <span class="frac"><span>[Na⁺]<sub>1</sub></span><span>[Na⁺]<sub>2</sub></span></span>  ⇔  [Na⁺]<sub>1</sub>[Cl⁻]<sub>1</sub> = [Na⁺]<sub>2</sub>[Cl⁻]<sub>2</sub></div></div>
+        <div class="calc">[Na⁺]<sub>2</sub> = 0.16 / 0.457 = 0.350 osmol/L</div></li>
+    </ol>
+    <span class="answer">[Na⁺]<sub>2</sub> ≈ 0.350 osmol/L</span>
+
+    <h3>2) Side, sign and osmolarity of the macromolecule</h3>
+    <ol class="steps">
+      <li><p>In (2), [Cl⁻]<sub>2</sub> = 0.457 &gt; [Na⁺]<sub>2</sub> = 0.350: the anions outnumber Na⁺, so another cation must balance them — the macromolecule is in (2)
+        and it is <b>positive</b> (Pr<sup>18+</sup>). Compartment (1) has only NaCl:</p>
+        <div class="calc">[Na⁺]<sub>1</sub> = [Cl⁻]<sub>1</sub> = √0.16 = 0.400 osmol/L</div></li>
+      <li><div class="law"><span class="label">Law</span> Electroneutrality <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=1">Solutions 7 · p. 1</a>
+          <div class="formula">[Na⁺]<sub>2</sub> + z C′ = [Cl⁻]<sub>2</sub></div></div>
+        <div class="calc">z C′ = 0.457 − 0.350 = 0.1069 Eq/L</div>
+        <div class="calc">C′ = 0.1069 / 18 = 5.94 × 10⁻³ mol/L</div>
+        <p>The macro-ion is one particle: its osmolarity is ω<sub>p</sub> = C′ (its counter-ions, the Cl⁻, are already counted in [Cl⁻]<sub>2</sub>).</p></li>
+    </ol>
+    <span class="answer">In (2), positive (z = +18), ω<sub>p</sub> ≈ 5.94 × 10⁻³ osmol/L (5.94 mosmol/L)</span>
+
+    <h3>3) Osmotic pressure</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Osmolarity <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-3.pdf#page=2">Solutions 3 · p. 2</a>
+          <div class="formula">ω = Σ ω<sub>i</sub></div></div>
+        <div class="calc">ω<sub>1</sub> = 0.400 + 0.400 = 0.800 osmol/L</div>
+        <div class="calc">ω<sub>2</sub> = 0.350 + 0.457 + 0.00594 = 0.8130 osmol/L</div>
+        <div class="calc">Δω = 0.8130 − 0.800 = 0.01305 osmol/L = 13.05 osmol/m³</div></li>
+      <li><div class="law"><span class="label">Law</span> Oncotic pressure <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-8.pdf#page=1">Solutions 8 · p. 1</a>
+          <div class="formula">Δπ = (ω<sub>2</sub> − ω<sub>1</sub>) RT = Δω<sub>i</sub>RT + ω<sub>p</sub>RT</div></div>
+        <div class="calc">Δπ = 13.05 × 8.31 × 290 = 3.14 × 10⁴ Pa  (≈ 0.31 atm)</div>
+        <p>Split: Δω<sub>i</sub> = 0.807 − 0.800 = 7.1 × 10⁻³ osmol/L from the unequal ions, ω<sub>p</sub> = 5.94 × 10⁻³ osmol/L from the macromolecule.</p></li>
+    </ol>
+    <span class="answer">Δπ ≈ 3.14 × 10⁴ Pa, exerted by (2) on (1): water is drawn (1) → (2)</span>
+
+    <h3>4) Donnan potential and transmembrane field</h3>
+    <ol class="steps">
+      <li><div class="law"><span class="label">Law</span> Nernst equation <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=3">Solutions 7 · p. 3</a>
+          <div class="formula">V<sub>2</sub> − V<sub>1</sub> = − <span class="frac"><span>RT</span><span>zF</span></span> ln <span class="frac"><span>C<sub>2</sub></span><span>C<sub>1</sub></span></span></div></div>
+        <div class="calc">RT/F = 8.31 × 290 / 96 500 = 0.02497 V</div>
+        <div class="calc">Na⁺ (z = +1): V<sub>2</sub> − V<sub>1</sub> = −0.02497 × ln(0.350 / 0.400) = −0.02497 × (−0.1332) = +3.33 × 10⁻³ V</div>
+        <div class="calc">Cl⁻ (z = −1): V<sub>2</sub> − V<sub>1</sub> = +0.02497 × ln(0.457 / 0.400) = 0.02497 × 0.1332 = +3.33 × 10⁻³ V ✓</div></li>
+      <li><div class="law"><span class="label">Law</span> Transmembrane field <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-7.pdf#page=3">Solutions 7 · p. 3</a>
+          <div class="formula">E = − (V<sub>2</sub> − V<sub>1</sub>) / l</div></div>
+        <div class="calc">E = − 3.33 × 10⁻³ / 10⁻⁵ = −333 V/m</div>
+        <p>V<sub>2</sub> &gt; V<sub>1</sub>: the face of the membrane in contact with the positive macro-ions (side 2) is (+), side (1) is (−).
+          The field goes from (+) to (−), i.e. from (2) to (1) — the minus sign means it points against the (1) → (2) axis.</p>
+        <svg viewBox="0 0 640 230" role="img" aria-label="Membrane between compartment 1 on the left (Na+ 0.400, Cl− 0.400) and compartment 2 on the right (Na+ 0.350, Cl− 0.457, macro-ion 18+). Side 2 of the membrane is positive, side 1 negative; the field E of 333 V/m points from 2 to 1.">
+          <defs><marker id="e-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="s-text"/></marker></defs>
+          <rect x="20" y="20" width="270" height="170" rx="12" class="s-accent"/>
+          <rect x="350" y="20" width="270" height="170" rx="12" class="s-ok"/>
+          <line x1="320" y1="12" x2="320" y2="198" class="s-line" stroke-width="3" stroke-dasharray="7 5"/>
+          <text x="155" y="50" text-anchor="middle" class="s-text" font-size="19" font-weight="600">(1)  V₁</text>
+          <text x="155" y="82" text-anchor="middle" class="s-text" font-size="16">Na⁺ 0.400 · Cl⁻ 0.400</text>
+          <text x="485" y="50" text-anchor="middle" class="s-text" font-size="19" font-weight="600">(2)  V₂ &gt; V₁</text>
+          <text x="485" y="82" text-anchor="middle" class="s-text" font-size="16">Na⁺ 0.350 · Cl⁻ 0.457</text>
+          <text x="485" y="106" text-anchor="middle" class="s-text" font-size="16">Pr¹⁸⁺ 5.94 mmol/L</text>
+          <text x="304" y="182" text-anchor="middle" class="s-text" font-size="22" font-weight="700">−</text>
+          <text x="337" y="182" text-anchor="middle" class="s-text" font-size="22" font-weight="700">+</text>
+          <line x1="430" y1="138" x2="210" y2="138" class="s-line" stroke-width="2.5" marker-end="url(#e-arrow)"/>
+          <text x="250" y="128" text-anchor="middle" class="s-text" font-size="17" font-weight="600">E</text>
+          <text x="320" y="220" text-anchor="middle" class="s-muted" font-size="15">|E| = 333 V/m, from (2) (+) to (1) (−) · l = 10 µm</text>
+        </svg></li>
+    </ol>
+    <span class="answer">V<sub>2</sub> − V<sub>1</sub> ≈ +3.33 mV · E ≈ −333 V/m (333 V/m directed from (2) to (1))</span>
+    <div class="unsure">17 °C is taken as 290 K (273 + 17) with R = 8.31, as in Set 2; with 290.15 K and R = 8.314 the results change only in the 3rd digit.
+      The sheet writes "17°" without a unit: Celsius is assumed. The sheet gives no answers to compare with.</div>
+    <div class="box trap"><span class="label">Traps</span>
+      <ul><li>Placing the macro-ion in the side with <b>more</b> Na⁺: with a positive macro-ion it's the Cl⁻ that are in excess on its side.</li>
+        <li>Counting the macromolecule as 18 × C′ osmoles: 18 is its charge; as one particle it counts once (ω<sub>p</sub> = C′).</li>
+        <li>Forgetting z = −1 for Cl⁻ in Nernst: both ions must give the same V<sub>2</sub> − V<sub>1</sub> — a good check.</li>
+        <li>T in °C, ω in osmol/L instead of osmol/m³, or l in µm instead of m.</li></ul></div>
+  </details>
+</section>
+
+<footer>Exercises from "Problem Set 3: Biophysics of solutions", Pr B. Boutabia-Chéraitia, 1st-year medicine, Faculty of Medicine Annaba, 2026-2027.
+  Solutions written with the course's lessons (📄 = lesson PDF page); every number was computed with a script. ⚠️ notes mark assumptions.
+  Check them against your TD corrections.</footer>
+</main>
+</body>
+</html>

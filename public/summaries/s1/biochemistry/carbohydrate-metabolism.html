@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carbohydrate metabolism — Summary</title>
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Biochemistry · Summary</div>
+<h1>Carbohydrate metabolism</h1>
+<p class="meta">Chapter 1-B, Dr Daroui-Mokaddem H. · 73 slides · 43 past exam questions (EMD1 2022–2026) cover this lesson ·
+  <a href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf">open the PDF</a></p>
+<ul class="toc">
+  <li><a target="_self" href="#essentials">Essentials</a></li>
+  <li><a target="_self" href="#intro">Introduction</a></li>
+  <li><a target="_self" href="#digestion">Digestion &amp; absorption</a></li>
+  <li><a target="_self" href="#pathways">Main pathways</a></li>
+  <li><a target="_self" href="#glycolysis">Glycolysis</a></li>
+  <li><a target="_self" href="#pyruvate">Fates of pyruvate</a></li>
+  <li><a target="_self" href="#krebs">Krebs cycle</a></li>
+  <li><a target="_self" href="#yield">ATP yield</a></li>
+  <li><a target="_self" href="#chain">Respiratory chain</a></li>
+  <li><a target="_self" href="#hexoses">Other hexoses</a></li>
+  <li><a target="_self" href="#ppp">Pentose phosphate</a></li>
+  <li><a target="_self" href="#gng">Gluconeogenesis</a></li>
+  <li><a target="_self" href="#glycogen">Glycogen</a></li>
+  <li><a target="_self" href="#traps">Exam traps</a></li>
+  <li><a target="_self" href="#check">Self-check</a></li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<div class="box essentials" id="essentials">
+  <span class="label">If you remember only this</span>
+  <ul>
+    <li><b>Glycolysis</b>: cytoplasm, no O₂ needed, 10 reactions, glucose → <b>2 pyruvate</b>. Only <b>3 irreversible</b> steps:
+      <b>1 hexokinase</b>, <b>3 PFK-1</b> (main regulator), <b>10 pyruvate kinase</b>. ATP is <b>spent</b> at 1 and 3,
+      <b>made</b> at 7 and 10. Net <b>2 ATP</b> (anaerobic) or <b>8 ATP</b> (aerobic, + 2 NADH × 3).</li>
+    <li><b>PFK-1</b>: activated by AMP, ADP, <b>fructose-2,6-bisphosphate</b>, F6P; inhibited by <b>ATP, citrate</b>.</li>
+    <li><b>Anaerobic</b>: pyruvate → <b>lactate</b> (lactate dehydrogenase; muscle, red cells) or <b>ethanol</b> (yeasts) — this
+      <b>regenerates NAD⁺</b> so glycolysis can go on. <b>Aerobic</b>: pyruvate → <b>acetyl-CoA</b> by <b>PDH</b> (mitochondrion, irreversible, 1 NADH).</li>
+    <li><b>Krebs cycle</b>: mitochondrion, amphibolic, 8 reactions; per acetyl-CoA: <b>3 NADH + 1 FADH₂ + 1 GTP = 12 ATP</b>, 2 CO₂
+      (released at isocitrate DH and α-ketoglutarate DH). <b>Succinate DH</b> is the only membrane enzyme.
+      1 pyruvate fully oxidised = <b>15 ATP</b>; 1 glucose = <b>38</b> (or 36).</li>
+    <li><b>PPP</b>: cytosol, all cells, <b>no ATP</b>; makes <b>NADPH</b> and <b>ribose-5-P</b>. Key enzyme <b>G6PD</b> → deficiency =
+      hemolysis (favism). Back to glycolysis as <b>F6P and G3P</b>.</li>
+    <li><b>Gluconeogenesis</b>: liver 90% / kidney + gut 10%, <b>not muscle or brain</b>. Precursors: lactate, pyruvate, alanine,
+      glycerol, glucogenic AAs, propionate — <b>never acetyl-CoA / fatty acids</b>. Bypasses: <b>pyruvate carboxylase</b>
+      (mitochondrial, biotin) + <b>PEPCK</b>, <b>F1,6-BPase</b>, <b>glucose-6-phosphatase</b>. Costs <b>6 ATP</b>.</li>
+    <li><b>Cori cycle</b> = lactate (muscle) → glucose (liver). <b>Felig cycle</b> = alanine (muscle) → glucose (liver).</li>
+    <li><b>Glycogen</b>: synthesis in the cytosol from <b>G6P</b>, key enzyme <b>glycogen synthase</b>, needs <b>ATP + UTP</b>.
+      Liver glycogen = "public" (has glucose-6-phosphatase); muscle glycogen = "private" (no glucose-6-phosphatase).</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="intro"><span class="num">I.</span> Introduction <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=3">p. 3</a></h2>
+<p>After digestion and absorption, nutrients go through <span class="term">intermediate metabolism</span>: all the intracellular
+  enzymatic reactions that convert, connect and regulate molecules to keep the cell's energy balance.</p>
+<div class="table-wrap"><table>
+  <tr><th>Type of pathway</th><th>What it does</th></tr>
+  <tr><td><b>Anabolic</b></td><td>Synthesis: builds complex molecules (glycogen, lipids, proteins) from simple precursors. <b>Needs energy</b> (ATP or reduced coenzymes).</td></tr>
+  <tr><td><b>Catabolic</b></td><td>Oxidative breakdown of energy substrates (carbohydrates, lipids, amino acids) → <b>releases energy</b> as ATP, NADH,H⁺ or FADH₂, which then feed the respiratory chain.</td></tr>
+  <tr><td><b>Amphibolic</b></td><td>Dual-purpose, between anabolism and catabolism. Main example: the <b>Krebs cycle</b> (the main metabolic crossroads).</td></tr>
+</table></div>
+<p class="meta">Normal carbohydrate metabolism is needed to understand disorders such as <b>diabetes mellitus</b> (impaired regulation of blood glucose and energy metabolism).</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="digestion"><span class="num">II.</span> Digestion and absorption of dietary carbohydrates
+  <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=5">p. 5–7</a></h2>
+<p>Dietary carbohydrates: <b>polysaccharides</b> (starch, glycogen), <b>disaccharides</b> (lactose, sucrose) and, a little,
+  <b>monosaccharides</b> (glucose, fructose). Digestion <b>begins in the mouth</b> and is <b>completed mainly in the small intestine</b>.</p>
+<div class="table-wrap"><table>
+  <tr><th>Site</th><th>Enzyme</th><th>Result</th></tr>
+  <tr><td><b>Mouth</b></td><td><b>Salivary α-amylase</b> (ptyalin) — randomly cleaves <b>α-1,4</b> bonds of starch</td>
+    <td><b>α-limit dextrins</b> (~8 glucoses with one or more α-1,6 bonds), maltotriose, maltose. Carbohydrates are the <b>only</b> macronutrients whose digestion starts significantly in the mouth.</td></tr>
+  <tr><td><b>Stomach</b></td><td>— (salivary amylase is <b>inactivated by the low pH</b>)</td><td><b>No digestion</b> of carbohydrates.</td></tr>
+  <tr><td><b>Small intestine</b> (lumen)</td><td>Chyme neutralised by pancreatic <b>bicarbonate</b>; <b>pancreatic α-amylase</b> (α-1,4 bonds)</td><td>Disaccharides (maltose, isomaltose) and short oligosaccharides.</td></tr>
+  <tr><td><b>Brush border, upper jejunum</b></td><td><b>Oligosaccharidases</b> (glucoamylase) and <b>disaccharidases</b> (maltase, sucrase, lactase)</td><td>Monosaccharides. Lactase (β-galactosidase) is <b>slow</b> → lactose digestion is a <b>rate-limiting step</b>; sucrase is efficient.</td></tr>
+</table></div>
+<p><b>Dietary fibre</b> = cellulose, hemicellulose, pectins, lignin and gums: <b>not digested</b> in humans; important for intestinal transit and preventing constipation.</p>
+<figure class="small">
+  <img src="carbohydrate-metabolism/digestion.jpg" alt="Diagram: mouth (salivary amylase on starch), stomach (low pH stops amylase), small intestine (pancreatic amylase, glucoamylase, isomaltase, maltase, lactase, sucrase); cellulose not digested and excreted" loading="lazy">
+  <figcaption><b>Where each carbohydrate is cut.</b> Starch starts in the mouth, stops in the stomach (low pH), finishes in the small
+    intestine → glucose. Lactose and sucrose are split only at the intestine → glucose, fructose, galactose. Cellulose leaves undigested.
+    <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=6">p. 6</a></figcaption>
+</figure>
+
+<h3>Absorption — only as monosaccharides</h3>
+<p>The enterocyte membrane is lipophilic, so monosaccharides need <b>transport proteins</b>:</p>
+<div class="table-wrap"><table>
+  <tr><th>Transporter</th><th>Type of transport</th><th>Where / what</th></tr>
+  <tr><td><b>SGLT1</b> (sodium–glucose linked)</td><td><b>Secondary active</b>, driven by the Na⁺ gradient kept by the Na⁺/K⁺-ATPase</td><td><b>Apical</b> side: glucose + galactose + Na⁺, same direction</td></tr>
+  <tr><td><b>GLUT5</b></td><td>Facilitated diffusion (passive)</td><td><b>Apical</b> side: <b>fructose only</b></td></tr>
+  <tr><td><b>GLUT2</b></td><td>Facilitated diffusion (passive)</td><td><b>Basolateral</b> side: glucose, fructose, galactose → blood → <b>portal vein</b> → liver</td></tr>
+  <tr><td><b>GLUT4</b></td><td>—</td><td>Skeletal muscle and adipose tissue; <b>insulin</b> increases its number and activity. Type 2 diabetes: insulin resistance in these tissues (less GLUT4).</td></tr>
+</table></div>
+<figure class="small">
+  <img src="carbohydrate-metabolism/hexose-uptake.jpg" alt="Enterocyte: SGLT1 brings glucose/galactose with Na+, GLUT5 brings fructose at the apical side; GLUT2 releases all three at the basolateral side; Na+/K+ pump" loading="lazy">
+  <figcaption><b>Hexose uptake by the enterocyte.</b> Gut side (left): SGLT1 (with Na⁺) and GLUT5 (fructose). Blood side (right): GLUT2
+    for all three sugars; the Na⁺/K⁺ pump keeps the Na⁺ gradient that drives SGLT1.
+    <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=7">p. 7</a></figcaption>
+</figure>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="pathways"><span class="num">III.</span> Main pathways and glucose homeostasis
+  <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=8">p. 8–10</a>
+  <span class="exam">2025-26</span></h2>
+<p>In the liver, <b>fructose and galactose are converted into glucose</b>, the body's main energy substrate. Hepatic glucose can:</p>
+<ul>
+  <li>be oxidised to pyruvate (<b>glycolysis</b>) then enter the <b>Krebs cycle</b> → ATP;</li>
+  <li>be stored as glycogen (<b>glycogenesis</b>);</li>
+  <li>when glycogen stores are full, become fatty acids (<b>lipogenesis</b>);</li>
+  <li><b>5–10%</b> goes through the <b>pentose phosphate pathway</b> → NADPH (needed for lipogenesis).</li>
+</ul>
+<p>Glucose not taken by the liver leaves by the hepatic veins: <b>brain ~50%</b>, <b>skeletal muscle ~30%</b>, other tissues.
+  Between meals / fasting, glucose comes from <b>glycogenolysis</b> or from <b>gluconeogenesis</b> (from amino acids).</p>
+<figure class="small">
+  <img src="carbohydrate-metabolism/main-pathways.jpg" alt="Map: glucose ↔ glucose-6-phosphate, linked to glycogen (glycogenesis/glycogenolysis), the pentose phosphate pathway, glycolysis/gluconeogenesis to pyruvate, acetyl-CoA, fatty acids, citric acid cycle, electron transport chain, ATP" loading="lazy">
+  <figcaption><b>Glucose-6-phosphate is the hub</b>: it belongs to glycolysis, gluconeogenesis, glycogen synthesis and breakdown, and the
+    pentose phosphate pathway (asked in 2025-26). Pyruvate → acetyl-CoA → citric acid cycle → electron transport chain → ATP.
+    <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=9">p. 9</a></figcaption>
+</figure>
+<div class="box def"><span class="label">Glucose homeostasis</span>
+  The main job of carbohydrate metabolism: keep blood glucose (glycemia) stable. Healthy adult: <b>fasting 0.7–1.1 g/L</b>,
+  <b>&lt; 1.4 g/L after a meal</b>. Protects strictly glucose-dependent organs: <b>brain, blood cells, kidneys</b>. Impaired in diabetes.
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="glycolysis"><span class="num">IV.</span> Glycolysis
+  <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=12">p. 12–19</a>
+  <span class="exam">2022-23 · 2023-24 · 2024-25 · 2025-26</span></h2>
+<ul>
+  <li>Also called the <span class="term">Embden-Meyerhof pathway</span>. In the <b>cytoplasm</b>; <b>does not need oxygen</b>; in both aerobic and anaerobic organisms.</li>
+  <li>Glucose → <b>2 pyruvate</b> + ATP + NADH + water.</li>
+  <li><b>10 reactions</b>, all reversible <b>except 3</b> key regulatory steps. Two phases: <b>preparatory</b> (reactions 1–5) and <b>payoff</b> (6–10).</li>
+</ul>
+<div class="table-wrap"><table>
+  <tr><th>#</th><th>Reaction</th><th>Enzyme</th><th>Note</th></tr>
+  <tr><td>1</td><td>Glucose → glucose-6-P</td><td><b>Hexokinase</b> (glucokinase in liver)</td><td><b>−1 ATP</b> · irreversible · 1st priming</td></tr>
+  <tr><td>2</td><td>G6P → fructose-6-P</td><td>Phosphohexose isomerase (G6P isomerase)</td><td>reversible</td></tr>
+  <tr><td>3</td><td>F6P → fructose-1,6-bisP</td><td><b>Phosphofructokinase-1</b> (PFK-1)</td><td><b>−1 ATP</b> · irreversible · <b>main control point</b></td></tr>
+  <tr><td>4</td><td>F1,6-bisP → G3P + DHAP</td><td>Aldolase</td><td>cuts the 6C sugar into two 3C</td></tr>
+  <tr><td>5</td><td>DHAP ⇄ glyceraldehyde-3-P</td><td>Triose phosphate isomerase</td><td>→ 2 G3P from here on</td></tr>
+  <tr><td>6</td><td>G3P → 1,3-bisphosphoglycerate</td><td>Glyceraldehyde-3-P dehydrogenase</td><td>oxidation + phosphorylation: <b>2 NADH</b></td></tr>
+  <tr><td>7</td><td>1,3-BPG → 3-phosphoglycerate</td><td>Phosphoglycerate kinase</td><td><b>+2 ATP</b> (substrate-level)</td></tr>
+  <tr><td>8</td><td>3-PG → 2-phosphoglycerate</td><td>Phosphoglycerate mutase</td><td>reversible</td></tr>
+  <tr><td>9</td><td>2-PG → phosphoenolpyruvate</td><td>Enolase</td><td>releases H₂O</td></tr>
+  <tr><td>10</td><td>PEP → pyruvate</td><td><b>Pyruvate kinase</b></td><td><b>+2 ATP</b> (substrate-level) · irreversible</td></tr>
+</table></div>
+<figure>
+  <img src="carbohydrate-metabolism/glycolysis-10-steps.jpg" alt="The 10 reactions of glycolysis with structures: preparatory phase (hexokinase, phosphohexose isomerase, PFK-1, aldolase, triose phosphate isomerase) and payoff phase (G3P dehydrogenase, phosphoglycerate kinase, mutase, enolase, pyruvate kinase)" loading="lazy">
+  <figcaption><b>Preparatory phase (a)</b>: 2 ATP are invested (steps 1 and 3) and glucose is split into two trioses. <b>Payoff phase (b)</b>,
+    ×2: step 6 makes NADH, steps 7 and 10 each make ATP. <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=13">p. 13</a></figcaption>
+</figure>
+
+<h3>Why the intermediates are phosphorylated — 3 roles of the phosphate <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=14">p. 14</a></h3>
+<ol>
+  <li>Gives a <b>negative charge</b> at pH 7 → the intermediates <b>cannot leave the cell</b>.</li>
+  <li><b>Energy conservation</b> → allows the formation of ATP.</li>
+  <li><b>Binding/recognition</b> → helps form enzyme–substrate complexes.</li>
+</ol>
+
+<h3>Energy balance <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=17">p. 15–17</a></h3>
+<div class="formula">Glucose + 2 ADP + 2 Pi + 2 NAD⁺ → 2 pyruvate + 2 ATP + 2 H₂O + 2 NADH,H⁺</div>
+<div class="table-wrap"><table>
+  <tr><th>Condition</th><th>Count</th><th>Net</th></tr>
+  <tr><td><b>Anaerobic</b> (up to pyruvate)</td><td>−2 ATP (steps 1, 3) + 4 ATP (steps 7, 10)</td><td><b>2 ATP</b></td></tr>
+  <tr><td><b>Aerobic</b></td><td>2 ATP + 2 NADH × 3 ATP in the respiratory chain (6 ATP)</td><td><b>8 ATP</b></td></tr>
+</table></div>
+<ul>
+  <li><b>Aerobic</b> glycolysis: 2 ATP, 2 NADH, 2 pyruvate → pyruvate goes to the mitochondrion → acetyl-CoA → Krebs → complete oxidation to CO₂ + H₂O.</li>
+  <li><b>Anaerobic</b> glycolysis: same 2 ATP, 2 NADH, 2 pyruvate, but NADH is reoxidised by turning pyruvate into <b>lactate</b> (cells without mitochondria
+    such as red blood cells; hypoxic tissue such as rapidly contracting muscle) or <b>ethanol</b> (yeasts, some microorganisms).</li>
+</ul>
+<div class="box tip"><span class="label">Worked example (2022-23 exam)</span>
+  Fructose-6-P → lactate: it has already passed step 1, so only <b>PFK-1 costs 1 ATP</b>; steps 7 and 10 still give <b>4 ATP</b>; the NADH
+  is used by lactate dehydrogenase (no respiratory chain). <b>4 − 1 = 3 ATP</b>.</div>
+
+<h3>Regulation <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=18">p. 18–19</a></h3>
+<p><b>Hormonal</b>: after a meal, <b>insulin</b> increases hepatic glucokinase, PFK-1 and pyruvate kinase (gene transcription ↑) →
+  more glycolysis. During fasting, <b>glucagon</b> lowers that transcription → glycolysis inhibited, glucose kept for the brain and kidneys.</p>
+<p><b>Allosteric</b>: the rate depends on glucose availability and on the 3 rate-limiting steps (1, 3, 10).</p>
+<div class="table-wrap"><table>
+  <tr><th>Enzyme</th><th>Activators</th><th>Inhibitors</th></tr>
+  <tr><td><b>Hexokinase</b> (step 1, slightly limiting)</td><td>—</td><td>its product <b>glucose-6-P</b></td></tr>
+  <tr><td><b>PFK-1</b> (step 3, <b>most limiting</b>, commits glucose to glycolysis)</td><td><b>AMP, ADP, fructose-2,6-bisphosphate</b>, fructose-6-P</td><td><b>ATP, citrate</b></td></tr>
+  <tr><td><b>Pyruvate kinase</b> (step 10)</td><td>—</td><td><b>ATP</b></td></tr>
+</table></div>
+<p class="meta">Fructose-2,6-bisphosphate is made from F6P (like F1,6-bisP) but is <b>only a regulator</b>; its synthesis and breakdown are under hormonal control.</p>
+
+<h3>Clinical aspects of glycolysis <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=29">p. 29</a></h3>
+<div class="table-wrap"><table>
+  <tr><th>Situation</th><th>Description</th><th>Consequences</th></tr>
+  <tr><td>Glycolysis-dependent tissues</td><td>Red blood cells (no mitochondria), brain, muscle in anaerobiosis</td><td>Muscle fatigue, sensitivity to hypoglycemia, hemolysis if glycolytic enzymes are defective</td></tr>
+  <tr><td>Cancer (<b>Warburg effect</b>)</td><td>More glycolysis <b>even with oxygen</b></td><td>High glucose uptake → basis of <b>PET imaging with ¹⁸F-FDG</b></td></tr>
+  <tr><td>Lactic acidosis</td><td>Too much lactate made or poorly cleared</td><td>↓ blood pH, respiratory distress, emergency</td></tr>
+  <tr><td>Enzyme deficiencies</td><td>Pyruvate kinase, PFK (<b>Tarui disease</b>), hexokinase</td><td>Hemolytic anemia, exercise intolerance, myoglobinuria</td></tr>
+  <tr><td>Intense exercise</td><td>Anaerobic glycolysis → high lactate</td><td>Cramps, ↓ pH, fatigue</td></tr>
+  <tr><td>Hypoglycemia</td><td>Not enough glucose for the brain</td><td>Confusion, seizures, coma</td></tr>
+  <tr><td>Diabetes mellitus</td><td>Chronic hyperglycemia</td><td>Vascular complications, oxidative stress</td></tr>
+</table></div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="pyruvate"><span class="num">V.</span> Fates of pyruvate
+  <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=20">p. 20–22</a>
+  <span class="exam">2022-23 · 2023-24 · 2024-25 · 2025-26</span></h2>
+<p>Depends on the <b>organism</b> and the <b>metabolic conditions</b> (O₂ or not).</p>
+<div class="table-wrap"><table>
+  <tr><th>Pathway</th><th>Condition / where</th><th>Enzyme(s)</th><th>Product</th></tr>
+  <tr><td><b>Lactic fermentation</b></td><td>Anaerobic: intensely contracting muscle, red blood cells, some microorganisms</td><td><b>Lactate dehydrogenase</b> (pyruvate accepts the electrons of NADH directly)</td><td>2 lactate + NAD⁺</td></tr>
+  <tr><td><b>Alcoholic fermentation</b></td><td>Yeasts and other microorganisms</td><td><b>Pyruvate decarboxylase</b> → acetaldehyde, then <b>alcohol dehydrogenase</b></td><td>2 ethanol + 2 CO₂ + NAD⁺</td></tr>
+  <tr><td><b>Oxidative decarboxylation</b></td><td>Aerobic, <b>mitochondrion</b></td><td><b>Pyruvate dehydrogenase (PDH)</b></td><td>2 acetyl-CoA + 2 CO₂ → Krebs → 4 CO₂ + 4 H₂O</td></tr>
+</table></div>
+<figure class="small">
+  <img src="carbohydrate-metabolism/pyruvate-fates.jpg" alt="Glucose to 2 pyruvate; anaerobic: 2 ethanol + 2 CO2 in yeast or 2 lactate in muscle and red cells; aerobic: 2 acetyl-CoA then citric acid cycle to 4 CO2 + 4 H2O" loading="lazy">
+  <figcaption><b>Three exits for pyruvate.</b> No oxygen: ethanol (yeast) or lactate (muscle, red cells). Oxygen: pyruvate oxidation to
+    acetyl-CoA → citric acid cycle. <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=20">p. 20</a></figcaption>
+</figure>
+<div class="box def"><span class="label">Why fermentation exists</span>
+  In anaerobiosis, cytosolic NADH <b>cannot enter the mitochondria</b> and the respiratory chain is not used. Reducing pyruvate (to lactate or
+  ethanol) <b>reoxidises NADH to NAD⁺</b>, which is reused by <b>reaction 6</b> of glycolysis → glycolysis can go on without O₂. In aerobiosis,
+  NAD⁺ is regenerated by the <b>respiratory chain</b>.</div>
+
+<h3>Pyruvate → acetyl-CoA (pyruvate dehydrogenase) <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=22">p. 22</a></h3>
+<div class="formula">Pyruvate + NAD⁺ + CoA-SH → acetyl-CoA + NADH,H⁺ + CO₂</div>
+<ul>
+  <li>In the <b>mitochondrion</b>; the key reaction <b>between glycolysis and the Krebs cycle</b>.</li>
+  <li><b>5 cofactors</b>: thiamine pyrophosphate (<b>TPP</b>), <b>lipoic acid</b> (lipoamide), <b>coenzyme A</b>, <b>FAD</b>, <b>NAD⁺</b> (E1-TPP, E2-lipoate, E3-FAD).</li>
+  <li><b>Highly exergonic → irreversible</b>. Forms a high-energy <b>thioester</b> bond in acetyl-CoA and <b>1 NADH = 3 ATP</b>.</li>
+  <li>Activators: ↑ pyruvate, NAD⁺, CoA-SH, AMP. Inhibitors: <b>NADH, acetyl-CoA, ATP</b>.</li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="krebs"><span class="num">VI.</span> Krebs cycle (citric acid / tricarboxylic acid cycle)
+  <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=24">p. 24–30</a>
+  <span class="exam">2022-23 · 2023-24 · 2024-25 · 2025-26</span></h2>
+<ul>
+  <li><b>Mitochondrion</b> (eukaryotes). <b>Amphibolic</b>: <b>catabolic</b> (oxidises acetyl-CoA → energy) and <b>anabolic</b> (supplies intermediates
+    for amino acids, purine bases, heme and glucose via gluconeogenesis).</li>
+  <li>Each turn: <b>acetyl-CoA (2C) + oxaloacetate (4C) → citrate (6C)</b>; <b>2 carbons leave as CO₂</b> → oxaloacetate is regenerated.</li>
+  <li><b>8 reactions</b>, <b>7 soluble enzymes</b> + <b>1 membrane enzyme</b> (inner mitochondrial membrane): <b>succinate dehydrogenase</b>.</li>
+  <li>Makes reduced coenzymes (3 NADH + 1 FADH₂) reoxidised by the respiratory chain → the cycle is <b>coupled to the respiratory chain</b> (needs O₂).</li>
+</ul>
+<div class="table-wrap"><table>
+  <tr><th>#</th><th>Reaction</th><th>Enzyme</th><th>Produces</th></tr>
+  <tr><td>1</td><td>Oxaloacetate + acetyl-CoA → <b>citrate</b> (tricarboxylic)</td><td><b>Citrate synthase</b> 🔑</td><td>CoA-SH released</td></tr>
+  <tr><td>2</td><td>Citrate → cis-aconitate → isocitrate</td><td>Aconitase</td><td>—</td></tr>
+  <tr><td>3</td><td>Isocitrate → (oxalosuccinate) → <b>α-ketoglutarate</b></td><td><b>Isocitrate dehydrogenase</b> 🔑</td><td><b>NADH + CO₂</b></td></tr>
+  <tr><td>4</td><td>α-Ketoglutarate + CoA-SH → <b>succinyl-CoA</b></td><td><b>α-Ketoglutarate dehydrogenase</b> 🔑</td><td><b>NADH + CO₂</b></td></tr>
+  <tr><td>5</td><td>Succinyl-CoA → succinate</td><td>Succinyl-CoA synthetase</td><td><b>GTP</b> (from GDP + Pi), CoA-SH</td></tr>
+  <tr><td>6</td><td>Succinate → <b>fumarate</b></td><td><b>Succinate dehydrogenase</b> (membrane)</td><td><b>FADH₂</b></td></tr>
+  <tr><td>7</td><td>Fumarate + H₂O → malate</td><td>Fumarase</td><td>—</td></tr>
+  <tr><td>8</td><td>Malate → oxaloacetate</td><td><b>Malate dehydrogenase</b></td><td><b>NADH</b></td></tr>
+</table></div>
+<p class="meta">🔑 = the 3 regulated enzymes (p. 27).</p>
+<figure class="small">
+  <img src="carbohydrate-metabolism/krebs-cycle.jpg" alt="Krebs cycle with structures: acetyl-CoA + oxaloacetate → citrate → cis-aconitate → isocitrate → oxalosuccinate → α-ketoglutarate → succinyl-CoA → succinate → fumarate → malate → oxaloacetate, with NADH, FADH2, GTP and CO2 marked" loading="lazy">
+  <figcaption><b>Find the products on the ring:</b> NADH at steps 3, 4 and 8; CO₂ at 3 and 4; GTP at 5; FADH₂ at 6. French labels:
+    oxaloacétate = oxaloacetate, α-cétoglutarate = α-ketoglutarate, déshydrogénase = dehydrogenase, synthétase = synthetase.
+    <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=25">p. 25</a></figcaption>
+</figure>
+
+<h3>Energy balance <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=26">p. 26</a></h3>
+<div class="formula">Acetyl-CoA + 3 NAD⁺ + FAD + GDP + Pi + 2 H₂O → 2 CO₂ + 3 (NADH,H⁺) + FADH₂ + GTP + CoA-SH</div>
+<div class="flow"><span>1 GTP = 1 ATP</span><i>+</i><span>3 NADH × 3 = 9 ATP</span><i>+</i><span>1 FADH₂ × 2 = 2 ATP</span><i>=</i><span><b>12 ATP per acetyl-CoA</b></span></div>
+<div class="box tip"><span class="label">Worked example (2023-24 exam)</span>
+  1 pyruvate fully oxidised: PDH (1 NADH = <b>3</b>) + one Krebs turn (<b>12</b>) = <b>15 ATP</b>. (2 and 8 are glycolysis values; 12 is acetyl-CoA alone.)</div>
+
+<h3>Regulation <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=27">p. 27</a></h3>
+<ul>
+  <li>Depends on <b>substrate availability</b> (acetyl-CoA) and the cell's <b>energy state</b>.</li>
+  <li><b>Inhibited</b> by ATP, NADH, succinyl-CoA (high energy). <b>Activated</b> by ADP and Ca²⁺ (energy demand).</li>
+  <li>Regulated enzymes: <b>citrate synthase</b>, <b>isocitrate dehydrogenase</b>, <b>α-ketoglutarate dehydrogenase</b>.</li>
+</ul>
+<p><b>Clinical</b> <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=30">p. 30</a>: mutations of Krebs enzymes → severe
+  <b>metabolic encephalopathies</b> in infants, <b>tumours and cancers</b> in adults (impaired mitochondrial oxidation, accumulation of
+  <b>oncometabolites</b>, epigenetic changes of DNA and histones).</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="yield"><span class="num">VII.</span> Total ATP yield from one glucose
+  <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=28">p. 28</a>
+  <span class="exam">2022-23 · 2023-24</span></h2>
+<p>NADH,H⁺ = <b>3 ATP</b>, FADH₂ = <b>2 ATP</b> in the respiratory chain. Everything is ×2 after aldolase.</p>
+<div class="table-wrap"><table>
+  <tr><th>Reaction</th><th>ATP or coenzyme</th><th>ATP</th></tr>
+  <tr><td>Glucose → glucose-6-P</td><td>−1 ATP</td><td>−1</td></tr>
+  <tr><td>Fructose-6-P → fructose-1,6-bisP</td><td>−1 ATP</td><td>−1</td></tr>
+  <tr><td>2 glyceraldehyde-3-P → 2 1,3-bisphosphoglycerate</td><td>2 NADH</td><td>6</td></tr>
+  <tr><td>2 1,3-BPG → 2 3-phosphoglycerate</td><td>2 ATP</td><td>2</td></tr>
+  <tr><td>2 PEP → 2 pyruvate</td><td>2 ATP</td><td>2</td></tr>
+  <tr><td colspan="2"><b>Glycolysis (aerobic)</b></td><td><b>8</b></td></tr>
+  <tr><td>2 pyruvate → 2 acetyl-CoA</td><td>2 NADH</td><td><b>6</b></td></tr>
+  <tr><td>2 isocitrate → 2 α-ketoglutarate</td><td>2 NADH</td><td>6</td></tr>
+  <tr><td>2 α-ketoglutarate → 2 succinyl-CoA</td><td>2 NADH</td><td>6</td></tr>
+  <tr><td>2 succinyl-CoA → 2 succinate</td><td>2 GTP</td><td>2</td></tr>
+  <tr><td>2 succinate → 2 fumarate</td><td>2 FADH₂</td><td>4</td></tr>
+  <tr><td>2 malate → 2 oxaloacetate</td><td>2 NADH</td><td>6</td></tr>
+  <tr><td colspan="2"><b>Krebs (2 turns)</b></td><td><b>24</b></td></tr>
+  <tr><td colspan="2"><b>Total per glucose</b></td><td><b>38</b></td></tr>
+</table></div>
+<div class="box tip"><span class="label">Memory trick</span><b>8 + 6 + 24 = 38</b> — glycolysis, PDH, Krebs. Or per pyruvate: 3 + 12 = 15, ×2 = 30, + 8 = 38.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="chain"><span class="num">VIII.</span> Respiratory chain and shuttle systems
+  <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=32">p. 32–37</a>
+  <span class="exam">2022-23 · 2025-26</span></h2>
+<p>In the <b>inner mitochondrial membrane</b>; 4 complexes:</p>
+<div class="table-wrap"><table>
+  <tr><th>Complex</th><th>Name</th></tr>
+  <tr><td>I</td><td>NADH–coenzyme Q oxidoreductase</td></tr>
+  <tr><td>II</td><td>Succinate–coenzyme Q oxidoreductase</td></tr>
+  <tr><td>III</td><td>Coenzyme Q–cytochrome c oxidoreductase</td></tr>
+  <tr><td>IV</td><td>Cytochrome c oxidase</td></tr>
+</table></div>
+<ul>
+  <li><b>Mobile carriers</b>: coenzyme Q (ubiquinone) and cytochrome c.</li>
+  <li>Two coupled parts: <b>electron transport</b> (from NADH,H⁺ and FADH₂ to <b>O₂</b> → H₂O = cellular respiration) and
+    <b>phosphorylation of ADP → ATP</b> by <b>ATP synthase</b>. The coupling = <span class="term">oxidative phosphorylation</span>.</li>
+  <li>≈ <b>3 ATP per NADH,H⁺</b>, <b>2 ATP per FADH₂</b>. ADP and Pi come from the cytosol.</li>
+  <li>Controlled by <b>[ADP]</b>: when ADP rises, the chain speeds up quickly and strongly.</li>
+  <li>Hypoxia → chain inhibited → Krebs slows, glycolysis goes on and <b>lactate rises</b> (NAD⁺ regenerated by fermentation).</li>
+  <li><b>Clinical</b>: defects hit high-energy organs (<b>brain, muscle</b>): fatigue, weakness, neurological disorders; <b>mitochondrial myopathies</b>.</li>
+</ul>
+
+<h3>Shuttles — moving cytosolic NADH into the mitochondrion <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=36">p. 35–37</a></h3>
+<p>The NADH from glycolysis step 6 must be reoxidised or glycolysis stops (no NAD⁺). <b>Problem</b>: the mitochondrial membrane is
+  <b>impermeable to NADH</b>. <b>Solution</b>: shuttles carry its <b>electrons</b>, not the NADH molecule.</p>
+<div class="table-wrap"><table>
+  <tr><th>Shuttle</th><th>Tissues</th><th>Enters the chain as</th><th>Glucose yield</th></tr>
+  <tr><td><b>Glycerol phosphate</b> (glycerol 3-P dehydrogenase, DHAP ⇄ glycerol 3-P, gives electrons to ubiquinone)</td><td><b>Muscle, brain</b></td><td>FADH₂ → 2 ATP</td><td><b>36 ATP</b></td></tr>
+  <tr><td><b>Malate–aspartate</b> (malate dehydrogenase, oxaloacetate ⇄ malate, aspartate/glutamate exchange)</td><td><b>Liver, kidney, heart</b></td><td>NADH → 3 ATP</td><td><b>38 ATP</b></td></tr>
+</table></div>
+<figure>
+  <img src="carbohydrate-metabolism/shuttles.jpg" alt="Left: glycerol phosphate shuttle — NADH reduces DHAP to glycerol 3-P, GPD on the inner membrane gives electrons to ubiquinone (Q → QH2). Right: malate–aspartate shuttle — oxaloacetate reduced to malate in the cytosol, malate enters the matrix and is reoxidised to oxaloacetate making NADH; aspartate and α-ketoglutarate/glutamate exchanged" loading="lazy">
+  <figcaption><b>Left</b>: cytosolic NADH reduces DHAP to glycerol 3-P; GPD (glycerol 3-P dehydrogenase) in the inner membrane passes the
+    electrons to ubiquinone — they enter at FADH₂ level. <b>Right</b>: NADH reduces oxaloacetate to malate, malate crosses and gives back NADH
+    in the matrix — full value. <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=37">p. 37</a></figcaption>
+</figure>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="hexoses"><span class="num">IX.</span> Conversion of other hexoses into glucose
+  <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=39">p. 39–41</a>
+  <span class="exam">2025-26</span></h2>
+<p><b>Fructose, galactose and mannose</b> are needed for <b>glycoprotein</b> synthesis and can be energy substrates. They are converted to
+  glucose in the <b>liver</b>, entering glycolysis at an intermediate step.</p>
+<figure class="small">
+  <img src="carbohydrate-metabolism/other-hexoses.jpg" alt="Entry points: sucrose → glucose + fructose; fructose via fructokinase → fructose 1-P → aldolase → glyceraldehyde + DHAP; galactose via UDP-galactose/UDP-glucose → glucose 1-P → glucose 6-P; mannose via hexokinase → mannose 6-P → fructose 6-P" loading="lazy">
+  <figcaption><b>Where each hexose joins glycolysis.</b> Fructose (liver): fructokinase → fructose-1-P → fructose-1-P aldolase →
+    glyceraldehyde + DHAP → trioses. Galactose → glucose-1-P → glucose-6-P. Mannose → mannose-6-P → fructose-6-P. Lactose (lactase) and
+    sucrose (sucrase) feed in their sugars. <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=39">p. 39</a></figcaption>
+</figure>
+
+<div class="grid2">
+<div class="box"><span class="label">Fructose — clinical <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=40">p. 40</a></span>
+  <ul>
+    <li><b>Hepatic fructokinase</b> deficiency → <b>essential fructosuria</b>: benign, no symptoms.</li>
+    <li><b>Aldolase B</b> deficiency → <b>hereditary fructose intolerance</b>: <b>fructose-1-P accumulates</b> → hypoglycemia, nausea, vomiting, liver damage.</li>
+  </ul></div>
+<div class="box"><span class="label">Galactose <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=41">p. 41</a></span>
+  <div class="flow"><span>Galactose</span><i>galactokinase (ATP) →</i><span>Galactose-1-P</span><i>uridyl transferase →</i><span>Glucose-1-P</span><i>phosphoglucomutase →</i><span>Glucose-6-P</span><i>→</i><span>glycolysis</span></div>
+  <p class="meta">The transferase swaps with UDP-glucose → UDP-galactose; UDP-hexose 4-epimerase turns UDP-galactose back into UDP-glucose.</p></div>
+</div>
+<div class="box trap"><span class="label">Galactosemia</span>
+  <ul>
+    <li><b>Galactose-1-phosphate uridyltransferase</b> deficiency → <b>congenital galactosemia</b>, the <b>most common</b> inherited disorder of carbohydrate metabolism.</li>
+    <li>Galactose accumulates in blood and tissues → <b>severe hypoglycemia</b>, <b>early cataracts</b> (aldose reductase reduces galactose to
+      <b>galactitol</b>, which opacifies the lens), vomiting, diarrhea, mental retardation.</li>
+    <li><b>Galactose-free diet</b> prevents it; the body can make galactose from glucose if needed.</li>
+    <li>The same <b>aldose reductase</b> turns glucose into <b>sorbitol</b> → cataracts in diabetics, can contribute to liver dysfunction.</li>
+  </ul></div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="ppp"><span class="num">X.</span> Pentose phosphate pathway (PPP)
+  <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=43">p. 43–48</a>
+  <span class="exam">2022-23 · 2023-24 · 2024-25 · 2025-26</span></h2>
+<ul>
+  <li>In the <b>cytosol</b>; <b>ubiquitous</b> (all cells), activity depends on the need for ribose and NADPH.</li>
+  <li><b>Produces no energy</b> (no ATP). Starts from <b>glucose-6-phosphate</b>, ends with <b>fructose-6-P and glyceraldehyde-3-P</b> — all glycolysis intermediates.</li>
+  <li>Products:
+    <ul>
+      <li><b>NADPH,H⁺</b> — reducing power: <b>detoxifies peroxides in red blood cells</b>; synthesis of fatty acids, cholesterol, steroid hormones.</li>
+      <li><b>Ribose-5-phosphate</b> — nucleic acids (RNA, DNA) and nucleotides (ATP, CoA, NAD, FAD…).</li>
+      <li><b>Erythrose-4-phosphate</b> — aromatic amino acids (<b>tyrosine, tryptophan, phenylalanine</b>).</li>
+    </ul></li>
+  <li><b>NADP⁺ vs NAD⁺</b>: chemically, only <b>one extra phosphate on the 2′ position</b> of the adenosine ribose. <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=44">p. 44</a></li>
+</ul>
+<div class="table-wrap"><table>
+  <tr><th>Phase</th><th>Steps</th><th>Notes</th></tr>
+  <tr><td><b>Oxidative</b></td><td>G6P → 6-phosphogluconolactone (<b>G6PD</b>, NADPH) → 6-phosphogluconate (lactonase) → <b>ribulose-5-P</b> (6-phosphogluconate dehydrogenase, NADPH + <b>CO₂</b>)</td>
+    <td><b>2 NADPH</b>, <b>one</b> decarboxylation. <b>G6PD = key enzyme</b>.</td></tr>
+  <tr><td><b>Non-oxidative</b></td><td>Ribulose-5-P → ribose-5-P (isomerase) and xylulose-5-P (epimerase); <b>transketolase</b> and <b>transaldolase</b> reshuffle →
+    sedoheptulose-7-P, erythrose-4-P → <b>G3P + F6P</b></td><td><b>Reversible</b>, regulated by substrate availability.</td></tr>
+</table></div>
+<ul>
+  <li>Ribose-5-P → nucleic acids/nucleotides; in cells that need <b>only NADPH</b>, it is sent <b>back to glycolysis</b>.</li>
+  <li>Erythrose-4-P → aromatic AAs, or with xylulose-5-P → G3P + F6P.</li>
+  <li><b>G3P and F6P</b> re-enter glycolysis: the <b>connection points</b> between the two pathways.</li>
+</ul>
+<div class="grid2">
+<figure>
+  <img src="carbohydrate-metabolism/ppp-overview.jpg" alt="Overview: glycolysis column (glucose, G6P, F6P, G3P, PEP, pyruvate); oxidative PPP (G6PDH, 6PGL, 6PGDH → ribulose 5P with NADPH and CO2); non-oxidative PPP (xylulose 5P, ribose 5P, transketolase, transaldolase, sedoheptulose 7P, erythrose 4P back to F6P and GA3P)" loading="lazy">
+  <figcaption><b>Overview</b>: leaves glycolysis at G6P (circled), returns at F6P and GA3P (circled). Green = oxidative (NADPH); violet =
+    non-oxidative. <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=45">p. 45</a></figcaption>
+</figure>
+<figure>
+  <img src="carbohydrate-metabolism/ppp-phases.jpg" alt="Detailed PPP: glucose-6-phosphate dehydrogenase, 6-phosphogluconolactonase, 6-phosphogluconate dehydrogenase, ribulose-5-phosphate epimerase and isomerase, transketolase, transaldolase, transketolase; outputs glyceraldehyde-3-phosphate and fructose-6-phosphate" loading="lazy">
+  <figcaption><b>Enzyme by enzyme</b>: NADPH is made twice (G6PD and 6-phosphogluconate dehydrogenase, which also releases CO₂).
+    <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=46">p. 46</a></figcaption>
+</figure>
+</div>
+
+<h3>NADPH, glutathione and the red blood cell <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=47">p. 47–48</a></h3>
+<div class="flow"><span>G6P</span><i>G6PD →</i><span>NADPH</span><i>glutathione reductase →</i><span>GS–SG → 2 GSH</span><i>glutathione peroxidase →</i><span>H₂O₂ → H₂O</span></div>
+<p><b>Reduced glutathione (GSH)</b> (glutamate–cysteine–glycine, with an SH group) protects red cells from oxidants such as <b>H₂O₂</b>;
+  NADPH from the PPP recycles oxidised glutathione (GS–SG) back to GSH.</p>
+<figure>
+  <img src="carbohydrate-metabolism/glutathione.jpg" alt="O2 → superoxide → (superoxide dismutase) H2O2 → (catalase or glutathione peroxidase) H2O; 2GSH ⇄ GSSG via glutathione reductase using NADPH from G6P dehydrogenase" loading="lazy">
+  <figcaption><b>The antioxidant chain of the red cell.</b> Superoxide → H₂O₂ (superoxide dismutase) → water (glutathione peroxidase, using
+    GSH; or catalase). No G6PD → no NADPH → no GSH → oxidative damage. <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=48">p. 48</a></figcaption>
+</figure>
+<div class="box trap"><span class="label">G6PD deficiency (favism)</span>
+  Less NADPH → <b>organic peroxides accumulate</b> → deform the red cell membrane, <b>oxidise hemoglobin (Fe²⁺ → Fe³⁺)</b> and other proteins
+  → <b>acute hemolytic crisis</b> a few hours after an oxidant: <b>fava beans</b>, drugs (<b>aspirin, sulfonamides</b>) → hemolytic anemia.
+  Mainly affects <b>red blood cells</b>.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="gng"><span class="num">XI.</span> Gluconeogenesis
+  <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=50">p. 50–63</a>
+  <span class="exam">2022-23 · 2023-24 · 2024-25 · 2025-26</span></h2>
+<div class="box def"><span class="label">Definition</span>
+  Formation of carbohydrates, mainly <b>glucose and glycogen</b>, from <b>non-carbohydrate precursors</b>.</div>
+<ul>
+  <li>Feeds glucose-needing tissues (brain, red blood cells, rapidly contracting muscle); the liver uses glycogen (short-term) and gluconeogenesis.</li>
+  <li>Where: <b>liver 90%</b>, <b>kidneys + intestinal epithelium 10%</b>. <b>Not in muscle or brain</b>.</li>
+  <li>Same reactions in animals, plants, fungi and microorganisms.</li>
+</ul>
+
+<h3>Precursors and entry points <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=52">p. 52–53</a></h3>
+<div class="table-wrap"><table>
+  <tr><th>Precursor</th><th>Origin</th><th>Enters at</th></tr>
+  <tr><td><b>Pyruvate, lactate</b> (≈ 1/3)</td><td>Red blood cells, muscle</td><td>Pyruvate</td></tr>
+  <tr><td><b>Alanine</b> (≈ 1/3)</td><td>Muscle</td><td>Pyruvate</td></tr>
+  <tr><td><b>Glycerol</b></td><td>Triglycerides (diet, adipose tissue, lipoproteins)</td><td><b>DHAP</b></td></tr>
+  <tr><td><b>Glucogenic amino acids</b></td><td>Dietary or tissue proteins</td><td>Pyruvate, or Krebs intermediates → <b>PEP</b></td></tr>
+  <tr><td><b>Propionate</b></td><td><b>Odd-chain</b> fatty acids</td><td>Succinyl-CoA → PEP</td></tr>
+</table></div>
+<div class="box trap"><span class="label">Not a precursor</span>
+  <b>Acetyl-CoA</b> (from fatty acid breakdown) <b>cannot</b> become glucose in humans and animals → <b>fatty acids are not gluconeogenic substrates</b>.</div>
+<figure class="small">
+  <img src="carbohydrate-metabolism/gng-entry.jpg" alt="Lactate and amino acids enter at pyruvate/oxaloacetate, then PEP, glyceraldehyde-3-P, glucose-6-P, glucose; glycerol from triglycerides enters at glyceraldehyde-3-P level; glycogen at glucose-6-P" loading="lazy">
+  <figcaption><b>Three doors</b>: pyruvate (lactate, alanine, AAs), PEP via oxaloacetate (AAs feeding the Krebs cycle), DHAP/triose level
+    (glycerol from TG = triglycerides). <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=53">p. 53</a></figcaption>
+</figure>
+
+<h3>The 3 bypasses <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=54">p. 54–55</a></h3>
+<p>Of the 10 reactions from pyruvate to glucose, <b>7 are glycolysis reversed</b> (same cytosolic enzymes). The <b>3 irreversible</b>
+  glycolytic steps are bypassed by different enzymes (gluconeogenesis reactions 1, 8 and 10):</p>
+<div class="table-wrap"><table>
+  <tr><th>Glycolysis step (irreversible)</th><th>Gluconeogenesis bypass</th><th>Details</th></tr>
+  <tr><td>10 · Pyruvate kinase (PEP → pyruvate)</td><td><b>Pyruvate carboxylase</b> + <b>PEPCK</b></td>
+    <td>Pyruvate enters the mitochondrion → oxaloacetate by <b>pyruvate carboxylase</b> (<b>strictly mitochondrial</b>, coenzyme <b>biotin, vitamin B8</b>, <b>1 ATP</b>).
+      Oxaloacetate leaves as <b>malate</b> (malate dehydrogenase, malate–aspartate shuttle), then <b>PEP carboxykinase</b> (PEPCK): phosphorylative decarboxylation, <b>1 GTP</b>.</td></tr>
+  <tr><td>3 · PFK-1</td><td><b>Fructose-1,6-bisphosphatase</b></td><td>F1,6-bisP → F6P</td></tr>
+  <tr><td>1 · Hexokinase</td><td><b>Glucose-6-phosphatase</b></td><td>G6P → <b>free glucose</b>. Liver-specific (absent in muscle).</td></tr>
+</table></div>
+<div class="grid2">
+<figure>
+  <img src="carbohydrate-metabolism/pyruvate-to-pep.jpg" alt="Pyruvate enters the mitochondrion via MPC; pyruvate carboxylase (biotin, activated by acetyl-CoA, uses ATP) makes oxaloacetate; malate dehydrogenase makes malate, which crosses to the cytosol, is reoxidised to oxaloacetate; PEP carboxykinase uses GTP and releases CO2 to give phosphoenolpyruvate" loading="lazy">
+  <figcaption><b>Pyruvate → PEP takes two enzymes and two compartments</b>: pyruvate carboxylase (mitochondrion, ATP, biotin) and PEPCK
+    (cytosol, GTP, releases CO₂). <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=54">p. 54</a></figcaption>
+</figure>
+<figure>
+  <img src="carbohydrate-metabolism/gng-bypasses.jpg" alt="Glycolysis vs gluconeogenesis: red irreversible glycolytic enzymes (hexokinase, PFK-1, pyruvate kinase) and green bypass enzymes (glucose-6-phosphatase, fructose bisphosphatase, PEP carboxykinase, pyruvate carboxylase); cost −2 ATP at the pyruvate step, −ATP at phosphoglycerate kinase, ×2, total −6 ATP" loading="lazy">
+  <figcaption><b>Red</b> = glycolysis-only enzymes; <b>green</b> = gluconeogenesis-only. The cost adds up to <b>−6 ATP</b> per glucose.
+    <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=55">p. 55–56</a></figcaption>
+</figure>
+</div>
+
+<h3>Energy cost <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=56">p. 56</a></h3>
+<div class="formula">2 pyruvate + 4 ATP + 2 GTP + 2 (NADH,H⁺) + 6 H₂O → glucose + 4 ADP + 2 GDP + 6 Pi + 2 NAD⁺ + 2 H⁺</div>
+<p>2 pyruvate → 1 glucose costs <b>2 × 3 = 6 ATP</b> (pyruvate carboxylase, PEPCK, phosphoglycerate kinase, ×2) — versus 2 ATP gained in
+  glycolysis: the price of irreversibility and reciprocal regulation.</p>
+
+<h3>The precursors one by one <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=57">p. 57–61</a></h3>
+<div class="table-wrap"><table>
+  <tr><th>Precursor</th><th>Route</th></tr>
+  <tr><td><b>Lactate — Cori cycle</b></td><td>Anaerobic (hypoxic) muscle makes lactate → blood → <b>liver</b> → glucose → back to muscle. <b>Glucose–lactate cycle</b>.</td></tr>
+  <tr><td><b>Alanine — Felig cycle</b></td><td>Constant precursor in <b>prolonged fasting</b>; from muscle protein catabolism and glycolytic pyruvate. Muscle: pyruvate → alanine (ALT) → blood → <b>liver</b>: alanine → pyruvate (NH₂ → urea) → glucose. <b>Glucose–alanine cycle</b>.</td></tr>
+  <tr><td><b>Glycerol</b></td><td>Liver and kidneys have <b>glycerol kinase</b>: glycerol → glycerol-3-P, which either takes fatty acids (→ triglycerides) or is oxidised to <b>DHAP</b> by glycerol-3-P dehydrogenase → gluconeogenesis.</td></tr>
+  <tr><td><b>Glucogenic AAs</b></td><td>Carbon skeleton → pyruvate or one of <b>4 Krebs intermediates</b>: α-ketoglutarate, succinyl-CoA, fumarate, oxaloacetate. It leaves the mitochondrion as <b>malate</b> → PEP.</td></tr>
+  <tr><td><b>Propionate</b> (CH₃–CH₂–COOH)</td><td>From odd-chain fatty acids → <b>succinyl-CoA</b> → PEP.</td></tr>
+</table></div>
+<div class="grid2">
+<figure>
+  <img src="carbohydrate-metabolism/cori-cycle.jpg" alt="Cori cycle: in active skeletal muscle glucose → pyruvate → lactate (glycolysis); lactate goes to the liver, lactate → pyruvate → glucose (gluconeogenesis), glucose returns to muscle" loading="lazy">
+  <figcaption><b>Cori</b>: lactate goes muscle → liver; glucose goes liver → muscle. <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=57">p. 57</a></figcaption>
+</figure>
+<figure>
+  <img src="carbohydrate-metabolism/felig-cycle.jpg" alt="Glucose/alanine cycle: muscle glucose → 2 pyruvate (2 ATP) → alanine via ALT; alanine travels in blood to the liver → pyruvate (NH2 → urea, 4 ATP) → glucose (6 ATP) → back to muscle" loading="lazy">
+  <figcaption><b>Felig</b>: alanine goes muscle → liver; its nitrogen becomes urea in the liver. <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=58">p. 58</a></figcaption>
+</figure>
+</div>
+<figure class="small">
+  <img src="carbohydrate-metabolism/glucogenic-aa.jpg" alt="Glucogenic amino acids feeding pyruvate (hydroxyproline, serine, cysteine, threonine, glycine, alanine, tryptophan), fumarate (tyrosine, phenylalanine), succinyl-CoA (isoleucine, methionine, valine, propionate), α-ketoglutarate (histidine, proline, glutamine, arginine via glutamate), oxaloacetate (aspartate); oxaloacetate → PEP → glucose" loading="lazy">
+  <figcaption><b>Which amino acids enter where.</b> Pyruvate: Hyp, Ser, Cys, Thr, Gly, Ala, Trp. Fumarate: Tyr, Phe. Succinyl-CoA: Ile, Met, Val
+    (+ propionate). α-Ketoglutarate: His, Pro, Gln, Arg (via glutamate). Oxaloacetate: aspartate. All exit via oxaloacetate → PEP.
+    <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=60">p. 60–61</a></figcaption>
+</figure>
+
+<h3>Regulation <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=63">p. 63</a></h3>
+<ul>
+  <li><b>Fasting</b> → blood glucose falls → <b>glucagon</b> → <b>accelerates gluconeogenesis, inhibits glycolysis</b>, induces <b>PEPCK</b> and <b>F1,6-BPase</b>.</li>
+  <li><b>After a meal</b> → <b>insulin</b> → slows gluconeogenesis, activates glycolysis.</li>
+</ul>
+<div class="table-wrap"><table>
+  <tr><th>Step</th><th>Glycolysis enzyme</th><th>Gluconeogenesis enzyme</th></tr>
+  <tr><td>F6P ⇄ F1,6-bisP</td><td><b>PFK-1</b>: + AMP, F-2,6-BP, insulin · − ATP, citrate, glucagon</td><td><b>F1,6-BPase</b>: + citrate, glucagon · − AMP, F-2,6-BP</td></tr>
+  <tr><td>PEP ⇄ pyruvate</td><td><b>Pyruvate kinase</b>: + insulin · − alanine, ATP, glucagon</td><td><b>Pyruvate carboxylase</b>: + acetyl-CoA · − ADP. <b>PEPCK</b>: − ADP</td></tr>
+</table></div>
+<figure class="small">
+  <img src="carbohydrate-metabolism/glycolysis-vs-gng-regulation.jpg" alt="Side-by-side regulation: glycolysis (PFK-1 activated by AMP, F-2,6-BP, insulin; inhibited by ATP, citrate, glucagon; pyruvate kinase inhibited by alanine, ATP, glucagon, activated by insulin) and gluconeogenesis (F1,6-bisphosphatase inhibited by AMP, F-2,6-BP, activated by citrate and glucagon; PEPCK inhibited by ADP; pyruvate carboxylase activated by acetyl-CoA, inhibited by ADP)" loading="lazy">
+  <figcaption><b>Mirror regulation</b>: what turns PFK-1 on (AMP, F-2,6-BP) turns F1,6-BPase off, and vice versa (citrate). Insulin favours
+    glycolysis, glucagon gluconeogenesis. <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=63">p. 63</a></figcaption>
+</figure>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="glycogen"><span class="num">XII.</span> Glycogen metabolism
+  <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=65">p. 65–73</a>
+  <span class="exam">2023-24 · 2025-26</span></h2>
+<p>Synthesis (<b>glycogenesis</b>) and breakdown (<b>glycogenolysis</b>) are regulated by the <b>nutritional state</b> (fed/fasting) and the
+  <b>energy status</b> (ATP/AMP ratio). Glycogen metabolism concerns the intestine, liver and muscles.</p>
+<div class="table-wrap"><table>
+  <tr><th></th><th>Liver</th><th>Muscle</th></tr>
+  <tr><td>Store</td><td>≈ <b>150 g</b> (1/3 of body glycogen)</td><td>≈ <b>300 g</b> (2/3)</td></tr>
+  <tr><td>Fed / rest</td><td>Stores intestinal glucose (and glucose from gluconeogenesis) as glycogen</td><td>Stores glucose as glycogen at rest</td></tr>
+  <tr><td>Fasting / activity</td><td>Glycogenolysis → glucose <b>exported</b> to tissues; empty within <b>24 h</b></td><td>Glycogenolysis → glucose <b>used on the spot</b> during activity</td></tr>
+  <tr><td>Glucose-6-phosphatase</td><td><b>Yes</b> → free glucose to the blood</td><td><b>No</b> → G6P stays in the cell → glycolysis (lactate)</td></tr>
+  <tr><td>Use</td><td><b>"Public"</b> (regulates blood glucose)</td><td><b>"Private"</b> (local energy)</td></tr>
+  <tr><td>Breakdown hormone</td><td><b>Glucagon</b></td><td><b>Epinephrine</b></td></tr>
+</table></div>
+
+<h3>Glycogenesis <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=68">p. 67–69</a></h3>
+<ul>
+  <li>In the <b>cytosol</b>. Key enzyme <b>glycogen synthase</b> (α1→4 bonds) + <b>branching enzyme</b> (α1→6). Precursor <b>glucose-6-P</b>.
+    Stimulated by <b>insulin</b> after meals.</li>
+  <li>Needs <b>ATP and UTP</b> — <b>two high-energy bonds</b> per glucose.</li>
+</ul>
+<div class="flow"><span>Glucose</span><i>hexokinase, ATP →</i><span>G6P</span><i>phosphoglucomutase →</i><span>G1P</span><i>+ UTP (UDP-glucose pyrophosphorylase), − PPi →</i><span>UDP-glucose</span><i>glycogen synthase →</i><span>glycogen (n+1) + UDP</span></div>
+<p><b>Branching</b>: once a chain is <b>≥ 11 residues</b> long, the branching enzyme cuts an α(1→4) bond, takes a <b>7-residue</b> fragment and attaches it
+  to <b>C6</b> of a glucose on the same or another chain → <b>α(1→6)</b> branch. Many branches = <b>more soluble</b> and many ends for fast
+  addition/removal of glucose.</p>
+<figure>
+  <img src="carbohydrate-metabolism/glycogen-branching.jpg" alt="A linear α1→4 glycogen chain; glycogen-branching enzyme moves a 7-residue block (pink) to form an α1→6 branch point" loading="lazy">
+  <figcaption><b>Branching enzyme</b>: the pink block of residues is cut from the chain end and reattached by an α(1→6) bond. Nonreducing end =
+    where glucoses are added or removed. <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=69">p. 69</a></figcaption>
+</figure>
+
+<h3>Glycogenolysis <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=70">p. 67, 70–72</a></h3>
+<div class="flow"><span>Glycogen (n) + Pi</span><i>glycogen phosphorylase →</i><span>glycogen (n−1) + G1P</span><i>phosphoglucomutase →</i><span>G6P</span><i>liver: glucose-6-phosphatase →</i><span>glucose → blood</span></div>
+<p>Glycogen phosphorylase breaks α(1→4) bonds; the <b>debranching enzyme</b> breaks α(1→6). Stimulated by <b>glucagon (liver)</b> and
+  <b>epinephrine (muscle)</b> during fasting or exercise.</p>
+<div class="grid2">
+<figure>
+  <img src="carbohydrate-metabolism/glycogenolysis-liver.jpg" alt="Liver: glycogen phosphorylase → glucose-1-phosphate → phosphoglucomutase → glucose-6-phosphate → glucose-6-phosphatase → glucose exported to blood (or glycolysis)" loading="lazy">
+  <figcaption><b>Liver</b>: G6P → <b>free glucose</b> (glucose-6-phosphatase) → blood. <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=70">p. 70</a></figcaption>
+</figure>
+<figure>
+  <img src="carbohydrate-metabolism/glycogenolysis-muscle.jpg" alt="Muscle: glycogen phosphorylase → glucose-1-phosphate → glucose-6-phosphate → glycolysis; only lactate leaves to blood" loading="lazy">
+  <figcaption><b>Muscle</b>: no glucose-6-phosphatase → G6P goes to glycolysis; only <b>lactate</b> reaches the blood. <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=71">p. 71</a></figcaption>
+</figure>
+</div>
+<figure class="small">
+  <img src="carbohydrate-metabolism/glycogen-pathways.jpg" alt="Cycle: glucose → G6P → G1P → UDP-glucose → glycogen (insulin: glycogen synthase, branching enzyme) and glycogen → G1P (epinephrine, glucagon: glycogen phosphorylase, debranching enzyme); glucose-6-phosphatase in liver" loading="lazy">
+  <figcaption><b>Both directions in one loop.</b> Left (insulin ⊕): glycogen synthase + branching enzyme via UDP-glucose. Right (epinephrine,
+    glucagon ⊕): phosphorylase + debranching enzyme. <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=67">p. 67</a></figcaption>
+</figure>
+
+<h3>Glycogen storage diseases <a class="page" href="/lessons/s1/biochemistry/carbohydrate-metabolism.pdf#page=73">p. 73</a></h3>
+<div class="table-wrap"><table>
+  <tr><th>Type</th><th>Name</th><th>Deficient enzyme</th><th>Glycogen</th><th>Prevalence</th><th>Clinical</th></tr>
+  <tr><td>0</td><td>—</td><td>Glycogen synthase</td><td>None</td><td>Very rare</td><td>Hypoglycemia, ketosis</td></tr>
+  <tr><td>I</td><td><b>Von Gierke</b></td><td><b>Glucose-6-phosphatase</b></td><td>Normal</td><td>1/50 000</td><td>Severe hypoglycemia, big liver, lactic acidosis</td></tr>
+  <tr><td>II</td><td><b>Pompe</b></td><td>Lysosomal α1,4-glucosidase</td><td>Inclusion bodies with glycogen</td><td>1/140 000</td><td>Big heart, weakness, death</td></tr>
+  <tr><td>III</td><td><b>Cori</b></td><td>Debranching enzyme (α1,6-glucosidase)</td><td>Shorter outer branches</td><td>1/100 000</td><td>Mild hypoglycemia, big liver</td></tr>
+  <tr><td>IV</td><td><b>Anderson</b></td><td>Branching enzyme</td><td>Long chains, few branches</td><td>Very rare</td><td>Cirrhosis, hypoglycemia, death</td></tr>
+  <tr><td>V</td><td><b>McArdle</b></td><td><b>Muscle</b> glycogen phosphorylase</td><td>Normal</td><td>1/100 000</td><td>Muscle cramps, weakness, teens</td></tr>
+  <tr><td>VI</td><td><b>Hers</b></td><td><b>Liver</b> glycogen phosphorylase</td><td>Normal</td><td>1/70 000</td><td>Mild hypoglycemia, cirrhosis</td></tr>
+</table></div>
+<div class="box tip"><span class="label">Memory trick</span>
+  Liver enzymes missing → <b>hypoglycemia</b> (Von Gierke I, Cori III, Hers VI). Muscle enzyme missing → <b>cramps</b> (McArdle V). Heart → Pompe II.
+  Don't mix up <b>Cori disease</b> (type III) with the <b>Cori cycle</b> (lactate → glucose).</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="traps">Exam traps <span class="meta">— the wrong options past exams keep using</span></h2>
+<div class="box trap"><span class="label">False statements from past EMDs</span>
+  <ul>
+    <li>"During glycolysis, ATP is <b>only consumed</b>" — false: 2 used (steps 1, 3), 4 made (steps 7, 10).</li>
+    <li>"<b>Phosphoglycerate kinase / pyruvate kinase</b> consume ATP" — false: they <b>make</b> ATP. Only <b>hexokinase and PFK</b> consume it. <span class="exam">2025-26</span></li>
+    <li>"<b>PFK</b> is shared by glycolysis and gluconeogenesis" — false: irreversible, bypassed by F1,6-BPase. Shared reversible enzymes: G6P isomerase, phosphoglycerate kinase, enolase… <span class="exam">2023-24</span></li>
+    <li>"<b>G6P isomerase / phosphoglycerate kinase</b> are allosterically regulated" — false: hexokinase, PFK-1 (and pyruvate kinase). <span class="exam">2022-23</span></li>
+    <li>"The main activator of PFK-1 is <b>ATP / NADH / acetyl-CoA</b>" — false: <b>fructose-2,6-bisphosphate</b> (ATP inhibits). <span class="exam">2024-25</span></li>
+    <li>"PDH turns pyruvate into <b>PEP / lactate / ethanol</b>" — false: into <b>acetyl-CoA</b>. <span class="exam">2023-24</span></li>
+    <li>"Under hypoxia <b>glycolysis is inhibited</b>" — false: chain and Krebs slow down, glycolysis continues, <b>lactate rises</b>, NAD⁺ regenerated. <span class="exam">2025-26</span></li>
+    <li>"The <b>Krebs cycle</b> / the <b>PPP</b> regenerates NAD⁺ in anaerobiosis" — false: <b>fermentation</b> does. <span class="exam">2024-25</span></li>
+    <li>"The Krebs cycle takes place in the <b>cytoplasm</b>" — false: <b>mitochondrion</b>. <span class="exam">2023-24</span></li>
+    <li>"<b>Glucokinase / PDH / carnitine acyltransferase</b> are Krebs cycle enzymes" — false; <b>malate dehydrogenase</b> is. <span class="exam">2022-23</span></li>
+    <li>"Succinyl-CoA → succinate makes NADH" — false: <b>GTP</b>. "Oxaloacetate → citrate / succinate → fumarate release CO₂" — false: CO₂ only at <b>isocitrate DH and α-KG DH</b>. <span class="exam">2024-25</span></li>
+    <li>"Succinate dehydrogenation gives <b>malate</b>" — false: <b>fumarate</b>. <span class="exam">2023-24</span></li>
+    <li>"Isocitrate dehydrogenase is <b>activated by ATP and NADH</b>" — false: they <b>inhibit</b> the cycle. <span class="exam">2025-26</span></li>
+    <li>"Glucose synthesis is a main function of the Krebs cycle" — false per the key: it <b>supplies intermediates</b> (anabolic role), it doesn't make glucose. <span class="exam">2024-25</span></li>
+    <li>"Krebs dysfunction → <b>oxaloacetate accumulates</b> / <b>oxidative metabolism increases</b>" — false: less NADH/FADH₂ and less ATP. <span class="exam">2024-25</span></li>
+    <li>Yield of 1 pyruvate = 2 / 8 / 12 ATP — false: <b>15</b>. F6P → lactate = <b>3</b>, not 2. <span class="exam">2022-23 · 2023-24</span></li>
+    <li>PPP "is <b>exclusively hepatic</b>" (ubiquitous), "makes <b>ATP</b>" or "<b>NADH</b>" (NADPH), "oxidative phase has <b>two</b> decarboxylations" (one). <span class="exam">3 years</span></li>
+    <li>PPP products: <b>arabinose-5-P</b> is not one. Molecules that re-enter glycolysis: <b>F6P and G3P</b> — not F1,6-bisP, not xylulose-5-P. <span class="exam">2022-23 · 2024-25</span></li>
+    <li>"<b>Acetyl-CoA / malonyl-CoA</b> are gluconeogenic precursors" — false. <span class="exam">2022-23 · 2024-25</span></li>
+    <li>"Gluconeogenesis is <b>exclusively cytosolic</b>" (pyruvate carboxylase is mitochondrial) or "uses <b>all</b> the glycolysis enzymes" (3 bypasses) — false. <span class="exam">2025-26</span></li>
+    <li>"G6P → glucose is done by <b>hexokinase / glucokinase</b>" — false: <b>glucose-6-phosphatase</b> (and it is not glucose → G6P). <span class="exam">2022-23 · 2023-24</span></li>
+    <li>"Muscle lacks <b>pyruvate carboxylase / PEPCK / F1,6-BPase</b>" — the enzyme the key says is missing in muscle is <b>glucose-6-phosphatase</b>. <span class="exam">2024-25</span></li>
+    <li>"<b>Hexokinase</b> / <b>glucose-6-phosphatase</b> are mitochondrial" — false; mitochondrial: <b>succinate DH, PDH</b>. <span class="exam">2023-24</span></li>
+    <li>Cori cycle "transports <b>glucose</b> from muscle to liver" — false: it carries <b>lactate</b> muscle → liver. Felig cycle is about <b>alanine</b>, not lactate. <span class="exam">2024-25 · 2025-26</span></li>
+    <li>Galactose "enters glycolysis via <b>fructose-6-P</b>" — false: via glucose-1-P → <b>glucose-6-P</b>. <span class="exam">2025-26</span></li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="check">Self-check <span class="meta">— answer, then tap to reveal</span></h2>
+<details class="card"><summary>Which 3 glycolysis steps are irreversible, and which consume or make ATP?</summary>
+  <div>1 hexokinase (−ATP), 3 PFK-1 (−ATP), 10 pyruvate kinase (+ATP). Step 7 (phosphoglycerate kinase) also makes ATP but is reversible.</div></details>
+<details class="card"><summary>Net ATP of glycolysis, anaerobic vs aerobic?</summary>
+  <div>Anaerobic 2 ATP; aerobic 2 + 2 NADH × 3 = 8 ATP.</div></details>
+<details class="card"><summary>Activators and inhibitors of PFK-1?</summary>
+  <div>Activators: AMP, ADP, fructose-2,6-bisphosphate, fructose-6-P. Inhibitors: ATP, citrate (and glucagon hormonally).</div></details>
+<details class="card"><summary>Why must pyruvate become lactate in anaerobiosis?</summary>
+  <div>To reoxidise NADH to NAD⁺ (lactate dehydrogenase), so reaction 6 of glycolysis can continue without O₂.</div></details>
+<details class="card"><summary>Name the 5 cofactors of pyruvate dehydrogenase. Where does it work?</summary>
+  <div>TPP, lipoic acid, CoA, FAD, NAD⁺. In the mitochondrion; irreversible; gives 1 NADH.</div></details>
+<details class="card"><summary>Which Krebs reactions make NADH, FADH₂, GTP and CO₂?</summary>
+  <div>NADH: isocitrate DH, α-ketoglutarate DH, malate DH. FADH₂: succinate DH. GTP: succinyl-CoA synthetase. CO₂: isocitrate DH and α-ketoglutarate DH.</div></details>
+<details class="card"><summary>How many ATP from 1 acetyl-CoA, 1 pyruvate, 1 glucose?</summary>
+  <div>12, 15, 38 (36 with the glycerol phosphate shuttle).</div></details>
+<details class="card"><summary>Which shuttle works in muscle and brain, and what is the consequence?</summary>
+  <div>Glycerol phosphate shuttle: electrons enter as FADH₂ (2 ATP) → 36 ATP per glucose. Liver, kidney, heart use malate–aspartate → 38.</div></details>
+<details class="card"><summary>What does the PPP produce, and what does it not?</summary>
+  <div>NADPH, ribose-5-P, erythrose-4-P (and back to F6P + G3P). No ATP, no NADH.</div></details>
+<details class="card"><summary>Why does G6PD deficiency cause hemolysis after fava beans?</summary>
+  <div>No NADPH → GS–SG not recycled to GSH → peroxides accumulate → membrane damage and Hb oxidation (Fe²⁺ → Fe³⁺) → acute hemolytic crisis.</div></details>
+<details class="card"><summary>Give the 3 gluconeogenesis bypass enzymes (4 enzymes in total) and their cofactor/cost.</summary>
+  <div>Pyruvate carboxylase (mitochondrial, biotin, ATP) + PEPCK (GTP); fructose-1,6-bisphosphatase; glucose-6-phosphatase. Total cost 6 ATP per glucose.</div></details>
+<details class="card"><summary>Why can't fatty acids make glucose, but glycerol and propionate can?</summary>
+  <div>Fatty acids give acetyl-CoA, which can't become glucose. Glycerol → glycerol-3-P → DHAP; propionate (odd-chain FA) → succinyl-CoA → PEP.</div></details>
+<details class="card"><summary>Cori cycle vs Felig cycle?</summary>
+  <div>Cori: muscle lactate → liver → glucose → muscle. Felig: muscle alanine → liver → pyruvate → glucose (N → urea) → muscle.</div></details>
+<details class="card"><summary>Why can't muscle glycogen raise blood glucose?</summary>
+  <div>Muscle has no glucose-6-phosphatase: G6P can't become free glucose; it is used locally (glycolysis → lactate). "Private" glycogen.</div></details>
+<details class="card"><summary>What does glycogen synthesis need, and how are branches made?</summary>
+  <div>Cytosol, precursor G6P, glycogen synthase, ATP + UTP (2 high-energy bonds). Branching enzyme moves a 7-residue piece from a chain of ≥ 11 to a C6 → α(1→6).</div></details>
+<details class="card"><summary>Von Gierke vs McArdle disease?</summary>
+  <div>Von Gierke (I): glucose-6-phosphatase → severe hypoglycemia, big liver, lactic acidosis. McArdle (V): muscle glycogen phosphorylase → cramps, weakness.</div></details>
+
+<footer>Summary of "Chapter 1-B: Carbohydrate metabolism", Dr Daroui-Mokaddem H., 1st-year medicine biochemistry, Faculty of Medicine Annaba, 2025-2026.
+  🎯 = topic asked in past EMD1 exams (years shown). 📄 = page in the lesson PDF. Every fact comes from the slides; exam traps come from the official keys.</footer>
+</main>
+</body>
+</html>
