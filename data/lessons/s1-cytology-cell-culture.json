@@ -1,0 +1,235 @@
+{
+  "semester": 1,
+  "module": "Cytology",
+  "title": "Cell culture",
+  "pdf": "s1/cytology/cell-culture.pdf",
+  "exam_questions": [
+    "EMD1 2022-2023 Q9",
+    "EMD1 2023-2024 Q12",
+    "EMD1 2023-2024 Q35",
+    "EMD1 2024-2025 Q26"
+  ],
+  "questions": [
+    {
+      "stem": "About cell culture:",
+      "options": [
+        "It maintains living cells outside their original organism.",
+        "Cultured cells keep the capacity to proliferate and differentiate in vitro.",
+        "Cultured cells are organized into tissues, as in the organism.",
+        "It is used in vaccine development and therapeutic protein production."
+      ],
+      "answer": "ABD",
+      "explanation": "Cell culture keeps living cells outside the organism, where they still proliferate and differentiate, but they are not organized into tissues. It is central to vaccines, cancer research and therapeutic protein production.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "You receive a fresh liver biopsy and want to obtain isolated living hepatocytes. The correct order of steps is:",
+      "options": [
+        "biopsy → mechanical dissociation → enzymatic dissociation → debris removal.",
+        "biopsy → enzymatic dissociation → debris removal → mechanical dissociation.",
+        "biopsy → debris removal → mechanical dissociation → enzymatic dissociation.",
+        "blood sample → enzymatic dissociation → debris removal."
+      ],
+      "answer": "A",
+      "explanation": "For adherent cells: biopsy, mechanical dissociation (physical disruption), enzymatic dissociation, then debris removal by filtration and washing. A blood sample is only enough for circulating cells.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "During the isolation of adherent cells, enzymatic dissociation is used to:",
+      "options": [
+        "eliminate the extracellular matrix.",
+        "break intercellular junctions.",
+        "release individual cells.",
+        "remove tissue fragments by filtration."
+      ],
+      "answer": "ABC",
+      "explanation": "Enzymatic dissociation removes the extracellular matrix, breaks intercellular junctions and releases single cells. Removing fragments by filtration and washing is the later debris-removal step.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "You want to culture a patient's lymphocytes:",
+      "options": [
+        "lymphocytes are adherent cells derived from a solid tissue.",
+        "a simple blood sample is sufficient to obtain them.",
+        "a biopsy followed by mechanical and enzymatic dissociation is mandatory.",
+        "lymphocytes are circulating cells."
+      ],
+      "answer": "BD",
+      "explanation": "Blood and lymphatic cells are circulating cells, easy to obtain with a simple blood sample. Biopsy and mechanical/enzymatic dissociation are needed for adherent cells from solid tissues.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "About a primary culture:",
+      "options": [
+        "it is a homogeneous population of a single cell type.",
+        "its cells divide indefinitely.",
+        "it is the initial population of cells isolated directly from a tissue.",
+        "it is the closest cellular state to the cells in their natural environment."
+      ],
+      "answer": "CD",
+      "explanation": "A primary culture is the first population isolated from a tissue and the closest to the physiological state. It contains all the cell types of the tissue (not homogeneous) and has a short lifespan.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "A primary culture of normal human skin fibroblasts is kept for several weeks:",
+      "options": [
+        "its telomeres shorten with each division.",
+        "when telomeres become critically short, cells enter permanent cell-cycle arrest (replicative senescence).",
+        "fibroblasts express telomerase, so the culture divides indefinitely.",
+        "the arrested cells finally undergo apoptosis."
+      ],
+      "answer": "ABD",
+      "explanation": "DNA polymerase cannot fully replicate chromosome ends, so telomeres shorten at each division until replicative senescence and then apoptosis. Normal somatic cells lack telomerase; it is expressed by cell lines, germ cells, some stem cells and most cancer cells.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "About cell lines:",
+      "options": [
+        "like primary cultures, they stop dividing after roughly 40 to 60 divisions.",
+        "they are homogeneous populations derived from a primary culture.",
+        "they have acquired resistance to apoptosis and divide indefinitely (immortalization).",
+        "immortalization usually results from a genetic modification, most often by viral transduction."
+      ],
+      "answer": "BCD",
+      "explanation": "Cell lines are homogeneous, derived from a primary culture, and immortalized, usually by introducing viral genes. They bypass the Hayflick limit (40–60 divisions) that applies to primary cultures.",
+      "page": 3,
+      "weight": 3
+    },
+    {
+      "stem": "You want to establish a cell line of normal human kidney epithelial cells for a long-term project. Which protocol do you use?",
+      "options": [
+        "biopsy + primary culture.",
+        "biopsy + primary culture + flow cytometry sorting.",
+        "biopsy + primary culture + flow cytometry sorting + immortalization by introducing viral genes.",
+        "blood sample + flow cytometry sorting + immortalization by introducing viral genes."
+      ],
+      "answer": "C",
+      "explanation": "Normal cells must be sorted by flow cytometry to keep the desired type, then immortalized with viral genes. Sorting alone is enough only for tumor cells, which already resist apoptosis; kidney cells are adherent, so a blood sample won't do.",
+      "page": 3,
+      "weight": 3
+    },
+    {
+      "stem": "Establishing a tumor cell line requires only cell sorting, with no immortalization step, because tumor cells:",
+      "options": [
+        "lack telomerase.",
+        "are post-mitotic cells in G0 phase.",
+        "are by definition resistant to apoptosis.",
+        "have accumulated multiple mutations enabling uncontrolled proliferation."
+      ],
+      "answer": "CD",
+      "explanation": "Tumor cells are intrinsically resistant to apoptosis because of accumulated mutations, so they need no extra immortalization. Most cancer cells actually express telomerase, and post-mitotic G0 cells describe mature neurons.",
+      "page": 3,
+      "weight": 3
+    },
+    {
+      "stem": "About flow cytometry:",
+      "options": [
+        "it measures the relative size of each cell.",
+        "it measures the internal complexity (granularity) of each cell.",
+        "cells pass in groups through an electron beam.",
+        "modern cytometers can analyze up to 1,000 cells per second."
+      ],
+      "answer": "ABD",
+      "explanation": "Cells in suspension pass one by one through a LASER beam; the cytometer measures relative size, granularity and fluorescence, up to 1,000 cells per second. It uses a laser, not an electron beam, and cells pass individually.",
+      "page": 3,
+      "weight": 3
+    },
+    {
+      "stem": "From a primary culture, you want to keep only the cells carrying a surface marker labeled with a fluorochrome, before immortalizing them. Which step do you use?",
+      "options": [
+        "enzymatic dissociation.",
+        "debris removal by filtration and washing.",
+        "flow cytometry sorting according to fluorescence intensity.",
+        "immortalization by introducing viral genes."
+      ],
+      "answer": "C",
+      "explanation": "Flow cytometry sorts cells according to predefined parameters, including fluorescence intensity of a labeled marker. Immortalization comes after sorting and does not select cells; dissociation and debris removal belong to cell isolation.",
+      "page": 3,
+      "weight": 3
+    },
+    {
+      "stem": "About the evolution of cells once placed in culture:",
+      "options": [
+        "they first go through a lag phase, during which they adjust to the new environment.",
+        "a phase of exponential growth with active cell division follows.",
+        "the lag phase is characterized by active cell division.",
+        "normal human somatic cells divide only about 40 to 60 times: the Hayflick limit."
+      ],
+      "answer": "ABD",
+      "explanation": "Cells adapt during the lag phase, then divide actively in the exponential phase. Normal somatic cells are capped at about 40–60 divisions (Hayflick limit); active division belongs to the exponential, not the lag, phase.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Which cells express telomerase, allowing them to bypass the Hayflick limit?",
+      "options": [
+        "normal human somatic cells in primary culture.",
+        "germ cells.",
+        "mature neurons.",
+        "most cancer cells."
+      ],
+      "answer": "BD",
+      "explanation": "Telomerase is expressed by cell lines, germ cells, certain stem cells and most cancer cells. Normal somatic cells lack it and senesce; mature neurons don't divide at all, so the Hayflick limit doesn't apply to them.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Two adherent cell lines are grown in flasks well past confluence. Which observation identifies the tumor cell line?",
+      "options": [
+        "a single layer of cells that has stopped dividing.",
+        "cells floating in suspension in the medium.",
+        "cells entering senescence after about 50 divisions.",
+        "cells piled up in multilayered aggregates."
+      ],
+      "answer": "D",
+      "explanation": "Normal adherent lines keep contact inhibition and stop dividing at confluence (monolayer). Tumor adherent lines lack it and keep dividing, forming multilayered aggregates; neither line senesces, both being immortal.",
+      "page": 4,
+      "weight": 1
+    },
+    {
+      "stem": "You want to study healthy adult human neurons in culture:",
+      "options": [
+        "mature neurons are terminally differentiated, post-mitotic cells in G0 phase.",
+        "the Hayflick limit does not apply to them.",
+        "you can establish a continuous cell line directly from healthy adult neurons.",
+        "you can expand neural progenitors and induce them to differentiate into mature neurons."
+      ],
+      "answer": "ABD",
+      "explanation": "Mature neurons do not divide, so the Hayflick limit doesn't apply and they cannot be subcultured: no continuous line can be made from them directly. They must be isolated from fresh tissue or obtained by differentiating expanded neural progenitors.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Concerning the maintenance of a culture of adherent cells:",
+      "options": [
+        "the work requires aseptic conditions.",
+        "the culture medium is changed once a month.",
+        "the culture medium must be changed every 2–3 days to prevent nutrient depletion.",
+        "at confluence, cells must be subcultured (passaged) into new flasks."
+      ],
+      "answer": "ACD",
+      "explanation": "Culture needs aseptic conditions, a medium change every 2–3 days, and passaging into new flasks at confluence. A monthly change would deplete nutrients.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "In clinical practice (as opposed to medical research), cell culture is used for:",
+      "options": [
+        "toxicological testing of new drugs in vitro.",
+        "preparation of artificial skin for burn treatment.",
+        "production of antibodies, hormones, vaccines and insulin.",
+        "implantation of cultured cells into animals for in vivo studies."
+      ],
+      "answer": "BC",
+      "explanation": "The lesson lists artificial skin, pharmaceutical production and stem cell preparation for transplantation under clinical practice. Toxicological testing and implanting cells into animals are medical-research uses.",
+      "page": 5,
+      "weight": 0
+    }
+  ]
+}

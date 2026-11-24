@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biophysics of solutions 10 — Summary</title>
+<link rel="stylesheet" href="/summaries/summary.css">
+<base target="_blank">
+</head>
+<body>
+<main>
+<div class="kicker">S1 · Biophysics · Summary · Part 10 of 10</div>
+<h1>Biophysics of solutions — 10</h1>
+<p class="meta">Pr B. Boutabia-Chéraitia · slides 60–66 (solute flux across dialysis and biological membranes, reflection coefficient σ, Darcy's law, Starling phenomenon, edema, Exercise 13) · 4 pages · no past exam question on these slides yet ·
+  <a href="/lessons/s1/biophysics/biophysics-of-solutions-10.pdf">open the PDF</a></p>
+<p class="meta">Course parts: <a target="_self" href="biophysics-of-solutions.html">1 · States, Psat</a> ·
+  <a target="_self" href="biophysics-of-solutions-2.html">2 · Solutions, activity, ionic strength</a> ·
+  <a target="_self" href="biophysics-of-solutions-3.html">3 · Osmolarity</a> ·
+  <a target="_self" href="biophysics-of-solutions-4.html">4 · Colligative properties</a> ·
+  <a target="_self" href="biophysics-of-solutions-5.html">5 · Renal work, transport</a> ·
+  <a target="_self" href="biophysics-of-solutions-6.html">6 · Membrane diffusion, dialysis</a> ·
+  <a target="_self" href="biophysics-of-solutions-7.html">7 · Donnan equilibrium</a> ·
+  <a target="_self" href="biophysics-of-solutions-8.html">8 · Oncotic pressure, fluids</a> ·
+  <a target="_self" href="biophysics-of-solutions-9.html">9 · Poiseuille, convective flux</a> ·
+  <b>10 · Starling, edema</b></p>
+<ul class="toc">
+  <li><a target="_self" href="#essentials">Essentials</a></li>
+  <li><a target="_self" href="#membranes">Dialysis vs biological</a></li>
+  <li><a target="_self" href="#starling">Starling</a></li>
+  <li><a target="_self" href="#balance">Balance &amp; edema</a></li>
+  <li><a target="_self" href="#ex13">Exercise 13</a></li>
+  <li><a target="_self" href="#traps">Traps</a></li>
+  <li><a target="_self" href="#check">Self-check</a></li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<div class="box essentials" id="essentials">
+  <span class="label">If you remember only this</span>
+  <ul>
+    <li>Biological membrane = <b>selective</b> ⇒ reflection coefficient <b>σ</b>: <b>J<sub>d</sub> = LσΔπ</b> (σ only on the osmotic flux), J<sub>c</sub> = LΔP.</li>
+    <li><b>Darcy's law</b>: J<sub>c</sub> = (P<sub>f</sub>V<sub>me</sub>/RT)ΔP, so <b>L = P<sub>f</sub>V<sub>me</sub>/RT</b>; P<sub>f</sub> = filtration coefficient (<b>m/s</b>), V<sub>me</sub> = molar volume of water (<b>18 cm³</b>).</li>
+    <li>Solute dragged by the solvent: <b>J<sub>cs</sub> = (1 − σ)J<sub>net</sub>C̄<sub>s</sub></b>; <b>(1 − σ) = transmission coefficient</b>. Impermeable solute σ = 1 (albumin), freely crossing σ = 0 (glucose).</li>
+    <li><b>Starling</b>: water exchange plasma ↔ interstitial medium; capillary wall = dialysis membrane. <b>Δπ = ω<sub>p</sub>RT</b> (proteins only) pulls water <b>into</b> the plasma; ΔP pushes it <b>out</b>.</li>
+    <li>Normal values: <b>ΔP<sub>a</sub> ≈ 40 mmHg, ΔP<sub>v</sub> ≈ 10 mmHg, Δπ ≈ 25 mmHg</b>. Arteriolar end: water <b>leaves</b> the plasma; venular end: water <b>returns</b>.</li>
+    <li>No accumulation when J<sub>net,a</sub> = J<sub>net,v</sub> ⇔ <b>Δπ = (ΔP<sub>a</sub> + ΔP<sub>v</sub>)/2 = ΔP̄</b>.</li>
+    <li><b>Δπ &lt; ΔP̄ ⇒ edema</b> (hyperhydration of the extravascular medium); <b>Δπ &gt; ΔP̄ ⇒ dehydration</b> of the extravascular medium.</li>
+    <li>Exercise 13: albumin 20 g/L ⇒ Δπ ≈ 9.68 mmHg, ΔP̄ = 30 mmHg ⇒ <b>edema</b>. 1 mmHg = 1.36 cmH₂O = <b>133 Pa</b>.</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="membranes"><span class="num">App.</span> Dialysis membrane vs biological membrane
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-10.pdf#page=1">slides 60–62</a></h2>
+<p>A <b>biological</b> membrane is selective: we must take into account its <span class="term">reflection coefficient σ</span>.</p>
+<div class="table-wrap"><table>
+  <tr><th></th><th>Dialysis membrane <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-10.pdf#page=1">slide 60</a></th><th>Biological membrane <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-10.pdf#page=1">slides 61–62</a></th></tr>
+  <tr><td>Solvent, diffusive flux</td><td>J<sub>d</sub> = LΔπ</td><td><b>J<sub>d</sub> = LσΔπ</b></td></tr>
+  <tr><td>Solvent, convective flux</td><td>J<sub>c</sub> = LΔP</td><td>J<sub>c</sub> = LΔP (no σ)</td></tr>
+  <tr><td>Net solvent flux</td><td colspan="2">J<sub>net</sub> = J<sub>c</sub> + J<sub>d</sub></td></tr>
+  <tr><td>Solute, convective flux</td><td>J<sub>cs</sub> = J<sub>net</sub>·C̄<sub>s</sub></td><td><b>J<sub>cs</sub> = (1 − σ)·J<sub>net</sub>·C̄<sub>s</sub></b></td></tr>
+  <tr><td>Solute, diffusive flux</td><td colspan="2">J<sub>ds</sub> = P|ΔC<sub>s</sub>|</td></tr>
+  <tr><td>Net solute flux</td><td colspan="2">J<sub>net(s)</sub> = J<sub>cs</sub> + J<sub>ds</sub> · C̄<sub>s</sub> = (C₁<sub>s</sub> + C₂<sub>s</sub>)/2</td></tr>
+</table></div>
+<div class="box def"><span class="label">Transmission coefficient</span>
+  <b>(1 − σ)</b>: the membrane transmission coefficient. σ = 1 (solute can't cross) ⇒ J<sub>cs</sub> = 0; σ = 0 ⇒ back to the dialysis formula J<sub>cs</sub> = J<sub>net</sub>C̄<sub>s</sub>.</div>
+
+<h3>Darcy's law of filtration
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-10.pdf#page=1">slide 61</a></h3>
+<div class="formula law">J<sub>c</sub> = <span class="frac"><span>P<sub>f</sub>V<sub>me</sub></span><span>RT</span></span> ΔP
+  <span class="where">so L = P<sub>f</sub>V<sub>me</sub>/RT and J<sub>d</sub> = (P<sub>f</sub>V<sub>me</sub>/RT)·σΔπ</span></div>
+<ul>
+  <li><span class="term">P<sub>f</sub></span>: membrane <b>filtration coefficient</b>, [P<sub>f</sub>] = <b>m/s</b>.</li>
+  <li><span class="term">V<sub>me</sub></span>: <b>molar volume of water</b>, V<sub>me</sub> = <b>18 cm³</b>.</li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="starling"><span class="num">Med.</span> Medical application: the Starling phenomenon
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-10.pdf#page=2">slides 62–63</a></h2>
+<div class="box def"><span class="label">Starling phenomenon</span>
+  Describes the <b>water exchange between plasma and the interstitial medium</b>, the capillary wall being modeled as a <b>dialysis membrane</b>.</div>
+<div class="table-wrap"><table>
+  <tr><th>Symbol</th><th>Meaning</th></tr>
+  <tr><td>P<sub>a</sub></td><td>Blood pressure at the <b>entrance</b> of the capillary (arteriolar end)</td></tr>
+  <tr><td>P<sub>v</sub></td><td>Blood pressure at the <b>exit</b> of the capillary (venular end) · <b>P<sub>a</sub> &gt; P<sub>v</sub></b></td></tr>
+  <tr><td>P<sub>int</sub></td><td>Pressure in the interstitial medium</td></tr>
+  <tr><td>ΔP<sub>a</sub>, ΔP<sub>v</sub></td><td>ΔP<sub>a</sub> = P<sub>a</sub> − P<sub>int</sub> · ΔP<sub>v</sub> = P<sub>v</sub> − P<sub>int</sub> (in general ΔP = P<sub>cap</sub> − P<sub>int</sub>)</td></tr>
+</table></div>
+
+<h3>Where Δπ comes from <span class="exam">Δπ = ωRT: 2022-23 · 2023-24 · 2024-25</span></h3>
+<ul>
+  <li>ω<sub>plasma</sub> = ω<sub>i</sub> + ω<sub>p</sub> (small ions + proteins); ω<sub>int</sub> = ω′<sub>i</sub> ≈ ω<sub>i</sub>.</li>
+  <li><b>Δπ = (ω<sub>plasma</sub> − ω<sub>int</sub>)RT = ω<sub>p</sub>RT</b>: due to the plasma proteins only (the oncotic pressure of part 8).</li>
+  <li>Direction of Δπ: <b>interstitial medium → plasma</b>. ΔP pushes the other way, plasma → interstitial medium.</li>
+</ul>
+
+<div class="table-wrap"><table>
+  <tr><th></th><th>Arteriolar end (a)</th><th>Venular end (v)</th></tr>
+  <tr><td>Normal values</td><td><b>ΔP<sub>a</sub> ≈ 40 mmHg</b>, Δπ ≈ 25 mmHg</td><td><b>ΔP<sub>v</sub> ≈ 10 mmHg</b>, Δπ ≈ 25 mmHg</td></tr>
+  <tr><td>Winner</td><td>ΔP<sub>a</sub> &gt; Δπ</td><td>Δπ &gt; ΔP<sub>v</sub></td></tr>
+  <tr><td>Net water flux</td><td><b>J<sub>net,a</sub> = L(ΔP<sub>a</sub> − Δπ)</b></td><td><b>J<sub>net,v</sub> = L(Δπ − ΔP<sub>v</sub>)</b></td></tr>
+  <tr><td>Water goes</td><td><b>plasma → interstitial medium</b></td><td><b>interstitial medium → plasma</b></td></tr>
+</table></div>
+
+<figure>
+  <svg viewBox="0 0 760 340" role="img" aria-label="A capillary drawn horizontally from the arteriole on the left to the venule on the right, above the interstitial medium. At the arteriolar end, delta Pa about 40 mmHg exceeds delta pi about 25 mmHg, so water leaves the plasma downward into the interstitial medium. At the venular end, delta pi about 25 exceeds delta Pv about 10, so water returns upward into the plasma.">
+    <defs><marker id="on10a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="s-text"/></marker>
+      <marker id="on10b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="s-text"/></marker></defs>
+    <rect x="80" y="60" width="600" height="70" rx="10" class="s-coral" stroke-width="2"/>
+    <text x="380" y="101" text-anchor="middle" class="s-text" font-size="17" font-weight="700">Capillary (plasma)</text>
+    <line x1="100" y1="40" x2="660" y2="40" class="s-line" stroke-width="2.5" marker-end="url(#on10a)"/>
+    <text x="40" y="100" text-anchor="middle" class="s-text" font-size="14" font-weight="700">Arteriole</text>
+    <text x="720" y="100" text-anchor="middle" class="s-text" font-size="14" font-weight="700">Venule</text>
+    <text x="380" y="30" text-anchor="middle" class="s-muted" font-size="13">blood flow · P<tspan baseline-shift="sub" font-size="10">a</tspan> &gt; P<tspan baseline-shift="sub" font-size="10">v</tspan></text>
+    <rect x="80" y="220" width="600" height="80" rx="10" class="s-ok" stroke-width="2"/>
+    <text x="380" y="268" text-anchor="middle" class="s-text" font-size="17" font-weight="700">Interstitial medium (P<tspan baseline-shift="sub" font-size="12">int</tspan>)</text>
+    <line x1="190" y1="134" x2="190" y2="214" class="s-accent" stroke-width="4" marker-end="url(#on10b)"/>
+    <text x="210" y="170" class="s-text" font-size="14">ΔP<tspan baseline-shift="sub" font-size="10">a</tspan> 40 &gt; Δπ 25</text>
+    <text x="210" y="190" class="s-text" font-size="14" font-weight="700">water out</text>
+    <line x1="570" y1="218" x2="570" y2="138" class="s-accent" stroke-width="4" marker-end="url(#on10b)"/>
+    <text x="550" y="170" text-anchor="end" class="s-text" font-size="14">Δπ 25 &gt; ΔP<tspan baseline-shift="sub" font-size="10">v</tspan> 10</text>
+    <text x="550" y="190" text-anchor="end" class="s-text" font-size="14" font-weight="700">water back in</text>
+    <text x="380" y="328" text-anchor="middle" class="s-muted" font-size="13">values in mmHg, normal conditions · 25 = (40 + 10)/2 ⇒ no accumulation</text>
+  </svg>
+  <figcaption>The Starling balance: hydrostatic pressure drives water out at the arteriolar end, the protein osmotic pressure brings it back at the venular end. Normally Δπ sits exactly at the mean of ΔP<sub>a</sub> and ΔP<sub>v</sub>, so what leaves comes back. Redrawn from the slides' capillary and arrow schemas.
+    <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-10.pdf#page=2">slides 62–63</a></figcaption>
+</figure>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="balance"><span class="num">·</span> Balance and pathologies
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-10.pdf#page=3">slide 64</a></h2>
+<div class="flow"><span>J<sub>net,a</sub> = J<sub>net,v</sub></span><i>⇒</i><span>ΔP<sub>a</sub> − Δπ = Δπ − ΔP<sub>v</sub></span><i>⇒</i><span><b>Δπ = (ΔP<sub>a</sub> + ΔP<sub>v</sub>)/2 ≡ ΔP̄</b></span><i>⇒</i><span>no water accumulation</span></div>
+<div class="table-wrap"><table>
+  <tr><th>Condition</th><th>Equivalent</th><th>Consequence</th></tr>
+  <tr><td>ΔP<sub>a</sub> − Δπ &gt; Δπ − ΔP<sub>v</sub></td><td><b>Δπ &lt; ΔP̄</b></td><td><b>Hyperhydration</b> of the extravascular medium = <b>edema</b></td></tr>
+  <tr><td>ΔP<sub>a</sub> − Δπ &lt; Δπ − ΔP<sub>v</sub></td><td><b>Δπ &gt; ΔP̄</b></td><td><b>Dehydration</b> of the extravascular medium</td></tr>
+</table></div>
+<div class="box tip"><span class="label">Memory trick</span>
+  "Too little pull ⇒ puddle": when the proteins' pull (Δπ) is below the average push (ΔP̄), water stays outside the vessels ⇒ edema.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="ex13"><span class="num">Ex. 13</span> Hypoalbuminemia and edema
+  <a class="page" href="/lessons/s1/biophysics/biophysics-of-solutions-10.pdf#page=3">slides 64–66</a>
+  <span class="exam">Δπ = ωRT: 2022-23 · 2023-24 · 2024-25</span></h2>
+<p><b>Data:</b> plasma albumin <b>20 g/L</b> (M = 40 000 g/mol), P<sub>a</sub> = <b>45 mmHg</b>, P<sub>v</sub> = <b>15 mmHg</b>; the wall is impermeable to albumin but lets smaller molecules through; <b>L = 10⁻¹¹ m²·s/kg</b>; no albumin in the interstitium, P<sub>i</sub> = 0 (reference); 37 °C.</p>
+<ol class="steps">
+  <li><b>Net water flux</b> (dialysis membrane): J<sub>d</sub> = LΔπ, J<sub>c</sub> = LΔP with ΔP = P<sub>cap</sub> − P<sub>i</sub> = P<sub>cap</sub> ≡ P ⇒ J<sub>net</sub> = <b>L(P − Δπ) if P &gt; Δπ</b>, <b>L(Δπ − P) if P &lt; Δπ</b>.</li>
+  <li><b>Reflection coefficients:</b> <b>σ<sub>albumin</sub> = 1</b>, <b>σ<sub>glucose</sub> = 0</b>.</li>
+  <li><b>Δπ</b>: 1 mmHg = 1.36 cmH₂O = <b>133 Pa</b>; Δπ = ω<sub>al</sub>RT = (C<sub>p,al</sub>/M<sub>al</sub>)RT = (20/40 000 × 10³ mol/m³) × 8.31 × 310 = <b>1288.05 Pa = 9.68 mmHg</b>.</li>
+  <li><b>Entrance:</b> P<sub>a</sub> &gt; Δπ ⇒ J<sub>net,a</sub> = L(P<sub>a</sub> − Δπ) = 10⁻¹¹ × (45 − 9.68) × 133 = <b>4.69 × 10⁻⁸ m/s</b>, water plasma → interstitial medium.</li>
+  <li><b>Exit:</b> P<sub>v</sub> &gt; Δπ too ⇒ J<sub>net,v</sub> = 10⁻¹¹ × (15 − 9.68) × 133 = <b>0.707 × 10⁻⁸ m/s</b>, water <b>still</b> plasma → interstitial medium.</li>
+  <li><b>Clinical consequence:</b> ΔP̄ = (45 + 15)/2 = <b>30 mmHg &gt; Δπ</b> ⇒ <b>formation of edema</b>.</li>
+</ol>
+<div class="box calc"><span class="label">By hand</span>
+  20/40 000 = 0.5 mol/m³; RT ≈ 8.3 × 310 ≈ 2 580 Pa ⇒ Δπ ≈ 1 290 Pa ≈ 1 290/133 ≈ <b>9.7 mmHg</b>. Then (45 − 9.7) ≈ 35 mmHg ≈ 35 × 133 ≈ 4 700 Pa ⇒ × 10⁻¹¹ ≈ 4.7 × 10⁻⁸ m/s.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="traps">Traps <span class="meta">— no past exam question on these slides yet; these are the confusions the lesson invites</span></h2>
+<div class="box trap"><span class="label">Likely traps</span>
+  <ul>
+    <li>σ goes on the <b>diffusive</b> solvent flux (J<sub>d</sub> = LσΔπ), <b>not</b> on J<sub>c</sub> = LΔP.</li>
+    <li><b>(1 − σ)</b> is the transmission coefficient; σ is the <b>reflection</b> coefficient. Impermeable ⇒ σ = 1, transmission 0.</li>
+    <li>P<sub>f</sub> is in <b>m/s</b>; m²·s/kg is the unit of L. V<sub>me</sub> is the molar volume of <b>water</b>, not of the solute. J<sub>c</sub> is <b>inversely</b> proportional to T in Darcy's law.</li>
+    <li>Δπ = <b>ω<sub>p</sub>RT</b>, not (ω<sub>i</sub> + ω<sub>p</sub>)RT: the small ions are on both sides.</li>
+    <li>25 mmHg is <b>Δπ</b>; ΔP<sub>v</sub> ≈ <b>10</b>, ΔP<sub>a</sub> ≈ <b>40</b>.</li>
+    <li>Balance condition uses the <b>mean</b> (ΔP<sub>a</sub> + ΔP<sub>v</sub>)/2, not the difference.</li>
+    <li>Edema ⇔ Δπ <b>&lt;</b> ΔP̄; dehydration ⇔ Δπ <b>&gt;</b> ΔP̄. Low albumin ⇒ low Δπ ⇒ edema.</li>
+    <li>Convert mmHg → Pa (× 133) before multiplying by L, and g/L → mol/m³ (÷ M, × 10³) before RT.</li>
+  </ul>
+</div>
+<div class="box trap"><span class="label">An inconsistency in the slides</span>
+  Slide 62 models the capillary wall as a <b>dialysis</b> membrane and uses J<sub>d</sub> = LΔπ without σ, right after introducing σ for biological membranes. Follow the slide you are on: Starling (and Exercise 13) use <b>J = L(ΔP − Δπ)</b> with no σ.</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="check">Self-check <span class="meta">— answer, then tap to reveal</span></h2>
+<details class="card"><summary>Biological membrane: write J<sub>d</sub> and J<sub>c</sub> for the solvent.</summary><div>J<sub>d</sub> = LσΔπ; J<sub>c</sub> = LΔP; J<sub>net</sub> = J<sub>c</sub> + J<sub>d</sub>.</div></details>
+<details class="card"><summary>Darcy's law, and what are P<sub>f</sub> and V<sub>me</sub>?</summary><div>J<sub>c</sub> = (P<sub>f</sub>V<sub>me</sub>/RT)ΔP, L = P<sub>f</sub>V<sub>me</sub>/RT; P<sub>f</sub> = filtration coefficient in m/s; V<sub>me</sub> = molar volume of water, 18 cm³.</div></details>
+<details class="card"><summary>Convective solute flux across a biological membrane? Name of (1 − σ)?</summary><div>J<sub>cs</sub> = (1 − σ)J<sub>net</sub>C̄<sub>s</sub>, C̄<sub>s</sub> = (C₁<sub>s</sub> + C₂<sub>s</sub>)/2; (1 − σ) = transmission coefficient.</div></details>
+<details class="card"><summary>σ for albumin and for glucose across the capillary wall?</summary><div>σ<sub>albumin</sub> = 1 (impermeable), σ<sub>glucose</sub> = 0 (crosses freely).</div></details>
+<details class="card"><summary>What does the Starling phenomenon describe?</summary><div>Water exchange between plasma and the interstitial medium, the capillary wall modeled as a dialysis membrane.</div></details>
+<details class="card"><summary>Why is Δπ = ω<sub>p</sub>RT? Which way does it act?</summary><div>ω<sub>plasma</sub> = ω<sub>i</sub> + ω<sub>p</sub>, ω<sub>int</sub> ≈ ω<sub>i</sub>; the small ions cancel. It draws water from the interstitial medium into the plasma.</div></details>
+<details class="card"><summary>Normal ΔP<sub>a</sub>, ΔP<sub>v</sub>, Δπ?</summary><div>≈ 40, 10 and 25 mmHg.</div></details>
+<details class="card"><summary>Net water flux and its direction at each end, normal conditions?</summary><div>Arteriolar: L(ΔP<sub>a</sub> − Δπ), plasma → interstitium. Venular: L(Δπ − ΔP<sub>v</sub>), interstitium → plasma.</div></details>
+<details class="card"><summary>Condition for no water accumulation?</summary><div>J<sub>net,a</sub> = J<sub>net,v</sub> ⇔ Δπ = (ΔP<sub>a</sub> + ΔP<sub>v</sub>)/2 = ΔP̄.</div></details>
+<details class="card"><summary>Δπ &lt; ΔP̄? Δπ &gt; ΔP̄?</summary><div>Δπ &lt; ΔP̄: hyperhydration of the extravascular medium (edema). Δπ &gt; ΔP̄: dehydration of the extravascular medium.</div></details>
+<details class="card"><summary>Exercise 13: Δπ for 20 g/L albumin (M = 40 000) at 37 °C?</summary><div>0.5 mol/m³ × RT ≈ 1288 Pa ≈ 9.68 mmHg.</div></details>
+<details class="card"><summary>Exercise 13: fluxes at both ends and the clinical consequence?</summary><div>Entrance 4.69 × 10⁻⁸ m/s, exit 0.707 × 10⁻⁸ m/s, both plasma → interstitium; ΔP̄ = 30 mmHg &gt; 9.68 ⇒ edema.</div></details>
+<details class="card"><summary>1 mmHg in Pa and in cmH₂O?</summary><div>133 Pa; 1.36 cmH₂O.</div></details>
+
+<footer>Summary of "Biophysics of solutions" slides 60–66, Pr B. Boutabia-Chéraitia, 1st-year medicine, Faculty of Medicine Annaba.
+  🎯 = topic asked in past EMD1 exams. 📄 = page in the lesson PDF. Slide 60 also closes part 9.</footer>
+</main>
+</body>
+</html>
