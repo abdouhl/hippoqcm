@@ -513,6 +513,10 @@ function offlineAnswer(path: string): unknown {
         lesson_question_count: qs.filter((q) => q.lesson_ids.length > 0).length,
         calc_count: qs.filter((q) => (q.calc ?? 0) > 0).length,
         read_new_count: qs.filter((q) => !q.card && inReadLesson(q)).length,
+        ...(({ learn_count, review_count }) => ({ nocalc_learn_count: learn_count, nocalc_review_count: review_count }))(
+          counts(qs.filter((q) => !q.calc), now),
+        ),
+        nocalc_read_new_count: qs.filter((q) => !q.calc && !q.card && inReadLesson(q)).length,
       };
     });
   }
@@ -576,12 +580,12 @@ function offlineAnswer(path: string): unknown {
   const all = url.searchParams.get("all") === "1";
   // ?modules=1,2: only questions from those modules.
   const moduleIds = url.searchParams.get("modules")?.split(",").map(Number);
-  // ?calc=1: only questions that need a calculation.
-  const calcOnly = url.searchParams.get("calc") === "1";
+  // ?calc=1: only questions that need a calculation; ?calc=0: only ones that don't.
+  const calc = url.searchParams.get("calc");
   // ?readnew=1: unseen questions only from lessons marked read.
   const readNew = url.searchParams.get("readnew") === "1";
   return s.questions
-    .filter((q) => inScope(q) && inLessons(q) && (!moduleIds || moduleIds.includes(q.module_id)) && (!calcOnly || (q.calc ?? 0) > 0) && (!readNew || q.card || inReadLesson(q)) && (all || !q.card || q.card.due <= now))
+    .filter((q) => inScope(q) && inLessons(q) && (!moduleIds || moduleIds.includes(q.module_id)) && (calc === null || ((q.calc ?? 0) > 0) === (calc === "1")) && (!readNew || q.card || inReadLesson(q)) && (all || !q.card || q.card.due <= now))
     // Overdue reviews first, then unseen questions in exam order.
     .sort((a, b) => (a.card ? 0 : 1) - (b.card ? 0 : 1) || (a.card?.due ?? 0) - (b.card?.due ?? 0) || a.id - b.id);
 }

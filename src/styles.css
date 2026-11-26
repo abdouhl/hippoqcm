@@ -268,6 +268,17 @@ main.tab-main { padding-bottom: calc(var(--tabbar-h) + 28px + env(safe-area-inse
 .module-picker li .meta { margin: 0; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
 .module-picker b.new { color: var(--new); }
 .module-picker b.due { color: var(--ok); }
+.calc-toggle {
+  display: inline-flex; align-items: center; gap: 8px; margin: 0 0 12px; padding: 6px 12px 6px 8px;
+  border: 1px solid var(--border-strong); border-radius: 999px; background: var(--surface);
+  color: var(--muted); font-size: 0.85rem; font-weight: 600; cursor: pointer;
+}
+.calc-toggle .box {
+  display: grid; place-items: center; width: 18px; height: 18px; flex: none;
+  border: 1.5px solid var(--border-strong); border-radius: 5px; color: var(--on-accent);
+}
+.calc-toggle[aria-checked="true"] { color: var(--text); border-color: var(--accent); }
+.calc-toggle[aria-checked="true"] .box { background: var(--accent); border-color: var(--accent); }
 .module-picker > .secondary { width: 100%; }
 .hero-title { display: flex; align-items: center; gap: 8px; font-size: 1.4rem; font-weight: 700; margin: 4px 0 0; color: var(--ok); }
 .exam-list { list-style: none; margin: 0; padding: 0; }

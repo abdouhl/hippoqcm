@@ -11,6 +11,10 @@ export type Module = {
   lesson_question_count: number; // questions linked to at least one lesson
   calc_count?: number; // questions that need a calculation; missing from servers older than it
   read_new_count?: number; // never seen, linked to a lesson you've marked read; missing from older servers
+  // The same counts leaving out calculation questions (home tab's "No calculation"); missing from older servers.
+  nocalc_read_new_count?: number;
+  nocalc_learn_count?: number;
+  nocalc_review_count?: number;
 };
 
 // One "mark as read" press, of the lesson PDF or of its summary page.

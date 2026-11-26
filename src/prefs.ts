@@ -11,6 +11,7 @@ export type Settings = {
   examDates: Record<string, string>; // module id → exam day, "YYYY-MM-DD"
   autoGrade: boolean; // suggest Hard/Good/Easy from how long a right answer took
   skipModules: number[]; // module ids left out of today's session on the home tab
+  noCalc: boolean; // home tab: leave out questions that need a calculation
   examScoring: Scoring; // how mock exams and past papers are graded out of 20
 };
 
@@ -23,6 +24,7 @@ export const DEFAULTS: Settings = {
   examDates: {},
   autoGrade: true,
   skipModules: [],
+  noCalc: false,
   examScoring: "all-or-nothing",
 };
 

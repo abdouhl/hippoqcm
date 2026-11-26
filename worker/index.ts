@@ -154,6 +154,12 @@ export default {
                 COALESCE(SUM(c.state = 2 AND c.due <= ?1), 0) AS review_count,
                 COALESCE(SUM(EXISTS (SELECT 1 FROM question_lessons ql WHERE ql.question_id = q.id)), 0) AS lesson_question_count,
                 COALESCE(SUM(q.calc > 0), 0) AS calc_count,
+                -- The same counts without calculation questions, for the home tab's "No calculation" switch.
+                COALESCE(SUM(q.calc = 0 AND c.state IN (1, 3) AND c.due <= ?1), 0) AS nocalc_learn_count,
+                COALESCE(SUM(q.calc = 0 AND c.state = 2 AND c.due <= ?1), 0) AS nocalc_review_count,
+                COALESCE(SUM(q.calc = 0 AND q.id IS NOT NULL AND c.question_id IS NULL AND EXISTS (
+                  SELECT 1 FROM question_lessons ql JOIN lesson_read_log r ON r.lesson_id = ql.lesson_id
+                  WHERE ql.question_id = q.id AND r.user_id = ?2)), 0) AS nocalc_read_new_count,
                 COALESCE(SUM(q.id IS NOT NULL AND c.question_id IS NULL AND EXISTS (
                   SELECT 1 FROM question_lessons ql JOIN lesson_read_log r ON r.lesson_id = ql.lesson_id
                   WHERE ql.question_id = q.id AND r.user_id = ?2)), 0) AS read_new_count,
@@ -216,7 +222,7 @@ export default {
 
     // Study queue for a whole year, a semester, a module (optionally only questions tied to a
     // lesson, or to the lessons listed in ?ids=1,2), one lesson, or every leech. Year n = semesters 2n-1 and 2n.
-    // ?modules=1,2 keeps only those modules' questions; ?calc=1 only the ones that need a calculation;
+    // ?modules=1,2 keeps only those modules' questions; ?calc=1 only the ones that need a calculation, ?calc=0 only the ones that don't;
     // ?readnew=1 keeps unseen questions only when they belong to a lesson marked read.
     const studyMatch = url.pathname.match(/^\/api\/(?:(years|semesters|modules|lessons)\/(\d+)|(leeches))\/study$/);
     if (studyMatch && request.method === "GET") {
@@ -239,7 +245,7 @@ export default {
            AND (?5 IS NULL OR q.id IN (SELECT question_id FROM question_lessons
                                        WHERE lesson_id IN (SELECT value FROM json_each(?5))))
            AND (?6 IS NULL OR q.module_id IN (SELECT value FROM json_each(?6)))
-           AND (?7 = 0 OR q.calc > 0)
+           AND (?7 IS NULL OR (q.calc > 0) = ?7)
            -- ?readnew=1: unseen questions only from lessons marked read.
            AND (?8 = 0 OR c.question_id IS NOT NULL OR EXISTS (
              SELECT 1 FROM question_lessons ql JOIN lesson_read_log r ON r.lesson_id = ql.lesson_id
@@ -254,7 +260,7 @@ export default {
           user,
           url.searchParams.has("ids") ? JSON.stringify(idList(url)) : null,
           url.searchParams.has("modules") ? JSON.stringify(idList(url, "modules")) : null,
-          url.searchParams.get("calc") === "1" ? 1 : 0,
+          url.searchParams.has("calc") ? (url.searchParams.get("calc") === "1" ? 1 : 0) : null,
           url.searchParams.get("readnew") === "1" ? 1 : 0,
         )
         .all<Record<string, unknown>>();

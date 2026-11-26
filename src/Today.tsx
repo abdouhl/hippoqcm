@@ -40,8 +40,19 @@ export default function Today({ modules: allModules, onStudy, onOpenModule, onSe
   const [picking, setPicking] = useState(false);
   const skipped = (m: Module) => settings.skipModules.includes(m.id);
 
-  // New questions on the home tab come only from lessons you've marked read.
-  const modules = allModules.map((m) => ({ ...m, new_count: m.read_new_count ?? m.new_count }));
+  // New questions on the home tab come only from lessons you've marked read; "No calculation"
+  // leaves out the questions that need one.
+  const noCalc = settings.noCalc;
+  const modules = allModules.map((m) =>
+    noCalc
+      ? {
+          ...m,
+          new_count: m.nocalc_read_new_count ?? m.read_new_count ?? m.new_count,
+          learn_count: m.nocalc_learn_count ?? m.learn_count,
+          review_count: m.nocalc_review_count ?? m.review_count,
+        }
+      : { ...m, new_count: m.read_new_count ?? m.new_count },
+  );
 
   // Today's session is one year's questions: the first year with something to do (there's one for now).
   const withQuestions = modules.filter((m) => m.question_count > 0);
@@ -64,11 +75,13 @@ export default function Today({ modules: allModules, onStudy, onOpenModule, onSe
   const nothing = fresh + reviews === 0;
 
   const subset = picked.length < yearModules.length;
-  const scope = !subset ? `Year ${year}` : picked.length === 1 ? picked[0].name : `Year ${year} · ${picked.length} modules`;
+  const scope =
+    (!subset ? `Year ${year}` : picked.length === 1 ? picked[0].name : `Year ${year} · ${picked.length} modules`) +
+    (noCalc ? " · no calc" : "");
   const start = (only?: StudyOnly) =>
     onStudy({
       title: only === "new" ? `${scope} · new` : only === "reviews" ? `${scope} · reviews` : scope,
-      endpoint: `/api/years/${year}/study?readnew=1${subset ? `&modules=${picked.map((m) => m.id).join(",")}` : ""}`,
+      endpoint: `/api/years/${year}/study?readnew=1${noCalc ? "&calc=0" : ""}${subset ? `&modules=${picked.map((m) => m.id).join(",")}` : ""}`,
       only,
     });
 
@@ -152,6 +165,16 @@ export default function Today({ modules: allModules, onStudy, onOpenModule, onSe
             <button className="secondary" onClick={() => setPicking(false)}>Done</button>
           </div>
         )}
+        <button
+          className="calc-toggle"
+          role="switch"
+          aria-checked={noCalc}
+          onClick={() => saveSettings({ ...settings, noCalc: !noCalc })}
+        >
+          <span className="box">{noCalc && <Icon name="check" size={14} />}</span>
+          <Icon name="calc" size={16} />
+          <span>No calculation</span>
+        </button>
         {picked.length === 0 ? (
           <p className="meta">Pick at least one module to study.</p>
         ) : nothing ? (
