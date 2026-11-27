@@ -1,0 +1,282 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Social Sciences · Seq 2 Social sciences and their disciplines",
+  "pdf": "s1/medical-english/social-2-disciplines.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "About anthropology:",
+      "options": [
+        "The term comes from the Greek anthropos (mankind) and logos (study)",
+        "It is also a natural science in some respects",
+        "It is limited to the study of \"primitive\" societies",
+        "It is the comparative study of humans as a group"
+      ],
+      "answer": "ABD",
+      "explanation": "Being limited to primitive societies is listed as a misconception.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "The four main sub-fields of anthropology are:",
+      "options": [
+        "Physical anthropology",
+        "Sociocultural anthropology",
+        "Linguistic and archaeological anthropology",
+        "Applied anthropology, the best-established branch"
+      ],
+      "answer": "ABC",
+      "explanation": "Applied anthropology is sometimes added as a fifth branch but is not as well established.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "In archaeological anthropology, \"ecofacts\" are:",
+      "options": [
+        "Natural features studied by physical geography",
+        "The material remains of human societies",
+        "The footprints on the ecology left by past societies",
+        "Written records of ancient societies"
+      ],
+      "answer": "C",
+      "explanation": "Artifacts = material remains; ecofacts = ecological footprints of past societies.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Linguistic anthropology:",
+      "options": [
+        "Studies language as a cultural resource and speaking as a cultural practice",
+        "Usually focuses on unwritten languages",
+        "Studies only the grammar of written Western languages",
+        "Is also called anthropological linguistics or ethnolinguistics"
+      ],
+      "answer": "ABD",
+      "explanation": "Duranti (1997). It often studies languages of indigenous non-Western peoples with no form of writing.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Misconceptions about anthropology listed in the course:",
+      "options": [
+        "Anthropologists only study rural people and rural areas",
+        "Anthropology overlaps with other disciplines that study society",
+        "Anthropology is limited to \"primitive\" societies",
+        "Anthropologists want to preserve defunct cultural practices in museums"
+      ],
+      "answer": "ACD",
+      "explanation": "Overlap with other disciplines (law, religion, politics, art…) is true, not a misconception.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "About history:",
+      "options": [
+        "Herodotus is called the father of history",
+        "Ibn Khaldun is called the father of historiography",
+        "The word comes from the Greek Historie, meaning careful enquiry or investigation",
+        "Historiography is the study of the earth's surface"
+      ],
+      "answer": "ABC",
+      "explanation": "Historiography = the writing of history based on critical examination of sources.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "According to the course, the fruits of the study of history are:",
+      "options": [
+        "Exact laws of human behaviour",
+        "Appreciation of variety",
+        "Imposition of order",
+        "Possibilities of prediction and realization of limitation"
+      ],
+      "answer": "BCD",
+      "explanation": "Four fruits: order, variety, prediction, limitation.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "About archaeology:",
+      "options": [
+        "It starts with the first artefacts, about 2.5 million years ago in East Africa",
+        "Ethno-archaeologists study how people living today organize and use objects",
+        "The word means \"discourse about ancient things\"",
+        "Prehistoric archaeologists study the period after the Industrial Revolution"
+      ],
+      "answer": "ABC",
+      "explanation": "Prehistoric = before writing; industrial archaeologists study the post-Industrial-Revolution period.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Geography differs from geology because:",
+      "options": [
+        "Geography also studies humans",
+        "Geography is limited to map-making",
+        "Geology studies the human landscape",
+        "Geology focuses mainly on the physical Earth and the processes shaping it"
+      ],
+      "answer": "AD",
+      "explanation": "Geography = natural environment and its influence on social and cultural development (Dorrell et al., 2019).",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "The two main divisions of geography and the link between geography and other disciplines:",
+      "options": [
+        "The link is the spatial perspective",
+        "The link is the chronological perspective",
+        "Human geography — the human landscape and human–environment relations",
+        "Physical geography — physical features of the earth"
+      ],
+      "answer": "ACD",
+      "explanation": "\"If a phenomenon can be mapped, it has some kind of relationship to geography.\"",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "About political science:",
+      "options": [
+        "\"Political\" comes from the Greek polis (city or sovereign state)",
+        "Government is the only institution with legitimate authority to use coercive power",
+        "Aristotle viewed man as a \"political animal\"",
+        "Its main subfield is microeconomics"
+      ],
+      "answer": "ABC",
+      "explanation": "Subfields: political theory, comparative politics, international relations, political economy, political sociology, public administration, environmental politics.",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "About the history of economics:",
+      "options": [
+        "Adam Smith is known as the father of modern economics",
+        "The word comes from oikos and nemein: \"one who manages a household\"",
+        "Karl Marx promoted the self-regulating economy",
+        "Alfred Marshall saw economics as a study of wealth and a study of man"
+      ],
+      "answer": "ABD",
+      "explanation": "Marx challenged capitalism with the labour theory of value; Smith, Rousseau and Locke promoted the self-regulating economy.",
+      "page": 10,
+      "weight": 0
+    },
+    {
+      "stem": "Microeconomics, as opposed to macroeconomics:",
+      "options": [
+        "Has price determination as its central problem",
+        "Deals with partial equilibrium analysis",
+        "Studies individual economic units",
+        "Is also called aggregative economics"
+      ],
+      "answer": "ABC",
+      "explanation": "Macroeconomics = aggregative economics, general equilibrium, level of income and employment.",
+      "page": 11,
+      "weight": 0
+    },
+    {
+      "stem": "Which statements are normative economics?",
+      "options": [
+        "Poverty and unemployment are the biggest problems in Africa",
+        "The life expectancy at birth in Somalia is rising",
+        "The poor should pay no taxes",
+        "Females ought to be given job opportunities"
+      ],
+      "answer": "CD",
+      "explanation": "Normative = value judgments (\"what ought to be\"). C and D are the course's examples of positive economics.",
+      "page": 11,
+      "weight": 0
+    },
+    {
+      "stem": "Match the psychologist to the approach:",
+      "options": [
+        "Sigmund Freud — psychoanalytic theory",
+        "Abraham Maslow — behaviourism",
+        "William James — functionalism",
+        "Wundt — structuralism"
+      ],
+      "answer": "ACD",
+      "explanation": "Maslow (with Carl Rogers) is humanistic psychology. Skinner is the behaviourist.",
+      "page": 12,
+      "weight": 0
+    },
+    {
+      "stem": "B. F. Skinner:",
+      "options": [
+        "Spoke of reinforcement and punishment as major factors driving behaviour",
+        "Introduced Gestalt principles in the United States",
+        "Was a behaviourist",
+        "Developed the operant conditioning chamber"
+      ],
+      "answer": "ACD",
+      "explanation": "Gestalt principles were introduced by Wertheimer, Koffka and Köhler.",
+      "page": 13,
+      "weight": 0
+    },
+    {
+      "stem": "The word Gestalt roughly translates to:",
+      "options": [
+        "Mind",
+        "Whole",
+        "Structure",
+        "Behaviour"
+      ],
+      "answer": "B",
+      "explanation": "Gestalt psychology: how parts relate to each other as a whole in perception.",
+      "page": 12,
+      "weight": 0
+    },
+    {
+      "stem": "About the origins of sociology:",
+      "options": [
+        "The term was coined by Auguste Comte in 1838",
+        "The first US sociology course was taught at Harvard in 1950",
+        "The first European department was founded in Bordeaux in 1895 by Durkheim",
+        "It comes from the Latin socius (companion) and the Greek logos"
+      ],
+      "answer": "ACD",
+      "explanation": "First US course: University of Kansas, 1890 (Elements of Sociology).",
+      "page": 13,
+      "weight": 0
+    },
+    {
+      "stem": "A study of the accepted rules of conversation among teenagers is an example of:",
+      "options": [
+        "Macro-level sociology",
+        "Archaeological anthropology",
+        "Normative economics",
+        "Micro-level sociology"
+      ],
+      "answer": "D",
+      "explanation": "Macro-level analysis looks at trends among large groups, e.g. how language use has changed over time.",
+      "page": 14,
+      "weight": 0
+    },
+    {
+      "stem": "About Ibn Khaldun's New Science ('Ilm al-'Umran):",
+      "options": [
+        "Its central concept is 'Assabiyya — what holds groups together",
+        "It holds that social phenomena are the outcome of chance",
+        "It uses a dualist bedouin/sedentary typology",
+        "Its introduction is the Muqaddimah (\"Prologue\")"
+      ],
+      "answer": "ACD",
+      "explanation": "He stressed that social and historical phenomena are controlled by laws that must be discovered.",
+      "page": 15,
+      "weight": 0
+    },
+    {
+      "stem": "According to Ibn Khaldun, historians commit errors because of:",
+      "options": [
+        "Bias and prejudice",
+        "Blind acceptance of reports given by others",
+        "Excessive use of statistics",
+        "Ignorance of the natures of civilization and peoples"
+      ],
+      "answer": "ABD",
+      "explanation": "Three major factors; remedies include absolute objectivity and checking reports and reporters.",
+      "page": 15,
+      "weight": 0
+    }
+  ]
+}

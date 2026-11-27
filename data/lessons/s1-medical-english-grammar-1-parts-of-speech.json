@@ -1,0 +1,230 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Grammar · L1 Parts of speech",
+  "pdf": "s1/medical-english/grammar-1-parts-of-speech.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "About content words and function words:",
+      "options": [
+        "Nouns, verbs, adjectives and adverbs are content words",
+        "Prepositions can usually be predicted from word-formation patterns",
+        "Content words form an open, ever-growing class",
+        "Pronouns, prepositions and conjunctions are function words forming a closed class"
+      ],
+      "answer": "ACD",
+      "explanation": "Function words (pronouns, prepositions, conjunctions) form a closed class and must simply be memorised; content words can be predicted from context and word formation.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Which words are function words?",
+      "options": [
+        "although",
+        "gradually",
+        "in",
+        "they"
+      ],
+      "answer": "ACD",
+      "explanation": "although = conjunction, in = preposition, they = pronoun. Gradually is an adverb, a content word.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Which forms of the same root are correctly labelled?",
+      "options": [
+        "diagnostic — adjective",
+        "diagnose — verb",
+        "diagnostic — verb",
+        "diagnosis — noun"
+      ],
+      "answer": "ABD",
+      "explanation": "The lecture's example of a root shifting word class: diagnose (V) → diagnosis (N) → diagnostic (Adj).",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Which sentence uses the correct word form?",
+      "options": [
+        "The diagnose was confirmed by the tests.",
+        "The diagnostic tests confirmed the diagnosis.",
+        "The diagnosis tests were normal.",
+        "The doctor diagnosis the patient."
+      ],
+      "answer": "B",
+      "explanation": "diagnostic (adjective) modifies tests; diagnosis is the noun; diagnose is the verb. Choosing the wrong form produces an ungrammatical sentence.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Which nouns are uncountable according to the lecture?",
+      "options": [
+        "pain",
+        "symptom",
+        "blood",
+        "oxygen"
+      ],
+      "answer": "ACD",
+      "explanation": "Countable: one symptom, two symptoms. Uncountable: blood, oxygen, pain.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which noun–verb pairs are correct (noun formed from the verb)?",
+      "options": [
+        "administer → administration",
+        "treat → treatment",
+        "evaluate → evaluation",
+        "examine → examinate"
+      ],
+      "answer": "ABC",
+      "explanation": "Suffixes -ment, -ion, -ing form nouns from verbs: examine → examination.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "In which phrases is a noun used as an adjective?",
+      "options": [
+        "tissue damage",
+        "cancer treatment",
+        "heart failure",
+        "severe pain"
+      ],
+      "answer": "ABC",
+      "explanation": "The first noun modifies the second (heart → failure). In \"severe pain\", severe is a true adjective.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Match each sentence to its tense as given in the lecture:",
+      "options": [
+        "\"The patient remains stable at the time of writing.\" — present",
+        "\"Mr Thomas was diagnosed with Type 2 diabetes in 2019.\" — past",
+        "\"She has been prescribed metformin.\" — future",
+        "\"She has been prescribed metformin 500 mg twice daily.\" — present perfect"
+      ],
+      "answer": "ABD",
+      "explanation": "Tense signals past history (past), current status (present), and the present perfect links past to present.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Which pronouns are correctly classified?",
+      "options": [
+        "him — object pronoun",
+        "their — possessive",
+        "these — demonstrative",
+        "she — object pronoun"
+      ],
+      "answer": "ABC",
+      "explanation": "she is a subject pronoun; the object form is her.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "Which adjectives does the lecture list under clinical state?",
+      "options": [
+        "swollen",
+        "ambulatory",
+        "tender",
+        "elevated"
+      ],
+      "answer": "ACD",
+      "explanation": "Clinical state: stable, deteriorating, improving, responsive, non-compliant, elevated, swollen, tender. Ambulatory is a patient descriptor.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "About adverbs in clinical narration:",
+      "options": [
+        "\"gradually\" versus \"suddenly\" can carry diagnostic significance",
+        "They answer how, when or to what degree",
+        "They can modify only verbs",
+        "\"markedly\" is a degree adverb"
+      ],
+      "answer": "ABD",
+      "explanation": "Adverbs modify verbs, adjectives or other adverbs. The manner and speed of onset can matter diagnostically.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Which verb + preposition collocations are correct?",
+      "options": [
+        "complain of pain",
+        "respond to treatment",
+        "suffer from a condition",
+        "present at symptoms"
+      ],
+      "answer": "ABC",
+      "explanation": "present with symptoms · suffer from · respond to · refer to · complain of.",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "Which phrase is idiomatically correct according to the lecture?",
+      "options": [
+        "a fever since three days",
+        "a pain in the chest",
+        "a pain at the chest",
+        "a rash in his forearm"
+      ],
+      "answer": "B",
+      "explanation": "English says \"a pain in the chest\", not \"at the chest\". The lecture also gives \"for three days\" and \"on his forearm\".",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "Match the conjunction to its type:",
+      "options": [
+        "yet — coordinating",
+        "neither…nor — correlative",
+        "although — coordinating",
+        "unless — subordinating"
+      ],
+      "answer": "ABD",
+      "explanation": "Coordinating: and, but, or, so, for, nor, yet. Subordinating: because, although, since, while, when, if, unless. Correlative: both…and, either…or, neither…nor, not only…but also.",
+      "page": 9,
+      "weight": 0
+    },
+    {
+      "stem": "Subordinating conjunctions:",
+      "options": [
+        "Connect unequal elements",
+        "Connect a dependent clause to an independent clause",
+        "Include \"because\" and \"while\"",
+        "Always work in pairs"
+      ],
+      "answer": "ABC",
+      "explanation": "Pairs working together are correlative conjunctions.",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "In \"The experienced surgeon carefully examined the patient before surgery\":",
+      "options": [
+        "before is a preposition",
+        "experienced is an adjective",
+        "examined is a noun",
+        "carefully is an adverb"
+      ],
+      "answer": "ABD",
+      "explanation": "examined is the verb. This is the formative assessment's sentence-analysis item.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Why does the lecture study only seven of the eight parts of speech?",
+      "options": [
+        "Pronouns are not a part of speech",
+        "Determiners are studied instead",
+        "Conjunctions are covered in a later lecture",
+        "Interjections are rare in formal medical writing"
+      ],
+      "answer": "D",
+      "explanation": "The eight are nouns, pronouns, verbs, adjectives, adverbs, prepositions, conjunctions and interjections; the lecture focuses on the first seven.",
+      "page": 3,
+      "weight": 0
+    }
+  ]
+}

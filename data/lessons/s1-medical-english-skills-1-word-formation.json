@@ -1,0 +1,217 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Work Techniques · L1 Medical vocabulary and word formation",
+  "pdf": "s1/medical-english/skills-1-word-formation.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "According to the lecture, medical vocabulary:",
+      "options": [
+        "Is made of arbitrary lexical forms",
+        "Is a rule-governed morphological system based on Greek and Latin",
+        "Is characterized by morphological transparency",
+        "Should be learned by analytical decoding rather than rote memorization"
+      ],
+      "answer": "BCD",
+      "explanation": "Meaning is systematically encoded through standardized word parts, not arbitrary forms.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Match the component to its role:",
+      "options": [
+        "Prefix — semantic modifier",
+        "Root — semantic core of the term",
+        "Suffix — diagnostic and procedural indicator",
+        "Combining vowel — carries the main meaning"
+      ],
+      "answer": "ABC",
+      "explanation": "The combining vowel has no meaning of its own; it is a morphophonemic connector.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "About the combining vowel:",
+      "options": [
+        "It changes the meaning of the root",
+        "It is most frequently \"o\"",
+        "It has no semantic meaning of its own",
+        "It facilitates pronunciation between morphemes"
+      ],
+      "answer": "BCD",
+      "explanation": "In cardi/o/logy or gastr/o/enter/o/logy, \"o\" is purely a linking element.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Which root–meaning pairs are given in the lecture?",
+      "options": [
+        "hemat — blood",
+        "oste — bone",
+        "dermat — nerve",
+        "nephr — kidney"
+      ],
+      "answer": "ABD",
+      "explanation": "dermat = skin; neur = nerve.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Which prefix–meaning pairs are correct?",
+      "options": [
+        "dys- — excessive",
+        "tachy- — fast",
+        "peri- — surrounding",
+        "brady- — slow"
+      ],
+      "answer": "BCD",
+      "explanation": "dys- = abnormal or impaired; hyper- = excessive.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Hyperglycemia and hypoglycemia, or tachycardia and bradycardia, show that:",
+      "options": [
+        "The suffix always decides the meaning alone",
+        "Opposite conditions can be distinguished only by the prefix",
+        "Prefixes can be core diagnostic indicators",
+        "Prefixes are only auxiliary elements"
+      ],
+      "answer": "BC",
+      "explanation": "The lecture concludes that prefixes are not auxiliary elements but core diagnostic indicators.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Which suffix–meaning pairs are correct?",
+      "options": [
+        "-ectomy — inflammation",
+        "-pathy — disease",
+        "-osis — abnormal condition",
+        "-scopy — visual examination"
+      ],
+      "answer": "BCD",
+      "explanation": "-ectomy = surgical removal; -itis = inflammation.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "According to the lecture, which component is often the most diagnostically significant?",
+      "options": [
+        "The prefix",
+        "The combining vowel",
+        "The suffix",
+        "The root"
+      ],
+      "answer": "C",
+      "explanation": "Suffixes define the grammatical and clinical category (inflammation, procedure, condition, field) and are often the most diagnostically significant component.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "About Greek and Latin in medical English:",
+      "options": [
+        "Latin is more common for anatomical structures and descriptive terms",
+        "The dual system produces parallel forms for related concepts",
+        "Greek is mainly associated with diagnostic, pathological and functional terms",
+        "Greek is mainly used for anatomy"
+      ],
+      "answer": "ABC",
+      "explanation": "e.g. cardiac (Latin-based descriptive adjective) vs cardiology (Greek-based discipline).",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Match the word to the formation process given in the lecture:",
+      "options": [
+        "cardiologist — compounding",
+        "osteoarthritis — compounding",
+        "dermatitis — affixation",
+        "gastroenterology — blending of roots"
+      ],
+      "answer": "BCD",
+      "explanation": "cardiology → cardiologist → cardiac → cardiopathy illustrates derivational morphology (a lexical family from one root).",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "In the lexical family cardiology → cardiologist → cardiac → cardiopathy:",
+      "options": [
+        "cardiopathy is a surgical procedure",
+        "cardiology is the field of study",
+        "cardiac is an adjective",
+        "cardiologist is the specialist"
+      ],
+      "answer": "BCD",
+      "explanation": "cardiopathy = disease of the heart (-pathy).",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "What is the order of the lecture's decoding model?",
+      "options": [
+        "Prefix → root → suffix → reconstruct meaning",
+        "Suffix → prefix → root(s) → reconstruct meaning",
+        "Root → prefix → suffix → reconstruct meaning",
+        "Reconstruct meaning → suffix → root → prefix"
+      ],
+      "answer": "B",
+      "explanation": "The suffix comes first because it is the most stable marker and narrows the interpretive domain.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "In step 2 of the decoding model, prefixes may indicate:",
+      "options": [
+        "Location (endo-, intra-, sub-)",
+        "The diagnostic frame of the term (disease, procedure)",
+        "Negation (a-, anti-)",
+        "Intensity (hyper-, hypo-)"
+      ],
+      "answer": "ACD",
+      "explanation": "The diagnostic frame is given by the suffix (step 1). Prefixes also mark time/function (pre-, post-).",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Hyperglycemia means:",
+      "options": [
+        "Inflammation of the pancreas",
+        "Abnormally low blood glucose",
+        "Abnormally high concentration of glucose in the blood",
+        "Excessive blood pressure"
+      ],
+      "answer": "C",
+      "explanation": "hyper- (excessive) + glyc- (glucose) + -emia (blood condition).",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "Which are examples of irregularities in medical terminology given in the lecture?",
+      "options": [
+        "ECG vs EKG (regional variation)",
+        "US/UK terminology differences",
+        "myocardial infarction = \"heart attack\" (clinical synonymy)",
+        "The combining vowel \"o\""
+      ],
+      "answer": "ABC",
+      "explanation": "Irregularities come from historical borrowing, clinical conventions, international variation and abbreviation systems.",
+      "page": 9,
+      "weight": 0
+    },
+    {
+      "stem": "Which study strategies does the lecture recommend for learning medical vocabulary?",
+      "options": [
+        "Contextual exposure through authentic clinical texts",
+        "Analytical decomposition of terms",
+        "Spaced repetition of lexical families",
+        "Rote memorization of isolated word lists"
+      ],
+      "answer": "ABC",
+      "explanation": "The lecture calls for a shift from rote memorization toward analysis, plus morphological mapping and active retrieval.",
+      "page": 9,
+      "weight": 0
+    }
+  ]
+}

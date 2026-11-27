@@ -1,0 +1,191 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Terminology · Unit 3 Cardiovascular system",
+  "pdf": "s1/medical-english/terminology-3-cardiovascular.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "The three main components of the cardiovascular system are:",
+      "options": [
+        "The heart",
+        "The lungs",
+        "The blood vessels",
+        "The blood"
+      ],
+      "answer": "ACD",
+      "explanation": "Heart, blood vessels and blood, working together.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "The cardiovascular system:",
+      "options": [
+        "Delivers oxygen, nutrients and hormones",
+        "Removes carbon dioxide and other waste products",
+        "Is also called the circulatory system",
+        "Produces bile"
+      ],
+      "answer": "ABC",
+      "explanation": "Bile is produced by the liver.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "About the chambers of the heart:",
+      "options": [
+        "The two atria are at the top",
+        "There are four chambers",
+        "The two ventricles are at the bottom",
+        "The ventricles are the upper chambers"
+      ],
+      "answer": "ABC",
+      "explanation": "Atria = upper chambers; ventricles = lower pumping chambers.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "The right side of the heart:",
+      "options": [
+        "Propels oxygenated blood into the systemic circulation",
+        "Pumps blood to the lungs",
+        "Has no ventricle",
+        "Pumps blood directly to the brain"
+      ],
+      "answer": "B",
+      "explanation": "The left side propels oxygenated blood into the systemic circulation.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "The strict separation between the right and left sides of the heart is important because:",
+      "options": [
+        "It prevents oxygen-rich and oxygen-poor blood from mixing",
+        "It slows the heart rate",
+        "It allows blood to skip the lungs",
+        "It ensures efficiency"
+      ],
+      "answer": "AD",
+      "explanation": "\"The strict division… ensures efficiency by preventing oxygen-rich and oxygen-poor blood from mixing.\"",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Match the blood vessel to its function:",
+      "options": [
+        "Capillaries — fine exchange sites with cells",
+        "Arteries — carry blood away from the heart under strong pressure",
+        "Veins — carry blood away from the heart under strong pressure",
+        "Veins — return blood to the heart with the help of valves"
+      ],
+      "answer": "ABD",
+      "explanation": "Arteries carry blood away from the heart; veins bring it back.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Match the blood component to its role:",
+      "options": [
+        "Red blood cells — contain hemoglobin to transport oxygen",
+        "Plasma — carries hemoglobin inside white cells",
+        "White blood cells — defend the body against pathogens",
+        "Platelets — contribute to clot formation"
+      ],
+      "answer": "ACD",
+      "explanation": "Hemoglobin is in red blood cells.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Blood is described in the text as:",
+      "options": [
+        "A muscular organ",
+        "A nervous tissue",
+        "A specialized connective tissue",
+        "A type of epithelium"
+      ],
+      "answer": "C",
+      "explanation": "\"The blood itself is a specialized connective tissue.\"",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Regulation of the cardiovascular system:",
+      "options": [
+        "Is entirely voluntary",
+        "Is achieved through neural and hormonal control",
+        "Adrenaline prepares the system for stress or physical effort",
+        "The autonomic nervous system adjusts heart rate and vessel diameter"
+      ],
+      "answer": "BCD",
+      "explanation": "The autonomic nervous system controls involuntary functions.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Besides circulating blood, the cardiovascular system participates in:",
+      "options": [
+        "Immune defence",
+        "Temperature regulation",
+        "Producing hormones such as insulin",
+        "Coordination of complex physiological processes"
+      ],
+      "answer": "ABD",
+      "explanation": "The text lists temperature regulation, immune defence and coordination of processes.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Match each term to its definition:",
+      "options": [
+        "Capillary — the smallest blood vessel, where exchange with tissues occurs",
+        "Ventricle — a small blood component that helps clotting",
+        "Atrium — one of the upper chambers of the heart",
+        "Hemoglobin — the protein in red blood cells that carries oxygen"
+      ],
+      "answer": "ACD",
+      "explanation": "Ventricle = one of the lower pumping chambers; platelet = clotting component.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "The correct passive form of \"Red blood cells transport oxygen\" is:",
+      "options": [
+        "Oxygen transported red blood cells.",
+        "Red blood cells are transported by oxygen.",
+        "Oxygen is transported by red blood cells.",
+        "Oxygen is transporting by red blood cells."
+      ],
+      "answer": "C",
+      "explanation": "Object → subject + is + past participle + by agent.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which sentences are correct passive forms?",
+      "options": [
+        "Blood is pumped to the lungs by the heart.",
+        "The body is defended against pathogens by white blood cells.",
+        "The heart rate is adjusted by the autonomic nervous system.",
+        "Oxygen is absorb in the lungs."
+      ],
+      "answer": "ABC",
+      "explanation": "The passive needs the past participle: \"is absorbed\".",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "In the passive voice:",
+      "options": [
+        "The agent can be introduced with \"by\"",
+        "The verb is formed with be + past participle",
+        "The object of the active sentence becomes the subject",
+        "The verb is always in the -ing form"
+      ],
+      "answer": "ABC",
+      "explanation": "e.g. \"Oxygen is absorbed in the lungs and is then transported to tissues by red blood cells.\"",
+      "page": 5,
+      "weight": 0
+    }
+  ]
+}

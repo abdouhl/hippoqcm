@@ -1,0 +1,204 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Phonetics · L3 English consonants",
+  "pdf": "s1/medical-english/phonetics-3-consonants.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "Which three parameters classify every English consonant?",
+      "options": [
+        "Length",
+        "Voicing",
+        "Manner of articulation",
+        "Place of articulation"
+      ],
+      "answer": "BCD",
+      "explanation": "The three-term system: place (where), manner (how), voicing (vocal fold vibration or not).",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "How many consonant phonemes does English have according to the lecture?",
+      "options": [
+        "44",
+        "24",
+        "20",
+        "26"
+      ],
+      "answer": "B",
+      "explanation": "The lecture applies the classification to all twenty-four consonant phonemes of English.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "Match the place of articulation to the articulators involved:",
+      "options": [
+        "Glottal — the vocal folds themselves",
+        "Labiodental — lower lip and upper teeth",
+        "Velar — tongue back and soft palate",
+        "Dental — tongue and alveolar ridge"
+      ],
+      "answer": "ABC",
+      "explanation": "Dental = tongue and upper teeth; tongue + alveolar ridge = alveolar.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Match the manner of articulation to its description:",
+      "options": [
+        "Fricative — a narrow gap that creates audible friction",
+        "Approximant — complete closure with air through the nose",
+        "Affricate — a plosive closure with a fricative release",
+        "Plosive — complete closure followed by a sudden release"
+      ],
+      "answer": "ACD",
+      "explanation": "Approximants involve only a slight narrowing with no audible friction; air through the nose (lowered velum) defines nasals.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Which consonants are nasals?",
+      "options": [
+        "/m/",
+        "/l/",
+        "/ŋ/",
+        "/n/"
+      ],
+      "answer": "ACD",
+      "explanation": "/l/ is an alveolar lateral approximant.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which are voiceless/voiced pairs sharing the same place and manner?",
+      "options": [
+        "/θ/–/ð/",
+        "/f/–/v/",
+        "/k/–/g/",
+        "/m/–/n/"
+      ],
+      "answer": "ABC",
+      "explanation": "Pairs: /p/–/b/, /t/–/d/, /k/–/g/, /f/–/v/, /s/–/z/, /θ/–/ð/. /m/ and /n/ differ in place (bilabial vs alveolar).",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "In the lecture's consonant chart, when two symbols share a cell:",
+      "options": [
+        "They differ in manner of articulation",
+        "The left one is voiceless and the right one is voiced",
+        "The left one is voiced and the right one is voiceless",
+        "They differ in place of articulation"
+      ],
+      "answer": "B",
+      "explanation": "Symbols in the same cell share place and manner; left = voiceless, right = voiced.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "/g/ as in \"gland\" is:",
+      "options": [
+        "Velar",
+        "Alveolar",
+        "Plosive",
+        "Voiced"
+      ],
+      "answer": "ACD",
+      "explanation": "/g/ = voiced velar plosive.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "/ʃ/ as in \"shoulder\" is:",
+      "options": [
+        "Post-alveolar",
+        "Fricative",
+        "Voiceless",
+        "Affricate"
+      ],
+      "answer": "ABC",
+      "explanation": "/ʃ/ = voiceless post-alveolar fricative. The affricates are /tʃ/ and /dʒ/.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "/dʒ/ as in \"jaundice\" is a:",
+      "options": [
+        "Voiced post-alveolar affricate",
+        "Voiceless post-alveolar affricate",
+        "Voiced palatal approximant",
+        "Voiced alveolar plosive"
+      ],
+      "answer": "A",
+      "explanation": "Its voiceless partner /tʃ/ is in \"chest\". The palatal approximant is /j/ (yawn).",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which consonant–word pairs from the lecture are correct?",
+      "options": [
+        "/ð/ — this",
+        "/ʒ/ — measure",
+        "/θ/ — thorax",
+        "/θ/ — this"
+      ],
+      "answer": "ABC",
+      "explanation": "The same spelling \"th\" is voiceless /θ/ in thorax and voiced /ð/ in this.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which consonants are approximants according to the lecture's table?",
+      "options": [
+        "/w/ — bilabial-velar approximant",
+        "/h/ — glottal approximant",
+        "/j/ — palatal approximant",
+        "/l/ — alveolar lateral approximant"
+      ],
+      "answer": "ACD",
+      "explanation": "/h/ is a voiceless glottal fricative. /r/ is a post-alveolar approximant.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which IPA transcriptions match the lecture?",
+      "options": [
+        "tissue /ˈtɪsuː/",
+        "lung /lʌŋ/",
+        "pulse /pʌls/",
+        "chest /tʃest/"
+      ],
+      "answer": "BCD",
+      "explanation": "tissue is /ˈtɪʃuː/: the \"ss\" is /ʃ/.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Which sound is a glottal fricative?",
+      "options": [
+        "/h/ as in heart",
+        "/s/ as in sternum",
+        "/k/ as in cough",
+        "/ŋ/ as in lung"
+      ],
+      "answer": "A",
+      "explanation": "Glottal = produced at the vocal folds themselves; /h/ is the voiceless glottal fricative.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "How many places of articulation does the lecture list for English consonants?",
+      "options": [
+        "10",
+        "8",
+        "6",
+        "5"
+      ],
+      "answer": "B",
+      "explanation": "Bilabial, labiodental, dental, alveolar, post-alveolar, palatal, velar, glottal.",
+      "page": 2,
+      "weight": 0
+    }
+  ]
+}

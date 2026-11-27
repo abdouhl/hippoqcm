@@ -1,0 +1,204 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Social Sciences · Seq 1 Humanities and social sciences",
+  "pdf": "s1/medical-english/social-1-humanities.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "According to the introduction, humanities and social sciences:",
+      "options": [
+        "Are both focused on human life",
+        "Differ in that humanities are mostly analytical or philosophical",
+        "Differ in that social sciences are more scientific and experimental",
+        "Are both classified as natural sciences"
+      ],
+      "answer": "ABC",
+      "explanation": "Humanities are classified as non-science academic disciplines.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "About the history of the humanities:",
+      "options": [
+        "They are traditionally known as the liberal arts",
+        "Their modern conception dates from the Sophists in the mid-5th century BCE",
+        "They appeared with the Industrial Revolution",
+        "They date back to the ancient Greeks, who used them to educate citizens"
+      ],
+      "answer": "ABD",
+      "explanation": "The Sophists' general education prepared young men for active citizenship in the polis (city-state).",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "Which disciplines belong to the humanities according to the course?",
+      "options": [
+        "Literature and languages",
+        "Religion and history",
+        "Philosophy",
+        "Sociology"
+      ],
+      "answer": "ABC",
+      "explanation": "Sociology is a social science (man as a social being). Humanities: history, philosophy, religion, languages, literatures, arts, media, cultural studies.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "The Encyclopedia Britannica (2006) defines the humanities as:",
+      "options": [
+        "Sciences dealing with the individual as a member of the group",
+        "General term for all sciences concerned with human affairs",
+        "The scientific study of social, cultural and economic forces",
+        "Branches of knowledge that investigate human beings, their culture and their self-expression"
+      ],
+      "answer": "D",
+      "explanation": "B is the course's definition of social science; C is Fairchild's; D is Seligman's.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Characteristics of the humanities stated in the course:",
+      "options": [
+        "They use narrative imagination as an important tool",
+        "Their methods are creative and speculative by nature",
+        "There is no search for objective truth",
+        "They explain the causality of events"
+      ],
+      "answer": "ABC",
+      "explanation": "\"It neither seeks objective truth nor tries to explain the causality of events.\"",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "What distinguishes the humanities from the natural sciences, according to the course?",
+      "options": [
+        "The search for objective, measurable truth",
+        "The use of laboratory experiments",
+        "Their recent origin",
+        "The mode of approach to any question"
+      ],
+      "answer": "D",
+      "explanation": "\"What distinguishes the humanities from the natural Sciences is the mode of approach to any question.\"",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "The humanities are described as self-reflexive and answer the fundamental question:",
+      "options": [
+        "How to measure human behaviour",
+        "What laws govern society",
+        "What it means to be human",
+        "How to cure social problems"
+      ],
+      "answer": "C",
+      "explanation": "\"…answers the fundamental question what it means to be human.\"",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Compared with the humanities, the social sciences:",
+      "options": [
+        "Study issues in a systematic and scientific way",
+        "Deal with the basic elements of culture that determine general patterns of human behaviour",
+        "Are more objective, relying on facts, experiments and reality",
+        "Are more subjective, relying on feelings and assumptions"
+      ],
+      "answer": "ABC",
+      "explanation": "Subjectivity (experience, feelings, assumptions, philosophy) characterizes the humanities.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "The humanities, unlike the social sciences:",
+      "options": [
+        "Are more subjective",
+        "Express spiritual and aesthetic values and the meaning of life",
+        "Focus more on emotions and feelings than on the system employed",
+        "Rely mainly on experiments"
+      ],
+      "answer": "ABC",
+      "explanation": "Reliance on facts and experiments is the social-science side of the comparison.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Social science aims at:",
+      "options": [
+        "Studying how people interact, behave and develop a culture",
+        "Understanding all aspects of society",
+        "Studying only artistic self-expression",
+        "Finding solutions to deal with social problems"
+      ],
+      "answer": "ABD",
+      "explanation": "Artistic self-expression is the domain of the humanities.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Match the scholar to his definition of social sciences:",
+      "options": [
+        "Peter Lewis — concerned with the laws that govern society",
+        "Mitchell — the study of human self-expression through the arts",
+        "Fairchild — a general term for all the sciences concerned with human affairs",
+        "Seligman — sciences dealing with the activities of the individual as member of the group"
+      ],
+      "answer": "ACD",
+      "explanation": "Mitchell: strictly, the application of the scientific method to the complex network of human relationships.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "The social sciences view man from two dimensions. Which pairings are correct?",
+      "options": [
+        "Man as an individual being — psychology",
+        "Man as a social being — philosophy",
+        "Man as a social being — sociology",
+        "Man as an individual being — sociology"
+      ],
+      "answer": "AC",
+      "explanation": "Individual: his way of thinking (psychology). Social: his behaviour with others (sociology).",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "According to the course, foreign-language learning develops at the same time:",
+      "options": [
+        "Only grammatical accuracy",
+        "Social competence",
+        "Linguistic competence",
+        "Cognitive competence"
+      ],
+      "answer": "BCD",
+      "explanation": "\"Learners develop cognitive, social and linguistic competence at the same time.\"",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Fields said to be natural byproducts of social-science thinking:",
+      "options": [
+        "Literature",
+        "International relations",
+        "Law",
+        "Government"
+      ],
+      "answer": "BCD",
+      "explanation": "Social-science thinking underlies law, international relations and government.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "The course presents English as:",
+      "options": [
+        "The first international medium used to interact with people worldwide",
+        "Needed for digital and internet communication and the professional world",
+        "Important in the world of education",
+        "Useful only for direct conversation"
+      ],
+      "answer": "ABC",
+      "explanation": "English is \"not only important in communicating directly\" but also in education, technology and work, and for studying abroad.",
+      "page": 5,
+      "weight": 0
+    }
+  ]
+}

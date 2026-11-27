@@ -1,0 +1,204 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Terminology · Unit 1 Word structure (root, prefix, suffix)",
+  "pdf": "s1/medical-english/terminology-1-word-structure.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "The three fundamental components of medical terms are:",
+      "options": [
+        "The article",
+        "The prefix",
+        "The root",
+        "The suffix"
+      ],
+      "answer": "BCD",
+      "explanation": "Root (core), prefix (beginning), suffix (end).",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "About the root of a medical term:",
+      "options": [
+        "It often relates to a body part, system or function",
+        "cardi- (heart) is an example",
+        "It always comes at the end of the word",
+        "It conveys the essential meaning"
+      ],
+      "answer": "ABD",
+      "explanation": "The suffix is at the end; the root is the core.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "A prefix modifies the meaning of a term by conveying information such as:",
+      "options": [
+        "Time",
+        "The grammatical form of the word",
+        "Location",
+        "Number or status"
+      ],
+      "answer": "ACD",
+      "explanation": "Indicating a grammatical form (or condition, disease, procedure) is the role of the suffix.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "In the unit, hyper- means:",
+      "options": [
+        "Below or deficient",
+        "Above or excessive",
+        "Inflammation",
+        "Study of"
+      ],
+      "answer": "B",
+      "explanation": "hyper- = above/excessive; hypo- = below.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Combining vowels in medical terms:",
+      "options": [
+        "Appear in gastroenterology (stomach + intestine + study)",
+        "Are usually \"o\"",
+        "Are added between elements to aid pronunciation",
+        "Change the meaning of the root"
+      ],
+      "answer": "ABC",
+      "explanation": "They help pronunciation without changing meaning.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Cardiology means:",
+      "options": [
+        "Removal of the heart",
+        "Inflammation of the heart",
+        "The study of the heart",
+        "Pain in the heart"
+      ],
+      "answer": "C",
+      "explanation": "cardi- (heart) + -logy (study of).",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Match the procedure suffix to its meaning:",
+      "options": [
+        "-plasty — crush",
+        "-ectomy — excision / removal of",
+        "-ostomy — create a new opening",
+        "-otomy — make an incision / cut into"
+      ],
+      "answer": "BCD",
+      "explanation": "-plasty = repair/restore/replace; -otripsy = crush.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "Match the term to its procedure:",
+      "options": [
+        "Colostomy — removal of the colon",
+        "Nephrectomy — removal of a kidney",
+        "Arthroscopy — examination of a joint",
+        "Rhinoplasty — repair of the nose"
+      ],
+      "answer": "BCD",
+      "explanation": "Colostomy = creation of a new opening of the colon (-ostomy).",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "Pericardiocentesis and pleurodesis contain suffixes meaning, respectively:",
+      "options": [
+        "Incision — removal",
+        "Puncture/aspiration — bind/fuse together",
+        "Instrument for viewing — inspection",
+        "Repair — crush"
+      ],
+      "answer": "B",
+      "explanation": "-centesis = puncture/aspiration; -desis = bind/fuse together.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "Which statements about -scope and -oscopy are correct?",
+      "options": [
+        "Lithotripsy uses -otripsy, meaning crush",
+        "-scope = instrument for viewing (otoscope)",
+        "-opsy = repair (biopsy)",
+        "-oscopy = examination/viewing of (arthroscopy)"
+      ],
+      "answer": "ABD",
+      "explanation": "-opsy = examination/inspection (biopsy).",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "Match the root to its meaning:",
+      "options": [
+        "Rhino- — nose",
+        "Reno- — kidney",
+        "Tympano- — eardrum",
+        "Axillo- — bladder"
+      ],
+      "answer": "ABC",
+      "explanation": "Axillo- = armpit (axillary vein); vesico- = bladder/blister.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Which root–meaning pairs come from the unit's Medical Roots chart?",
+      "options": [
+        "Tracheo- — trachea",
+        "Vasculo- — blood vessel",
+        "Vesico- — bladder/blister",
+        "Umbilico- — sinuses"
+      ],
+      "answer": "ABC",
+      "explanation": "Umbilico- = umbilicus; sinus- = sinuses.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Match the suffix to its meaning:",
+      "options": [
+        "-oma — tumour (melanoma)",
+        "-algia — pain (neuralgia)",
+        "-pnea — breathing (tachypnea)",
+        "-stasis — inflammation (hemostasis)"
+      ],
+      "answer": "ABC",
+      "explanation": "-stasis = stop (hemostasis = stopping of bleeding).",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Word formation and parts of speech in the unit:",
+      "options": [
+        "infect → infection → infectious",
+        "diagnose is a verb; diagnosis is a noun",
+        "arthritis is a noun; arthritic is an adjective",
+        "operative is a verb"
+      ],
+      "answer": "ABC",
+      "explanation": "operate (verb) → operation (noun) → operative (adjective).",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "In the role-play, \"gastritis\" is explained as:",
+      "options": [
+        "Pain in the stomach",
+        "Study of the stomach",
+        "Inflammation of the stomach",
+        "Removal of the stomach"
+      ],
+      "answer": "C",
+      "explanation": "gastro = stomach, -itis = inflammation.",
+      "page": 5,
+      "weight": 0
+    }
+  ]
+}

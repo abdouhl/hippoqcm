@@ -1,0 +1,178 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Terminology · Unit 2 Names of body parts",
+  "pdf": "s1/medical-english/terminology-2-body-parts.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "According to the reading, the brain regulates:",
+      "options": [
+        "Emotions",
+        "Thought and memory",
+        "Bile production",
+        "Voluntary and involuntary movements"
+      ],
+      "answer": "ABD",
+      "explanation": "The brain is the control centre. Bile is produced by the liver.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "The functions of the liver described in the text are:",
+      "options": [
+        "Detoxifying harmful substances",
+        "Producing bile to aid digestion",
+        "Filtering waste from the blood to make urine",
+        "Processing nutrients"
+      ],
+      "answer": "ABD",
+      "explanation": "Filtering waste from the blood and maintaining fluid balance is the kidneys' role.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "The kidneys:",
+      "options": [
+        "Supply oxygen to the blood",
+        "Maintain fluid balance",
+        "Produce bile",
+        "Filter waste from the blood"
+      ],
+      "answer": "BD",
+      "explanation": "Bile = liver; oxygen supply = lungs.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "The largest organ of the body, according to the text, is:",
+      "options": [
+        "The liver",
+        "The brain",
+        "The intestines",
+        "The skin"
+      ],
+      "answer": "D",
+      "explanation": "The skin acts as a protective barrier against injury, germs and temperature changes.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Match the organ to its function:",
+      "options": [
+        "Heart — pump circulating blood that carries oxygen and nutrients",
+        "Lungs — supply oxygen and remove carbon dioxide",
+        "Stomach and intestines — break down food and absorb nutrients",
+        "Muscles — form the strong framework supporting the body"
+      ],
+      "answer": "ABC",
+      "explanation": "Bones form the framework; muscles attach to bones and allow movement, posture and strength.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "The endocrine system:",
+      "options": [
+        "Regulates growth, metabolism and mood",
+        "Defends the body against infections",
+        "Filters blood",
+        "Releases hormones"
+      ],
+      "answer": "AD",
+      "explanation": "Defence against infections = immune system.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Match the sense to its organ, as in the text:",
+      "options": [
+        "Smell — nose",
+        "Sight — eyes",
+        "Touch — ears",
+        "Taste — tongue"
+      ],
+      "answer": "ABD",
+      "explanation": "Touch — skin; hearing — ears.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Word roots for body parts given in the learning objectives:",
+      "options": [
+        "neuro — nerve",
+        "derma — blood",
+        "cardio — heart",
+        "derma — skin"
+      ],
+      "answer": "ACD",
+      "explanation": "Examples cited: cardio, derma, neuro.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "Which sentences are grammatically correct?",
+      "options": [
+        "The patient has pain in the chest.",
+        "Does the liver have important functions?",
+        "Does the liver has important functions?",
+        "The kidneys are responsible for filtering blood."
+      ],
+      "answer": "ABD",
+      "explanation": "After does, use the base form have.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "The correct question form of \"The eyes are sensitive to light\" is:",
+      "options": [
+        "Is the eyes sensitive to light?",
+        "Does the eyes sensitive to light?",
+        "Do the eyes are sensitive to light?",
+        "Are the eyes sensitive to light?"
+      ],
+      "answer": "D",
+      "explanation": "With be, invert subject and verb; plural subject → are.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Choose the correct verb: \"The lungs ___ essential for breathing.\"",
+      "options": [
+        "does",
+        "has",
+        "is",
+        "are"
+      ],
+      "answer": "D",
+      "explanation": "Plural subject (lungs) + adjective → are.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Why is understanding body parts and systems important, according to the text?",
+      "options": [
+        "It helps anyone make informed choices about nutrition, exercise and medical care",
+        "It is only useful to doctors",
+        "It contributes to a longer and healthier life",
+        "It is important for medical professionals"
+      ],
+      "answer": "ACD",
+      "explanation": "\"Not only important for medical professionals but also for anyone who wishes to take care of their health.\"",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "In the doctor–patient role-play, which are appropriate answers to \"Where do you feel pain?\"",
+      "options": [
+        "My head hurts.",
+        "I feel pain in my chest, near the heart.",
+        "My stomach hurts.",
+        "Yes, I does have pain."
+      ],
+      "answer": "ABC",
+      "explanation": "\"I does\" is ungrammatical; the doctor's question asks for a location.",
+      "page": 5,
+      "weight": 0
+    }
+  ]
+}

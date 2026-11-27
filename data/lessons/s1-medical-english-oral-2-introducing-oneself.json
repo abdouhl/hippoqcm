@@ -1,0 +1,79 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Oral Expression · L2 Introducing oneself",
+  "pdf": "s1/medical-english/oral-2-introducing-oneself.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "According to the reading text, before any examination begins a patient needs to know:",
+      "options": ["Who you are", "What your role is", "How long you have been working", "Your date of birth"],
+      "answer": "AB",
+      "explanation": "\"A patient needs to know two things: who you are, and what your role is.\"",
+      "page": 2, "weight": 0
+    },
+    {
+      "stem": "A short, confident introduction, according to the text, includes:",
+      "options": ["Your name", "Your role", "A brief explanation of what will happen next", "A detailed description of your training"],
+      "answer": "ABC",
+      "explanation": "Name, role and a brief explanation of what will happen next help the patient feel safe.",
+      "page": 2, "weight": 0
+    },
+    {
+      "stem": "Why should students and trainees state their role clearly?",
+      "options": ["So the patient does not assume they are a fully qualified doctor or nurse", "Because students are not allowed to talk to patients", "To avoid confirming the patient's identity", "To shorten the consultation"],
+      "answer": "A",
+      "explanation": "Students should say so clearly \"rather than letting the patient assume they are a fully qualified doctor or nurse\".",
+      "page": 2, "weight": 0
+    },
+    {
+      "stem": "Confirming the patient's full name and date of birth is described as:",
+      "options": ["A matter of politeness", "A basic safety check before any procedure", "Optional for nurses", "Only needed at discharge"],
+      "answer": "AB",
+      "explanation": "\"It is not just politeness; it is also a basic safety check before any procedure.\"",
+      "page": 2, "weight": 0
+    },
+    {
+      "stem": "Which sentences are appropriate for a first-year student meeting a patient?",
+      "options": ["I'm a first-year student; I'll be observing today, if that's alright with you.", "Pleased to meet you.", "I'm the consultant in charge of your case.", "Please, make yourself comfortable."],
+      "answer": "ABD",
+      "explanation": "C would let the patient believe the student is a qualified senior doctor.",
+      "page": 1, "weight": 0
+    },
+    {
+      "stem": "Which are role nouns listed in the lecture?",
+      "options": ["consultant", "paramedic", "student nurse", "receptionist"],
+      "answer": "ABCD",
+      "explanation": "Role nouns: physician, nurse, student nurse, consultant, receptionist, paramedic.",
+      "page": 1, "weight": 0
+    },
+    {
+      "stem": "In the model dialogue, what does the nurse do before checking the blood pressure?",
+      "options": ["Gives her name and role", "Asks the patient to confirm his full name and date of birth", "Asks permission (\"if that's alright\")", "Asks for the patient's insurance card"],
+      "answer": "ABC",
+      "explanation": "\"My name is Nadia, and I'll be your nurse this morning… Could you confirm your full name and date of birth… I'm just going to check your blood pressure now, if that's alright.\"",
+      "page": 3, "weight": 0
+    },
+    {
+      "stem": "Which expression means \"I will be responsible for your care today\"?",
+      "options": ["I'll be looking after you today.", "I'll be observing today.", "Make yourself comfortable.", "It's a pleasure to meet you."],
+      "answer": "A",
+      "explanation": "\"I'm Dr / Nurse [name]. I'll be looking after you today.\" Observing is what a student does.",
+      "page": 1, "weight": 0
+    },
+    {
+      "stem": "The written self-introduction (70–90 words) must include:",
+      "options": ["Your name and role", "One sentence explaining what will happen during the visit", "A polite closing question", "The patient's diagnosis"],
+      "answer": "ABC",
+      "explanation": "Name, role, what will happen during the visit, and a polite closing question.",
+      "page": 3, "weight": 0
+    },
+    {
+      "stem": "In the controlled speaking practice, students rewrite the model dialogue by changing:",
+      "options": ["The role (student nurse, paramedic, consultant)", "The procedure mentioned at the end", "The language to French", "The patient's diagnosis only"],
+      "answer": "AB",
+      "explanation": "Rewrite it by changing the role and the procedure mentioned at the end.",
+      "page": 3, "weight": 0
+    }
+  ]
+}

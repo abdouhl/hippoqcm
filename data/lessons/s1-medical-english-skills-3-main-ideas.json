@@ -1,0 +1,191 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Work Techniques · L3 Main ideas and supporting details",
+  "pdf": "s1/medical-english/skills-3-main-ideas.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "Match the information level to its content:",
+      "options": [
+        "Macro-level — global concept / central proposition",
+        "Micro-level — statistics, examples, observations",
+        "Micro-level — the topic of the paragraph",
+        "Meso-level — explanations, causes, mechanisms"
+      ],
+      "answer": "ABD",
+      "explanation": "The topic is macro-level. Micro details validate and illustrate but do not define the core message.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "\"Diabetes is a metabolic disorder.\" In the lecture's hierarchy, this is:",
+      "options": [
+        "A supporting detail",
+        "Macro-level information",
+        "Meso-level information",
+        "Micro-level information"
+      ],
+      "answer": "B",
+      "explanation": "Table 1 gives it as the macro-level example: the global concept, used for topic identification.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "In medical texts, the main idea typically corresponds to:",
+      "options": [
+        "A definition establishing a medical concept",
+        "A scientific claim presenting a generalizable observation",
+        "A diagnostic classification",
+        "A list of numerical data"
+      ],
+      "answer": "ABC",
+      "explanation": "Recurring functions: definition, clinical statement, scientific claim, diagnostic classification. Numerical data are micro-level support.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "A paragraph describes symptoms and risk factors without ever stating its topic in one sentence. Its main idea is:",
+      "options": [
+        "Comparative",
+        "Implicit",
+        "Explicit",
+        "Absent"
+      ],
+      "answer": "B",
+      "explanation": "Implicit main ideas require inference (Table 2). Distributed ones are spread across sentences, as in research explanations of a mechanism.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "Match the linguistic marker to the type of supporting detail:",
+      "options": [
+        "\"for example\" — descriptive detail",
+        "\"due to\" — causal explanation",
+        "\"studies show\" — clinical evidence",
+        "\"whereas\" — comparative analysis"
+      ],
+      "answer": "BCD",
+      "explanation": "\"for example / such as\" mark exemplification; \"includes / consists of\" mark descriptive detail.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "According to the lecture, supporting details:",
+      "options": [
+        "Show how and why a claim is scientifically valid",
+        "Are merely secondary and can always be ignored",
+        "Act as epistemic justification tools",
+        "Operationalize, justify and contextualize the main idea"
+      ],
+      "answer": "ACD",
+      "explanation": "The lecture insists they are not merely secondary: without them medical statements would remain abstract and lack credibility.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "Put the typical medical paragraph in order:",
+      "options": [
+        "Opening → Development → Support → Closure",
+        "Opening → Support → Closure → Development",
+        "Support → Opening → Closure → Development",
+        "Development → Opening → Support → Closure"
+      ],
+      "answer": "A",
+      "explanation": "Opening (main idea/definition) → development (mechanisms) → support (studies/data) → closure (synthesis/implication).",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "About the structure of medical paragraphs:",
+      "options": [
+        "The main idea may be distributed across several sentences",
+        "It is not always linear",
+        "The main idea is always the first sentence",
+        "In research articles the main idea may appear at the end"
+      ],
+      "answer": "ABD",
+      "explanation": "The topic sentence is usually first, but not always: readers must reconstruct meaning by inference.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Which are indicators of a main idea (Table 5)?",
+      "options": [
+        "Lexical repetition of key terms",
+        "Generalization (\"affects multiple systems\")",
+        "Numerical data",
+        "Nominalization such as \"cardiovascular dysfunction\""
+      ],
+      "answer": "ABD",
+      "explanation": "Topic sentence position, repetition, generalization, nominalization and thematic focus signal main ideas; numbers are micro details.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Match the recognition strategy to its purpose:",
+      "options": [
+        "Highlighting — remove the main idea",
+        "Substitution test — identify redundancy",
+        "Question test (Why? How? What example?) — locate explanation",
+        "Deletion test — check whether meaning collapses without the sentence"
+      ],
+      "answer": "BCD",
+      "explanation": "Highlighting key nouns and verbs isolates evidence.",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "In the lecture's COPD extract:",
+      "options": [
+        "The cause is long-term exposure to harmful particles, especially cigarette smoke",
+        "Coughing and shortness of breath are the symptoms",
+        "The main idea is that COPD is a progressive lung disease",
+        "Morbidity and mortality are the main idea"
+      ],
+      "answer": "ABC",
+      "explanation": "Morbidity and mortality are the impact (consequence). The pattern is definition → mechanism → cause → symptoms → consequence.",
+      "page": 9,
+      "weight": 0
+    },
+    {
+      "stem": "About macro and micro information:",
+      "options": [
+        "Macro information is essential in a summary",
+        "A symptom list is micro information",
+        "Micro information is optional in a summary",
+        "Micro details alone are enough to rebuild the overall meaning"
+      ],
+      "answer": "ABC",
+      "explanation": "Micro details are not sufficient to reconstruct the overall meaning; over-focusing on them leads to fragmented comprehension.",
+      "page": 9,
+      "weight": 0
+    },
+    {
+      "stem": "The four steps for reconstructing a main idea in a summary are:",
+      "options": [
+        "Remove key terms → keep examples → merge → copy",
+        "Identify key terms → remove examples → merge concepts → reformulate",
+        "Reformulate → identify key terms → add details → merge",
+        "Quote the text → add examples → translate → shorten"
+      ],
+      "answer": "B",
+      "explanation": "Table 9: lexical core → reduce noise → conceptual synthesis → academic summary.",
+      "page": 10,
+      "weight": 0
+    },
+    {
+      "stem": "Identifying the main idea first, before details, is called:",
+      "options": [
+        "Scanning",
+        "Bottom-up processing",
+        "Word-by-word decoding",
+        "Top-down processing"
+      ],
+      "answer": "D",
+      "explanation": "Main idea identification is a core component of top-down processing, where global meaning is established before detailed interpretation.",
+      "page": 4,
+      "weight": 0
+    }
+  ]
+}

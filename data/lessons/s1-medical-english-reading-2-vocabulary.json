@@ -1,0 +1,204 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Reading · Seq 2 Medical vocabulary and terminology",
+  "pdf": "s1/medical-english/reading-2-vocabulary.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "About the root (stem) of a medical term:",
+      "options": [
+        "It gives the term its essential meaning",
+        "It is always placed at the end of the word",
+        "It can appear at the beginning, middle or end of a word",
+        "Every medical term has at least one root"
+      ],
+      "answer": "ACD",
+      "explanation": "Root placement: beginning (hepatitis), middle (encephalitis), end (psychopath).",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "In the course's \"tree\" image of a medical word:",
+      "options": [
+        "The root is the trunk",
+        "The combining vowel is the trunk",
+        "The suffix is the branches and leaves",
+        "The prefix is the root system that supports and modifies it"
+      ],
+      "answer": "ACD",
+      "explanation": "The trunk (root word) remains the central, defining core.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Polyarthritis means:",
+      "options": [
+        "Looking inside a joint",
+        "Inflammation of many joints",
+        "Surgical repair of a joint",
+        "Pain in one joint"
+      ],
+      "answer": "B",
+      "explanation": "poly- (many) + arthr (joint) + -itis (inflammation).",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Which terms keep the combining vowel \"o\" correctly according to the rules?",
+      "options": [
+        "cardiomyopathy",
+        "cardiology",
+        "gastroscopy",
+        "hepatoitis"
+      ],
+      "answer": "ABC",
+      "explanation": "Keep o between two roots and before a suffix starting with a consonant; drop it before a vowel: hepatitis.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "Why is there no \"o\" in hepatitis?",
+      "options": [
+        "The suffix -itis starts with a vowel",
+        "Hepatitis has no root",
+        "The o is only used with prefixes",
+        "Hepat is a Latin root"
+      ],
+      "answer": "A",
+      "explanation": "Rule 2: suffix starting with a consonant → use o; suffix starting with a vowel → drop o.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "\"Lymphadenopathy (not lymphoadenopathy)\" illustrates that:",
+      "options": [
+        "Two roots can never be joined",
+        "It means disease of the lymph glands",
+        "When the second root starts with a vowel, the o between roots may be dropped",
+        "The word is easier to say without the o"
+      ],
+      "answer": "BCD",
+      "explanation": "lymph (clear fluid) + aden (gland) + pathy (disease) — the exception to rule 1.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Match the term to its meaning:",
+      "options": [
+        "hepatomegaly — enlargement of the liver",
+        "cardiogram — study of the heart",
+        "arthroplasty — surgical repair of a joint",
+        "cardialgia — pain in the heart"
+      ],
+      "answer": "ACD",
+      "explanation": "cardiogram = recording of the heart's activity; cardiology = study of the heart.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Which suffixes begin with a vowel and are attached without the combining vowel?",
+      "options": [
+        "-itis",
+        "-algia",
+        "-gram",
+        "-ectomy"
+      ],
+      "answer": "ABD",
+      "explanation": "-logy, -gram, -pathy start with a consonant and take the o.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Match the prefix to its meaning:",
+      "options": [
+        "endo- — inner, within",
+        "tachy- — around",
+        "brady- — slow",
+        "peri- — around"
+      ],
+      "answer": "ACD",
+      "explanation": "tachy- = fast (tachycardia).",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "About prefixes, the course says:",
+      "options": [
+        "Every medical term must have a prefix",
+        "A prefix always means the same thing, whatever word it is attached to",
+        "Not all medical terms have a prefix",
+        "Changing the prefix changes the meaning even if the root stays the same"
+      ],
+      "answer": "BCD",
+      "explanation": "The prefix is a \"directional sign\" giving specific information about the root.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "In \"subhepatic\", which part means \"below\"?",
+      "options": [
+        "sub-",
+        "subhepat",
+        "hepat",
+        "-ic"
+      ],
+      "answer": "A",
+      "explanation": "sub- = below/under; hepat = liver; -ic = pertaining to.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Which plurals are correct?",
+      "options": [
+        "adenoma → adenomata",
+        "ganglion → ganglia",
+        "villus → villuses",
+        "phalanx → phalanges"
+      ],
+      "answer": "ABD",
+      "explanation": "-us → -i: villus → villi.",
+      "page": 9,
+      "weight": 0
+    },
+    {
+      "stem": "Which plurals are correct?",
+      "options": [
+        "diverticulum → diverticulums",
+        "macula → maculae",
+        "testis → testes",
+        "appendix → appendices"
+      ],
+      "answer": "BCD",
+      "explanation": "The course insists on \"multiple diverticula\", not \"diverticulums\".",
+      "page": 10,
+      "weight": 0
+    },
+    {
+      "stem": "Which statements about the history of medical terms are made in the course?",
+      "options": [
+        "Medical terms have not changed since antiquity",
+        "Most come from ancient Greek and Latin",
+        "Many date back to the 1st century B.C., the time of Hippocrates",
+        "Medical language keeps growing (e.g. MRI, ultrasound)"
+      ],
+      "answer": "BCD",
+      "explanation": "Traditional terms (carditis, osteotomy) coexist with modern names for tests and treatments.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Match the term to its combined roots or prefix:",
+      "options": [
+        "hypodermic — under the skin",
+        "cardiopulmonary — heart + lungs",
+        "myocardial — around the heart",
+        "phototherapy — light + treatment"
+      ],
+      "answer": "ABD",
+      "explanation": "myocardial = pertaining to the heart muscle (myo = muscle); \"around the heart\" is pericardium.",
+      "page": 4,
+      "weight": 0
+    }
+  ]
+}

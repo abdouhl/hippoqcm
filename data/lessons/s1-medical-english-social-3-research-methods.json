@@ -1,0 +1,282 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Social Sciences · Seq 3 Social sciences and their methods",
+  "pdf": "s1/medical-english/social-3-research-methods.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "About the history of the social sciences:",
+      "options": [
+        "Their emergence was helped by the Industrial and French revolutions",
+        "They emerged as a distinct form of research in the 18th century",
+        "They appeared as a distinct discipline in the 20th century",
+        "Their origins can be traced back to the ancient Greeks"
+      ],
+      "answer": "ABD",
+      "explanation": "18th century (Age of Enlightenment, age of revolutions): social philosophy gave way to a scientific emphasis.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "Positivism was first articulated by:",
+      "options": [
+        "Thomas Kuhn",
+        "Auguste Comte",
+        "Émile Durkheim",
+        "Max Weber"
+      ],
+      "answer": "B",
+      "explanation": "Comte, best described in his 1848 work A General View of Positivism.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "About positivism as a mode of knowledge:",
+      "options": [
+        "It rejects the scientific method",
+        "It moved away from metaphysical speculation",
+        "It focuses on facts and falsifiable statements about the empirical world",
+        "It is knowledge based on actual positive sense experience"
+      ],
+      "answer": "BCD",
+      "explanation": "Positivism focuses on the scientific method's ability to produce facts and falsifiable statements.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "According to Burrell and Morgan (1979):",
+      "options": [
+        "Epistemology refers to our assumptions about the best way to study the world",
+        "Epistemology is the study of human emotions",
+        "Ontology refers to our assumptions about how we see the world",
+        "Ontology refers to the best method to collect data"
+      ],
+      "answer": "AC",
+      "explanation": "Ontology: social order or constant change? Epistemology: objective or subjective approach?",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Statistical analysis was first incorporated into social scientific writings with:",
+      "options": [
+        "Kuhn's The Structure of Scientific Revolutions (1962)",
+        "Comte's A General View of Positivism (1848)",
+        "Burrell and Morgan's Sociological Paradigms (1979)",
+        "Émile Durkheim's Suicide (1897)"
+      ],
+      "answer": "D",
+      "explanation": "Before that, early social science relied heavily on human observation.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Compared with the natural sciences, the social sciences tend to be:",
+      "options": [
+        "Less accurate",
+        "Less deterministic",
+        "Independent of the person making the observations",
+        "Less unambiguous"
+      ],
+      "answer": "ABD",
+      "explanation": "Independence from the observer is a feature of the natural sciences.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "About inductive and deductive research:",
+      "options": [
+        "Inductive research is also called theory-building research",
+        "Inductive research infers theoretical concepts and patterns from observed data",
+        "Deductive research tests concepts and patterns from theory using new empirical data",
+        "Deductive research is also called theory-building research"
+      ],
+      "answer": "ABC",
+      "explanation": "Deductive = theory-testing (and possibly refining, improving, extending the theory).",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Inductive (theory-building) research is most valuable when:",
+      "options": [
+        "There are few prior theories or explanations",
+        "The theory has been proven",
+        "Data are already fully analysed",
+        "There are many competing theories of the same phenomenon"
+      ],
+      "answer": "A",
+      "explanation": "Deductive research is more productive when many competing theories exist.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "The word \"paradigm\" was popularized by:",
+      "options": [
+        "McDonald (1993)",
+        "Auguste Comte (1848)",
+        "Saunders et al. (2009)",
+        "Thomas Kuhn (1962)"
+      ],
+      "answer": "D",
+      "explanation": "In The Structure of Scientific Revolutions.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Match the paradigm to its emphasis:",
+      "options": [
+        "Postmodernism — value-free, objective truth",
+        "Positivism — objectivity, knowability and deductive logic",
+        "Social constructionism — truth as varying, socially constructed and ever-changing",
+        "Critical paradigm — power, inequality and social change"
+      ],
+      "answer": "BCD",
+      "explanation": "Postmodernism claims there is no objective, knowable truth; a value-free sociology is the positivist aim.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "The interpretivist paradigm:",
+      "options": [
+        "Stresses understanding differences among humans as social actors",
+        "Calls for a value-free sociology",
+        "Emphasizes research among people rather than objects",
+        "Uses the analogy of the theatre, where actors interpret their parts"
+      ],
+      "answer": "ACD",
+      "explanation": "Saunders, Lewis & Thornhill (2009). Value-free sociology is positivism.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "The course illustrates the social constructionist idea that meaning is constructed socially with:",
+      "options": [
+        "Durkheim's study of suicide",
+        "Hand gestures that vary across regions of the world",
+        "Two students from different academic fields",
+        "Birth and marriage certificates"
+      ],
+      "answer": "B",
+      "explanation": "Different meanings of hand gestures show meaning is constructed socially and collectively. The two students illustrate interpretivism.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which paradigm states that social science can never be truly objective or value-free and should seek social change?",
+      "options": [
+        "Social constructionism",
+        "Positivism",
+        "Interpretivism",
+        "Critical paradigm"
+      ],
+      "answer": "D",
+      "explanation": "The critical paradigm, unlike positivism.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Mental attitudes required for successful scientific research:",
+      "options": [
+        "Prejudice",
+        "Objectivity",
+        "Scepticism",
+        "Curiosity"
+      ],
+      "answer": "BCD",
+      "explanation": "Curiosity, scepticism and objectivity.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "In the course's approach to a social-science problem:",
+      "options": [
+        "Drawing conclusions comes before collecting data",
+        "Choosing a research design is described as the crux of the research process",
+        "After analysing the results the hypothesis can be confirmed, rejected or modified",
+        "Reviewing the literature comes after defining the problem"
+      ],
+      "answer": "BCD",
+      "explanation": "Order: observe → define problem → review literature → observe more → framework & hypothesis → design → collect data → analyse → conclude.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Match the method to its example:",
+      "options": [
+        "Historical method — collecting birth and marriage certificates",
+        "Comparative and cross-cultural method — comparing how different societies meet similar needs",
+        "Case method — detailed study of a single person, a town or a whole country",
+        "Case method — tracing past developments of a social situation"
+      ],
+      "answer": "ABC",
+      "explanation": "Tracing past developments is the historical method.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Qualitative research methods listed in the course:",
+      "options": [
+        "Correlational research",
+        "Case study research",
+        "One-on-one online interview and content analysis",
+        "Ethnographic research and focus groups"
+      ],
+      "answer": "BCD",
+      "explanation": "Correlational research is one of the 4 quantitative methods (survey, correlational, causal-comparative, experimental).",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "About primary and secondary research:",
+      "options": [
+        "Primary research is conducted by the researchers themselves",
+        "Primary data are collected first-hand and are highly accurate",
+        "Newspapers, reports and audiovisual evidence are secondary data",
+        "Secondary research always uses close-ended questionnaires sent by the researcher"
+      ],
+      "answer": "ABC",
+      "explanation": "Secondary research uses information already collected by others.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Why is it difficult to discover exact laws governing social life?",
+      "options": [
+        "Social scientists routinely use controlled experiments",
+        "There is a human element in any social situation",
+        "Laws are not measurable (e.g. satisfaction, democracy)",
+        "Society is extremely complex"
+      ],
+      "answer": "BCD",
+      "explanation": "Investigators seldom employ controlled experiments; they use careful observation and abstraction.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Recasting a research problem so that it fits one's favourite method (e.g. survey research) is called:",
+      "options": [
+        "Pursuing research fads",
+        "Favored research methods",
+        "Blind data mining",
+        "Unresearchable problems"
+      ],
+      "answer": "B",
+      "explanation": "Methods should be chosen to fit the problem, not the other way around.",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "\"Blind data mining\" means:",
+      "options": [
+        "Collecting data first with available instruments, then figuring out what to do with it",
+        "Studying problems that cannot be answered with evidence",
+        "Choosing popular topics with a limited shelf life",
+        "Choosing pet problems that interest only the researcher"
+      ],
+      "answer": "A",
+      "explanation": "B = research fads, C = insufficiently motivated questions, D = unresearchable problems.",
+      "page": 8,
+      "weight": 0
+    }
+  ]
+}

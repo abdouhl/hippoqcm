@@ -1,0 +1,153 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Written Expression · L1 Parts of speech",
+  "pdf": "s1/medical-english/writing-1-parts-of-speech.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "According to the lecture, which of the following belong to the eight traditional parts of speech?",
+      "options": ["Interjections", "Determiners", "Conjunctions", "Prepositions"],
+      "answer": "ACD",
+      "explanation": "The eight traditional classes are noun, verb, adjective, adverb, pronoun, preposition, conjunction and interjection. Determiners are presented as a ninth class that many modern grammars separate from adjectives.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Match the noun to its type. Which pairs are correct?",
+      "options": ["prognosis — abstract noun", "discharge summary — compound noun", "Royal Melbourne Hospital — common noun", "ward — proper noun"],
+      "answer": "AB",
+      "explanation": "Prognosis names a state that cannot be perceived by the senses (abstract); discharge summary is two words acting as one noun (compound). A named hospital is a proper noun; ward is a common noun.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "About abstract nouns in medical English:",
+      "options": ["They name ideas, conditions or states that cannot be perceived by the senses", "\"compliance\" and \"deterioration\" are examples", "\"heart rate\" is an example", "They always begin with a capital letter"],
+      "answer": "AB",
+      "explanation": "Pain, anxiety, compliance, deterioration, recovery and prognosis are the lecture's abstract nouns. Heart rate is a compound noun; capital letters mark proper nouns.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Which sentence applies the lecture's writing tip on nominalisation?",
+      "options": ["The administration of medication was completed.", "She administered the medication.", "The nurse administers medication carefully.", "Administer the medication now."],
+      "answer": "A",
+      "explanation": "Nominalisation turns the verb (administer) into a noun phrase (the administration of medication), which formal medical writing prefers.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Classify the verbs as the lecture does:",
+      "options": ["prescribe — action verb", "exhibit — state verb", "remain — linking verb", "monitor — linking verb"],
+      "answer": "ABC",
+      "explanation": "Prescribe and monitor are action verbs; exhibit (like present, suffer, require, indicate) is a state verb; remain (like appear, seem, become) is a linking verb.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Why does the lecture recommend the passive (\"The medication was administered\") in medical letters and reports?",
+      "options": ["It sounds formal", "It sounds objective", "It makes the sentence shorter", "It names the person who performed the action"],
+      "answer": "AB",
+      "explanation": "The passive is used to sound formal and objective, a key feature of medical letters. It actually hides the agent (the nurse), and it is not presented as shorter.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "In \"The patient's condition is stable\", the adjective \"stable\":",
+      "options": ["Is in predicative position", "Is in attributive position", "Follows a linking verb", "Describes the clinical state/progression"],
+      "answer": "ACD",
+      "explanation": "Predicative adjectives follow a linking verb (is). Attributive ones precede the noun (\"severe chest pain\"). Stable belongs to the clinical state and progression category.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Which adjectives does the lecture list under severity and intensity?",
+      "options": ["acute", "intermittent", "ambulatory", "hepatic"],
+      "answer": "AB",
+      "explanation": "Severity/intensity: severe, mild, moderate, acute, chronic, persistent, recurring, intermittent. Ambulatory is a patient characteristic; hepatic is anatomical/physiological.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Match the adverb to its category:",
+      "options": ["subsequently — time", "markedly — degree", "promptly — frequency", "intermittently — manner"],
+      "answer": "AB",
+      "explanation": "Subsequently is a time adverb, markedly a degree adverb. Promptly is manner; intermittently is frequency.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Choose the correct word: \"The patient's pain was ______ improved after treatment.\"",
+      "options": ["significantly", "significant", "significance", "signify"],
+      "answer": "A",
+      "explanation": "An adverb is needed to modify the verb/participle \"improved\": significantly. \"Significant improved\" is the error corrected in the formative assessment.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "About pronouns in medical writing:",
+      "options": ["\"him\" and \"them\" are object pronouns", "\"their\" is a subject pronoun", "Once the patient's gender is established, he or she should be used consistently", "Pronouns are used to avoid repeating nouns"],
+      "answer": "ACD",
+      "explanation": "Object pronouns receive the action (me, you, him, her, it, us, them); their is possessive. Pronouns avoid repetition, and the lecture advises not to switch between pronouns.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "Which prepositional phrases are correct according to the lecture?",
+      "options": ["diagnosed with hypertension", "complained of chest pain", "suffering with a disease", "admitted at the hospital"],
+      "answer": "AB",
+      "explanation": "The lecture gives diagnosed with, complained of, suffering from and admitted to.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "Which sentences use prepositions correctly?",
+      "options": ["The patient will undergo surgery next week.", "She was referred to a cardiologist.", "He was treated for pneumonia with antibiotics.", "She was discharged of hospital on Monday."],
+      "answer": "ABC",
+      "explanation": "Undergo takes no preposition; referred to a specialist; treated for a condition / with a medication. The correct form is discharged from hospital.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "About conjunctions:",
+      "options": ["FANBOYS lists the coordinating conjunctions", "\"although\" and \"unless\" are subordinating conjunctions", "\"yet\" is a subordinating conjunction", "\"despite\" is a conjunction"],
+      "answer": "AB",
+      "explanation": "FANBOYS = for, and, nor, but, or, yet, so (coordinating, so yet is coordinating). Although, unless, because, since, while, when, if, whereas are subordinating. Despite is a preposition.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "About interjections:",
+      "options": ["They express strong emotion", "They are rarely used in formal medical writing", "They may appear in doctor–patient dialogue or patient narratives", "They are recommended in discharge summaries to show empathy"],
+      "answer": "ABC",
+      "explanation": "Interjections (Oh! Ouch! Well…) express emotion and appear occasionally in dialogue or narratives, rarely in formal writing.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "About determiners:",
+      "options": ["They identify or quantify a noun rather than describe its qualities", "They must appear before any adjectives in a noun phrase", "\"the patient's\" can act as a possessive determiner", "\"several\" is a demonstrative"],
+      "answer": "ABC",
+      "explanation": "Determiners identify/quantify and precede adjectives; possessives include the patient's. Several is a quantifier; demonstratives are this, that, these, those.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "A new patient is introduced in a referral letter. According to the lecture:",
+      "options": ["Use \"a/an\" at the first mention (\"a 67-year-old patient\")", "Switch to \"the\" for every subsequent reference", "\"Patient was admitted…\" without an article is acceptable in a formal referral", "\"the\" marks new, non-specific information"],
+      "answer": "AB",
+      "explanation": "a/an introduces something new; the refers to something already identified. Omitting the article is common in rapid clinical notes but should be avoided in formal letters, reports and referrals.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Which sentences are correct?",
+      "options": ["She is a 45-year-old woman.", "The patient was diagnosis with pneumonia.", "The medication was administered by the nurse.", "He has a history of chronic, he takes medication regularly."],
+      "answer": "AC",
+      "explanation": "Compound adjectives take no plural (45-year-old); diagnosed is the needed verb form; chronic is an adjective and needs a noun (chronic illness).",
+      "page": 7,
+      "weight": 0
+    }
+  ]
+}

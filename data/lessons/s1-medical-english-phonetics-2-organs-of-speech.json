@@ -1,0 +1,152 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Phonetics · L2 Organs of speech and articulation",
+  "pdf": "s1/medical-english/phonetics-2-organs-of-speech.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "Match each speech subsystem to its role:",
+      "options": [
+        "Articulatory — shapes the airstream into consonants and vowels",
+        "Phonatory — shapes the airstream in the mouth and nose",
+        "Respiratory — supplies the power source (lungs push air out)",
+        "Phonatory — larynx and vocal folds modulate the airstream and produce voicing"
+      ],
+      "answer": "ACD",
+      "explanation": "Shaping in the throat, mouth and nose is the articulatory system's job.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "A sound is voiced when the vocal folds:",
+      "options": [
+        "Are drawn together",
+        "Vibrate as air passes between them",
+        "Remain apart",
+        "Close the nasal cavity"
+      ],
+      "answer": "AB",
+      "explanation": "Apart and not vibrating = voiceless. The nasal cavity is closed by the soft palate.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Which pairs are distinguished only by voicing, according to the lecture?",
+      "options": [
+        "/m/ and /n/",
+        "/s/ and /z/",
+        "/p/ and /s/",
+        "/p/ and /b/"
+      ],
+      "answer": "BD",
+      "explanation": "Voicing separates pairs that are otherwise identical, such as /p/–/b/ and /s/–/z/.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Which are passive articulators?",
+      "options": [
+        "Upper teeth",
+        "Hard palate",
+        "Soft palate",
+        "Alveolar ridge"
+      ],
+      "answer": "ABD",
+      "explanation": "Passive: upper lip, upper teeth, alveolar ridge, hard palate, rear wall of the pharynx. The soft palate is active.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Which are active articulators?",
+      "options": [
+        "Tongue",
+        "Lower lip",
+        "Soft palate (velum)",
+        "Lower jaw"
+      ],
+      "answer": "ABCD",
+      "explanation": "Active articulators move toward a fixed surface to form a constriction or closure: lower lip, tongue, lower jaw, soft palate.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "About active and passive articulators:",
+      "options": [
+        "Passive articulators provide a relatively fixed surface",
+        "They are located above the larynx",
+        "The rear wall of the pharynx is an active articulator",
+        "Active articulators move toward that surface to form a constriction or closure"
+      ],
+      "answer": "ABD",
+      "explanation": "The rear wall of the pharynx is passive.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "The five regions of the tongue are:",
+      "options": [
+        "tip, blade, front, back, root",
+        "tip, blade, palate, back, root",
+        "tip, body, dorsum, uvula, root",
+        "apex, front, middle, back, epiglottis"
+      ],
+      "answer": "A",
+      "explanation": "The blade is just behind the tip. The uvula, epiglottis and palate are not parts of the tongue.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "About the tongue:",
+      "options": [
+        "Different sounds are made by raising different parts of it toward the roof of the mouth",
+        "It is involved in most English sounds",
+        "It is the most flexible and important articulator",
+        "It is a passive articulator"
+      ],
+      "answer": "ABC",
+      "explanation": "The tongue is the most mobile, active articulator.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "When the soft palate (velum) is lowered:",
+      "options": [
+        "A nasal sound such as /m/, /n/ or /ŋ/ is produced",
+        "Air escapes only through the mouth",
+        "Air can pass through the nose",
+        "The nasal cavity is sealed off"
+      ],
+      "answer": "AC",
+      "explanation": "Raised velum → nasal cavity sealed, air through the mouth only → oral sound.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Match the articulator to its function (lecture's Table 1):",
+      "options": [
+        "Alveolar ridge — target for tongue-tip closure or narrowing",
+        "Lower lip — fixed surface for dental contact",
+        "Soft palate — opens or closes the nasal cavity",
+        "Hard palate — surface for tongue-front raising"
+      ],
+      "answer": "ACD",
+      "explanation": "The lower lip is active: it moves toward the teeth or upper lip. The upper lip/teeth are the fixed surfaces.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which statement explains the role of the soft palate?",
+      "options": [
+        "It is the passive target for tongue-tip closure",
+        "It acts as a valve that distinguishes oral from nasal sounds",
+        "It produces voicing",
+        "It is the power source of speech"
+      ],
+      "answer": "B",
+      "explanation": "Voicing = vocal folds; power = lungs; tongue-tip target = alveolar ridge.",
+      "page": 3,
+      "weight": 0
+    }
+  ]
+}

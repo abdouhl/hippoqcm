@@ -48,7 +48,8 @@ const answerOf = (q: BankQuestion) => [...q.answer].join("");
 async function validate(draft: Draft) {
   const errors: string[] = [];
   const exams = await examQuestions(draft.semester, draft.module);
-  if (exams.size === 0) errors.push(`no exam banks found for S${draft.semester} ${draft.module}`);
+  // Modules without past exams (e.g. Medical English) are fine as long as no exam question is linked.
+  if (exams.size === 0 && draft.exam_questions.length) errors.push(`no exam banks found for S${draft.semester} ${draft.module}`);
   if (!existsSync(`public/lessons/${draft.pdf}`)) errors.push(`missing PDF public/lessons/${draft.pdf}`);
   for (const key of draft.exam_questions) if (!exams.has(key)) errors.push(`unknown exam question "${key}"`);
   if (new Set(draft.exam_questions).size !== draft.exam_questions.length) errors.push("duplicate exam_questions");
@@ -77,7 +78,10 @@ const [cmd, ...args] = process.argv.slice(2);
 if (cmd === "exams") {
   const [semester, module] = args;
   const exams = await examQuestions(Number(semester), module);
-  if (exams.size === 0) throw new Error(`no exam banks for S${semester} ${module}`);
+  if (exams.size === 0) {
+    console.log(`No past exam banks for S${semester} ${module}: weight questions by what the lesson stresses.`);
+    process.exit(0);
+  }
   for (const [key, q] of exams) {
     console.log(`[${key}] ${q.stem}${q.image ? `   (image ${q.image})` : ""}`);
     q.options.forEach((o, j) => console.log(`  ${LABELS[j]}. ${o}`));

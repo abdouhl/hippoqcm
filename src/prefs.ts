@@ -13,6 +13,7 @@ export type Settings = {
   skipModules: number[]; // module ids left out of today's session on the home tab
   noCalc: boolean; // home tab: leave out questions that need a calculation
   examScoring: Scoring; // how mock exams and past papers are graded out of 20
+  summativesDone: string[]; // ids from summatives.ts ticked off on the home tab
 };
 
 export const DEFAULTS: Settings = {
@@ -26,6 +27,7 @@ export const DEFAULTS: Settings = {
   skipModules: [],
   noCalc: false,
   examScoring: "all-or-nothing",
+  summativesDone: [],
 };
 
 const KEY = "hippoqcm.settings";

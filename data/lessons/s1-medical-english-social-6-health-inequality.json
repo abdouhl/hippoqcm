@@ -1,0 +1,282 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Social Sciences · Seq 6 Inequality in health access",
+  "pdf": "s1/medical-english/social-6-health-inequality.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "Health inequity, as opposed to health inequality, refers to differences that are:",
+      "options": [
+        "Due only to natural variation such as age",
+        "Avoidable",
+        "Unjust",
+        "Unfair"
+      ],
+      "answer": "BCD",
+      "explanation": "Differences due to natural variation (older vs younger adults) are inequalities, not necessarily injustices.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "Older adults generally have different health needs than younger adults. According to the course, this is:",
+      "options": [
+        "An inequality, but not necessarily an injustice",
+        "A structural barrier",
+        "An example of the Inverse Care Law",
+        "A health inequity"
+      ],
+      "answer": "A",
+      "explanation": "The course's example of a health inequality that is not an inequity.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "Dimensions of access to healthcare listed in the course:",
+      "options": [
+        "Genetic access — inherited ability to recover",
+        "Cultural access — linguistically and culturally appropriate services",
+        "Financial access — ability to afford care, medicines and transport",
+        "Geographic access — physical distance to facilities"
+      ],
+      "answer": "BCD",
+      "explanation": "The five dimensions: geographic, financial, cultural, timely, quality.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "The Inverse Care Law:",
+      "options": [
+        "States that the availability of good medical care tends to vary inversely with the need for it",
+        "States that the poorest receive the most care",
+        "Operates more completely where medical care is most exposed to market forces",
+        "Was first described by Julian Tudor Hart in 1971"
+      ],
+      "answer": "ACD",
+      "explanation": "Those who need healthcare most are the least likely to receive it.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "People in the countries with the lowest life expectancy live, compared with those in the highest:",
+      "options": [
+        "33 years less",
+        "5 years less",
+        "41 years less",
+        "17 years less"
+      ],
+      "answer": "A",
+      "explanation": "A 33-year gap, reflecting inequalities in healthcare, water, nutrition and social conditions.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "In Canada (Canadian Longitudinal Study on Aging), greater difficulty accessing specialist care was associated with:",
+      "options": [
+        "Lacking a family physician",
+        "Household income below $50,000",
+        "Living in a rural area",
+        "Having universal health coverage"
+      ],
+      "answer": "ABC",
+      "explanation": "Even with universal healthcare, disparities persist by income, race, immigrant status and Indigeneity.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Key facts about low- and middle-income countries given in the course:",
+      "options": [
+        "Low-income countries spend about $17 per capita per year on health",
+        "Stockouts of essential NCD medicines affect up to 41% of low-income countries vs 4% of high-income ones",
+        "Asia and Africa show the most significant intraregional inequalities in maternal and child health",
+        "Government health spending is projected to rise in all low-income countries by 2030"
+      ],
+      "answer": "ABC",
+      "explanation": "Over 80% of low-income countries are projected to spend less on health in 2030 than in 2024.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "By the end of 2021, the share of people with at least one COVID-19 vaccine dose was:",
+      "options": [
+        "5.4% in low-income countries",
+        "64.1% in low-income countries",
+        "5.4% in high-income countries",
+        "64.1% in high-income countries"
+      ],
+      "answer": "AD",
+      "explanation": "\"Vaccine nationalism\" reflected policy choices favouring profit and national interest.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Match the financial cost to its type:",
+      "options": [
+        "Hidden costs — healthy food and lifestyle expenses",
+        "Indirect costs — transportation and lost wages",
+        "Hidden costs — hospital fees",
+        "Direct costs — consultations, medicines, hospital fees"
+      ],
+      "answer": "ABD",
+      "explanation": "Hospital fees are direct costs.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Social and cultural barriers to health access include:",
+      "options": [
+        "Stigma associated with illnesses such as HIV and mental disorders",
+        "Immigration-related difficulties",
+        "Poor roads and inadequate infrastructure",
+        "Language difficulties"
+      ],
+      "answer": "ABD",
+      "explanation": "Poor roads are a geographic barrier.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Systemic and structural barriers include:",
+      "options": [
+        "Weak governance and lack of accountability",
+        "Shortage of healthcare professionals",
+        "Hidden lifestyle costs",
+        "Poor coordination between healthcare services"
+      ],
+      "answer": "ABD",
+      "explanation": "Also inadequate health information systems. Hidden costs are financial barriers.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "The \"poverty trap\" described among the consequences of unequal access means:",
+      "options": [
+        "Rich countries lose productivity",
+        "Childhood illness has no later effects",
+        "Illness increases poverty, while poverty limits healthcare access",
+        "Poor people use emergency services less"
+      ],
+      "answer": "C",
+      "explanation": "One of the economic and social consequences, with lost productivity and intergenerational effects.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Limited access to preventive care puts pressure on healthcare systems through:",
+      "options": [
+        "Greater use of emergency services",
+        "Fewer patients reaching hospitals",
+        "Less investment in prevention and early diagnosis",
+        "Higher treatment costs"
+      ],
+      "answer": "ACD",
+      "explanation": "Section 4.3.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "In the Pakistan vs Canada case study:",
+      "options": [
+        "Canada faces gaps in achieving equal access for everyone",
+        "Pakistan struggles mainly with basic healthcare infrastructure",
+        "Indigenous children in Canada face greater health risks",
+        "Canada has no universal healthcare"
+      ],
+      "answer": "ABC",
+      "explanation": "Canada's universal healthcare reduces financial barriers, but inequalities remain.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "Among older homeless adults in Chicago:",
+      "options": [
+        "Only 66% of those needing medical assistance obtained it",
+        "Most received dental care easily",
+        "Arthritis, diabetes, hypertension and vision problems were frequent",
+        "Only 18% of those needing dental assistance received it"
+      ],
+      "answer": "ACD",
+      "explanation": "Age, homelessness and poverty combine to increase inequalities.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "In the study of women living with chronic STDs, the most frequent type of healthcare interaction was:",
+      "options": [
+        "Moral surveillance (42%)",
+        "Moral surveillance (27%)",
+        "The patient-centred approach (31%)",
+        "The biomedical approach (42%)"
+      ],
+      "answer": "D",
+      "explanation": "Biomedical 42% (disease rather than the person), patient-centred 31%, moral surveillance 27%.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "Health equity is based on four principles:",
+      "options": [
+        "Justice — fair distribution of resources",
+        "Solidarity — shared responsibility",
+        "Profitability — care driven by market forces",
+        "Accountability and participation"
+      ],
+      "answer": "ABD",
+      "explanation": "Accountability = monitoring healthcare systems; participation = involving communities in decisions.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "About the Algerian healthcare system:",
+      "options": [
+        "It is a dual system with a public and a growing private sector",
+        "Health spending is about 5.2% of GDP",
+        "Life expectancy reached 76 years in 2024",
+        "Maternal mortality rose between 1999 and 2019"
+      ],
+      "answer": "ABC",
+      "explanation": "Maternal mortality fell from 117.4 to 48.5 per 100,000 births (1999–2019).",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "The Boussemghoun study (2025) of 400 adults found that:",
+      "options": [
+        "Access to dental and mental health services was high",
+        "36.5% travelled to other regions for healthcare",
+        "52.3% did not visit a general practitioner during the previous year",
+        "39.7% had at least one chronic disease"
+      ],
+      "answer": "BCD",
+      "explanation": "Access to mental health, dental and preventive services was particularly low.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "About the El-Chifa card:",
+      "options": [
+        "It provides health insurance coverage in Algeria",
+        "It removes all indirect costs such as transport",
+        "Insurance alone does not guarantee access when local services are inadequate",
+        "It includes full coverage for certain chronic-disease prescriptions"
+      ],
+      "answer": "ACD",
+      "explanation": "Even with free public care, transport, lost wages and accommodation remain indirect barriers.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Recent Algerian policy responses cited by the course:",
+      "options": [
+        "Creation of a Ministry of Pharmaceutical Industry",
+        "Second National Cancer Plan (2025–2030)",
+        "Increased healthcare budget in the 2025 Finance Law",
+        "Privatization of all public hospitals"
+      ],
+      "answer": "ABC",
+      "explanation": "Also screening and early-diagnosis campaigns in rural areas.",
+      "page": 8,
+      "weight": 0
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Work Techniques · L2 Identifying key terms",
+  "pdf": "s1/medical-english/skills-2-key-terms.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "According to the lecture, key terms in medical texts are:",
+      "options": [
+        "Mostly nouns and nominal compounds",
+        "Mostly verbs",
+        "Mostly function words such as \"of\" and \"the\"",
+        "Almost always content words"
+      ],
+      "answer": "AD",
+      "explanation": "Medical English is a nominalized register: meaning is concentrated in nouns and noun phrases.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "What does it mean that medical English is a \"nominalized register\"?",
+      "options": [
+        "Texts use \"diagnosis\" rather than \"the patient is diagnosed\"",
+        "Verbs carry most of the meaning",
+        "Nouns are avoided",
+        "Processes and actions are often expressed as nouns rather than verbs"
+      ],
+      "answer": "AD",
+      "explanation": "Nominalization shifts emphasis from action to conceptual entity.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Match the term to its category:",
+      "options": [
+        "analgesics — pharmacological",
+        "femur — pathological",
+        "dialysis — procedural",
+        "biopsy — diagnostic"
+      ],
+      "answer": "ACD",
+      "explanation": "Femur is an anatomical term (body structure). Pathological terms: anemia, tuberculosis, cancer.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "In a report about lung cancer confirmed by biopsy and treated with chemotherapy, which classifications are correct?",
+      "options": [
+        "biopsy — diagnostic",
+        "lung — anatomical",
+        "cancer — pathological",
+        "chemotherapy — pharmacological"
+      ],
+      "answer": "ABCD",
+      "explanation": "The lecture uses exactly this example to show that one passage combines several categories.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which text features signal key terms (lecture's Table 3)?",
+      "options": [
+        "Definitions",
+        "Function words",
+        "Headings",
+        "Repetition"
+      ],
+      "answer": "ACD",
+      "explanation": "Repetition, definitions, headings, bold/italic terms and noun clusters signal key terms; function words are removed in extraction.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "Skimming is used to:",
+      "options": [
+        "Identify the general topic, purpose and structure",
+        "Read every sentence in detail",
+        "Locate a specific laboratory value",
+        "Get a global understanding of a text"
+      ],
+      "answer": "AD",
+      "explanation": "Locating specific information (values, diagnoses) is scanning.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "A student searches a discharge report only for the words \"pneumonia\", \"fever\" and the CT scan result. This is:",
+      "options": [
+        "Nominalization",
+        "Chunking",
+        "Scanning",
+        "Skimming"
+      ],
+      "answer": "C",
+      "explanation": "Scanning = targeted search for predefined keywords or data (micro-level extraction).",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Put in order the first three steps of the keyword extraction model:",
+      "options": [
+        "1 remove function words → 2 group → 3 validate",
+        "1 nouns → 2 headings → 3 repetition",
+        "1 title and headings → 2 repeated words → 3 nouns and noun phrases",
+        "1 validate → 2 group → 3 repetition"
+      ],
+      "answer": "C",
+      "explanation": "Steps: title/headings → repetition → nouns/noun phrases → remove function words → group → validate in context.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "In the keyword extraction model:",
+      "options": [
+        "The first step is to remove function words",
+        "The final step is to validate keywords in context",
+        "Removing function words filters grammatical noise",
+        "Grouping related terms builds conceptual clusters"
+      ],
+      "answer": "BCD",
+      "explanation": "The first step is reading titles and headings.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "About medical noun phrases such as \"chronic obstructive pulmonary disease\":",
+      "options": [
+        "They reduce cognitive load for learners",
+        "Each element narrows the clinical meaning",
+        "They must be interpreted holistically, not word by word",
+        "They function as single semantic units"
+      ],
+      "answer": "BCD",
+      "explanation": "Their density increases efficiency but also increases cognitive load for learners.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Match the noun phrase to its meaning:",
+      "options": [
+        "central nervous system disorder — long-term lung disease",
+        "myocardial infarction — heart attack",
+        "elevated blood glucose level — high blood sugar",
+        "acute renal failure — sudden kidney dysfunction"
+      ],
+      "answer": "BCD",
+      "explanation": "CNS disorder = brain/spinal cord pathology; long-term lung disease = COPD.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Which information has the highest priority in semantic prioritization?",
+      "options": [
+        "Procedures (e.g. CT scan)",
+        "Diagnoses, diseases and outcomes (e.g. pneumonia, stroke)",
+        "Function words",
+        "Adjectives and general verbs"
+      ],
+      "answer": "B",
+      "explanation": "High: diagnoses/diseases/outcomes · medium: procedures/explanations · low: supporting descriptions.",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "Match the reading error to its correction strategy (Table 8):",
+      "options": [
+        "Ignoring repetition — translate every word",
+        "Translating every word — focus on key terms only",
+        "Overlooking headings — use structural reading",
+        "Misreading noun phrases — learn a chunking strategy"
+      ],
+      "answer": "BCD",
+      "explanation": "Ignoring repetition (weak scanning) → track repeated lexical items.",
+      "page": 9,
+      "weight": 0
+    },
+    {
+      "stem": "Which are common difficulties in key-term identification listed by the lecture?",
+      "options": [
+        "Misinterpreting abbreviations such as ECG or MRI",
+        "Confusing technical and general vocabulary",
+        "Using headings to orient reading",
+        "Over-focusing on unknown words"
+      ],
+      "answer": "ABD",
+      "explanation": "Using headings is a recommended strategy, not a difficulty.",
+      "page": 8,
+      "weight": 0
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Oral Expression · L1 Greetings and polite expressions",
+  "pdf": "s1/medical-english/oral-1-greetings.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "Which greetings belong to a formal register?",
+      "options": ["Good morning, Madam.", "How do you do?", "Hi there!", "Hey!"],
+      "answer": "AB",
+      "explanation": "The lecture contrasts \"Hi there!\" (informal) with \"Good morning, Madam.\" (formal); the answer key adds \"How do you do?\" as very formal, used on first meeting.",
+      "page": 1, "weight": 0
+    },
+    {
+      "stem": "\"How do you do?\" is, according to the answer key:",
+      "options": ["Very formal", "Used on a first meeting", "A question about the patient's health that needs a detailed answer", "Informal"],
+      "answer": "AB",
+      "explanation": "It is listed as very formal, on first meeting. To ask about health, the lecture uses \"How are you feeling today?\".",
+      "page": 1, "weight": 0
+    },
+    {
+      "stem": "Which expressions are closing phrases from the lecture's vocabulary list?",
+      "options": ["Take care.", "Get well soon.", "See you tomorrow.", "Excuse me, could I ask you something?"],
+      "answer": "ABC",
+      "explanation": "Take care / Get well soon / See you tomorrow close an exchange; \"Excuse me, could I ask you something?\" opens a polite request.",
+      "page": 1, "weight": 0
+    },
+    {
+      "stem": "A patient arrives at reception. According to the reading text, the receptionist should:",
+      "options": ["Greet the patient before asking for any paperwork", "Ask for the paperwork first, then greet", "Use the patient's first name immediately", "Use the patient's name with Mr or Mrs once known"],
+      "answer": "AD",
+      "explanation": "Always greet first. Use Mr/Mrs unless the patient invites you to use their first name.",
+      "page": 2, "weight": 0
+    },
+    {
+      "stem": "Why does the text recommend \"Mr\" or \"Mrs\" rather than the first name?",
+      "options": ["It is more respectful", "The first name may be used if the patient invites you to", "First names are forbidden in hospitals", "It saves time"],
+      "answer": "AB",
+      "explanation": "Answer key: because it is more respectful, and Mr/Mrs should be used unless the patient invites you to use their first name.",
+      "page": 2, "weight": 0
+    },
+    {
+      "stem": "If a patient looks anxious, the text advises you to:",
+      "options": ["Slow down your speech", "Keep your tone warm", "Speak faster to finish quickly", "Switch to a very formal register"],
+      "answer": "AB",
+      "explanation": "Slow down your speech and keep your tone warm.",
+      "page": 2, "weight": 0
+    },
+    {
+      "stem": "In the model dialogue, which lines are polite requests?",
+      "options": ["May I have your name, please?", "Please take a seat; the doctor will call you shortly.", "Thank you very much.", "Good morning. How can I help you?"],
+      "answer": "AB",
+      "explanation": "\"May I…, please?\" and \"Please take a seat\" are requests. \"Thank you very much\" is thanks; \"Good morning\" is the greeting.",
+      "page": 3, "weight": 0
+    },
+    {
+      "stem": "The guided speaking practice keeps which structure for every new situation?",
+      "options": ["Greeting – request – thanks", "Request – greeting – thanks", "Thanks – greeting – request", "Greeting – complaint – apology"],
+      "answer": "A",
+      "explanation": "The dialogue is adapted (elderly patient arriving late, worried parent, visitor) while keeping the greeting–request–thanks structure.",
+      "page": 3, "weight": 0
+    },
+    {
+      "stem": "The appointment-confirmation email should contain:",
+      "options": ["A greeting", "The day and time of the appointment", "A polite closing line", "The patient's full medical history"],
+      "answer": "ABC",
+      "explanation": "The task asks for a greeting, the appointment details, a practical instruction and a polite closing, using at least three polite expressions (60–80 words).",
+      "page": 3, "weight": 0
+    },
+    {
+      "stem": "In the listening task (British Council, Hospital Scene 1), what is happening?",
+      "options": ["Ashlie and Stephen are at the hospital", "Stephen is being examined", "Mostly very formal language is used", "The characters are at a pharmacy"],
+      "answer": "AB",
+      "explanation": "The answer key: the characters are at the hospital, where Stephen is being examined; expect simple, everyday greetings rather than very formal language.",
+      "page": 2, "weight": 0
+    },
+    {
+      "stem": "Which reply is appropriate to \"Thank you very much\"?",
+      "options": ["You're welcome.", "Pleased to meet you.", "Get well soon.", "How are you feeling today?"],
+      "answer": "A",
+      "explanation": "The vocabulary list pairs \"Thank you very much.\" with \"You're welcome.\"",
+      "page": 1, "weight": 0
+    }
+  ]
+}

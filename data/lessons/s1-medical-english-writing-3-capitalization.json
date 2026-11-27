@@ -1,0 +1,121 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Written Expression · L3 Capitalization",
+  "pdf": "s1/medical-english/writing-3-capitalization.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "Which proper nouns must be capitalized according to the lecture?",
+      "options": ["Days and months (Monday, September)", "Names of hospitals (St Mary's Hospital)", "Holidays", "Common nouns such as \"hospital\" in \"admitted to the hospital\""],
+      "answer": "ABC",
+      "explanation": "Names of people, places, days, months, holidays and institutions are capitalized. \"the hospital\" used as a common noun is not.",
+      "page": 2, "weight": 0
+    },
+    {
+      "stem": "Which drug names are correctly written?",
+      "options": ["metformin", "Prozac", "Aspirin (used as a generic name mid-sentence)", "diazepam"],
+      "answer": "ABD",
+      "explanation": "Generic names are lowercase (aspirin, diazepam, metformin); brand names are capitalized (Prozac, Lipitor).",
+      "page": 2, "weight": 0
+    },
+    {
+      "stem": "About generic and brand drug names:",
+      "options": ["Generic names are nonproprietary and lowercase", "Brand names are proprietary and capitalized", "The brand name should be preferred in formal medical writing", "Disulfiram is generic; Antabuse is its brand name"],
+      "answer": "ABD",
+      "explanation": "Use the generic name unless there is a specific clinical reason to use the brand name; generic names are preferred in most formal writing.",
+      "page": 3, "weight": 0
+    },
+    {
+      "stem": "Which eponymous diseases are written correctly?",
+      "options": ["Alzheimer's disease", "Down syndrome", "Parkinson's Disease", "tourette syndrome"],
+      "answer": "AB",
+      "explanation": "The person's name is capitalized; \"disease\" or \"syndrome\" is not.",
+      "page": 3, "weight": 0
+    },
+    {
+      "stem": "About the apostrophe in eponyms:",
+      "options": ["Some style guides, including SNOMED CT, recommend omitting it", "\"Down syndrome\" is preferred to \"Down's syndrome\" by those guides", "You should check your institution's preferred style", "The apostrophe is compulsory in every style guide"],
+      "answer": "ABC",
+      "explanation": "The lecture notes that SNOMED CT and others omit the apostrophe and advises following the institution's style.",
+      "page": 3, "weight": 0
+    },
+    {
+      "stem": "Which disease names are correctly capitalized?",
+      "options": ["Lyme disease", "West Nile virus", "Pneumonia (mid-sentence)", "leukemia"],
+      "answer": "ABD",
+      "explanation": "Diseases named after places are usually capitalized; common diseases (pneumonia, leukemia, cancer) are not.",
+      "page": 3, "weight": 0
+    },
+    {
+      "stem": "Which sentence is correct?",
+      "options": ["The patient was diagnosed with cancer of the colon.", "The patient was diagnosed with Cancer of the Colon.", "The patient was diagnosed with Hypertension.", "The patient has Type 2 Diabetes and Migraine."],
+      "answer": "A",
+      "explanation": "Most diseases are not capitalized unless they include a proper name.",
+      "page": 3, "weight": 0
+    },
+    {
+      "stem": "About medical abbreviations and acronyms:",
+      "options": ["Their letters are almost always capitalized (MRI, ECG, GP)", "\"The mri scan showed no abnormalities\" is correct", "ENT stands for Ear, Nose, and Throat", "NHS and CDC are written in capitals"],
+      "answer": "ACD",
+      "explanation": "Acronyms are capitalized: MRI, CT, ECG, ENT, ICU, ER, GP, WHO, CDC, NHS.",
+      "page": 4, "weight": 0
+    },
+    {
+      "stem": "About medical specialties and departments:",
+      "options": ["\"She was referred to the cardiology department\" is correct", "\"He specializes in Neurology\" is correct", "\"She works in the Department of Cardiology at St Mary's Hospital\" is correct", "Specialties are always capitalized"],
+      "answer": "AC",
+      "explanation": "Specialties are lowercase as common nouns and capitalized only as part of a proper name or department title.",
+      "page": 4, "weight": 0
+    },
+    {
+      "stem": "Which uses of professional titles are correct?",
+      "options": ["Dr Smith examined the patient.", "Professor Jones presented the case.", "The Nurse administered the medication.", "The doctor examined the patient."],
+      "answer": "ABD",
+      "explanation": "Titles are capitalized before a name, as part of it; used as common nouns (the doctor, the nurse) they are lowercase.",
+      "page": 4, "weight": 0
+    },
+    {
+      "stem": "About Latin names of microorganisms:",
+      "options": ["The genus is capitalized and the species is lowercase", "Both parts are italicized in print", "After the first full use the genus may be abbreviated: S. aureus", "The convention follows ordinary English capitalization rules"],
+      "answer": "ABC",
+      "explanation": "Binomial nomenclature follows an international convention independent of ordinary English rules.",
+      "page": 4, "weight": 0
+    },
+    {
+      "stem": "Which are written correctly?",
+      "options": ["Blood cultures were positive for Escherichia coli.", "The wound swab grew staphylococcus Aureus.", "She had a streptococcal throat infection.", "The patient's infection was Staphylococcal."],
+      "answer": "AC",
+      "explanation": "Genus capital + species lowercase. Adjectival forms (staphylococcal, streptococcal) are lowercase and not italic.",
+      "page": 5, "weight": 0
+    },
+    {
+      "stem": "About headings and document titles:",
+      "options": ["Title case capitalizes all major words but not articles or short prepositions (unless first)", "Sentence case capitalizes only the first word and proper nouns", "Most hospital templates use sentence case for section headings", "Mixing both conventions within one document is recommended"],
+      "answer": "ABC",
+      "explanation": "Title case for the document title, sentence case for section headings (\"Reason for admission\"); consistency within a document is essential.",
+      "page": 5, "weight": 0
+    },
+    {
+      "stem": "\"Discharge summary for Mrs Alia Thompson\" is written in:",
+      "options": ["Sentence case", "Title case", "All capitals", "Lowercase"],
+      "answer": "A",
+      "explanation": "Only the first word and proper nouns are capitalized. In title case it would be \"Discharge Summary for Mrs Alia Thompson\".",
+      "page": 5, "weight": 0
+    },
+    {
+      "stem": "Which corrections of \"he was admitted to st mary's hospital on friday. The mri was normal.\" are right?",
+      "options": ["St Mary's Hospital", "Friday", "MRI", "Hospital should stay lowercase because it is a common noun"],
+      "answer": "ABC",
+      "explanation": "Hospital is part of the institution's proper name here; days and acronyms are capitalized; the sentence also starts with a capital (He).",
+      "page": 2, "weight": 0
+    },
+    {
+      "stem": "Why does capitalization matter in medical writing, according to the lecture?",
+      "options": ["It distinguishes a specific product (brand) from a general medication (generic)", "It distinguishes a disease from a person's name (Parkinson's)", "It serves clarity and safety", "The rules are arbitrary conventions with no clinical function"],
+      "answer": "ABC",
+      "explanation": "The conclusion stresses that the rules are not arbitrary but serve clarity and safety.",
+      "page": 5, "weight": 0
+    }
+  ]
+}

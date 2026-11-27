@@ -280,6 +280,29 @@ main.tab-main { padding-bottom: calc(var(--tabbar-h) + 28px + env(safe-area-inse
 .calc-toggle[aria-checked="true"] { color: var(--text); border-color: var(--accent); }
 .calc-toggle[aria-checked="true"] .box { background: var(--accent); border-color: var(--accent); }
 .module-picker > .secondary { width: 100%; }
+.sum-banner {
+  margin: 0 0 14px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface);
+}
+.sum-banner.open { border-color: var(--accent); background: var(--accent-soft); }
+.sum-banner.late { border-color: var(--coral); }
+.sum-head { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; }
+.sum-head > span { flex: 1; min-width: 0; }
+.sum-head small { color: var(--muted); font-size: 0.8rem; }
+.sum-banner.open .sum-head > .icon { color: var(--accent); }
+.sum-banner.late .sum-head > .icon, .sum-banner.late .sum-head small { color: var(--coral); }
+.sum-head .link { font-size: 0.8rem; font-weight: 600; }
+.sum-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.sum-chip {
+  display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px 5px 6px; border-radius: 999px;
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--text);
+  font: inherit; font-size: 0.82rem; font-weight: 600; cursor: pointer;
+}
+.sum-chip .box {
+  display: grid; place-items: center; width: 16px; height: 16px; flex: none;
+  border: 1.5px solid var(--border-strong); border-radius: 4px; color: var(--on-accent);
+}
+.sum-chip.done { color: var(--muted); text-decoration: line-through; }
+.sum-chip.done .box { background: var(--accent); border-color: var(--accent); }
 .hero-title { display: flex; align-items: center; gap: 8px; font-size: 1.4rem; font-weight: 700; margin: 4px 0 0; color: var(--ok); }
 .exam-list { list-style: none; margin: 0; padding: 0; }
 .exam-list li + li .row-link { border-top: 1px solid var(--border); }

@@ -1,0 +1,243 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Grammar · L2 Common medical nouns and verbs",
+  "pdf": "s1/medical-english/grammar-2-nouns-and-verbs.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "Which nouns are uncountable according to the lecture?",
+      "options": [
+        "equipment",
+        "infection",
+        "diagnosis",
+        "information"
+      ],
+      "answer": "AD",
+      "explanation": "Uncountable: pain (general), information, equipment, treatment (concept), blood, fever. Infection and diagnosis are countable (infections, diagnoses).",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "About uncountable nouns:",
+      "options": [
+        "They cannot be used with a/an or numbers",
+        "They have only one (singular) form",
+        "They are used with \"many\"",
+        "They always take a singular verb"
+      ],
+      "answer": "ABD",
+      "explanation": "\"Much\" goes with uncountable nouns (How much medication?), \"many\" with countable ones (How many tablets?).",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which sentences are correct?",
+      "options": [
+        "The patient presented with many pain.",
+        "How much medication is left?",
+        "How many tablets are left?",
+        "Measles is highly infectious."
+      ],
+      "answer": "BCD",
+      "explanation": "Illness names such as measles are uncountable (singular verb). Pain is uncountable: much pain, not many.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which minor ailments does the lecture say are countable?",
+      "options": [
+        "a headache",
+        "a cold",
+        "a flu",
+        "a sore throat"
+      ],
+      "answer": "ABD",
+      "explanation": "Illness names (flu, chickenpox, diabetes, pneumonia) are usually uncountable; some minor ailments are countable.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Toothache, earache, stomach-ache and backache are:",
+      "options": [
+        "Usually uncountable in British English",
+        "Always countable in both varieties",
+        "Always plural",
+        "Generally countable in American English"
+      ],
+      "answer": "AD",
+      "explanation": "British English treats them as usually uncountable; American English as generally countable.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which plurals are correct?",
+      "options": [
+        "nucleus → nuclei",
+        "vertebra → vertebrae",
+        "appendix → appendixae",
+        "bacterium → bacteria"
+      ],
+      "answer": "ABD",
+      "explanation": "-a → -ae, -um → -a, -us → -i, -ex/-ix → -ices (appendix → appendices).",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which plurals are correct?",
+      "options": [
+        "diagnosis → diagnosises",
+        "cortex → cortices",
+        "prognosis → prognoses",
+        "criterion → criteria"
+      ],
+      "answer": "BCD",
+      "explanation": "-on → -a, -is → -es, -ex → -ices. \"Diagnosises\" is the lecture's example of an incorrect plural.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which plural endings match the lecture's table?",
+      "options": [
+        "-um → -a (ovum → ova)",
+        "consonant + y → -ies (therapy → therapies)",
+        "-a → -as (vertebra → vertebras)",
+        "-us → -i (bronchus → bronchi)"
+      ],
+      "answer": "ABD",
+      "explanation": "Latin -a takes -ae: vertebrae.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which verbs does the lecture list in the Diagnosis category?",
+      "options": [
+        "confirm",
+        "detect",
+        "rule out",
+        "relapse"
+      ],
+      "answer": "ABC",
+      "explanation": "Diagnosis: diagnose, identify, detect, confirm, rule out. Relapse is a patient-state verb.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "Choose the correct verb–noun collocations:",
+      "options": [
+        "do a diagnosis",
+        "make a diagnosis",
+        "run a test",
+        "take a temperature"
+      ],
+      "answer": "BCD",
+      "explanation": "\"The doctor did a diagnosis\" is listed as an error: make collocates with diagnosis.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Which sentences use the correct collocation?",
+      "options": [
+        "The patient underwent emergency surgery.",
+        "The patient received appropriate care.",
+        "The patient got surgery.",
+        "The nurse administered the injection."
+      ],
+      "answer": "ABD",
+      "explanation": "\"Got surgery\" → underwent surgery, the correct clinical term.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "\"The doctor made an examination.\" According to the lecture, the correct version is:",
+      "options": [
+        "The doctor gave an examination.",
+        "The doctor performed an examination.",
+        "The doctor took an examination.",
+        "The doctor conducted an examination."
+      ],
+      "answer": "BD",
+      "explanation": "Perform / conduct collocate with an examination, surgery, a procedure, an investigation; \"make an examination\" is a common ESL error.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "About collocations in medical English:",
+      "options": [
+        "They often involve \"delexical\" verbs paired with specific nouns",
+        "They can always be predicted by translating from one's own language",
+        "They are words that naturally and frequently occur together",
+        "They must be learned as whole units"
+      ],
+      "answer": "ACD",
+      "explanation": "These combinations cannot be predicted from translation alone.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Which verb + preposition combinations are correct?",
+      "options": [
+        "recover from surgery",
+        "discharged from hospital",
+        "admitted to the emergency department",
+        "responded at antibiotics"
+      ],
+      "answer": "ABC",
+      "explanation": "respond to: \"The infection responded to antibiotics.\"",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Match each tense to its clinical meaning:",
+      "options": [
+        "Past simple — completed past action",
+        "Present simple — current condition",
+        "Present perfect — action that will happen tomorrow",
+        "Present perfect — past action with present relevance"
+      ],
+      "answer": "ABD",
+      "explanation": "\"The patient presents with chest pain\" / \"She has been prescribed metformin\" / \"He was diagnosed in 2019\".",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Which verb → noun pairs are correct?",
+      "options": [
+        "investigate → investigatement",
+        "recover → recovery",
+        "prescribe → prescription",
+        "monitor → monitoring"
+      ],
+      "answer": "BCD",
+      "explanation": "investigate → investigation.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "Which sentence uses nominalisation to sound more formal?",
+      "options": [
+        "The patient made a good recovery.",
+        "The patient recovered well.",
+        "The patient is recovering.",
+        "The patient will recover soon."
+      ],
+      "answer": "A",
+      "explanation": "The noun form (recovery) creates a more objective, professional tone than the verb (recovered).",
+      "page": 9,
+      "weight": 0
+    },
+    {
+      "stem": "Which corrections are right?",
+      "options": [
+        "several bacterias → several bacteria",
+        "The nurse gave medication → The nurse administered medication",
+        "The doctor prescribed medicaments → this is the preferred modern term",
+        "The patient took treatment → The patient received treatment"
+      ],
+      "answer": "ABD",
+      "explanation": "Medicament is rarely used in modern medical English: use medication(s).",
+      "page": 8,
+      "weight": 0
+    }
+  ]
+}

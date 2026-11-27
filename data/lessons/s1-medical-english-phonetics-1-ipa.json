@@ -1,0 +1,191 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Phonetics · L1 Introduction to the IPA",
+  "pdf": "s1/medical-english/phonetics-1-ipa.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "Why does English need a phonetic alphabet, according to the lecture?",
+      "options": [
+        "The same letters can correspond to different sounds",
+        "The same sound can be written in different ways",
+        "Medical terms come from Greek and Latin roots whose spelling doesn't match ordinary English patterns",
+        "English spelling represents pronunciation perfectly"
+      ],
+      "answer": "ABC",
+      "explanation": "English spelling only partially represents pronunciation; a phonetic alphabet assigns exactly one symbol to each distinct sound.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Match the branch of phonetics to what it studies:",
+      "options": [
+        "Auditory — how sounds are perceived by the listener",
+        "Acoustic — how sounds are transmitted as sound waves",
+        "Articulatory — how sounds are produced by the vocal organs",
+        "Auditory — how sounds are produced by the larynx"
+      ],
+      "answer": "ABC",
+      "explanation": "Phonetics studies physical properties of speech sounds in three branches; this course focuses on articulatory phonetics.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Why does the course focus on articulatory phonetics?",
+      "options": [
+        "It studies sound waves with instruments",
+        "It is the only branch of phonetics",
+        "It is the branch most directly useful for improving a learner's own pronunciation",
+        "It replaces phonology"
+      ],
+      "answer": "C",
+      "explanation": "Articulatory phonetics deals with sound production by the vocal organs, which is what learners need to change their pronunciation.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "About phonology:",
+      "options": [
+        "It studies sound waves",
+        "It studies how sounds function within a particular language's sound system",
+        "It asks which sound differences change meaning",
+        "Its basic unit is the phoneme"
+      ],
+      "answer": "BCD",
+      "explanation": "Phonology studies which sound differences change meaning; its basic unit is the phoneme. Sound waves belong to acoustic phonetics.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "A phoneme is:",
+      "options": [
+        "A sound variant that never changes meaning",
+        "Shown inside square brackets in narrow transcription",
+        "The same thing as a letter of the alphabet",
+        "The smallest unit of sound that can distinguish one word from another"
+      ],
+      "answer": "D",
+      "explanation": "/p/ and /b/ are separate phonemes because pin and bin are different words. A variant that never changes meaning is an allophone.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "The p in \"pin\" and the p in \"spin\":",
+      "options": [
+        "Are two different phonemes because they sound slightly different",
+        "Are allophones of the same phoneme /p/",
+        "Differ because the first is aspirated and the second is not",
+        "Are perceived by English speakers as the same sound"
+      ],
+      "answer": "BCD",
+      "explanation": "Allophones are different phonetic realizations of one phoneme that never change meaning on their own.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "About slant brackets and square brackets:",
+      "options": [
+        "[pʰɪn] is a narrow (phonetic) transcription",
+        "/pɪn/ is a broad (phonemic) transcription",
+        "The ʰ in [pʰɪn] marks aspiration",
+        "This course mostly uses square brackets"
+      ],
+      "answer": "ABC",
+      "explanation": "The course uses broad (slant-bracket) transcription for most purposes, keeping square brackets for specific phonetic detail.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Which transcriptions are narrow (phonetic)?",
+      "options": [
+        "/pen/",
+        "[pʰen]",
+        "/tiːm/",
+        "[tʰiːm]"
+      ],
+      "answer": "BD",
+      "explanation": "Square brackets + the aspiration diacritic = narrow. Slant brackets = broad.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "About the IPA:",
+      "options": [
+        "It was developed by the International Phonetic Association",
+        "Each symbol always represents the same sound",
+        "It is language-independent",
+        "Vowel symbols are easy to predict from ordinary spelling"
+      ],
+      "answer": "ABC",
+      "explanation": "Vowel symbols are less predictable from spelling and must be learned individually.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Which IPA consonant symbols does the lecture describe as unfamiliar (not ordinary Latin letters)?",
+      "options": [
+        "ʃ",
+        "ŋ",
+        "k",
+        "θ"
+      ],
+      "answer": "ABD",
+      "explanation": "/p, b, t, d, k, g, m, n, l, r/ look like Latin letters; /θ, ð, ʃ, ʒ, ŋ/ are borrowed from Greek or specially designed.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "Match the word to its spelling difficulty as given in the lecture:",
+      "options": [
+        "psychology — silent initial \"p\"",
+        "stomach — \"ch\" represents /k/",
+        "pharmacy — \"ph\" represents /f/",
+        "muscle — silent \"m\""
+      ],
+      "answer": "ABC",
+      "explanation": "In muscle /ˈmʌsl/ it's the \"c\" that is silent.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Which word is transcribed /kɒf/?",
+      "options": [
+        "cog",
+        "cuff",
+        "cough",
+        "calf"
+      ],
+      "answer": "C",
+      "explanation": "In cough, \"gh\" represents /f/.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "Match the transcription to the word:",
+      "options": [
+        "/ɡɔːz/ — gauze",
+        "/jɔːn/ — yawn",
+        "/θʌm/ — thumb",
+        "/haɪt/ — heat"
+      ],
+      "answer": "ABC",
+      "explanation": "/haɪt/ is height (the diphthong aɪ as in \"high\").",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "The four words though, cough, through and enough show that:",
+      "options": [
+        "English spelling is a reliable guide to pronunciation",
+        "The IPA gives each sound one symbol regardless of spelling",
+        "One spelling pattern (\"-ough\") can have four different pronunciations",
+        "\"-ough\" is always pronounced /ɒf/"
+      ],
+      "answer": "BC",
+      "explanation": "Figure 1: /ðəʊ/, /kɒf/, /θruː/, /ɪˈnʌf/.",
+      "page": 2,
+      "weight": 0
+    }
+  ]
+}

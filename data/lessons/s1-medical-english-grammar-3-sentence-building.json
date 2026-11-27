@@ -1,0 +1,217 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Grammar · L3 Sentence building",
+  "pdf": "s1/medical-english/grammar-3-sentence-building.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "Why is English word order (SVO) so rigid, according to the lecture?",
+      "options": [
+        "Nouns basically have only two forms (singular and plural)",
+        "Word position must do the work of conveying meaning",
+        "English has very little inflection",
+        "Word endings indicate grammatical relationships, as in Russian"
+      ],
+      "answer": "ABC",
+      "explanation": "In Russian, Finnish or Hungarian, inflections show relationships, so order is freer; English relies on position.",
+      "page": 4,
+      "weight": 0
+    },
+    {
+      "stem": "In \"Captopril controls hypertension\":",
+      "options": [
+        "\"Captopril\" answers \"Who or what controls?\" and is the subject",
+        "\"hypertension\" is the subject because it is a disease",
+        "\"hypertension\" is the object",
+        "\"controls\" is the verb"
+      ],
+      "answer": "ACD",
+      "explanation": "Find the verb, ask \"who/what + verb?\" for the subject, then \"subject + verb + what?\" for the object.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "\"The surgeon examined the patient\" vs \"The patient examined the surgeon\" shows that:",
+      "options": [
+        "In clinical documentation this precision can affect patient safety",
+        "Word order determines meaning in English",
+        "The same words can convey completely different meanings",
+        "Word order does not matter if the vocabulary is correct"
+      ],
+      "answer": "ABC",
+      "explanation": "Meaning in English is determined primarily by word order.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Which questions are correctly formed?",
+      "options": [
+        "Does the patient have diabetes?",
+        "When the symptoms did start?",
+        "Does the patient has diabetes?",
+        "When did the symptoms start?"
+      ],
+      "answer": "AD",
+      "explanation": "After does, use the base form (have). In wh- questions the auxiliary comes after the wh-word and before the subject.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "The structure of a wh- question is:",
+      "options": [
+        "Wh-word + Auxiliary + Subject + Main verb",
+        "Wh-word + Subject + Auxiliary + Main verb",
+        "Auxiliary + Wh-word + Subject + Main verb",
+        "Subject + Wh-word + Main verb"
+      ],
+      "answer": "A",
+      "explanation": "e.g. \"How long has she been in pain?\". Yes/no questions are Aux + S + V.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "In a medical consultation, according to the lecture:",
+      "options": [
+        "Yes/no questions are useful for confirming information",
+        "\"When did the pain begin?\" is a yes/no question",
+        "Wh- questions are essential for open-ended history-taking",
+        "\"Do you have a history of hypertension?\" is a yes/no question"
+      ],
+      "answer": "ACD",
+      "explanation": "\"When did the pain begin?\" is a wh- question.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "Which negative sentences are correct?",
+      "options": [
+        "The patient does not have a fever.",
+        "The infection cannot be ruled out.",
+        "The patient not has a fever.",
+        "She has not experienced any side effects."
+      ],
+      "answer": "ABD",
+      "explanation": "Negative structure: Subject + Auxiliary + not + Main verb.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "About negative findings in clinical documentation:",
+      "options": [
+        "They help establish differential diagnoses",
+        "They should be left out of notes to save space",
+        "They are as clinically significant as positive findings",
+        "\"No evidence of fracture was found on X-ray\" is an example"
+      ],
+      "answer": "ACD",
+      "explanation": "Negation is crucial for ruling out diagnoses and documenting negative findings.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Identify the sentence types:",
+      "options": [
+        "\"Treatment began immediately.\" — interrogative",
+        "\"Has she experienced any side effects?\" — interrogative",
+        "\"The infection cannot be ruled out.\" — negative",
+        "\"The diagnosis was confirmed by the blood test.\" — declarative"
+      ],
+      "answer": "BCD",
+      "explanation": "\"Treatment began immediately\" is a declarative sentence with an intransitive verb.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Match the sentence to its pattern:",
+      "options": [
+        "\"Blood flows.\" — Pattern 1 (S + intransitive V)",
+        "\"Gallbladder stores bile.\" — Pattern 3 (S + transitive V + DO)",
+        "\"The patient remains stable.\" — Pattern 7 (S + linking V + Adj)",
+        "\"The liver is an essential organ.\" — Pattern 7 (S + linking V + Adj)"
+      ],
+      "answer": "ABC",
+      "explanation": "\"The liver is an essential organ\" has a noun complement: Pattern 6.",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "\"The hospital named Dr. Funes the best surgeon.\" This sentence:",
+      "options": [
+        "Is Pattern 5",
+        "Uses a linking verb",
+        "Has a direct object followed by an object complement",
+        "Has two nouns that refer to the same person"
+      ],
+      "answer": "ACD",
+      "explanation": "Pattern 5: S + V + N (DO) + N (OC) — Dr. Funes and \"the best surgeon\" are the same person. \"Named\" is not a linking verb.",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "Which sentences contain a linking verb followed by a subject complement?",
+      "options": [
+        "The surgeon performed the operation.",
+        "The patient became a diabetic.",
+        "The test results are inconclusive.",
+        "The diagnosis is pneumonia."
+      ],
+      "answer": "BCD",
+      "explanation": "became/are/is are linking verbs (patterns 6 and 7). \"performed the operation\" is transitive + direct object (pattern 3).",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "Which pattern does \"The heart lies in the thoracic cavity\" follow?",
+      "options": [
+        "S + linking V + noun (Pattern 6)",
+        "S + intransitive V + adverbial (Pattern 2)",
+        "S + V + DO + IO (Pattern 4)",
+        "S + transitive V + DO (Pattern 3)"
+      ],
+      "answer": "B",
+      "explanation": "Pattern 2 adds information about how, when or where; \"lies\" takes no object.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "Which are recommendations or corrections given in the lecture?",
+      "options": [
+        "Keep the subject and verb close together",
+        "Place long phrases between the subject and the verb for emphasis",
+        "\"After waiting for three hours, the patient was finally seen\" is preferred",
+        "Prefer the active voice for clarity: \"The doctor examined the patient.\""
+      ],
+      "answer": "ACD",
+      "explanation": "Overuse of the passive and separating subject and verb are listed as common errors.",
+      "page": 9,
+      "weight": 0
+    },
+    {
+      "stem": "Rearrange \"with / presents / pain / the / chest / patient\". The correct sentence is:",
+      "options": [
+        "Presents the patient with chest pain.",
+        "The patient presents with chest pain.",
+        "The chest presents with patient pain.",
+        "The patient with chest pain presents."
+      ],
+      "answer": "B",
+      "explanation": "Subject (the patient) + verb (presents) + prepositional phrase (with chest pain).",
+      "page": 9,
+      "weight": 0
+    },
+    {
+      "stem": "Which are the three core sentence types this lecture presents for clinical communication?",
+      "options": [
+        "Interrogative",
+        "Negative",
+        "Exclamatory",
+        "Declarative"
+      ],
+      "answer": "ABD",
+      "explanation": "Declarative (stating facts), interrogative (history-taking questions), negative (excluding symptoms or findings).",
+      "page": 1,
+      "weight": 0
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Reading · Seq 1 Introduction to medical texts",
+  "pdf": "s1/medical-english/reading-1-medical-texts.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "Which are considered primary literature?",
+      "options": [
+        "Original research articles",
+        "Meta-analyses",
+        "Systematic reviews",
+        "Clinical trial results reported for the first time"
+      ],
+      "answer": "AD",
+      "explanation": "Primary literature reports original findings (new discoveries, trial results, case studies). Reviews and meta-analyses are secondary: they synthesize primary research.",
+      "page": 2,
+      "weight": 0
+    },
+    {
+      "stem": "Which statements about medical text sources are correct?",
+      "options": [
+        "Historical treatises have no value for modern medicine",
+        "Peer-reviewed journals are considered more reliable than non-peer-reviewed publications",
+        "Patient records are confidential documents",
+        "PubMed is provided by the National Library of Medicine"
+      ],
+      "answer": "BCD",
+      "explanation": "Historical treatises (Edwin Smith Papyrus, Sushruta Samhita, Canon of Medicine) help understand the evolution of medical thought.",
+      "page": 1,
+      "weight": 0
+    },
+    {
+      "stem": "Match the text to its description:",
+      "options": [
+        "The Canon of Medicine — medieval encyclopedia by Ibn Sina",
+        "Sushruta Samhita — modern textbook of surgery",
+        "Edwin Smith Papyrus — ancient treatise from Egypt",
+        "Harrison's Principles of Internal Medicine — the most widely read medical textbook"
+      ],
+      "answer": "ACD",
+      "explanation": "Sushruta Samhita is an ancient treatise from India.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "According to the course, the most efficient way to start reading a research article is to:",
+      "options": [
+        "Read the abstract's conclusions to judge relevance",
+        "Start with the reference list",
+        "Read only the figures",
+        "Read the whole paper from start to finish"
+      ],
+      "answer": "A",
+      "explanation": "Experts recommend reviewing the abstract's conclusions first, then the methods and results, appraising at each step whether to continue.",
+      "page": 3,
+      "weight": 0
+    },
+    {
+      "stem": "IMRAD stands for:",
+      "options": [
+        "Investigation, Methods, Results, and Diagnosis",
+        "Introduction, Measurements, Analysis, and Discussion",
+        "Introduction, Methods, Results, and Discussion",
+        "Introduction, Materials, Review, and Data"
+      ],
+      "answer": "C",
+      "explanation": "The usual organization of an original research article, preceded by a structured abstract.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "About review articles:",
+      "options": [
+        "A meta-analysis is a primary research article",
+        "Systematic reviews address specific questions with defined methods for selecting papers",
+        "Narrative reviews give a qualitative overview of broad topics without a specific research question",
+        "A meta-analysis combines the statistical findings of several studies"
+      ],
+      "answer": "BCD",
+      "explanation": "Meta-analyses are secondary literature.",
+      "page": 5,
+      "weight": 0
+    },
+    {
+      "stem": "About the title of a research article:",
+      "options": [
+        "\"Comparison of Microwave with Conventional Tissue Processing on Quality of Histological Sections\" is a better title than \"Microwave processing – A blessing for pathologists\"",
+        "The best titles are descriptive and self-explanatory",
+        "It is the first point of attraction for readers",
+        "A vague, intriguing title is preferred"
+      ],
+      "answer": "ABC",
+      "explanation": "A specific title tells the reader immediately what the study is about.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "About the abstract:",
+      "options": [
+        "It is used to assess the statistical methods in detail",
+        "It helps readers quickly decide whether the paper is relevant",
+        "It is limited in word count",
+        "Most journals now require a structured abstract with subheadings"
+      ],
+      "answer": "BCD",
+      "explanation": "Statistical methods are assessed in the Methods section.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Where are the aims of a study (and often the hypothesis) usually stated?",
+      "options": [
+        "In the title only",
+        "In the reference list",
+        "In the results",
+        "At the end of the introduction"
+      ],
+      "answer": "D",
+      "explanation": "The introduction moves from background to literature to gap, and usually states the aims at its end; check later in the discussion whether the hypothesis was addressed.",
+      "page": 6,
+      "weight": 0
+    },
+    {
+      "stem": "Match each section with its role:",
+      "options": [
+        "Introduction — statistical significance of the findings",
+        "Methods — study design, sample, data collection, statistics",
+        "Results — key findings, p-values, confidence intervals",
+        "Discussion — implications, limitations, future research"
+      ],
+      "answer": "BCD",
+      "explanation": "Statistical significance is reported in the Results.",
+      "page": 7,
+      "weight": 0
+    },
+    {
+      "stem": "In a case report, which section is described as \"the heart of the report\"?",
+      "options": [
+        "Introduction",
+        "Abstract",
+        "References",
+        "Case presentation"
+      ],
+      "answer": "D",
+      "explanation": "The case presentation gives background, history, findings and tests, interventions and follow-up in chronological order.",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "About case reports:",
+      "options": [
+        "Their abstract is usually 150–250 words",
+        "They require written informed consent from the patient or guardian",
+        "They are based on large population samples",
+        "They must be de-identified"
+      ],
+      "answer": "ABD",
+      "explanation": "Case reports describe a single patient (rarely up to four).",
+      "page": 9,
+      "weight": 0
+    },
+    {
+      "stem": "Which features can make a clinical case worth publishing as a case report?",
+      "options": [
+        "Innovative diagnostic or therapeutic approach",
+        "Educational merit, even for a common condition",
+        "Rare or unique presentation",
+        "Atypical progression or outcome"
+      ],
+      "answer": "ABCD",
+      "explanation": "Also ethical or public-health relevance (ICMJE and leading journals).",
+      "page": 10,
+      "weight": 0
+    },
+    {
+      "stem": "Which tools are cited for critically appraising case reports?",
+      "options": [
+        "CARE guidelines",
+        "JBI checklists",
+        "IMRAD",
+        "PubMed"
+      ],
+      "answer": "AB",
+      "explanation": "IMRAD is the structure of research articles; PubMed is a search database.",
+      "page": 11,
+      "weight": 0
+    },
+    {
+      "stem": "Research article (a) or case report (b)? Which matches are correct?",
+      "options": [
+        "Typically extensive in references — (a)",
+        "Aims at statistical significance and hypothesis testing — (b)",
+        "Focuses on a single patient — (b)",
+        "Follows IMRAD — (a)"
+      ],
+      "answer": "ACD",
+      "explanation": "Case reports aim at educational value and hypothesis generation, with selective references; hypothesis testing belongs to research articles.",
+      "page": 12,
+      "weight": 0
+    },
+    {
+      "stem": "\"A 32-year-old woman presented with persistent cough and fever. Chest X-ray revealed consolidation in the right lower lobe...\" This excerpt most likely comes from:",
+      "options": [
+        "A meta-analysis",
+        "A case report",
+        "A medical textbook preface",
+        "A randomized controlled trial"
+      ],
+      "answer": "B",
+      "explanation": "A narrative about one patient's presentation and investigations is typical of a case report.",
+      "page": 8,
+      "weight": 0
+    },
+    {
+      "stem": "Which are reasons for reading journal articles listed in Table 1?",
+      "options": [
+        "To generate research ideas",
+        "To stay updated in a field",
+        "To solve specific clinical problems",
+        "To avoid learning statistics"
+      ],
+      "answer": "ABC",
+      "explanation": "Eight reasons: stay updated, solve problems, understand disease, grasp fundamentals, generate research ideas, academic requirements, support own views, impress others. The course recommends learning basic biostatistics.",
+      "page": 4,
+      "weight": 0
+    }
+  ]
+}

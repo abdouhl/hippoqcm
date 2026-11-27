@@ -8,6 +8,7 @@ import type { StudyTarget } from "./Decks";
 import { Icon } from "./icons";
 import { useSettings } from "./prefs";
 import { plannedToday, type StudyOnly } from "./queue";
+import { SUMMATIVES, type Summative } from "./summatives";
 import { SyncBadge } from "./SyncBadge";
 
 // Rough pace for the time estimate: a new question takes longer to read and think through.
@@ -25,6 +26,56 @@ function greeting() {
 
 export function inDays(days: number) {
   return days === 0 ? "today" : days === 1 ? "tomorrow" : `in ${days} days`;
+}
+
+const shortDate = (iso: string) => new Date(`${iso}T00:00`).toLocaleDateString(undefined, { day: "numeric", month: "short" });
+
+const SHORT: Record<string, string> = {
+  writ: "Written", oral: "Oral", gram: "Grammar", phon: "Phonetics",
+  skills: "Study skills", read: "Reading", shs: "Social sci.", term: "Terminology",
+};
+const shortName = (s: Summative) => `${SHORT[s.id.split("-")[0]] ?? s.subject} ${s.n}`;
+const dayDate = (iso: string) => new Date(`${iso}T00:00`).toLocaleDateString(undefined, { weekday: "short", day: "numeric", month: "short" });
+
+// Medical English summatives: one line with what's open this week, ticked off in place.
+function Summatives() {
+  const settings = useSettings();
+  const [all, setAll] = useState(false);
+  const done = new Set(settings.summativesDone ?? []);
+  const today = localToday();
+  const tick = (id: string) =>
+    saveSettings({ ...settings, summativesDone: done.has(id) ? [...done].filter((d) => d !== id) : [...done, id] });
+
+  // Only what's open now (or past and not ticked); nothing until the next week opens.
+  const now = SUMMATIVES.filter((s) => !done.has(s.id) && s.start <= today);
+  if (now.length === 0 && !all) return null;
+  const late = now.length > 0 && now.every((s) => s.end < today);
+  const ends = now.map((s) => s.end).sort()[0] ?? "";
+
+  const chip = (s: Summative) => {
+    const isDone = done.has(s.id);
+    return (
+      <button key={s.id} role="checkbox" aria-checked={isDone} className={isDone ? "sum-chip done" : "sum-chip"} onClick={() => tick(s.id)}
+        title={`${s.subject} · Summative ${s.n} · ${shortDate(s.start)} – ${shortDate(s.end)}`}>
+        <span className="box">{isDone && <Icon name="check" size={12} />}</span>
+        {shortName(s)}
+      </button>
+    );
+  };
+
+  return (
+    <section className={now.length > 0 ? (late ? "sum-banner late" : "sum-banner open") : "sum-banner"}>
+      <div className="sum-head">
+        <Icon name="calendar" size={16} />
+        <span>
+          <b>This week</b> · Medical English{" "}
+          <small>{now.length === 0 ? "· all done" : late ? "· past due?" : `· ends ${dayDate(ends)}`}</small>
+        </span>
+        <button className="link" onClick={() => setAll(!all)}>{all ? "Hide" : "See all"}</button>
+      </div>
+      <div className="sum-chips">{(all ? SUMMATIVES : now).map(chip)}</div>
+    </section>
+  );
 }
 
 type Props = {
@@ -115,6 +166,8 @@ export default function Today({ modules: allModules, onStudy, onOpenModule, onSe
           <Icon name="next" />
         </button>
       )}
+
+      <Summatives />
 
       <section className={nothing ? "card hero done-today" : "card hero"}>
         <div className="hero-top">

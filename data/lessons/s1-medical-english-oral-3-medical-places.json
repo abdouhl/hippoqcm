@@ -1,0 +1,79 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Oral Expression · L3 Describing medical places",
+  "pdf": "s1/medical-english/oral-3-medical-places.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "Match the department to its function. Which pairs are correct?",
+      "options": ["Radiology — X-rays are taken here", "Pharmacy — you buy or collect medicine here", "Outpatients Department — surgical operations are performed here", "Emergency Department — patients with serious injuries are treated here"],
+      "answer": "ABD",
+      "explanation": "Outpatients = doctors examine patients; surgical operations take place in the operating theatre.",
+      "page": 1, "weight": 0
+    },
+    {
+      "stem": "A&E stands for:",
+      "options": ["Accident and Emergency", "Admission and Examination", "Anaesthesia and Emergency", "Ambulance and Entrance"],
+      "answer": "A",
+      "explanation": "Emergency Room / A&E (Accident and Emergency).",
+      "page": 1, "weight": 0
+    },
+    {
+      "stem": "Which are prepositions of place from the lecture's vocabulary list?",
+      "options": ["opposite", "between", "at the end of the corridor", "afterwards"],
+      "answer": "ABC",
+      "explanation": "next to, opposite, at the end of the corridor, on the second floor, between, past, on your left/right. \"Afterwards\" is a time adverb.",
+      "page": 1, "weight": 0
+    },
+    {
+      "stem": "Which directions are written correctly?",
+      "options": ["It's on the second floor.", "It's at the end of the corridor.", "It's next the pharmacy.", "It's the second door in your left."],
+      "answer": "AB",
+      "explanation": "The correct forms are \"next to the pharmacy\" and \"on your left\".",
+      "page": 1, "weight": 0
+    },
+    {
+      "stem": "According to the reading text, patients arriving by ambulance are usually:",
+      "options": ["Taken straight to the Emergency Department", "Asked to wait in the outpatient department", "Sent to the pharmacy first", "Registered at the laboratory"],
+      "answer": "A",
+      "explanation": "Ambulance patients go straight to the Emergency Department; patients with an appointment wait in the outpatient department.",
+      "page": 2, "weight": 0
+    },
+    {
+      "stem": "About the Intensive Care Unit in the reading text:",
+      "options": ["It receives serious cases that need continuous monitoring", "It is normally located close to the operating theatres", "Its location allows patients to be moved quickly after surgery", "It is usually on the ground floor next to the pharmacy"],
+      "answer": "ABC",
+      "explanation": "The ICU is close to the operating theatres; it's the pharmacy and laboratory that are on the ground floor near reception.",
+      "page": 3, "weight": 0
+    },
+    {
+      "stem": "Why are the pharmacy and laboratory often near reception?",
+      "options": ["Almost every department needs to send samples there or collect medication", "They are the first place ambulance patients go", "They need continuous monitoring", "Visitors are not allowed in other departments"],
+      "answer": "A",
+      "explanation": "They are on the ground floor near reception because almost every department sends samples or collects medication there.",
+      "page": 3, "weight": 0
+    },
+    {
+      "stem": "In a general hospital as described in the text:",
+      "options": ["Corridors lead from a central reception area to the main departments", "Patients with an appointment wait in the outpatient department until called", "Emergency patients wait in reception until called", "The ICU is far from the operating theatres to avoid infection"],
+      "answer": "AB",
+      "explanation": "Central reception with corridors; appointment patients wait in outpatients; ambulance cases go straight to Emergency; ICU is near the theatres.",
+      "page": 2, "weight": 0
+    },
+    {
+      "stem": "Which is the most polite way to ask for directions, as in the model dialogue?",
+      "options": ["Excuse me, could you tell me where the radiology department is?", "Where is radiology?", "Tell me where the radiology department is.", "Excuse me, where the radiology department is?"],
+      "answer": "A",
+      "explanation": "\"Excuse me, could you tell me where … is?\" — polite opener + indirect question (subject before verb).",
+      "page": 3, "weight": 0
+    },
+    {
+      "stem": "In the model dialogue, where is the radiology department?",
+      "options": ["Down the corridor, second door on the left", "Next to the pharmacy", "Opposite the waiting room on the second floor", "At the end of the corridor on the right"],
+      "answer": "AB",
+      "explanation": "\"Go down this corridor, and it's the second door on your left, next to the pharmacy.\" The waiting room is just opposite, on the ground floor.",
+      "page": 3, "weight": 0
+    }
+  ]
+}

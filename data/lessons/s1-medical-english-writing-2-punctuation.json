@@ -1,0 +1,156 @@
+{
+  "semester": 1,
+  "module": "Medical English",
+  "title": "Written Expression · L2 Punctuation",
+  "pdf": "s1/medical-english/writing-2-punctuation.pdf",
+  "exam_questions": [],
+  "questions": [
+    {
+      "stem": "According to the lecture, which reasons make punctuation critical in healthcare?",
+      "options": ["Legal protection in cases of dispute or litigation", "Patient safety", "Standardisation across multidisciplinary teams", "It is mainly a matter of stylistic preference"],
+      "answer": "ABC",
+      "explanation": "The five reasons are accuracy, patient safety, professional credibility, legal protection and standardisation. The lecture explicitly says punctuation is NOT merely stylistic preference.",
+      "page": 1, "weight": 0
+    },
+    {
+      "stem": "Which abbreviations are correctly written according to the lecture?",
+      "options": ["e.g.", "W.H.O.", "et al.", "M.R.I."],
+      "answer": "AC",
+      "explanation": "Common abbreviations such as e.g., i.e., a.m., p.m. and et al. take periods; acronyms (WHO, MRI, ICU, ER, ECG) do not.",
+      "page": 3, "weight": 0
+    },
+    {
+      "stem": "Which are correct uses of the period in medical writing?",
+      "options": ["0.5 mg", "37,5°C", "Administer 10 mg of morphine sulphate.", "The patient's vital signs were stable., and the doctor ordered discharge."],
+      "answer": "AC",
+      "explanation": "Periods mark decimal points (0.5 mg, 37.5°C, not a comma) and end imperative sentences. \"stable., and\" is the lecture's example of an unnecessary period.",
+      "page": 4, "weight": 0
+    },
+    {
+      "stem": "Why does the lecture strongly recommend the serial (Oxford) comma in medical writing?",
+      "options": ["It shows that the listed items are separate (e.g. three distinct conditions)", "It prevents ambiguity", "It is only needed with lists of two items", "It replaces the conjunction \"and\""],
+      "answer": "AB",
+      "explanation": "The serial comma (before \"and/or\" in lists of three or more) prevents ambiguity: \"diabetes, hypertension, and heart disease\" = three separate conditions. The conjunction stays.",
+      "page": 5, "weight": 0
+    },
+    {
+      "stem": "Which sentences are correctly punctuated?",
+      "options": ["The diagnosis was uncertain, so additional tests were ordered.", "After the surgery, the patient was transferred to the recovery room.", "The patient presented with fever, he also reported chills.", "The patient, was discharged yesterday."],
+      "answer": "AB",
+      "explanation": "A comma goes before FANBOYS joining two independent clauses and after introductory phrases. C is a comma splice; D has an unnecessary comma between subject and verb.",
+      "page": 6, "weight": 0
+    },
+    {
+      "stem": "\"The patient was experiencing chest pain, the ECG was ordered.\" Which corrections does the lecture accept?",
+      "options": ["The patient was experiencing chest pain; the ECG was ordered.", "The patient was experiencing chest pain, so the ECG was ordered.", "The patient was experiencing chest pain. The ECG was ordered.", "The patient was experiencing chest pain: the ECG, was ordered."],
+      "answer": "ABC",
+      "explanation": "A comma splice is fixed with a semicolon, a comma + coordinating conjunction, or a period.",
+      "page": 19, "weight": 0
+    },
+    {
+      "stem": "About commas and non-essential information:",
+      "options": ["\"The patient, who had a history of diabetes, presented with foot pain\" correctly sets off extra information", "\"Patients who have diabetes should monitor their blood sugar\" needs no commas because the clause is essential", "\"Dr. Chen, the chief surgeon, performed the procedure\" is correct", "Restrictive (essential) clauses are always placed between commas"],
+      "answer": "ABC",
+      "explanation": "Non-essential information goes between commas; essential (restrictive) information that identifies which patients takes no commas.",
+      "page": 6, "weight": 0
+    },
+    {
+      "stem": "Which statements about commas are correct according to the lecture?",
+      "options": ["Use a comma between coordinate adjectives: \"a severe, persistent cough\"", "The test for coordinate adjectives is whether \"and\" can be placed between them", "\"Mr. Smith, your test results are normal\" uses a comma for direct address", "No comma is used after \"Therefore\" at the start of a sentence"],
+      "answer": "ABC",
+      "explanation": "Rules 6–8: coordinate adjectives (\"and\" test), direct address, and a comma after transitional phrases such as Therefore, Furthermore, In conclusion.",
+      "page": 7, "weight": 0
+    },
+    {
+      "stem": "About the semicolon:",
+      "options": ["It marks a pause stronger than a comma but less final than a period", "Both clauses it joins must be able to stand alone as sentences", "It can follow a dependent clause: \"Because the patient presented with chest pain; we ordered an ECG\"", "\"The patient presented with; fever and chills\" is correct"],
+      "answer": "AB",
+      "explanation": "A semicolon joins two complete, related clauses. After a dependent clause (\"Because…\") use a comma; \"The patient presented with\" is not a complete sentence.",
+      "page": 9, "weight": 0
+    },
+    {
+      "stem": "Which sentence is punctuated correctly?",
+      "options": ["The patient was discharged; however, the symptoms recurred.", "The patient was discharged, however, the symptoms recurred.", "The patient was discharged; however the symptoms recurred.", "The patient was discharged however; the symptoms recurred."],
+      "answer": "A",
+      "explanation": "With a transitional expression joining two independent clauses: semicolon before the transition, comma after it.",
+      "page": 11, "weight": 0
+    },
+    {
+      "stem": "Match the transitional expression to its category as given in the lecture:",
+      "options": ["consequently — cause/effect", "nevertheless — contrast", "meanwhile — addition", "indeed — emphasis"],
+      "answer": "ABD",
+      "explanation": "Addition: moreover, furthermore, in addition. Contrast: however, nevertheless, on the other hand. Cause/effect: therefore, consequently, as a result. Time: subsequently, meanwhile, later. Emphasis: indeed, in fact, certainly.",
+      "page": 9, "weight": 0
+    },
+    {
+      "stem": "When should items in a list be separated by semicolons?",
+      "options": ["When one or more items already contain commas", "When listing three simple symptoms such as nausea, vomiting and diarrhoea", "In \"Boston, Massachusetts; Los Angeles, California; and Chicago, Illinois\"", "Never in medication lists"],
+      "answer": "AC",
+      "explanation": "Semicolons separate complex list items that contain commas (places with states, drugs with dose and indication). Simple lists use commas.",
+      "page": 10, "weight": 0
+    },
+    {
+      "stem": "Which are uses of the colon listed in the lecture?",
+      "options": ["Introducing an explanation: \"The diagnosis was clear: the patient had a myocardial infarction.\"", "Separating hours and minutes: 08:30", "Separating a title and subtitle", "Joining two related independent clauses such as \"The patient had fever: the patient was administered antipyretics.\""],
+      "answer": "ABC",
+      "explanation": "Colons introduce lists, explanations and quotations, and are used in time, ratios and title:subtitle. Joining two related clauses is the semicolon's job — D is the lecture's \"colon instead of semicolon\" error.",
+      "page": 12, "weight": 0
+    },
+    {
+      "stem": "Which sentences contain a colon error described in the lecture?",
+      "options": ["The patient was treated with: antibiotics and antipyretics.", "The patient's symptoms were: fever, chills, and headache.", "The following tests were ordered: complete blood count, urinalysis, and chest X-ray.", "The diagnosis was; myocardial infarction."],
+      "answer": "ABD",
+      "explanation": "A colon must not follow a preposition (A) or a verb (B). D uses a semicolon where a colon is needed. C is the correct model.",
+      "page": 14, "weight": 0
+    },
+    {
+      "stem": "About capitalisation after a colon, the lecture says:",
+      "options": ["Lowercase is most common when a clause, phrase or list follows", "A capital may be used when a complete sentence follows (more formal)", "One style should be chosen and applied consistently", "A capital letter is always compulsory after a colon"],
+      "answer": "ABC",
+      "explanation": "Both styles exist; the recommendation is consistency.",
+      "page": 13, "weight": 0
+    },
+    {
+      "stem": "About punctuating lists of instructions and dosages:",
+      "options": ["Sequential instructions should be numbered", "Bullets are used for non-sequential items", "A colon followed by semicolons gives a very clear dosage list", "List items do not need parallel grammatical structure"],
+      "answer": "ABC",
+      "explanation": "Numbers show the order of steps, bullets organise without implying order; colon + semicolons is rated \"very clear\". Best practice requires parallel structure and consistency.",
+      "page": 16, "weight": 0
+    },
+    {
+      "stem": "In a research abstract, the lecture recommends:",
+      "options": ["Colons to introduce findings (Background:, Methods:, Results:)", "Semicolons to join related sentences", "Commas to separate items in lists", "No periods, to save space"],
+      "answer": "ABC",
+      "explanation": "Abstract guidelines: periods end each sentence, commas separate list items, semicolons join related sentences, colons introduce findings.",
+      "page": 19, "weight": 0
+    },
+    {
+      "stem": "Which uses of the apostrophe are correct?",
+      "options": ["the patients' records (belonging to several patients)", "the children's ward", "The patient's vital sign's were recorded.", "The patient's not responding to treatment. (in a formal report)"],
+      "answer": "AB",
+      "explanation": "Plural -s nouns take only an apostrophe; irregular plurals take 's. No apostrophe for plain plurals (signs), and contractions are avoided in formal writing (\"is not\").",
+      "page": 20, "weight": 0
+    },
+    {
+      "stem": "Match the mark to its use:",
+      "options": ["En dash — a range: a 10–15 mg dose", "Hyphen — a compound modifier: a 45-year-old man", "Square brackets — an abbreviation introduced for the first time", "Em dash — to be used frequently in formal medical writing"],
+      "answer": "AB",
+      "explanation": "Parentheses introduce abbreviations (COPD); square brackets are for editorial insertions. The em dash should be used sparingly.",
+      "page": 21, "weight": 0
+    },
+    {
+      "stem": "About quotation marks in medical writing:",
+      "options": ["They enclose a patient's exact words", "Double quotation marks are the standard", "Single quotation marks are for a quotation within a quotation", "Periods are conventionally placed outside the closing quotation mark"],
+      "answer": "ABC",
+      "explanation": "Commas and periods go inside the closing quotation mark; ? and ! go inside only when they belong to the quotation.",
+      "page": 22, "weight": 0
+    },
+    {
+      "stem": "\"Do not administer aspirin if patient has fever headache and nausea.\" What does the lecture say?",
+      "options": ["The missing commas make the instruction ambiguous", "The correction is \"…if patient has fever, headache, and nausea.\"", "This kind of error can lead to medication errors", "The sentence is acceptable because medical notes are informal"],
+      "answer": "ABC",
+      "explanation": "Case study 8.1: missing commas create ambiguity in a medication instruction, a patient-safety risk.",
+      "page": 17, "weight": 0
+    }
+  ]
+}
